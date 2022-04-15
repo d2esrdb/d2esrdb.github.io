@@ -1,0 +1,82 @@
+23	Cruel	dmg%		201	300											weap
+24	Bloodlust	dmg%		400	400	howl		128	128	regen		-8	-8			mele
+48	Master's	att		151	250	dmg%		101	150							weap
+49	Grandmaster's	att		251	300	dmg%		151	200							weap
+184	Valkyrie's	ama		3	3											amul
+193	Arch-Angel's	sor		3	3											amul
+202	Necromancer's	nec		3	3											amul
+211	Priest's	pal		3	3											amul
+220	Berserker's	bar		3	3											amul
+229	Hierophant's	dru		3	3											amul
+238	Witch-hunter's	ass		3	3											amul
+333	Shouting	dmg%/lvl	20													weap
+334	Screaming	dmg%/lvl	24													weap
+344	Joker's	dmg/lvl	16			att/lvl	8									weap
+345	Trump	dmg/lvl	20			att/lvl	10									weap
+385	Serrated	dmg-max		10	15											lcha
+390	Serrated	dmg-max		7	10											mcha
+393	Serrated	dmg-max		4	5											scha
+425	Sharp	att		51	75	dmg-max		7	9							lcha
+427	Sharp	att		26	50	dmg-max		4	6							mcha
+428	Fine	att		10	25	dmg-max		1	3							scha
+450	Shimmering	res-all		10	12											lcha
+451	Shimmering	res-all		13	15											lcha
+453	Shimmering	res-all		8	10											mcha
+454	Shimmering	res-all		3	5											scha
+503	Fletcher's	skilltab	0	1	1											lcha
+504	Acrobat's	skilltab	1	1	1											lcha
+505	Harpoonist's	skilltab	2	1	1											lcha
+506	Burning	skilltab	3	1	1											lcha
+507	Sparking	skilltab	4	1	1											lcha
+508	Chilling	skilltab	5	1	1											lcha
+509	Hexing	skilltab	6	1	1											lcha
+510	Fungal	skilltab	7	1	1											lcha
+511	Graverobber's	skilltab	8	1	1											lcha
+512	Lion Branded	skilltab	9	1	1											lcha
+513	Captain's	skilltab	10	1	1											lcha
+514	Preserver's	skilltab	11	1	1											lcha
+515	Expert's	skilltab	12	1	1											lcha
+516	Fanatic	skilltab	13	1	1											lcha
+517	Sounding	skilltab	14	1	1											lcha
+518	Trainer's	skilltab	15	1	1											lcha
+519	Spiritual	skilltab	16	1	1											lcha
+520	Nature's	skilltab	17	1	1											lcha
+521	Entrapping	skilltab	18	1	1											lcha
+522	Mentalist's	skilltab	19	1	1											lcha
+523	Shogukusha's	skilltab	20	1	1											lcha
+592	Assailant's	dmg/lvl	3													lcha
+594	Assailant's	dmg/lvl	2													mcha
+595	Assailant's	dmg/lvl	1													scha
+629	Vermillion	dmg-max		16	25											jewl
+633	Ruby	dmg%		41	60											jewl
+641	Argent	att		61	120	dmg/lvl	2									jewl
+642	Bright	light		1	1	att/lvl	4									jewl
+648	Scintillating	res-all		11	15											jewl
+659	Maiden's	ama		1	1	jewelflag		1	1							jewl
+660	Monk's	pal		1	1	jewelflag		2	2							jewl
+661	Summoner's	nec		1	1	jewelflag		3	3							jewl
+662	Angel's	sor		1	1	jewelflag		4	4							jewl
+663	Slayer's	bar		1	1	jewelflag		5	5							jewl
+664	Shaman's	dru		1	1	jewelflag		6	6							jewl
+665	Magekiller's	ass		1	1	jewelflag		7	7							jewl
+669	Excellent	att%		20	20	dmg%		31	45							jewl
+693	Vile	dmg%/lvl	4													jewl
+694	Vile	dmg%/lvl	5													jewl
+698	Looter's	mag%/lvl	4													jewl
+699	Looter's	mag%/lvl	5													jewl
+700	Knowledgeable	allskills		1	1	jewelflag		8	8							jewl
+731	Skillful	skill-rand	1	6	35											mcha
+732	Skillful	skill-rand	1	36	65											mcha
+733	Skillful	skill-rand	1	66	95											mcha
+734	Skillful	skill-rand	1	96	125											mcha
+735	Skillful	skill-rand	1	126	155											mcha
+736	Skillful	skill-rand	1	221	250											mcha
+737	Skillful	skill-rand	1	251	280											mcha
+738	Skillful	skill-rand	1	6	35	skill-rand	1	6	35							mcha
+739	Skillful	skill-rand	1	36	65	skill-rand	1	36	65							mcha
+740	Skillful	skill-rand	1	66	95	skill-rand	1	66	95							mcha
+741	Skillful	skill-rand	1	96	125	skill-rand	1	96	125							mcha
+742	Skillful	skill-rand	1	126	155	skill-rand	1	126	155							mcha
+743	Skillful	skill-rand	1	221	250	skill-rand	1	221	250							mcha
+795	Kron's	maxdmg%/kill	1													weap
+796	Ronal's	maxdmg/kill	1													weap

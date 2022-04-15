@@ -1,0 +1,8 @@
+yps Antidote Potion
+wms Thawing Potion
+aqv Arrows
+cqv Bolts
+tsc Scroll of Town Portal
+isc Scroll of Identify
+Key Key
+key Key
