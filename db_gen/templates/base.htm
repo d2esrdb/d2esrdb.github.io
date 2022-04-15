@@ -1,0 +1,60 @@
+<%page args="body, quick_links"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Rises Database">
+        <meta property="og:description" content="Database for Eastern Sun Rises with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <meta property="og:image" content="https://static.wikia.nocookie.net/d2esr/images/6/68/ESR_banner.png">
+        <title>
+            Eastern Sun Rises 5.3 Database
+        </title>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000">
+        <center>
+            <font size="+2" face="arial,helvetica">
+                Eastern Sun Rises 5.3 Database
+                <br>
+            </font>                
+                <table cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td bgcolor="#000000" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    <%include file="links.htm"/>
+                                    % if len(quick_links) > 0:
+                                    <br>
+                                        % for quick_link in quick_links:
+                                    <a href="#${quick_link}">[${quick_link}]</a>
+                                        % endfor
+                                    % endif
+                                </font>
+                            </td>
+                        </tr>   
+                    </tbody>
+                </table>
+                <%include file="${body}"/>
+                <table cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td bgcolor="#000000" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    % if len(quick_links) > 0:
+                                        % for quick_link in quick_links:
+                                    <a href="#${quick_link}">[${quick_link}]</a>
+                                        % endfor
+                                    <br>
+                                    % endif
+                                    <%include file="links.htm"/>
+                                </font>
+                            </td>
+                        </tr>   
+                    </tbody>
+                </table>
+            </a>
+        </center>
+    </body>
+</html>
