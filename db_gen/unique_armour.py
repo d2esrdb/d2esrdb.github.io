@@ -1,7 +1,7 @@
 import csv
-import strings
+import table_strings
 
-mod_strings = strings.get_string_dict()
+mod_strings = table_strings.get_string_dict()
 no_mod_strings = {}
 
 class stat:
@@ -100,20 +100,4 @@ def main():
             get_property_stats(unique_item.name, property)
         print_item(unique_item)
         
-
-#print(mod_strings["healkillStr"])
 main()
-#print(no_mod_strings)
-
-
-#items = get_unique_items()
-#for item in items:
-#    print_item(item)
-
-#print(strings.get_string_dict()["ModStr4s"])
-
-#strings = strings.get_string_dict()
-#print(strings["ModStr1j"])
-#for string in strings:
-#    if "All Resistances" == strings[string]:
-#        print(string)
