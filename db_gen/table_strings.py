@@ -1,3 +1,5 @@
+import os
+
 # List of string tables to parse. Parsed in order so higher indexed tables
 # override lower tables in the case of duplicate strings  
 string_tables = [
@@ -20,9 +22,14 @@ def read_string(data):
     return string
 
 def get_string_dict():
+    data_path = ""
+    for root, dirs, files in os.walk("../"):
+        if "Data" in dirs:
+            data_path = os.path.join(root, "Data")
+
     key_value_dict = {}
     for string_table in string_tables:
-        strings = open("../Data/local/LNG/eng/" + string_table, "rb")
+        strings = open(data_path + "/local/LNG/eng/" + string_table, "rb")
 
         # HEADER 21 bytes
         read_bytes(strings, 2) # CRC, ignored
@@ -62,3 +69,11 @@ def get_string_dict():
             # Create the key/value pair dict
             key_value_dict[key_string] = value_string
     return key_value_dict
+
+#print(get_string_dict()["StrSkill3"])
+#print(get_string_dict()["item_singleskill"])
+
+#strings = get_string_dict()
+#for key in strings:
+#    if "Repairs" in strings[key]:
+#        print(strings[key])

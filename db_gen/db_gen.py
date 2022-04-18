@@ -4,16 +4,45 @@ from mako.lookup import TemplateLookup
 
 mylookup = TemplateLookup(directories=[os.getcwd()])
 
+def get_version():
+    for directory_name in os.listdir("../"):
+        if directory_name.startswith("ESR"):
+            return directory_name.replace("ESR", "").replace("_", "").strip()
+
+def generate(body_template, filename, quick_links):
+    base_template = Template(filename="templates/base.htm", lookup=mylookup)
+    base_rendered = base_template.render(body=body_template,
+                                         quick_links=quick_links,
+                                         version=get_version()).replace("\r","")
+    open("../" + filename, "w").write(base_rendered)
+
 def generate_index():
-    index_template = Template(filename="templates/base.htm", lookup=mylookup)
-    index_rendered = index_template.render(body="index.htm", quick_links=[])
-    open("../index.htm", "w").write(index_rendered)
+    index_template = Template(filename="templates/index.htm", lookup=mylookup)
+    index_rendered = index_template.render()
+    generate(index_rendered, "index.htm", [])
 
 def generate_armor():
-    armor_template = Template(filename="templates/base.htm", lookup=mylookup)
-    armor_rendered = armor_template.render(body="es3armo_n.htm", quick_links=["Helms", "Circlets",
-        "Armor", "Robes", "Shields", "Gloves", "Belts", "Boots", "Bar", "Dru", "Nec", "Pal"])
-    open("../es3armo_n.htm", "w").write(armor_rendered)
+    quick_links = ["Helms", "Circlets", "Armor", "Robes", "Shields", "Gloves", "Belts", "Boots",
+                   "Bar", "Dru", "Nec", "Pal"]
+    armor_template = Template(filename="templates/es3armo_n.htm", lookup=mylookup)
+    armor_rendered = armor_template.render()
+    generate(armor_rendered, "es3armo_n.htm", quick_links)
+
+def generate_weapons():
+    quick_links = ["Axes", "Bows", "Xbows", "Daggers", "Javelins", "Knuckles", "Maces", "Poles",
+                   "Scepters", "Spears", "Staves", "Swords", "Throw", "Wands", "Ama", "Asn", "Bar",
+                   "Dru", "Nec", "Pal", "Sor"]
+    weapon_template = Template(filename="templates/es3weap_n.htm", lookup=mylookup)
+    weapon_rendered = weapon_template.render()
+    generate(weapon_rendered, "es3weap_n.htm", quick_links)
 
 generate_index()
 generate_armor()
+generate_weapons()
+#generate_uniques() #armors and weapons
+#generate_sets()
+#generate_gems_and_runes()
+#generate_runewords()
+#generate_gemwords()
+#generate_recipes()
+#generate_maps()
