@@ -2,9 +2,9 @@ import os
 import csv
 import table_strings
 import stat_formats
+import load_txts
 
 mod_strings = table_strings.get_string_dict()
-no_mod_strings = {}
 
 class Stat:
     def __init__(self, name, stat_string, priority):
@@ -26,11 +26,6 @@ class Unique_Item:
         self.item_level = item_level
         self.required_level = required_level
         self.properties = properties
-
-data_path = ""
-for root, dirs, files in os.walk("../"):
-    if "Data" in dirs:
-        data_path = os.path.join(root, "Data")
 
 # Get the list of armors
 #def get_armor_bases():
@@ -78,27 +73,45 @@ def get_value_string(param, min, max):
         
     return min + "-" + max
 
+def short_to_long_class(short):
+    if short == "ama":
+        return "Amazon"
+    if short == "sor":
+        return "Sorceress"
+    if short == "nec":
+        return "Necromancer"
+    if short == "pal":
+        return "Paladin"
+    if short == "bar":
+        return "Barbarian"
+    if short == "dru":
+        return "Druid"
+    if short == "ass":
+        return "Assassin"
+    return "Unknown"
+
+def get_class_from_tab_number(tab_number):
+    tab_number = int(tab_number)
+    if tab_number < 4:
+        return "Amazon"
+    if tab_number < 7:
+        return "Paladin"
+    if tab_number < 10:
+        return "Necromancer"
+    if tab_number < 13:
+        return "Barbarian"
+    if tab_number < 16:
+        return "Sorceress"
+    if tab_number < 19:
+        return "Druid"
+    if tab_number < 21:
+        return "Assassin"
+    return "Unknown"
+
 def get_class_from_skill_name(skill_name):
-    skill_table = open(data_path + "/global/excel/Skills.txt", newline='')
-    skill_rows = csv.reader(skill_table, delimiter='\t')
-    
-    for skill_row in skill_rows:
+    for skill_row in load_txts.skills_table:
         if skill_name == skill_row[0]:
-            if skill_row[2] == "ama":
-                return "Amazon"
-            if skill_row[2] == "sor":
-                return "Sorceress"
-            if skill_row[2] == "nec":
-                return "Necromancer"
-            if skill_row[2] == "pal":
-                return "Paladin"
-            if skill_row[2] == "bar":
-                return "Barbarian"
-            if skill_row[2] == "dru":
-                return "Druid"
-            if skill_row[2] == "ass":
-                return "Assassin"
-            return "Unknown"
+            return short_to_long_class(skill_row[2])
 
 def get_class_from_skill_range(start, end):
     start = int(start)
@@ -120,10 +133,8 @@ def get_class_from_skill_range(start, end):
     return "Unknown"
 
 def get_skill_name(skill):
-    skill_table = open(data_path + "/global/excel/Skills.txt", newline='')
-    skill_rows = csv.reader(skill_table, delimiter='\t')
     skill_desc = ""
-    for skill_row in skill_rows:
+    for skill_row in load_txts.skills_table:
         if skill.isdigit():
             if str(skill) == str(skill_row[1]):
                 skill_desc = skill_row[3] 
@@ -133,11 +144,8 @@ def get_skill_name(skill):
     if skill_desc == "":
         print("Did not find skill desc for skill: " + skill)
         return skill
-
-    skill_desc_table = open(data_path + "/global/excel/SkillDesc.txt", newline='')
-    skill_desc_rows = csv.reader(skill_desc_table, delimiter='\t')
     
-    for skill_desc_row in skill_desc_rows:
+    for skill_desc_row in load_txts.skill_desc_table:
         if skill_desc == skill_desc_row[0]:
             skill_name = mod_strings.get(skill_desc_row[7], "")
             if skill_name != "":
@@ -146,11 +154,8 @@ def get_skill_name(skill):
     print("Did not find skill name for skill: " + skill)
     return skill
 
-def get_stat(stat_name, param, min, max):
-    item_stat_cost_table = open(data_path + "/global/excel/ItemStatCost.txt", newline='')
-    item_stat_cost_rows = csv.reader(item_stat_cost_table, delimiter='\t')
-    
-    for item_stat_cost_row in item_stat_cost_rows:
+def get_stat(stat_name, param, min, max, prop_name):
+    for item_stat_cost_row in load_txts.item_stat_cost_table:
         if stat_name == item_stat_cost_row[0]:
             
             # Custom handling
@@ -161,8 +166,14 @@ def get_stat(stat_name, param, min, max):
                     return Stat(stat_name, "+" + get_value_string("", min, max) + " to " + get_skill_name(param) + " (" + get_class_from_skill_name(param) + " Only)", int(item_stat_cost_row[39]))
                 return Stat(stat_name, "+" + str(param) + " to Random " + get_class_from_skill_range(min, max) + " Skill", int(item_stat_cost_row[39]))
             if stat_name == "item_addskill_tab":
-                # @TODO what's going on with skilltab 0 ?? everything seems off by 1 at some point
-                return Stat(stat_name, mod_strings["StrSklTabItem" + str(int(param)+1)].replace("%d", get_value_string("", min, max)), int(item_stat_cost_row[39]))
+                # @TODO what's going on with amazon skilltab numbers ?? 
+                if "0" == param:
+                    param = "3"
+                if "2" == param:
+                    param = "1"
+                elif "1" == param:
+                    param = "2"
+                return Stat(stat_name, mod_strings["StrSklTabItem" + str(int(param))].replace("%d", get_value_string("", min, max)) + " (" + get_class_from_tab_number(int(param)) + " Only)", int(item_stat_cost_row[39]))
             if stat_name == "item_nonclassskill":
                 return Stat(stat_name, "+" + get_value_string("", min, max) + " to " + get_skill_name(param), int(item_stat_cost_row[39]))
             if stat_name == "item_charged_skill":
@@ -183,6 +194,9 @@ def get_stat(stat_name, param, min, max):
                 return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + get_skill_name(param) + " When You Die", int(item_stat_cost_row[39]))
             if stat_name == "item_skillonlevelup":
                 return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + get_skill_name(param) + " When You Level Up", int(item_stat_cost_row[39]))
+            # @TODO could get rid of this case if we refactor stat_formats to take in param and min and max
+            if stat_name == "item_addclassskills":
+                return Stat(stat_name, "+" + str(get_value_string("", min, max)) + " to " + short_to_long_class(prop_name) + " Skill Levels", int(item_stat_cost_row[39]))
             if stat_name == "curse_resistance" or stat_name == "coldlength" or stat_name == "poisonlength" or stat_name == "heal_kill_per_maxhp":
                 return None
             
@@ -200,31 +214,53 @@ def get_stat(stat_name, param, min, max):
             val = int(item_stat_cost_row[41])
 
             string1 = mod_strings.get(item_stat_cost_row[42], "EMPTY")
+            # @TODO Negative string?
             string2 = mod_strings.get(item_stat_cost_row[44], "EMPTY")
 
             #@TODO there's a bunch of other parameters we need to find and pass in here
             if 0 == val:
-                return Stat(stat_name, stat_formats.get_stat_string0(func, string1, string2), priority)
+                return Stat(stat_name, stat_formats.get_stat_string0(func, string1, string2).replace(" [x2]",""), priority)
             if 1 == val:
-                return Stat(stat_name, stat_formats.get_stat_string1(func, get_value_string(param, min, max), string1, string2), priority)
+                return Stat(stat_name, stat_formats.get_stat_string1(func, get_value_string(param, min, max), string1, string2).replace(" [x2]",""), priority)
             if 2 == val:
-                return Stat(stat_name, stat_formats.get_stat_string2(func, get_value_string(param, min, max), string1, string2), priority)
+                return Stat(stat_name, stat_formats.get_stat_string2(func, get_value_string(param, min, max), string1, string2).replace(" [x2]",""), priority)
 
 def fill_property_stats(property):
-    properties_table = open(data_path + "/global/excel/Properties.txt", newline='')
-    properties_rows = csv.reader(properties_table, delimiter='\t')
-    
-    for property_row in properties_rows:
+    # Custom handling
+    if property.name == "dmg%":
+        # @TODO Figure out proper priority 
+        property.stats.append(Stat(property.name, "+" + get_value_string(property.param, property.min, property.max) + "% Enhanced Damage", 144))
+        return
+    if property.name == "dmg-min":
+        # @TODO Figure out proper string and priority
+        property.stats.append(Stat(property.name, "+" + get_value_string(property.param, property.min, property.max) + " to Minimum Damage", 143))
+        return
+    if property.name == "dmg-max":
+        # @TODO Figure out proper string and priority
+        property.stats.append(Stat(property.name, "+" + get_value_string(property.param, property.min, property.max) + " to Maximum Damage", 142))
+        return
+    if property.name == "indestruct":
+        # @TODO Figure out proper string and priority
+        property.stats.append(Stat(property.name, "Indesctructible", 5))
+        return
+    if property.name == "fear":
+        # @TODO Figure out proper string and priority
+        property.stats.append(Stat(property.name, "Hit Causes Monster to Flee " + get_value_string(property.param, property.min, property.max) + "%", 5))
+        return
+
+    foundone = False
+    for property_row in load_txts.properties_table:
         if property.name == property_row[0]:
             for i in range(7):
                 if property_row[5+i*4] != "":
-                    property.stats.append(get_stat(property_row[5+i*4], property.param, property.min, property.max))
+                    foundone = True
+                    property.stats.append(get_stat(property_row[5+i*4], property.param, property.min, property.max, property.name))
+    if not foundone:
+        print("Didn't find property stats for property: " + property.name)
 
 def get_unique_items():
-    unique_items_table = open(data_path + "/global/excel/uniqueitems.txt", newline='')
-    unique_items_rows = csv.reader(unique_items_table, delimiter='\t')
     unique_items = []
-    for i, row in enumerate(unique_items_rows):
+    for i, row in enumerate(load_txts.unique_items_table):
         # Ignore header
         if i == 0:
             continue
@@ -242,7 +278,7 @@ def get_unique_items():
             fill_property_stats(property)
     return unique_items
 
-#get_unique_items()
+get_unique_items()
 for unique_item in get_unique_items():
-    if unique_item.name.startswith("Thunder"):
+    if unique_item.name.startswith("Fluff"):
         print_item(unique_item)

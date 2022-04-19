@@ -98,8 +98,8 @@ def get_stat_string1(func, value, string1, string2=None, _class=None, skilltab=N
         case 12:
             return "+" + value + " " + string1
         case 13:
-            return "CLASS SKILL LEVELS NOT IMPLEMENTED YET"
-            #return "+" + value + " to " + _class + " Skill Levels"
+            #return "CLASS SKILL LEVELS NOT IMPLEMENTED YET"
+            return "+" + value + " to " + _class + " Skill Levels"
         case 14:
             return "+" + " to " + skilltab + " Skill Levels (" + _class + " Only)"
         case 15:
@@ -152,18 +152,30 @@ def get_stat_string2(func, value, string1, string2=None, _class=None, skilltab=N
                 return string1 + " " + value + "%"
             return string1 + " +" + value + "%" 
         case 5:
-            return "TODO RANGE"
-            #return string1 + " " + str(int(value)*100/128) + "%"
+            # @TODO this would be cleaner if we took in min/max/param instead of value
+            #-10--5 (both numbers negative)
+            if str(value).count("-") == 3:
+                min,max = value.replace("--"," ").replace("-","").split(" ")
+                return string1 + " -" + str(int(int(min)*100/128)) + "--" + str(int(int(max)*100/128)) + "%"
+            #-10-5 (one number negative)
+            if str(value).count("-") == 2:
+                min,max = value.replace("-"," ").strip().split(" ")
+                return string1 + " -" + str(int(int(min)*100/128)) + "-" + str(int(int(max)*100/128)) + "%"
+            #5-10 (both numbers positive)
+            if str(value).count("-") == 1:
+                min,max = value.replace("-"," ").split(" ")
+                return string1 + str(int(int(min)*100/128)) + "-" + str(int(int(max)*100/128)) + "%"
+            return string1 + " " + str(int(int(value)*100/128)) + "%"
         case 6:
             return string1 + " " + string2 + " +" + value
         case 7:
-            return string1 + " " + string2 + " " + value + "%"
+            return string1 + " " + value + "% " + string2
         case 8:
-            return string1 + " " + string2 + " +" + value + "%"
+            return string1 + " +" + value + "% " + string2
         case 9:
-            return string1 + " " + string2 + " " + value 
+            return string1 + " " + value + " " + string2
         case 10:
-            return string1 + " " + string2 + " " + str(int(value*100/128)) + "%"
+            return string1 + " " + str(int(value*100/128)) + "% " + string2
         case 11:
             # same as 1?
             return "Repairs 1 Durability In " + str(100/int(value)) + " Seconds"

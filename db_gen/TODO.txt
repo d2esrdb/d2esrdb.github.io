@@ -1,0 +1,5 @@
+1. automods to unique items
+2. unique weapons / armors templates
+3. suffixes / prefixes
+4. figure out skill tab issue (skill tab value 0 not valid, but then off by 1 later on?)
+5. group mod strings

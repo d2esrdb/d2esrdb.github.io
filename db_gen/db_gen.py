@@ -1,4 +1,5 @@
 import os
+import unique_items
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
@@ -36,10 +37,18 @@ def generate_weapons():
     weapon_rendered = weapon_template.render()
     generate(weapon_rendered, "es3weap_n.htm", quick_links)
 
+def generate_uniques():
+    quick_links = ["Rings", "Amulets", "Charms", "Jewels", "Helms", "Circlets", "Armor", "Robes",
+                   "Shields", "Gloves", "Boots", "Belts", "Bar", "Dru", "Nec", "Pal"]
+    unique_armor_rendered = Template(filename="templates/es3uarmo_n.htm",
+                                     lookup=mylookup).render()#unique_items=unique_items.get_unique_items())
+    generate(unique_armor_rendered, "es3uarmo_n.htm", quick_links)
+
+
 generate_index()
 generate_armor()
 generate_weapons()
-#generate_uniques() #armors and weapons
+generate_uniques() #armors and weapons
 #generate_sets()
 #generate_gems_and_runes()
 #generate_runewords()

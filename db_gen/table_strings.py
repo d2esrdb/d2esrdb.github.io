@@ -70,10 +70,13 @@ def get_string_dict():
             key_value_dict[key_string] = value_string
     return key_value_dict
 
-#print(get_string_dict()["StrSkill3"])
+#for i in range(1,100):
+#    print(get_string_dict()["StrSklTabItem" + str(i)])
 #print(get_string_dict()["item_singleskill"])
 
 #strings = get_string_dict()
 #for key in strings:
-#    if "Repairs" in strings[key]:
+#    if "Increased Attack Speed" == strings[key]:
+#        print("kylemc1" + key)
 #        print(strings[key])
+#        print("kylemc2")
