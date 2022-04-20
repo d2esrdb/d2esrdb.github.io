@@ -1,3 +1,4 @@
+from operator import attrgetter
 import os
 import csv
 import table_strings
@@ -21,39 +22,27 @@ class Property:
         self.stats = []
 
 class Unique_Item:
-    def __init__(self, name, item_level, required_level, properties):
+    def __init__(self, name, item_level, required_level, properties, base_type, subbase_type):
         self.name = name
         self.item_level = item_level
         self.required_level = required_level
         self.properties = properties
+        self.gamble_item = "Not Implemented"
+        self.base_type = base_type
+        self.subbase_type = subbase_type
+        
+    def get_stats_sorted(self):
+        stats = []
+        for prop in self.properties:
+            for stat in prop.stats:
+                stats.append(stat)
+        return sorted(stats, key = lambda x: int(x.priority), reverse=True)
 
-# Get the list of armors
-#def get_armor_bases():
-#    armor_list = []
-#    armors = open('../Data/global/excel/armor.txt', newline='')
-#    items = csv.reader(armors, delimiter='\t')
-#    for i, row in enumerate(items):
-#        armor_list.append(row[0])
-#    return armor_list
-
-def print_item(item):
-    print(item.name)
-    print("    Item Level: " + item.item_level)
-    print("    Required Level: " + item.required_level)
-    for property in item.properties:
-        #print("    Property: " + property.name)
-        #print("        param: " + property.param)
-        #print("        min: " + property.min)
-        #print("        max: " + property.max)
-        for stat in property.stats:
-            if stat is not None and stat.stat_string is not None:
-                print("    " + stat.stat_string)
-            #if (property.param != ""):
-            #    print("    " + property.param + " " + stat.name)
-            #elif property.min == property.max:
-            #    print("    " + property.min + " " + stat.name)
-            #else:
-            #    print("    " + property.min + "-" + str(property.max) + " " + stat.name)
+class Item_Group:
+    def __init__(self, name, gamble_item):
+        self.name = name
+        self.gamble_item = gamble_item
+        self.items = []
 
 def get_value_string(param, min, max):
     if param != "":
@@ -224,6 +213,7 @@ def get_stat(stat_name, param, min, max, prop_name):
                 return Stat(stat_name, stat_formats.get_stat_string1(func, get_value_string(param, min, max), string1, string2).replace(" [x2]",""), priority)
             if 2 == val:
                 return Stat(stat_name, stat_formats.get_stat_string2(func, get_value_string(param, min, max), string1, string2).replace(" [x2]",""), priority)
+    return None
 
 def fill_property_stats(property):
     # Custom handling
@@ -241,7 +231,7 @@ def fill_property_stats(property):
         return
     if property.name == "indestruct":
         # @TODO Figure out proper string and priority
-        property.stats.append(Stat(property.name, "Indesctructible", 5))
+        property.stats.append(Stat(property.name, "Indestructible", 5))
         return
     if property.name == "fear":
         # @TODO Figure out proper string and priority
@@ -254,7 +244,9 @@ def fill_property_stats(property):
             for i in range(7):
                 if property_row[5+i*4] != "":
                     foundone = True
-                    property.stats.append(get_stat(property_row[5+i*4], property.param, property.min, property.max, property.name))
+                    stat = get_stat(property_row[5+i*4], property.param, property.min, property.max, property.name)
+                    if stat is not None:
+                        property.stats.append(stat)
     if not foundone:
         print("Didn't find property stats for property: " + property.name)
 
@@ -271,14 +263,14 @@ def get_unique_items():
                 # If the property doesn't have a name, then there isn't a property
                 if row[21+j*4] != "":
                     properties.append(Property(row[21+j*4], row[22+j*4], row[23+j*4], row[24+j*4]))
-            unique_items.append(Unique_Item(row[0], row[6], row[7], properties))
+            unique_items.append(Unique_Item(row[0], row[6], row[7], properties, row[9], row[8]))
     
     for unique_item in unique_items:
         for property in unique_item.properties:
             fill_property_stats(property)
     return unique_items
 
-get_unique_items()
-for unique_item in get_unique_items():
-    if unique_item.name.startswith("Fluff"):
-        print_item(unique_item)
+#get_unique_items()
+#for unique_item in get_unique_items():
+#    if unique_item.name.startswith("Fluff"):
+#        print_item(unique_item)

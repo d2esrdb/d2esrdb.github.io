@@ -1,4 +1,4 @@
-<%page args="body, quick_links, version"/>\
+<%page args="body, version"/>\
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
@@ -25,12 +25,6 @@
                             <td bgcolor="#000000" align="center">
                                 <font size="-1" face="arial,helvetica">
 <%include file="links.htm"/>
-                                    % if len(quick_links) > 0:
-                                    <br>
-                                        % for quick_link in quick_links:
-                                    <a href="#${quick_link}">[${quick_link}]</a>
-                                        % endfor
-                                    % endif
                                 </font>
                             </td>
                         </tr>   
@@ -42,12 +36,6 @@
                         <tr>
                             <td bgcolor="#000000" align="center">
                                 <font size="-1" face="arial,helvetica">
-                                    % if len(quick_links) > 0:
-                                        % for quick_link in quick_links:
-                                    <a href="#${quick_link}">[${quick_link}]</a>
-                                        % endfor
-                                    <br>
-                                    % endif
 <%include file="links.htm"/>
                                 </font>
                             </td>

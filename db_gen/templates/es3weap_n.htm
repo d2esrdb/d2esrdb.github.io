@@ -1,4 +1,9 @@
+<%page args="quick_links"/>\
 <a name="Axes"></a>
+<font size="-1" face="arial,helvetica">
+% for quick_link in quick_links:
+<a href="#${quick_link}">[${quick_link}]</a>
+% endfor
 <table width="867" cellpadding="5" border="0">
 <tbody><tr><td colspan="14" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
 <font color="FF0000"><b>Weapons dropped in normal and early NM may not be able to have the max sockets.</b></font> See <a href="https://d2esr.fandom.com/wiki/Item_Enhancement#Making_Sockets">here</a> for details.<br>
@@ -6488,3 +6493,7 @@ Battering Arms look 1H, but are too heavy to use with a shield, and treated as 2
 Lvl = quality level. The weapons with * have the Magic Level of 1.<br>
 </font></td></tr>
 </tbody></table>
+<font size="-1" face="arial,helvetica">
+% for quick_link in quick_links:
+<a href="#${quick_link}">[${quick_link}]</a>
+% endfor
