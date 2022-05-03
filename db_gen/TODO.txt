@@ -1,5 +1,12 @@
 1. automods to unique items
-2. unique weapons / armors templates
-3. suffixes / prefixes
-4. figure out skill tab issue (skill tab value 0 not valid, but then off by 1 later on?)
-5. group mod strings
+2. suffixes / prefixes
+3. group mod strings
+4. attacker takes damage of /lvl stat too high?
+5. Gamble item
+6. Background highlighting on exceptional/elite unique armors
+7. Add Other Uniques tab to links
+8. Implement "aura while equipped" stat string
+9. Split out 1h/2h
+10. Add categories in "other uniques" template
+11. Remove ores from "other uniques"
+12. Re-add life gain on kill [x2] i suppose since it shows up in Game
