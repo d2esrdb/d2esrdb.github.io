@@ -22,14 +22,15 @@ class Property:
         self.stats = []
 
 class Unique_Item:
-    def __init__(self, name, item_level, required_level, properties, base_type, subbase_type):
+    def __init__(self, name, item_level, required_level, properties, base_name, base_code):
         self.name = name
         self.item_level = item_level
         self.required_level = required_level
         self.properties = properties
         self.gamble_item = "Not Implemented"
-        self.base_type = base_type
-        self.subbase_type = subbase_type
+        self.base_name = base_name
+        self.base_code = base_code
+        self.bg_color_code = 101010
         
     def get_stats_sorted(self):
         stats = []
@@ -37,12 +38,6 @@ class Unique_Item:
             for stat in prop.stats:
                 stats.append(stat)
         return sorted(stats, key = lambda x: int(x.priority), reverse=True)
-
-class Item_Group:
-    def __init__(self, name, gamble_item):
-        self.name = name
-        self.gamble_item = gamble_item
-        self.items = []
 
 def get_value_string(param, min, max):
     if param != "":

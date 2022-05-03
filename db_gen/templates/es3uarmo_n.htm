@@ -1,13 +1,10 @@
-<%page args="quick_links, item_groups"/>\
-<a name="Rings"></a>
+<%page args="item_groups"/>\
 <font size="-1" face="arial,helvetica">
-% for quick_link in quick_links:
-<a href="#${quick_link}">[${quick_link}]</a>
+% for item_group in item_groups:
+<a href="#${item_group.name}">[${item_group.name}]</a>
 % endfor
 % for item_group in item_groups:
-% if item_group.name in quick_links:
 <a name="${item_group.name}"></a>
-% endif
 <table cellpadding="5" border="0">
 	<tbody>
 		<tr>
@@ -36,13 +33,13 @@
 		</tr>
 		% for item in item_group.items:
 		<tr>
-			<td align=center bgcolor=#101010>
+			<td align=center bgcolor=#${item.bg_color_code}>
 				<font face=arial,helvetica size=-1>
 					<b>
 						${item.name}
 						<br>
 						<a href="javascript:void(0);">
-							${item.base_type}
+							${item.base_name}
 						</a>
 					</b>
 				</font>
@@ -52,11 +49,11 @@
 					Gamble Item:
 					<br>
 						<b>
-							${item.base_type} (${item.subbase_type})
+							NOT IMPLEMENTED
 						</b>
 				</font>
 			</td>
-			<td align=center bgcolor=#101010>
+			<td align=center bgcolor=#${item.bg_color_code}>
 				<font face=arial,helvetica size=-1>
 					Item Level: ${item.item_level}
 					<br>
@@ -64,7 +61,7 @@
 					<br>
 				</font>
 			</td>
-			<td align=center bgcolor=#101010>
+			<td align=center bgcolor=#${item.bg_color_code}>
 				<font face=arial,helvetica size=-1>
 					<font color=4850B8>
 					% for stat in item.get_stats_sorted():
@@ -79,7 +76,7 @@
 	</tbody>
 </table>
 <font size="-1" face="arial,helvetica">
-% for quick_link in quick_links:
-<a href="#${quick_link}">[${quick_link}]</a>
+% for item_group in item_groups:
+<a href="#${item_group.name}">[${item_group.name}]</a>
 % endfor
 % endfor
