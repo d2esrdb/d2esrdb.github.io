@@ -21,6 +21,6 @@ properties_table = load_table("Properties.txt")
 item_stat_cost_table = load_table("ItemStatCost.txt")
 item_types = load_table("ItemTypes.txt")
 
-for i, armor in enumerate(armor_table):
-    if i < 5:
-        print(armor[48])
+#for i, armor in enumerate(armor_table):
+#    if i < 5:
+#        print(armor[48])

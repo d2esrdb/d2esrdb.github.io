@@ -2,8 +2,8 @@
 # Strings from https://d2mods.info/forum/kb/viewarticle?a=448
 
 # No value (descval 0)
-def get_stat_string0(func, string1, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
-    match func:
+def get_stat_string0(descfunc, string1, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
+    match descfunc:
         case 1:
             return string1
         case 2:
@@ -65,12 +65,12 @@ def get_stat_string0(func, string1, string2=None, _class=None, skilltab=None, ch
         case 28:
             # ???
             return "to " + skill
-    return "Invalid descfunc: " + func + " descval: 0"
+    return "Invalid descfunc: " + descfunc + " descval: 0"
 
 # Value comes before string (descval 1)
-def get_stat_string1(func, value, string1, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
+def get_stat_string1(descfunc, value, string1, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
     value = str(value)
-    match func:
+    match descfunc:
         case 1:
             if value.startswith("-"):
                 return value + " " + string1
@@ -133,12 +133,12 @@ def get_stat_string1(func, value, string1, string2=None, _class=None, skilltab=N
             return "+" + value + " to " + skill + " (" + _class + " Only)"
         case 28:
             return "+" + value + " to " + skill
-    return "Invalid descfunc: " + func + " descval: 1"
+    return "Invalid descfunc: " + descfunc + " descval: 1"
 
 # Value comes after string (descval 2)
-def get_stat_string2(func, value, string1, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
+def get_stat_string2(descfunc, value, string1, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
     value = str(value)
-    match func:
+    match descfunc:
         case 1:
             if value.startswith("-"):
                 return value + " " + string1
@@ -221,4 +221,4 @@ def get_stat_string2(func, value, string1, string2=None, _class=None, skilltab=N
         case 28:
             # same as 1?
             return "+" + value + " to " + skill
-    return "Invalid descfunc: " + func + " descval: 2"
+    return "Invalid descfunc: " + descfunc + " descval: 2"

@@ -1,3 +1,5 @@
+-1. +skill tabs are wrong
+0. Some oskills are formatted weirdly, "Random Unknown Skill"
 1. automods to unique items
 2. suffixes / prefixes
 3. group mod strings
@@ -10,3 +12,4 @@
 10. Add categories in "other uniques" template
 11. Remove ores from "other uniques"
 12. Re-add life gain on kill [x2] i suppose since it shows up in Game
+13. Faith says 0-2 sockets, but we never get 0?
