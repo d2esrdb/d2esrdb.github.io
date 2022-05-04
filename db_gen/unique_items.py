@@ -145,8 +145,10 @@ def get_stat(stat_name, param, min, max, prop_name):
             
             # Custom handling
             if stat_name == "item_numsockets":
+                # @TODO Could be a bug with socket range 0-n, I think it can roll 0 but then gives 1? More testing needed (Faith shield)
                 return Stat(stat_name, "Socketed (" + get_value_string(param, min, max) + ")", int(item_stat_cost_row[39]))
             if stat_name == "item_singleskill":
+                # Seems to work but is there a better way to determine if it's +random skill or +specific skill?
                 if param.isdigit():
                     return Stat(stat_name, "+" + str(param) + " to Random " + get_class_from_skill_range(min, max) + " Skill", int(item_stat_cost_row[39]))
                 return Stat(stat_name, "+" + get_value_string("", min, max) + " to " + get_skill_name(param) + " (" + get_class_from_skill_name(param) + " Only)", int(item_stat_cost_row[39]))
