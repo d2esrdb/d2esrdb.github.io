@@ -88,13 +88,17 @@ def get_class_from_tab_number(tab_number):
         return "Sorceress"
     if tab_number < 19:
         return "Druid"
-    if tab_number < 21:
+    if tab_number < 22:
         return "Assassin"
     return "Unknown"
 
 def get_class_from_skill_name(skill_name):
+    #if skill_name.isdigit():
+    #    for skill_row in load_txts.skills_table:
+    #        if skill_name == skill_row[0]:
+    #            return short_to_long_class(skill_row[2])
     for skill_row in load_txts.skills_table:
-        if skill_name == skill_row[0]:
+        if str(skill_name) == str(skill_row[0]) or str(skill_name) == str(skill_row[1]):
             return short_to_long_class(skill_row[2])
     return "Unknown+" + skill_name
 
@@ -149,7 +153,7 @@ def get_stat(stat_name, param, min, max, prop_name):
                 return Stat(stat_name, "Socketed (" + get_value_string(param, min, max) + ")", int(item_stat_cost_row[39]))
             if stat_name == "item_singleskill":
                 # Seems to work but is there a better way to determine if it's +random skill or +specific skill?
-                if param.isdigit():
+                if param.isdigit() and get_class_from_skill_range(min, max) != "Unknown":
                     return Stat(stat_name, "+" + str(param) + " to Random " + get_class_from_skill_range(min, max) + " Skill", int(item_stat_cost_row[39]))
                 return Stat(stat_name, "+" + get_value_string("", min, max) + " to " + get_skill_name(param) + " (" + get_class_from_skill_name(param) + " Only)", int(item_stat_cost_row[39]))
             if stat_name == "item_addskill_tab":
