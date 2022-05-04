@@ -96,6 +96,7 @@ def get_class_from_skill_name(skill_name):
     for skill_row in load_txts.skills_table:
         if skill_name == skill_row[0]:
             return short_to_long_class(skill_row[2])
+    return "Unknown+" + skill_name
 
 def get_class_from_skill_range(start, end):
     start = int(start)
@@ -146,17 +147,39 @@ def get_stat(stat_name, param, min, max, prop_name):
             if stat_name == "item_numsockets":
                 return Stat(stat_name, "Socketed (" + get_value_string(param, min, max) + ")", int(item_stat_cost_row[39]))
             if stat_name == "item_singleskill":
-                if min == max:
-                    return Stat(stat_name, "+" + get_value_string("", min, max) + " to " + get_skill_name(param) + " (" + get_class_from_skill_name(param) + " Only)", int(item_stat_cost_row[39]))
-                return Stat(stat_name, "+" + str(param) + " to Random " + get_class_from_skill_range(min, max) + " Skill", int(item_stat_cost_row[39]))
+                if param.isdigit():
+                    return Stat(stat_name, "+" + str(param) + " to Random " + get_class_from_skill_range(min, max) + " Skill", int(item_stat_cost_row[39]))
+                return Stat(stat_name, "+" + get_value_string("", min, max) + " to " + get_skill_name(param) + " (" + get_class_from_skill_name(param) + " Only)", int(item_stat_cost_row[39]))
             if stat_name == "item_addskill_tab":
-                # @TODO what's going on with amazon skilltab numbers ?? 
+                # @TODO is there a better way to do this?
                 if "0" == param:
                     param = "3"
-                if "2" == param:
-                    param = "1"
                 elif "1" == param:
                     param = "2"
+                elif "2" == param:
+                    param = "1"
+                elif "3" ==  param:
+                    param = "15"
+                elif "4" == param:
+                    param = "14"
+                elif "5" == param:
+                    param = "13"
+                elif "6" == param:
+                    param = "8"
+                elif "8" == param:
+                    param = "9"
+                elif "9" == param:
+                    param = "5"
+                elif "10" == param:
+                    param = "6"
+                elif "11" == param:
+                    param = "4"
+                elif "13" == param:
+                    param = "11"
+                elif "14" == param:
+                    param = "10"
+                elif "15" == param or "16" == param or "17" == param or "18" == param or "19" == param or "20" == param:
+                    param = str(int(param) + 1)
                 return Stat(stat_name, mod_strings["StrSklTabItem" + str(int(param))].replace("%d", get_value_string("", min, max)) + " (" + get_class_from_tab_number(int(param)) + " Only)", int(item_stat_cost_row[39]))
             if stat_name == "item_nonclassskill":
                 return Stat(stat_name, "+" + get_value_string("", min, max) + " to " + get_skill_name(param), int(item_stat_cost_row[39]))
@@ -203,11 +226,11 @@ def get_stat(stat_name, param, min, max, prop_name):
 
             #@TODO there's a bunch of other parameters we need to find and pass in here
             if 0 == val:
-                return Stat(stat_name, stat_formats.get_stat_string0(func, string1, string2).replace(" [x2]",""), priority)
+                return Stat(stat_name, stat_formats.get_stat_string0(func, string1, string2), priority)
             if 1 == val:
-                return Stat(stat_name, stat_formats.get_stat_string1(func, get_value_string(param, min, max), string1, string2).replace(" [x2]",""), priority)
+                return Stat(stat_name, stat_formats.get_stat_string1(func, get_value_string(param, min, max), string1, string2), priority)
             if 2 == val:
-                return Stat(stat_name, stat_formats.get_stat_string2(func, get_value_string(param, min, max), string1, string2).replace(" [x2]",""), priority)
+                return Stat(stat_name, stat_formats.get_stat_string2(func, get_value_string(param, min, max), string1, string2), priority)
     return None
 
 def fill_property_stats(property):

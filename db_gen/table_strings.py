@@ -71,6 +71,9 @@ def get_string_dict():
     return key_value_dict
 
 #for i in range(1,100):
+#    print(str(i) + ": " + get_string_dict()["StrSklTabItem" + str(i)])
+
+#for i in range(1,100):
 #    print(get_string_dict()["StrSklTabItem" + str(i)])
 #print(get_string_dict()["item_singleskill"])
 

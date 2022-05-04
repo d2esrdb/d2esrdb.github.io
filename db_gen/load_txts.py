@@ -20,6 +20,11 @@ unique_items_table = load_table("UniqueItems.txt")
 properties_table = load_table("Properties.txt")
 item_stat_cost_table = load_table("ItemStatCost.txt")
 item_types = load_table("ItemTypes.txt")
+misc_table = load_table("Misc.txt")
+
+#for i, misc in enumerate(misc_table):
+#    if i < 5:
+#        print(misc[13])
 
 #for i, armor in enumerate(armor_table):
 #    if i < 5:

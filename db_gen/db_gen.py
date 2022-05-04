@@ -42,6 +42,13 @@ def generate_weapons():
     weapon_rendered = weapon_template.render(quick_links=quick_links)
     generate(weapon_rendered, "es3weap_n.htm")
 
+def get_other_types(remaining_items):
+    other_types = []
+    for item in remaining_items:
+        if item.base_code not in other_types:
+            other_types.append(item.base_code)
+    return other_types
+
 def get_weapon_types():
     weapon_types = []
     for i, weapon in enumerate(load_txts.weapons_table):
@@ -52,6 +59,10 @@ def get_weapon_types():
 def get_item_name_from_code(code):
     for row in load_txts.item_types:
         if row[1] == code:
+            return row[0]
+
+    for row in load_txts.misc_table:
+        if row[13] == code:
             return row[0]
     return "Unknown: " + code
 
@@ -123,16 +134,24 @@ def generate_uniques():
                                          version=get_version()).replace("\r","")
     open("../es3uarmo_n.htm", "w").write(base_rendered)
 
-    item_groups = []
-    others = Item_Group("Other")
+    # Remove ores
     for item in list(unique_items_list):
-        others.items.append(item)
-        others.items.sort(key = lambda x: (int(x.item_level), int(x.required_level)))
-    item_groups.append(others)
-    unique_armor_rendered = unique_armor_template.render(item_groups=item_groups)
-    base_template = Template(filename="templates/base.htm", lookup=mylookup)
-    base_rendered = base_template.render(body=unique_armor_rendered,
-                                         version=get_version()).replace("\r","")
+        if item.base_code == "ore":
+            unique_items_list.remove(item)
+
+    item_groups = []
+    #others = Item_Group("Other")
+    for other_type in get_other_types(unique_items_list):
+        others = Item_Group(get_item_name_from_code(other_type))
+        for item in list(unique_items_list):
+            if item.base_code == other_type:
+                others.items.append(item)
+                others.items.sort(key = lambda x: (int(x.item_level), int(x.required_level)))
+        item_groups.append(others)
+        unique_armor_rendered = unique_armor_template.render(item_groups=item_groups)
+        base_template = Template(filename="templates/base.htm", lookup=mylookup)
+        base_rendered = base_template.render(body=unique_armor_rendered,
+                                             version=get_version()).replace("\r","")
     
     open("../es3uother_n.htm", "w").write(base_rendered)
 
