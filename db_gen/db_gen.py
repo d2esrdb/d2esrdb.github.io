@@ -94,6 +94,15 @@ def set_weapon_bg_color(item):
             item.bg_color_code = 202020
             return
 
+def set_armor_bg_color(item):
+    for armor in load_txts.armor_table:
+        if item.base_code == armor[25]:
+            item.bg_color_code = 303030
+            return
+        if item.base_code == armor[24]:
+            item.bg_color_code = 202020
+            return
+
 def generate_uniques():
     unique_items_list = unique_items.get_unique_items()
     item_groups = []
@@ -122,7 +131,7 @@ def generate_uniques():
         for item in list(unique_items_list):
             #print("base code: " + item.base_code + " armor_type: " + armor_type)
             if armor_is_of_type(item.base_code, armor_type):
-                #set_armor_bg_color(item)
+                set_armor_bg_color(item)
                 armor_group.items.append(item)
                 unique_items_list.remove(item)
         if len(armor_group.items) > 0:

@@ -22,12 +22,12 @@ class Property:
         self.stats = []
 
 class Unique_Item:
-    def __init__(self, name, item_level, required_level, properties, base_name, base_code):
+    def __init__(self, name, item_level, required_level, properties, base_name, base_code, gamble_item):
         self.name = name
         self.item_level = item_level
         self.required_level = required_level
         self.properties = properties
-        self.gamble_item = "Not Implemented"
+        self.gamble_item = gamble_item
         self.base_name = base_name
         self.base_code = base_code
         self.bg_color_code = 101010
@@ -93,10 +93,6 @@ def get_class_from_tab_number(tab_number):
     return "Unknown"
 
 def get_class_from_skill_name(skill_name):
-    #if skill_name.isdigit():
-    #    for skill_row in load_txts.skills_table:
-    #        if skill_name == skill_row[0]:
-    #            return short_to_long_class(skill_row[2])
     for skill_row in load_txts.skills_table:
         if str(skill_name) == str(skill_row[0]) or str(skill_name) == str(skill_row[1]):
             return short_to_long_class(skill_row[2])
@@ -274,6 +270,18 @@ def fill_property_stats(property):
     if not foundone:
         print("Didn't find property stats for property: " + property.name)
 
+def get_gamble_item_from_code(code):
+    for row in load_txts.armor_table:
+        if row[17] == code and row[4] == str(1):
+            for row_again in load_txts.armor_table:
+                if row_again[17] == row[23]:
+                    return row_again[0] + " (" + row_again[17] + ")"
+    for row in load_txts.weapons_table:
+        if row[3] == code and row[9] == str(1):
+            for row_again in load_txts.weapons_table:
+                if row_again[3] == row[34]:
+                    return row_again[0] + " (" + row_again[3] + ")"
+
 def get_unique_items():
     unique_items = []
     for i, row in enumerate(load_txts.unique_items_table):
@@ -287,14 +295,9 @@ def get_unique_items():
                 # If the property doesn't have a name, then there isn't a property
                 if row[21+j*4] != "":
                     properties.append(Property(row[21+j*4], row[22+j*4], row[23+j*4], row[24+j*4]))
-            unique_items.append(Unique_Item(row[0], row[6], row[7], properties, row[9], row[8]))
+            unique_items.append(Unique_Item(row[0], row[6], row[7], properties, row[9], row[8], get_gamble_item_from_code(row[8])))
     
     for unique_item in unique_items:
         for property in unique_item.properties:
             fill_property_stats(property)
     return unique_items
-
-#get_unique_items()
-#for unique_item in get_unique_items():
-#    if unique_item.name.startswith("Fluff"):
-#        print_item(unique_item)

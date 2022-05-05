@@ -26,6 +26,10 @@ misc_table = load_table("Misc.txt")
 #    if i < 5:
 #        print(misc[13])
 
-#for i, armor in enumerate(armor_table):
-#    if i < 5:
-#        print(armor[48])
+first_row = None
+for i, armor in enumerate(armor_table):
+    if i == 0:
+        first_row = armor
+    if i == 2:
+        for j, _ in enumerate(first_row):
+            print(str(j) + ": " + first_row[j] + ": " + armor[j])
