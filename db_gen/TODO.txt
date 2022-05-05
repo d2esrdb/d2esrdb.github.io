@@ -1,9 +1,8 @@
-1. automods to unique items
-2. group mod strings
-3. attacker takes damage of /lvl stat too high? (i.e account for op/op param/op stat)
-4. suffixes / prefixes
-5. Split out 1h/2h
-6. Add base item stats to uniques
+1. group mod strings
+2. attacker takes damage of /lvl stat too high? (i.e account for op/op param/op stat)
+3. suffixes / prefixes
+4. Split out 1h/2h
+5. Add base item stats to uniques
 
 Things we can't fix?/Unknowns
 1. Faith says 0-2 sockets, but we never get 0 in game?
