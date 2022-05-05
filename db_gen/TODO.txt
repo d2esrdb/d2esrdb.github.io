@@ -1,10 +1,9 @@
 1. automods to unique items
-2. suffixes / prefixes
-3. group mod strings
-4. attacker takes damage of /lvl stat too high? (i.e account for op/op param/op stat)
-5. Background highlighting on exceptional/elite unique armors
-6. Implement "aura while equipped" stat string
-7. Split out 1h/2h
+2. group mod strings
+3. attacker takes damage of /lvl stat too high? (i.e account for op/op param/op stat)
+4. suffixes / prefixes
+5. Split out 1h/2h
+6. Add base item stats to uniques
 
 Things we can't fix?/Unknowns
 1. Faith says 0-2 sockets, but we never get 0 in game?

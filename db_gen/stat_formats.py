@@ -37,8 +37,8 @@ def get_stat_string0(descfunc, string1, string2=None, _class=None, skilltab=None
         case 15:
             return chance + "% to cast Level " + slvl + " " + skill + " on " + event
         case 16:
-            return "AURAS NOT IMPLEMENTED YET"
-            #return "Level " + slvl + " " + skill + " Aura When Equipped"
+            #return "AURAS NOT IMPLEMENTED YET"
+            return "Level " + slvl + " " + skill + " Aura When Equipped"
         case 17:
             return string1 + " (Increases near " + time + ")"
         case 18:

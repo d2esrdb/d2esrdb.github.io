@@ -118,6 +118,8 @@ def get_class_from_skill_range(start, end):
     return "Unknown"
 
 def get_skill_name(skill):
+    if skill == "":
+        return
     skill_desc = ""
     for skill_row in load_txts.skills_table:
         if skill.isdigit():
@@ -228,7 +230,7 @@ def get_stat(stat_name, param, min, max, prop_name):
 
             #@TODO there's a bunch of other parameters we need to find and pass in here
             if 0 == val:
-                return Stat(stat_name, stat_formats.get_stat_string0(func, string1, string2), priority)
+                return Stat(stat_name, stat_formats.get_stat_string0(func, string1, string2, skill=get_skill_name(param), slvl=get_value_string("", min, max)), priority)
             if 1 == val:
                 return Stat(stat_name, stat_formats.get_stat_string1(func, get_value_string(param, min, max), string1, string2), priority)
             if 2 == val:
