@@ -284,6 +284,54 @@ def get_gamble_item_from_code(code):
                 if row_again[3] == row[34]:
                     return row_again[0] + " (" + row_again[3] + ")"
 
+def get_all_equivalent_types(types):
+    while True:
+        keep_going = False
+        for item_type in load_txts.item_types:
+            if item_type[1] in types:
+                if item_type[2] not in types:
+                    types.append(item_type[2])
+                    keep_going = True
+                if item_type[3] not in types:
+                    types.append(item_type[3])
+                    keep_going = True
+        if not keep_going:
+            types.remove("")
+            return types
+
+def is_of_item_type(types, include_types):
+    # Build up a list of all types, then check if any of them are in include_types
+    all_types = get_all_equivalent_types(types)
+    return set(all_types) & set(include_types)
+
+
+def fill_automod(properties, code):
+    automods = {}
+    for armor in load_txts.armor_table:
+        if armor[17] == code and armor[20] != "":
+            for autos in load_txts.automagic_table:
+                # @TODO Maybe look at exclude types too?
+                # @TODO look at item level too
+                if autos[10] == armor[20] and is_of_item_type([armor[48], armor[49]], [autos[25], autos[26], autos[27], autos[28], autos[29], autos[30], autos[31]]):
+                    if autos[11] in automods:
+                        automods[autos[11]] = [autos[12], min(autos[13], automods[autos[11]][1]), max(autos[14], automods[autos[11]][2])]
+                    else:
+                        automods[autos[11]] = [autos[12], autos[13], autos[14]]
+
+                    if autos[15] in automods:
+                        automods[autos[15]] = [autos[16], min(autos[17], automods[autos[15]][1]), max(autos[18], automods[autos[15]][2])]
+                    else:
+                        automods[autos[15]] = [autos[16], autos[17], autos[18]]
+
+                    if autos[19] in automods:
+                        automods[autos[19]] = [autos[20], min(autos[21], automods[autos[19]][1]), max(autos[22], automods[autos[19]][2])]
+                    else:
+                        automods[autos[19]] = [autos[20], autos[21], autos[22]]
+
+    for key in automods:
+        if key != "":
+            properties.append(Property(key, automods[key][0], automods[key][1], automods[key][2]))
+
 def get_unique_items():
     unique_items = []
     for i, row in enumerate(load_txts.unique_items_table):
@@ -297,6 +345,7 @@ def get_unique_items():
                 # If the property doesn't have a name, then there isn't a property
                 if row[21+j*4] != "":
                     properties.append(Property(row[21+j*4], row[22+j*4], row[23+j*4], row[24+j*4]))
+            fill_automod(properties, row[8])
             unique_items.append(Unique_Item(row[0], row[6], row[7], properties, row[9], row[8], get_gamble_item_from_code(row[8])))
     
     for unique_item in unique_items:

@@ -21,16 +21,38 @@ properties_table = load_table("Properties.txt")
 item_stat_cost_table = load_table("ItemStatCost.txt")
 item_types = load_table("ItemTypes.txt")
 misc_table = load_table("Misc.txt")
+automagic_table = load_table("automagic.txt")
 
 #for i, misc in enumerate(misc_table):
 #    if i < 5:
 #        print(misc[13])
-'''
+
+first_row = None
+for i, item_type in enumerate(item_types):
+    if i == 0:
+        first_row = item_type
+    if item_type[1] == "ashd":
+        for j, element in enumerate(first_row):
+            print(str(j) + " " + first_row[j] + ": " + item_type[j])
+
+
+
 first_row = None
 for i, armor in enumerate(armor_table):
     if i == 0:
         first_row = armor
-    if i == 2:
+    if armor[0] == "Sacred Targe":
+        for j, element in enumerate(first_row):
+            print(str(j) + " " + first_row[j] + ": " + armor[j])
+
+
+
+first_row = None
+for i, armor in enumerate(automagic_table):
+    if i == 0:
+        first_row = armor
+    if armor[10] == str(304):
         for j, _ in enumerate(first_row):
-            #print(str(j) + ": " + first_row[j] + ": " + armor[j])
-'''
+            print(str(j) + ": " + first_row[j] + ": " + armor[j])
+        print("")
+        print("")
