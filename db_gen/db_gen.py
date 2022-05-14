@@ -23,9 +23,7 @@ def generate(body_template, filename):
     open("../" + filename, "w").write(base_rendered)
 
 def generate_simple():
-#generate_gems_and_runes()
-#generate_maps()
-    filenames = ["es3runew_n.htm", "es3set_n.htm", "es3cube_n.htm", "es3gemw_n.htm", "index.htm"]
+    filenames = ["es3gem_n.htm", "es3map_n.htm", "es3runew_n.htm", "es3set_n.htm", "es3cube_n.htm", "es3gemw_n.htm", "index.htm"]
     for filename in filenames:
         template = Template(filename="templates/" + filename, lookup=mylookup)
         rendered = template.render()
