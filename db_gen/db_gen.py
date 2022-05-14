@@ -22,25 +22,14 @@ def generate(body_template, filename):
                                          version=get_version()).replace("\r","")
     open("../" + filename, "w").write(base_rendered)
 
-def generate_sets():
-    sets_template = Template(filename="templates/es3set_n.htm", lookup=mylookup)
-    sets_rendered = sets_template.render()
-    generate(sets_rendered, "es3set_n.htm")
-
-def generate_recipes():
-    recipes_template = Template(filename="templates/es3cube_n.htm", lookup=mylookup)
-    recipes_rendered = recipes_template.render()
-    generate(recipes_rendered, "es3cube_n.htm")
-
-def generate_gemwords():
-    gemwords_template = Template(filename="templates/es3gemw_n.htm", lookup=mylookup)
-    gemwords_rendered = gemwords_template.render()
-    generate(gemwords_rendered, "es3gemw_n.htm")
-
-def generate_index():
-    index_template = Template(filename="templates/index.htm", lookup=mylookup)
-    index_rendered = index_template.render()
-    generate(index_rendered, "index.htm")
+def generate_simple():
+#generate_gems_and_runes()
+#generate_maps()
+    filenames = ["es3runew_n.htm", "es3set_n.htm", "es3cube_n.htm", "es3gemw_n.htm", "index.htm"]
+    for filename in filenames:
+        template = Template(filename="templates/" + filename, lookup=mylookup)
+        rendered = template.render()
+        generate(rendered, filename)
 
 def generate_armor():
     quick_links = ["Helms", "Circlets", "Armor", "Robes", "Shields", "Gloves", "Belts", "Boots",
@@ -253,13 +242,7 @@ def generate_uniques():
     
     open("../es3uarmo_n.htm", "w").write(base_rendered)
 
-generate_index()
 generate_armor()
 generate_weapons()
 generate_uniques() #armors and weapons
-generate_sets()
-#generate_gems_and_runes()
-#generate_runewords()
-generate_gemwords()
-generate_recipes()
-#generate_maps()
+generate_simple()
