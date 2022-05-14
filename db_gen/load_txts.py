@@ -22,11 +22,12 @@ item_stat_cost_table = load_table("ItemStatCost.txt")
 item_types = load_table("ItemTypes.txt")
 misc_table = load_table("Misc.txt")
 automagic_table = load_table("automagic.txt")
+prefixes_table = load_table("MagicPrefix.txt")
 
 #for i, misc in enumerate(misc_table):
 #    if i < 5:
 #        print(misc[13])
-
+'''
 first_row = None
 for i, item_type in enumerate(item_types):
     if i == 0:
@@ -56,3 +57,11 @@ for i, armor in enumerate(automagic_table):
             print(str(j) + ": " + first_row[j] + ": " + armor[j])
         print("")
         print("")
+
+first_row = None
+for i, prefix in enumerate(prefixes_table):
+    if i == 0:
+        first_row = prefix
+for i, column in enumerate(first_row):
+    print(str(i) + ": " + column)
+'''

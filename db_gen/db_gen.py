@@ -1,6 +1,7 @@
 import os
 import unique_items
 import load_txts
+import affixes
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
@@ -240,7 +241,15 @@ def generate_uniques():
     
     open("../es3uarmo_n.htm", "w").write(base_rendered)
 
+def generate_prefixes():
+    prefixes = affixes.get_prefixes()
+    armor_template = Template(filename="templates/es3pref_n.htm", lookup=mylookup)
+    armor_rendered = armor_template.render(prefixes)
+    generate(armor_rendered, "es3pref_n.htm")
+
+
 generate_armor()
 generate_weapons()
-generate_uniques() #armors and weapons
+generate_uniques()
 generate_simple()
+generate_prefixes()

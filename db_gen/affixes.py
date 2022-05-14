@@ -1,0 +1,68 @@
+import load_txts
+import unique_items
+
+class Affix:
+    def __init__(self, name, rare, level, required_level, rarity, stat_string, item_types):
+        self.name = name
+        self.rare = rare
+        self.level = level
+        self.required_level = required_level
+        self.rarity = rarity
+        self.stat_string = stat_string
+        self.item_types = item_types
+        self.item_types_string = ", ".join(item_types)
+
+def get_value_string(min, max):
+    min = str(min)
+    max = str(max)
+    if min == "" and max == "":
+        return "NOVALUE"
+
+    if min == "":
+        return max
+
+    if max == "":
+        return min
+
+    if min == max:
+        return min
+        
+    return min + "-" + max
+
+def get_prefixes():
+    prefixes = []
+    for i, prefix in enumerate(load_txts.prefixes_table):
+        if i == 0 or prefix[3] != str(1):
+            continue
+        prop1 = unique_items.Property(prefix[12], prefix[13], prefix[14], prefix[15])
+        unique_items.fill_property_stats(prop1)
+        prop2 = None
+        prop3 = None
+        if prefix[16] != "":
+            prop2 = unique_items.Property(prefix[16], prefix[17], prefix[18], prefix[19])
+            unique_items.fill_property_stats(prop2)
+        if prefix[20] != "":
+            prop3 = unique_items.Property(prefix[20], prefix[21], prefix[22], prefix[23])
+            unique_items.fill_property_stats(prop3)
+        stats = []
+        for stat in prop1.stats:
+            stats.append(stat.stat_string)
+        if prop2 is not None:
+            for stat in prop2.stats:
+                stats.append(stat.stat_string)
+        if prop3 is not None:
+            for stat in prop3.stats:
+                stats.append(stat.stat_string)
+        stat_string = "<br>".join(stats)
+
+        item_types = []
+        for index in range(26, 33):
+            if prefix[index] != "":
+                item_types.append(prefix[index])
+
+        prefixes.append(Affix(prefix[0], prefix[3], get_value_string(prefix[4], prefix[5]), prefix[6], prefix[10], stat_string, item_types))
+    return prefixes
+
+#prefixes = get_prefixes()
+#for prefix in prefixes:
+#    print(prefix.name)
