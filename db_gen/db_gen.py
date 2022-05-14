@@ -22,6 +22,11 @@ def generate(body_template, filename):
                                          version=get_version()).replace("\r","")
     open("../" + filename, "w").write(base_rendered)
 
+def generate_sets():
+    sets_template = Template(filename="templates/es3set_n.htm", lookup=mylookup)
+    sets_rendered = sets_template.render()
+    generate(sets_rendered, "es3set_n.htm")
+
 def generate_recipes():
     recipes_template = Template(filename="templates/es3cube_n.htm", lookup=mylookup)
     recipes_rendered = recipes_template.render()
@@ -252,7 +257,7 @@ generate_index()
 generate_armor()
 generate_weapons()
 generate_uniques() #armors and weapons
-#generate_sets()
+generate_sets()
 #generate_gems_and_runes()
 #generate_runewords()
 generate_gemwords()
