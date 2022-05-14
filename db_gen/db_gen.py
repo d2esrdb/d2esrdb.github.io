@@ -22,6 +22,11 @@ def generate(body_template, filename):
                                          version=get_version()).replace("\r","")
     open("../" + filename, "w").write(base_rendered)
 
+def generate_recipes():
+    recipes_template = Template(filename="templates/es3cube_n.htm", lookup=mylookup)
+    recipes_rendered = recipes_template.render()
+    generate(recipes_rendered, "es3cube_n.htm")
+
 def generate_gemwords():
     gemwords_template = Template(filename="templates/es3gemw_n.htm", lookup=mylookup)
     gemwords_rendered = gemwords_template.render()
@@ -251,5 +256,5 @@ generate_uniques() #armors and weapons
 #generate_gems_and_runes()
 #generate_runewords()
 generate_gemwords()
-#generate_recipes()
+generate_recipes()
 #generate_maps()
