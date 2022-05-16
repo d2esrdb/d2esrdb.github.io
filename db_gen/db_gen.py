@@ -243,13 +243,13 @@ def generate_uniques():
 
 def generate_prefixes():
     prefixes = affixes.get_prefixes()
-    armor_template = Template(filename="templates/es3pref_n.htm", lookup=mylookup)
+    armor_template = Template(filename="templates/es3affix_n.htm", lookup=mylookup)
     armor_rendered = armor_template.render(prefixes)
     generate(armor_rendered, "es3pref_n.htm")
 
 def generate_suffixes():
     suffixes = affixes.get_suffixes()
-    armor_template = Template(filename="templates/es3suff_n.htm", lookup=mylookup)
+    armor_template = Template(filename="templates/es3affix_n.htm", lookup=mylookup)
     armor_rendered = armor_template.render(suffixes)
     generate(armor_rendered, "es3suff_n.htm")
 

@@ -1,4 +1,4 @@
-<%page args="prefixes"/>\
+<%page args="affixes"/>\
 <a name="gene">
 <table cellpadding="5" border="0">
 <tbody><tr><td bgcolor="#000000" align="center">
@@ -131,23 +131,23 @@ If the Lvl column shows a ranged value like n-m, it means that affix can be spaw
 
 
 
-% for prefix in prefixes:
-% if "boqm" not in prefix.item_types and "arrm" not in prefix.item_types and "jewl" not in prefix.item_types and "scha" not in prefix.item_types and "mcha" not in prefix.item_types and "lcha" not in prefix.item_types:
+% for affix in affixes:
+% if "boqm" not in affix.item_types and "arrm" not in affix.item_types and "jewl" not in affix.item_types and "scha" not in affix.item_types and "mcha" not in affix.item_types and "lcha" not in affix.item_types:
     <tr>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.name}
+    ${affix.name}
     </font></font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rare}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.required_level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rarity}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rare}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.required_level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rarity}</font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.stat_string}<br>
+    ${affix.stat_string}<br>
     </font></font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
-    ${prefix.item_types_string}</font></td>
+    ${affix.item_types_string}</font></td>
     </tr>
 % endif
 % endfor
@@ -183,23 +183,23 @@ If the Lvl column shows a ranged value like n-m, it means that affix can be spaw
 
 
 
-% for prefix in prefixes:
-% if "lcha" in prefix.item_types:
+% for affix in affixes:
+% if "lcha" in affix.item_types:
     <tr>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.name}
+    ${affix.name}
     </font></font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rare}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.required_level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rarity}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rare}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.required_level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rarity}</font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.stat_string}<br>
+    ${affix.stat_string}<br>
     </font></font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
-    ${prefix.item_types_string}</font></td>
+    ${affix.item_types_string}</font></td>
     </tr>
 % endif
 % endfor
@@ -236,23 +236,23 @@ If the Lvl column shows a ranged value like n-m, it means that affix can be spaw
 
 
 
-% for prefix in prefixes:
-% if "mcha" in prefix.item_types:
+% for affix in affixes:
+% if "mcha" in affix.item_types:
     <tr>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.name}
+    ${affix.name}
     </font></font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rare}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.required_level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rarity}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rare}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.required_level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rarity}</font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.stat_string}<br>
+    ${affix.stat_string}<br>
     </font></font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
-    ${prefix.item_types_string}</font></td>
+    ${affix.item_types_string}</font></td>
     </tr>
 % endif
 % endfor
@@ -290,23 +290,23 @@ If the Lvl column shows a ranged value like n-m, it means that affix can be spaw
 
 
 
-% for prefix in prefixes:
-% if "scha" in prefix.item_types:
+% for affix in affixes:
+% if "scha" in affix.item_types:
     <tr>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.name}
+    ${affix.name}
     </font></font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rare}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.required_level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rarity}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rare}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.required_level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rarity}</font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.stat_string}<br>
+    ${affix.stat_string}<br>
     </font></font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
-    ${prefix.item_types_string}</font></td>
+    ${affix.item_types_string}</font></td>
     </tr>
 % endif
 % endfor
@@ -344,23 +344,23 @@ If the Lvl column shows a ranged value like n-m, it means that affix can be spaw
 
 
 
-% for prefix in prefixes:
-% if "jewl" in prefix.item_types:
+% for affix in affixes:
+% if "jewl" in affix.item_types:
     <tr>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.name}
+    ${affix.name}
     </font></font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rare}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.required_level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rarity}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rare}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.required_level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rarity}</font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.stat_string}<br>
+    ${affix.stat_string}<br>
     </font></font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
-    ${prefix.item_types_string}</font></td>
+    ${affix.item_types_string}</font></td>
     </tr>
 % endif
 % endfor
@@ -397,23 +397,23 @@ If the Lvl column shows a ranged value like n-m, it means that affix can be spaw
 
 
 
-% for prefix in prefixes:
-% if "arrm" in prefix.item_types or "boqm" in prefix.item_types:
+% for affix in affixes:
+% if "arrm" in affix.item_types or "boqm" in affix.item_types:
     <tr>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.name}
+    ${affix.name}
     </font></font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rare}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.required_level}</font></td>
-    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${prefix.rarity}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rare}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.required_level}</font></td>
+    <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">${affix.rarity}</font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
     <font color="8080E6">
-    ${prefix.stat_string}<br>
+    ${affix.stat_string}<br>
     </font></font></td>
     <td bgcolor="#181818" align="center"><font size="-1" face="arial,helvetica">
-    ${prefix.item_types_string}</font></td>
+    ${affix.item_types_string}</font></td>
     </tr>
 % endif
 % endfor

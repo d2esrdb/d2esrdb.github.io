@@ -30,19 +30,19 @@ def get_value_string(min, max):
     return min + "-" + max
 
 def get_affixes(table):
-    prefixes = []
-    for i, prefix in enumerate(table):
-        if i == 0 or prefix[2] != str(1):
+    affixes = []
+    for i, affix in enumerate(table):
+        if i == 0 or affix[2] != str(1):
             continue
-        prop1 = unique_items.Property(prefix[12], prefix[13], prefix[14], prefix[15])
+        prop1 = unique_items.Property(affix[12], affix[13], affix[14], affix[15])
         unique_items.fill_property_stats(prop1)
         prop2 = None
         prop3 = None
-        if prefix[16] != "":
-            prop2 = unique_items.Property(prefix[16], prefix[17], prefix[18], prefix[19])
+        if affix[16] != "":
+            prop2 = unique_items.Property(affix[16], affix[17], affix[18], affix[19])
             unique_items.fill_property_stats(prop2)
-        if prefix[20] != "":
-            prop3 = unique_items.Property(prefix[20], prefix[21], prefix[22], prefix[23])
+        if affix[20] != "":
+            prop3 = unique_items.Property(affix[20], affix[21], affix[22], affix[23])
             unique_items.fill_property_stats(prop3)
         stats = []
         for stat in prop1.stats:
@@ -57,18 +57,14 @@ def get_affixes(table):
 
         item_types = []
         for index in range(26, 33):
-            if prefix[index] != "":
-                item_types.append(prefix[index])
+            if affix[index] != "":
+                item_types.append(affix[index])
 
-        prefixes.append(Affix(prefix[0], prefix[3], get_value_string(prefix[4], prefix[5]), prefix[6], prefix[10], stat_string, item_types))
-    return prefixes
+        affixes.append(Affix(affix[0], affix[3], get_value_string(affix[4], affix[5]), affix[6], affix[10], stat_string, item_types))
+    return affixes
 
 def get_prefixes():
     return get_affixes(load_txts.prefixes_table)
 
 def get_suffixes():
     return get_affixes(load_txts.suffixes_table)
-
-#prefixes = get_prefixes()
-#for prefix in prefixes:
-#    print(prefix.name)
