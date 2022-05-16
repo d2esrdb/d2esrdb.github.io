@@ -78,6 +78,7 @@ def get_string_dict():
 #print(get_string_dict()["item_singleskill"])
 
 #strings = get_string_dict()
+#print(strings["ModItemTotalAvoidStr"])
 #for key in strings:
 #    if "Increased Attack Speed" == strings[key]:
 #        print("kylemc1" + key)

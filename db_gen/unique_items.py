@@ -332,6 +332,74 @@ def fill_automod(properties, code):
         if key != "":
             properties.append(Property(key, automods[key][0], automods[key][1], automods[key][2]))
 
+def fill_group_stats(unique_item):
+    groups = {}
+    # Make a dict of lists, containing the dgrp and the associated stats
+    for i, row in enumerate(load_txts.item_stat_cost_table):
+        if i == 0:
+            continue
+        if row[45] != "":
+            if row[45] in groups:
+                tmp = groups[row[45]]
+                tmp.append(row[0])
+                groups[row[45]] = tmp
+            else:
+                groups[row[45]] = [row[0]]
+    
+    item_group_stats = {}
+    for property in unique_item.properties:
+        for stat in property.stats:
+            for row in load_txts.item_stat_cost_table:
+                # If there is a group text for this mod
+                if stat.name == row[0] and row[45] != "":
+                    item_group_stats[row[0]] = [property.param, property.min, property.max, row[39], row[46], row[48], row[50], property]
+
+    for key in groups:
+        found = True
+        # if all stats in group are present on item
+        for stat in groups[key]:
+            if stat not in item_group_stats:
+                found = False
+        if found:
+            use_group_string = True
+            # if all found group stats are equal
+            param = None
+            min = None
+            max = None
+            priority = None
+            func = None
+            props = []
+            for i, stat in enumerate(groups[key]):
+                props.append(item_group_stats[stat][7])
+                if i == 0:
+                    param = item_group_stats[stat][0]
+                    min = item_group_stats[stat][1]
+                    max = item_group_stats[stat][2]
+                    priority = item_group_stats[stat][3]
+                    func = item_group_stats[stat][4]
+                    string1 = item_group_stats[stat][5]
+                    string2 = item_group_stats[stat][6]
+                if param != item_group_stats[stat][0] or min != item_group_stats[stat][1] or max != item_group_stats[stat][2]:
+                    use_group_string = False
+            if use_group_string:
+                prop = Property("Group Property", param, min, max)
+                prop.stats.append(Stat("Group Stat", stat_formats.get_stat_string1(int(func), get_value_string(param, min, max), mod_strings.get(string1, "NONE"), mod_strings.get(string2, "NONE")), priority))
+                unique_item.properties.append(prop)
+                for p in props:
+                    try:
+                        unique_item.properties.remove(p)
+                    except:
+                        pass
+
+
+
+
+                
+
+
+
+
+
 def get_unique_items():
     unique_items = []
     for i, row in enumerate(load_txts.unique_items_table):
@@ -351,4 +419,7 @@ def get_unique_items():
     for unique_item in unique_items:
         for property in unique_item.properties:
             fill_property_stats(property)
+        fill_group_stats(unique_item)
     return unique_items
+
+#get_unique_items()

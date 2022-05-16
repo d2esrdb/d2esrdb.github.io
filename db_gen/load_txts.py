@@ -66,4 +66,13 @@ for i, prefix in enumerate(prefixes_table):
         first_row = prefix
     if prefix[3] != str(1):
         print(prefix[0] + ": " + prefix[3]) 
-'''
+
+
+first_row = None
+for i, item_stat_cost in enumerate(item_stat_cost_table):
+    if i == 0:
+        for j, column in enumerate(item_stat_cost):
+            print(str(column) + ": " + str(j))
+    if item_stat_cost[48] != "":
+        print(item_stat_cost[0] + ": " + item_stat_cost[45] + ": " + item_stat_cost[48])
+    '''
