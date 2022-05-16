@@ -247,9 +247,15 @@ def generate_prefixes():
     armor_rendered = armor_template.render(prefixes)
     generate(armor_rendered, "es3pref_n.htm")
 
+def generate_suffixes():
+    suffixes = affixes.get_suffixes()
+    armor_template = Template(filename="templates/es3suff_n.htm", lookup=mylookup)
+    armor_rendered = armor_template.render(suffixes)
+    generate(armor_rendered, "es3suff_n.htm")
 
 generate_armor()
 generate_weapons()
 generate_uniques()
 generate_simple()
 generate_prefixes()
+generate_suffixes()

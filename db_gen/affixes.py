@@ -29,10 +29,10 @@ def get_value_string(min, max):
         
     return min + "-" + max
 
-def get_prefixes():
+def get_affixes(table):
     prefixes = []
-    for i, prefix in enumerate(load_txts.prefixes_table):
-        if i == 0 or prefix[3] != str(1):
+    for i, prefix in enumerate(table):
+        if i == 0 or prefix[2] != str(1):
             continue
         prop1 = unique_items.Property(prefix[12], prefix[13], prefix[14], prefix[15])
         unique_items.fill_property_stats(prop1)
@@ -62,6 +62,12 @@ def get_prefixes():
 
         prefixes.append(Affix(prefix[0], prefix[3], get_value_string(prefix[4], prefix[5]), prefix[6], prefix[10], stat_string, item_types))
     return prefixes
+
+def get_prefixes():
+    return get_affixes(load_txts.prefixes_table)
+
+def get_suffixes():
+    return get_affixes(load_txts.suffixes_table)
 
 #prefixes = get_prefixes()
 #for prefix in prefixes:

@@ -23,6 +23,8 @@ item_types = load_table("ItemTypes.txt")
 misc_table = load_table("Misc.txt")
 automagic_table = load_table("automagic.txt")
 prefixes_table = load_table("MagicPrefix.txt")
+suffixes_table = load_table("MagicSuffix.txt")
+
 
 #for i, misc in enumerate(misc_table):
 #    if i < 5:
@@ -62,6 +64,6 @@ first_row = None
 for i, prefix in enumerate(prefixes_table):
     if i == 0:
         first_row = prefix
-for i, column in enumerate(first_row):
-    print(str(i) + ": " + column)
+    if prefix[3] != str(1):
+        print(prefix[0] + ": " + prefix[3]) 
 '''
