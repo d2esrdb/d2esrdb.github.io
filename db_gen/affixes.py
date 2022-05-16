@@ -1,5 +1,7 @@
 import load_txts
 import unique_items
+import stat_formats
+import table_strings
 
 class Affix:
     def __init__(self, name, rare, level, required_level, rarity, stat_string, item_types):
@@ -29,6 +31,63 @@ def get_value_string(min, max):
         
     return min + "-" + max
 
+
+def get_group_prop(property):
+    groups = {}
+    # Make a dict of lists, containing the dgrp and the associated stats
+    for i, row in enumerate(load_txts.item_stat_cost_table):
+        if i == 0:
+            continue
+        if row[45] != "":
+            if row[45] in groups:
+                tmp = groups[row[45]]
+                tmp.append(row[0])
+                groups[row[45]] = tmp
+            else:
+                groups[row[45]] = [row[0]]
+    
+    item_group_stats = {}
+    for stat in property.stats:
+        for row in load_txts.item_stat_cost_table:
+            # If there is a group text for this mod
+            if stat.name == row[0] and row[45] != "":
+                item_group_stats[row[0]] = [property.param, property.min, property.max, row[39], row[46], row[48], row[50], property]
+    print(groups)
+    for key in groups:
+        found = True
+        # if all stats in group are present on item
+        for stat in groups[key]:
+            if stat not in item_group_stats:
+                found = False
+        if found:
+            print("found")
+            use_group_string = True
+            # if all found group stats are equal
+            param = None
+            min = None
+            max = None
+            priority = None
+            func = None
+            props = []
+            for i, stat in enumerate(groups[key]):
+                props.append(item_group_stats[stat][7])
+                if i == 0:
+                    param = item_group_stats[stat][0]
+                    min = item_group_stats[stat][1]
+                    max = item_group_stats[stat][2]
+                    priority = item_group_stats[stat][3]
+                    func = item_group_stats[stat][4]
+                    string1 = item_group_stats[stat][5]
+                    string2 = item_group_stats[stat][6]
+                if param != item_group_stats[stat][0] or min != item_group_stats[stat][1] or max != item_group_stats[stat][2]:
+                    use_group_string = False
+            if use_group_string:
+                prop = unique_items.Property("Group Property", param, min, max)
+                prop.stats.append(unique_items.Stat("Group Stat", stat_formats.get_stat_string1(int(func), unique_items.get_value_string(param, min, max), unique_items.mod_strings.get(string1, "NONE"), unique_items.mod_strings.get(string2, "NONE")), priority))
+                print("returning new prop")
+                return prop
+    return property
+
 def get_affixes(table):
     affixes = []
     for i, affix in enumerate(table):
@@ -36,14 +95,17 @@ def get_affixes(table):
             continue
         prop1 = unique_items.Property(affix[12], affix[13], affix[14], affix[15])
         unique_items.fill_property_stats(prop1)
+        prop1 = get_group_prop(prop1)
         prop2 = None
         prop3 = None
         if affix[16] != "":
             prop2 = unique_items.Property(affix[16], affix[17], affix[18], affix[19])
             unique_items.fill_property_stats(prop2)
+            prop2 = get_group_prop(prop2)
         if affix[20] != "":
             prop3 = unique_items.Property(affix[20], affix[21], affix[22], affix[23])
             unique_items.fill_property_stats(prop3)
+            prop3 = get_group_prop(prop3)
         stats = []
         for stat in prop1.stats:
             stats.append(stat.stat_string)
