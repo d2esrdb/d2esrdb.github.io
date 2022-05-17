@@ -3,6 +3,8 @@ import unique_items
 import stat_formats
 import table_strings
 
+mod_strings = table_strings.get_string_dict()
+
 class Affix:
     def __init__(self, name, rare, level, required_level, rarity, stat_string, item_types):
         self.name = name
@@ -52,7 +54,7 @@ def get_group_prop(property):
             # If there is a group text for this mod
             if stat.name == row[0] and row[45] != "":
                 item_group_stats[row[0]] = [property.param, property.min, property.max, row[39], row[46], row[48], row[50], property]
-    print(groups)
+
     for key in groups:
         found = True
         # if all stats in group are present on item
@@ -60,7 +62,6 @@ def get_group_prop(property):
             if stat not in item_group_stats:
                 found = False
         if found:
-            print("found")
             use_group_string = True
             # if all found group stats are equal
             param = None
@@ -84,8 +85,10 @@ def get_group_prop(property):
             if use_group_string:
                 prop = unique_items.Property("Group Property", param, min, max)
                 prop.stats.append(unique_items.Stat("Group Stat", stat_formats.get_stat_string1(int(func), unique_items.get_value_string(param, min, max), unique_items.mod_strings.get(string1, "NONE"), unique_items.mod_strings.get(string2, "NONE")), priority))
-                print("returning new prop")
                 return prop
+
+    unique_items.handle_hardcoded_groups(property)
+    
     return property
 
 def get_affixes(table):

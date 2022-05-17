@@ -1,6 +1,7 @@
 1. attacker takes damage of /lvl stat too high? (i.e account for op/op param/op stat)
 2. Split out 1h/2h
 3. Finish automods
+4. Poison damage? (possibly handled by 1?)
 
 Things we can't fix?/Unknowns
 1. Faith says 0-2 sockets, but we never get 0 in game?

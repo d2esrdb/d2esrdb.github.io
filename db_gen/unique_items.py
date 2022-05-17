@@ -1,3 +1,4 @@
+from enum import unique
 from operator import attrgetter
 import os
 import csv
@@ -332,6 +333,41 @@ def fill_automod(properties, code):
         if key != "":
             properties.append(Property(key, automods[key][0], automods[key][1], automods[key][2]))
 
+# Custom handling for hardcoded groups
+def handle_hardcoded_groups(property):
+    priority = 0
+    if property.name == "dmg-fire":
+        for stat in list(property.stats):
+            priority = stat.priority
+            property.stats.remove(stat)
+        property.stats.append(Stat("Group Stat", mod_strings["strModFireDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
+    if property.name == "dmg-cold":
+        for stat in list(property.stats):
+            priority = stat.priority
+            property.stats.remove(stat)
+        property.stats.append(Stat("Group Stat", mod_strings["strModColdDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
+    if property.name == "dmg-lightning":
+        for stat in list(property.stats):
+            priority = stat.priority
+            property.stats.remove(stat)
+        property.stats.append(Stat("Group Stat", mod_strings["strModLightningDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
+    if property.name == "dmg-mag":
+        for stat in list(property.stats):
+            priority = stat.priority
+            property.stats.remove(stat)
+        property.stats.append(Stat("Group Stat", mod_strings["strModMagicDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
+    if property.name == "dmg-norm":
+        for stat in list(property.stats):
+            priority = stat.priority
+            property.stats.remove(stat)
+        property.stats.append(Stat("Group Stat", mod_strings["strModMinDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
+    if property.name == "dmg-pois":
+        for stat in list(property.stats):
+            priority = stat.priority
+            property.stats.remove(stat)
+        property.stats.append(Stat("Group Stat", mod_strings["strModPoisonDamageRange"].replace("%d-%d", get_value_string("", property.min, property.max)).replace("%d", property.param), priority))
+
+
 def fill_group_stats(unique_item):
     groups = {}
     # Make a dict of lists, containing the dgrp and the associated stats
@@ -385,11 +421,14 @@ def fill_group_stats(unique_item):
                 prop = Property("Group Property", param, min, max)
                 prop.stats.append(Stat("Group Stat", stat_formats.get_stat_string1(int(func), get_value_string(param, min, max), mod_strings.get(string1, "NONE"), mod_strings.get(string2, "NONE")), priority))
                 unique_item.properties.append(prop)
-                for p in props:
+                for p in list(props):
                     try:
                         unique_item.properties.remove(p)
                     except:
                         pass
+    # Custom handling for hard-coded flat damage adds
+    for property in unique_item.properties:
+        handle_hardcoded_groups(property)
 
 
 
