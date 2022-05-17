@@ -346,7 +346,7 @@ def handle_hardcoded_groups(property):
             priority = stat.priority
             property.stats.remove(stat)
         property.stats.append(Stat("Group Stat", mod_strings["strModColdDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
-    if property.name == "dmg-lightning":
+    if property.name == "dmg-ltng":
         for stat in list(property.stats):
             priority = stat.priority
             property.stats.remove(stat)
