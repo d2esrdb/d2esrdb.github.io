@@ -142,10 +142,32 @@ def get_skill_name(skill):
     print("Did not find skill name for skill: " + skill)
     return skill
 
+def handle_op(value, op, op_param, op_base, op_stat1, op_stat2, op_stat3):
+    if not value.isdigit():
+        return value
+    if op == str(1):
+        if not op_base.isdigit():
+            return value
+        value = (value * int(op_base)) / 100
+    if op == str(2):
+        value = float(value) * 1 / pow(2, float(op_param))
+    if op == str(3):
+        value = float(value) * 1 / pow(2, float(op_param))
+    if op == str(4):
+        value = float(value) * 1 / pow(2, float(op_param))
+    if op == str(5):
+        value = float(value) * 1 / pow(2, float(op_param))
+
+    if value.is_integer():
+        value = int(value)
+    return str(value)
+
 def get_stat(stat_name, param, min, max, prop_name):
-    for item_stat_cost_row in load_txts.item_stat_cost_table:
+    for i, item_stat_cost_row in enumerate(load_txts.item_stat_cost_table):
         if stat_name == item_stat_cost_row[0]:
-            
+            if item_stat_cost_row[25] != 0 and item_stat_cost_row[25] != "" and i != 0:
+                param = handle_op(param, item_stat_cost_row[25], item_stat_cost_row[26], item_stat_cost_row[27], item_stat_cost_row[28], item_stat_cost_row[29], item_stat_cost_row[30])
+
             # Custom handling
             if stat_name == "item_numsockets":
                 # @TODO Could be a bug with socket range 0-n, I think it can roll 0 but then gives 1? More testing needed (Faith shield)

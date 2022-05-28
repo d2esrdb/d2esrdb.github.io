@@ -1,5 +1,6 @@
 import os
 import csv
+from re import I
 import table_strings
 import stat_formats
 
@@ -25,6 +26,21 @@ automagic_table = load_table("automagic.txt")
 prefixes_table = load_table("MagicPrefix.txt")
 suffixes_table = load_table("MagicSuffix.txt")
 
+
+first_row = None
+for i, stat in enumerate(item_stat_cost_table):
+    if i == 0:
+        first_row = stat
+        #for j, item in enumerate(first_row):
+            #print(str(j) + ": " + item)
+    if stat[25] != 0 and stat[25] != "" and i != 0 and int(stat[25]) > 5:
+        print("name: " + str(stat[0]))
+        print("op: " + str(stat[25]))
+        print("op param: " + str(stat[26]))
+        print("op base: " + str(stat[27]))
+        print("op stat1: " + str(stat[28]))
+        print("op stat2: " + str(stat[29]))
+        print("op stat3: " + str(stat[30]))
 
 #for i, misc in enumerate(misc_table):
 #    if i < 5:
