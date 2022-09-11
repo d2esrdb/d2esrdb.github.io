@@ -6,11 +6,12 @@ import table_strings
 mod_strings = table_strings.get_string_dict()
 
 class Affix:
-    def __init__(self, name, rare, level, required_level, rarity, stat_string, item_types):
+    def __init__(self, name, rare, level, max_level, required_level, rarity, stat_string, item_types):
         self.name = name
         self.rare = rare
         self.level = level
         self.required_level = required_level
+        self.max_level = max_level
         self.rarity = rarity
         self.stat_string = stat_string
         self.item_types = item_types
@@ -125,7 +126,7 @@ def get_affixes(table):
             if affix[index] != "":
                 item_types.append(affix[index])
 
-        affixes.append(Affix(affix[0], affix[3], get_value_string(affix[4], affix[5]), affix[6], affix[10], stat_string, item_types))
+        affixes.append(Affix(affix[0], affix[3], affix[4], affix[5], affix[6], affix[10], stat_string, item_types))
     return affixes
 
 def get_prefixes():

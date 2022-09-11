@@ -26,7 +26,7 @@ automagic_table = load_table("automagic.txt")
 prefixes_table = load_table("MagicPrefix.txt")
 suffixes_table = load_table("MagicSuffix.txt")
 
-
+'''
 first_row = None
 for i, stat in enumerate(item_stat_cost_table):
     if i == 0:
@@ -41,7 +41,7 @@ for i, stat in enumerate(item_stat_cost_table):
         print("op stat1: " + str(stat[28]))
         print("op stat2: " + str(stat[29]))
         print("op stat3: " + str(stat[30]))
-
+'''
 #for i, misc in enumerate(misc_table):
 #    if i < 5:
 #        print(misc[13])
