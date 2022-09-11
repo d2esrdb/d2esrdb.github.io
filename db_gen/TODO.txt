@@ -2,6 +2,7 @@
 2. Split out 1h/2h
 3. Verify poison damage is correct
 4. Bonemash (Mace) reanimate 
+5. Hellforge finest incorrect numbers
 
 Stretch goals:
 1. Autogen recipes, runewords/gemwords, gems/runes, sets
