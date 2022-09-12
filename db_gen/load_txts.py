@@ -83,12 +83,18 @@ for i, prefix in enumerate(prefixes_table):
     if prefix[3] != str(1):
         print(prefix[0] + ": " + prefix[3]) 
 
-
+'''
 first_row = None
 for i, item_stat_cost in enumerate(item_stat_cost_table):
     if i == 0:
-        for j, column in enumerate(item_stat_cost):
-            print(str(column) + ": " + str(j))
-    if item_stat_cost[48] != "":
-        print(item_stat_cost[0] + ": " + item_stat_cost[45] + ": " + item_stat_cost[48])
-    '''
+        first_row = item_stat_cost
+        #for j, column in enumerate(item_stat_cost):
+            #print(str(column) + ": " + str(j))
+    if item_stat_cost[0] == "item_energy_perkill":
+        print("energy")
+        for i in range(50):
+            print(first_row[i] + ": " + item_stat_cost[i])
+    if item_stat_cost[0] == "min_firedmg_per_strength":
+        print("fire")
+        for i in range(50):
+            print(first_row[i] + ": " + item_stat_cost[i])

@@ -157,7 +157,28 @@ def handle_op(value, op, op_param, op_base, op_stat1, op_stat2, op_stat3):
         value = float(value) * 1 / pow(2, float(op_param))
     if op == str(5):
         value = float(value) * 1 / pow(2, float(op_param))
+    # 6 and 7 don't work
+    # @TODO 8 hardcoded for max mana?
+    if op == str(8):
+        return value
+    # @TODO 9 hardcoded for max hp / stamina?
+    if op == str(9):
+        return value
+    # 10 doesn't exist
+    if op == str(11):
+        if not op_base.isdigit():
+            return value
+        value = (value * int(op_base)) / 100
+    # 12 doesn't exist
+    if op == str(13):
+        if not op_base.isdigit():
+            return value
+        value = (value * int(op_base)) / 100
 
+
+    print("damnit:")
+    print(op)
+    print(value)
     if value.is_integer():
         value = int(value)
     return str(value)
@@ -167,6 +188,8 @@ def get_stat(stat_name, param, min, max, prop_name):
         if stat_name == item_stat_cost_row[0]:
             if item_stat_cost_row[25] != 0 and item_stat_cost_row[25] != "" and i != 0:
                 param = handle_op(param, item_stat_cost_row[25], item_stat_cost_row[26], item_stat_cost_row[27], item_stat_cost_row[28], item_stat_cost_row[29], item_stat_cost_row[30])
+                min = handle_op(min, item_stat_cost_row[25], item_stat_cost_row[26], item_stat_cost_row[27], item_stat_cost_row[28], item_stat_cost_row[29], item_stat_cost_row[30])
+                max = handle_op(max, item_stat_cost_row[25], item_stat_cost_row[26], item_stat_cost_row[27], item_stat_cost_row[28], item_stat_cost_row[29], item_stat_cost_row[30])
 
             # Custom handling
             if stat_name == "item_numsockets":
