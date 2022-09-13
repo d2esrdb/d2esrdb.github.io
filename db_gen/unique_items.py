@@ -175,10 +175,6 @@ def handle_op(value, op, op_param, op_base, op_stat1, op_stat2, op_stat3):
             return value
         value = (value * int(op_base)) / 100
 
-
-    print("damnit:")
-    print(op)
-    print(value)
     if value.is_integer():
         value = int(value)
     return str(value)
@@ -333,7 +329,7 @@ def get_gamble_item_from_code(code):
 def get_all_equivalent_types(types):
     while True:
         keep_going = False
-        for item_type in load_txts.item_types:
+        for item_type in load_txts.item_types_table:
             if item_type[1] in types:
                 if item_type[2] not in types:
                     types.append(item_type[2])
@@ -417,8 +413,6 @@ def fill_group_stats(unique_item):
     groups = {}
     # Make a dict of lists, containing the dgrp and the associated stats
     for i, row in enumerate(load_txts.item_stat_cost_table):
-        if i == 0:
-            continue
         if row[45] != "":
             if row[45] in groups:
                 tmp = groups[row[45]]
@@ -475,21 +469,9 @@ def fill_group_stats(unique_item):
     for property in unique_item.properties:
         handle_hardcoded_groups(property)
 
-
-
-
-                
-
-
-
-
-
 def get_unique_items():
     unique_items = []
     for i, row in enumerate(load_txts.unique_items_table):
-        # Ignore header
-        if i == 0:
-            continue
         # If item is enabled
         if row[4].isdigit() and int(row[4]) > 0:
             properties = []
@@ -505,5 +487,3 @@ def get_unique_items():
             fill_property_stats(property)
         fill_group_stats(unique_item)
     return unique_items
-
-#get_unique_items()

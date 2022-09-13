@@ -1,9 +1,9 @@
-import load_txts
 import unique_items
 import stat_formats
+import load_txts
 import table_strings
 
-mod_strings = table_strings.get_string_dict()
+mod_strings = table_strings.mod_strings
 
 class Affix:
     def __init__(self, name, rare, level, max_level, required_level, rarity, stat_string, item_types):
@@ -22,25 +22,18 @@ def get_value_string(min, max):
     max = str(max)
     if min == "" and max == "":
         return "NOVALUE"
-
     if min == "":
         return max
-
     if max == "":
         return min
-
     if min == max:
         return min
-        
     return min + "-" + max
-
 
 def get_group_prop(property):
     groups = {}
     # Make a dict of lists, containing the dgrp and the associated stats
     for i, row in enumerate(load_txts.item_stat_cost_table):
-        if i == 0:
-            continue
         if row[45] != "":
             if row[45] in groups:
                 tmp = groups[row[45]]
@@ -89,13 +82,12 @@ def get_group_prop(property):
                 return prop
 
     unique_items.handle_hardcoded_groups(property)
-    
     return property
 
 def get_affixes(table):
     affixes = []
     for i, affix in enumerate(table):
-        if i == 0 or affix[2] != str(1):
+        if affix[2] != str(1):
             continue
         prop1 = unique_items.Property(affix[12], affix[13], affix[14], affix[15])
         unique_items.fill_property_stats(prop1)

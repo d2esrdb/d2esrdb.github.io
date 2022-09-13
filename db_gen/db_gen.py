@@ -60,7 +60,7 @@ def get_weapon_types():
     return weapon_types
 
 def get_item_name_from_code(code):
-    for row in load_txts.item_types:
+    for row in load_txts.item_types_table:
         if row[1] == code:
             return row[0]
 
