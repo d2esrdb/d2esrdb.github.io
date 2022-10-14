@@ -42,21 +42,21 @@ class Unique_Item:
 
 def get_value_string(param, min, max):
     if param != "":
-        return param
+        return str(param)
     
     if min == "" and max == "":
         return "NOVALUE"
 
     if min == "":
-        return max
+        return str(max)
 
     if max == "":
-        return min
+        return str(min)
 
     if min == max:
-        return min
+        return str(min)
         
-    return min + "-" + max
+    return str(min) + "-" + str(max)
 
 def short_to_long_class(short):
     if short == "ama":
@@ -427,8 +427,10 @@ def handle_hardcoded_groups(property):
         for stat in list(property.stats):
             priority = stat.priority
             property.stats.remove(stat)
-        property.stats.append(Stat("Group Stat", mod_strings["strModPoisonDamageRange"].replace("%d-%d", get_value_string("", property.min, property.max)).replace("%d", property.param), priority))
-
+        real_length = int(int(property.param)/25)
+        real_min = int(int(property.min)/256*real_length*25)
+        real_max = int(int(property.max)/256*real_length*25)
+        property.stats.append(Stat("Group Stat", mod_strings["strModPoisonDamageRange"].replace("%d-%d", get_value_string("", real_min, real_max)).replace("%d", str(real_length)), priority))
 
 def fill_group_stats(unique_item):
     groups = {}
