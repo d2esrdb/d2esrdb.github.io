@@ -78,7 +78,7 @@ def get_group_prop(property):
                     use_group_string = False
             if use_group_string:
                 prop = unique_items.Property("Group Property", param, min, max)
-                prop.stats.append(unique_items.Stat("Group Stat", stat_formats.get_stat_string1(int(func), unique_items.get_value_string(param, min, max), unique_items.mod_strings.get(string1, "NONE"), unique_items.mod_strings.get(string2, "NONE")), priority))
+                prop.stats.append(unique_items.Stat("Group Stat", stat_formats.get_stat_string1(int(func), unique_items.get_value_string(param, min, max), unique_items.mod_strings.get(string1, "NONE"), param, min, max, unique_items.mod_strings.get(string2, "NONE")), priority))
                 return prop
 
     unique_items.handle_hardcoded_groups(property)

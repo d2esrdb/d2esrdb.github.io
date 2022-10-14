@@ -272,11 +272,11 @@ def get_stat(stat_name, param, min, max, prop_name):
 
             #@TODO there's a bunch of other parameters we need to find and pass in here
             if 0 == val:
-                return Stat(stat_name, stat_formats.get_stat_string0(func, string1, string2, skill=get_skill_name(param), slvl=get_value_string("", min, max)), priority)
+                return Stat(stat_name, stat_formats.get_stat_string0(func, string1, param, min, max, string2, skill=get_skill_name(param), slvl=get_value_string("", min, max)), priority)
             if 1 == val:
-                return Stat(stat_name, stat_formats.get_stat_string1(func, get_value_string(param, min, max), string1, string2), priority)
+                return Stat(stat_name, stat_formats.get_stat_string1(func, get_value_string(param, min, max), string1, param, min, max, string2), priority)
             if 2 == val:
-                return Stat(stat_name, stat_formats.get_stat_string2(func, get_value_string(param, min, max), string1, string2), priority)
+                return Stat(stat_name, stat_formats.get_stat_string2(func, get_value_string(param, min, max), string1, param, min, max, string2), priority)
     return None
 
 def fill_property_stats(property):
@@ -458,7 +458,7 @@ def fill_group_stats(unique_item):
                     use_group_string = False
             if use_group_string:
                 prop = Property("Group Property", param, min, max)
-                prop.stats.append(Stat("Group Stat", stat_formats.get_stat_string1(int(func), get_value_string(param, min, max), mod_strings.get(string1, "NONE"), mod_strings.get(string2, "NONE")), priority))
+                prop.stats.append(Stat("Group Stat", stat_formats.get_stat_string1(int(func), get_value_string(param, min, max), mod_strings.get(string1, "NONE"), param, min, max, mod_strings.get(string2, "NONE")), priority))
                 unique_item.properties.append(prop)
                 for p in list(props):
                     try:

@@ -1,8 +1,33 @@
 # One of the following functions are called, depending on descval
 # Strings from https://d2mods.info/forum/kb/viewarticle?a=448
+import table_strings 
+import load_txts
+
+def get_monster_from_id(mon_id):
+    for mon_stat_row in load_txts.mon_stats_table:
+        if mon_stat_row[1] == mon_id:
+            return table_strings.mod_strings[mon_stat_row[5]]
+
+def get_value_string(param, min, max):
+    if param != "":
+        return param
+    
+    if min == "" and max == "":
+        return "NOVALUE"
+
+    if min == "":
+        return max
+
+    if max == "":
+        return min
+
+    if min == max:
+        return min
+        
+    return min + "-" + max
 
 # No value (descval 0)
-def get_stat_string0(descfunc, string1, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
+def get_stat_string0(descfunc, string1, param, min, max, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
     match descfunc:
         case 1:
             return string1
@@ -68,7 +93,7 @@ def get_stat_string0(descfunc, string1, string2=None, _class=None, skilltab=None
     return "Invalid descfunc: " + descfunc + " descval: 0"
 
 # Value comes before string (descval 1)
-def get_stat_string1(descfunc, value, string1, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
+def get_stat_string1(descfunc, value, string1, param, min, max, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
     value = str(value)
     match descfunc:
         case 1:
@@ -121,8 +146,7 @@ def get_stat_string1(descfunc, value, string1, string2=None, _class=None, skillt
         case 22:
             return "Apparently this format string is bugged"
         case 23:
-            return "MONSTER NOT IMPLEMENTED YET"
-            #return value + "% " + string1 + " " + monster
+            return get_value_string("", min, max) + "% " + string1 + " " + get_monster_from_id(param)
         case 24:
             return "gotta figure out charges string"
         case 25:
@@ -136,7 +160,7 @@ def get_stat_string1(descfunc, value, string1, string2=None, _class=None, skillt
     return "Invalid descfunc: " + descfunc + " descval: 1"
 
 # Value comes after string (descval 2)
-def get_stat_string2(descfunc, value, string1, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
+def get_stat_string2(descfunc, value, string1, param, min, max, string2=None, _class=None, skilltab=None, chance=None, slvl=None, skill=None, event=None, time=None, monster=None):
     value = str(value)
     match descfunc:
         case 1:
