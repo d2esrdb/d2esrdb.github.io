@@ -402,27 +402,27 @@ def handle_hardcoded_groups(property):
         for stat in list(property.stats):
             priority = stat.priority
             property.stats.remove(stat)
-        property.stats.append(Stat("Group Stat", mod_strings["strModFireDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
+        property.stats.append(Stat("Group Stat", mod_strings["strModFireDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)).title(), priority))
     if property.name == "dmg-cold":
         for stat in list(property.stats):
             priority = stat.priority
             property.stats.remove(stat)
-        property.stats.append(Stat("Group Stat", mod_strings["strModColdDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
+        property.stats.append(Stat("Group Stat", mod_strings["strModColdDamageRange"].replace("%d-%d", get_value_string("", property.min, property.max)).title(), priority))
     if property.name == "dmg-ltng":
         for stat in list(property.stats):
             priority = stat.priority
             property.stats.remove(stat)
-        property.stats.append(Stat("Group Stat", mod_strings["strModLightningDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
+        property.stats.append(Stat("Group Stat", mod_strings["strModLightningDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)).title(), priority))
     if property.name == "dmg-mag":
         for stat in list(property.stats):
             priority = stat.priority
             property.stats.remove(stat)
-        property.stats.append(Stat("Group Stat", mod_strings["strModMagicDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
+        property.stats.append(Stat("Group Stat", mod_strings["strModMagicDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)).title(), priority))
     if property.name == "dmg-norm":
         for stat in list(property.stats):
             priority = stat.priority
             property.stats.remove(stat)
-        property.stats.append(Stat("Group Stat", mod_strings["strModMinDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)), priority))
+        property.stats.append(Stat("Group Stat", mod_strings["strModMinDamageRange"].replace("%d-%d", get_value_string(property.param, property.min, property.max)).title(), priority))
     if property.name == "dmg-pois":
         for stat in list(property.stats):
             priority = stat.priority
@@ -430,7 +430,7 @@ def handle_hardcoded_groups(property):
         real_length = int(int(property.param)/25)
         real_min = int(int(property.min)/256*real_length*25)
         real_max = int(int(property.max)/256*real_length*25)
-        property.stats.append(Stat("Group Stat", mod_strings["strModPoisonDamageRange"].replace("%d-%d", get_value_string("", real_min, real_max)).replace("%d", str(real_length)), priority))
+        property.stats.append(Stat("Group Stat", mod_strings["strModPoisonDamageRange"].replace("%d-%d", get_value_string("", real_min, real_max)).replace("%d", str(real_length)).title(), priority))
 
 def fill_group_stats(unique_item):
     groups = {}
