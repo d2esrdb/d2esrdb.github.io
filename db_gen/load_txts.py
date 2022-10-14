@@ -33,3 +33,4 @@ mon_stats_table = load_table("MonStats.txt")
 automagic_table = load_table("automagic.txt")
 prefixes_table = load_table("MagicPrefix.txt")
 suffixes_table = load_table("MagicSuffix.txt")
+

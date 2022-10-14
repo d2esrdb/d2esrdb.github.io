@@ -23,13 +23,13 @@ class Property:
         self.stats = []
 
 class Unique_Item:
-    def __init__(self, name, item_level, required_level, properties, base_name, base_code, gamble_item):
+    def __init__(self, name, item_level, required_level, properties, base_code, gamble_item):
         self.name = name
         self.item_level = item_level
         self.required_level = required_level
         self.properties = properties
         self.gamble_item = gamble_item
-        self.base_name = base_name
+        self.base_name = get_item_name_from_code(base_code)
         self.base_code = base_code
         self.bg_color_code = 101010
         
@@ -314,17 +314,38 @@ def fill_property_stats(property):
     if not foundone:
         print("Didn't find property stats for property: " + property.name)
 
+def get_item_name_from_code(code):
+    # Use weapon/armor namestr if it exists, otherwise use misc.txt
+    for row in load_txts.armor_table:
+        if row[17] == code and row[4] == str(1):
+            if mod_strings.get(row[18]) is not None:
+                return mod_strings[row[18]]
+    for row in load_txts.weapons_table:
+        if row[3] == code and row[9] == str(1):
+            if mod_strings.get(row[5]) is not None:
+                return mod_strings[row[5]]
+
+    for row in load_txts.misc_table:
+        if row[13] == code:
+            return mod_strings[row[15]]
+    if mod_strings.get(code) is not None:
+        return mod_strings[code]
+    print("No name found for code: " + code)
+    return "NO_NAME"
+
 def get_gamble_item_from_code(code):
     for row in load_txts.armor_table:
         if row[17] == code and row[4] == str(1):
             for row_again in load_txts.armor_table:
                 if row_again[17] == row[23]:
-                    return row_again[0] + " (" + row_again[17] + ")"
+                    return get_item_name_from_code(row_again[17]) + " (" + row_again[17] + ")"
     for row in load_txts.weapons_table:
         if row[3] == code and row[9] == str(1):
             for row_again in load_txts.weapons_table:
                 if row_again[3] == row[34]:
-                    return row_again[0] + " (" + row_again[3] + ")"
+                    if row_again[3] == "":
+                        return "N/A"
+                    return get_item_name_from_code(row_again[3]) + " (" + row_again[3] + ")"
 
 def get_all_equivalent_types(types):
     while True:
@@ -480,7 +501,7 @@ def get_unique_items():
                 if row[21+j*4] != "":
                     properties.append(Property(row[21+j*4], row[22+j*4], row[23+j*4], row[24+j*4]))
             fill_automod(properties, row[8])
-            unique_items.append(Unique_Item(row[0], row[6], row[7], properties, row[9], row[8], get_gamble_item_from_code(row[8])))
+            unique_items.append(Unique_Item(row[0], row[6], row[7], properties, row[8], get_gamble_item_from_code(row[8])))
     
     for unique_item in unique_items:
         for property in unique_item.properties:

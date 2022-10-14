@@ -71,10 +71,3 @@ def get_string_dict():
     return key_value_dict
 
 mod_strings = get_string_dict()
-#for i in range(1,100):
-#    print(str(i) + ": " + get_string_dict()["StrSklTabItem" + str(i)])
-
-#for i in range(1,100):
-#    print(get_string_dict()["StrSklTabItem" + str(i)])
-#print(mod_strings["flyingscimitar"])
-
