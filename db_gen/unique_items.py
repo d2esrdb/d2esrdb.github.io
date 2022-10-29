@@ -180,9 +180,9 @@ def handle_op(value, op, op_param, op_base, op_stat1, op_stat2, op_stat3):
     return str(value)
 
 def get_stat(stat_name, param, min, max, prop_name):
-    for i, item_stat_cost_row in enumerate(load_txts.item_stat_cost_table):
+    for item_stat_cost_row in load_txts.item_stat_cost_table:
         if stat_name == item_stat_cost_row[0]:
-            if item_stat_cost_row[25] != 0 and item_stat_cost_row[25] != "" and i != 0:
+            if item_stat_cost_row[25] != 0 and item_stat_cost_row[25] != "":
                 param = handle_op(param, item_stat_cost_row[25], item_stat_cost_row[26], item_stat_cost_row[27], item_stat_cost_row[28], item_stat_cost_row[29], item_stat_cost_row[30])
                 min = handle_op(min, item_stat_cost_row[25], item_stat_cost_row[26], item_stat_cost_row[27], item_stat_cost_row[28], item_stat_cost_row[29], item_stat_cost_row[30])
                 max = handle_op(max, item_stat_cost_row[25], item_stat_cost_row[26], item_stat_cost_row[27], item_stat_cost_row[28], item_stat_cost_row[29], item_stat_cost_row[30])

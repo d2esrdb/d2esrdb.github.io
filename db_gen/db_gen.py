@@ -2,10 +2,12 @@ import os
 import unique_items
 import load_txts
 import affixes
+import table_strings
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
 mylookup = TemplateLookup(directories=[os.getcwd()])
+mod_strings = table_strings.get_string_dict()
 
 class Item_Group:
     def __init__(self, name):
@@ -31,10 +33,66 @@ def generate_simple():
         generate(rendered, filename)
 
 def generate_armor():
-    quick_links = ["Helms", "Circlets", "Armor", "Robes", "Shields", "Gloves", "Belts", "Boots",
-                   "Bar", "Dru", "Nec", "Pal"]
+    normal_armors = []
+    exceptional_armors = []
+    elite_armors = []
+    for i, armor_row in enumerate(load_txts.armor_table):
+        if armor_row[4] != "0":
+            for item_type_row in load_txts.item_types_table:
+                if armor_row[48] == item_type_row[1] and armor_row[48] != "":
+                    armor = [mod_strings.get(armor_row[18], armor_row[0]), #0: name
+                             item_type_row[0],  #1: category
+                             armor_row[14],     #2: req_level
+                             armor_row[17],     #3: code
+                             armor_row[23],     #4: norm_code
+                             armor_row[24],     #5: exceptional_code
+                             armor_row[25],     #6: elite code                           
+                             armor_row[5],      #7: min defense
+                             armor_row[6],      #8: max defense
+                             armor_row[11],     #9: durability
+                             armor_row[8],      #10: frw
+                             armor_row[13],     #11: qlvl
+                             armor_row[19],     #12: mag lvl
+                             armor_row[9],      #13: req str
+                             armor_row[10],     #14: block
+                             armor_row[63],     #15: min damage
+                             armor_row[64],     #16: max damage
+                             armor_row[31],     #17: sock
+                             armor_row[32],     #18: gem_type
+                            ]
+                    if armor_row[23] == armor_row[17]:
+                        normal_armors.append(armor)
+                    if armor_row[24] == armor_row[17]:
+                        exceptional_armors.append(armor)
+                    if armor_row[25] == armor_row[17]:
+                        elite_armors.append(armor)
+
+    # First sort normal armors by level req
+    normal_armors.sort(key = lambda x: (int(x[2])))
+
+    armors = list(normal_armors)
+    # Now append exceptional armors in order
+    for normal_armor in list(normal_armors):
+        for exceptional_armor in list(exceptional_armors):
+            if normal_armor[5] == exceptional_armor[3]:
+                armors.append(exceptional_armor)
+                exceptional_armors.remove(exceptional_armor)
+                break
+    if len(exceptional_armors) != 0:
+        print("Uh oh... we didn't find a matching base for all exceptional armors")
+
+    # Now append elite armors in order
+    for normal_armor in list(normal_armors):
+        for elite_armor in list(elite_armors):
+            if normal_armor[6] == elite_armor[3]:
+                armors.append(elite_armor)
+                elite_armors.remove(elite_armor)
+                break
+    if len(elite_armors) != 0:
+        print("Uh oh... we didn't find a matching base for all elite armors")
+
     armor_template = Template(filename="templates/es3armo_n.htm", lookup=mylookup)
-    armor_rendered = armor_template.render(quick_links)
+    armor_rendered = armor_template.render(armors)
     generate(armor_rendered, "es3armo_n.htm")
 
 def generate_weapons():
@@ -54,8 +112,8 @@ def get_other_types(remaining_items):
 
 def get_weapon_types():
     weapon_types = []
-    for i, weapon in enumerate(load_txts.weapons_table):
-        if weapon[1] not in weapon_types and i != 0:
+    for weapon in load_txts.weapons_table:
+        if weapon[1] not in weapon_types:
             weapon_types.append(weapon[1])
     return weapon_types
 
@@ -71,8 +129,8 @@ def get_item_name_from_code(code):
 
 def get_armor_types():
     armor_types = []
-    for i, armor in enumerate(load_txts.armor_table):
-        if armor[48] not in armor_types and i != 0:
+    for armor in load_txts.armor_table:
+        if armor[48] not in armor_types:
             armor_types.append(armor[48])
     return armor_types
 

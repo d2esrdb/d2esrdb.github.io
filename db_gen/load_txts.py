@@ -32,12 +32,10 @@ automagic_table = load_table("automagic.txt")
 prefixes_table = load_table("MagicPrefix.txt")
 suffixes_table = load_table("MagicSuffix.txt")
 
-'''
 first = None
-for i, row in enumerate(item_stat_cost_table):
+for i, row in enumerate(armor_table):
     if i == 0:
         first = row
-    if row[0] == "poisonmindam" or row[0] == "poisonmaxdam" or row[0] == "poisonlength":
-        for j, column in enumerate(first):
-            print(first[j] + ": " + row[j])
-'''
+for i, row in enumerate(first):
+    print(row + ": " + str(i))
+
