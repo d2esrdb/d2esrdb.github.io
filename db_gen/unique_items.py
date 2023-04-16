@@ -333,25 +333,27 @@ def get_item_name_from_code(code):
     print("No name found for code: " + code)
     return "NO_NAME"
 
+def is_in_gamble_table(code):
+    for row in load_txts.gamble_table:
+        if row[1] == code:
+            return True
+    return False
+
 def get_gamble_item_from_code(code):
     for row in load_txts.armor_table:
         if row[17] == code and row[4] == str(1):
             for row_again in load_txts.armor_table:
-                if row_again[17] == row[23]:
+                if row_again[17] != "" and row_again[17] == row[23] and is_in_gamble_table(row_again[17]):
                     return get_item_name_from_code(row_again[17]) + " (" + row_again[17] + ")"
     for row in load_txts.weapons_table:
         if row[3] == code and row[9] == str(1):
             for row_again in load_txts.weapons_table:
-                if row_again[3] == row[34]:
-                    if row_again[3] == "":
-                        return "N/A"
+                if row_again[3] != "" and row_again[3] == row[34] and is_in_gamble_table(row_again[3]):
                     return get_item_name_from_code(row_again[3]) + " (" + row_again[3] + ")"
     for row in load_txts.misc_table:
-        if row[13] == code and row[9] == str(1):
-            for row_again in load_txts.misc_table:
-                if row_again[13] == "":
-                    return "N/A"
-                return get_item_name_from_code(row_again[13]) + " (" + row_again[13] + ")"
+        if row[13] != "" and row[13] == code and row[8] == str(1) and is_in_gamble_table(row[13]):
+            return get_item_name_from_code(row[13]) + " (" + row[13] + ")"
+    return "N/A"
 
 def get_all_equivalent_types(types):
     while True:
