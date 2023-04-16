@@ -346,6 +346,12 @@ def get_gamble_item_from_code(code):
                     if row_again[3] == "":
                         return "N/A"
                     return get_item_name_from_code(row_again[3]) + " (" + row_again[3] + ")"
+    for row in load_txts.misc_table:
+        if row[13] == code and row[9] == str(1):
+            for row_again in load_txts.misc_table:
+                if row_again[13] == "":
+                    return "N/A"
+                return get_item_name_from_code(row_again[13]) + " (" + row_again[13] + ")"
 
 def get_all_equivalent_types(types):
     while True:
