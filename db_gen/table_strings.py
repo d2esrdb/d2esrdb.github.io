@@ -71,3 +71,9 @@ def get_string_dict():
     return key_value_dict
 
 mod_strings = get_string_dict()
+
+#for i in range(1,100):
+#    print(str(i) + ": " + mod_strings["StrSklTabItem" + str(i)])
+
+#for key, value in mod_strings.items():
+#    print(key + ": " + value)

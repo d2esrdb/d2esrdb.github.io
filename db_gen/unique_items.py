@@ -77,19 +77,19 @@ def short_to_long_class(short):
 
 def get_class_from_tab_number(tab_number):
     tab_number = int(tab_number)
-    if tab_number < 4:
+    if tab_number in (0,1,2):
         return "Amazon"
-    if tab_number < 7:
-        return "Paladin"
-    if tab_number < 10:
-        return "Necromancer"
-    if tab_number < 13:
-        return "Barbarian"
-    if tab_number < 16:
+    if tab_number in (3,4,5):
         return "Sorceress"
-    if tab_number < 19:
+    if tab_number in (6,7,8):
+        return "Necromancer"
+    if tab_number in (9,10,11):
+        return "Paladin"
+    if tab_number in (12,13,14):
+        return "Barbarian"
+    if tab_number in (15,16,17):
         return "Druid"
-    if tab_number < 22:
+    if tab_number in (18,19,20):
         return "Assassin"
     return "Unknown"
 
@@ -197,36 +197,11 @@ def get_stat(stat_name, param, min, max, prop_name):
                     return Stat(stat_name, "+" + str(param) + " to Random " + get_class_from_skill_range(min, max) + " Skill", int(item_stat_cost_row[39]))
                 return Stat(stat_name, "+" + get_value_string("", min, max) + " to " + get_skill_name(param) + " (" + get_class_from_skill_name(param) + " Only)", int(item_stat_cost_row[39]))
             if stat_name == "item_addskill_tab":
-                # @TODO is there a better way to do this?
-                if "0" == param:
-                    param = "3"
-                elif "1" == param:
-                    param = "2"
-                elif "2" == param:
-                    param = "1"
-                elif "3" ==  param:
-                    param = "15"
-                elif "4" == param:
-                    param = "14"
-                elif "5" == param:
-                    param = "13"
-                elif "6" == param:
-                    param = "8"
-                elif "8" == param:
-                    param = "9"
-                elif "9" == param:
-                    param = "5"
-                elif "10" == param:
-                    param = "6"
-                elif "11" == param:
-                    param = "4"
-                elif "13" == param:
-                    param = "11"
-                elif "14" == param:
-                    param = "10"
-                elif "15" == param or "16" == param or "17" == param or "18" == param or "19" == param or "20" == param:
-                    param = str(int(param) + 1)
-                return Stat(stat_name, mod_strings["StrSklTabItem" + str(int(param))].replace("%d", get_value_string("", min, max)) + " (" + get_class_from_tab_number(int(param)) + " Only)", int(item_stat_cost_row[39]))
+                # Some hard coded nonsense... known issue though
+                skill_tab_conversion = [3, 2, 1, 15, 14, 13, 8, 7, 9, 6, 5, 4, 11, 12, 10, 16, 17, 18, 19, 20, 21];
+                param = str(int(param))
+                p = str(skill_tab_conversion[int(param)])
+                return Stat(stat_name, mod_strings["StrSklTabItem" + p].replace("%d", get_value_string("", min, max)) + " (" + get_class_from_tab_number(int(param)) + " Only)", int(item_stat_cost_row[39]))
             if stat_name == "item_nonclassskill":
                 return Stat(stat_name, "+" + get_value_string("", min, max) + " to " + get_skill_name(param), int(item_stat_cost_row[39]))
             if stat_name == "item_charged_skill":
