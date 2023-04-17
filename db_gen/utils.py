@@ -9,24 +9,28 @@ class Stat:
         self.priority = priority
 
 class Property:
-    def __init__(self, name, param, min, max):
+    def __init__(self, name, param, min, max, is_automod=False, is_staffmod=False):
         self.name = name
         self.param = param
         self.min = min
         self.max = max
+        self.is_automod = is_automod
+        self.is_staffmod = is_staffmod
         self.stats = []
 
 class Item:
-    def __init__(self, name, item_level, required_level, properties, base_code, gamble_item):
-        self.name = name
+    def __init__(self, name, item_level, required_level, properties, base_code):
+        self.name = mod_strings[name]
         self.item_level = item_level
         self.required_level = required_level
         self.properties = properties
-        self.gamble_item = gamble_item
-        self.base_name = get_item_name_from_code(base_code)
         self.base_code = base_code
         self.bg_color_code = 101010
-        
+        self.gamble_item = get_gamble_item_from_code(base_code)
+        self.base_name = get_item_name_from_code(base_code)
+        fill_automod(self.properties, base_code)
+        fill_staffmod(self.properties, base_code)
+         
     def get_stats_sorted(self):
         stats = []
         for prop in self.properties:
@@ -363,6 +367,9 @@ def get_item_name_from_code(code):
     print("No name found for code: " + code)
     return "NO_NAME"
 
+def fill_staffmod(properties, code):
+    #@TODO implement this function
+    return
 
 def fill_automod(properties, code):
     automods = {}
@@ -389,7 +396,7 @@ def fill_automod(properties, code):
 
     for key in automods:
         if key != "":
-            properties.append(Property(key, automods[key][0], automods[key][1], automods[key][2]))
+            properties.append(Property(key, automods[key][0], automods[key][1], automods[key][2], is_automod=True))
 
 # Custom handling for hardcoded groups
 def handle_hardcoded_groups(property):
