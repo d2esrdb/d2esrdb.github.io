@@ -5,4 +5,3 @@ Stretch goals:
 
 Things we can't fix?/Unknowns
 1. Faith says 0-2 sockets, but we never get 0 in game?
-2. Skill tabs are a mess, is there a better way to do it?

@@ -33,11 +33,17 @@ prefixes_table = load_table("MagicPrefix.txt")
 suffixes_table = load_table("MagicSuffix.txt")
 gamble_table = load_table("gamble.txt")
 
-'''
-first = None
-for i, row in enumerate(misc_table):
-    if i == 0:
-        first = row
-for i, row in enumerate(first):
-    print(row + ": " + str(i))
-'''
+#descstrs = set()
+#first = None
+#for i, row in enumerate(misc_table):
+#    if i == 0:
+#        first = row
+#    if row[64] != "":
+#        descstrs.add(row[64])
+#print(descstrs)
+#import table_strings
+#for dstr in descstrs:
+    #print(table_strings.mod_strings[dstr])
+#for i, row in enumerate(first):
+#    print(row + ": " + second[i] + str(i))
+

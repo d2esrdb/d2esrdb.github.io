@@ -1,9 +1,7 @@
-import unique_items
 import stat_formats
 import load_txts
-import table_strings
-
-mod_strings = table_strings.mod_strings
+from table_strings import *
+from utils import *
 
 class Affix:
     def __init__(self, name, rare, level, max_level, required_level, rarity, stat_string, item_types):
@@ -17,18 +15,6 @@ class Affix:
         self.item_types = item_types
         self.item_types_string = ", ".join(item_types)
 
-def get_value_string(min, max):
-    min = str(min)
-    max = str(max)
-    if min == "" and max == "":
-        return "NOVALUE"
-    if min == "":
-        return max
-    if max == "":
-        return min
-    if min == max:
-        return min
-    return min + "-" + max
 
 def get_group_prop(property):
     groups = {}
@@ -77,11 +63,11 @@ def get_group_prop(property):
                 if param != item_group_stats[stat][0] or min != item_group_stats[stat][1] or max != item_group_stats[stat][2]:
                     use_group_string = False
             if use_group_string:
-                prop = unique_items.Property("Group Property", param, min, max)
-                prop.stats.append(unique_items.Stat("Group Stat", stat_formats.get_stat_string1(int(func), unique_items.get_value_string(param, min, max), unique_items.mod_strings.get(string1, "NONE"), param, min, max, unique_items.mod_strings.get(string2, "NONE")), priority))
+                prop = Property("Group Property", param, min, max)
+                prop.stats.append(Stat("Group Stat", stat_formats.get_stat_string1(int(func), get_value_string(param, min, max), mod_strings.get(string1, "NONE"), param, min, max, mod_strings.get(string2, "NONE")), priority))
                 return prop
 
-    unique_items.handle_hardcoded_groups(property)
+    handle_hardcoded_groups(property)
     return property
 
 def get_affixes(table):
@@ -89,18 +75,18 @@ def get_affixes(table):
     for i, affix in enumerate(table):
         if affix[2] != str(1):
             continue
-        prop1 = unique_items.Property(affix[12], affix[13], affix[14], affix[15])
-        unique_items.fill_property_stats(prop1)
+        prop1 = Property(affix[12], affix[13], affix[14], affix[15])
+        fill_property_stats(prop1)
         prop1 = get_group_prop(prop1)
         prop2 = None
         prop3 = None
         if affix[16] != "":
-            prop2 = unique_items.Property(affix[16], affix[17], affix[18], affix[19])
-            unique_items.fill_property_stats(prop2)
+            prop2 = Property(affix[16], affix[17], affix[18], affix[19])
+            fill_property_stats(prop2)
             prop2 = get_group_prop(prop2)
         if affix[20] != "":
-            prop3 = unique_items.Property(affix[20], affix[21], affix[22], affix[23])
-            unique_items.fill_property_stats(prop3)
+            prop3 = Property(affix[20], affix[21], affix[22], affix[23])
+            fill_property_stats(prop3)
             prop3 = get_group_prop(prop3)
         stats = []
         for stat in prop1.stats:
