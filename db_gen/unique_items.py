@@ -17,8 +17,4 @@ def get_unique_items():
                     properties.append(Property(row[21+j*4], row[22+j*4], row[23+j*4], row[24+j*4]))
             unique_items.append(Item(row[0], row[6], row[7], properties, row[8]))
     
-    for unique_item in unique_items:
-        for property in unique_item.properties:
-            fill_property_stats(property)
-        fill_group_stats(unique_item)
     return unique_items

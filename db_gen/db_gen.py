@@ -3,6 +3,7 @@ import unique_items
 import load_txts
 import affixes
 import table_strings
+from utils import *
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
@@ -40,6 +41,14 @@ def generate_armor():
         if armor_row[4] != "0":
             for item_type_row in load_txts.item_types_table:
                 if armor_row[48] == item_type_row[1] and armor_row[48] != "":
+                    item = Item(armor_row[18], 1, armor_row[14], [], armor_row[17])
+                    automods = []
+                    staffmods = []
+                    for p in item.properties:
+                        if p.is_automod:
+                            for s in p.stats:
+                                automods.append(s.stat_string)
+
                     armor = [mod_strings.get(armor_row[18], armor_row[0]), #0: name
                              item_type_row[0],  #1: category
                              armor_row[14],     #2: req_level
@@ -59,6 +68,8 @@ def generate_armor():
                              armor_row[64],     #16: max damage
                              armor_row[31],     #17: sock
                              armor_row[32],     #18: gem_type
+                             string_array_to_html(automods, 2),          #19: automods
+                             string_array_to_html(staffmods, 2),         #20: staffmods
                             ]
                     if armor_row[23] == armor_row[17]:
                         normal_armors.append(armor)

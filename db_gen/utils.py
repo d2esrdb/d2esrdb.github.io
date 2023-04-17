@@ -30,6 +30,10 @@ class Item:
         self.base_name = get_item_name_from_code(base_code)
         fill_automod(self.properties, base_code)
         fill_staffmod(self.properties, base_code)
+    
+        for p in self.properties:
+            fill_property_stats(p)
+        fill_group_stats(self.properties)
          
     def get_stats_sorted(self):
         stats = []
@@ -435,7 +439,7 @@ def handle_hardcoded_groups(property):
         real_max = int(int(property.max)/256*real_length*25)
         property.stats.append(Stat("Group Stat", mod_strings["strModPoisonDamageRange"].replace("%d-%d", get_value_string("", real_min, real_max)).replace("%d", str(real_length)).title(), priority))
 
-def fill_group_stats(item):
+def fill_group_stats(properties):
     groups = {}
     # Make a dict of lists, containing the dgrp and the associated stats
     for i, row in enumerate(item_stat_cost_table):
@@ -448,7 +452,7 @@ def fill_group_stats(item):
                 groups[row[45]] = [row[0]]
     
     item_group_stats = {}
-    for property in item.properties:
+    for property in properties:
         for stat in property.stats:
             for row in item_stat_cost_table:
                 # If there is a group text for this mod
@@ -485,12 +489,22 @@ def fill_group_stats(item):
             if use_group_string:
                 prop = Property("Group Property", param, min, max)
                 prop.stats.append(Stat("Group Stat", stat_formats.get_stat_string1(int(func), get_value_string(param, min, max), mod_strings.get(string1, "NONE"), param, min, max, mod_strings.get(string2, "NONE")), priority))
-                item.properties.append(prop)
+                properties.append(prop)
                 for p in list(props):
                     try:
-                        item.properties.remove(p)
+                        properties.remove(p)
                     except:
                         pass
     # Custom handling for hard-coded flat damage adds
-    for property in item.properties:
+    for property in properties:
         handle_hardcoded_groups(property)
+
+def string_array_to_html(strs, numbr=1):
+    br = "<br>"*numbr
+    mystring = ""
+    for s in strs:
+        if mystring != "":
+            mystring = mystring + br + s
+        else:
+            mystring = s
+    return mystring
