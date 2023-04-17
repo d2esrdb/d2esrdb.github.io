@@ -487,7 +487,7 @@ def fill_group_stats(properties):
                 if param != item_group_stats[stat][0] or min != item_group_stats[stat][1] or max != item_group_stats[stat][2]:
                     use_group_string = False
             if use_group_string:
-                prop = Property("Group Property", param, min, max)
+                prop = Property("Group Property", param, min, max, props[0].is_automod)
                 prop.stats.append(Stat("Group Stat", stat_formats.get_stat_string1(int(func), get_value_string(param, min, max), mod_strings.get(string1, "NONE"), param, min, max, mod_strings.get(string2, "NONE")), priority))
                 properties.append(prop)
                 for p in list(props):

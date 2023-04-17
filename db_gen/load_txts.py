@@ -33,17 +33,12 @@ prefixes_table = load_table("MagicPrefix.txt")
 suffixes_table = load_table("MagicSuffix.txt")
 gamble_table = load_table("gamble.txt")
 
-#descstrs = set()
-#first = None
-#for i, row in enumerate(misc_table):
-#    if i == 0:
-#        first = row
-#    if row[64] != "":
-#        descstrs.add(row[64])
-#print(descstrs)
-#import table_strings
-#for dstr in descstrs:
-    #print(table_strings.mod_strings[dstr])
-#for i, row in enumerate(first):
-#    print(row + ": " + second[i] + str(i))
+def print_table_headers(table_name):
+    first = None
+    for i, row in enumerate(table_name):
+        if i == 0:
+            first = row
+    for i, col in enumerate(first):
+        print(str(i) + ": " + col)
 
+#print_table_headers(armor_table)
