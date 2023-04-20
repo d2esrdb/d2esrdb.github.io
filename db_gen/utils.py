@@ -29,7 +29,8 @@ class Item:
         self.base_name = get_item_name_from_code(base_code)
         fill_automod(self.properties, base_code)
         self.staffmod = get_staffmod(base_code)
-    
+        self.spelldesc = get_spelldesc(base_code)
+
         for p in self.properties:
             fill_property_stats(p)
         fill_group_stats(self.properties)
@@ -377,6 +378,11 @@ def get_staffmod(code):
                 if item_type[1] == armor[48] and item_type[25] != "":
                     return short_to_long_class(item_type[25])
     return ""
+
+def get_spelldesc(code):
+    for row in misc_table:
+        if row[13] == code:
+            return mod_strings.get(row[64], "")
 
 def fill_automod(properties, code):
     automods = {}

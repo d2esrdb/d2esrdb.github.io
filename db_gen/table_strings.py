@@ -68,6 +68,13 @@ def get_string_dict():
             
             # Create the key/value pair dict
             key_value_dict[key_string] = value_string
+
+    # Convert the embedded color codes to html color
+    for key, value in dict(key_value_dict).items():
+        value = value.replace("'n", "<br>")
+        if "Ã¿c1" in value:
+            key_value_dict[key] = value.replace("Ã¿c1", "<FONT COLOR=\"RED\">") + "</FONT>"
+    
     return key_value_dict
 
 mod_strings = get_string_dict()

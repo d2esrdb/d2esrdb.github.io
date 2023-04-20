@@ -64,6 +64,10 @@
 			<td align=center bgcolor=#${item.bg_color_code}>
 				<font face=arial,helvetica size=-1>
 					<font color=4850B8>
+					% if item.spelldesc != "" and item.spelldesc is not None:
+						${item.spelldesc}
+						<br>
+					% endif
 					% for stat in item.get_stats_sorted():
 						${stat.stat_string}
 						<br>

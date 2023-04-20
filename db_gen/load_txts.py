@@ -50,5 +50,6 @@ def print_row_with_cell_equal_to(table_name, cell_index, value):
             for i, col in enumerate(first):
                 print(str(i) + ": " + col + ": " + row[i])
 
-print_row_with_cell_equal_to(armor_table, 0, "Robe")
+print_row_with_cell_equal_to(misc_table, 0, "Grand Charm4")
+#print_row_with_cell_equal_to(armor_table, 0, "Robe")
 #print_table_headers(armor_table)
