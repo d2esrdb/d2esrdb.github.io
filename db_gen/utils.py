@@ -9,13 +9,12 @@ class Stat:
         self.priority = priority
 
 class Property:
-    def __init__(self, name, param, min, max, is_automod=False, is_staffmod=False):
+    def __init__(self, name, param, min, max, is_automod=False):
         self.name = name
         self.param = param
         self.min = min
         self.max = max
         self.is_automod = is_automod
-        self.is_staffmod = is_staffmod
         self.stats = []
 
 class Item:
@@ -29,7 +28,7 @@ class Item:
         self.gamble_item = get_gamble_item_from_code(base_code)
         self.base_name = get_item_name_from_code(base_code)
         fill_automod(self.properties, base_code)
-        fill_staffmod(self.properties, base_code)
+        self.staffmod = get_staffmod(base_code)
     
         for p in self.properties:
             fill_property_stats(p)
@@ -75,7 +74,7 @@ def short_to_long_class(short):
         return "Druid"
     if short == "ass":
         return "Assassin"
-    return "Unknown"
+    return "Unknown class: " + short
 
 def get_class_from_tab_number(tab_number):
     tab_number = int(tab_number)
@@ -371,9 +370,13 @@ def get_item_name_from_code(code):
     print("No name found for code: " + code)
     return "NO_NAME"
 
-def fill_staffmod(properties, code):
-    #@TODO implement this function
-    return
+def get_staffmod(code):
+    for armor in armor_table:
+        if armor[17] == code:
+            for item_type in item_types_table:
+                if item_type[1] == armor[48] and item_type[25] != "":
+                    return short_to_long_class(item_type[25])
+    return ""
 
 def fill_automod(properties, code):
     automods = {}

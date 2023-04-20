@@ -41,4 +41,14 @@ def print_table_headers(table_name):
     for i, col in enumerate(first):
         print(str(i) + ": " + col)
 
+def print_row_with_cell_equal_to(table_name, cell_index, value):
+    first = None
+    for i, row in enumerate(table_name):
+        if i == 0:
+            first = row
+        if row[cell_index] == value:
+            for i, col in enumerate(first):
+                print(str(i) + ": " + col + ": " + row[i])
+
+print_row_with_cell_equal_to(armor_table, 0, "Robe")
 #print_table_headers(armor_table)
