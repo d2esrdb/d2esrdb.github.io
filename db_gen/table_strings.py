@@ -21,6 +21,26 @@ def read_string(data):
         string_byte = data.read(1).decode("raw_unicode_escape")
     return string
 
+def replace_code_with_color(value, code, color):
+    if code in value:
+        return value.replace(code, "<FONT COLOR=\"" + color + "\">") + "</FONT>"
+    return value
+
+def d2_color_to_html_color(value):
+    value = replace_code_with_color(value, "Ã¿c1", "RED")
+    value = replace_code_with_color(value, "Ã¿c2", "GREEN")
+    value = replace_code_with_color(value, "Ã¿c3", "BLUE")
+    value = replace_code_with_color(value, "Ã¿c4", "GOLD")
+    value = replace_code_with_color(value, "Ã¿c5", "DARKGRAY")
+    value = replace_code_with_color(value, "Ã¿c6", "BLACK")
+    value = replace_code_with_color(value, "Ã¿c7", "GOLDENROD")
+    value = replace_code_with_color(value, "Ã¿c8", "ORANGE")
+    value = replace_code_with_color(value, "Ã¿c9", "YELLOW")
+    value = replace_code_with_color(value, "Ã¿c:", "GREEN")
+    value = replace_code_with_color(value, "Ã¿c<<", "GREEN")
+    value = replace_code_with_color(value, "Ã¿c;", "PURPLE")
+    return value
+
 def get_string_dict():
     data_path = ""
     for root, dirs, files in os.walk("../"):
@@ -71,9 +91,8 @@ def get_string_dict():
 
     # Convert the embedded color codes to html color
     for key, value in dict(key_value_dict).items():
-        value = value.replace("'n", "<br>")
-        if "Ã¿c1" in value:
-            key_value_dict[key] = value.replace("Ã¿c1", "<FONT COLOR=\"RED\">") + "</FONT>"
+        value = value.replace("\n", "<br>")
+        key_value_dict[key] = d2_color_to_html_color(value)
     
     return key_value_dict
 
