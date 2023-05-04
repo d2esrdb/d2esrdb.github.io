@@ -1,0 +1,7 @@
+name: d2esrdb
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - mako
+prefix: /home/d2esr/miniconda3/envs/d2esrdb
