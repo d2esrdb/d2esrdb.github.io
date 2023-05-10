@@ -321,13 +321,11 @@ def generate_suffixes():
     armor_rendered = armor_template.render(suffixes)
     generate(armor_rendered, "es3suff_n.htm")
 
-def set_baseurl(baseURL="http\\://db.d2esr.online/beta/"):
+def set_baseurl(baseURL="http\://db.d2esr.online/beta/"):
     files = os.scandir(path="..")
     for fil in files:
         if ".htm" in fil.name:
             print("Replacing URLs in "+fil.name)
-            print("sed -i 's:{{BASEURL}}:{:s}:g' ../{:s}".format(
-                baseURL, fil.name))
             os.system("sed -i 's:{{BASEURL}}:{:s}:g' ../{:s}".format(
                 baseURL, fil.name))
 
