@@ -3,14 +3,11 @@ import unique_items
 import load_txts
 import affixes
 import table_strings
+import db_config
 from utils import *
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
-PROJECT = "ESR"
-VERSION = "5.3A5"
-
-PROJECT_DIR = "../" + PROJECT + "/"
 mylookup = TemplateLookup(directories=[os.getcwd()])
 mod_strings = table_strings.get_string_dict()
 

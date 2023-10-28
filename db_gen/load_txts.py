@@ -1,11 +1,12 @@
 import os
 import csv
+from db_config import *
 from re import I
 
 include_header = False
 
 def load_table(table_name):
-    table = open("../ESR/" + table_name, newline='')
+    table = open(PROJECT_DIR + table_name, newline='')
     if include_header:
         return list(csv.reader(table, delimiter='\t'))
     return list(csv.reader(table, delimiter='\t'))[1:]
@@ -46,6 +47,11 @@ def print_row_with_cell_equal_to(table_name, cell_index, value):
             for i, col in enumerate(first):
                 print(str(i) + ": " + col + ": " + row[i])
 
-print_row_with_cell_equal_to(misc_table, 0, "Grand Charm4")
+
+
+#print_row_with_cell_equal_to(properties_table, 0, "all-stats")
+print_row_with_cell_equal_to(unique_items_table, 0, "The Bishop")
+#print_row_with_cell_equal_to(unique_items_table, 0, "Soulstone")
+#print_row_with_cell_equal_to(misc_table, 0, "Grand Charm4")
 #print_row_with_cell_equal_to(armor_table, 0, "Robe")
 #print_table_headers(armor_table)

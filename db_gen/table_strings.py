@@ -1,4 +1,5 @@
 import os
+from db_config import *
 
 # List of string tables to parse. Parsed in order so higher indexed tables
 # override lower tables in the case of duplicate strings  
@@ -6,7 +7,7 @@ string_tables = [
     "string.tbl",
     "expansionstring.tbl",
     "patchstring.tbl",
-    "ES AlphA.tbl",   
+#    "ES AlphA.tbl",   
 ]
 
 def read_bytes(data, num_bytes):
@@ -44,7 +45,7 @@ def d2_color_to_html_color(value):
 def get_string_dict():
     key_value_dict = {}
     for string_table in string_tables:
-        strings = open("../ESR/" + string_table, "rb")
+        strings = open(PROJECT_DIR + string_table, "rb")
 
         # HEADER 21 bytes
         read_bytes(strings, 2) # CRC, ignored
