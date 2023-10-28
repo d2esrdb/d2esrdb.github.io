@@ -19,7 +19,7 @@ class Property:
 
 class Item:
     def __init__(self, name, item_level, required_level, properties, base_code):
-        self.name = mod_strings[name]
+        self.name = mod_strings.get(name, "MISSING tbl: " + name)
         self.item_level = item_level
         self.required_level = required_level
         self.properties = properties
@@ -365,7 +365,7 @@ def get_item_name_from_code(code):
 
     for row in misc_table:
         if row[13] == code:
-            return mod_strings[row[15]]
+            return mod_strings.get(row[15], "MISSING TBL: " + row[15])
     if mod_strings.get(code) is not None:
         return mod_strings[code]
     print("No name found for code: " + code)
