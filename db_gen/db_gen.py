@@ -7,6 +7,10 @@ from utils import *
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
+PROJECT = "ESR"
+VERSION = "5.3A5"
+
+PROJECT_DIR = "../" + PROJECT + "/"
 mylookup = TemplateLookup(directories=[os.getcwd()])
 mod_strings = table_strings.get_string_dict()
 
@@ -16,13 +20,13 @@ class Item_Group:
         self.items = []
 
 def get_version():
-    return "5.3A6"
+    return VERSION
 
 def generate(body_template, filename):
     base_template = Template(filename="templates/base.htm", lookup=mylookup)
     base_rendered = base_template.render(body=body_template,
                                          version=get_version()).replace("\r","")
-    open("../ESR/" + filename, "w").write(base_rendered)
+    open(PROJECT_DIR + filename, "w").write(base_rendered)
 
 def generate_simple():
     filenames = ["es3gem_n.htm", "es3map_n.htm", "es3runew_n.htm", "es3set_n.htm", "es3cube_n.htm", "es3gemw_n.htm", "index.htm"]
@@ -190,7 +194,7 @@ def generate_uniques():
     base_template = Template(filename="templates/base.htm", lookup=mylookup)
     base_rendered = base_template.render(body=unique_weapon_rendered,
                                          version=get_version()).replace("\r","")    
-    open("../es3uweap_n.htm", "w").write(base_rendered)
+    open(PROJECT_DIR + "es3uweap_n.htm", "w").write(base_rendered)
 
     item_groups = []
     unique_armor_template = Template(filename="templates/es3uarmo_n.htm",
@@ -210,7 +214,7 @@ def generate_uniques():
     base_template = Template(filename="templates/base.htm", lookup=mylookup)
     base_rendered = base_template.render(body=unique_armor_rendered,
                                          version=get_version()).replace("\r","")
-    open("../es3uarmo_n.htm", "w").write(base_rendered)
+    open(PROJECT_DIR + "es3uarmo_n.htm", "w").write(base_rendered)
 
     # Remove ores
     for item in list(unique_items_list):
@@ -231,7 +235,7 @@ def generate_uniques():
         base_rendered = base_template.render(body=unique_armor_rendered,
                                              version=get_version()).replace("\r","")
     
-    open("../es3uother_n.htm", "w").write(base_rendered)
+    open(PROJECT_DIR + "es3uother_n.htm", "w").write(base_rendered)
 
     return
 
@@ -305,7 +309,7 @@ def generate_uniques():
     base_rendered = base_template.render(body=unique_armor_rendered,
                                          version=get_version()).replace("\r","")
     
-    open("../es3uarmo_n.htm", "w").write(base_rendered)
+    open(PROJECT_DIR + "es3uarmo_n.htm", "w").write(base_rendered)
 
 def generate_prefixes():
     prefixes = affixes.get_prefixes()
