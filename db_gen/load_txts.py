@@ -3,13 +3,9 @@ import csv
 from re import I
 
 include_header = False
-data_path = ""
-for root, dirs, files in os.walk("../"):
-    if "Data" in dirs:
-        data_path = os.path.join(root, "Data")
 
 def load_table(table_name):
-    table = open(data_path + "/global/excel/" + table_name, newline='')
+    table = open("../ESR/" + table_name, newline='')
     if include_header:
         return list(csv.reader(table, delimiter='\t'))
     return list(csv.reader(table, delimiter='\t'))[1:]

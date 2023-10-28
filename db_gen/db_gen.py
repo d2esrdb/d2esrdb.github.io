@@ -16,9 +16,7 @@ class Item_Group:
         self.items = []
 
 def get_version():
-    for directory_name in os.listdir("../"):
-        if directory_name.startswith("ESR"):
-            return directory_name.replace("ESR", "").replace("_", "").strip()
+    return "5.3A5"
 
 def generate(body_template, filename):
     base_template = Template(filename="templates/base.htm", lookup=mylookup)

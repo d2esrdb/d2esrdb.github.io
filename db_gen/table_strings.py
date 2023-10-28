@@ -42,14 +42,9 @@ def d2_color_to_html_color(value):
     return value
 
 def get_string_dict():
-    data_path = ""
-    for root, dirs, files in os.walk("../"):
-        if "Data" in dirs:
-            data_path = os.path.join(root, "Data")
-
     key_value_dict = {}
     for string_table in string_tables:
-        strings = open(data_path + "/local/LNG/eng/" + string_table, "rb")
+        strings = open("../ESR/" + string_table, "rb")
 
         # HEADER 21 bytes
         read_bytes(strings, 2) # CRC, ignored
