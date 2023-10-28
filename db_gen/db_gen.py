@@ -16,13 +16,13 @@ class Item_Group:
         self.items = []
 
 def get_version():
-    return "5.3A5"
+    return "5.3A6"
 
 def generate(body_template, filename):
     base_template = Template(filename="templates/base.htm", lookup=mylookup)
     base_rendered = base_template.render(body=body_template,
                                          version=get_version()).replace("\r","")
-    open("../" + filename, "w").write(base_rendered)
+    open("../ESR/" + filename, "w").write(base_rendered)
 
 def generate_simple():
     filenames = ["es3gem_n.htm", "es3map_n.htm", "es3runew_n.htm", "es3set_n.htm", "es3cube_n.htm", "es3gemw_n.htm", "index.htm"]
