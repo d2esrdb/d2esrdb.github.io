@@ -29,7 +29,7 @@ def generate(body_template, filename):
     open(PROJECT_DIR + filename, "w").write(base_rendered)
 
 def generate_simple():
-    filenames = ["es3gem_n.htm", "es3map_n.htm", "es3runew_n.htm", "es3set_n.htm", "es3cube_n.htm", "es3gemw_n.htm", "index.htm"]
+    filenames = ["gems.htm", "maps.htm", "runewords.htm", "sets.htm", "recipes.htm", "gemwords.htm", "index.htm"]
     for filename in filenames:
         template = Template(filename="templates/" + filename, lookup=mylookup)
         rendered = template.render()
@@ -103,17 +103,17 @@ def generate_armor():
     if len(elite_armors) != 0:
         print("Uh oh... we didn't find a matching base for all elite armors")
 
-    armor_template = Template(filename="templates/es3armo_n.htm", lookup=mylookup)
+    armor_template = Template(filename="templates/armors.htm", lookup=mylookup)
     armor_rendered = armor_template.render(armors)
-    generate(armor_rendered, "es3armo_n.htm")
+    generate(armor_rendered, "armors.htm")
 
 def generate_weapons():
     quick_links = ["Axes", "Bows", "Xbows", "Daggers", "Javelins", "Knuckles", "Maces", "Poles",
                    "Scepters", "Spears", "Staves", "Swords", "Throw", "Wands", "Ama", "Asn", "Bar",
                    "Dru", "Nec", "Pal", "Sor"]
-    weapon_template = Template(filename="templates/es3weap_n.htm", lookup=mylookup)
+    weapon_template = Template(filename="templates/weapons.htm", lookup=mylookup)
     weapon_rendered = weapon_template.render(quick_links=quick_links)
-    generate(weapon_rendered, "es3weap_n.htm")
+    generate(weapon_rendered, "weapons.htm")
 
 def get_other_types(remaining_items):
     other_types = []
@@ -179,7 +179,7 @@ def set_armor_bg_color(item):
 def generate_uniques():
     unique_items_list = unique_items.get_unique_items()
     item_groups = []
-    unique_weapon_template = Template(filename="templates/es3uarmo_n.htm",
+    unique_weapon_template = Template(filename="templates/uniques.htm",
                                       lookup=mylookup)
     for weapon_type in get_weapon_types():
         weapon_group = Item_Group(get_item_name_from_code(weapon_type))
@@ -194,10 +194,10 @@ def generate_uniques():
     base_template = Template(filename="templates/base.htm", lookup=mylookup)
     base_rendered = base_template.render(body=unique_weapon_rendered,
                                          version=get_version()).replace("\r","")    
-    open(PROJECT_DIR + "es3uweap_n.htm", "w").write(base_rendered)
+    open(PROJECT_DIR + "unique_weapons.htm", "w").write(base_rendered)
 
     item_groups = []
-    unique_armor_template = Template(filename="templates/es3uarmo_n.htm",
+    unique_armor_template = Template(filename="templates/uniques.htm",
                                      lookup=mylookup)
     for armor_type in get_armor_types():
         armor_group = Item_Group(get_item_name_from_code(armor_type))
@@ -214,7 +214,7 @@ def generate_uniques():
     base_template = Template(filename="templates/base.htm", lookup=mylookup)
     base_rendered = base_template.render(body=unique_armor_rendered,
                                          version=get_version()).replace("\r","")
-    open(PROJECT_DIR + "es3uarmo_n.htm", "w").write(base_rendered)
+    open(PROJECT_DIR + "unique_armors.htm", "w").write(base_rendered)
 
     # Remove ores
     for item in list(unique_items_list):
@@ -235,14 +235,14 @@ def generate_uniques():
         base_rendered = base_template.render(body=unique_armor_rendered,
                                              version=get_version()).replace("\r","")
     
-    open(PROJECT_DIR + "es3uother_n.htm", "w").write(base_rendered)
+    open(PROJECT_DIR + "unique_others.htm", "w").write(base_rendered)
 
     return
 
     item_groups = []
     quick_links = ["Rings", "Amulets", "Charms", "Jewels", "Helms", "Circlets", "Armor", "Robes",
                    "Shields", "Gloves", "Boots", "Belts", "Bar", "Dru", "Nec", "Pal"]
-    unique_armor_template = Template(filename="templates/es3uarmo_n.htm",
+    unique_armor_template = Template(filename="templates/uniques.htm",
                                      lookup=mylookup)
     ring_groups =   [
                         ["Generic Rings", "rin"],
@@ -309,19 +309,19 @@ def generate_uniques():
     base_rendered = base_template.render(body=unique_armor_rendered,
                                          version=get_version()).replace("\r","")
     
-    open(PROJECT_DIR + "es3uarmo_n.htm", "w").write(base_rendered)
+    open(PROJECT_DIR + "unique_armors.htm", "w").write(base_rendered)
 
 def generate_prefixes():
     prefixes = affixes.get_prefixes()
-    armor_template = Template(filename="templates/es3affix_n.htm", lookup=mylookup)
+    armor_template = Template(filename="templates/affixes.htm", lookup=mylookup)
     armor_rendered = armor_template.render(prefixes)
-    generate(armor_rendered, "es3pref_n.htm")
+    generate(armor_rendered, "prefixes.htm")
 
 def generate_suffixes():
     suffixes = affixes.get_suffixes()
-    armor_template = Template(filename="templates/es3affix_n.htm", lookup=mylookup)
+    armor_template = Template(filename="templates/affixes.htm", lookup=mylookup)
     armor_rendered = armor_template.render(suffixes)
-    generate(armor_rendered, "es3suff_n.htm")
+    generate(armor_rendered, "suffixes.htm")
 
 generate_armor()
 generate_weapons()
