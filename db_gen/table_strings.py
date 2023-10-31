@@ -26,12 +26,30 @@ def replace_code_with_color(value, code, color, count):
     if code in value:
         return value.replace(code, "<FONT COLOR=\"" + color + "\">", 1), count+1
     return value, count
+'''
+Ã¿c0 - Light Gray (Item Descriptions)
+Ã¿c1 - Red
+Ã¿c2 - Bright Green (Set Items)
+Ã¿c3 - Blue (Magic Items)
+Ã¿c4 - Gold (Unique Items)
+Ã¿c5 - Dark Gray (Socketed/Ethereal Items)
+Ã¿c6 - Transparent (Text Doesn't Show)
+Ã¿c7 - Tan
+Ã¿c8 - Orange (Crafted Items)
+Ã¿c9 - Yellow (Rare Items)
+Ã¿c: - Dark Green
+Ã¿c; - Purple
+Ã¿c/ - White (Brighter than Light Gray)
+Ã¿c. - Messed Up White (Same as above but text is messed up)
+
+Thanks Kieran zkier
+'''
 
 def d2_color_to_html_color(value):
     count = 0
     while True:
         start_count = count
-        value, count = replace_code_with_color(value, "Ã¿c0", "WHITE", count)
+        value, count = replace_code_with_color(value, "Ã¿c0", "LIGHTGRAY", count)
         value, count = replace_code_with_color(value, "Ã¿c1", "RED", count)
         value, count = replace_code_with_color(value, "Ã¿c2", "GREEN", count)
         value, count = replace_code_with_color(value, "Ã¿c3", "BLUE", count)
@@ -41,9 +59,10 @@ def d2_color_to_html_color(value):
         value, count = replace_code_with_color(value, "Ã¿c7", "GOLDENROD", count)
         value, count = replace_code_with_color(value, "Ã¿c8", "ORANGE", count)
         value, count = replace_code_with_color(value, "Ã¿c9", "YELLOW", count)
-        value, count = replace_code_with_color(value, "Ã¿c:", "GREEN", count)
-        value, count = replace_code_with_color(value, "Ã¿c<<", "GREEN", count)
+        value, count = replace_code_with_color(value, "Ã¿c:", "DARKGREEN", count)
         value, count = replace_code_with_color(value, "Ã¿c;", "PURPLE", count)
+        value, count = replace_code_with_color(value, "Ã¿c/", "WHITE", count)
+        value, count = replace_code_with_color(value, "Ã¿c.", "WHITE", count)
         if start_count == count:
             break
     value = value + "</FONT>" * count
