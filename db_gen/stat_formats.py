@@ -2,6 +2,7 @@
 # Strings from https://d2mods.info/forum/kb/viewarticle?a=448
 import table_strings 
 import load_txts
+import re
 
 def get_monster_from_id(mon_id):
     for mon_stat_row in load_txts.mon_stats_table:
@@ -69,7 +70,8 @@ def get_stat_string0(descfunc, string1, param, min, max, string2=None, _class=No
         case 18:
             return string1 + " (Increases near " + time + ")"
         case 19:
-            return "Custom sprintf not implemented"
+            #TODO this won't handle all cases
+            return re.sub(r'%\S*', get_value_string(param, min, max), string1, count=1)
         case 20:
             return string1
         case 21:
@@ -136,7 +138,8 @@ def get_stat_string1(descfunc, value, string1, param, min, max, string2=None, _c
         case 18:
             return value + "% " + string1 + " (Increases near " + time + ")"
         case 19:
-            return "Custom sprintf not implemented"
+            #TODO this won't handle all cases
+            return re.sub(r'%\S*', get_value_string(param, min, max), string1, count=1)
         case 20:
             if "-" in value:
                 return "-(" + value + ")% " + string1
@@ -222,7 +225,8 @@ def get_stat_string2(descfunc, value, string1, param, min, max, string2=None, _c
         case 18:
             return string1 + " " + value + "% (Increases near " + time + ")"
         case 19:
-            return "Custom sprintf not implemented"
+            #TODO this won't handle all cases
+            return re.sub(r'%\S*', get_value_string(param, min, max), string1, count=1)
         case 20:
             if "-" in value:
                 return string1 + " -(" + value + ")%"

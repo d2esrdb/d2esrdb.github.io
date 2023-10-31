@@ -293,7 +293,7 @@ def get_stat(stat_name, param, min, max, prop_name):
             
             priority = item_stat_cost_row[39]
             if not item_stat_cost_row[39].isdigit():
-                print("No Priority for stat: " + stat_name + ". Using priority 0")
+                #print("No Priority for stat: " + stat_name + ". Using priority 0")
                 priority = 0
             if not item_stat_cost_row[40].isdigit():
                 print("Bad stat no func: " + stat_name)

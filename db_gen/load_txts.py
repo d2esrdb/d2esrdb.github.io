@@ -50,7 +50,7 @@ def print_row_with_cell_equal_to(table_name, cell_index, value):
 
 
 #print_row_with_cell_equal_to(properties_table, 0, "all-stats")
-print_row_with_cell_equal_to(unique_items_table, 0, "The Bishop")
+#print_row_with_cell_equal_to(unique_items_table, 0, "The Bishop")
 #print_row_with_cell_equal_to(unique_items_table, 0, "Soulstone")
 #print_row_with_cell_equal_to(misc_table, 0, "Grand Charm4")
 #print_row_with_cell_equal_to(armor_table, 0, "Robe")

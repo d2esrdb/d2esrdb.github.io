@@ -22,24 +22,31 @@ def read_string(data):
         string_byte = data.read(1).decode("raw_unicode_escape")
     return string
 
-def replace_code_with_color(value, code, color):
+def replace_code_with_color(value, code, color, count):
     if code in value:
-        return value.replace(code, "<FONT COLOR=\"" + color + "\">") + "</FONT>"
-    return value
+        return value.replace(code, "<FONT COLOR=\"" + color + "\">", 1), count+1
+    return value, count
 
 def d2_color_to_html_color(value):
-    value = replace_code_with_color(value, "Ã¿c1", "RED")
-    value = replace_code_with_color(value, "Ã¿c2", "GREEN")
-    value = replace_code_with_color(value, "Ã¿c3", "BLUE")
-    value = replace_code_with_color(value, "Ã¿c4", "GOLD")
-    value = replace_code_with_color(value, "Ã¿c5", "DARKGRAY")
-    value = replace_code_with_color(value, "Ã¿c6", "BLACK")
-    value = replace_code_with_color(value, "Ã¿c7", "GOLDENROD")
-    value = replace_code_with_color(value, "Ã¿c8", "ORANGE")
-    value = replace_code_with_color(value, "Ã¿c9", "YELLOW")
-    value = replace_code_with_color(value, "Ã¿c:", "GREEN")
-    value = replace_code_with_color(value, "Ã¿c<<", "GREEN")
-    value = replace_code_with_color(value, "Ã¿c;", "PURPLE")
+    count = 0
+    while True:
+        start_count = count
+        value, count = replace_code_with_color(value, "Ã¿c0", "WHITE", count)
+        value, count = replace_code_with_color(value, "Ã¿c1", "RED", count)
+        value, count = replace_code_with_color(value, "Ã¿c2", "GREEN", count)
+        value, count = replace_code_with_color(value, "Ã¿c3", "BLUE", count)
+        value, count = replace_code_with_color(value, "Ã¿c4", "GOLD", count)
+        value, count = replace_code_with_color(value, "Ã¿c5", "DARKGRAY", count)
+        value, count = replace_code_with_color(value, "Ã¿c6", "BLACK", count)
+        value, count = replace_code_with_color(value, "Ã¿c7", "GOLDENROD", count)
+        value, count = replace_code_with_color(value, "Ã¿c8", "ORANGE", count)
+        value, count = replace_code_with_color(value, "Ã¿c9", "YELLOW", count)
+        value, count = replace_code_with_color(value, "Ã¿c:", "GREEN", count)
+        value, count = replace_code_with_color(value, "Ã¿c<<", "GREEN", count)
+        value, count = replace_code_with_color(value, "Ã¿c;", "PURPLE", count)
+        if start_count == count:
+            break
+    value = value + "</FONT>" * count
     return value
 
 def get_string_dict():
