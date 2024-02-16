@@ -25,7 +25,7 @@ def generate(body_template, filename):
                                          version=get_version()).replace("\r","")
     open(PROJECT_DIR + filename, "w").write(base_rendered)
 
-def generate_simple():
+def generate_static():
     filenames = ["gems.htm", "maps.htm", "runewords.htm", "sets.htm", "recipes.htm", "gemwords.htm", "index.htm"]
     for filename in filenames:
         template = Template(filename="templates/" + filename, lookup=mylookup)
@@ -323,6 +323,6 @@ def generate_suffixes():
 generate_armor()
 generate_weapons()
 generate_uniques()
-generate_simple()
+generate_static()
 generate_prefixes()
 generate_suffixes()
