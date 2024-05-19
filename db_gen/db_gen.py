@@ -343,7 +343,7 @@ class Database_Generator:
         self.generate_prefixes()
         self.generate_suffixes()
 
-for db in config.databases:
+def generate_static_links(db):
     prelinks = ""
     postlinks = ""
     extra_static = []
@@ -360,6 +360,13 @@ for db in config.databases:
     postlink_file = open("templates/postlinks.htm", "w")
     postlink_file.write(postlinks)
     postlink_file.close()
-    db_gen = Database_Generator(db[0], db[1], db[2], db[3])
-    db_gen.gen_all()
-    db_gen.generate_static(extra_static)
+    return extra_static
+
+for db in config.databases:
+    if len(sys.argv) == 1 or sys.argv[1] == db[0]:
+        print("----GENERATING " + db[1] + "-----")
+        extra_static = generate_static_links(db)
+        db_gen = Database_Generator(db[0], db[1], db[2], db[3])
+        db_gen.gen_all()
+        db_gen.generate_static(extra_static)
+        print("----DONE-----")
