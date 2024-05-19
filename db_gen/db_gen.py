@@ -2,6 +2,7 @@ import sys
 import os
 
 import config
+import operator
 import unique_items
 import load_txts
 from affixes import *
@@ -86,7 +87,7 @@ class Database_Generator:
                             elite_armors.append(armor)
 
         # First sort normal armors by level req
-        normal_armors.sort(key = lambda x: (int(x[2])))
+        normal_armors.sort(key = operator.itemgetter(2))
 
         armors = list(normal_armors)
         # Now append exceptional armors in order

@@ -9,7 +9,6 @@
 
 
 
-
 <table width="818" cellpadding="5" border="0">
 <tbody><tr><td colspan="13" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
 <font color="FF0000"><b>Helms/Torso/Shields dropped in normal and early NM may not be able to have the max sockets.</b></font> See <a href="https://d2esr.fandom.com/wiki/Item_Enhancement#Making_Sockets">here</a> for details.<br>
@@ -17,9 +16,9 @@ Consult the wiki for a <a href="https://d2esr.fandom.com/wiki/Tables#Area_Levels
 </font></td></tr><tr>
 </tr></tbody></table>
 
-% for category in list(categories):
+% for category in sorted(list(categories)):
 <a name="${category}"></a>
-% for qlink in list(categories):
+% for qlink in sorted(list(categories)):
 <a href="#${qlink}">[${qlink}]</a>
 % endfor
     <table cellpadding="5" border="0">
