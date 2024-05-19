@@ -1,14 +1,4 @@
 import os
-from db_config import *
-
-# List of string tables to parse. Parsed in order so higher indexed tables
-# override lower tables in the case of duplicate strings  
-string_tables = [
-    "string.tbl",
-    "expansionstring.tbl",
-    "patchstring.tbl",
-#    "ES AlphA.tbl",   
-]
 
 def read_bytes(data, num_bytes):
     return int.from_bytes(data.read(num_bytes), byteorder='little')
@@ -68,10 +58,10 @@ def d2_color_to_html_color(value):
     value = value + "</FONT>" * count
     return value
 
-def get_string_dict():
+def get_string_dict(db_code, string_tables):
     key_value_dict = {}
     for string_table in string_tables:
-        strings = open(PROJECT_DIR + string_table, "rb")
+        strings = open("../" + db_code + "/" + string_table, "rb")
 
         # HEADER 21 bytes
         read_bytes(strings, 2) # CRC, ignored
@@ -118,10 +108,3 @@ def get_string_dict():
     
     return key_value_dict
 
-mod_strings = get_string_dict()
-
-#for i in range(1,100):
-#    print(str(i) + ": " + mod_strings["StrSklTabItem" + str(i)])
-
-#for key, value in mod_strings.items():
-#    print(key + ": " + value)

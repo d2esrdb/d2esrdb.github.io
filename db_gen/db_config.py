@@ -1,4 +1,0 @@
-PROJECT = "ESE"
-VERSION = "1"
-
-PROJECT_DIR = "../" + PROJECT + "/"

@@ -5,9 +5,9 @@ import os
 from table_strings import *
 import load_txts
 
-def get_unique_items():
+def get_unique_items(tables, mod_strings):
     unique_items = []
-    for i, row in enumerate(load_txts.unique_items_table):
+    for i, row in enumerate(tables.unique_items_table):
         # If item is enabled
         if row[4].isdigit() and int(row[4]) > 0:
             properties = []
@@ -15,6 +15,6 @@ def get_unique_items():
                 # If the property doesn't have a name, then there isn't a property
                 if row[21+j*4] != "":
                     properties.append(Property(row[21+j*4], row[22+j*4], row[23+j*4], row[24+j*4]))
-            unique_items.append(Item(row[0], row[6], row[7], properties, row[8]))
+            unique_items.append(Item(row[0], row[6], row[7], properties, row[8], mod_strings, tables))
     
     return unique_items

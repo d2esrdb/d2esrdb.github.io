@@ -1,51 +1,48 @@
 import os
 import csv
-from db_config import *
 from re import I
 
-include_header = False
+class Tables:
+    def __init__(self, db_name):
+        self.include_header = False
+        self.db_name = db_name
+        self.weapons_table = self.load_table("Weapons.txt")
+        self.armor_table = self.load_table("Armor.txt")
+        self.skills_table = self.load_table("Skills.txt")
+        self.skill_desc_table = self.load_table("SkillDesc.txt")
+        self.unique_items_table = self.load_table("UniqueItems.txt")
+        self.properties_table = self.load_table("Properties.txt")
+        self.item_stat_cost_table = self.load_table("ItemStatCost.txt")
+        self.item_types_table = self.load_table("ItemTypes.txt")
+        self.misc_table = self.load_table("Misc.txt")
+        self.mon_stats_table = self.load_table("MonStats.txt")
+        self.automagic_table = self.load_table("automagic.txt")
+        self.prefixes_table = self.load_table("MagicPrefix.txt")
+        self.suffixes_table = self.load_table("MagicSuffix.txt")
+        self.gamble_table = self.load_table("gamble.txt")
 
-def load_table(table_name):
-    table = open(PROJECT_DIR + table_name, newline='')
-    if include_header:
-        return list(csv.reader(table, delimiter='\t'))
-    return list(csv.reader(table, delimiter='\t'))[1:]
+    def load_table(self, table_name):
+        table = open("../" + self.db_name + "/" + table_name, newline='')
+        if self.include_header:
+            return list(csv.reader(table, delimiter='\t'))
+        return list(csv.reader(table, delimiter='\t'))[1:]
 
-# For debugging
-if __name__ == "__main__":
-    include_header = True
+    def print_table_headers(self, table_name):
+        first = None
+        for i, row in enumerate(table_name):
+            if i == 0:
+                first = row
+        for i, col in enumerate(first):
+            print(str(i) + ": " + col)
 
-weapons_table = load_table("Weapons.txt")
-armor_table = load_table("Armor.txt")
-skills_table = load_table("Skills.txt")
-skill_desc_table = load_table("SkillDesc.txt")
-unique_items_table = load_table("UniqueItems.txt")
-properties_table = load_table("Properties.txt")
-item_stat_cost_table = load_table("ItemStatCost.txt")
-item_types_table = load_table("ItemTypes.txt")
-misc_table = load_table("Misc.txt")
-mon_stats_table = load_table("MonStats.txt")
-automagic_table = load_table("automagic.txt")
-prefixes_table = load_table("MagicPrefix.txt")
-suffixes_table = load_table("MagicSuffix.txt")
-gamble_table = load_table("gamble.txt")
-
-def print_table_headers(table_name):
-    first = None
-    for i, row in enumerate(table_name):
-        if i == 0:
-            first = row
-    for i, col in enumerate(first):
-        print(str(i) + ": " + col)
-
-def print_row_with_cell_equal_to(table_name, cell_index, value):
-    first = None
-    for i, row in enumerate(table_name):
-        if i == 0:
-            first = row
-        if row[cell_index] == value:
-            for i, col in enumerate(first):
-                print(str(i) + ": " + col + ": " + row[i])
+    def print_row_with_cell_equal_to(self, table_name, cell_index, value):
+        first = None
+        for i, row in enumerate(table_name):
+            if i == 0:
+                first = row
+            if row[cell_index] == value:
+                for i, col in enumerate(first):
+                    print(str(i) + ": " + col + ": " + row[i])
 
 
 

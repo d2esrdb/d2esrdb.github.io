@@ -1,4 +1,4 @@
-<%page args="body, version"/>\
+<%page args="body, name, version"/>\
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
@@ -14,17 +14,16 @@
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta property="og:type" content="website">
         <meta property="og:url" content="http://d2esrdb.github.io">
-        <meta property="og:title" content="Eastern Sun Rises Database">
-        <meta property="og:description" content="Database for Eastern Sun Rises with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
-        <meta property="og:image" content="https://static.wikia.nocookie.net/d2esr/images/6/68/ESR_banner.png">
+        <meta property="og:title" content="${name} Database">
+        <meta property="og:description" content="Database for ${name} with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
         <title>
-            Eastern Sun Rises ${version} Database
+            ${name} ${version} Database
         </title>
     </head>
     <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000">
         <center>
             <font size="+2" face="arial,helvetica">
-                Eastern Sun Rises ${version} Database
+                ${name} ${version} Database
                 <br>
             </font>                
                 <table cellpadding="5" border="0">
