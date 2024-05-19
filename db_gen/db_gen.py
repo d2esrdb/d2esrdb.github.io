@@ -35,8 +35,9 @@ class Database_Generator:
                                              version=self.db_version).replace("\r","")
         open("../" + self.db_code + "/" + filename, "w").write(base_rendered)
 
-    def generate_static(self):
-        filenames = ["gems.htm", "maps.htm", "runewords.htm", "sets.htm", "recipes.htm", "gemwords.htm", "index.htm"]
+    def generate_static(self, extra=[]):
+        filenames = ["gems.htm", "maps.htm", "runewords.htm", "sets.htm", "recipes.htm", "gemwords.htm"]
+        filenames = filenames + extra
         for filename in filenames:
             template = Template(filename="templates/" + filename, lookup=self.mylookup)
             rendered = template.render()
@@ -343,5 +344,22 @@ class Database_Generator:
         self.generate_suffixes()
 
 for db in config.databases:
+    prelinks = ""
+    postlinks = ""
+    extra_static = []
+    for extra_links in db[4]:
+        if extra_links[2] < 0:
+            prelinks = prelinks + "<a href=\"./" + extra_links[1] + "\">[" + extra_links[0] + "]</a>\n"
+            extra_static.append(extra_links[1])
+        if extra_links[2] > 0:
+            postlinks = postlinks + "<a href=\"./" + extra_links[1] + "\">[" + extra_links[0] + "]</a>\n"
+            extra_static.append(extra_links[1])
+    prelink_file = open("templates/prelinks.htm", "w")
+    prelink_file.write(prelinks)
+    prelink_file.close()
+    postlink_file = open("templates/postlinks.htm", "w")
+    postlink_file.write(postlinks)
+    postlink_file.close()
     db_gen = Database_Generator(db[0], db[1], db[2], db[3])
     db_gen.gen_all()
+    db_gen.generate_static(extra_static)

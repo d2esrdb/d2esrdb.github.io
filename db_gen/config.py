@@ -7,22 +7,8 @@ databases = \
             "patchstring.tbl",
         ], 
         [
-            "Top",
-            "Armor",
-            "Weapons",
-            "Prefixes"
-            "Suffixes",
-            "Uni Armor",
-            "Uni Weapons",
-            "Uni Other",
-            "Sets"
-            "Gems/Runes",
-            "Runewords",
-            "Gemwords",
-            "Recipes",
-            "Maps",
-            "New Stuff",
-            "Eclipse",
+            ["New Stuff", "newstuff.htm", 1],
+            ["Eclipse",   "eclipse.htm",  2],
         ],
     ],
 
@@ -35,20 +21,7 @@ databases = \
             "ES AlphA.tbl",   
         ],
         [
-            "Top",
-            "Armor",
-            "Weapons",
-            "Prefixes"
-            "Suffixes",
-            "Uni Armor",
-            "Uni Weapons",
-            "Uni Other",
-            "Sets"
-            "Gems/Runes",
-            "Runewords",
-            "Gemwords",
-            "Recipes",
-            "Maps",
+            ["Top", "top.htm", -1],
         ],
     ],
 ]
