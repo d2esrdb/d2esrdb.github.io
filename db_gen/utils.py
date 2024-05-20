@@ -384,6 +384,12 @@ class Utils:
                 for item_type in self.tables.item_types_table:
                     if item_type["Code"] == armor["type"] and item_type["StaffMods"] != "":
                         return self.short_to_long_class(item_type["StaffMods"])
+        
+        for weapon in self.tables.weapons_table:
+            if weapon["code"] == code:
+                for item_type in self.tables.item_types_table:
+                    if item_type["Code"] == weapon["type"] and item_type["StaffMods"] != "":
+                        return self.short_to_long_class(item_type["StaffMods"])
         return ""
 
     def get_spelldesc(self, code):
