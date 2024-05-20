@@ -22,33 +22,51 @@ class Tables:
         self.gamble_table = self.load_table("gamble.txt")
 
     def load_table(self, table_name):
-        table = open("../" + self.db_name + "/" + table_name, newline='')
-        if self.include_header:
-            return list(csv.reader(table, delimiter='\t'))
-        return list(csv.reader(table, delimiter='\t'))[1:]
+        table_file = open("../" + self.db_name + "/" + table_name, newline='')
+        table = csv.reader(table_file, delimiter='\t')
+        fieldnames = []
+        for headername in next(table):
+            if headername not in fieldnames:
+                fieldnames.append(headername)
+            else:
+                print("Warning: Duplicate column \"" + headername + "\" detected. Renaming second one to " + headername + "2.")
+                fieldnames.append(headername + "2")
+        return list(csv.DictReader(table_file, fieldnames=fieldnames, delimiter='\t'))
 
+    def load_table_list(self, table_name):
+        table_file = open("../" + self.db_name + "/" + table_name, newline='')
+        return list(csv.reader(table_file, delimiter='\t'))
+    
     def print_table_headers(self, table_name):
+        table = self.load_table_list(table_name)
         first = None
-        for i, row in enumerate(table_name):
+        for i, row in enumerate(table):
             if i == 0:
                 first = row
         for i, col in enumerate(first):
             print(str(i) + ": " + col)
 
-    def print_row_with_cell_equal_to(self, table_name, cell_index, value):
+    def print_row_with_cell_equal_to_list(self, table_name, cell_index, value):
+        table = self.load_table_list(table_name)
         first = None
-        for i, row in enumerate(table_name):
+        for i, row in enumerate(table):
             if i == 0:
                 first = row
             if row[cell_index] == value:
                 for i, col in enumerate(first):
                     print(str(i) + ": " + col + ": " + row[i])
 
+    def print_row_with_cell_equal_to(self, table_name, cell_name, value):
+        table = self.load_table(table_name)
+        first = None
+        for i, row in enumerate(table):
+            if i == 0:
+                first = row
+            if row[cell_name] == value:
+                for i, col in enumerate(first):
+                    print(str(i) + ": " + col + ": " + row[col])
 
 
-#print_row_with_cell_equal_to(properties_table, 0, "all-stats")
-#print_row_with_cell_equal_to(unique_items_table, 0, "The Bishop")
-#print_row_with_cell_equal_to(unique_items_table, 0, "Soulstone")
-#print_row_with_cell_equal_to(misc_table, 0, "Grand Charm4")
-#print_row_with_cell_equal_to(armor_table, 0, "Robe")
-#print_table_headers(armor_table)
+if __name__ == "__main__":
+    mytables = Tables("ESR")
+    mytables.print_table_headers("MagicSuffix.txt")

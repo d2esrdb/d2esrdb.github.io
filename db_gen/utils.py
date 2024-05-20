@@ -104,8 +104,8 @@ class Utils:
 
     def get_class_from_skill_name(self, skill_name):
         for skill_row in self.tables.skills_table:
-            if str(skill_name) == str(skill_row[0]) or str(skill_name) == str(skill_row[1]):
-                return self.short_to_long_class(skill_row[2])
+            if str(skill_name) == str(skill_row["skill"]) or str(skill_name) == str(skill_row["Id"]):
+                return self.short_to_long_class(skill_row["charclass"])
         return "Unknown+" + skill_name
 
     def get_class_from_skill_range(self, start, end):
@@ -133,18 +133,18 @@ class Utils:
         skill_desc = ""
         for skill_row in self.tables.skills_table:
             if skill.isdigit():
-                if str(skill) == str(skill_row[1]):
-                    skill_desc = skill_row[3] 
-            if str(skill).lower() == str(skill_row[0]).lower():
-                skill_desc = skill_row[3]
+                if str(skill) == str(skill_row["Id"]):
+                    skill_desc = skill_row["skilldesc"] 
+            if str(skill).lower() == str(skill_row["skill"]).lower():
+                skill_desc = skill_row["skilldesc"]
 
         if skill_desc == "":
             print("Did not find skill desc for skill: " + skill)
             return skill
         
         for skill_desc_row in self.tables.skill_desc_table:
-            if skill_desc == skill_desc_row[0]:
-                skill_name = self.mod_strings.get(skill_desc_row[7], "")
+            if skill_desc == skill_desc_row["skilldesc"]:
+                skill_name = self.mod_strings.get(skill_desc_row["str name"], "")
                 if skill_name != "":
                     return skill_name
 
@@ -172,36 +172,36 @@ class Utils:
 
     def is_in_gamble_table(self, code):
         for row in self.tables.gamble_table:
-            if row[1] == code:
+            if row["code"] == code:
                 return True
         return False
 
     def get_gamble_item_from_code(self, code):
         for row in self.tables.armor_table:
-            if row[17] == code and row[4] == str(1):
+            if row["code"] == code and row["spawnable"] == str(1):
                 for row_again in self.tables.armor_table:
-                    if row_again[17] != "" and row_again[17] == row[23] and self.is_in_gamble_table(row_again[17]):
-                        return self.get_item_name_from_code(row_again[17]) + " (" + row_again[17] + ")"
+                    if row_again["code"] != "" and row_again["code"] == row["normcode"] and self.is_in_gamble_table(row_again["code"]):
+                        return self.get_item_name_from_code(row_again["code"]) + " (" + row_again["code"] + ")"
         for row in self.tables.weapons_table:
-            if row[3] == code and row[9] == str(1):
+            if row["code"] == code and row["spawnable"] == str(1):
                 for row_again in self.tables.weapons_table:
-                    if row_again[3] != "" and row_again[3] == row[34] and self.is_in_gamble_table(row_again[3]):
-                        return self.get_item_name_from_code(row_again[3]) + " (" + row_again[3] + ")"
+                    if row_again["code"] != "" and row_again["code"] == row["normcode"] and self.is_in_gamble_table(row_again["code"]):
+                        return self.get_item_name_from_code(row_again["code"]) + " (" + row_again["code"] + ")"
         for row in self.tables.misc_table:
-            if row[13] != "" and row[13] == code and row[8] == str(1) and self.is_in_gamble_table(row[13]):
-                return self.get_item_name_from_code(row[13]) + " (" + row[13] + ")"
+            if row["code"] != "" and row["code"] == code and row["spawnable"] == str(1) and self.is_in_gamble_table(row["code"]):
+                return self.get_item_name_from_code(row["code"]) + " (" + row["code"] + ")"
         return "N/A"
 
     def get_all_equivalent_types(self, types):
         while True:
             keep_going = False
             for item_type in self.tables.item_types_table:
-                if item_type[1] in types:
-                    if item_type[2] not in types:
-                        types.append(item_type[2])
+                if item_type["Code"] in types:
+                    if item_type["Equiv1"] not in types:
+                        types.append(item_type["Equiv1"])
                         keep_going = True
-                    if item_type[3] not in types:
-                        types.append(item_type[3])
+                    if item_type["Equiv2"] not in types:
+                        types.append(item_type["Equiv2"])
                         keep_going = True
             if not keep_going:
                 types.remove("")
@@ -251,69 +251,69 @@ class Utils:
 
     def get_stat(self, stat_name, param, min, max, prop_name):
         for item_stat_cost_row in self.tables.item_stat_cost_table:
-            if stat_name == item_stat_cost_row[0]:
-                if item_stat_cost_row[25] != 0 and item_stat_cost_row[25] != "":
-                    param = self.handle_op(param, item_stat_cost_row[25], item_stat_cost_row[26], item_stat_cost_row[27], item_stat_cost_row[28], item_stat_cost_row[29], item_stat_cost_row[30])
-                    min = self.handle_op(min, item_stat_cost_row[25], item_stat_cost_row[26], item_stat_cost_row[27], item_stat_cost_row[28], item_stat_cost_row[29], item_stat_cost_row[30])
-                    max = self.handle_op(max, item_stat_cost_row[25], item_stat_cost_row[26], item_stat_cost_row[27], item_stat_cost_row[28], item_stat_cost_row[29], item_stat_cost_row[30])
+            if stat_name == item_stat_cost_row["Stat"]:
+                if item_stat_cost_row["op"] != 0 and item_stat_cost_row["op"] != "":
+                    param = self.handle_op(param, item_stat_cost_row["op"], item_stat_cost_row["op param"], item_stat_cost_row["op base"], item_stat_cost_row["op stat1"], item_stat_cost_row["op stat2"], item_stat_cost_row["op stat3"])
+                    min = self.handle_op(min, item_stat_cost_row["op"], item_stat_cost_row["op param"], item_stat_cost_row["op base"], item_stat_cost_row["op stat1"], item_stat_cost_row["op stat2"], item_stat_cost_row["op stat3"])
+                    max = self.handle_op(max, item_stat_cost_row["op"], item_stat_cost_row["op param"], item_stat_cost_row["op base"], item_stat_cost_row["op stat1"], item_stat_cost_row["op stat2"], item_stat_cost_row["op stat3"])
 
                 # Custom handling
                 if stat_name == "item_numsockets":
                     # @TODO Could be a bug with socket range 0-n, I think it can roll 0 but then gives 1? More testing needed (Faith shield)
-                    return Stat(stat_name, "Socketed (" + self.get_value_string(param, min, max) + ")", int(item_stat_cost_row[39]))
+                    return Stat(stat_name, "Socketed (" + self.get_value_string(param, min, max) + ")", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_singleskill":
                     # Seems to work but is there a better way to determine if it's +random skill or +specific skill?
                     if param.isdigit() and self.get_class_from_skill_range(min, max) != "Unknown":
-                        return Stat(stat_name, "+" + str(param) + " to Random " + self.get_class_from_skill_range(min, max) + " Skill", int(item_stat_cost_row[39]))
-                    return Stat(stat_name, "+" + self.get_value_string("", min, max) + " to " + self.get_skill_name(param) + " (" + self.get_class_from_skill_name(param) + " Only)", int(item_stat_cost_row[39]))
+                        return Stat(stat_name, "+" + str(param) + " to Random " + self.get_class_from_skill_range(min, max) + " Skill", int(item_stat_cost_row["descpriority"]))
+                    return Stat(stat_name, "+" + self.get_value_string("", min, max) + " to " + self.get_skill_name(param) + " (" + self.get_class_from_skill_name(param) + " Only)", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_addskill_tab":
                     # Some hard coded nonsense... known issue though
                     skill_tab_conversion = [3, 2, 1, 15, 14, 13, 8, 7, 9, 6, 5, 4, 11, 12, 10, 16, 17, 18, 19, 20, 21];
                     param = str(int(param))
                     p = str(skill_tab_conversion[int(param)])
-                    return Stat(stat_name, self.mod_strings["StrSklTabItem" + p].replace("%d", self.get_value_string("", min, max)) + " (" + self.get_class_from_tab_number(int(param)) + " Only)", int(item_stat_cost_row[39]))
+                    return Stat(stat_name, self.mod_strings["StrSklTabItem" + p].replace("%d", self.get_value_string("", min, max)) + " (" + self.get_class_from_tab_number(int(param)) + " Only)", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_nonclassskill":
-                    return Stat(stat_name, "+" + self.get_value_string("", min, max) + " to " + self.get_skill_name(param), int(item_stat_cost_row[39]))
+                    return Stat(stat_name, "+" + self.get_value_string("", min, max) + " to " + self.get_skill_name(param), int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_charged_skill":
-                    return Stat(stat_name, "Level " + str(max) + " " + self.get_skill_name(param) + " (" + min + "/" + min + " Charges)", int(item_stat_cost_row[39]))
+                    return Stat(stat_name, "Level " + str(max) + " " + self.get_skill_name(param) + " (" + min + "/" + min + " Charges)", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_skillonhit":
-                    return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " On Striking", int(item_stat_cost_row[39]))
+                    return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " On Striking", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_skillongethit":
-                     return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " When Struck", int(item_stat_cost_row[39]))
+                     return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " When Struck", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "fade":
-                    return Stat(stat_name, "Fade (Cosmetic Effect)", int(item_stat_cost_row[39]))
+                    return Stat(stat_name, "Fade (Cosmetic Effect)", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "killheal_dummy":
-                    return Stat(stat_name, self.mod_strings["healkillStr"].replace("%d%", str(min)), int(item_stat_cost_row[39]))
+                    return Stat(stat_name, self.mod_strings["healkillStr"].replace("%d%", str(min)), int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_skillonattack":
-                    return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " On Attack", int(item_stat_cost_row[39]))
+                    return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " On Attack", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_skillonkill":
-                    return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " When You Kill An Enemy", int(item_stat_cost_row[39]))
+                    return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " When You Kill An Enemy", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_skillondeath":
-                    return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " When You Die", int(item_stat_cost_row[39]))
+                    return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " When You Die", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_skillonlevelup":
-                    return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " When You Level Up", int(item_stat_cost_row[39]))
+                    return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " When You Level Up", int(item_stat_cost_row["descpriority"]))
                 # @TODO could get rid of this case if we refactor stat_formats to take in param and min and max
                 if stat_name == "item_addclassskills":
-                    return Stat(stat_name, "+" + str(self.get_value_string("", min, max)) + " to " + self.short_to_long_class(prop_name) + " Skill Levels", int(item_stat_cost_row[39]))
+                    return Stat(stat_name, "+" + str(self.get_value_string("", min, max)) + " to " + self.short_to_long_class(prop_name) + " Skill Levels", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "curse_resistance" or stat_name == "coldlength" or stat_name == "poisonlength" or stat_name == "heal_kill_per_maxhp":
                     return None
                 
-                priority = item_stat_cost_row[39]
-                if not item_stat_cost_row[39].isdigit():
+                priority = item_stat_cost_row["descpriority"]
+                if not item_stat_cost_row["descpriority"].isdigit():
                     #print("No Priority for stat: " + stat_name + ". Using priority 0")
                     priority = 0
-                if not item_stat_cost_row[40].isdigit():
+                if not item_stat_cost_row["descfunc"].isdigit():
                     print("Bad stat no func: " + stat_name)
                     return None
-                func = int(item_stat_cost_row[40])
-                if not item_stat_cost_row[41].isdigit():
+                func = int(item_stat_cost_row["descfunc"])
+                if not item_stat_cost_row["descval"].isdigit():
                     print("Bad stat no val: " + stat_name)
                     return None
-                val = int(item_stat_cost_row[41])
+                val = int(item_stat_cost_row["descval"])
 
-                string1 = self.mod_strings.get(item_stat_cost_row[42], "EMPTY")
+                string1 = self.mod_strings.get(item_stat_cost_row["descstrpos"], "EMPTY")
                 # @TODO Negative string?
-                string2 = self.mod_strings.get(item_stat_cost_row[44], "EMPTY")
+                string2 = self.mod_strings.get(item_stat_cost_row["descstr2"], "EMPTY")
 
                 #@TODO there's a bunch of other parameters we need to find and pass in here
                 if 0 == val:
@@ -349,11 +349,11 @@ class Utils:
 
         foundone = False
         for property_row in self.tables.properties_table:
-            if property.name == property_row[0]:
+            if property.name == property_row["code"]:
                 for i in range(7):
-                    if property_row[5+i*4] != "":
+                    if property_row["stat" + str(i+1)] != "":
                         foundone = True
-                        stat = self.get_stat(property_row[5+i*4], property.param, property.min, property.max, property.name)
+                        stat = self.get_stat(property_row["stat" + str(i+1)], property.param, property.min, property.max, property.name)
                         if stat is not None:
                             property.stats.append(stat)
         if not foundone:
@@ -362,17 +362,17 @@ class Utils:
     def get_item_name_from_code(self, code):
         # Use weapon/armor namestr if it exists, otherwise use misc.txt
         for row in self.tables.armor_table:
-            if row[17] == code and row[4] == str(1):
-                if self.mod_strings.get(row[18]) is not None:
-                    return self.mod_strings[row[18]]
+            if row["code"] == code and row["spawnable"] == str(1):
+                if self.mod_strings.get(row["namestr"]) is not None:
+                    return self.mod_strings[row["namestr"]]
         for row in self.tables.weapons_table:
-            if row[3] == code and row[9] == str(1):
-                if self.mod_strings.get(row[5]) is not None:
-                    return self.mod_strings[row[5]]
+            if row["code"] == code and row["spawnable"] == str(1):
+                if self.mod_strings.get(row["namestr"]) is not None:
+                    return self.mod_strings[row["namestr"]]
 
         for row in self.tables.misc_table:
-            if row[13] == code:
-                return self.mod_strings.get(row[15], "MISSING TBL: " + row[15])
+            if row["code"] == code:
+                return self.mod_strings.get(row["namestr"], "MISSING TBL: " + row["namestr"])
         if self.mod_strings.get(code) is not None:
             return self.mod_strings[code]
         print("No name found for code: " + code)
@@ -380,39 +380,40 @@ class Utils:
 
     def get_staffmod(self, code):
         for armor in self.tables.armor_table:
-            if armor[17] == code:
+            if armor["code"] == code:
                 for item_type in self.tables.item_types_table:
-                    if item_type[1] == armor[48] and item_type[25] != "":
-                        return self.short_to_long_class(item_type[25])
+                    if item_type["Code"] == armor["type"] and item_type["StaffMods"] != "":
+                        return self.short_to_long_class(item_type["StaffMods"])
         return ""
 
     def get_spelldesc(self, code):
         for row in self.tables.misc_table:
-            if row[13] == code:
-                return self.mod_strings.get(row[64], "")
+            if row["code"] == code:
+                return self.mod_strings.get(row["spelldescstr"], "")
 
     def fill_automod(self, properties, code):
         automods = {}
         for armor in self.tables.armor_table:
-            if armor[17] == code and armor[20] != "":
+            if armor["code"] == code and armor["auto prefix"] != "":
                 for autos in self.tables.automagic_table:
                     # @TODO Maybe look at exclude types too?
                     # @TODO look at item level too
-                    if autos[10] == armor[20] and self.is_of_item_type([armor[48], armor[49]], [autos[25], autos[26], autos[27], autos[28], autos[29], autos[30], autos[31]]):
-                        if autos[11] in automods:
-                            automods[autos[11]] = [autos[12], min(autos[13], automods[autos[11]][1]), max(autos[14], automods[autos[11]][2])]
+                    if autos["group"] == armor["auto prefix"] and self.is_of_item_type([armor["type"], armor["type2"]], [autos["itype1"], autos["itype2"], autos["itype3"], autos["itype4"], autos["itype5"], autos["itype6"], autos["itype7"]]):
+                        if autos["mod1code"] in automods:
+                            automods[autos["mod1code"]] = [autos["mod1param"], min(autos["mod1min"], automods[autos["mod1code"]][1]), max(autos["mod1max"], automods[autos["mod1code"]][2])]
                         else:
-                            automods[autos[11]] = [autos[12], autos[13], autos[14]]
+                            automods[autos["mod1code"]] = [autos["mod1param"], autos["mod1min"], autos["mod1max"]]
+                        
+                        if autos["mod2code"] in automods:
+                            automods[autos["mod2code"]] = [autos["mod2param"], min(autos["mod2min"], automods[autos["mod2code"]][1]), max(autos["mod2max"], automods[autos["mod2code"]][2])]
+                        else:
+                            automods[autos["mod2code"]] = [autos["mod2param"], autos["mod2min"], autos["mod2max"]]
+                        
+                        if autos["mod3code"] in automods:
+                            automods[autos["mod3code"]] = [autos["mod3param"], min(autos["mod3min"], automods[autos["mod3code"]][1]), max(autos["mod3max"], automods[autos["mod3code"]][2])]
+                        else:
+                            automods[autos["mod3code"]] = [autos["mod3param"], autos["mod3min"], autos["mod3max"]]
 
-                        if autos[15] in automods:
-                            automods[autos[15]] = [autos[16], min(autos[17], automods[autos[15]][1]), max(autos[18], automods[autos[15]][2])]
-                        else:
-                            automods[autos[15]] = [autos[16], autos[17], autos[18]]
-
-                        if autos[19] in automods:
-                            automods[autos[19]] = [autos[20], min(autos[21], automods[autos[19]][1]), max(autos[22], automods[autos[19]][2])]
-                        else:
-                            automods[autos[19]] = [autos[20], autos[21], autos[22]]
 
         for key in automods:
             if key != "":
@@ -458,22 +459,22 @@ class Utils:
     def fill_group_stats(self, properties):
         groups = {}
         # Make a dict of lists, containing the dgrp and the associated stats
-        for i, row in enumerate(self.tables.item_stat_cost_table):
-            if row[45] != "":
-                if row[45] in groups:
-                    tmp = groups[row[45]]
-                    tmp.append(row[0])
-                    groups[row[45]] = tmp
+        for row in self.tables.item_stat_cost_table:
+            if row["dgrp"] != "":
+                if row["dgrp"] in groups:
+                    tmp = groups[row["dgrp"]]
+                    tmp.append(row["Stat"])
+                    groups[row["dgrp"]] = tmp
                 else:
-                    groups[row[45]] = [row[0]]
+                    groups[row["dgrp"]] = [row["Stat"]]
         
         item_group_stats = {}
         for property in properties:
             for stat in property.stats:
                 for row in self.tables.item_stat_cost_table:
                     # If there is a group text for this mod
-                    if stat.name == row[0] and row[45] != "":
-                        item_group_stats[row[0]] = [property.param, property.min, property.max, row[39], row[46], row[48], row[50], property]
+                    if stat.name == row["Stat"] and row["dgrp"] != "":
+                        item_group_stats[row["Stat"]] = [property.param, property.min, property.max, row["descpriority"], row["dgrpfunc"], row["dgrpstrpos"], row["dgrpstr2"], property]
 
         for key in groups:
             found = True

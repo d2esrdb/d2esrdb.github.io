@@ -47,8 +47,86 @@ class Database_Generator:
         normal_armors = []
         exceptional_armors = []
         elite_armors = []
-        for i, armor_row in enumerate(self.tables.armor_table):
-            if armor_row[4] != "0":
+        for armor_row in self.tables.armor_table:
+            if armor_row["spawnable"] != "0":
+                for item_type_row in self.tables.item_types_table:
+                    if armor_row["type"] == item_type_row["Code"] and armor_row["type"] != "":
+                        item = Item(armor_row["namestr"], 1, armor_row["levelreq"], [], armor_row["code"], self.mod_strings, self.tables)
+                        automods = []
+                        for p in item.properties:
+                            if p.is_automod:
+                                for s in p.stats:
+                                    automods.append(s.stat_string)
+                        armor = [self.mod_strings.get(armor_row["namestr"], armor_row["name"]), #0: name
+                                 item_type_row["ItemType"],  #1: category
+                                 armor_row["levelreq"],      #2: req_level
+                                 armor_row["code"],          #3: code
+                                 armor_row["normcode"],      #4: norm_code
+                                 armor_row["ubercode"],      #5: exceptional_code
+                                 armor_row["ultracode"],     #6: elite code                           
+                                 armor_row["minac"],         #7: min defense
+                                 armor_row["maxac"],         #8: max defense
+                                 armor_row["durability"],    #9: durability
+                                 armor_row["speed"],         #10: frw
+                                 armor_row["level"],         #11: qlvl
+                                 armor_row["magic lvl"],     #12: mag lvl
+                                 armor_row["reqstr"],        #13: req str
+                                 armor_row["block"],         #14: block
+                                 armor_row["mindam"],        #15: min damage
+                                 armor_row["maxdam"],        #16: max damage
+                                 armor_row["gemsockets"],    #17: sock
+                                 armor_row["gemapplytype"],  #18: gem_type
+                                 self.utils.string_array_to_html(automods, 2),          #19: automods
+                                 item.staffmod,     #20: staffmods
+                                ]
+                        if armor_row["normcode"] == armor_row["code"]:
+                            normal_armors.append(armor)
+                        if armor_row["ubercode"] == armor_row["code"]:
+                            exceptional_armors.append(armor)
+                        if armor_row["ultracode"] == armor_row["code"]:
+                            elite_armors.append(armor)
+
+        # First sort normal armors by level req
+        normal_armors.sort(key = operator.itemgetter(2))
+
+        armors = list(normal_armors)
+        # Now append exceptional armors in order
+        for normal_armor in list(normal_armors):
+            for exceptional_armor in list(exceptional_armors):
+                if normal_armor[5] == exceptional_armor[3]:
+                    armors.append(exceptional_armor)
+                    exceptional_armors.remove(exceptional_armor)
+                    break
+        if len(exceptional_armors) != 0:
+            print("Uh oh... we didn't find a matching base for all exceptional armors")
+
+        # Now append elite armors in order
+        for normal_armor in list(normal_armors):
+            for elite_armor in list(elite_armors):
+                if normal_armor[6] == elite_armor[3]:
+                    armors.append(elite_armor)
+                    elite_armors.remove(elite_armor)
+                    break
+        if len(elite_armors) != 0:
+            print("Uh oh... we didn't find a matching base for all elite armors")
+
+        armor_template = Template(filename="templates/armors.htm", lookup=self.mylookup)
+        armor_rendered = armor_template.render(armors)
+        self.generate(armor_rendered, "armors.htm")
+
+    def generate_weapons(self):
+        quick_links = ["Axes", "Bows", "Xbows", "Daggers", "Javelins", "Knuckles", "Maces", "Poles",
+                       "Scepters", "Spears", "Staves", "Swords", "Throw", "Wands", "Ama", "Asn", "Bar",
+                       "Dru", "Nec", "Pal", "Sor"]
+        weapon_template = Template(filename="templates/weapons.htm", lookup=self.mylookup)
+        weapon_rendered = weapon_template.render(quick_links=quick_links)
+        self.generate(weapon_rendered, "weapons.htm")
+        return
+        normal_weapons = []
+        exceptional_weapons = []
+        elite_weapons = []
+        for weapon_row in self.tables.weapons_table:
+            if weapon_row[9] != "0":
                 for item_type_row in self.tables.item_types_table:
                     if armor_row[48] == item_type_row[1] and armor_row[48] != "":
                         item = Item(armor_row[18], 1, armor_row[14], [], armor_row[17], self.mod_strings, self.tables)
@@ -115,14 +193,6 @@ class Database_Generator:
         armor_rendered = armor_template.render(armors)
         self.generate(armor_rendered, "armors.htm")
 
-    def generate_weapons(self):
-        quick_links = ["Axes", "Bows", "Xbows", "Daggers", "Javelins", "Knuckles", "Maces", "Poles",
-                       "Scepters", "Spears", "Staves", "Swords", "Throw", "Wands", "Ama", "Asn", "Bar",
-                       "Dru", "Nec", "Pal", "Sor"]
-        weapon_template = Template(filename="templates/weapons.htm", lookup=self.mylookup)
-        weapon_rendered = weapon_template.render(quick_links=quick_links)
-        self.generate(weapon_rendered, "weapons.htm")
-
     def get_other_types(self, remaining_items):
         other_types = []
         for item in remaining_items:
@@ -133,54 +203,54 @@ class Database_Generator:
     def get_weapon_types(self):
         weapon_types = []
         for weapon in self.tables.weapons_table:
-            if weapon[1] not in weapon_types:
-                weapon_types.append(weapon[1])
+            if weapon["type"] not in weapon_types:
+                weapon_types.append(weapon["type"])
         return weapon_types
 
     def get_item_name_from_code(self, code):
         for row in self.tables.item_types_table:
-            if row[1] == code:
-                return row[0]
+            if row["Code"] == code:
+                return row["ItemType"]
 
         for row in self.tables.misc_table:
-            if row[13] == code:
-                return row[0]
+            if row["code"] == code:
+                return row["name"]
         return "Unknown: " + code
 
     def get_armor_types(self):
         armor_types = []
         for armor in self.tables.armor_table:
-            if armor[48] not in armor_types:
-                armor_types.append(armor[48])
+            if armor["type"] not in armor_types:
+                armor_types.append(armor["type"])
         return armor_types
 
     def weapon_is_a_subtype_of(self, subtype_code, maintype_code):
         for weapon in self.tables.weapons_table:
-            if weapon[3] == subtype_code and maintype_code == weapon[1]:
+            if weapon["code"] == subtype_code and maintype_code == weapon["type"]:
                 return True
         return False
 
     def armor_is_of_type(self, item_code, armor_code):
         for row in self.tables.armor_table:
-            if row[17] == item_code and armor_code == row[48]:
+            if row["code"] == item_code and armor_code == row["type"]:
                 return True
         return False
 
     def set_weapon_bg_color(self, item):
         for weapon in self.tables.weapons_table:
-            if item.base_code == weapon[36]:
+            if item.base_code == weapon["ultracode"]:
                 item.bg_color_code = 303030
                 return
-            if item.base_code == weapon[35]:
+            if item.base_code == weapon["ubercode"]:
                 item.bg_color_code = 202020
                 return
 
     def set_armor_bg_color(self, item):
         for armor in self.tables.armor_table:
-            if item.base_code == armor[25]:
+            if item.base_code == armor["ultracode"]:
                 item.bg_color_code = 303030
                 return
-            if item.base_code == armor[24]:
+            if item.base_code == armor["ubercode"]:
                 item.bg_color_code = 202020
                 return
 

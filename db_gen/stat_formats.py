@@ -11,8 +11,8 @@ class Stat_Formats:
 
     def get_monster_from_id(self, mon_id):
         for mon_stat_row in self.tables.mon_stats_table:
-            if mon_stat_row[1] == mon_id:
-                return self.mod_strings[mon_stat_row[5]]
+            if mon_stat_row["hcIdx"] == mon_id:
+                return self.mod_strings[mon_stat_row["NameStr"]]
 
     def get_value_string(self, param, min, max):
         if param != "":

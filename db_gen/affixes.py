@@ -23,21 +23,21 @@ class Affix_Utils:
     def get_group_prop(self, property):
         groups = {}
         # Make a dict of lists, containing the dgrp and the associated stats
-        for i, row in enumerate(self.tables.item_stat_cost_table):
-            if row[45] != "":
-                if row[45] in groups:
-                    tmp = groups[row[45]]
-                    tmp.append(row[0])
-                    groups[row[45]] = tmp
+        for row in self.tables.item_stat_cost_table:
+            if row["dgrp"] != "":
+                if row["dgrp"] in groups:
+                    tmp = groups[row["dgrp"]]
+                    tmp.append(row["Stat"])
+                    groups[row["dgrp"]] = tmp
                 else:
-                    groups[row[45]] = [row[0]]
+                    groups[row["dgrp"]] = [row["Stat"]]
         
         item_group_stats = {}
         for stat in property.stats:
             for row in self.tables.item_stat_cost_table:
                 # If there is a group text for this mod
-                if stat.name == row[0] and row[45] != "":
-                    item_group_stats[row[0]] = [property.param, property.min, property.max, row[39], row[46], row[48], row[50], property]
+                if stat.name == row["Stat"] and row["dgrp"] != "":
+                    item_group_stats[row["Stat"]] = [property.param, property.min, property.max, row["descpriority"], row["dgrpfunc"], row["dgrpstrpos"], row["dgrpstr2"], property]
 
         for key in groups:
             found = True
@@ -76,20 +76,20 @@ class Affix_Utils:
 
     def get_affixes(self, table):
         affixes = []
-        for i, affix in enumerate(table):
-            if affix[2] != str(1):
+        for affix in table:
+            if affix["spawnable"] != str(1):
                 continue
-            prop1 = Property(affix[12], affix[13], affix[14], affix[15])
+            prop1 = Property(affix["mod1code"], affix["mod1param"], affix["mod1min"], affix["mod1max"])
             self.utils.fill_property_stats(prop1)
             prop1 = self.get_group_prop(prop1)
             prop2 = None
             prop3 = None
-            if affix[16] != "":
-                prop2 = Property(affix[16], affix[17], affix[18], affix[19])
+            if affix["mod2code"] != "":
+                prop2 = Property(affix["mod2code"], affix["mod2param"], affix["mod2min"], affix["mod2max"])
                 self.utils.fill_property_stats(prop2)
                 prop2 = self.get_group_prop(prop2)
-            if affix[20] != "":
-                prop3 = Property(affix[20], affix[21], affix[22], affix[23])
+            if affix["mod3code"] != "":
+                prop3 = Property(affix["mod3code"], affix["mod3param"], affix["mod3min"], affix["mod3max"])
                 self.utils.fill_property_stats(prop3)
                 prop3 = self.get_group_prop(prop3)
             stats = []
@@ -104,11 +104,11 @@ class Affix_Utils:
             stat_string = "<br>".join(stats)
 
             item_types = []
-            for index in range(26, 33):
-                if affix[index] != "":
-                    item_types.append(affix[index])
+            for i in range(7):
+                if affix["itype" + str(i+1)] != "":
+                    item_types.append(affix["itype" + str(i+1)])
 
-            affixes.append(Affix(affix[0], affix[3], affix[4], affix[5], affix[6], affix[10], stat_string, item_types))
+            affixes.append(Affix(affix["Name"], affix["rare"], affix["level"], affix["maxlevel"], affix["levelreq"], affix["frequency"], stat_string, item_types))
         return affixes
 
     def get_prefixes(self):
