@@ -18,7 +18,7 @@ class Property:
         self.stats = []
 
 class Item:
-    def __init__(self, name, item_level, required_level, properties, base_code, mod_strings, tables):
+    def __init__(self, name, item_level, required_level, properties, base_code, mod_strings, tables, include_implicits=True):
         self.name = mod_strings.get(name, "MISSING tbl: " + name)
         self.item_level = item_level
         self.required_level = required_level
@@ -28,8 +28,9 @@ class Item:
         self.utils = Utils(tables, mod_strings)
         self.gamble_item = self.utils.get_gamble_item_from_code(base_code)
         self.base_name = self.utils.get_item_name_from_code(base_code)
-        self.utils.fill_automod(self.properties, base_code)
-        self.staffmod = self.utils.get_staffmod(base_code)
+        if include_implicits:
+            self.utils.fill_automod(self.properties, base_code)
+            self.staffmod = self.utils.get_staffmod(base_code)
         self.spelldesc = self.utils.get_spelldesc(base_code)
 
         for p in self.properties:
@@ -405,6 +406,27 @@ class Utils:
                     # @TODO Maybe look at exclude types too?
                     # @TODO look at item level too
                     if autos["group"] == armor["auto prefix"] and self.is_of_item_type([armor["type"], armor["type2"]], [autos["itype1"], autos["itype2"], autos["itype3"], autos["itype4"], autos["itype5"], autos["itype6"], autos["itype7"]]):
+                        if autos["mod1code"] in automods:
+                            automods[autos["mod1code"]] = [autos["mod1param"], min(autos["mod1min"], automods[autos["mod1code"]][1]), max(autos["mod1max"], automods[autos["mod1code"]][2])]
+                        else:
+                            automods[autos["mod1code"]] = [autos["mod1param"], autos["mod1min"], autos["mod1max"]]
+                        
+                        if autos["mod2code"] in automods:
+                            automods[autos["mod2code"]] = [autos["mod2param"], min(autos["mod2min"], automods[autos["mod2code"]][1]), max(autos["mod2max"], automods[autos["mod2code"]][2])]
+                        else:
+                            automods[autos["mod2code"]] = [autos["mod2param"], autos["mod2min"], autos["mod2max"]]
+                        
+                        if autos["mod3code"] in automods:
+                            automods[autos["mod3code"]] = [autos["mod3param"], min(autos["mod3min"], automods[autos["mod3code"]][1]), max(autos["mod3max"], automods[autos["mod3code"]][2])]
+                        else:
+                            automods[autos["mod3code"]] = [autos["mod3param"], autos["mod3min"], autos["mod3max"]]
+        
+        for weapon in self.tables.weapons_table:
+            if weapon["code"] == code and weapon["auto prefix"] != "":
+                for autos in self.tables.automagic_table:
+                    # @TODO Maybe look at exclude types too?
+                    # @TODO look at item level too
+                    if autos["group"] == weapon["auto prefix"] and self.is_of_item_type([weapon["type"], weapon["type2"]], [autos["itype1"], autos["itype2"], autos["itype3"], autos["itype4"], autos["itype5"], autos["itype6"], autos["itype7"]]):
                         if autos["mod1code"] in automods:
                             automods[autos["mod1code"]] = [autos["mod1param"], min(autos["mod1min"], automods[autos["mod1code"]][1]), max(autos["mod1max"], automods[autos["mod1code"]][2])]
                         else:

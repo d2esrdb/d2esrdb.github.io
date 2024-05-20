@@ -1,6 +1,9 @@
 databases = \
 [
-    ["ESE", "Eastern Sun Eclipse", "1.0",
+    [
+        "ESE",
+        "Eastern Sun Eclipse",
+        "1.0",
         [
             "string.tbl",
             "expansionstring.tbl",
@@ -10,10 +13,14 @@ databases = \
             ["New Stuff", "newstuff.htm", 1],
             ["Eclipse",   "eclipse.htm",  2],
         ],
+        False,
     ],
 
 
-    ["ESR", "Eastern Sun Rises", "5.3A5",
+    [
+        "ESR",
+        "Eastern Sun Rises",
+        "5.3A5",
         [
             "string.tbl",
             "expansionstring.tbl",
@@ -23,5 +30,6 @@ databases = \
         [
             ["Top", "top.htm", -1],
         ],
+        True,
     ],
 ]

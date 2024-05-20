@@ -18,7 +18,7 @@ class Item_Group:
         self.items = []
 
 class Database_Generator:
-    def __init__(self, db_code, db_name, db_version, string_tables):
+    def __init__(self, db_code, db_name, db_version, string_tables, include_implicits_on_uniques):
         self.db_code = db_code
         self.db_name = db_name
         self.db_version = db_version
@@ -27,6 +27,7 @@ class Database_Generator:
         self.mylookup = TemplateLookup(directories=[os.getcwd()])
         self.tables = Tables(db_code)
         self.utils = Utils(self.tables, self.mod_strings)
+        self.include_implicits_on_uniques = include_implicits_on_uniques
 
     def generate(self, body_template, filename):
         base_template = Template(filename="templates/base.htm", lookup=self.mylookup)
@@ -257,7 +258,7 @@ class Database_Generator:
                 return
 
     def generate_uniques(self):
-        unique_items_list = unique_items.get_unique_items(self.tables, self.mod_strings)
+        unique_items_list = unique_items.get_unique_items(self.tables, self.mod_strings, self.include_implicits_on_uniques)
         item_groups = []
         unique_weapon_template = Template(filename="templates/uniques.htm",
                                           lookup=self.mylookup)
@@ -438,7 +439,7 @@ for db in config.databases:
     if len(sys.argv) == 1 or sys.argv[1] == db[0]:
         print("----GENERATING " + db[1] + "-----")
         extra_static = generate_static_links(db)
-        db_gen = Database_Generator(db[0], db[1], db[2], db[3])
+        db_gen = Database_Generator(db[0], db[1], db[2], db[3], db[5])
         db_gen.gen_all()
         db_gen.generate_static(extra_static)
         print("----DONE-----")
