@@ -68,5 +68,5 @@ class Tables:
 
 
 if __name__ == "__main__":
-    mytables = Tables("ESR")
-    mytables.print_table_headers("MagicSuffix.txt")
+    mytables = Tables("ESE")
+    mytables.print_row_with_cell_equal_to("Weapons.txt", "name", "Throwing Knife")
