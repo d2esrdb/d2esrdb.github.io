@@ -120,18 +120,16 @@ class Database_Generator:
             return replacement
         return string
 
-    def generate_damage_string(self, mindam, maxdam, twohandmindam, twohandmaxdam, minmisdam, maxmisdam):
+    def get_avg(self, mindam, maxdam):
         ret = ""
         if mindam != "":
-            ret = "1H: " + mindam + "-" + maxdam + "&nbsp&nbsp&nbsp&nbsp&nbsp Avg: " + str(round((float(mindam) + float(maxdam)/2.0), 1))
-        if twohandmindam != "":
-            if ret != "":
-                ret = ret + "<br>"
-            ret = ret + "2H: " + twohandmindam + "-" + twohandmaxdam + "&nbsp&nbsp&nbsp&nbsp&nbsp Avg: " + str(round((float(twohandmindam) + float(twohandmaxdam)/2.0), 1))
-        if minmisdam != "":
-            if ret != "":
-                ret = ret + "<br>"
-            ret = ret + "Mis: " + minmisdam + "-" + maxmisdam + "&nbsp&nbsp&nbsp&nbsp&nbsp Avg: " + str(round((float(minmisdam) + float(maxmisdam)/2.0), 1))
+            ret = str(round((float(mindam) + float(maxdam)/2.0), 1)) + " Avg"
+        return ret
+    
+    def get_dmg(self, mindam, maxdam):
+        ret = ""
+        if mindam != "":
+            ret = str(mindam) + " to " + str(maxdam)
         return ret
 
     def generate_weapons(self):
@@ -155,25 +153,25 @@ class Database_Generator:
                                  weapon_row["normcode"],     #4: norm_code
                                  weapon_row["ubercode"],     #5: exceptional_code
                                  weapon_row["ultracode"],    #6: elite code                           
-                                 self.generate_damage_string(weapon_row["mindam"],
-                                     weapon_row["maxdam"],       
-                                     weapon_row["2handmindam"],  
-                                     weapon_row["2handmaxdam"],  
-                                     weapon_row["minmisdam"],
-                                     weapon_row["maxmisdam"]), #7 damage
-                                 weapon_row["rangeadder"],   #8: range
-                                 weapon_row["durability"],   #9: durability
-                                 weapon_row["speed"],        #10: wsm?
-                                 weapon_row["level"],        #11: qlvl
-                                 weapon_row["magic lvl"],    #12: mag lvl
-                                 weapon_row["reqstr"],       #13: req str
-                                 weapon_row["reqdex"],       #14: req dex
-                                 self.replace_if_empty(weapon_row["StrBonus"], 0), #15: str bonus
-                                 self.replace_if_empty(weapon_row["DexBonus"], 0), #16: dex bonus
-                                 weapon_row["gemsockets"],   #17: sock
-                                 weapon_row["gemapplytype"], #18: gem_type
-                                 self.utils.string_array_to_html(automods, 2), #19: automods
-                                 item.staffmod,              #20: staffmods
+                                 self.get_dmg(weapon_row["mindam"], weapon_row["maxdam"]), #7
+                                 self.get_avg(weapon_row["mindam"], weapon_row["maxdam"]), #8
+                                 self.get_dmg(weapon_row["2handmindam"], weapon_row["2handmaxdam"]), #9
+                                 self.get_avg(weapon_row["2handmindam"], weapon_row["2handmaxdam"]), #10
+                                 self.get_dmg(weapon_row["minmisdam"], weapon_row["maxmisdam"]), #11
+                                 self.get_avg(weapon_row["minmisdam"], weapon_row["maxmisdam"]), #12
+                                 weapon_row["rangeadder"],   #13: range
+                                 weapon_row["durability"],   #14: durability
+                                 weapon_row["speed"],        #15: wsm?
+                                 weapon_row["level"],        #16: qlvl
+                                 weapon_row["magic lvl"],    #17: mag lvl
+                                 weapon_row["reqstr"],       #18: req str
+                                 weapon_row["reqdex"],       #19: req dex
+                                 self.replace_if_empty(weapon_row["StrBonus"], 0), #20: str bonus
+                                 self.replace_if_empty(weapon_row["DexBonus"], 0), #21: dex bonus
+                                 weapon_row["gemsockets"],   #22: sock
+                                 weapon_row["gemapplytype"], #23: gem_type
+                                 self.utils.string_array_to_html(automods, 2), #24: automods
+                                 item.staffmod,              #25: staffmods
                                 ]
                         if weapon_row["normcode"] == weapon_row["code"]:
                             normal_weapons.append(weapon)
