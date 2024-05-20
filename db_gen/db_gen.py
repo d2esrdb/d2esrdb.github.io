@@ -114,84 +114,86 @@ class Database_Generator:
         armor_rendered = armor_template.render(armors)
         self.generate(armor_rendered, "armors.htm")
 
+    def replace_if_empty(self, string, replacement):
+        if string == "":
+            return replacement
+        return string
+
     def generate_weapons(self):
-        quick_links = ["Axes", "Bows", "Xbows", "Daggers", "Javelins", "Knuckles", "Maces", "Poles",
-                       "Scepters", "Spears", "Staves", "Swords", "Throw", "Wands", "Ama", "Asn", "Bar",
-                       "Dru", "Nec", "Pal", "Sor"]
-        weapon_template = Template(filename="templates/weapons.htm", lookup=self.mylookup)
-        weapon_rendered = weapon_template.render(quick_links=quick_links)
-        self.generate(weapon_rendered, "weapons.htm")
-        return
         normal_weapons = []
         exceptional_weapons = []
         elite_weapons = []
         for weapon_row in self.tables.weapons_table:
-            if weapon_row[9] != "0":
+            if weapon_row["spawnable"] != "0":
                 for item_type_row in self.tables.item_types_table:
-                    if armor_row[48] == item_type_row[1] and armor_row[48] != "":
-                        item = Item(armor_row[18], 1, armor_row[14], [], armor_row[17], self.mod_strings, self.tables)
+                    if weapon_row["type"] == item_type_row["Code"] and weapon_row["type"] != "":
+                        item = Item(weapon_row["namestr"], 1, weapon_row["levelreq"], [], weapon_row["code"], self.mod_strings, self.tables)
                         automods = []
                         for p in item.properties:
                             if p.is_automod:
                                 for s in p.stats:
                                     automods.append(s.stat_string)
-
-                        armor = [self.mod_strings.get(armor_row[18], armor_row[0]), #0: name
-                                 item_type_row[0],  #1: category
-                                 armor_row[14],     #2: req_level
-                                 armor_row[17],     #3: code
-                                 armor_row[23],     #4: norm_code
-                                 armor_row[24],     #5: exceptional_code
-                                 armor_row[25],     #6: elite code                           
-                                 armor_row[5],      #7: min defense
-                                 armor_row[6],      #8: max defense
-                                 armor_row[11],     #9: durability
-                                 armor_row[8],      #10: frw
-                                 armor_row[13],     #11: qlvl
-                                 armor_row[19],     #12: mag lvl
-                                 armor_row[9],      #13: req str
-                                 armor_row[10],     #14: block
-                                 armor_row[63],     #15: min damage
-                                 armor_row[64],     #16: max damage
-                                 armor_row[31],     #17: sock
-                                 armor_row[32],     #18: gem_type
-                                 self.utils.string_array_to_html(automods, 2),          #19: automods
-                                 item.staffmod,     #20: staffmods
+                        weapon = [self.mod_strings.get(weapon_row["namestr"], weapon_row["name"]), #0: name
+                                 item_type_row["ItemType"],  #1: category
+                                 weapon_row["levelreq"],     #2: req_level
+                                 weapon_row["code"],         #3: code
+                                 weapon_row["normcode"],     #4: norm_code
+                                 weapon_row["ubercode"],     #5: exceptional_code
+                                 weapon_row["ultracode"],    #6: elite code                           
+                                 weapon_row["mindam"],       #7: min damage
+                                 weapon_row["maxdam"],       #8: max damage
+                                 weapon_row["1or2handed"],   #9: can barb dual wield 
+                                 weapon_row["2handed"],      #10: 2handed?
+                                 weapon_row["2handmindam"],  #11: 2g min damage
+                                 weapon_row["2handmaxdam"],  #12: 2h max damage
+                                 weapon_row["rangeadder"],   #13: range
+                                 weapon_row["durability"],   #14: durability
+                                 weapon_row["speed"],        #15: wsm?
+                                 weapon_row["level"],        #16: qlvl
+                                 weapon_row["magic lvl"],    #17: mag lvl
+                                 weapon_row["reqstr"],       #18: req str
+                                 weapon_row["reqdex"],       #19: req dex
+                                 self.replace_if_empty(weapon_row["StrBonus"], 0),     #20: str bonus
+                                 self.replace_if_empty(weapon_row["DexBonus"], 0),    #21: dex bonus
+                                 weapon_row["gemsockets"],   #22: sock
+                                 weapon_row["gemapplytype"], #23: gem_type
+                                 self.utils.string_array_to_html(automods, 2), #24: automods
+                                 item.staffmod,              #25: staffmods
                                 ]
-                        if armor_row[23] == armor_row[17]:
-                            normal_armors.append(armor)
-                        if armor_row[24] == armor_row[17]:
-                            exceptional_armors.append(armor)
-                        if armor_row[25] == armor_row[17]:
-                            elite_armors.append(armor)
+                        if weapon_row["normcode"] == weapon_row["code"]:
+                            normal_weapons.append(weapon)
+                        if weapon_row["ubercode"] == weapon_row["code"]:
+                            exceptional_weapons.append(weapon)
+                        if weapon_row["ultracode"] == weapon_row["code"]:
+                            elite_weapons.append(weapon)
 
-        # First sort normal armors by level req
-        normal_armors.sort(key = operator.itemgetter(2))
+        # First sort normal weapons by level req
+        normal_weapons.sort(key = operator.itemgetter(2))
 
-        armors = list(normal_armors)
-        # Now append exceptional armors in order
-        for normal_armor in list(normal_armors):
-            for exceptional_armor in list(exceptional_armors):
-                if normal_armor[5] == exceptional_armor[3]:
-                    armors.append(exceptional_armor)
-                    exceptional_armors.remove(exceptional_armor)
+        weapons = list(normal_weapons)
+        # Now append exceptional weapons in order
+        for normal_weapon in list(normal_weapons):
+            for exceptional_weapon in list(exceptional_weapons):
+                if normal_weapon[5] == exceptional_weapon[3]:
+                    weapons.append(exceptional_weapon)
+                    exceptional_weapons.remove(exceptional_weapon)
                     break
-        if len(exceptional_armors) != 0:
-            print("Uh oh... we didn't find a matching base for all exceptional armors")
+        if len(exceptional_weapons) != 0:
+            print("Uh oh... we didn't find a matching base for all exceptional weapons")
 
-        # Now append elite armors in order
-        for normal_armor in list(normal_armors):
-            for elite_armor in list(elite_armors):
-                if normal_armor[6] == elite_armor[3]:
-                    armors.append(elite_armor)
-                    elite_armors.remove(elite_armor)
+        # Now append elite weapons in order
+        for normal_weapon in list(normal_weapons):
+            for elite_weapon in list(elite_weapons):
+                if normal_weapon[6] == elite_weapon[3]:
+                    weapons.append(elite_weapon)
+                    elite_weapons.remove(elite_weapon)
                     break
-        if len(elite_armors) != 0:
-            print("Uh oh... we didn't find a matching base for all elite armors")
+        if len(elite_weapons) != 0:
+            print("Uh oh... we didn't find a matching base for all elite weapons")
 
-        armor_template = Template(filename="templates/armors.htm", lookup=self.mylookup)
-        armor_rendered = armor_template.render(armors)
-        self.generate(armor_rendered, "armors.htm")
+        weapon_template = Template(filename="templates/weapons.htm", lookup=self.mylookup)
+        weapon_rendered = weapon_template.render(weapons)
+        self.generate(weapon_rendered, "weapons.htm")
 
     def get_other_types(self, remaining_items):
         other_types = []
