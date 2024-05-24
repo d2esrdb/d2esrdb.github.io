@@ -398,6 +398,20 @@ class Utils:
             if row["code"] == code:
                 return self.mod_strings.get(row["spelldescstr"], "")
 
+    def mymin(self, v1, v2):
+        if not v1.isdigit():
+            return v2
+        if not v2.isdigit():
+            return v1
+        return str(min(int(v1), int(v2)))
+    
+    def mymax(self, v1, v2):
+        if not v1.isdigit():
+            return v2
+        if not v2.isdigit():
+            return v1
+        return str(max(int(v1), int(v2)))
+
     def fill_automod(self, properties, code):
         automods = {}
         for armor in self.tables.armor_table:
@@ -407,17 +421,23 @@ class Utils:
                     # @TODO look at item level too
                     if autos["group"] == armor["auto prefix"] and self.is_of_item_type([armor["type"], armor["type2"]], [autos["itype1"], autos["itype2"], autos["itype3"], autos["itype4"], autos["itype5"], autos["itype6"], autos["itype7"]]):
                         if autos["mod1code"] in automods:
-                            automods[autos["mod1code"]] = [autos["mod1param"], min(autos["mod1min"], automods[autos["mod1code"]][1]), max(autos["mod1max"], automods[autos["mod1code"]][2])]
+                            automods[autos["mod1code"]] = [autos["mod1param"],
+                                                           self.mymin(autos["mod1min"], automods[autos["mod1code"]][1]),
+                                                           self.mymax(autos["mod1max"], automods[autos["mod1code"]][2])]
                         else:
                             automods[autos["mod1code"]] = [autos["mod1param"], autos["mod1min"], autos["mod1max"]]
                         
                         if autos["mod2code"] in automods:
-                            automods[autos["mod2code"]] = [autos["mod2param"], min(autos["mod2min"], automods[autos["mod2code"]][1]), max(autos["mod2max"], automods[autos["mod2code"]][2])]
+                            automods[autos["mod2code"]] = [autos["mod2param"],
+                                                           self.mymin(autos["mod2min"], automods[autos["mod2code"]][1]),
+                                                           self.mymax(autos["mod2max"], automods[autos["mod2code"]][2])]
                         else:
                             automods[autos["mod2code"]] = [autos["mod2param"], autos["mod2min"], autos["mod2max"]]
                         
                         if autos["mod3code"] in automods:
-                            automods[autos["mod3code"]] = [autos["mod3param"], min(autos["mod3min"], automods[autos["mod3code"]][1]), max(autos["mod3max"], automods[autos["mod3code"]][2])]
+                            automods[autos["mod3code"]] = [autos["mod3param"],
+                                                           self.mymin(autos["mod3min"], automods[autos["mod3code"]][1]),
+                                                           self.mymax(autos["mod3max"], automods[autos["mod3code"]][2])]
                         else:
                             automods[autos["mod3code"]] = [autos["mod3param"], autos["mod3min"], autos["mod3max"]]
         
