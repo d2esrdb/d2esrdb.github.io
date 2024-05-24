@@ -1,35 +1,62 @@
 databases = \
 [
-    [
-        "ESE",
-        "Eastern Sun Eclipse",
-        "1.0",
+    {
+        "name" : "Eastern Sun Eclipse",
+        "shortname" : "ESE",
+        "version" : "1.0",
+        "include_staff_and_automods_on_uniques" : False,
+        "tablestring_files" : \
         [
             "string.tbl",
             "expansionstring.tbl",
             "patchstring.tbl",
-        ], 
-        [
-            ["New Stuff", "newstuff.htm", 1],
-            ["Eclipse",   "eclipse.htm",  2],
         ],
-        False,
-    ],
-
-
-    [
-        "ESR",
-        "Eastern Sun Rises",
-        "5.3A5",
+        "gemapplytype_names" : \
+        [
+            "Weapons / Gloves",
+            "Helms / Boots",
+            "Armor / Shields / Belts",
+        ],
+        "extra_pages" : \
+        [
+            {
+                "name" : "New Stuff",
+                "file" : "newstuff.htm", 
+                "position" : 1,
+            },
+            {
+                "name": "Eclipse",
+                "file" : "eclipse.htm", 
+                "position" : 2,
+            },
+        ],
+    },
+    {
+        "name" : "Eastern Sun Rises",
+        "shortname" : "ESR",
+        "version" : "5.3A5",
+        "include_staff_and_automods_on_uniques" : True,
+        "tablestring_files" : \
         [
             "string.tbl",
             "expansionstring.tbl",
             "patchstring.tbl",
             "ES AlphA.tbl",   
         ],
+        "gemapplytype_names" : \
         [
-            ["Top", "top.htm", -1],
+            "Weapons / Gloves",
+            "Helms / Boots",
+            "Armor / Shields / Belts",
         ],
-        True,
-    ],
+        "extra_pages" : \
+        [
+            {
+                "name" : "Top",
+                "file" : "top.htm", 
+                "position" : -1,
+            },
+        ],
+    },
 ]
+

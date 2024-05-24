@@ -108,3 +108,13 @@ def get_string_dict(db_code, string_tables):
     
     return key_value_dict
 
+
+
+#stringtables =        [
+#            "string.tbl",
+#            "expansionstring.tbl",
+#            "patchstring.tbl",
+#            "ES AlphA.tbl",   
+#        ]
+#my = get_string_dict("ESR", stringtables)
+#print(my["gpr"])

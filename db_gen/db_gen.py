@@ -11,6 +11,43 @@ from utils import *
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
+class Runeword:
+    def __init__(self, name, runes, allowed_bases, excluded_bases, properties):
+        self.name = name
+        self.runes = runes
+        self.num_sockets = len(runes)
+        self.allowed_bases = allowed_bases
+        self.excluded_bases = excluded_bases
+        self.properties = properties
+
+    def rune_string(self):
+        ret = ""
+        for rune in self.runes:
+            ret = ret + rune + " "
+        ret = ret.replace("Rune", "")
+        return ret
+
+    def bases_string(self):
+        ret = ""
+        for base in self.allowed_bases:
+            ret = ret + base + "<br>"
+        for i, base in enumerate(self.excluded_bases):
+            if i == 0:
+                ret = ret + "<br>Excluded:<br>"
+            ret = ret + base + "<br>"
+        return ret
+
+    def stats_string(self):
+        ret = ""
+        allstats = []
+        for prop in self.properties:
+            for stat in prop.stats:
+                allstats.append(stat)
+        #allstats.sort(key = lambda x: (int(x.item_level), int(x.required_level)))
+        for stat in sorted(allstats, key=lambda x: int(x.priority)):
+            ret = ret + stat.stat_string + "<br>"
+        return ret
+
 
 class Item_Group:
     def __init__(self, name):
@@ -18,7 +55,7 @@ class Item_Group:
         self.items = []
 
 class Database_Generator:
-    def __init__(self, db_code, db_name, db_version, string_tables, include_implicits_on_uniques):
+    def __init__(self, db_code, db_name, db_version, string_tables, include_implicits_on_uniques, gemapplytype_names):
         self.db_code = db_code
         self.db_name = db_name
         self.db_version = db_version
@@ -28,6 +65,7 @@ class Database_Generator:
         self.tables = Tables(db_code)
         self.utils = Utils(self.tables, self.mod_strings)
         self.include_implicits_on_uniques = include_implicits_on_uniques
+        self.gemapplytype_names = gemapplytype_names
 
     def generate(self, body_template, filename):
         base_template = Template(filename="templates/base.htm", lookup=self.mylookup)
@@ -37,7 +75,7 @@ class Database_Generator:
         open("../" + self.db_code + "/" + filename, "w").write(base_rendered)
 
     def generate_static(self, extra=[]):
-        filenames = ["gems.htm", "maps.htm", "runewords.htm", "sets.htm", "recipes.htm", "gemwords.htm"]
+        filenames = ["gems.htm", "maps.htm", "sets.htm", "recipes.htm", "gemwords.htm"]
         filenames = filenames + extra
         for filename in filenames:
             template = Template(filename="templates/" + filename, lookup=self.mylookup)
@@ -222,7 +260,11 @@ class Database_Generator:
                 weapon_types.append(weapon["type"])
         return weapon_types
 
-    def get_item_name_from_code(self, code):
+    def get_item_type_name_from_code(self, code):
+        # Hard code "tors" because "Armor" is confusing
+        if code == "tors":
+            return "Body Armor"
+
         for row in self.tables.item_types_table:
             if row["Code"] == code:
                 return row["ItemType"]
@@ -275,7 +317,7 @@ class Database_Generator:
         unique_weapon_template = Template(filename="templates/uniques.htm",
                                           lookup=self.mylookup)
         for weapon_type in self.get_weapon_types():
-            weapon_group = Item_Group(self.get_item_name_from_code(weapon_type))
+            weapon_group = Item_Group(self.get_item_type_name_from_code(weapon_type))
             for item in list(unique_items_list):
                 if self.weapon_is_a_subtype_of(item.base_code, weapon_type):
                     self.set_weapon_bg_color(item)
@@ -294,7 +336,7 @@ class Database_Generator:
         unique_armor_template = Template(filename="templates/uniques.htm",
                                          lookup=self.mylookup)
         for armor_type in self.get_armor_types():
-            armor_group = Item_Group(self.get_item_name_from_code(armor_type))
+            armor_group = Item_Group(self.get_item_type_name_from_code(armor_type))
             for item in list(unique_items_list):
                 #print("base code: " + item.base_code + " armor_type: " + armor_type)
                 if self.armor_is_of_type(item.base_code, armor_type):
@@ -319,7 +361,7 @@ class Database_Generator:
         item_groups = []
         #others = Item_Group("Other")
         for other_type in self.get_other_types(unique_items_list):
-            others = Item_Group(self.get_item_name_from_code(other_type))
+            others = Item_Group(self.get_item_type_name_from_code(other_type))
             for item in list(unique_items_list):
                 if item.base_code == other_type:
                     others.items.append(item)
@@ -419,26 +461,61 @@ class Database_Generator:
         armor_template = Template(filename="templates/affixes.htm", lookup=self.mylookup)
         armor_rendered = armor_template.render(suffixes)
         self.generate(armor_rendered, "suffixes.htm")
+
+
+    def generate_runewords(self):
+        runewords = []
+        for rw in self.tables.runeword_table:
+            allowed_bases = []
+            excluded_bases = []
+            runes = []
+            properties = []
+            for i in range(6):
+                if rw["itype" + str(i+1)] != "":
+                    allowed_bases.append(self.get_item_type_name_from_code(rw["itype" + str(i+1)]))
+            for i in range(3):
+                if rw["etype" + str(i+1)] != "":
+                    excluded_bases.append(self.get_item_type_name_from_code(rw["etype" + str(i+1)]))
+            for i in range(6):
+                if rw["Rune" + str(i+1)] != "":
+                    runes.append(self.mod_strings.get(rw["Rune" + str(i+1)], rw["Rune" + str(i+1)]))
+            for j in range(6):
+                # If the property doesn't have a name, then there isn't a property
+                if rw["T1Code" + str(j+1)] != "":
+                    properties.append(Property(rw["T1Code" + str(j+1)], rw["T1Param" + str(j+1)], rw["T1Min" + str(j+1)], rw["T1Max" + str(j+1)]))
+
+            for p in properties:
+                self.utils.fill_property_stats(p)
+            self.utils.fill_group_stats(properties)
+            runewords.append(Runeword(self.mod_strings.get(rw["Name"], rw["Rune Name"]), runes, allowed_bases, excluded_bases, properties))  
+        filename ="runewords.htm"
+        template = Template(filename="templates/" + filename, lookup=self.mylookup)
+        rendered = template.render(runewords, self.gemapplytype_names)
+        self.generate(rendered, filename)
     
     def gen_all(self):
+        self.generate_runewords()
         self.generate_armor()
         self.generate_weapons()
         self.generate_uniques()
         self.generate_static()
         self.generate_prefixes()
         self.generate_suffixes()
+        #self.generate_socketables()
+        #self.generate_sets()
+        #self.generate_recipes()
 
 def generate_static_links(db):
     prelinks = ""
     postlinks = ""
     extra_static = []
-    for extra_links in db[4]:
-        if extra_links[2] < 0:
-            prelinks = prelinks + "<a href=\"./" + extra_links[1] + "\">[" + extra_links[0] + "]</a>\n"
-            extra_static.append(extra_links[1])
-        if extra_links[2] > 0:
-            postlinks = postlinks + "<a href=\"./" + extra_links[1] + "\">[" + extra_links[0] + "]</a>\n"
-            extra_static.append(extra_links[1])
+    for extra_links in db["extra_pages"]:
+        if extra_links["position"] < 0:
+            prelinks = prelinks + "<a href=\"./" + extra_links["file"] + "\">[" + extra_links["name"] + "]</a>\n"
+            extra_static.append(extra_links["file"])
+        if extra_links["position"] > 0:
+            postlinks = postlinks + "<a href=\"./" + extra_links["file"] + "\">[" + extra_links["name"] + "]</a>\n"
+            extra_static.append(extra_links["file"])
     prelink_file = open("templates/prelinks.htm", "w")
     prelink_file.write(prelinks)
     prelink_file.close()
@@ -448,10 +525,15 @@ def generate_static_links(db):
     return extra_static
 
 for db in config.databases:
-    if len(sys.argv) == 1 or sys.argv[1] == db[0]:
-        print("----GENERATING " + db[1] + "-----")
+    if len(sys.argv) == 1 or sys.argv[1] == db["shortname"]:
+        print("----GENERATING " + db["name"] + "-----")
         extra_static = generate_static_links(db)
-        db_gen = Database_Generator(db[0], db[1], db[2], db[3], db[5])
+        db_gen = Database_Generator(db["shortname"], 
+                                    db["name"],
+                                    db["version"],
+                                    db["tablestring_files"],
+                                    db["include_staff_and_automods_on_uniques"],
+                                    db["gemapplytype_names"])
         db_gen.gen_all()
         db_gen.generate_static(extra_static)
         print("----DONE-----")

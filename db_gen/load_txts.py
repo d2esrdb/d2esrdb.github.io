@@ -20,6 +20,8 @@ class Tables:
         self.prefixes_table = self.load_table("MagicPrefix.txt")
         self.suffixes_table = self.load_table("MagicSuffix.txt")
         self.gamble_table = self.load_table("gamble.txt")
+        self.runeword_table = self.load_table("Runes.txt")
+        self.socketables_table = self.load_table("Gems.txt")
 
     def load_table(self, table_name):
         table_file = open("../" + self.db_name + "/" + table_name, newline='')
@@ -67,6 +69,46 @@ class Tables:
                     print(str(i) + ": " + col + ": " + row[col])
 
 
+class Node:
+    def __init__(self, code):
+        self.code = code
+        self.children = []
+    
+    def addchild(self, child):
+        self.children.append(child)
+
+def fillsubtype(node):
+    if node.code == "":
+        return
+    
+    #print("filling subtype: " + node.code)
+    for itemtype in mytables.item_types_table:
+        if itemtype["Equiv1"] == node.code or itemtype["Equiv2"] == node.code:
+            child = Node(itemtype["Code"])
+            node.addchild(child)
+            fillsubtype(child)
+
+def printtree(node, indent):
+    if node.code is None:
+        return
+    print(indent + node.code)
+    for child in node.children:
+        printtree(child, indent + "  ")
+
 if __name__ == "__main__":
     mytables = Tables("ESE")
-    mytables.print_row_with_cell_equal_to("Weapons.txt", "name", "Throwing Knife")
+    root = Node(None)
+    for itemtype in mytables.item_types_table:
+        if itemtype["Equiv1"] == "":
+            root.addchild(Node(itemtype["Code"]))
+    for child in root.children:
+        fillsubtype(child)
+    for child in root.children:
+        printtree(child, "")
+
+
+
+
+
+
+
