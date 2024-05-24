@@ -23,8 +23,7 @@ class Runeword:
     def rune_string(self):
         ret = ""
         for rune in self.runes:
-            ret = ret + rune + " "
-        ret = ret.replace("Rune", "")
+            ret = ret + rune + "<br>"
         return ret
 
     def bases_string(self):
