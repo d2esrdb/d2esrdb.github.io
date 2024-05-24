@@ -324,7 +324,7 @@ class Database_Generator:
                     unique_items_list.remove(item)
             if len(weapon_group.items) > 0:
                 item_groups.append(weapon_group)
-        unique_weapon_rendered = unique_weapon_template.render(item_groups=item_groups)
+        unique_weapon_rendered = unique_weapon_template.render(item_groups=item_groups, page="weapons")
         base_template = Template(filename="templates/base.htm", lookup=self.mylookup)
         base_rendered = base_template.render(body=unique_weapon_rendered,
                                              name=self.db_name,
@@ -344,7 +344,7 @@ class Database_Generator:
                     unique_items_list.remove(item)
             if len(armor_group.items) > 0:
                 item_groups.append(armor_group)
-        unique_armor_rendered = unique_armor_template.render(item_groups=item_groups)
+        unique_armor_rendered = unique_armor_template.render(item_groups=item_groups, page="armors")
         
         base_template = Template(filename="templates/base.htm", lookup=self.mylookup)
         base_rendered = base_template.render(body=unique_armor_rendered,
@@ -366,7 +366,7 @@ class Database_Generator:
                     others.items.append(item)
                     others.items.sort(key = lambda x: (int(x.item_level), int(x.required_level)))
             item_groups.append(others)
-            unique_armor_rendered = unique_armor_template.render(item_groups=item_groups)
+            unique_armor_rendered = unique_armor_template.render(item_groups=item_groups, page="misc")
             base_template = Template(filename="templates/base.htm", lookup=self.mylookup)
             base_rendered = base_template.render(body=unique_armor_rendered,
                                                  name=self.db_name,

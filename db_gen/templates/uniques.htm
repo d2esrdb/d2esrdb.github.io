@@ -1,4 +1,4 @@
-<%page args="item_groups"/>\
+<%page args="item_groups,page"/>\
 <font size="-1" face="arial,helvetica">
 % for item_group in item_groups:
 <a href="#${item_group.name}">[${item_group.name}]</a>
@@ -38,8 +38,8 @@
 					<b>
 						${item.name}
 						<br>
-						<a href="javascript:void(0);">
-							${item.base_name}
+						<a href="${page}.htm#${item.base_code}">
+							${item.base_name} (${item.base_code})
 						</a>
 					</b>
 				</font>
