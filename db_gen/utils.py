@@ -152,25 +152,6 @@ class Utils:
         print("Did not find skill name for skill: " + skill)
         return skill
 
-    def get_item_name_from_code(self, code):
-        # Use weapon/armor namestr if it exists, otherwise use misc.txt
-        for row in self.tables.armor_table:
-            if row[17] == code and row[4] == str(1):
-                if self.mod_strings.get(row[18]) is not None:
-                    return self.mod_strings[row[18]]
-        for row in weapons_table:
-            if row[3] == code and row[9] == str(1):
-                if self.mod_strings.get(row[5]) is not None:
-                    return self.mod_strings[row[5]]
-
-        for row in self.tables.misc_table:
-            if row[13] == code:
-                return self.mod_strings[row[15]]
-        if self.mod_strings.get(code) is not None:
-            return self.mod_strings[code]
-        print("No name found for code: " + code)
-        return "NO_NAME"
-
     def is_in_gamble_table(self, code):
         for row in self.tables.gamble_table:
             if row["code"] == code:

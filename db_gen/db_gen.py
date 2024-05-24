@@ -477,7 +477,7 @@ class Database_Generator:
                     excluded_bases.append(self.get_item_type_name_from_code(rw["etype" + str(i+1)]))
             for i in range(6):
                 if rw["Rune" + str(i+1)] != "":
-                    runes.append(self.mod_strings.get(rw["Rune" + str(i+1)], rw["Rune" + str(i+1)]))
+                    runes.append(self.utils.get_item_name_from_code(rw["Rune" + str(i+1)]))
             for j in range(6):
                 # If the property doesn't have a name, then there isn't a property
                 if rw["T1Code" + str(j+1)] != "":
