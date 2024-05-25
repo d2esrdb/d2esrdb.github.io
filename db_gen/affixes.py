@@ -2,7 +2,7 @@ import stat_formats
 from utils import *
 
 class Affix:
-    def __init__(self, name, rare, level, max_level, required_level, rarity, stat_string, item_types):
+    def __init__(self, name, rare, level, max_level, required_level, rarity, stat_string, item_types, exclude_types):
         self.name = name
         self.rare = rare
         self.level = level
@@ -11,7 +11,10 @@ class Affix:
         self.rarity = rarity
         self.stat_string = stat_string
         self.item_types = item_types
+        self.exclude_types = exclude_types
         self.item_types_string = ", ".join(item_types)
+        if len(exclude_types) != 0:
+            self.item_types_string = self.item_types_string + "<br><br>Excluding:<br>" + ", ".join(exclude_types)
 
 class Affix_Utils:
     def __init__(self, tables, mod_strings):
@@ -107,8 +110,17 @@ class Affix_Utils:
             for i in range(7):
                 if affix["itype" + str(i+1)] != "":
                     item_types.append(affix["itype" + str(i+1)])
+            
+            exclude_types = []
+            for i in range(5):
+                # prefixes have 5 columns for exclude types but suffix only has 3 #smart
+                try:
+                    if affix["etype" + str(i+1)] != "":
+                        exclude_types.append(affix["etype" + str(i+1)])
+                except:
+                    pass
 
-            affixes.append(Affix(affix["Name"], affix["rare"], affix["level"], affix["maxlevel"], affix["levelreq"], affix["frequency"], stat_string, item_types))
+            affixes.append(Affix(affix["Name"], affix["rare"], affix["level"], affix["maxlevel"], affix["levelreq"], affix["frequency"], stat_string, item_types, exclude_types))
         return affixes
 
     def get_prefixes(self):
