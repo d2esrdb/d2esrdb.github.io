@@ -19,7 +19,7 @@ class Property:
 
 class Item:
     def __init__(self, name, item_level, required_level, properties, base_code, mod_strings, tables, include_implicits=True):
-        self.name = mod_strings.get(name, "MISSING tbl: " + name)
+        self.name = mod_strings.get(name, name)
         self.item_level = item_level
         self.required_level = required_level
         self.properties = properties
@@ -356,7 +356,7 @@ class Utils:
 
         for row in self.tables.misc_table:
             if row["code"] == code:
-                return self.mod_strings.get(row["namestr"], "MISSING TBL: " + row["namestr"])
+                return self.mod_strings.get(row["namestr"], row["namestr"])
         if self.mod_strings.get(code) is not None:
             return self.mod_strings[code]
         print("No name found for code: " + code)
