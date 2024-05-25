@@ -117,4 +117,4 @@ stringtables =        [
 #            "ES AlphA.tbl",   
         ]
 #my = get_string_dict("ESE", stringtables)
-#print(my["ModitemRedVendP"])
+#print(my["ModFireMultiPos"])

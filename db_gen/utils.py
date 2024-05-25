@@ -140,7 +140,7 @@ class Utils:
                 skill_desc = skill_row["skilldesc"]
 
         if skill_desc == "":
-            print("Did not find skill desc for skill: " + skill)
+            #print("Did not find skill desc for skill: " + skill)
             return skill
         
         for skill_desc_row in self.tables.skill_desc_table:
@@ -284,26 +284,28 @@ class Utils:
                 if not item_stat_cost_row["descpriority"].isdigit():
                     #print("No Priority for stat: " + stat_name + ". Using priority 0")
                     priority = 0
-                if not item_stat_cost_row["descfunc"].isdigit():
-                    print("Bad stat no func: " + stat_name)
-                    return None
-                func = int(item_stat_cost_row["descfunc"])
-                if not item_stat_cost_row["descval"].isdigit():
-                    print("Bad stat no val: " + stat_name)
-                    return None
-                val = int(item_stat_cost_row["descval"])
+                func = item_stat_cost_row["descfunc"]
+                val = item_stat_cost_row["descval"]
 
-                string1 = self.mod_strings.get(item_stat_cost_row["descstrpos"], "EMPTY")
-                # @TODO Negative string?
-                string2 = self.mod_strings.get(item_stat_cost_row["descstr2"], "EMPTY")
+                #if "" == item_stat_cost_row["descstrpos"]:
+                    #print("Error: No descstrpos found for stat: " + item_stat_cost_row["Stat"])
+                string1 = self.mod_strings.get(item_stat_cost_row["descstrpos"], "")
+                string2 = self.mod_strings.get(item_stat_cost_row["descstr2"], "")
 
                 #@TODO there's a bunch of other parameters we need to find and pass in here
-                if 0 == val:
-                    return Stat(stat_name, self.stat_formats.get_stat_string0(func, string1, param, min, max, string2, skill=self.get_skill_name(param), slvl=self.get_value_string("", min, max)), priority)
-                if 1 == val:
-                    return Stat(stat_name, self.stat_formats.get_stat_string1(func, self.get_value_string(param, min, max), string1, param, min, max, string2), priority)
-                if 2 == val:
-                    return Stat(stat_name, self.stat_formats.get_stat_string2(func, self.get_value_string(param, min, max), string1, param, min, max, string2), priority)
+                try:
+                    if "0" == val:
+                        return Stat(stat_name,
+                                    self.stat_formats.get_stat_string0(int(func), string1, param, min, max, string2, skill=self.get_skill_name(param), slvl=self.get_value_string("", min, max)),
+                                    priority)
+                    elif "1" == val:
+                        return Stat(stat_name, self.stat_formats.get_stat_string1(int(func), self.get_value_string(param, min, max), string1, param, min, max, string2), priority)
+                    elif "2" == val:
+                        return Stat(stat_name, self.stat_formats.get_stat_string2(int(func), self.get_value_string(param, min, max), string1, param, min, max, string2), priority)
+                    return Stat(stat_name, string1, priority)
+                except:
+                    #print("Error: failed to get stat string for stat: " + item_stat_cost_row["Stat"])
+                    return Stat(stat_name, string1, priority)
         return None
 
     def fill_property_stats(self, property):

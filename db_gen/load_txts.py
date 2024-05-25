@@ -107,9 +107,9 @@ def printItemTypesTree():
         printtree(child, "")
 
 if __name__ == "__main__":
-    mytables = Tables("ESR")
-    #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "cheap")
-    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_reducedprices")
+    mytables = Tables("ESE")
+    #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "fire-multi")
+    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "fire_multi")
         
 
 
