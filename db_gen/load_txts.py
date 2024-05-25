@@ -95,7 +95,7 @@ def printtree(node, indent):
     for child in node.children:
         printtree(child, indent + "  ")
 
-if __name__ == "__main__":
+def printItemTypesTree():
     mytables = Tables("ESE")
     root = Node(None)
     for itemtype in mytables.item_types_table:
@@ -106,6 +106,11 @@ if __name__ == "__main__":
     for child in root.children:
         printtree(child, "")
 
+if __name__ == "__main__":
+    mytables = Tables("ESR")
+    #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "cheap")
+    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_reducedprices")
+        
 
 
 

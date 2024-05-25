@@ -110,11 +110,11 @@ def get_string_dict(db_code, string_tables):
 
 
 
-#stringtables =        [
-#            "string.tbl",
-#            "expansionstring.tbl",
-#            "patchstring.tbl",
+stringtables =        [
+            "string.tbl",
+            "expansionstring.tbl",
+            "patchstring.tbl",
 #            "ES AlphA.tbl",   
-#        ]
-#my = get_string_dict("ESR", stringtables)
-#print(my["gpr"])
+        ]
+#my = get_string_dict("ESE", stringtables)
+#print(my["ModitemRedVendP"])

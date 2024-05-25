@@ -478,7 +478,7 @@ class Database_Generator:
             for i in range(6):
                 if rw["Rune" + str(i+1)] != "":
                     runes.append(self.utils.get_item_name_from_code(rw["Rune" + str(i+1)]))
-            for j in range(6):
+            for j in range(7):
                 # If the property doesn't have a name, then there isn't a property
                 if rw["T1Code" + str(j+1)] != "":
                     properties.append(Property(rw["T1Code" + str(j+1)], rw["T1Param" + str(j+1)], rw["T1Min" + str(j+1)], rw["T1Max" + str(j+1)]))
