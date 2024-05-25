@@ -50,6 +50,14 @@ class Utils:
         self.tables = tables
         self.stat_formats = Stat_Formats(tables, mod_strings)
 
+    def get_item_types_list(self, types):
+        ret = []
+        for item_type in self.tables.item_types_table:
+            for t in types:
+                if t == item_type["Code"]:
+                    ret.append(item_type["Code"] + " = " + item_type["ItemType"])
+        return ret
+            
     def get_value_string(self, param, min, max):
         if param != "":
             return str(param)

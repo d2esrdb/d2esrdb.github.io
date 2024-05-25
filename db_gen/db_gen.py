@@ -451,14 +451,20 @@ class Database_Generator:
 
     def generate_prefixes(self):
         prefixes = Affix_Utils(self.tables, self.mod_strings).get_prefixes()
+        all_types = []
+        for prefix in prefixes:
+            all_types = all_types + prefix.item_types + prefix.exclude_types
         armor_template = Template(filename="templates/affixes.htm", lookup=self.mylookup)
-        armor_rendered = armor_template.render(prefixes)
+        armor_rendered = armor_template.render(prefixes, self.utils.get_item_types_list(list(set(all_types))))
         self.generate(armor_rendered, "prefixes.htm")
 
     def generate_suffixes(self):
         suffixes = Affix_Utils(self.tables, self.mod_strings).get_suffixes()
+        all_types = []
+        for suffix in suffixes:
+            all_types = all_types + suffix.item_types + suffix.exclude_types
         armor_template = Template(filename="templates/affixes.htm", lookup=self.mylookup)
-        armor_rendered = armor_template.render(suffixes)
+        armor_rendered = armor_template.render(suffixes, self.utils.get_item_types_list(list(set(all_types))))
         self.generate(armor_rendered, "suffixes.htm")
 
 
