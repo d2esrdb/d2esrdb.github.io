@@ -38,9 +38,13 @@
 					<b>
 						${item.name}
 						<br>
+		% if page == "weapons" or page == "armors":
 						<a href="${page}.htm#${item.base_code}">
 							${item.base_name} (${item.base_code})
 						</a>
+		% else:
+			${item.base_name} (${item.base_code})
+		% endif
 					</b>
 				</font>
 				<br>
