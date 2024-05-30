@@ -18,17 +18,28 @@ ${gemapplytype_names[2]}</font></td>
 <tr>
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="#908858"><b>${runeword.name}</b></font><br><br>${runeword.rune_string()}<br>(${runeword.num_sockets} Socket)<br><br></font></td>
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica">${runeword.bases_string()}</font></td>
-<td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">${runeword.stats_string()}</font></font></td>
+
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">
-stat1<br>
-stat2<br>
-stat3<br>
+% if runeword.gemapplytype[0] == True:
+${runeword.stats_string()}
+<!--${runeword.types[0]}-->
+% endif
 </font></font></td>
+
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">
-stat1<br>
-stat2<br>
-stat3<br>
+% if runeword.gemapplytype[1] == True:
+${runeword.stats_string()}
+<!--${runeword.types[1]}-->
+% endif
 </font></font></td>
+
+<td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">
+% if runeword.gemapplytype[2] == True:
+${runeword.stats_string()}
+<!--${runeword.types[2]}-->
+% endif
+</font></font></td>
+
 </tr>
 % endfor
 

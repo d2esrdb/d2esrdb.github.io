@@ -62,14 +62,20 @@
     	dammin.append(weapon[11])
 	dammax.append(weapon[12])
         numdam = numdam + 1
-    rowspan = numdam 
+    rowspan = max(numdam, 1)
 %>
 <a name="${weapon[3]}"></a>
         <tr>
 	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[0]}<br>${weapon[3]}</font></td>
+% if numdam > 0:
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica">${damtype[0]}</font></td>
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica">${dammin[0]}</font></td>
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica">${dammax[0]}</font></td>
+% else:
+	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica"></font></td>
+	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica"></font></td>
+	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica"></font></td>
+% endif
 	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[14]}</font></td>
 	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[13]}</font></td>
 	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[15]}</font></td>
@@ -83,14 +89,14 @@
 	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[24]}</font></td>
 	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[25]}</font></td>
 	</tr>
-% if rowspan > 1:
+% if numdam > 1:
 	<tr>
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica">${damtype[1]}</font></td>
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica">${dammin[1]}</font></td>
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica">${dammax[1]}</font></td>
 	</tr>
 % endif
-% if rowspan > 2:
+% if numdam > 2:
 	<tr>
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica">${damtype[2]}</font></td>
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica">${dammin[2]}</font></td>

@@ -354,11 +354,11 @@ class Utils:
     def get_item_name_from_code(self, code):
         # Use weapon/armor namestr if it exists, otherwise use misc.txt
         for row in self.tables.armor_table:
-            if row["code"] == code and row["spawnable"] == str(1):
+            if row["code"] == code:
                 if self.mod_strings.get(row["namestr"]) is not None:
                     return self.mod_strings[row["namestr"]]
         for row in self.tables.weapons_table:
-            if row["code"] == code and row["spawnable"] == str(1):
+            if row["code"] == code:
                 if self.mod_strings.get(row["namestr"]) is not None:
                     return self.mod_strings[row["namestr"]]
 

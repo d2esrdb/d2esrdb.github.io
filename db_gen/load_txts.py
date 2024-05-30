@@ -22,6 +22,44 @@ class Tables:
         self.gamble_table = self.load_table("gamble.txt")
         self.runeword_table = self.load_table("Runes.txt")
         self.socketables_table = self.load_table("Gems.txt")
+        
+        # For efficiency sake we should just build this dict once
+        self.parent_types = {}
+        for t in self.item_types_table:
+            if t["Code"] == "":
+                continue
+            self.parent_types[t["Code"]] = [t["Code"]]
+            self.add_code_to_type(t["Equiv1"], t["Code"])
+            self.add_code_to_type(t["Equiv2"], t["Code"])
+            self.parent_types[t["Code"]] = set(self.parent_types[t["Code"]])
+
+        self.sub_types = {}
+        for t in self.item_types_table:
+            if t["Code"] == "":
+                continue
+            self.sub_types[t["Code"]] = [t["Code"]]
+            self.add_sub_codes_to_type(t["Code"], t["Code"])
+            self.sub_types[t["Code"]] = set(self.sub_types[t["Code"]])
+
+    def add_sub_codes_to_type(self, code, t):
+        if code == "":
+            return
+        for _type in self.item_types_table:
+            if _type["Equiv1"] == code:
+                self.sub_types[t].append(_type["Code"])
+                self.add_sub_codes_to_type(_type["Code"], t)
+            if _type["Equiv2"] == code:
+                self.sub_types[t].append(_type["Code"])
+                self.add_sub_codes_to_type(_type["Code"], t)
+
+    def add_code_to_type(self, code, t):
+        if code == "":
+            return
+        self.parent_types[t].append(code)
+        for _type in self.item_types_table:
+            if _type["Code"] == code:
+                self.add_code_to_type(_type["Equiv1"], t)
+                self.add_code_to_type(_type["Equiv2"], t)
 
     def load_table(self, table_name):
         table_file = open("../" + self.db_name + "/" + table_name, newline='')
@@ -108,9 +146,15 @@ def printItemTypesTree():
 
 if __name__ == "__main__":
     mytables = Tables("ESE")
+    mytables.print_row_with_cell_equal_to("Armor.txt", "name", "Guilded Shield")
+
+    #for armor in mytables.armor_table:
+    #    if armor["type"] in mytables.sub_types["tors"] or armor["type2"] in mytables.sub_types["tors"]:
+    #        print(armor["name"] + ": " + armor["gemapplytype"]) 
     #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "fire-multi")
-    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "fire_multi")
-        
+    #mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "fire_multi")
+    #for key in mytables.sub_types:
+    #    print(key + ": " + str(mytables.sub_types[key]))
 
 
 

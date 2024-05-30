@@ -19,7 +19,9 @@ class Runeword:
         self.allowed_bases = allowed_bases
         self.excluded_bases = excluded_bases
         self.properties = properties
-
+        self.gemapplytype = [False, False, False]
+        self.types = ["", "", ""]
+    
     def rune_string(self):
         ret = ""
         for rune in self.runes:
@@ -65,6 +67,10 @@ class Database_Generator:
         self.utils = Utils(self.tables, self.mod_strings)
         self.include_implicits_on_uniques = include_implicits_on_uniques
         self.gemapplytype_names = gemapplytype_names
+        self.log_errors = []
+
+    def log(self, msg):
+        self.log_errors.append(msg)
 
     def generate(self, body_template, filename):
         base_template = Template(filename="templates/base.htm", lookup=self.mylookup)
@@ -86,43 +92,42 @@ class Database_Generator:
         exceptional_armors = []
         elite_armors = []
         for armor_row in self.tables.armor_table:
-            if armor_row["spawnable"] != "0":
-                for item_type_row in self.tables.item_types_table:
-                    if armor_row["type"] == item_type_row["Code"] and armor_row["type"] != "":
-                        item = Item(armor_row["namestr"], 1, armor_row["levelreq"], [], armor_row["code"], self.mod_strings, self.tables)
-                        automods = []
-                        for p in item.properties:
-                            if p.is_automod:
-                                for s in p.stats:
-                                    automods.append(s.stat_string)
-                        armor = [self.mod_strings.get(armor_row["namestr"], armor_row["name"]), #0: name
-                                 item_type_row["ItemType"],  #1: category
-                                 armor_row["levelreq"],      #2: req_level
-                                 armor_row["code"],          #3: code
-                                 armor_row["normcode"],      #4: norm_code
-                                 armor_row["ubercode"],      #5: exceptional_code
-                                 armor_row["ultracode"],     #6: elite code                           
-                                 armor_row["minac"],         #7: min defense
-                                 armor_row["maxac"],         #8: max defense
-                                 armor_row["durability"],    #9: durability
-                                 armor_row["speed"],         #10: frw
-                                 armor_row["level"],         #11: qlvl
-                                 armor_row["magic lvl"],     #12: mag lvl
-                                 armor_row["reqstr"],        #13: req str
-                                 armor_row["block"],         #14: block
-                                 armor_row["mindam"],        #15: min damage
-                                 armor_row["maxdam"],        #16: max damage
-                                 armor_row["gemsockets"],    #17: sock
-                                 armor_row["gemapplytype"],  #18: gem_type
-                                 self.utils.string_array_to_html(automods, 2),          #19: automods
-                                 item.staffmod,     #20: staffmods
-                                ]
-                        if armor_row["normcode"] == armor_row["code"]:
-                            normal_armors.append(armor)
-                        if armor_row["ubercode"] == armor_row["code"]:
-                            exceptional_armors.append(armor)
-                        if armor_row["ultracode"] == armor_row["code"]:
-                            elite_armors.append(armor)
+            for item_type_row in self.tables.item_types_table:
+                if armor_row["type"] == item_type_row["Code"] and armor_row["type"] != "":
+                    item = Item(armor_row["namestr"], 1, armor_row["levelreq"], [], armor_row["code"], self.mod_strings, self.tables)
+                    automods = []
+                    for p in item.properties:
+                        if p.is_automod:
+                            for s in p.stats:
+                                automods.append(s.stat_string)
+                    armor = [self.mod_strings.get(armor_row["namestr"], armor_row["name"]), #0: name
+                             item_type_row["ItemType"],  #1: category
+                             armor_row["levelreq"],      #2: req_level
+                             armor_row["code"],          #3: code
+                             armor_row["normcode"],      #4: norm_code
+                             armor_row["ubercode"],      #5: exceptional_code
+                             armor_row["ultracode"],     #6: elite code                           
+                             armor_row["minac"],         #7: min defense
+                             armor_row["maxac"],         #8: max defense
+                             armor_row["durability"],    #9: durability
+                             armor_row["speed"],         #10: frw
+                             armor_row["level"],         #11: qlvl
+                             armor_row["magic lvl"],     #12: mag lvl
+                             armor_row["reqstr"],        #13: req str
+                             armor_row["block"],         #14: block
+                             armor_row["mindam"],        #15: min damage
+                             armor_row["maxdam"],        #16: max damage
+                             armor_row["gemsockets"],    #17: sock
+                             armor_row["gemapplytype"],  #18: gem_type
+                             self.utils.string_array_to_html(automods, 2),          #19: automods
+                             item.staffmod,     #20: staffmods
+                            ]
+                    if armor_row["normcode"] == armor_row["code"]:
+                        normal_armors.append(armor)
+                    if armor_row["ubercode"] == armor_row["code"]:
+                        exceptional_armors.append(armor)
+                    if armor_row["ultracode"] == armor_row["code"]:
+                        elite_armors.append(armor)
 
         # First sort normal armors by level req
         normal_armors.sort(key = operator.itemgetter(2))
@@ -135,9 +140,7 @@ class Database_Generator:
                     armors.append(exceptional_armor)
                     exceptional_armors.remove(exceptional_armor)
                     break
-        if len(exceptional_armors) != 0:
-            print("Uh oh... we didn't find a matching base for all exceptional armors")
-
+        
         # Now append elite armors in order
         for normal_armor in list(normal_armors):
             for elite_armor in list(elite_armors):
@@ -145,8 +148,13 @@ class Database_Generator:
                     armors.append(elite_armor)
                     elite_armors.remove(elite_armor)
                     break
-        if len(elite_armors) != 0:
-            print("Uh oh... we didn't find a matching base for all elite armors")
+
+        for exceptional_armor in exceptional_armors:
+            armors.append(exceptional_armor)
+            self.log("Error: Exceptional armor " + exceptional_armor[0] + " could not find corresponding Normal armor.")
+        for elite_armor in elite_armors:
+            self.log("Error: Elite armor " + elite_armor[0] + " could not find corresponding Normal armor.")
+            armors.append(elite_armor)
 
         armor_template = Template(filename="templates/armors.htm", lookup=self.mylookup)
         armor_rendered = armor_template.render(armors)
@@ -174,48 +182,47 @@ class Database_Generator:
         exceptional_weapons = []
         elite_weapons = []
         for weapon_row in self.tables.weapons_table:
-            if weapon_row["spawnable"] != "0":
-                for item_type_row in self.tables.item_types_table:
-                    if weapon_row["type"] == item_type_row["Code"] and weapon_row["type"] != "":
-                        item = Item(weapon_row["namestr"], 1, weapon_row["levelreq"], [], weapon_row["code"], self.mod_strings, self.tables)
-                        automods = []
-                        for p in item.properties:
-                            if p.is_automod:
-                                for s in p.stats:
-                                    automods.append(s.stat_string)
-                        weapon = [self.mod_strings.get(weapon_row["namestr"], weapon_row["name"]), #0: name
-                                 item_type_row["ItemType"],  #1: category
-                                 weapon_row["levelreq"],     #2: req_level
-                                 weapon_row["code"],         #3: code
-                                 weapon_row["normcode"],     #4: norm_code
-                                 weapon_row["ubercode"],     #5: exceptional_code
-                                 weapon_row["ultracode"],    #6: elite code                           
-                                 self.get_dmg(weapon_row["mindam"], weapon_row["maxdam"]), #7
-                                 self.get_avg(weapon_row["mindam"], weapon_row["maxdam"]), #8
-                                 self.get_dmg(weapon_row["2handmindam"], weapon_row["2handmaxdam"]), #9
-                                 self.get_avg(weapon_row["2handmindam"], weapon_row["2handmaxdam"]), #10
-                                 self.get_dmg(weapon_row["minmisdam"], weapon_row["maxmisdam"]), #11
-                                 self.get_avg(weapon_row["minmisdam"], weapon_row["maxmisdam"]), #12
-                                 weapon_row["rangeadder"],   #13: range
-                                 weapon_row["durability"],   #14: durability
-                                 weapon_row["speed"],        #15: wsm?
-                                 weapon_row["level"],        #16: qlvl
-                                 weapon_row["magic lvl"],    #17: mag lvl
-                                 weapon_row["reqstr"],       #18: req str
-                                 weapon_row["reqdex"],       #19: req dex
-                                 self.replace_if_empty(weapon_row["StrBonus"], 0), #20: str bonus
-                                 self.replace_if_empty(weapon_row["DexBonus"], 0), #21: dex bonus
-                                 weapon_row["gemsockets"],   #22: sock
-                                 weapon_row["gemapplytype"], #23: gem_type
-                                 self.utils.string_array_to_html(automods, 2), #24: automods
-                                 item.staffmod,              #25: staffmods
-                                ]
-                        if weapon_row["normcode"] == weapon_row["code"]:
-                            normal_weapons.append(weapon)
-                        if weapon_row["ubercode"] == weapon_row["code"]:
-                            exceptional_weapons.append(weapon)
-                        if weapon_row["ultracode"] == weapon_row["code"]:
-                            elite_weapons.append(weapon)
+            for item_type_row in self.tables.item_types_table:
+                if weapon_row["type"] == item_type_row["Code"] and weapon_row["type"] != "":
+                    item = Item(weapon_row["namestr"], 1, weapon_row["levelreq"], [], weapon_row["code"], self.mod_strings, self.tables)
+                    automods = []
+                    for p in item.properties:
+                        if p.is_automod:
+                            for s in p.stats:
+                                automods.append(s.stat_string)
+                    weapon = [self.mod_strings.get(weapon_row["namestr"], weapon_row["name"]), #0: name
+                             item_type_row["ItemType"],  #1: category
+                             weapon_row["levelreq"],     #2: req_level
+                             weapon_row["code"],         #3: code
+                             weapon_row["normcode"],     #4: norm_code
+                             weapon_row["ubercode"],     #5: exceptional_code
+                             weapon_row["ultracode"],    #6: elite code                           
+                             self.get_dmg(weapon_row["mindam"], weapon_row["maxdam"]), #7
+                             self.get_avg(weapon_row["mindam"], weapon_row["maxdam"]), #8
+                             self.get_dmg(weapon_row["2handmindam"], weapon_row["2handmaxdam"]), #9
+                             self.get_avg(weapon_row["2handmindam"], weapon_row["2handmaxdam"]), #10
+                             self.get_dmg(weapon_row["minmisdam"], weapon_row["maxmisdam"]), #11
+                             self.get_avg(weapon_row["minmisdam"], weapon_row["maxmisdam"]), #12
+                             weapon_row["rangeadder"],   #13: range
+                             weapon_row["durability"],   #14: durability
+                             weapon_row["speed"],        #15: wsm?
+                             weapon_row["level"],        #16: qlvl
+                             weapon_row["magic lvl"],    #17: mag lvl
+                             weapon_row["reqstr"],       #18: req str
+                             weapon_row["reqdex"],       #19: req dex
+                             self.replace_if_empty(weapon_row["StrBonus"], 0), #20: str bonus
+                             self.replace_if_empty(weapon_row["DexBonus"], 0), #21: dex bonus
+                             weapon_row["gemsockets"],   #22: sock
+                             weapon_row["gemapplytype"], #23: gem_type
+                             self.utils.string_array_to_html(automods, 2), #24: automods
+                             item.staffmod,              #25: staffmods
+                            ]
+                    if weapon_row["normcode"] == weapon_row["code"]:
+                        normal_weapons.append(weapon)
+                    if weapon_row["ubercode"] == weapon_row["code"]:
+                        exceptional_weapons.append(weapon)
+                    if weapon_row["ultracode"] == weapon_row["code"]:
+                        elite_weapons.append(weapon)
 
         # First sort normal weapons by level req
         normal_weapons.sort(key = operator.itemgetter(2))
@@ -228,8 +235,6 @@ class Database_Generator:
                     weapons.append(exceptional_weapon)
                     exceptional_weapons.remove(exceptional_weapon)
                     break
-        if len(exceptional_weapons) != 0:
-            print("Uh oh... we didn't find a matching base for all exceptional weapons")
 
         # Now append elite weapons in order
         for normal_weapon in list(normal_weapons):
@@ -238,9 +243,14 @@ class Database_Generator:
                     weapons.append(elite_weapon)
                     elite_weapons.remove(elite_weapon)
                     break
-        if len(elite_weapons) != 0:
-            print("Uh oh... we didn't find a matching base for all elite weapons")
 
+        for exceptional_weapon in exceptional_weapons:
+            weapons.append(exceptional_weapon)
+            self.log("Error: Exceptional weapon " + exceptional_weapon[0] + " could not find corresponding Normal weapon.")
+        for elite_weapon in elite_weapons:
+            self.log("Error: Elite weapon " + elite_weapon[0] + " could not find corresponding Normal weapon.")
+            weapons.append(elite_weapon)
+        
         weapon_template = Template(filename="templates/weapons.htm", lookup=self.mylookup)
         weapon_rendered = weapon_template.render(weapons)
         self.generate(weapon_rendered, "weapons.htm")
@@ -337,7 +347,6 @@ class Database_Generator:
         for armor_type in self.get_armor_types():
             armor_group = Item_Group(self.get_item_type_name_from_code(armor_type))
             for item in list(unique_items_list):
-                #print("base code: " + item.base_code + " armor_type: " + armor_type)
                 if self.armor_is_of_type(item.base_code, armor_type):
                     self.set_armor_bg_color(item)
                     armor_group.items.append(item)
@@ -467,10 +476,50 @@ class Database_Generator:
         armor_rendered = armor_template.render(suffixes, self.utils.get_item_types_list(list(set(all_types))))
         self.generate(armor_rendered, "suffixes.htm")
 
+    def get_all_parent_types(self, types):
+        ret = list(types)
+        for t in types:
+            if t == "":
+                continue
+            for pt in self.tables.parent_types[t]:
+                if pt == "":
+                    continue
+                ret.append(pt)
+        return set(ret)
+    
+    def get_all_sub_types(self, types):
+        ret = list(types)
+        for t in types:
+            if t == "":
+                continue
+            for st in self.tables.sub_types[t]:
+                if st == "":
+                    continue
+                ret.append(st)
+        return set(ret)
+
+    def set_gemapplytypes(self, rw, include_types, exclude_types):
+        # Get the intersection of all the armor types and its subtypes and the rw include types and it's subtypes
+        intersected_types = self.get_all_sub_types(include_types) - self.get_all_sub_types(exclude_types)
+        for armor in (self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table):
+            if armor["gemapplytype"] != "" and rw.gemapplytype[int(armor["gemapplytype"])] == False and armor["hasinv"] == "1" and int(armor["gemsockets"]) >= rw.num_sockets:
+                # If there's even 1 item remaining in the intersected types after removing the exclude types, we have a valid item that can use the rw
+                if armor["type"] in intersected_types or armor["type2"] in intersected_types:
+                    rw.gemapplytype[int(armor["gemapplytype"])] = True
+                    rw.types[int(armor["gemapplytype"])] = rw.types[int(armor["gemapplytype"])] + "<br>" + self.mod_strings.get(armor["namestr"], armor["namestr"])
+
+    def bases_string(self, intersected_types):
+        ret = ""
+        for t in intersected_types:
+            ret = ret + self.get_item_type_name_from_code(t) + "<br>"
+        return ret
+    
 
     def generate_runewords(self):
         runewords = []
         for rw in self.tables.runeword_table:
+            include_types = []
+            exclude_types = []
             allowed_bases = []
             excluded_bases = []
             runes = []
@@ -478,9 +527,11 @@ class Database_Generator:
             for i in range(6):
                 if rw["itype" + str(i+1)] != "":
                     allowed_bases.append(self.get_item_type_name_from_code(rw["itype" + str(i+1)]))
+                    include_types.append(rw["itype" + str(i+1)])
             for i in range(3):
                 if rw["etype" + str(i+1)] != "":
                     excluded_bases.append(self.get_item_type_name_from_code(rw["etype" + str(i+1)]))
+                    exclude_types.append(rw["etype" + str(i+1)])
             for i in range(6):
                 if rw["Rune" + str(i+1)] != "":
                     runes.append(self.utils.get_item_name_from_code(rw["Rune" + str(i+1)]))
@@ -492,15 +543,17 @@ class Database_Generator:
             for p in properties:
                 self.utils.fill_property_stats(p)
             self.utils.fill_group_stats(properties)
-            runewords.append(Runeword(self.mod_strings.get(rw["Name"], rw["Rune Name"]), runes, allowed_bases, excluded_bases, properties))  
+            new_rw = Runeword(self.mod_strings.get(rw["Name"], rw["Rune Name"]), runes, allowed_bases, excluded_bases, properties)
+            self.set_gemapplytypes(new_rw, include_types, exclude_types)
+            runewords.append(new_rw) 
         filename ="runewords.htm"
         template = Template(filename="templates/" + filename, lookup=self.mylookup)
         rendered = template.render(runewords, self.gemapplytype_names)
         self.generate(rendered, filename)
     
     def gen_all(self):
-        self.generate_uniques()
         self.generate_runewords()
+        self.generate_uniques()
         self.generate_armor()
         self.generate_weapons()
         self.generate_static()
@@ -542,3 +595,6 @@ for db in config.databases:
         db_gen.gen_all()
         db_gen.generate_static(extra_static)
         print("----DONE-----")
+        if False:
+            for log in db_gen.log_errors:
+                print(log)
