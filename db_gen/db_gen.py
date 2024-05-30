@@ -12,13 +12,14 @@ from mako.template import Template
 from mako.lookup import TemplateLookup
 
 class Runeword:
-    def __init__(self, name, runes, allowed_bases, excluded_bases, properties):
+    def __init__(self, name, runes, allowed_bases, excluded_bases, properties, rune_properties):
         self.name = name
         self.runes = runes
         self.num_sockets = len(runes)
         self.allowed_bases = allowed_bases
         self.excluded_bases = excluded_bases
         self.properties = properties
+        self.rune_properties = rune_properties
         self.gemapplytype = [False, False, False]
         self.types = ["", "", ""]
     
@@ -42,6 +43,17 @@ class Runeword:
         ret = ""
         allstats = []
         for prop in self.properties:
+            for stat in prop.stats:
+                allstats.append(stat)
+        #allstats.sort(key = lambda x: (int(x.item_level), int(x.required_level)))
+        for stat in sorted(allstats, key=lambda x: int(x.priority)):
+            ret = ret + stat.stat_string + "<br>"
+        return ret
+    
+    def runes_string(self, gemapplytype):
+        ret = ""
+        allstats = []
+        for prop in self.rune_properties[gemapplytype]:
             for stat in prop.stats:
                 allstats.append(stat)
         #allstats.sort(key = lambda x: (int(x.item_level), int(x.required_level)))
@@ -543,7 +555,39 @@ class Database_Generator:
             for p in properties:
                 self.utils.fill_property_stats(p)
             self.utils.fill_group_stats(properties)
-            new_rw = Runeword(self.mod_strings.get(rw["Name"], rw["Rune Name"]), runes, allowed_bases, excluded_bases, properties)
+
+            
+            rune_properties = [[],[],[]]
+            for socketable in self.tables.socketables_table:
+                for i in range(6):
+                    if socketable["code"] == rw["Rune" + str(i+1)]:
+                        for j in range(3):
+                            if socketable["weaponMod" + str(j+1) + "Code"] != "":
+                                rune_properties[0].append(Property(socketable["weaponMod" + str(j+1) + "Code"],
+                                                                   socketable["weaponMod" + str(j+1) + "Param"],
+                                                                   socketable["weaponMod" + str(j+1) + "Min"],
+                                                                   socketable["weaponMod" + str(j+1) + "Max"]))
+                            if socketable["helmMod" + str(j+1) + "Code"] != "":
+                                rune_properties[1].append(Property(socketable["helmMod" + str(j+1) + "Code"],
+                                                                   socketable["helmMod" + str(j+1) + "Param"],
+                                                                   socketable["helmMod" + str(j+1) + "Min"],
+                                                                   socketable["helmMod" + str(j+1) + "Max"]))
+                            if socketable["shieldMod" + str(j+1) + "Code"] != "":
+                                rune_properties[2].append(Property(socketable["shieldMod" + str(j+1) + "Code"],
+                                                                   socketable["shieldMod" + str(j+1) + "Param"],
+                                                                   socketable["shieldMod" + str(j+1) + "Min"],
+                                                                   socketable["shieldMod" + str(j+1) + "Max"]))
+            for i in range(3):            
+                for p in rune_properties[i]:
+                    self.utils.fill_property_stats(p)
+                self.utils.fill_group_stats(rune_properties[i])
+
+
+
+
+
+
+            new_rw = Runeword(self.mod_strings.get(rw["Name"], rw["Rune Name"]), runes, allowed_bases, excluded_bases, properties, rune_properties)
             self.set_gemapplytypes(new_rw, include_types, exclude_types)
             runewords.append(new_rw) 
         filename ="runewords.htm"
