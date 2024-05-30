@@ -68,7 +68,7 @@ class Item_Group:
         self.items = []
 
 class Database_Generator:
-    def __init__(self, db_code, db_name, db_version, string_tables, include_implicits_on_uniques, gemapplytype_names):
+    def __init__(self, db_code, db_name, db_version, string_tables, gemapplytype_names):
         self.db_code = db_code
         self.db_name = db_name
         self.db_version = db_version
@@ -77,7 +77,6 @@ class Database_Generator:
         self.mylookup = TemplateLookup(directories=[os.getcwd()])
         self.tables = Tables(db_code)
         self.utils = Utils(self.tables, self.mod_strings)
-        self.include_implicits_on_uniques = include_implicits_on_uniques
         self.gemapplytype_names = gemapplytype_names
         self.log_errors = []
 
@@ -333,7 +332,7 @@ class Database_Generator:
                 return
 
     def generate_uniques(self):
-        unique_items_list = unique_items.get_unique_items(self.tables, self.mod_strings, self.include_implicits_on_uniques)
+        unique_items_list = unique_items.get_unique_items(self.tables, self.mod_strings)
         item_groups = []
         unique_weapon_template = Template(filename="templates/uniques.htm",
                                           lookup=self.mylookup)
@@ -635,7 +634,6 @@ for db in config.databases:
                                     db["name"],
                                     db["version"],
                                     db["tablestring_files"],
-                                    db["include_staff_and_automods_on_uniques"],
                                     db["gemapplytype_names"])
         db_gen.gen_all()
         db_gen.generate_static(extra_static)

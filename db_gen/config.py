@@ -4,7 +4,6 @@ databases = \
         "name" : "Eastern Sun Eclipse",
         "shortname" : "ESE",
         "version" : "1.0",
-        "include_staff_and_automods_on_uniques" : False,
         "tablestring_files" : \
         [
             "string.tbl",
@@ -35,7 +34,6 @@ databases = \
         "name" : "Eastern Sun Rises",
         "shortname" : "ESR",
         "version" : "5.3A5",
-        "include_staff_and_automods_on_uniques" : True,
         "tablestring_files" : \
         [
             "string.tbl",
