@@ -146,7 +146,8 @@ def printItemTypesTree():
 
 if __name__ == "__main__":
     mytables = Tables("ESE")
-    mytables.print_row_with_cell_equal_to("Armor.txt", "name", "Guilded Shield")
+    mytables.print_row_with_cell_equal_to("Armor.txt", "name", "Bloodlord Skull")
+    mytables.print_row_with_cell_equal_to("Weapons.txt", "name", "Blade")
 
     #for armor in mytables.armor_table:
     #    if armor["type"] in mytables.sub_types["tors"] or armor["type2"] in mytables.sub_types["tors"]:
