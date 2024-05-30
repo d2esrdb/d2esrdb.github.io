@@ -562,21 +562,22 @@ class Database_Generator:
                 for i in range(6):
                     if socketable["code"] == rw["Rune" + str(i+1)]:
                         for j in range(3):
-                            if socketable["weaponMod" + str(j+1) + "Code"] != "":
-                                rune_properties[0].append(Property(socketable["weaponMod" + str(j+1) + "Code"],
-                                                                   socketable["weaponMod" + str(j+1) + "Param"],
-                                                                   socketable["weaponMod" + str(j+1) + "Min"],
-                                                                   socketable["weaponMod" + str(j+1) + "Max"]))
-                            if socketable["helmMod" + str(j+1) + "Code"] != "":
-                                rune_properties[1].append(Property(socketable["helmMod" + str(j+1) + "Code"],
-                                                                   socketable["helmMod" + str(j+1) + "Param"],
-                                                                   socketable["helmMod" + str(j+1) + "Min"],
-                                                                   socketable["helmMod" + str(j+1) + "Max"]))
-                            if socketable["shieldMod" + str(j+1) + "Code"] != "":
-                                rune_properties[2].append(Property(socketable["shieldMod" + str(j+1) + "Code"],
-                                                                   socketable["shieldMod" + str(j+1) + "Param"],
-                                                                   socketable["shieldMod" + str(j+1) + "Min"],
-                                                                   socketable["shieldMod" + str(j+1) + "Max"]))
+                            for k, sockettype in enumerate(["weapon", "helm", "shield"]):
+                                if socketable[sockettype + "Mod" + str(j+1) + "Code"] != "":
+                                    found = False
+                                    for p in rune_properties[k]:
+                                        if p.name == socketable[sockettype + "Mod" + str(j+1) + "Code"]:
+                                            if p.min != "":
+                                                p.min = str(int(p.min) + int(socketable[sockettype + "Mod" + str(j+1) + "Min"]))
+                                            if p.max != "":
+                                                p.max = str(int(p.max) + int(socketable[sockettype + "Mod" + str(j+1) + "Max"]))
+                                            found = True
+                                    if not found:
+                                        rune_properties[k].append(Property(socketable[sockettype + "Mod" + str(j+1) + "Code"],
+                                                                           socketable[sockettype + "Mod" + str(j+1) + "Param"],
+                                                                           socketable[sockettype + "Mod" + str(j+1) + "Min"],
+                                                                           socketable[sockettype + "Mod" + str(j+1) + "Max"]))
+            
             for i in range(3):            
                 for p in rune_properties[i]:
                     self.utils.fill_property_stats(p)
