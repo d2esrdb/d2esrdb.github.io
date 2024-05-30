@@ -131,7 +131,7 @@ class Database_Generator:
                              armor_row["maxdam"],        #16: max damage
                              armor_row["gemsockets"],    #17: sock
                              armor_row["gemapplytype"],  #18: gem_type
-                             self.utils.string_array_to_html(automods, 2),          #19: automods
+                             self.utils.string_array_to_html(automods, 1),          #19: automods
                              item.staffmod,     #20: staffmods
                             ]
                     if armor_row["normcode"] == armor_row["code"]:
@@ -226,7 +226,7 @@ class Database_Generator:
                              self.replace_if_empty(weapon_row["DexBonus"], 0), #21: dex bonus
                              weapon_row["gemsockets"],   #22: sock
                              weapon_row["gemapplytype"], #23: gem_type
-                             self.utils.string_array_to_html(automods, 2), #24: automods
+                             self.utils.string_array_to_html(automods, 1), #24: automods
                              item.staffmod,              #25: staffmods
                             ]
                     if weapon_row["normcode"] == weapon_row["code"]:
