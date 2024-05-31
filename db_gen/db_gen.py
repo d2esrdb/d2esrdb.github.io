@@ -36,7 +36,11 @@ class Database_Generator:
         filenames = ["sets.htm", "recipes.htm",]
         filenames = filenames + extra
         for filename in filenames:
-            template = Template(filename="templates/" + filename, lookup=self.mylookup)
+            #@TODO delete once we autogen sets and recipes
+            if filename in ["sets.htm", "recipes.htm"]:
+                template = Template(filename="templates/" + filename, lookup=self.mylookup)
+            else:
+                template = Template(filename="templates/" + self.db_code + "/" + filename, lookup=self.mylookup)
             rendered = template.render()
             self.generate(rendered, filename)
 
@@ -105,7 +109,6 @@ class Database_Generator:
         self.generate_uniques()
         self.generate_armor()
         self.generate_weapons()
-        self.generate_static()
         self.generate_prefixes()
         self.generate_suffixes()
         self.generate_socketables()
