@@ -1,5 +1,3 @@
-import os
-
 def read_bytes(data, num_bytes):
     return int.from_bytes(data.read(num_bytes), byteorder='little')
 

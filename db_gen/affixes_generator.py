@@ -1,5 +1,5 @@
 import stat_formats
-from utils import *
+import utils
 
 class Affix:
     def __init__(self, name, rare, level, max_level, required_level, rarity, stat_string, item_types, exclude_types):
@@ -16,12 +16,12 @@ class Affix:
         if len(exclude_types) != 0:
             self.item_types_string = self.item_types_string + "<br><br>Excluding:<br>" + ", ".join(exclude_types)
 
-class Affix_Utils:
-    def __init__(self, tables, mod_strings):
+class Affix_Generator:
+    def __init__(self, tables, mod_strings, utils):
         self.tables = tables
         self.mod_strings = mod_strings
-        self.stat_formats = Stat_Formats(tables, mod_strings)
-        self.utils = Utils(tables, mod_strings)
+        self.stat_formats = stat_formats.Stat_Formats(tables, mod_strings)
+        self.utils = utils
 
     def get_group_prop(self, property):
         groups = {}
@@ -70,8 +70,8 @@ class Affix_Utils:
                     if param != item_group_stats[stat][0] or min != item_group_stats[stat][1] or max != item_group_stats[stat][2]:
                         use_group_string = False
                 if use_group_string:
-                    prop = Property("Group Property", param, min, max)
-                    prop.stats.append(Stat("Group Stat", self.stat_formats.get_stat_string1(int(func), self.utils.get_value_string(param, min, max), self.mod_strings.get(string1, "NONE"), param, min, max, self.mod_strings.get(string2, "NONE")), priority))
+                    prop = utils.Property("Group Property", param, min, max)
+                    prop.stats.append(utils.Stat("Group Stat", self.stat_formats.get_stat_string1(int(func), self.utils.get_value_string(param, min, max), self.mod_strings.get(string1, "NONE"), param, min, max, self.mod_strings.get(string2, "NONE")), priority))
                     return prop
 
         self.utils.handle_hardcoded_groups(property)
@@ -82,17 +82,17 @@ class Affix_Utils:
         for affix in table:
             if affix["spawnable"] != str(1):
                 continue
-            prop1 = Property(affix["mod1code"], affix["mod1param"], affix["mod1min"], affix["mod1max"])
+            prop1 = utils.Property(affix["mod1code"], affix["mod1param"], affix["mod1min"], affix["mod1max"])
             self.utils.fill_property_stats(prop1)
             prop1 = self.get_group_prop(prop1)
             prop2 = None
             prop3 = None
             if affix["mod2code"] != "":
-                prop2 = Property(affix["mod2code"], affix["mod2param"], affix["mod2min"], affix["mod2max"])
+                prop2 = utils.Property(affix["mod2code"], affix["mod2param"], affix["mod2min"], affix["mod2max"])
                 self.utils.fill_property_stats(prop2)
                 prop2 = self.get_group_prop(prop2)
             if affix["mod3code"] != "":
-                prop3 = Property(affix["mod3code"], affix["mod3param"], affix["mod3min"], affix["mod3max"])
+                prop3 = utils.Property(affix["mod3code"], affix["mod3param"], affix["mod3min"], affix["mod3max"])
                 self.utils.fill_property_stats(prop3)
                 prop3 = self.get_group_prop(prop3)
             stats = []

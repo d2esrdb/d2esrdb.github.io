@@ -1,7 +1,5 @@
 # One of the following functions are called, depending on descval
 # Strings from https://d2mods.info/forum/kb/viewarticle?a=448
-import table_strings 
-import load_txts
 import re
 
 class Stat_Formats:

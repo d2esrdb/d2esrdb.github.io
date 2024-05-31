@@ -1,6 +1,4 @@
-from table_strings import *
-from load_txts import *
-from stat_formats import *
+import stat_formats
 
 class Stat:
     def __init__(self, name, stat_string, priority):
@@ -18,14 +16,14 @@ class Property:
         self.stats = []
 
 class Item:
-    def __init__(self, name, item_level, required_level, properties, base_code, mod_strings, tables, include_implicits=True):
-        self.name = mod_strings.get(name, name)
+    def __init__(self, name, item_level, required_level, properties, base_code, table_strings, tables, include_implicits=True):
+        self.name = table_strings.get(name, name)
         self.item_level = item_level
         self.required_level = required_level
         self.properties = properties
         self.base_code = base_code
         self.bg_color_code = 101010
-        self.utils = Utils(tables, mod_strings)
+        self.utils = Utils(tables, table_strings)
         self.gamble_item = self.utils.get_gamble_item_from_code(base_code)
         self.base_name = self.utils.get_item_name_from_code(base_code)
         if include_implicits:
@@ -45,10 +43,14 @@ class Item:
         return sorted(stats, key = lambda x: int(x.priority), reverse=True)
 
 class Utils:
-    def __init__(self, tables, mod_strings):
-        self.mod_strings = mod_strings
+    def __init__(self, tables, table_strings):
+        self.table_strings = table_strings
         self.tables = tables
-        self.stat_formats = Stat_Formats(tables, mod_strings)
+        self.stat_formats = stat_formats.Stat_Formats(tables, table_strings)
+        self.log_errors = []
+
+    def log(self, msg):
+        self.log_errors.append(msg)
 
     def get_item_types_list(self, types):
         ret = []
@@ -153,7 +155,7 @@ class Utils:
         
         for skill_desc_row in self.tables.skill_desc_table:
             if skill_desc == skill_desc_row["skilldesc"]:
-                skill_name = self.mod_strings.get(skill_desc_row["str name"], "")
+                skill_name = self.table_strings.get(skill_desc_row["str name"], "")
                 if skill_name != "":
                     return skill_name
 
@@ -261,7 +263,7 @@ class Utils:
                     skill_tab_conversion = [3, 2, 1, 15, 14, 13, 8, 7, 9, 6, 5, 4, 11, 12, 10, 16, 17, 18, 19, 20, 21];
                     param = str(int(param))
                     p = str(skill_tab_conversion[int(param)])
-                    return Stat(stat_name, self.mod_strings["StrSklTabItem" + p].replace("%d", self.get_value_string("", min, max)) + " (" + self.get_class_from_tab_number(int(param)) + " Only)", int(item_stat_cost_row["descpriority"]))
+                    return Stat(stat_name, self.table_strings["StrSklTabItem" + p].replace("%d", self.get_value_string("", min, max)) + " (" + self.get_class_from_tab_number(int(param)) + " Only)", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_nonclassskill":
                     return Stat(stat_name, "+" + self.get_value_string("", min, max) + " to " + self.get_skill_name(param), int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_charged_skill":
@@ -273,7 +275,7 @@ class Utils:
                 if stat_name == "fade":
                     return Stat(stat_name, "Fade (Cosmetic Effect)", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "killheal_dummy":
-                    return Stat(stat_name, self.mod_strings["healkillStr"].replace("%d%", str(min)), int(item_stat_cost_row["descpriority"]))
+                    return Stat(stat_name, self.table_strings["healkillStr"].replace("%d%", str(min)), int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_skillonattack":
                     return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " On Attack", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_skillonkill":
@@ -297,8 +299,8 @@ class Utils:
 
                 #if "" == item_stat_cost_row["descstrpos"]:
                     #print("Error: No descstrpos found for stat: " + item_stat_cost_row["Stat"])
-                string1 = self.mod_strings.get(item_stat_cost_row["descstrpos"], "")
-                string2 = self.mod_strings.get(item_stat_cost_row["descstr2"], "")
+                string1 = self.table_strings.get(item_stat_cost_row["descstrpos"], "")
+                string2 = self.table_strings.get(item_stat_cost_row["descstr2"], "")
 
                 #@TODO there's a bunch of other parameters we need to find and pass in here
                 try:
@@ -353,20 +355,10 @@ class Utils:
 
     def get_item_name_from_code(self, code):
         # Use weapon/armor namestr if it exists, otherwise use misc.txt
-        for row in self.tables.armor_table:
+        for row in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
             if row["code"] == code:
-                if self.mod_strings.get(row["namestr"]) is not None:
-                    return self.mod_strings[row["namestr"]]
-        for row in self.tables.weapons_table:
-            if row["code"] == code:
-                if self.mod_strings.get(row["namestr"]) is not None:
-                    return self.mod_strings[row["namestr"]]
-
-        for row in self.tables.misc_table:
-            if row["code"] == code:
-                return self.mod_strings.get(row["namestr"], row["namestr"])
-        if self.mod_strings.get(code) is not None:
-            return self.mod_strings[code]
+                if self.table_strings.get(row["namestr"]) is not None:
+                    return self.table_strings[row["namestr"]]
         print("No name found for code: " + code)
         return "NO_NAME"
 
@@ -387,7 +379,7 @@ class Utils:
     def get_spelldesc(self, code):
         for row in self.tables.misc_table:
             if row["code"] == code:
-                return self.mod_strings.get(row["spelldescstr"], "")
+                return self.table_strings.get(row["spelldescstr"], "")
 
     def mymin(self, v1, v2):
         if not v1.isdigit():
@@ -443,27 +435,27 @@ class Utils:
             for stat in list(property.stats):
                 priority = stat.priority
                 property.stats.remove(stat)
-            property.stats.append(Stat("Group Stat", self.mod_strings["strModFireDamageRange"].replace("%d-%d", self.get_value_string(property.param, property.min, property.max)).title(), priority))
+            property.stats.append(Stat("Group Stat", self.table_strings["strModFireDamageRange"].replace("%d-%d", self.get_value_string(property.param, property.min, property.max)).title(), priority))
         if property.name == "dmg-cold":
             for stat in list(property.stats):
                 priority = stat.priority
                 property.stats.remove(stat)
-            property.stats.append(Stat("Group Stat", self.mod_strings["strModColdDamageRange"].replace("%d-%d", self.get_value_string("", property.min, property.max)).title(), priority))
+            property.stats.append(Stat("Group Stat", self.table_strings["strModColdDamageRange"].replace("%d-%d", self.get_value_string("", property.min, property.max)).title(), priority))
         if property.name == "dmg-ltng":
             for stat in list(property.stats):
                 priority = stat.priority
                 property.stats.remove(stat)
-            property.stats.append(Stat("Group Stat", self.mod_strings["strModLightningDamageRange"].replace("%d-%d", self.get_value_string(property.param, property.min, property.max)).title(), priority))
+            property.stats.append(Stat("Group Stat", self.table_strings["strModLightningDamageRange"].replace("%d-%d", self.get_value_string(property.param, property.min, property.max)).title(), priority))
         if property.name == "dmg-mag":
             for stat in list(property.stats):
                 priority = stat.priority
                 property.stats.remove(stat)
-            property.stats.append(Stat("Group Stat", self.mod_strings["strModMagicDamageRange"].replace("%d-%d", self.get_value_string(property.param, property.min, property.max)).title(), priority))
+            property.stats.append(Stat("Group Stat", self.table_strings["strModMagicDamageRange"].replace("%d-%d", self.get_value_string(property.param, property.min, property.max)).title(), priority))
         if property.name == "dmg-norm":
             for stat in list(property.stats):
                 priority = stat.priority
                 property.stats.remove(stat)
-            property.stats.append(Stat("Group Stat", self.mod_strings["strModMinDamageRange"].replace("%d-%d", self.get_value_string(property.param, property.min, property.max)).title(), priority))
+            property.stats.append(Stat("Group Stat", self.table_strings["strModMinDamageRange"].replace("%d-%d", self.get_value_string(property.param, property.min, property.max)).title(), priority))
         if property.name == "dmg-pois":
             for stat in list(property.stats):
                 priority = stat.priority
@@ -471,7 +463,7 @@ class Utils:
             real_length = int(int(property.param)/25)
             real_min = int(int(property.min)/256*real_length*25)
             real_max = int(int(property.max)/256*real_length*25)
-            property.stats.append(Stat("Group Stat", self.mod_strings["strModPoisonDamageRange"].replace("%d-%d", self.get_value_string("", real_min, real_max)).replace("%d", str(real_length)).title(), priority))
+            property.stats.append(Stat("Group Stat", self.table_strings["strModPoisonDamageRange"].replace("%d-%d", self.get_value_string("", real_min, real_max)).replace("%d", str(real_length)).title(), priority))
 
     def fill_group_stats(self, properties):
         groups = {}
@@ -525,11 +517,11 @@ class Utils:
                     prop.stats.append(Stat("Group Stat",
                                            self.stat_formats.get_stat_string1(int(func),
                                                                          self.get_value_string(param, min, max),
-                                                                         self.mod_strings.get(string1, "NONE"),
+                                                                         self.table_strings.get(string1, "NONE"),
                                                                          param,
                                                                          min,
                                                                          max,
-                                                                         self.mod_strings.get(string2, "NONE")), priority))
+                                                                         self.table_strings.get(string2, "NONE")), priority))
                     properties.append(prop)
                     for p in list(props):
                         try:
@@ -549,3 +541,39 @@ class Utils:
             else:
                 mystring = s
         return mystring
+    
+    def get_item_type_name_from_code(self, code):
+        # Hard code "tors" because "Armor" is confusing
+        if code == "tors":
+            return "Body Armor"
+
+        for row in self.tables.item_types_table:
+            if row["Code"] == code:
+                return row["ItemType"]
+
+        for row in self.tables.misc_table:
+            if row["code"] == code:
+                return row["name"]
+        return "Unknown: " + code
+
+    def get_all_parent_types(self, types):
+        ret = list(types)
+        for t in types:
+            if t == "":
+                continue
+            for pt in self.tables.parent_types[t]:
+                if pt == "":
+                    continue
+                ret.append(pt)
+        return set(ret)
+    
+    def get_all_sub_types(self, types):
+        ret = list(types)
+        for t in types:
+            if t == "":
+                continue
+            for st in self.tables.sub_types[t]:
+                if st == "":
+                    continue
+                ret.append(st)
+        return set(ret)

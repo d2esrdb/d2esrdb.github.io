@@ -21,21 +21,21 @@ ${gemapplytype_names[2]}</font></td>
 
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">
 % if runeword.gemapplytype[0] == True:
-${runeword.stats_string()}<br>${runeword.runes_string(0)}
+${runeword.stats_string()}<br>${runeword.rune_stats_string(0)}
 <!--${runeword.types[0]}-->
 % endif
 </font></font></td>
 
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">
 % if runeword.gemapplytype[1] == True:
-${runeword.stats_string()}<br>${runeword.runes_string(1)}
+${runeword.stats_string()}<br>${runeword.rune_stats_string(1)}
 <!--${runeword.types[1]}-->
 % endif
 </font></font></td>
 
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">
 % if runeword.gemapplytype[2] == True:
-${runeword.stats_string()}<br>${runeword.runes_string(2)}
+${runeword.stats_string()}<br>${runeword.rune_stats_string(2)}
 <!--${runeword.types[2]}-->
 % endif
 </font></font></td>
@@ -44,4 +44,5 @@ ${runeword.stats_string()}<br>${runeword.runes_string(2)}
 % endfor
 
 
+</tbody></table>
 
