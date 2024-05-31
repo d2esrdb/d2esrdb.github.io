@@ -19,14 +19,19 @@ databases = \
         "extra_pages" : \
         [
             {
+                "name": "Maps",
+                "file" : "maps.htm", 
+                "position" : 1,
+            },
+            {
                 "name" : "New Stuff",
                 "file" : "newstuff.htm", 
-                "position" : 1,
+                "position" : 2,
             },
             {
                 "name": "Eclipse",
                 "file" : "eclipse.htm", 
-                "position" : 2,
+                "position" : 3,
             },
         ],
     },
@@ -53,6 +58,11 @@ databases = \
                 "name" : "Top",
                 "file" : "top.htm", 
                 "position" : -1,
+            },
+            {
+                "name": "Maps",
+                "file" : "maps.htm", 
+                "position" : 1,
             },
         ],
     },

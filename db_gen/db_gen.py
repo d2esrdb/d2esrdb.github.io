@@ -33,7 +33,7 @@ class Database_Generator:
         open("../" + self.db_code + "/" + filename, "w").write(base_rendered)
 
     def generate_static(self, extra=[]):
-        filenames = ["maps.htm", "sets.htm", "recipes.htm",]
+        filenames = ["sets.htm", "recipes.htm",]
         filenames = filenames + extra
         for filename in filenames:
             template = Template(filename="templates/" + filename, lookup=self.mylookup)
