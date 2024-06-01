@@ -354,13 +354,12 @@ class Utils:
             print("Didn't find property stats for property: " + property.name)
 
     def get_item_name_from_code(self, code):
-        # Use weapon/armor namestr if it exists, otherwise use misc.txt
         for row in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
             if row["code"] == code:
                 if self.table_strings.get(row["namestr"]) is not None:
                     return self.table_strings[row["namestr"]]
         print("No name found for code: " + code)
-        return "NO_NAME"
+        return code
 
     def get_staffmod(self, code):
         for armor in self.tables.armor_table:

@@ -13,6 +13,7 @@ import affixes_generator
 import runeword_generator
 import uniques_generator
 import socketables_generator
+import set_generator
 
 class Database_Generator:
     def __init__(self, db_code, db_name, db_version, string_tables, gemapplytype_names):
@@ -33,11 +34,11 @@ class Database_Generator:
         open("../" + self.db_code + "/" + filename, "w").write(base_rendered)
 
     def generate_static(self, extra=[]):
-        filenames = ["sets.htm", "recipes.htm",]
+        filenames = ["recipes.htm",]
         filenames = filenames + extra
         for filename in filenames:
-            #@TODO delete once we autogen sets and recipes
-            if filename in ["sets.htm", "recipes.htm"]:
+            #@TODO delete once we autogen recipes
+            if filename in ["recipes.htm"]:
                 template = Template(filename="templates/" + filename, lookup=self.mylookup)
             else:
                 template = Template(filename="templates/" + self.db_code + "/" + filename, lookup=self.mylookup)
@@ -104,7 +105,15 @@ class Database_Generator:
         rendered = template.render(socketables, self.gemapplytype_names)
         self.generate(rendered, filename)
     
+    def generate_sets(self):
+        sets = set_generator.Set_Generator(self.tables, self.table_strings, self.utils).generate_sets()
+        filename = "sets.htm"
+        template = Template(filename="templates/" + filename, lookup=self.mylookup)
+        rendered = template.render(sets)
+        self.generate(rendered, filename)
+
     def gen_all(self):
+        self.generate_sets()
         self.generate_runewords()
         self.generate_uniques()
         self.generate_armor()
@@ -112,7 +121,6 @@ class Database_Generator:
         self.generate_prefixes()
         self.generate_suffixes()
         self.generate_socketables()
-        #self.generate_sets()
         #self.generate_recipes()
 
 def generate_static_links(db):

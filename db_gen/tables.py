@@ -22,6 +22,8 @@ class Tables:
         self.gamble_table = self.load_table("gamble.txt")
         self.runeword_table = self.load_table("Runes.txt")
         self.socketables_table = self.load_table("Gems.txt")
+        self.sets_table = self.load_table("Sets.txt")
+        self.set_items_table = self.load_table("SetItems.txt")
         
         # For efficiency sake we should just build this dict once
         self.parent_types = {}

@@ -35,7 +35,7 @@ class Runeword:
         for prop in self.properties:
             for stat in prop.stats:
                 allstats.append(stat)
-        for stat in sorted(allstats, key=lambda x: int(x.priority)):
+        for stat in sorted(allstats, key=lambda x: int(x.priority), reverse=True):
             ret = ret + stat.stat_string + "<br>"
         return ret
     
@@ -45,7 +45,7 @@ class Runeword:
         for prop in self.rune_properties[gemapplytype]:
             for stat in prop.stats:
                 allstats.append(stat)
-        for stat in sorted(allstats, key=lambda x: int(x.priority)):
+        for stat in sorted(allstats, key=lambda x: int(x.priority), reverse=True):
             ret = ret + stat.stat_string + "<br>"
         return ret
 
