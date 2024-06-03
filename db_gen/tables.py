@@ -148,8 +148,8 @@ def printItemTypesTree():
 
 if __name__ == "__main__":
     mytables = Tables("ESR")
-    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_replenish_durability")
-    #mytables.print_row_with_cell_equal_to("Weapons.txt", "name", "Blade")
+    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_singleskill")
+    #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "skill")
 
     #for armor in mytables.armor_table:
     #    if armor["type"] in mytables.sub_types["tors"] or armor["type2"] in mytables.sub_types["tors"]:

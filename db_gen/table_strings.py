@@ -114,6 +114,6 @@ stringtables =        [
             "patchstring.tbl",
 #            "ES AlphA.tbl",   
         ]
-my = get_string_dict("ESE", stringtables)
-print(my["ModStre9t"])
+#my = get_string_dict("ESE", stringtables)
+#print(my["item_singleskill"])
 #print(my["item_tinkerflag2"])

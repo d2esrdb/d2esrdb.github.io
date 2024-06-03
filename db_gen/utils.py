@@ -254,10 +254,10 @@ class Utils:
                     # @TODO Could be a bug with socket range 0-n, I think it can roll 0 but then gives 1? More testing needed (Faith shield)
                     return Stat(stat_name, "Socketed (" + self.get_value_string(param, min, max) + ")", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_singleskill":
-                    # Seems to work but is there a better way to determine if it's +random skill or +specific skill?
-                    if param.isdigit() and self.get_class_from_skill_range(min, max) != "Unknown":
+                    if prop_name == "skill-rand":
                         return Stat(stat_name, "+" + str(param) + " to Random " + self.get_class_from_skill_range(min, max) + " Skill", int(item_stat_cost_row["descpriority"]))
-                    return Stat(stat_name, "+" + self.get_value_string("", min, max) + " to " + self.get_skill_name(param) + " (" + self.get_class_from_skill_name(param) + " Only)", int(item_stat_cost_row["descpriority"]))
+                    if prop_name == "skill":
+                        return Stat(stat_name, "+" + self.get_value_string("", min, max) + " to " + self.get_skill_name(param) + " (" + self.get_class_from_skill_name(param) + " Only)", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_addskill_tab":
                     # Some hard coded nonsense... known issue though
                     skill_tab_conversion = [3, 2, 1, 15, 14, 13, 8, 7, 9, 6, 5, 4, 11, 12, 10, 16, 17, 18, 19, 20, 21];
