@@ -112,8 +112,8 @@ stringtables =        [
             "string.tbl",
             "expansionstring.tbl",
             "patchstring.tbl",
-            "ES AlphA.tbl",   
+#            "ES AlphA.tbl",   
         ]
-#my = get_string_dict("ESR", stringtables)
-#print(my["tinkerflag2"])
+my = get_string_dict("ESE", stringtables)
+print(my["ModStre9t"])
 #print(my["item_tinkerflag2"])

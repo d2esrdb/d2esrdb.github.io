@@ -54,8 +54,10 @@ class Stat_Formats:
             case 10:
                 return string1 + " " + string2
             case 11:
-                # There's no way this is valid, right?
-                return "Repairs 1 Durability In Seconds"
+                # Greasy hack for d2smallutility that changes the default repair string that has 1 %d to replenish per frame with two %d but the first one is hard-coded to 1?
+                if string1.count("%d") == 2:
+                    return string1.replace("%d", "1", 1).replace("%d", param) 
+                return "Repairs 1 Durability In " + str(int(100/int(param))) + " Seconds"
             case 12:
                 return string1
             case 13:
@@ -124,7 +126,10 @@ class Stat_Formats:
             case 10:
                 return str(int(value*100/128)) + "%" + string1 + " " + string2
             case 11:
-                return "Repairs 1 Durability In " + str(100/int(value)) + " Seconds"
+                # Greasy hack for d2smallutility that changes the default repair string that has 1 %d to replenish per frame with two %d but the first one is hard-coded to 1?
+                if string1.count("%d") == 2:
+                    return string1.replace("%d", "1", 1).replace("%d", param) 
+                return "Repairs 1 Durability In " + str(int(100/int(param))) + " Seconds"
             case 12:
                 return "+" + value + " " + string1
             case 13:
@@ -207,8 +212,10 @@ class Stat_Formats:
             case 10:
                 return string1 + " " + str(int(value*100/128)) + "% " + string2
             case 11:
-                # same as 1?
-                return "Repairs 1 Durability In " + str(100/int(value)) + " Seconds"
+                # Greasy hack for d2smallutility that changes the default repair string that has 1 %d to replenish per frame with two %d but the first one is hard-coded to 1?
+                if string1.count("%d") == 2:
+                    return string1.replace("%d", "1", 1).replace("%d", param) 
+                return "Repairs 1 Durability In " + str(int(100/int(param))) + " Seconds"
             case 12:
                 return string1 + " +" + value
             case 13:
