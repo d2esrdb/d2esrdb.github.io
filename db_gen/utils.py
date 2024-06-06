@@ -512,6 +512,15 @@ class Utils:
         for property in properties:
             self.handle_hardcoded_groups(property)
 
+    def get_base_url(self, code):
+        for weapon in self.tables.weapons_table:
+            if weapon["code"] == code:
+                return "weapons.htm#" + code
+        for armor in self.tables.armor_table:
+            if armor["code"] == code:
+                return "armors.htm#" + code
+        return ""
+
     def get_item_type_name_from_code(self, code):
         # Hard code "tors" because "Armor" is confusing
         if code == "tors":

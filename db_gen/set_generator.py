@@ -31,7 +31,7 @@ class Set:
         return ret
 
 class Set_Item:
-    def __init__(self, name, base_code, base_name, gamble_string, required_level, level, item_properties, bonus_properties):
+    def __init__(self, name, base_code, base_name, gamble_string, required_level, level, item_properties, bonus_properties, base_url):
         self.name = name
         self.base_code = base_code
         self.base_name = base_name
@@ -40,6 +40,7 @@ class Set_Item:
         self.item_properties = item_properties
         self.bonus_properties = bonus_properties
         self.gamble_item_string = gamble_string
+        self.base_url = base_url
 
     def stats_string(self):
         ret = ""
@@ -141,7 +142,7 @@ class Set_Generator:
                     self.utils.fill_group_stats(item_properties)
                     
                     gamble_string = self.utils.get_gamble_item_from_code(item_base_code)
-                    items.append(Set_Item(item_name, item_base_code, item_base_name, gamble_string, item_required_level, item_level, item_properties, item_partial_properties))
+                    items.append(Set_Item(item_name, item_base_code, item_base_name, gamble_string, item_required_level, item_level, item_properties, item_partial_properties, self.utils.get_base_url(item_base_code)))
             sets.append(Set(name, items, partial_properties, full_properties))
         return sets
 

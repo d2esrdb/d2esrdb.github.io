@@ -11,7 +11,11 @@
 <td width="45%" bgcolor="#101010" align="center">
 <font size="-1" face="arial,helvetica">
 <b><font color="#48B850">${item.name}</font><br>
-<a href="../armors.htm#tors">${item.base_name} (${item.base_code})</a><br></b>
+% if item.base_url == "":
+${item.base_name} (${item.base_code})<br></b>
+% else:
+<a href="${item.base_url}">${item.base_name} (${item.base_code})</a><br></b>
+% endif
 Lvl ${item.level} / Req Lvl ${item.required_level}<br>
 Gamble Item:
 ${item.gamble_item_string}<br><br>

@@ -113,8 +113,8 @@ class Database_Generator:
         self.generate(rendered, filename)
 
     def gen_all(self):
-        self.generate_weapons()
         self.generate_sets()
+        self.generate_weapons()
         self.generate_runewords()
         self.generate_uniques()
         self.generate_armor()
