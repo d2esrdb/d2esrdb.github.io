@@ -7,16 +7,15 @@ class Stat:
         self.priority = priority
 
 class Property:
-    def __init__(self, name, param, min, max, is_automod=False):
+    def __init__(self, name, param, min, max):
         self.name = name
         self.param = param
         self.min = min
         self.max = max
-        self.is_automod = is_automod
         self.stats = []
 
 class Item:
-    def __init__(self, name, item_level, required_level, properties, base_code, table_strings, tables, include_implicits=True):
+    def __init__(self, name, item_level, required_level, properties, base_code, table_strings, tables):
         self.name = table_strings.get(name, name)
         self.item_level = item_level
         self.required_level = required_level
@@ -26,9 +25,7 @@ class Item:
         self.utils = Utils(tables, table_strings)
         self.gamble_item = self.utils.get_gamble_item_from_code(base_code)
         self.base_name = self.utils.get_item_name_from_code(base_code)
-        if include_implicits:
-            self.utils.fill_automod(self.properties, base_code)
-            self.staffmod = self.utils.get_staffmod(base_code)
+        self.staffmod = self.utils.get_staffmod(base_code)
         self.spelldesc = self.utils.get_spelldesc(base_code)
 
         for p in self.properties:
@@ -361,17 +358,34 @@ class Utils:
         print("No name found for code: " + code)
         return code
 
-    def get_staffmod(self, code):
-        for armor in self.tables.armor_table:
-            if armor["code"] == code:
-                for item_type in self.tables.item_types_table:
-                    if item_type["Code"] == armor["type"] and item_type["StaffMods"] != "":
-                        return self.short_to_long_class(item_type["StaffMods"])
+    def get_automods(self, group, type1, type2):
+        automods = []
+        if group == "":
+            return
+        for autos in self.tables.automagic_table:
+            if group == autos["group"] and self.is_of_item_type([type1, type2], [autos["itype1"], autos["itype2"], autos["itype3"], autos["itype4"], autos["itype5"], autos["itype6"], autos["itype7"]]) and not self.is_of_item_type([type1, type2], [autos["etype1"], autos["etype2"], autos["etype3"]]):
+                properties = []
+                for i in range(3):
+                    if autos["mod" + str(i+1) + "code"] != "":
+                        properties.append(Property(autos["mod" + str(i+1) + "code"],
+                                                   autos["mod" + str(i+1) + "param"],
+                                                   autos["mod" + str(i+1) + "min"],
+                                                   autos["mod" + str(i+1) + "max"]))
+                automods.append(properties)
+
+        for automod in automods:
+            for p in automod:
+    	        self.fill_property_stats(p)
+            self.fill_group_stats(automod)
         
-        for weapon in self.tables.weapons_table:
-            if weapon["code"] == code:
+        return automods
+
+
+    def get_staffmod(self, code):
+        for item in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
+            if item["code"] == code:
                 for item_type in self.tables.item_types_table:
-                    if item_type["Code"] == weapon["type"] and item_type["StaffMods"] != "":
+                    if item_type["Code"] == item["type"] and item_type["StaffMods"] != "":
                         return self.short_to_long_class(item_type["StaffMods"])
         return ""
 
@@ -393,39 +407,6 @@ class Utils:
         if not v2.isdigit():
             return v1
         return str(max(int(v1), int(v2)))
-
-    def fill_automod(self, properties, code):
-        automods = {}
-        for armor in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
-            if armor["code"] == code and armor["auto prefix"] != "":
-                for autos in self.tables.automagic_table:
-                    # @TODO Maybe look at exclude types too?
-                    # @TODO look at item level too
-                    if autos["group"] == armor["auto prefix"] and self.is_of_item_type([armor["type"], armor["type2"]], [autos["itype1"], autos["itype2"], autos["itype3"], autos["itype4"], autos["itype5"], autos["itype6"], autos["itype7"]]):
-                        if autos["mod1code"] in automods:
-                            automods[autos["mod1code"]] = [autos["mod1param"],
-                                                           self.mymin(autos["mod1min"], automods[autos["mod1code"]][1]),
-                                                           self.mymax(autos["mod1max"], automods[autos["mod1code"]][2])]
-                        else:
-                            automods[autos["mod1code"]] = [autos["mod1param"], autos["mod1min"], autos["mod1max"]]
-                        
-                        if autos["mod2code"] in automods:
-                            automods[autos["mod2code"]] = [autos["mod2param"],
-                                                           self.mymin(autos["mod2min"], automods[autos["mod2code"]][1]),
-                                                           self.mymax(autos["mod2max"], automods[autos["mod2code"]][2])]
-                        else:
-                            automods[autos["mod2code"]] = [autos["mod2param"], autos["mod2min"], autos["mod2max"]]
-                        
-                        if autos["mod3code"] in automods:
-                            automods[autos["mod3code"]] = [autos["mod3param"],
-                                                           self.mymin(autos["mod3min"], automods[autos["mod3code"]][1]),
-                                                           self.mymax(autos["mod3max"], automods[autos["mod3code"]][2])]
-                        else:
-                            automods[autos["mod3code"]] = [autos["mod3param"], autos["mod3min"], autos["mod3max"]]
-
-        for key in automods:
-            if key != "":
-                properties.append(Property(key, automods[key][0], automods[key][1], automods[key][2], is_automod=True))
 
     # Custom handling for hardcoded groups
     def handle_hardcoded_groups(self, property):
@@ -512,7 +493,7 @@ class Utils:
                     if param != item_group_stats[stat][0] or min != item_group_stats[stat][1] or max != item_group_stats[stat][2]:
                         use_group_string = False
                 if use_group_string:
-                    prop = Property("Group Property", param, min, max, props[0].is_automod)
+                    prop = Property("Group Property", param, min, max)
                     prop.stats.append(Stat("Group Stat",
                                            self.stat_formats.get_stat_string1(int(func),
                                                                          self.get_value_string(param, min, max),
@@ -531,16 +512,6 @@ class Utils:
         for property in properties:
             self.handle_hardcoded_groups(property)
 
-    def string_array_to_html(self, strs, numbr=1):
-        br = "<br>"*numbr
-        mystring = ""
-        for s in strs:
-            if mystring != "":
-                mystring = mystring + br + s
-            else:
-                mystring = s
-        return mystring
-    
     def get_item_type_name_from_code(self, code):
         # Hard code "tors" because "Armor" is confusing
         if code == "tors":

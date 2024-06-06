@@ -128,6 +128,6 @@ class Uniques_Generator():
                 for j in range(12):
                     if row["prop" + str(j+1)] != "":
                         properties.append(utils.Property(row["prop" + str(j+1)], row["par" + str(j+1)], row["min" + str(j+1)], row["max" + str(j+1)]))
-                unique_items.append(utils.Item(row["index"], row["lvl"], row["lvl req"], properties, row["code"], self.table_strings, self.tables, False))
+                unique_items.append(utils.Item(row["index"], row["lvl"], row["lvl req"], properties, row["code"], self.table_strings, self.tables))
         
         return unique_items

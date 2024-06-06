@@ -4,7 +4,7 @@
     categories = set()
 %>
 % for weapon in weapons:
-<% categories.add(weapon[1]) %>
+<% categories.add(weapon.category) %>
 % endfor
 
 
@@ -36,37 +36,37 @@
     <td width="150" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Staffmod</font></td>
     </tr>
     % for weapon in weapons:
-    % if weapon[1] == category:
+    % if weapon.category == category:
 <%
     color = 101010
-    if weapon[3] == weapon[5]:
+    if weapon.code == weapon.exceptional_code:
 	color = 202020
-    if weapon[3] == weapon[6]:
+    if weapon.code == weapon.elite_code:
         color = 303030
     damtype = []
     dammin = []
     dammax = []
     numdam = 0
-    if weapon[7] != "":
+    if weapon.damage.mindam != "":
     	damtype.append("1H")
-    	dammin.append(weapon[7])
-	dammax.append(weapon[8])
+    	dammin.append(weapon.damage.dam)
+	dammax.append(weapon.damage.avg)
         numdam = numdam + 1
-    if weapon[9] != "":
+    if weapon.damage._2handmindam != "":
     	damtype.append("2H")
-    	dammin.append(weapon[9])
-	dammax.append(weapon[10])
+    	dammin.append(weapon.damage._2handdam)
+	dammax.append(weapon.damage._2handavg)
         numdam = numdam + 1
-    if weapon[11] != "":
+    if weapon.damage.minmisdam != "":
     	damtype.append("Mis")
-    	dammin.append(weapon[11])
-	dammax.append(weapon[12])
+    	dammin.append(weapon.damage.misdam)
+	dammax.append(weapon.damage.misavg)
         numdam = numdam + 1
     rowspan = max(numdam, 1)
 %>
-<a name="${weapon[3]}"></a>
+<a name="${weapon.category}"></a>
         <tr>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[0]}<br>${weapon[3]}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.name}<br>${weapon.code}</font></td>
 % if numdam > 0:
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica">${damtype[0]}</font></td>
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica">${dammin[0]}</font></td>
@@ -76,18 +76,18 @@
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica"></font></td>
 	<td bgcolor="#${color}" align="center" rowspan="1"><font size="-1" face="arial,helvetica"></font></td>
 % endif
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[14]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[13]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[15]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[16]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[2]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[18]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[19]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[20]}/${weapon[21]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[22]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[23]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[24]}</font></td>
-	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon[25]}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.durability}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.rangeadder}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.speed}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.level}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.req_level}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.reqstr}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.reqdex}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.strbonus}/${weapon.dexbonus}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.gemsockets}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.gemapplytype}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.automods_string()}</font></td>
+	<td bgcolor="#${color}" align="center" rowspan="${rowspan}"><font size="-1" face="arial,helvetica">${weapon.staffmods}</font></td>
 	</tr>
 % if numdam > 1:
 	<tr>

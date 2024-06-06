@@ -107,6 +107,17 @@ class Tables:
             if row[cell_name] == value:
                 for i, col in enumerate(first):
                     print(str(i) + ": " + col + ": " + row[col])
+    
+    def print_row_with_cell_not_equal_to(self, table_name, cell_name, value):
+        table = self.load_table(table_name)
+        first = None
+        for i, row in enumerate(table):
+            if i == 0:
+                first = row
+            if row[cell_name] != value:
+                print(row[cell_name])
+                #for i, col in enumerate(first):
+                #    print(str(i) + ": " + col + ": " + row[col])
 
 
 class Node:
@@ -148,7 +159,8 @@ def printItemTypesTree():
 
 if __name__ == "__main__":
     mytables = Tables("ESR")
-    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_singleskill")
+    mytables.print_row_with_cell_not_equal_to("Misc.txt", "spelldescstr", "")
+    #mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_singleskill")
     #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "skill")
 
     #for armor in mytables.armor_table:

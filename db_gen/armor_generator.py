@@ -6,6 +6,20 @@ class Armor_Generator:
         self.tables = tables
         self.table_strings = table_strings
         self.utils = utils
+    
+    def automods_string(self, automods):
+        ret = ""
+        if automods == None:
+            return ""
+        for automod in automods:
+            for p in automod:
+                allstats = []
+                for stat in p.stats:
+                    allstats.append(stat)
+                for stat in sorted(allstats, key=lambda x: int(x.priority), reverse=True):
+                    ret = ret + stat.stat_string + "<br>"
+            ret = ret + "<br>"
+        return ret[:-4]
 
     def generate_armor(self):
         normal_armors = []
@@ -15,11 +29,6 @@ class Armor_Generator:
             for item_type_row in self.tables.item_types_table:
                 if armor_row["type"] == item_type_row["Code"] and armor_row["type"] != "":
                     item = utils.Item(armor_row["namestr"], 1, armor_row["levelreq"], [], armor_row["code"], self.table_strings, self.tables)
-                    automods = []
-                    for p in item.properties:
-                        if p.is_automod:
-                            for s in p.stats:
-                                automods.append(s.stat_string)
                     armor = [self.table_strings.get(armor_row["namestr"], armor_row["name"]), #0: name
                              item_type_row["ItemType"],  #1: category
                              armor_row["levelreq"],      #2: req_level
@@ -39,7 +48,7 @@ class Armor_Generator:
                              armor_row["maxdam"],        #16: max damage
                              armor_row["gemsockets"],    #17: sock
                              armor_row["gemapplytype"],  #18: gem_type
-                             self.utils.string_array_to_html(automods, 1),          #19: automods
+                             self.automods_string(self.utils.get_automods(armor_row["auto prefix"], armor_row["type"], armor_row["type2"])),
                              item.staffmod,     #20: staffmods
                             ]
                     if armor_row["normcode"] == armor_row["code"]:

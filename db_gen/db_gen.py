@@ -113,11 +113,11 @@ class Database_Generator:
         self.generate(rendered, filename)
 
     def gen_all(self):
+        self.generate_weapons()
         self.generate_sets()
         self.generate_runewords()
         self.generate_uniques()
         self.generate_armor()
-        self.generate_weapons()
         self.generate_prefixes()
         self.generate_suffixes()
         self.generate_socketables()
