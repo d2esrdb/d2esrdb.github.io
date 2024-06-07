@@ -66,5 +66,25 @@ databases = \
             },
         ],
     },
+    {
+        "name" : "Diablo II Lord of Destruction",
+        "shortname" : "LOD",
+        "version" : "1.13c",
+        "tablestring_files" : \
+        [
+            "string.tbl",
+            "expansionstring.tbl",
+            "patchstring.tbl",
+        ],
+        "gemapplytype_names" : \
+        [
+            "Weapons / Gloves",
+            "Helms / Boots",
+            "Armor / Shields / Belts",
+        ],
+        "extra_pages" : \
+        [
+        ],
+    },
 ]
 

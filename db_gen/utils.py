@@ -58,22 +58,20 @@ class Utils:
         return ret
             
     def get_value_string(self, param, min, max):
-        if param != "":
-            return str(param)
-        
-        if min == "" and max == "":
-            return "NOVALUE"
+        if min != "" and max != "":
+            if min == max:
+                return str(min)
+            return str(min) + "-" + str(max)
 
-        if min == "":
+        if min == "" and max != "":
             return str(max)
 
-        if max == "":
-            return str(min)
-
-        if min == max:
+        if max == "" and min != "":
             return str(min)
             
-        return str(min) + "-" + str(max)
+        if param != "":
+            return str(param)
+        return "NOVALUE"
 
     def short_to_long_class(self, short):
         if short == "ama":
@@ -246,6 +244,8 @@ class Utils:
                     min = self.handle_op(min, item_stat_cost_row["op"], item_stat_cost_row["op param"], item_stat_cost_row["op base"], item_stat_cost_row["op stat1"], item_stat_cost_row["op stat2"], item_stat_cost_row["op stat3"])
                     max = self.handle_op(max, item_stat_cost_row["op"], item_stat_cost_row["op param"], item_stat_cost_row["op base"], item_stat_cost_row["op stat1"], item_stat_cost_row["op stat2"], item_stat_cost_row["op stat3"])
 
+                if item_stat_cost_row["descpriority"] == "":
+                    item_stat_cost_row["descpriority"] = "0"
                 # Custom handling
                 if stat_name == "item_numsockets":
                     # @TODO Could be a bug with socket range 0-n, I think it can roll 0 but then gives 1? More testing needed (Faith shield)
@@ -270,7 +270,9 @@ class Utils:
                 if stat_name == "item_skillongethit":
                      return Stat(stat_name, str(min) + "% Chance To Cast Level " + str(max) + " " + self.get_skill_name(param) + " When Struck", int(item_stat_cost_row["descpriority"]))
                 if stat_name == "fade":
-                    return Stat(stat_name, "Fade (Cosmetic Effect)", int(item_stat_cost_row["descpriority"]))
+                    if item_stat_cost_row["descpriority"] != "":
+                        return Stat(stat_name, "Fade (Cosmetic Effect)", int(item_stat_cost_row["descpriority"]))
+                    return Stat(stat_name, "Fade (Cosmetic Effect)", 1)
                 if stat_name == "killheal_dummy":
                     return Stat(stat_name, self.table_strings["healkillStr"].replace("%d%", str(min)), int(item_stat_cost_row["descpriority"]))
                 if stat_name == "item_skillonattack":
