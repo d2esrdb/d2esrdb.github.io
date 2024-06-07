@@ -89,7 +89,7 @@ class Utils:
             return "Druid"
         if short == "ass":
             return "Assassin"
-        if short == "randclass":
+        if short == "randclassskill":
             return "(Random Class)"
         return "Unknown class: " + short
 
