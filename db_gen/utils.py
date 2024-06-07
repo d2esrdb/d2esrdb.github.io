@@ -73,6 +73,7 @@ class Utils:
             return str(param)
         return "NOVALUE"
 
+    #@TODO can this just be a tablestrings lookup?
     def short_to_long_class(self, short):
         if short == "ama":
             return "Amazon"
@@ -88,6 +89,8 @@ class Utils:
             return "Druid"
         if short == "ass":
             return "Assassin"
+        if short == "randclass":
+            return "(Random Class)"
         return "Unknown class: " + short
 
     def get_class_from_tab_number(self, tab_number):

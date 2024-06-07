@@ -78,9 +78,9 @@ databases = \
         ],
         "gemapplytype_names" : \
         [
-            "Weapons / Gloves",
-            "Helms / Boots",
-            "Armor / Shields / Belts",
+            "Weapon",
+            "Helm",
+            "Shield",
         ],
         "extra_pages" : \
         [
