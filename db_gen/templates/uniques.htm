@@ -72,10 +72,7 @@
 						${item.spelldesc}
 						<br>
 					% endif
-					% for stat in item.get_stats_sorted():
-						${stat.stat_string}
-						<br>
-					% endfor
+					${item.utils.get_stat_string(item.properties)}
 					</font>
 				</font>
 			</td>

@@ -134,8 +134,8 @@ class Weapon_Generator:
 
         for exceptional_weapon in exceptional_weapons:
             weapons.append(exceptional_weapon)
-            self.utils.log("Error: Exceptional weapon " + exceptional_weapon.name + " could not find corresponding Normal weapon.")
+            #self.utils.log("Error: Exceptional weapon " + exceptional_weapon.name + " could not find corresponding Normal weapon.")
         for elite_weapon in elite_weapons:
-            self.utils.log("Error: Elite weapon " + elite_weapon.name + " could not find corresponding Normal weapon.")
+            #self.utils.log("Error: Elite weapon " + elite_weapon.name + " could not find corresponding Normal weapon.")
             weapons.append(elite_weapon)
         return weapons

@@ -107,13 +107,16 @@ def get_string_dict(db_code, string_tables):
     return key_value_dict
 
 
-
-stringtables =        [
-            "string.tbl",
-            "expansionstring.tbl",
-            "patchstring.tbl",
-#            "ES AlphA.tbl",   
-        ]
-#my = get_string_dict("ESE", stringtables)
-#print(my["item_singleskill"])
-#print(my["item_tinkerflag2"])
+if __name__ == "__main__":
+    stringtables =        [
+                "string.tbl",
+                "expansionstring.tbl",
+                "patchstring.tbl",
+         #       "ES AlphA.tbl",   
+            ]
+    my = get_string_dict("LOD", stringtables)
+    for key,value in my.items():
+        if "gore" in key.lower():
+            print(key + ": " + my[key])
+    
+    #print(my["ModStr3d"])

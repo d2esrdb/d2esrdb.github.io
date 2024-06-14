@@ -24,7 +24,9 @@ class Tables:
         self.socketables_table = self.load_table("Gems.txt")
         self.sets_table = self.load_table("Sets.txt")
         self.set_items_table = self.load_table("SetItems.txt")
-        
+        self.char_stats_table = self.load_table("CharStats.txt")
+        self.player_class_table = self.load_table("PlayerClass.txt")
+
         # For efficiency sake we should just build this dict once
         self.parent_types = {}
         for t in self.item_types_table:
@@ -71,7 +73,7 @@ class Tables:
             if headername not in fieldnames:
                 fieldnames.append(headername)
             else:
-                print("Warning: Duplicate column \"" + headername + "\" detected. Renaming second one to " + headername + "2.")
+                print("Warning: Duplicate column \"" + headername + "\" detected. Renaming second one to " + headername + "2. (this is normal for mindam and maxdam)")
                 fieldnames.append(headername + "2")
         return list(csv.DictReader(table_file, fieldnames=fieldnames, delimiter='\t'))
 
@@ -158,10 +160,11 @@ def printItemTypesTree():
         printtree(child, "")
 
 if __name__ == "__main__":
-    mytables = Tables("ESR")
-    mytables.print_row_with_cell_not_equal_to("Misc.txt", "spelldescstr", "")
-    #mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_singleskill")
-    #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "skill")
+    mytables = Tables("LOD")
+    #mytables.print_row_with_cell_not_equal_to("Misc.txt", "spelldescstr", "")
+    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "firemindam")
+    #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "dmg-fire")
+    #mytables.print_row_with_cell_equal_to("UniqueItems.txt", "code", "dmg-fire")
 
     #for armor in mytables.armor_table:
     #    if armor["type"] in mytables.sub_types["tors"] or armor["type2"] in mytables.sub_types["tors"]:

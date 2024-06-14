@@ -106,20 +106,20 @@ class Database_Generator:
         self.generate(rendered, filename)
     
     def generate_sets(self):
-        sets = set_generator.Set_Generator(self.tables, self.table_strings, self.utils).generate_sets()
+        sets = set_generator.Set_Generator(self.utils).generate_sets()
         filename = "sets.htm"
         template = Template(filename="templates/" + filename, lookup=self.mylookup)
         rendered = template.render(sets)
         self.generate(rendered, filename)
 
     def gen_all(self):
-        self.generate_sets()
-        self.generate_weapons()
-        self.generate_runewords()
-        self.generate_uniques()
         self.generate_armor()
+        self.generate_weapons()
+        self.generate_sets()
+        self.generate_runewords()
         self.generate_prefixes()
         self.generate_suffixes()
+        self.generate_uniques()
         self.generate_socketables()
         #self.generate_recipes()
 
@@ -153,7 +153,7 @@ for db in config.databases:
                                     db["gemapplytype_names"])
         db_gen.gen_all()
         db_gen.generate_static(extra_static)
+        for log in db_gen.utils.log_errors:
+            print(log)
         print("----DONE-----")
-        if False:
-            for log in db_gen.utils.log_errors:
-                print(log)
+        print("")

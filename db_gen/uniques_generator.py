@@ -1,4 +1,18 @@
 import utils 
+import properties
+
+class Unique_Item:
+    def __init__(self, utils, namestr, lvl, req_lvl, properties, code):
+        self.utils = utils
+        self.name = utils.table_strings.get(namestr, namestr) 
+        self.base_name = self.utils.get_item_name_from_code(code)
+        self.base_code = code
+        self.gamble_item = self.utils.get_gamble_item_from_code(code)
+        self.spelldesc = self.utils.get_spelldesc(code)
+        self.item_level = lvl
+        self.required_level = req_lvl
+        self.properties = properties
+        self.bg_color_code = self.utils.get_bg_color_from_code(code)
 
 class Item_Group:
     def __init__(self, name):
@@ -49,24 +63,6 @@ class Uniques_Generator():
                 return True
         return False
 
-    def set_weapon_bg_color(self, item):
-        for weapon in self.tables.weapons_table:
-            if item.base_code == weapon["ultracode"]:
-                item.bg_color_code = 303030
-                return
-            if item.base_code == weapon["ubercode"]:
-                item.bg_color_code = 202020
-                return
-
-    def set_armor_bg_color(self, item):
-        for armor in self.tables.armor_table:
-            if item.base_code == armor["ultracode"]:
-                item.bg_color_code = 303030
-                return
-            if item.base_code == armor["ubercode"]:
-                item.bg_color_code = 202020
-                return
-
     def get_unique_weapons(self):
         return self.unique_weapons
 
@@ -83,7 +79,6 @@ class Uniques_Generator():
             weapon_group = Item_Group(self.utils.get_item_type_name_from_code(weapon_type))
             for item in list(all_uniques):
                 if self.weapon_is_a_subtype_of(item.base_code, weapon_type):
-                    self.set_weapon_bg_color(item)
                     weapon_group.items.append(item)
                     all_uniques.remove(item)
             if len(weapon_group.items) > 0:
@@ -95,7 +90,6 @@ class Uniques_Generator():
             armor_group = Item_Group(self.utils.get_item_type_name_from_code(armor_type))
             for item in list(all_uniques):
                 if self.armor_is_of_type(item.base_code, armor_type):
-                    self.set_armor_bg_color(item)
                     armor_group.items.append(item)
                     all_uniques.remove(item)
             if len(armor_group.items) > 0:
@@ -114,7 +108,7 @@ class Uniques_Generator():
         self.unique_misc = item_groups
 
         if len(all_uniques) != 0:
-            print("Could not find group for unique item: " + str(all_uniques))
+            self.utils.log("Could not find group for unique item: " + str(all_uniques))
 
 
         
@@ -123,11 +117,10 @@ class Uniques_Generator():
         unique_items = []
         for row in self.tables.unique_items_table:
             # @TODO If item is enabled... for some reason we have to use rarity?? Maybe this is only an ES thing? I feel like this should be removed...
-            if row["rarity"].isdigit() and int(row["rarity"]) > 0:
-                properties = []
+            if row["rarity"].isdigit() and int(row["rarity"]) > 0 and row["enabled"] == "1" and row["code"] != "":
+                props = []
                 for j in range(12):
                     if row["prop" + str(j+1)] != "":
-                        properties.append(utils.Property(row["prop" + str(j+1)], row["par" + str(j+1)], row["min" + str(j+1)], row["max" + str(j+1)]))
-                unique_items.append(utils.Item(row["index"], row["lvl"], row["lvl req"], properties, row["code"], self.table_strings, self.tables))
-        
+                        props.append(properties.Property(self.utils, row["prop" + str(j+1)], row["par" + str(j+1)], row["min" + str(j+1)], row["max" + str(j+1)]))
+                unique_items.append(Unique_Item(self.utils, row["index"], row["lvl"], row["lvl req"], props, row["code"]))
         return unique_items

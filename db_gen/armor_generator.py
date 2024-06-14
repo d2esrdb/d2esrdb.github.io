@@ -8,18 +8,14 @@ class Armor_Generator:
         self.utils = utils
     
     def automods_string(self, automods):
-        ret = ""
-        if automods == None:
+        if automods is None:
             return ""
+        ret = ""
         for automod in automods:
-            for p in automod:
-                allstats = []
-                for stat in p.stats:
-                    allstats.append(stat)
-                for stat in sorted(allstats, key=lambda x: int(x.priority), reverse=True):
-                    ret = ret + stat.stat_string + "<br>"
-            ret = ret + "<br>"
-        return ret[:-4]
+            ret = ret + self.utils.get_stat_string(automod) + "<br>"
+        if ret != "":
+            return ret[:-4]
+        return ret
 
     def generate_armor(self):
         normal_armors = []
@@ -28,7 +24,6 @@ class Armor_Generator:
         for armor_row in self.tables.armor_table:
             for item_type_row in self.tables.item_types_table:
                 if armor_row["type"] == item_type_row["Code"] and armor_row["type"] != "":
-                    item = utils.Item(armor_row["namestr"], 1, armor_row["levelreq"], [], armor_row["code"], self.table_strings, self.tables)
                     armor = [self.table_strings.get(armor_row["namestr"], armor_row["name"]), #0: name
                              item_type_row["ItemType"],  #1: category
                              armor_row["levelreq"],      #2: req_level
@@ -49,7 +44,7 @@ class Armor_Generator:
                              armor_row["gemsockets"],    #17: sock
                              armor_row["gemapplytype"],  #18: gem_type
                              self.automods_string(self.utils.get_automods(armor_row["auto prefix"], armor_row["type"], armor_row["type2"])),
-                             item.staffmod,     #20: staffmods
+                             self.utils.get_staffmod(armor_row["code"]),
                             ]
                     if armor_row["normcode"] == armor_row["code"]:
                         normal_armors.append(armor)

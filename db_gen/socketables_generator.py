@@ -1,19 +1,15 @@
 import utils
+import properties
 
 class Socketable:
-    def __init__(self, name, properties):
+    def __init__(self, utils, name, props, level_req):
         self.name = name
-        self.properties = properties
-    
+        self.props = props
+        self.utils = utils
+        self.level_req = level_req
+
     def stats_string(self, gemapplytype):
-        ret = ""
-        allstats = []
-        for prop in self.properties[gemapplytype]:
-            for stat in prop.stats:
-                allstats.append(stat)
-        for stat in sorted(allstats, key=lambda x: int(x.priority), reverse=True):
-            ret = ret + stat.stat_string + "<br>"
-        return ret
+        return self.utils.get_stat_string(self.props[gemapplytype])
 
 class Socketables_Generator:
     def __init__(self, tables, table_strings, utils):
@@ -27,19 +23,17 @@ class Socketables_Generator:
             if socketable["code"] == "":
                 continue
             name = self.utils.get_item_name_from_code(socketable["code"])
-            properties = [[], [], []]
+            level_req = self.utils.get_level_req_from_code(socketable["code"])
+            props = [[], [], []]
             for i, socket_type in enumerate(["weapon", "helm", "shield"]):
                 for j in range(3):
                     if socketable[socket_type + "Mod" + str(j+1) + "Code"] != "":
-                        properties[i].append(utils.Property(socketable[socket_type + "Mod" + str(j+1) + "Code"],
+                        props[i].append(properties.Property(self.utils,
+                                                            socketable[socket_type + "Mod" + str(j+1) + "Code"],
                                                             socketable[socket_type + "Mod" + str(j+1) + "Param"],
                                                             socketable[socket_type + "Mod" + str(j+1) + "Min"],
                                                             socketable[socket_type + "Mod" + str(j+1) + "Max"]))
-            for i in range(3):            
-                for p in properties[i]:
-                    self.utils.fill_property_stats(p)
-                self.utils.fill_group_stats(properties[i])
-            ret.append(Socketable(name, properties))
+            ret.append(Socketable(self.utils, name, props, level_req))
         return ret
 
 
