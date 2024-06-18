@@ -173,6 +173,28 @@ class Utils:
                 ret.append(st)
         return set(ret)
 
+    def handle_hardcoded():
+        # Handle the hard-coded stuff
+        if stat.stat == "firemindam" and any(s.stat == "firemaxdam" for s in self.stats):
+            for s in self.stats:
+                if s.stat == "firemaxdam":
+                    return True, self.utils.table_strings["strModFireDamageRange"].replace("%d", self.min, 1).replace("%d", s.max, 1) 
+        if stat.stat == "firemaxdam":
+            for s in self.stats:
+                if s.stat == "firemindam":
+                    return True, self.utils.table_strings["strModFireDamageRange"].replace("%d", s.min, 1).replace("%d", self.max, 1) 
+        return False, None
+        if stat.stat == "lightmindam" and any(s.stat == "lightmaxdam"):
+            return True
+        if stat.stat == "magicmindam" and any(s.stat == "magicmaxdam"):
+            return True
+        if stat.stat == "coldmindam" and any(s.stat == "coldmaxdam"):
+            return True
+        if stat.stat == "poisonmindam" and any(s.stat == "poisonmaxdam"):
+            return True
+        if stat.stat == "mindamage" and any(s.stat == "maxdamage"):
+            return True
+        return False, None
 
     def get_stat_string(self, properties):
         ret = ""
@@ -180,7 +202,8 @@ class Utils:
         for prop in properties:
             for stat in prop.stats:
                 all_stats.append(stat)
-
+       
+        # Sort the remaining stats based on priority
         for stat in sorted(all_stats, key=lambda x: int(x.priority), reverse=True):
             if stat.stat_string != "":
                 ret = ret + stat.stat_string + "<br>"

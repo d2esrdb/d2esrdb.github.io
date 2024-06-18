@@ -52,13 +52,55 @@ class Property:
             stat.priority = 1000
             stat.stat_string = "Ethereal (Cannot be Repaired)" 
             self.stats.append(stat)
+        
+        # Replace stats with group stats
+        for stat in []: #list(self.stats):
+            if stat.dgrp != "":
+                item_stats = set()
+                isc_stats = set()
+                # Gather all the stats on the item with the same dgrp as stat
+                for s in list(self.stats):
+                    if s.dgrp == stat.dgrp:
+                        item_stats.add(s)
+                # Gather all the isc stats with the same dgrp as stat
+                for isc in self.tables.item_stat_cost_table:
+                    if isc["dgrp"] == stat.dgrp:
+                        isc_stats.add(isc["Stat"])
+                # Make sure each stat in isc is on item
+                found_all = True
+                for isc_item in isc_stats:
+                    if not any(item.stat == isc_item for item in item_stats):
+                        found_all = False
+                if not found_all:
+                    continue
+                # Make sure each stat is equal
+                all_equal = True
+                for item in item_stats:
+                    if any(item.property_value_string == i.property_value_string for i in item_stats):
+                        all_equal = False
+                if not all_equal:
+                    continue
+                # Remove the stats from the item
+                for item in item_stats:
+                    all_stats.remove(item)
+                # Add the group stat to the item
+
             
         for stat in self.stats:
             for isc in self.utils.tables.item_stat_cost_table:
                 if isc["Stat"].lower() == stat.stat.lower():
+                    stat.isc = isc
                     if isc["descpriority"] != "":
                         stat.priority = int(isc["descpriority"])
-                    stat.stat_string = self.get_stat_string(stat, isc)
+                    stat.property_value_string = self.get_property_value_string(stat)
+                    # Since we only display the stats range and don't actually roll for it, it's possible for
+                    # a stat to have negative and positive range, so we'll always use the positive one unless
+                    # the stat is always negative
+                    stat.descstr = self.get_descstr(isc["descstrpos"])
+                    if self.is_always_negative():
+                        stat.descstr = self.get_descstr(isc["descstrneg"])
+                    stat.descstr2 = self.get_descstr(isc["descstr2"])
+                    stat.stat_string = self.get_stat_string(stat)
 
 
         if len(self.stats) == 0:
@@ -194,15 +236,15 @@ class Property:
         self.utils.log("get classonly failed for skill id: " + skill_id)
         return "(Unknown Only)"
 
-    def get_stat_string0(self, stat, isc, descstr):
-        match isc["descfunc"]:
+    def get_stat_string0(self, stat):
+        match stat.isc["descfunc"]:
             case "0" | "":
                 # Just return what it's already set to, which is either "" or some hard-coded thing set previously
                 return stat.stat_string
             case "1" | "2" | "3" | "4" | "5" | "12" | "20" | "25" | "26":
-                return descstr
+                return stat.descstr
             case "6" | "7" | "8" | "9" | "10":
-                return descstr + " " + self.get_descstr(isc["descstr2"])
+                return stat.descstr + " " + stat.descstr2
             case "11":
                 # @TODO ESR/d2smallutility changes repair to replenish/frames and doesn't do the param calc?
                 # Also official docs say ModStre9t but ESE ESR and LOD seem to use 9u?
@@ -215,13 +257,13 @@ class Property:
                 descstr, _class = self.get_skilltab_descstr_from_param(self.param)
                 return self.get_descstr(descstr).replace("%d", self.get_property_value_string(stat)) + " (" + _class + " Only)" 
             case "15":
-                return descstr.replace("%d%", self.min, 1).replace("%d", self.max, 1).replace("%s", self.get_skill_name_from_skill_id(self.param), 1)
+                return stat.descstr.replace("%d%", self.min, 1).replace("%d", self.max, 1).replace("%s", self.get_skill_name_from_skill_id(self.param), 1)
             case "16":
-                return descstr.replace("%d", self.get_property_value_string(stat), 1).replace("%s", self.get_skill_name_from_skill_id(self.param), 1)
+                return stat.descstr.replace("%d", self.get_property_value_string(stat), 1).replace("%s", self.get_skill_name_from_skill_id(self.param), 1)
             case "19":
-                return descstr.replace("%d%", self.get_property_value_string(stat), 1) + " " + self.get_descstr(isc["descstr2"])
+                return stat.descstr.replace("%d%", self.get_property_value_string(stat), 1) + " " + stat.descstr2
             case "24":
-                return "Level " + self.max + " " + self.get_skill_name_from_skill_id(self.param) + " " + descstr.replace("%d", self.min)
+                return "Level " + self.max + " " + self.get_skill_name_from_skill_id(self.param) + " " + stat.descstr.replace("%d", self.min)
             case "27":
                 if stat.func == "12":
                     _class = self.get_class_name_from_skill_id(self.min)
@@ -234,54 +276,54 @@ class Property:
             case "28":
                 return "+" + self.get_property_value_string(stat) + " To " + self.get_skill_name_from_skill_id(self.param)
             case _:
-                self.utils.log("descfunc" + isc["descfunc"] + " descval 0 not implemented (stat " + stat.stat + ")")
-                return "descfunc" + isc["descfunc"] + " descval 0 not implemented"
+                self.utils.log("descfunc" + stat.isc["descfunc"] + " descval 0 not implemented (stat " + stat.stat + ")")
+                return "descfunc" + stat.isc["descfunc"] + " descval 0 not implemented"
     
-    def get_stat_string1(self, stat, isc, descstr):
-        match isc["descfunc"]:
+    def get_stat_string1(self, stat):
+        match stat.isc["descfunc"]:
             case "0" | "":
                 # Just return what it's already set to, which is either "" or some hard-coded thing set previously
                 return stat.stat_string
             case "1":
-                return "+" + self.get_property_value_string(stat) + " " + descstr
+                return "+" + self.get_property_value_string(stat) + " " + stat.descstr
             case "2":
-                return self.get_property_value_string(stat) + "% " + descstr
+                return self.get_property_value_string(stat) + "% " + stat.descstr
             case "3":
-                return self.get_property_value_string(stat) + " " + descstr
+                return self.get_property_value_string(stat) + " " + stat.descstr
             case "4":
-                return "+" + self.get_property_value_string(stat) + "% " + descstr
+                return "+" + self.get_property_value_string(stat) + "% " + stat.descstr
             case "6":
-                return "+" + self.get_property_value_string(stat) + " " + descstr + " " + self.get_descstr(isc["descstr2"])
+                return "+" + self.get_property_value_string(stat) + " " + stat.descstr + " " + stat.descstr2
             case "7":
-                return self.get_property_value_string(stat) + "% " + descstr + " " + self.get_descstr(isc["descstr2"])
+                return self.get_property_value_string(stat) + "% " + stat.descstr + " " + stat.descstr2
             case "8":
-                return "+" + self.get_property_value_string(stat) + "% " + descstr + " " + self.get_descstr(isc["descstr2"])
+                return "+" + self.get_property_value_string(stat) + "% " + stat.descstr + " " + stat.descstr2
             case "13":
                 # Not great... 
                 if stat.func == "36":
                     return "+" + self.get_property_value_string(stat) + " to Random Class Skill Levels"
                 return "+" + self.get_property_value_string(stat) + " " + self.get_descstr(self.get_allskills_descstr_from_class_number(self.param))
             case "20":
-                return "-" + self.get_property_value_string(stat) + "% " + descstr
+                return "-" + self.get_property_value_string(stat) + "% " + stat.descstr
             case "23":
-                return self.get_property_value_string(stat) + "% " + descstr + " " + self.utils.get_monster_from_id(self.param)
+                return self.get_property_value_string(stat) + "% " + stat.descstr + " " + self.utils.get_monster_from_id(self.param)
             case _:
-                self.utils.log("descfunc" + isc["descfunc"] + " descval 1 not implemented (stat " + stat.stat + ")")
-                return "descfunc" + isc["descfunc"] + " descval 1 not implemented"
+                self.utils.log("descfunc" + stat.isc["descfunc"] + " descval 1 not implemented (stat " + stat.stat + ")")
+                return "descfunc" + stat.isc["descfunc"] + " descval 1 not implemented"
     
-    def get_stat_string2(self, stat, isc, descstr):
-        match isc["descfunc"]:
+    def get_stat_string2(self, stat):
+        match stat.isc["descfunc"]:
             case "0" | "":
                 # Just return what it's already set to, which is either "" or some hard-coded thing set previously
                 return stat.stat_string
             case "1":
-                return descstr + " +" + self.get_property_value_string(stat)
+                return stat.descstr + " +" + self.get_property_value_string(stat)
             case "2":
-                return descstr + " " + self.get_property_value_string(stat) + "%"
+                return stat.descstr + " " + self.get_property_value_string(stat) + "%"
             case "3":
-                return descstr + " " + self.get_property_value_string(stat)
+                return stat.descstr + " " + self.get_property_value_string(stat)
             case "4":
-                return descstr + " +" + self.get_property_value_string(stat) + "%"
+                return stat.descstr + " +" + self.get_property_value_string(stat) + "%"
             case "5":
                 #“+[value * 100 / 128]% [descstr]”
                 if self.min != "":
@@ -290,62 +332,32 @@ class Property:
                     self.max = str(int(int(self.max) * 100 / 128))
                 if self.param != "":
                     self.param = str(int(int(self.param) * 100 / 128))
-                return descstr + " " + self.get_property_value_string(stat) + "%"
+                return stat.descstr + " " + self.get_property_value_string(stat) + "%"
             case "7":
-                return descstr + " " + self.get_property_value_string(stat) + "% " + self.get_descstr(isc["descstr2"])
+                return stat.descstr + " " + self.get_property_value_string(stat) + "% " + stat.descstr2
             case "8":
-                return descstr + " +" + self.get_property_value_string(stat) + "% " + self.get_descstr(isc["descstr2"])
+                return stat.descstr + " +" + self.get_property_value_string(stat) + "% " + stat.descstr2
             case "9":
-                return descstr + " " + self.get_property_value_string(stat) + " " + self.get_descstr(isc["descstr2"])
+                return stat.descstr + " " + self.get_property_value_string(stat) + " " + stat.descstr2
             case "12":
                  #@TODO vidalas full set just says freezes target but this says freezes target +1
-                 return descstr + " +" + self.get_property_value_string(stat)
+                 return stat.descstr + " +" + self.get_property_value_string(stat)
             case _:
-                self.utils.log("descfunc" + isc["descfunc"] + " descval 2 not implemented (stat " + stat.stat + ")")
-                return "descfunc" + isc["descfunc"] + " descval 2 not implemented"
+                self.utils.log("descfunc" + stat.isc["descfunc"] + " descval 2 not implemented (stat " + stat.stat + ")")
+                return "descfunc" + stat.isc["descfunc"] + " descval 2 not implemented"
 
-    #@TODO remove
-    def handle_hardcoded(self, stat):
-        if stat.stat == "firemindam" and any(s.stat == "firemaxdam" for s in self.stats):
-            for s in self.stats:
-                if s.stat == "firemaxdam":
-                    return True, self.utils.table_strings["strModFireDamageRange"].replace("%d", self.min, 1).replace("%d", s.max, 1) 
-        if stat.stat == "firemaxdam":
-            for s in self.stats:
-                if s.stat == "firemindam":
-                    return True, self.utils.table_strings["strModFireDamageRange"].replace("%d", s.min, 1).replace("%d", self.max, 1) 
-        return False, None
-        if stat.stat == "lightmindam" and any(s.stat == "lightmaxdam"):
-            return True
-        if stat.stat == "magicmindam" and any(s.stat == "magicmaxdam"):
-            return True
-        if stat.stat == "coldmindam" and any(s.stat == "coldmaxdam"):
-            return True
-        if stat.stat == "poisonmindam" and any(s.stat == "poisonmaxdam"):
-            return True
-        if stat.stat == "mindamage" and any(s.stat == "maxdamage"):
-            return True
-        return False, None
-
-    def get_stat_string(self, stat, isc):
+    def get_stat_string(self, stat):
         # Special handling for hardcoded nonsense...
         if stat.stat == "item_numsockets":
             return self.get_descstr("Socketable") + " " + self.get_property_value_string(stat) 
         
-        descstr = self.get_descstr(isc["descstrpos"])
-        # Since we only display the stats range and don't actually roll for it, it's possible for
-        # a stat to have negative and positive range, so we'll always use the positive one unless
-        # the stat is always negative
-        if self.is_always_negative():
-            descstr = self.get_descstr(isc["descstrneg"])
-
-        if isc["descval"] == "" or isc["descval"] == "0":
-            return self.get_stat_string0(stat, isc, descstr)
-        if isc["descval"] == "1":
-            return self.get_stat_string1(stat, isc, descstr)
-        if isc["descval"] == "2":
-            return self.get_stat_string2(stat, isc, descstr)
-        self.utils.log("invalid descval: " + isc["descval"] + " for stat: " + stat.stat + " property: " + self.code)
-        return "invalid descval: " + isc["descval"]
+        if stat.isc["descval"] == "" or stat.isc["descval"] == "0":
+            return self.get_stat_string0(stat)
+        if stat.isc["descval"] == "1":
+            return self.get_stat_string1(stat)
+        if stat.isc["descval"] == "2":
+            return self.get_stat_string2(stat)
+        self.utils.log("invalid descval: " + stat.isc["descval"] + " for stat: " + stat.stat + " property: " + self.code)
+        return "invalid descval: " + stat.isc["descval"]
 
         return ret
