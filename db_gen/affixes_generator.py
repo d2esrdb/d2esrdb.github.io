@@ -1,4 +1,3 @@
-import stat_formats
 import utils
 import properties
 
@@ -21,7 +20,6 @@ class Affix_Generator:
     def __init__(self, tables, mod_strings, utils):
         self.tables = tables
         self.mod_strings = mod_strings
-        self.stat_formats = stat_formats.Stat_Formats(tables, mod_strings)
         self.utils = utils
 
     def get_affixes(self, table):

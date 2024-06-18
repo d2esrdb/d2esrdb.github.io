@@ -1,4 +1,3 @@
-import stat_formats
 import properties
 
 class Utils:

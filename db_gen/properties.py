@@ -227,7 +227,7 @@ class Property:
                 classonly = self.get_classonly_from_skill_id(self.param)
                 return "+" + self.get_property_value_string(stat) + " To " + skill + " " + classonly
             case "28":
-                return self.get_property_value_string(stat) + " To " + self.get_skill_name_from_skill_id(self.param)
+                return "+" + self.get_property_value_string(stat) + " To " + self.get_skill_name_from_skill_id(self.param)
             case _:
                 self.utils.log("descfunc" + isc["descfunc"] + " descval 0 not implemented (stat " + stat.stat + ")")
                 return "descfunc" + isc["descfunc"] + " descval 0 not implemented"
