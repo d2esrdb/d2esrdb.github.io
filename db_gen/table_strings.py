@@ -116,7 +116,7 @@ if __name__ == "__main__":
             ]
     my = get_string_dict("LOD", stringtables)
     for key,value in my.items():
-        if "gore" in key.lower():
+        if "repair" in key.lower() or "repair" in value.lower():
             print(key + ": " + my[key])
     
     #print(my["ModStr3d"])

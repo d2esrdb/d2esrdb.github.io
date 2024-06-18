@@ -204,7 +204,12 @@ class Property:
             case "6" | "7" | "8" | "9" | "10":
                 return descstr + " " + self.get_descstr(isc["descstr2"])
             case "11":
-                return self.get_descstr("ModStre9t")
+                # @TODO ESR/d2smallutility changes repair to replenish/frames and doesn't do the param calc?
+                # Also official docs say ModStre9t but ESE ESR and LOD seem to use 9u?
+                # Also do we always use 1 in the first %d?
+                if "frame" in self.get_descstr("ModStre9t").lower():
+                    return self.get_descstr("ModStre9u").replace("%d", "1", 1).replace("%d", self.param, 1)
+                return self.get_descstr("ModStre9u").replace("%d", "1", 1).replace("%d", str(int(100/int(self.param))), 1)
             case "14":
                 # @TODO this doesn't seem quite right.. do we really manually append (class only)? can probably do it like 27 below
                 descstr, _class = self.get_skilltab_descstr_from_param(self.param)
