@@ -195,12 +195,56 @@ class Utils:
         if stat.stat == "mindamage" and any(s.stat == "maxdamage"):
             return True
         return False, None
+    
 
     def get_stat_string(self, properties):
         ret = ""
         all_stats = []
         for prop in properties:
             for stat in prop.stats:
+                all_stats.append(stat)
+        
+        # Replace stats with group stats
+        for stat in list(all_stats):
+            if stat.isc is not None and stat.isc["dgrp"] != "":
+                item_stats = set()
+                isc_stats = set()
+                # Gather all the stats on the item with the same dgrp as stat
+                for s in list(all_stats):
+                    if s.isc is not None and s.isc["dgrp"] == stat.isc["dgrp"]:
+                        item_stats.add(s)
+                # Gather all the isc stats with the same dgrp as stat
+                for isc in self.tables.item_stat_cost_table:
+                    if isc["dgrp"] == stat.isc["dgrp"]:
+                        isc_stats.add(isc["Stat"])
+                # Make sure each stat in isc is on item
+                found_all = True
+                for isc_item in isc_stats:
+                    if not any(item.stat == isc_item for item in item_stats):
+                        found_all = False
+                if not found_all:
+                    continue
+                # Make sure that each entry in isc has a corresponding entry on the item with the same property value
+                for isc in isc_stats:
+                    found = False
+                    for item_stat in item_stats:
+                        if isc == item_stat.stat and item_stat.property_value_string == stat.property_value_string:
+                            found = True
+                    if found == False:
+                        found_all = False
+                if not found_all:
+                    continue
+                # Remove the stats from the item
+                for item in item_stats:
+                    all_stats.remove(item)
+                # Change the stat to use the group stats
+                stat.descfunc = stat.isc["dgrpfunc"]
+                stat.descval = stat.isc["dgrpval"]
+                stat.descstr2 = stat.property.get_descstr(stat.isc["dgrpstr2"])
+                stat.descstr = stat.property.get_descstr(stat.isc["dgrpstrpos"])
+                if stat.property.is_always_negative():
+                    stat.descstr = stat.property.get_descstr(stat.isc["dgrpstrneg"])
+                stat.stat_string = stat.property.get_stat_string(stat)
                 all_stats.append(stat)
        
         # Sort the remaining stats based on priority

@@ -10,6 +10,7 @@ class Stat:
         self.priority = 0
         self.stat_string = ""
         self.property = prop
+        self.isc = None
 
 class Property:
     def __init__(self, utils, code, param, min, max):
@@ -53,39 +54,6 @@ class Property:
             stat.stat_string = "Ethereal (Cannot be Repaired)" 
             self.stats.append(stat)
         
-        # Replace stats with group stats
-        for stat in []: #list(self.stats):
-            if stat.dgrp != "":
-                item_stats = set()
-                isc_stats = set()
-                # Gather all the stats on the item with the same dgrp as stat
-                for s in list(self.stats):
-                    if s.dgrp == stat.dgrp:
-                        item_stats.add(s)
-                # Gather all the isc stats with the same dgrp as stat
-                for isc in self.tables.item_stat_cost_table:
-                    if isc["dgrp"] == stat.dgrp:
-                        isc_stats.add(isc["Stat"])
-                # Make sure each stat in isc is on item
-                found_all = True
-                for isc_item in isc_stats:
-                    if not any(item.stat == isc_item for item in item_stats):
-                        found_all = False
-                if not found_all:
-                    continue
-                # Make sure each stat is equal
-                all_equal = True
-                for item in item_stats:
-                    if any(item.property_value_string == i.property_value_string for i in item_stats):
-                        all_equal = False
-                if not all_equal:
-                    continue
-                # Remove the stats from the item
-                for item in item_stats:
-                    all_stats.remove(item)
-                # Add the group stat to the item
-
-            
         for stat in self.stats:
             for isc in self.utils.tables.item_stat_cost_table:
                 if isc["Stat"].lower() == stat.stat.lower():
@@ -96,12 +64,13 @@ class Property:
                     # Since we only display the stats range and don't actually roll for it, it's possible for
                     # a stat to have negative and positive range, so we'll always use the positive one unless
                     # the stat is always negative
+                    stat.descfunc = isc["descfunc"]
+                    stat.descval = isc["descval"]
                     stat.descstr = self.get_descstr(isc["descstrpos"])
                     if self.is_always_negative():
                         stat.descstr = self.get_descstr(isc["descstrneg"])
                     stat.descstr2 = self.get_descstr(isc["descstr2"])
                     stat.stat_string = self.get_stat_string(stat)
-
 
         if len(self.stats) == 0:
             self.utils.log("No stats for property: " + code)
@@ -237,7 +206,7 @@ class Property:
         return "(Unknown Only)"
 
     def get_stat_string0(self, stat):
-        match stat.isc["descfunc"]:
+        match stat.descfunc:
             case "0" | "":
                 # Just return what it's already set to, which is either "" or some hard-coded thing set previously
                 return stat.stat_string
@@ -261,7 +230,8 @@ class Property:
             case "16":
                 return stat.descstr.replace("%d", self.get_property_value_string(stat), 1).replace("%s", self.get_skill_name_from_skill_id(self.param), 1)
             case "19":
-                return stat.descstr.replace("%d%", self.get_property_value_string(stat), 1) + " " + stat.descstr2
+                # Weird %d% in descstr.. replace it with just %d? idk
+                return stat.descstr.replace("%d%", "%d").replace("%d", self.get_property_value_string(stat), 1) + " " + stat.descstr2
             case "24":
                 return "Level " + self.max + " " + self.get_skill_name_from_skill_id(self.param) + " " + stat.descstr.replace("%d", self.min)
             case "27":
@@ -276,11 +246,11 @@ class Property:
             case "28":
                 return "+" + self.get_property_value_string(stat) + " To " + self.get_skill_name_from_skill_id(self.param)
             case _:
-                self.utils.log("descfunc" + stat.isc["descfunc"] + " descval 0 not implemented (stat " + stat.stat + ")")
-                return "descfunc" + stat.isc["descfunc"] + " descval 0 not implemented"
+                self.utils.log("descfunc" + stat.descfunc + " descval 0 not implemented (stat " + stat.stat + ")")
+                return "descfunc" + stat.descfunc + " descval 0 not implemented"
     
     def get_stat_string1(self, stat):
-        match stat.isc["descfunc"]:
+        match stat.descfunc:
             case "0" | "":
                 # Just return what it's already set to, which is either "" or some hard-coded thing set previously
                 return stat.stat_string
@@ -308,11 +278,11 @@ class Property:
             case "23":
                 return self.get_property_value_string(stat) + "% " + stat.descstr + " " + self.utils.get_monster_from_id(self.param)
             case _:
-                self.utils.log("descfunc" + stat.isc["descfunc"] + " descval 1 not implemented (stat " + stat.stat + ")")
-                return "descfunc" + stat.isc["descfunc"] + " descval 1 not implemented"
+                self.utils.log("descfunc" + stat.descfunc + " descval 1 not implemented (stat " + stat.stat + ")")
+                return "descfunc" + stat.descfunc + " descval 1 not implemented"
     
     def get_stat_string2(self, stat):
-        match stat.isc["descfunc"]:
+        match stat.descfunc:
             case "0" | "":
                 # Just return what it's already set to, which is either "" or some hard-coded thing set previously
                 return stat.stat_string
@@ -343,21 +313,21 @@ class Property:
                  #@TODO vidalas full set just says freezes target but this says freezes target +1
                  return stat.descstr + " +" + self.get_property_value_string(stat)
             case _:
-                self.utils.log("descfunc" + stat.isc["descfunc"] + " descval 2 not implemented (stat " + stat.stat + ")")
-                return "descfunc" + stat.isc["descfunc"] + " descval 2 not implemented"
+                self.utils.log("descfunc" + stat.descfunc + " descval 2 not implemented (stat " + stat.stat + ")")
+                return "descfunc" + stat.descfunc + " descval 2 not implemented"
 
     def get_stat_string(self, stat):
         # Special handling for hardcoded nonsense...
         if stat.stat == "item_numsockets":
             return self.get_descstr("Socketable") + " " + self.get_property_value_string(stat) 
         
-        if stat.isc["descval"] == "" or stat.isc["descval"] == "0":
+        if stat.descval == "" or stat.descval == "0":
             return self.get_stat_string0(stat)
-        if stat.isc["descval"] == "1":
+        if stat.descval == "1":
             return self.get_stat_string1(stat)
-        if stat.isc["descval"] == "2":
+        if stat.descval == "2":
             return self.get_stat_string2(stat)
-        self.utils.log("invalid descval: " + stat.isc["descval"] + " for stat: " + stat.stat + " property: " + self.code)
-        return "invalid descval: " + stat.isc["descval"]
+        self.utils.log("invalid descval: " + stat.descval + " for stat: " + stat.stat + " property: " + self.code)
+        return "invalid descval: " + stat.descval
 
         return ret
