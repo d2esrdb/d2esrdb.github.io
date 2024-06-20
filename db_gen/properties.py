@@ -98,6 +98,8 @@ class Property:
                 return "(" + self.strmin(self.min, self.max) + " to " + self.strmax(self.min, self.max) + ")"
             case "2" | "4" | "16":
                 return self.max
+            case "11" | "19" | "20":
+                return "This shouldn't show up anywhere..."
             case "12":
                 return self.param
             case "14":
