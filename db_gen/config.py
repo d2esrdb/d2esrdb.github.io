@@ -83,11 +83,6 @@ databases = \
         "extra_pages" : \
         [
             {
-                "name" : "Top",
-                "file" : "top.htm", 
-                "position" : -1,
-            },
-            {
                 "name": "Maps",
                 "file" : "maps.htm", 
                 "position" : 1,
