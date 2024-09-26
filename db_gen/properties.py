@@ -181,7 +181,7 @@ class Property:
             if s["skill"].lower() == skill_id.lower() or s["Id"].lower() == skill_id.lower():
                 for sd in self.utils.tables.skill_desc_table:
                     if sd["skilldesc"].lower() == s["skilldesc"].lower():
-                        return self.utils.table_strings.get(sd["str name"], "ERROR: NO SKILL NAME")
+                        return self.utils.table_strings[sd["str name"]]
         self.utils.log("get skill name failed for skill id: " + skill_id)
         return "Unknown Skill"
     
