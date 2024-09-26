@@ -1,3 +1,6 @@
+import json
+import os
+
 def read_bytes(data, num_bytes):
     return int.from_bytes(data.read(num_bytes), byteorder='little')
 
@@ -58,46 +61,64 @@ def d2_color_to_html_color(value):
 
 def get_string_dict(db_code, string_tables):
     key_value_dict = {}
-    for string_table in string_tables:
-        strings = open("../" + db_code + "/" + string_table, "rb")
+    if string_tables[0].endswith("json"):
+        directory = os.fsencode("../" + db_code + "/strings-legacy")            
+        for file in os.listdir(directory):
+            filename = os.fsdecode(file)
+            if filename.endswith(".json"): 
+                st = open("../" + db_code + "/strings-legacy/" + filename, encoding="utf-8-sig")
+                data = json.load(st)
+                for i in data:
+                    key_value_dict[i["Key"]] = i["enUS"]
+        directory = os.fsencode("../" + db_code + "/strings")            
+        for file in os.listdir(directory):
+            filename = os.fsdecode(file)
+            if filename.endswith(".json"): 
+                st = open("../" + db_code + "/strings/" + filename, encoding="utf-8-sig")
+                data = json.load(st)
+                for i in data:
+                    key_value_dict[i["Key"]] = i["enUS"]
+    else:
+        for string_table in string_tables:
+            strings = open("../" + db_code + "/" + string_table, "rb")
 
-        # HEADER 21 bytes
-        read_bytes(strings, 2) # CRC, ignored
-        num_elements = read_bytes(strings, 2)
-        read_bytes(strings, 4) # Hash size, ignored
-        read_bytes(strings, 1) # Unknown, ignored
-        read_bytes(strings, 4) # Start Index, ignored
-        read_bytes(strings, 4) # Max misses, ignored
-        read_bytes(strings, 4) # End index, ignored
+            # HEADER 21 bytes
+            read_bytes(strings, 2) # CRC, ignored
+            num_elements = read_bytes(strings, 2)
+            read_bytes(strings, 4) # Hash size, ignored
+            read_bytes(strings, 1) # Unknown, ignored
+            read_bytes(strings, 4) # Start Index, ignored
+            read_bytes(strings, 4) # Max misses, ignored
+            read_bytes(strings, 4) # End index, ignored
 
-        # Array of two bytes per entry, gives index to next table
-        indexes = []
-        for i in range(num_elements):
-            indexes.append(read_bytes(strings, 2))
+            # Array of two bytes per entry, gives index to next table
+            indexes = []
+            for i in range(num_elements):
+                indexes.append(read_bytes(strings, 2))
 
-        # Store this position, as this is the position used to index from
-        start_pos = strings.tell()
+            # Store this position, as this is the position used to index from
+            start_pos = strings.tell()
 
-        # Array of 17 bytes per entry
-        for i in range(num_elements):
-            strings.seek(start_pos + (indexes[i] * 17), 0)
-            read_bytes(strings, 1) # Used byte, ignored
-            read_bytes(strings, 2) # Index Number, ignored
-            read_bytes(strings, 4) # Has Number, ignored
-            key_offset = read_bytes(strings, 4)
-            value_offset = read_bytes(strings, 4)
-            read_bytes(strings, 2) # Length of value string, ignored
-            
-            # Get the key string
-            strings.seek(key_offset)
-            key_string = read_string(strings)
+            # Array of 17 bytes per entry
+            for i in range(num_elements):
+                strings.seek(start_pos + (indexes[i] * 17), 0)
+                read_bytes(strings, 1) # Used byte, ignored
+                read_bytes(strings, 2) # Index Number, ignored
+                read_bytes(strings, 4) # Has Number, ignored
+                key_offset = read_bytes(strings, 4)
+                value_offset = read_bytes(strings, 4)
+                read_bytes(strings, 2) # Length of value string, ignored
+                
+                # Get the key string
+                strings.seek(key_offset)
+                key_string = read_string(strings)
 
-            # Get the value string
-            strings.seek(value_offset)
-            value_string = read_string(strings)
-            
-            # Create the key/value pair dict
-            key_value_dict[key_string] = value_string
+                # Get the value string
+                strings.seek(value_offset)
+                value_string = read_string(strings)
+                
+                # Create the key/value pair dict
+                key_value_dict[key_string] = value_string
 
     # Convert the embedded color codes to html color
     for key, value in dict(key_value_dict).items():

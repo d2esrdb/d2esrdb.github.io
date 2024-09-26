@@ -113,7 +113,7 @@ class Runeword_Generator():
                                                                                       socketable[sockettype + "Mod" + str(j+1) + "Min"],
                                                                                       socketable[sockettype + "Mod" + str(j+1) + "Max"]))
             
-            new_rw = Runeword(self.table_strings.get(rw["Name"], rw["Rune Name"]), runes, allowed_bases, excluded_bases, props, rune_properties)
+            new_rw = Runeword(self.table_strings.get(rw["Name"], rw.get("Rune Name", "ERROR: NO RUNE NAME")), runes, allowed_bases, excluded_bases, props, rune_properties)
             self.set_gemapplytypes(new_rw, include_types, exclude_types)
             runewords.append(new_rw)
         return runewords

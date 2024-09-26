@@ -2,7 +2,7 @@ databases = \
 [
     {
         "name" : "Eastern Sun Eclipse",
-        "shortname" : "ESE",
+        "shortname" : "Eastern_Sun_Eclipse",
         "version" : "1.0",
         "tablestring_files" : \
         [
@@ -37,7 +37,7 @@ databases = \
     },
     {
         "name" : "Eastern Sun Rises",
-        "shortname" : "ESR",
+        "shortname" : "Eastern_Sun_Rises",
         "version" : "5.3A5",
         "tablestring_files" : \
         [
@@ -67,8 +67,36 @@ databases = \
         ],
     },
     {
+        "name" : "Eastern Sun Resurrected",
+        "shortname" : "Eastern_Sun_Resurrected",
+        "version" : "1.6",
+        "tablestring_files" : \
+        [
+            "json", 
+        ],
+        "gemapplytype_names" : \
+        [
+            "Weapons / Gloves",
+            "Helms / Boots",
+            "Armor / Shields / Belts",
+        ],
+        "extra_pages" : \
+        [
+            {
+                "name" : "Top",
+                "file" : "top.htm", 
+                "position" : -1,
+            },
+            {
+                "name": "Maps",
+                "file" : "maps.htm", 
+                "position" : 1,
+            },
+        ],
+    },
+    {
         "name" : "Diablo II Lord of Destruction",
-        "shortname" : "LOD",
+        "shortname" : "Lord_Of_Destruction",
         "version" : "1.13c",
         "tablestring_files" : \
         [
