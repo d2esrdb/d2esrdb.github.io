@@ -160,9 +160,9 @@ def printItemTypesTree():
         printtree(child, "")
 
 if __name__ == "__main__":
-    mytables = Tables("LOD")
+    mytables = Tables("Eastern_Sun_Resurrected")
     #mytables.print_row_with_cell_not_equal_to("Misc.txt", "spelldescstr", "")
-    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "firemindam")
+    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "strength")
     #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "dmg-fire")
     #mytables.print_row_with_cell_equal_to("UniqueItems.txt", "code", "dmg-fire")
 

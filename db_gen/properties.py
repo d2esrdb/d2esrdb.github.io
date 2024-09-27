@@ -232,8 +232,7 @@ class Property:
             case "16":
                 return stat.descstr.replace("%d", self.get_property_value_string(stat), 1).replace("%s", self.get_skill_name_from_skill_id(self.param), 1)
             case "19":
-                # Weird %d% in descstr.. replace it with just %d? idk
-                return stat.descstr.replace("%d%", "%d").replace("%d", self.get_property_value_string(stat), 1) + " " + stat.descstr2
+                return stat.descstr.replace("%d%", "%d").replace("%+d%%", "+%d%").replace("%+d", "+%d").replace("%d", self.get_property_value_string(stat), 1) + " " + stat.descstr2
             case "24":
                 return "Level " + self.max + " " + self.get_skill_name_from_skill_id(self.param) + " " + stat.descstr.replace("%d", self.min)
             case "27":
