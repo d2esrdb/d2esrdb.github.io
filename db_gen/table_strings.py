@@ -34,6 +34,55 @@ def replace_code_with_color(value, code, color, count):
 Ã¿c. - Messed Up White (Same as above but text is messed up)
 
 Thanks Kieran zkier
+
+
+
+d2r
+ÿc0 white1
+ÿc= white2
+ÿc5 gray1
+ÿcK gray2
+ÿcI gray3
+ÿc6 black1
+ÿcM black2
+
+ÿcE lightred
+ÿc1 red1
+ÿcU red2
+ÿcS darkred
+
+ÿc@ orange1
+ÿc8 orange2
+ÿcJ orange3
+ÿcL orange4
+
+ÿc7 lightgold1
+ÿcH lightgold2
+ÿc4 gold1
+ÿcD gold2
+
+ÿc9 yellow1
+ÿcR yellow2
+
+ÿc2 green1
+ÿcQ green2
+ÿcC green3
+ÿc< green4
+ÿcA darkgreen1
+ÿc: darkgreen2
+
+ÿcN turquoise
+ÿcT skyblue
+ÿcF lightblue1
+ÿcP lightblue2
+ÿc3 blue1
+ÿcB blue2
+
+ÿcG lightpink
+ÿcO pink
+ÿc; purple
+
+Thanks LimpRock
 '''
 
 def d2_color_to_html_color(value):
@@ -54,6 +103,44 @@ def d2_color_to_html_color(value):
         value, count = replace_code_with_color(value, "Ã¿c;", "PURPLE", count)
         value, count = replace_code_with_color(value, "Ã¿c/", "WHITE", count)
         value, count = replace_code_with_color(value, "Ã¿c.", "WHITE", count)
+        #@TODO the colors below are for d2r and probably need to be better fine tuned
+        value, count = replace_code_with_color(value, "ÿc0", "WHITE", count)
+        value, count = replace_code_with_color(value, "ÿc=", "WHITE", count)
+        value, count = replace_code_with_color(value, "ÿc5", "LIGHTGRAY", count)
+        value, count = replace_code_with_color(value, "ÿcK", "LIGHTGRAY", count)
+        value, count = replace_code_with_color(value, "ÿcI", "LIGHTGRAY", count)
+        value, count = replace_code_with_color(value, "ÿc6", "BLACK", count)
+        value, count = replace_code_with_color(value, "ÿcM", "BLACK", count)
+        value, count = replace_code_with_color(value, "ÿcE", "RED", count)
+        value, count = replace_code_with_color(value, "ÿc1", "RED", count)
+        value, count = replace_code_with_color(value, "ÿcU", "RED", count)
+        value, count = replace_code_with_color(value, "ÿcS", "DARKRED", count)
+        value, count = replace_code_with_color(value, "ÿc@", "ORANGE", count)
+        value, count = replace_code_with_color(value, "ÿc8", "ORANGE", count)
+        value, count = replace_code_with_color(value, "ÿcJ", "ORANGE", count)
+        value, count = replace_code_with_color(value, "ÿcL", "ORANGE", count)
+        value, count = replace_code_with_color(value, "ÿc7", "GOLD", count)
+        value, count = replace_code_with_color(value, "ÿcH", "GOLD", count)
+        value, count = replace_code_with_color(value, "ÿc4", "GOLD", count)
+        value, count = replace_code_with_color(value, "ÿcD", "GOLD", count)
+        value, count = replace_code_with_color(value, "ÿc9", "YELLOW", count)
+        value, count = replace_code_with_color(value, "ÿcR", "YELLOW", count)
+        value, count = replace_code_with_color(value, "ÿc2", "GREEN", count)
+        value, count = replace_code_with_color(value, "ÿcQ", "GREEN", count)
+        value, count = replace_code_with_color(value, "ÿcC", "GREEN", count)
+        value, count = replace_code_with_color(value, "ÿc<", "GREEN", count)
+        value, count = replace_code_with_color(value, "ÿcA", "GREEN", count)
+        value, count = replace_code_with_color(value, "ÿc:", "GREEN", count)
+        value, count = replace_code_with_color(value, "ÿcN", "BLUE", count)
+        value, count = replace_code_with_color(value, "ÿcT", "BLUE", count)
+        value, count = replace_code_with_color(value, "ÿcF", "BLUE", count)
+        value, count = replace_code_with_color(value, "ÿcP", "BLUE", count)
+        value, count = replace_code_with_color(value, "ÿc3", "BLUE", count)
+        value, count = replace_code_with_color(value, "ÿcB", "BLUE", count)
+        value, count = replace_code_with_color(value, "ÿcG", "PINK", count)
+        value, count = replace_code_with_color(value, "ÿcO", "PINK", count)
+        value, count = replace_code_with_color(value, "ÿc;", "PURPLE", count)
+
         if start_count == count:
             break
     value = value + "</FONT>" * count
