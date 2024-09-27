@@ -231,7 +231,7 @@ class Property:
             case "14":
                 # @TODO this doesn't seem quite right.. do we really manually append (class only)? can probably do it like 27 below
                 descstr, _class = self.get_skilltab_descstr_from_param(self.param)
-                return self.get_descstr(descstr).replace("%d", self.get_property_value_string(stat)) + " (" + _class + " Only)" 
+                return self.get_descstr(descstr).replace("%+d", "+%d").replace("%d", self.get_property_value_string(stat)) + " (" + _class + " Only)" 
             case "15":
                 return stat.descstr.replace("%d%", self.min, 1).replace("%d", self.max, 1).replace("%s", self.get_skill_name_from_skill_id(self.param), 1)
             case "16":
