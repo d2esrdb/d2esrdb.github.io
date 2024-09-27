@@ -238,6 +238,9 @@ class Property:
                 return stat.descstr.replace("%d", self.get_property_value_string(stat), 1).replace("%s", self.get_skill_name_from_skill_id(self.param), 1)
             case "19":
                 return stat.descstr.replace("%d%", "%d").replace("%+d%%", "+%d%").replace("%+d", "+%d").replace("%d", self.get_property_value_string(stat), 1) + " " + stat.descstr2
+            case "23":
+                #%0%% Reanimate as: %1
+                return stat.descstr.replace("%0%", self.get_property_value_string(stat)).replace("%1", self.utils.get_monster_from_id(self.param))
             case "24":
                 return "Level " + self.max + " " + self.get_skill_name_from_skill_id(self.param) + " " + stat.descstr.replace("%d", self.min)
             case "27":
