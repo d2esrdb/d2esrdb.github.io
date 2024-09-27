@@ -251,6 +251,8 @@ class Property:
                 return "+" + self.get_property_value_string(stat) + " To " + skill + " " + classonly
             case "28":
                 return "+" + self.get_property_value_string(stat) + " To " + self.get_skill_name_from_skill_id(self.param)
+            case "29":
+                return stat.descstr.replace("%d%", "%d").replace("%+d%%", "+%d%").replace("%+d", "+%d").replace("%d", self.get_property_value_string(stat), 1) + " " + stat.descstr2
             case _:
                 self.utils.log("descfunc" + stat.descfunc + " descval 0 not implemented (stat " + stat.stat + ")")
                 return "descfunc" + stat.descfunc + " descval 0 not implemented"
