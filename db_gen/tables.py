@@ -162,8 +162,8 @@ def printItemTypesTree():
 if __name__ == "__main__":
     mytables = Tables("Eastern_Sun_Resurrected")
     #mytables.print_row_with_cell_not_equal_to("Misc.txt", "spelldescstr", "")
-    mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "strength")
-    #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "dmg-fire")
+    #mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "strength")
+    mytables.print_row_with_cell_equal_to("Properties.txt", "code", "dmg%")
     #mytables.print_row_with_cell_equal_to("UniqueItems.txt", "code", "dmg-fire")
 
     #for armor in mytables.armor_table:

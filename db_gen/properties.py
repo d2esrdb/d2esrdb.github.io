@@ -40,6 +40,7 @@ class Property:
             stat = Stat("", "", "", "7", self)
             stat.priority = 1000
             stat.stat_string = "+" + self.get_property_value_string(stat) + "% " + self.get_descstr("strModEnhancedDamage") 
+            stat.stat_string = stat.stat_string.replace("%+d%% ","")
             self.stats.append(stat)
         if code == "indestruct":
             self.stats.append(Stat("item_indesctructible", "", "", "20", self))    
