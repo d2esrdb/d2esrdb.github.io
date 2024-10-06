@@ -60,12 +60,13 @@ class Utils:
         all_types = self.get_all_equivalent_types(types)
         return set(all_types) & set(include_types)
 
-    def get_item_name_from_code(self, code):
+    def get_item_name_from_code(self, code, debug=True):
         for row in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
             if row["code"] == code:
                 if self.table_strings.get(row["namestr"]) is not None:
                     return self.table_strings[row["namestr"]]
-        self.log("No name found for code: " + code)
+        if debug:
+            self.log("No name found for code: " + code)
         return code
     
     def get_level_req_from_code(self, code):
@@ -126,8 +127,6 @@ class Utils:
             if mon_stat_row["hcIdx"] == mon_id:
                 return self.table_strings[mon_stat_row["NameStr"]]
 
-
-
     def get_base_url(self, code):
         for weapon in self.tables.weapons_table:
             if weapon["code"] == code:
@@ -137,7 +136,7 @@ class Utils:
                 return "armors.htm#" + code
         return ""
 
-    def get_item_type_name_from_code(self, code):
+    def get_item_type_name_from_code(self, code, debug=True):
         # Hard code "tors" because "Armor" is confusing
         if code == "tors":
             return "Body Armor"
@@ -149,7 +148,10 @@ class Utils:
         for row in self.tables.misc_table:
             if row["code"] == code:
                 return row["name"]
-        return "Unknown: " + code
+
+        if debug:
+            print("Could not get item type name for: " + code)
+        return code
 
     def get_all_parent_types(self, types):
         ret = list(types)

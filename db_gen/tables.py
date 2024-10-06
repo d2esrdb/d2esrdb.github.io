@@ -26,6 +26,7 @@ class Tables:
         self.set_items_table = self.load_table("SetItems.txt")
         self.char_stats_table = self.load_table("CharStats.txt")
         self.player_class_table = self.load_table("PlayerClass.txt")
+        self.recipes_table = self.load_table("CubeMain.txt")
 
         # For efficiency sake we should just build this dict once
         self.parent_types = {}

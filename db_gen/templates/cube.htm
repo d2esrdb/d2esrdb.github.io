@@ -1,0 +1,20 @@
+<%page args="recipes"/>\
+<table cellpadding="5" border="0">
+<tbody>
+<tr>
+<td width="500" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
+Input(s)</font></td>
+<td width="500" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
+Output(s)</font></td>
+</tr>
+
+% for recipe in recipes:
+<tr>
+	<td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica">
+	<br>${recipe.input_string()}<br></font></td>
+	<td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica">
+	<br>${recipe.output_string()}<br></font></td>
+</tr>
+% endfor
+</tbody></table>
+

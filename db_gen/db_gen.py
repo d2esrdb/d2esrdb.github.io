@@ -14,6 +14,7 @@ import runeword_generator
 import uniques_generator
 import socketables_generator
 import set_generator
+import recipes_generator
 
 class Database_Generator:
     def __init__(self, db_code, db_name, db_version, string_tables, gemapplytype_names):
@@ -111,6 +112,13 @@ class Database_Generator:
         template = Template(filename="templates/" + filename, lookup=self.mylookup)
         rendered = template.render(sets)
         self.generate(rendered, filename)
+    
+    def generate_recipes(self):
+        recipes = recipes_generator.Recipe_Generator(self.utils).generate_recipes()
+        filename = "cube.htm"
+        template = Template(filename="templates/" + filename, lookup=self.mylookup)
+        rendered = template.render(recipes)
+        self.generate(rendered, filename)
 
     def gen_all(self):
         self.generate_armor()
@@ -121,7 +129,7 @@ class Database_Generator:
         self.generate_suffixes()
         self.generate_uniques()
         self.generate_socketables()
-        #self.generate_recipes()
+        self.generate_recipes()
 
 def generate_static_links(db):
     prelinks = ""

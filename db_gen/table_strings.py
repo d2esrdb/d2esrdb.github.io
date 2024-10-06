@@ -220,11 +220,11 @@ if __name__ == "__main__":
                 "string.tbl",
                 "expansionstring.tbl",
                 "patchstring.tbl",
-                "ES AlphA.tbl",   
+                #"ES AlphA.tbl",   
             ]
-    my = get_string_dict("Eastern_Sun_Rises", stringtables)
-    #for key,value in my.items():
-    #    if "repair" in key.lower() or "repair" in value.lower():
-    #        print(key + ": " + my[key])
+    my = get_string_dict("Lord_Of_Destruction", stringtables)
+    for key,value in my.items():
+        if "weapon" == value.lower():
+            print(key + ": " + my[key])
     
-    print(my["ModStre8b"])
+    #print(my["weap"])
