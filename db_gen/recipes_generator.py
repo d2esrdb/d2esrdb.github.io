@@ -19,6 +19,11 @@ class Item:
         self.suf = ""
         self.pre = ""
 
+class Output:
+    def __init__(self, output_string):
+        self.output_string = output_string
+        self.properties = []
+
 class Recipe:
     def __init__(self, utils):
         self.utils = utils
@@ -166,7 +171,8 @@ class Recipe:
     def output_string(self):
         ret = ""
         for i in self.outputs:
-            ret = ret + self.parse_string(i) + "<br>"
+            ret = ret + self.parse_string(i.output_string) + "<br>"
+            ret = ret + self.utils.get_stat_string(i.props)
         return ret
 
 class Recipe_Generator:
@@ -182,10 +188,23 @@ class Recipe_Generator:
             for i in range(1,8):
                 if recipe["input " + str(i)] != "":
                     r.inputs.append(recipe["input " + str(i)])
-            recipes.append(r)
             for i in ["", " b", " c"]:
                 if recipe["output" + str(i)] != "":
-                    r.outputs.append(recipe["output" + str(i)])
+                    output = Output(recipe["output" + str(i)])
+                    props = []
+                    for j in range(1, 6):
+                        column = str(i + " mod").strip()
+                        if recipe[column + " " + str(j)] != "":
+                            print(recipe["description"])
+                            props.append(properties.Property(self.utils,
+                                                             recipe[column + " " + str(j)],
+                                                             recipe[column + " " + str(j) + " param"],
+                                                             recipe[column + " " + str(j) + " min"],
+                                                             recipe[column + " " + str(j) + " max"],
+                                                             chance=recipe[column + " " + str(j) + " chance"]))
+                    output.props = props
+                    r.outputs.append(output)
+            recipes.append(r)
                 
         return recipes
 

@@ -4744,9 +4744,6 @@ P-Ame + Any Wand + 3 ddd	1			100	16	0	199		3	wand	gvb	ddd					useitem				levelre
 P-Ame + Any Wand + 3 ddd	1			100	16	34	39		3	wand	gvb	ddd					useitem				levelreq			2	2	str			4	4	red-dmg			1	1																																																																					0
 P-Sap + Any Wand + 3 ddd	1			100	16	105	119		3	wand	gbb	ddd					useitem				levelreq			2	2	mana			10	10	cast1			2	2	mana%			1	1																																																																0
 P-Sap + Any Wand + 3 ddd	1			100	16	77	59		3	wand	gbb	ddd					useitem				levelreq			2	2	mana			10	10	cast1			2	2	mana%			1	1																																																																0
-P-Dia + Any Wand + 3 ddd	1			100	16	31	2999		3	wand	gwb	ddd					useitem				levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																																0	0
-P-Dia + Any Wand + 3 ddd	1			100	16	60	59		3	wand	gwb	ddd					useitem				levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																																0	0
-P-Dia + Any Wand + 3 ddd	1			100	16	116	99		3	wand	gwb	ddd					useitem				levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																																0	0
 P-Top + Any Wand + 3 ddd	1			100	16	80	399		3	wand	gyb	ddd					useitem				levelreq			2	2	mag%			10	10	gold%			10	10																																																																					0
 P-Top + Any Wand + 3 ddd	1			100	16	79	399		3	wand	gyb	ddd					useitem				levelreq			2	2	mag%			10	10	gold%			10	10																																																																					0
 P-Obs + Any Wand + 3 ddd	1			100	16	93	119		3	wand	gbk	ddd					useitem				levelreq			2	2	swing1			4	4	res-all			1	1																																																																					0
@@ -4766,9 +4763,6 @@ P-Ame + Any Staff + 3 ddd	1			100	16	0	199		3	staf	gvb	ddd					useitem				levelr
 P-Ame + Any Staff + 3 ddd	1			100	16	34	39		3	staf	gvb	ddd					useitem				levelreq			2	2	str			4	4	red-dmg			1	1																																																																					0
 P-Sap + Any Staff + 3 ddd	1			100	16	105	119		3	staf	gbb	ddd					useitem				levelreq			2	2	mana			10	10	cast1			2	2	mana%			1	1																																																																0
 P-Sap + Any Staff + 3 ddd	1			100	16	77	59		3	staf	gbb	ddd					useitem				levelreq			2	2	mana			10	10	cast1			2	2	mana%			1	1																																																																0
-P-Dia + Any Staff + 3 ddd	1			100	16	31	2999		3	staf	gwb	ddd					useitem				levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																																0	0
-P-Dia + Any Staff + 3 ddd	1			100	16	60	59		3	staf	gwb	ddd					useitem				levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																																0	0
-P-Dia + Any Staff + 3 ddd	1			100	16	116	99		3	staf	gwb	ddd					useitem				levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																																0	0
 P-Top + Any Staff + 3 ddd	1			100	16	80	799		3	staf	gyb	ddd					useitem				levelreq			2	2	mag%			5	5	gold%			5	5																																																																					0
 P-Top + Any Staff + 3 ddd	1			100	16	79	799		3	staf	gyb	ddd					useitem				levelreq			2	2	mag%			5	5	gold%			5	5																																																																					0
 P-Obs + Any Staff + 3 ddd	1			100	16	93	119		3	staf	gbk	ddd					useitem				levelreq			2	2	swing1			4	4	res-all			1	1																																																																					0
@@ -4836,9 +4830,6 @@ P-Ame + Any Helm + 3 ddd	1			100	16	0	199		3	helm	gvb	ddd					useitem				levelre
 P-Ame + Any Helm + 3 ddd	1			100	16	34	39		3	helm	gvb	ddd					useitem				levelreq			2	2	str			4	4	red-dmg			1	1																																																																					0
 P-Sap + Any Helm + 3 ddd	1			100	16	105	119		3	helm	gbb	ddd					useitem				levelreq			2	2	mana			10	10	cast1			2	2	mana%			1	1																																																																0
 P-Sap + Any Helm + 3 ddd	1			100	16	77	59		3	helm	gbb	ddd					useitem				levelreq			2	2	mana			10	10	cast1			2	2	mana%			1	1																																																																0
-P-Dia + Any Helm + 3 ddd	1			100	16	31	2999		3	helm	gwb	ddd					useitem				levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																																0	0
-P-Dia + Any Helm + 3 ddd	1			100	16	60	59		3	helm	gwb	ddd					useitem				levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																																0	0
-P-Dia + Any Helm + 3 ddd	1			100	16	116	99		3	helm	gwb	ddd					useitem				levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																																0	0
 P-Top + Any Helm + 3 ddd	1			100	16	80	799		3	helm	gyb	ddd					useitem				levelreq			2	2	gold%			10	10																																																																										0
 P-Top + Any Helm + 3 ddd	1			100	16	79	799		3	helm	gyb	ddd					useitem				levelreq			2	2	gold%			10	10																																																																										0
 P-Obs + Any Helm + 3 ddd	1			100	16	93	119		3	helm	gbk	ddd					useitem				levelreq			2	2	swing1			4	4	res-all			1	1																																																																					0
@@ -4858,9 +4849,6 @@ P-Ame + Any Boots + 3 ddd	1			100	16	0	199		3	boot	gvb	ddd					useitem				meldfl
 P-Ame + Any Boots + 3 ddd	1			100	16	34	39		3	boot	gvb	ddd					useitem				meldflag			1	1	levelreq			2	2	str			4	4	red-dmg			1	1																																																																0
 P-Sap + Any Boots + 3 ddd	1			100	16	105	119		3	boot	gbb	ddd					useitem				meldflag			1	1	levelreq			2	2	mana			10	10	cast1			2	2	mana%			1	1																																																											0
 P-Sap + Any Boots + 3 ddd	1			100	16	77	59		3	boot	gbb	ddd					useitem				meldflag			1	1	levelreq			2	2	mana			10	10	cast1			2	2	mana%			1	1																																																											0
-P-Dia + Any Boots + 3 ddd	1			100	16	31	2999		3	boot	gwb	ddd					useitem				meldflag			1	1	levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																											0	0
-P-Dia + Any Boots + 3 ddd	1			100	16	60	59		3	boot	gwb	ddd					useitem				meldflag			1	1	levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																											0	0
-P-Dia + Any Boots + 3 ddd	1			100	16	116	99		3	boot	gwb	ddd					useitem				meldflag			1	1	levelreq			2	2	ac			20	20	fasterattackanim		2	2	reduce-ac			3	3																																																											0	0
 P-Top + Any Boots + 3 ddd	1			100	16	80	799		3	boot	gyb	ddd					useitem				meldflag			1	1	levelreq			2	2	gold%			10	10																																																																					0
 P-Top + Any Boots + 3 ddd	1			100	16	79	799		3	boot	gyb	ddd					useitem				meldflag			1	1	levelreq			2	2	gold%			10	10																																																																					0
 P-Obs + Any Boots + 3 ddd	1			100	16	93	119		3	boot	gbk	ddd					useitem				meldflag			1	1	levelreq			2	2	swing1			4	4	res-all			1	1																																																																0

@@ -13,12 +13,13 @@ class Stat:
         self.isc = None
 
 class Property:
-    def __init__(self, utils, code, param, min, max):
+    def __init__(self, utils, code, param, min, max, chance=""):
         self.utils = utils
         self.code = code
         self.param = param
         self.min = min
         self.max = max
+        self.chance = chance
         self.stats = []
 
         for p in self.utils.tables.properties_table:
