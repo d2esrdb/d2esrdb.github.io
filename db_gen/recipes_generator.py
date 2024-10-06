@@ -172,7 +172,8 @@ class Recipe:
         ret = ""
         for i in self.outputs:
             ret = ret + self.parse_string(i.output_string) + "<br>"
-            ret = ret + self.utils.get_stat_string(i.props)
+            for p in i.props:
+                ret = ret + self.utils.get_stat_string([p])
         return ret
 
 class Recipe_Generator:
@@ -195,7 +196,6 @@ class Recipe_Generator:
                     for j in range(1, 6):
                         column = str(i + " mod").strip()
                         if recipe[column + " " + str(j)] != "":
-                            print(recipe["description"])
                             props.append(properties.Property(self.utils,
                                                              recipe[column + " " + str(j)],
                                                              recipe[column + " " + str(j) + " param"],

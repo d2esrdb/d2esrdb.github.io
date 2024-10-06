@@ -255,4 +255,5 @@ class Utils:
                 ret = ret + stat.stat_string + "<br>"
             if stat.stat_string == "" and stat.stat not in ["poisonlength", "coldlength", "state"]:
                 self.log("Could not get stat string for stat: " + stat.stat + " property: " + stat.property.code)
+       
         return ret
