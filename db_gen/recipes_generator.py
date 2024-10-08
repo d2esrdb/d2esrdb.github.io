@@ -18,6 +18,7 @@ class Item:
         self.mod = ""
         self.suf = ""
         self.pre = ""
+        self.nru = ""
 
 class Output:
     def __init__(self, output_string):
@@ -40,6 +41,18 @@ class Recipe:
                                                  table[int(row)]["mod" + str(i+1) + "min"],
                                                  table[int(row)]["mod" + str(i+1) + "max"]))
         return self.utils.get_stat_string(props)
+    
+    def is_a_unique_item(self, code):
+        for row in self.utils.tables.unique_items_table:
+            if row["index"] == code:
+                return True
+        return False
+
+    def is_a_set_item(self, code):
+        for row in self.utils.tables.set_items_table:
+            if row["index"] == code:
+                return True
+        return False
 
     def parse_string(self, in_str, input_item=None):
         in_strs = in_str.split(",")
@@ -95,6 +108,8 @@ class Recipe:
                 item.pre = self.get_affix(self.utils.tables.prefixes_table, s.replace("pre=",""))
             elif s.startswith("suf="):
                 item.suf = self.get_affix(self.utils.tables.suffixes_table, s.replace("suf=",""))
+            elif s.startswith("nru"):
+                item.nru = "(Non Runeword)"
             elif s.startswith("usetype"):
                 item.name = "Same Input Type" 
             elif s.startswith("useitem"):
@@ -102,12 +117,17 @@ class Recipe:
             elif s.startswith("any"):
                 item.name = "Any"
             else:
+                # This code isn't any of the special ones above, it must be it's name.. check armor/weapon/misc tables first
                 item.name = self.utils.get_item_name_from_code(s, False)
                 if s == item.name:
+                    # Not in armor/weapon/misc table, lets check if it's an item type, and if so, we'll use the comment column
+                    # Note that this is the best we can do because item types don't have strings because they don't show up in game
+                    # An example of this is tors=Torso or blun=Blunt Weapon
                     item.name = self.utils.get_item_type_name_from_code(s, False)
                     if s == item.name:
-                        print("Cannot translate: " + s)
-                        item.name = s
+                        # So it's not an item type, let's check if it's a unique or set items
+                        if not self.is_a_unique_item(s) and not self.is_a_set_item(s):
+                            self.utils.log("Could not translate: " + s)
             '''
 
             elif s.startswith("gem0"):
@@ -153,7 +173,7 @@ class Recipe:
             '''
 
             
-        ret = re.sub(" +", " ", item.qty + " " + item.quality + " " + item.tier + " " + item.rarity + " " + item.name + " " + item.eth + " " + item.upg + " " + item.rep + " " + item.rch + " " + item.uns + " " + item.rem)
+        ret = re.sub(" +", " ", item.qty + " " + item.quality + " " + item.tier + " " + item.rarity + " " + item.name + " " + item.eth + " " + item.upg + " " + item.rep + " " + item.rch + " " + item.uns + " " + item.rem + " " + item.nru)
         if item.mod != "":
             ret = ret + "<br>" + item.mod
         if item.suf != "":
