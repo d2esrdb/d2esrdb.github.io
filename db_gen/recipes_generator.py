@@ -192,8 +192,7 @@ class Recipe:
         ret = ""
         for i in self.outputs:
             ret = ret + self.parse_string(i.output_string) + "<br>"
-            for p in i.props:
-                ret = ret + self.utils.get_stat_string([p])
+            ret = ret + self.utils.get_stat_string(i.props)
         return ret
 
 class Recipe_Generator:
