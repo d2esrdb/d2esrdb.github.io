@@ -23,7 +23,7 @@ class Item:
 class Output:
     def __init__(self, output_string):
         self.output_string = output_string
-        self.properties = []
+        self.props = []
 
 class Recipe:
     def __init__(self, utils):
@@ -200,10 +200,69 @@ class Recipe_Generator:
     def __init__(self, utils):
         self.utils = utils
 
+    def proj_specific_recipes(self):
+        if self.utils.tables.db_name == "Lord_Of_Destruction":
+            return []
+        r = Recipe(self.utils)
+        r.inputs.append("Gem Can")
+        r.inputs.append("Any Gem")
+        r.outputs.append(Output("Gem Can"))
+        r.outputs.append(Output("Add Corresponding Gem Points"))
+
+        r2 = Recipe(self.utils)
+        r2.inputs.append("Gem Can")
+        r2.inputs.append("Rerollable Item")
+        r2.outputs.append(Output("Gem Can"))
+        r2.outputs.append(Output("Subtract Corresponding Gem Points"))
+        r2.outputs.append(Output("Rerolled Item"))
+        return [r, r2]
+
+    # @TODO make this project specific somehow
+    # Return True if you want to block/filter out the recipe, false otherwise
+    def proj_specific_filter(self, recipe):
+        gem_list = ["gcv", "gfv", "gsv", "gzv", "gpv", "gvb", "6gv",
+                    "gcb", "gfb", "gsb", "glb", "gpb", "gbb", "6gy",
+                    "gcg", "gfg", "gsg", "glg", "gpg", "ggb", "6gb",
+                    "gcr", "gfr", "gsr", "glr", "gpr", "grb", "6gg",
+                    "gcw", "gfw", "gsw", "glw", "gpw", "gwb", "6gr",
+                    "gcy", "gfy", "gsy", "gly", "gpy", "gyb", "6gw",
+                    "gcy", "gfy", "gsy", "gly", "gpy", "gyb", "6sk",
+                    "skc", "skf", "sku", "skl", "skz", "skb",
+                    "gck", "gfk", "gsk", "gzk", "gpk", "gbk", "6gk"]
+        
+        if recipe["input 1"] == "can1":
+            ret = True
+            # If first input is gem can, and all the other inputs are gems, don't add to recipe list
+            for i in range(2,8):
+                if recipe["input " + str(i)] == "" or recipe["input " + str(i)].split(",")[0] in gem_list:
+                    continue
+                else:
+                    ret = False
+            if ret:
+                return ret
+
+        if recipe["input 1"] in ["kv0","ky0","kb0","kg0","kr0","kw0","ks0","kk0"]:
+            ret = True
+            # If first input is gem can, and all other inputs are weapons/armors or ancient decipherers
+            for i in range(2,8):
+                if recipe["input " + str(i)] == "" or \
+                   recipe["input " + str(i)] == "ddd":
+                       continue
+                ret = False
+                for s in recipe["input " + str(i)].split(","):
+                    if s == self.utils.get_item_name_from_code(s):
+                        ret = True
+            if ret:
+                return ret
+        return False
+
+
     def generate_recipes(self):
         recipes = []
         for recipe in self.utils.tables.recipes_table:
             if recipe["enabled"] != "1":
+                continue
+            if self.proj_specific_filter(recipe):
                 continue
             r = Recipe(self.utils)
             for i in range(1,8):
@@ -225,6 +284,6 @@ class Recipe_Generator:
                     output.props = props
                     r.outputs.append(output)
             recipes.append(r)
-                
-        return recipes
+        
+        return recipes + self.proj_specific_recipes()
 
