@@ -1,17 +1,22 @@
-from db_gen import properties
+from collections.abc import Iterable
+from logging import INFO, WARNING
+
+from db_gen import logger, properties
+from db_gen.tables import Tables
 
 
 class Utils:
-    def __init__(self, tables, table_strings):
+    def __init__(self, tables: Tables, table_strings: dict[str, str]) -> None:
         self.table_strings = table_strings
         self.tables = tables
-        self.log_errors = []
+        self.log_errors = set()
 
-    def log(self, msg):
+    def log(self, msg: str, *, level: int = INFO) -> None:
         if msg not in self.log_errors:
-            self.log_errors.append(msg)
+            self.log_errors.add(msg)
+            logger.log(level, msg)
 
-    def get_item_types_list(self, types):
+    def get_item_types_list(self, types: list[str]) -> list:
         ret = []
         for item_type in self.tables.item_types_table:
             for t in types:
@@ -19,13 +24,10 @@ class Utils:
                     ret.append(item_type["Code"] + " = " + item_type["ItemType"])
         return ret
 
-    def is_in_gamble_table(self, code):
-        for row in self.tables.gamble_table:
-            if row["code"] == code:
-                return True
-        return False
+    def is_in_gamble_table(self, code: str) -> bool:
+        return any(row["code"] == code for row in self.tables.gamble_table)
 
-    def get_gamble_item_from_code(self, code):
+    def get_gamble_item_from_code(self, code: str) -> str:
         for row in self.tables.armor_table:
             if row["code"] == code and row["spawnable"] == str(1):
                 for row_again in self.tables.armor_table:
@@ -34,12 +36,7 @@ class Utils:
                         and row_again["code"] == row["normcode"]
                         and self.is_in_gamble_table(row_again["code"])
                     ):
-                        return (
-                            self.get_item_name_from_code(row_again["code"])
-                            + " ("
-                            + row_again["code"]
-                            + ")"
-                        )
+                        return self.get_item_name_from_code(row_again["code"]) + " (" + row_again["code"] + ")"
         for row in self.tables.weapons_table:
             if row["code"] == code and row["spawnable"] == str(1):
                 for row_again in self.tables.weapons_table:
@@ -48,12 +45,7 @@ class Utils:
                         and row_again["code"] == row["normcode"]
                         and self.is_in_gamble_table(row_again["code"])
                     ):
-                        return (
-                            self.get_item_name_from_code(row_again["code"])
-                            + " ("
-                            + row_again["code"]
-                            + ")"
-                        )
+                        return self.get_item_name_from_code(row_again["code"]) + " (" + row_again["code"] + ")"
         for row in self.tables.misc_table:
             if (
                 row["code"] != ""
@@ -61,12 +53,10 @@ class Utils:
                 and row["spawnable"] == str(1)
                 and self.is_in_gamble_table(row["code"])
             ):
-                return (
-                    self.get_item_name_from_code(row["code"]) + " (" + row["code"] + ")"
-                )
+                return self.get_item_name_from_code(row["code"]) + " (" + row["code"] + ")"
         return "N/A"
 
-    def get_all_equivalent_types(self, types):
+    def get_all_equivalent_types(self, types: list[str]) -> list[str]:
         while True:
             keep_going = False
             for item_type in self.tables.item_types_table:
@@ -81,32 +71,26 @@ class Utils:
                 types.remove("")
                 return types
 
-    def is_of_item_type(self, types, include_types):
+    def is_of_item_type(self, types: list[str], include_types: list[str]) -> set:
         # Build up a list of all types, then check if any of them are in include_types
         all_types = self.get_all_equivalent_types(types)
         return set(all_types) & set(include_types)
 
-    def get_item_name_from_code(self, code, debug=True):
-        for row in (
-            self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table
-        ):
-            if row["code"] == code:
-                if self.table_strings.get(row["namestr"]) is not None:
-                    return self.table_strings[row["namestr"]]
-        if debug:
-            self.log("No name found for code: " + code)
+    def get_item_name_from_code(self, code: str) -> str:
+        for row in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
+            if row["code"] == code and self.table_strings.get(row["namestr"]) is not None:
+                return self.table_strings[row["namestr"]]
+        logger.debug("No name found for code: " + code)
         return code
 
-    def get_level_req_from_code(self, code):
-        for row in (
-            self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table
-        ):
+    def get_level_req_from_code(self, code: str) -> str:
+        for row in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
             if row["code"] == code:
                 return row["levelreq"]
-        self.log("Could not get level req for code: " + code)
-        return 0
+        logger.debug("Could not get level req for code: " + code)
+        return "0"
 
-    def get_bg_color_from_code(self, code):
+    def get_bg_color_from_code(self, code: str) -> int:  # TODO: shouldn't return an int for a color code
         for item in self.tables.weapons_table + self.tables.armor_table:
             if code == item["ultracode"]:
                 return 303030
@@ -114,10 +98,10 @@ class Utils:
                 return 202020
         return 101010
 
-    def get_automods(self, group, type1, type2):
+    def get_automods(self, group: str, type1: str, type2: str) -> list[list[properties.Property]]:
         automods = []
         if group == "":
-            return
+            return []
         for autos in self.tables.automagic_table:
             if (
                 group == autos["group"]
@@ -134,7 +118,8 @@ class Utils:
                     ],
                 )
                 and not self.is_of_item_type(
-                    [type1, type2], [autos["etype1"], autos["etype2"], autos["etype3"]]
+                    [type1, type2],
+                    [autos["etype1"], autos["etype2"], autos["etype3"]],
                 )
             ):
                 props = []
@@ -147,42 +132,39 @@ class Utils:
                                 autos["mod" + str(i + 1) + "param"],
                                 autos["mod" + str(i + 1) + "min"],
                                 autos["mod" + str(i + 1) + "max"],
-                            )
+                            ),
                         )
                 automods.append(props)
         return automods
 
-    def short_to_long_class(self, class_code):
+    def short_to_long_class(self, class_code: str) -> str:
         for c in self.tables.player_class_table:
             if c["Code"] == class_code:
                 return c["Player Class"]
-        self.log("Unknown class: " + class_code)
+        self.log("Unknown class: " + class_code, level=WARNING)
         return "Unknown"
 
-    def get_staffmod(self, code):
-        for item in (
-            self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table
-        ):
+    def get_staffmod(self, code: str) -> str:
+        for item in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
             if item["code"] == code:
                 for item_type in self.tables.item_types_table:
-                    if (
-                        item_type["Code"] == item["type"]
-                        and item_type["StaffMods"] != ""
-                    ):
+                    if item_type["Code"] == item["type"] and item_type["StaffMods"] != "":
                         return self.short_to_long_class(item_type["StaffMods"])
         return ""
 
-    def get_spelldesc(self, code):
+    def get_spelldesc(self, code: str) -> str | None:
         for row in self.tables.misc_table:
             if row["code"] == code:
                 return self.table_strings.get(row["spelldescstr"], "")
+        return None
 
-    def get_monster_from_id(self, mon_id):
+    def get_monster_from_id(self, mon_id: str) -> str | None:
         for mon_stat_row in self.tables.mon_stats_table:
             if mon_stat_row["hcIdx"] == mon_id:
                 return self.table_strings[mon_stat_row["NameStr"]]
+        return None
 
-    def get_base_url(self, code):
+    def get_base_url(self, code: str) -> str:
         for weapon in self.tables.weapons_table:
             if weapon["code"] == code:
                 return "weapons.htm#" + code
@@ -191,7 +173,7 @@ class Utils:
                 return "armors.htm#" + code
         return ""
 
-    def get_item_type_name_from_code(self, code, debug=True):
+    def get_item_type_name_from_code(self, code: str) -> str:
         # Hard code "tors" because "Armor" is confusing
         if code == "tors":
             return "Body Armor"
@@ -204,11 +186,10 @@ class Utils:
             if row["code"] == code:
                 return row["name"]
 
-        if debug:
-            print("Could not get item type name for: " + code)
+        logger.debug("Could not get item type name for: " + code)
         return code
 
-    def get_all_parent_types(self, types):
+    def get_all_parent_types(self, types: Iterable[str]) -> set:
         ret = list(types)
         for t in types:
             if t == "":
@@ -219,7 +200,7 @@ class Utils:
                 ret.append(pt)
         return set(ret)
 
-    def get_all_sub_types(self, types):
+    def get_all_sub_types(self, types: Iterable[str]) -> set:
         ret = list(types)
         for t in types:
             if t == "":
@@ -230,7 +211,7 @@ class Utils:
                 ret.append(st)
         return set(ret)
 
-    def get_stat_string(self, properties):
+    def get_stat_string(self, properties: Iterable[properties.Property]) -> str:
         ret = ""
         all_stats = []
         for prop in properties:
@@ -239,12 +220,12 @@ class Utils:
 
         # Replace stats with group stats
         for stat in list(all_stats):
-            if stat.isc is not None and stat.isc["dgrp"] != "":
+            if stat.isc is not None and stat.isc.get("dgrp", "") != "":
                 item_stats = set()
                 isc_stats = set()
                 # Gather all the stats on the item with the same dgrp as stat
                 for s in list(all_stats):
-                    if s.isc is not None and s.isc["dgrp"] == stat.isc["dgrp"]:
+                    if s.isc is not None and s.isc.get("dgrp", "") == stat.isc["dgrp"]:
                         item_stats.add(s)
                 # Gather all the isc stats with the same dgrp as stat
                 for isc in self.tables.item_stat_cost_table:
@@ -261,11 +242,7 @@ class Utils:
                 for isc in isc_stats:
                     found = False
                     for item_stat in item_stats:
-                        if (
-                            isc == item_stat.stat
-                            and item_stat.property_value_string
-                            == stat.property_value_string
-                        ):
+                        if isc == item_stat.stat and item_stat.property_value_string == stat.property_value_string:
                             found = True
                     if not found:
                         found_all = False
@@ -294,10 +271,8 @@ class Utils:
                 "state",
             ]:
                 self.log(
-                    "Could not get stat string for stat: "
-                    + stat.stat
-                    + " property: "
-                    + stat.property.code
+                    "Could not get stat string for stat: " + stat.stat + " property: " + stat.property.code,
+                    level=WARNING,
                 )
 
         return ret

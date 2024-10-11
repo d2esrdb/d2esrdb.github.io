@@ -1,13 +1,14 @@
 import json
 import os
+from io import BufferedReader
 from pathlib import Path
 
 
-def read_bytes(data, num_bytes):
+def read_bytes(data: BufferedReader, num_bytes: int) -> int:
     return int.from_bytes(data.read(num_bytes), byteorder="little")
 
 
-def read_string(data):
+def read_string(data: BufferedReader) -> str:
     # @TODO There must be a better way of doing this...
     string_byte = data.read(1).decode("raw_unicode_escape")
     string = ""
@@ -17,7 +18,7 @@ def read_string(data):
     return string
 
 
-def replace_code_with_color(value, code, color, count):
+def replace_code_with_color(value: str, code: str, color: str, count: int) -> tuple:
     if code in value:
         return value.replace(code, '<FONT COLOR="' + color + '">', 1), count + 1
     return value, count
@@ -92,7 +93,7 @@ Thanks LimpRock
 """
 
 
-def d2_color_to_html_color(value):
+def d2_color_to_html_color(value: str) -> str:
     count = 0
     while True:
         start_count = count
@@ -150,19 +151,18 @@ def d2_color_to_html_color(value):
 
         if start_count == count:
             break
-    value = value + "</FONT>" * count
-    return value
+    return value + "</FONT>" * count
 
 
-def get_string_dict(db_dir: Path, db_code, string_tables):
+def get_string_dict(db_dir: Path, db_code: str, string_tables: list[str]) -> dict:
     key_value_dict = {}
     if string_tables[0].endswith("json"):
         directory = os.fsencode(db_dir / db_code / "strings-legacy")
         for file in os.listdir(directory):
             filename = os.fsdecode(file)
             if filename.endswith(".json"):
-                st = open(
-                    db_dir / db_code / "strings-legacy" / filename, encoding="utf-8-sig"
+                st = (db_dir / db_code / "strings-legacy" / filename).open(
+                    encoding="utf-8-sig",
                 )
                 data = json.load(st)
                 for i in data:
@@ -171,13 +171,13 @@ def get_string_dict(db_dir: Path, db_code, string_tables):
         for file in os.listdir(directory):
             filename = os.fsdecode(file)
             if filename.endswith(".json"):
-                st = open(db_dir / db_code / "strings" / filename, encoding="utf-8-sig")
+                st = (db_dir / db_code / "strings" / filename).open(encoding="utf-8-sig")
                 data = json.load(st)
                 for i in data:
                     key_value_dict[i["Key"]] = i["enUS"]
     else:
         for string_table in string_tables:
-            strings = open(db_dir / db_code / string_table, "rb")
+            strings = (db_dir / db_code / string_table).open("rb")
 
             # HEADER 21 bytes
             read_bytes(strings, 2)  # CRC, ignored
@@ -190,7 +190,7 @@ def get_string_dict(db_dir: Path, db_code, string_tables):
 
             # Array of two bytes per entry, gives index to next table
             indexes = []
-            for i in range(num_elements):
+            for _ in range(num_elements):
                 indexes.append(read_bytes(strings, 2))
 
             # Store this position, as this is the position used to index from
@@ -219,22 +219,6 @@ def get_string_dict(db_dir: Path, db_code, string_tables):
 
     # Convert the embedded color codes to html color
     for key, value in dict(key_value_dict).items():
-        value = value.replace("\n", "<br>")
-        key_value_dict[key] = d2_color_to_html_color(value)
+        key_value_dict[key] = d2_color_to_html_color(value.replace("\n", "<br>"))
 
     return key_value_dict
-
-
-if __name__ == "__main__":
-    stringtables = [
-        "string.tbl",
-        "expansionstring.tbl",
-        "patchstring.tbl",
-        # "ES AlphA.tbl",
-    ]
-    my = get_string_dict(Path("."), "Lord_Of_Destruction", stringtables)
-    for key, value in my.items():
-        if "weapon" == value.lower():
-            print(key + ": " + my[key])
-
-    # print(my["weap"])

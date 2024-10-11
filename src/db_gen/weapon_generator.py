@@ -1,7 +1,19 @@
+from logging import WARNING
+
+from db_gen.tables import Tables
+from db_gen.utils import Utils
+
+
 class Damage:
     def __init__(
-        self, mindam, maxdam, _2handmindam, _2handmaxdam, minmisdam, maxmisdam
-    ):
+        self,
+        mindam: str,
+        maxdam: str,
+        _2handmindam: str,
+        _2handmaxdam: str,
+        minmisdam: str,
+        maxmisdam: str,
+    ) -> None:
         self.mindam = mindam
         self.maxdam = maxdam
         self.dam = self.get_dmg(mindam, maxdam)
@@ -15,13 +27,13 @@ class Damage:
         self.misdam = self.get_dmg(minmisdam, maxmisdam)
         self.misavg = self.get_avg(minmisdam, maxmisdam)
 
-    def get_avg(self, mindam, maxdam):
+    def get_avg(self, mindam: str | int, maxdam: str | int) -> str:
         ret = ""
         if mindam != "":
             ret = str(round(((float(mindam) + float(maxdam)) / 2.0), 1)) + " Avg"
         return ret
 
-    def get_dmg(self, mindam, maxdam):
+    def get_dmg(self, mindam: str | int, maxdam: str | int) -> str:
         ret = ""
         if mindam != "":
             ret = str(mindam) + " to " + str(maxdam)
@@ -31,28 +43,28 @@ class Damage:
 class Weapon:
     def __init__(
         self,
-        name,
-        category,
-        req_level,
-        code,
-        norm_code,
-        exceptional_code,
-        elite_code,
-        damage,
-        rangeadder,
-        durability,
-        speed,
-        level,
-        magic_lvl,
-        reqstr,
-        reqdex,
-        strbonus,
-        dexbonus,
-        gemsockets,
-        gemapplytype,
-        automods,
-        staffmods,
-    ):
+        name: str,
+        category: str,
+        req_level: str,
+        code: str,
+        norm_code: str,
+        exceptional_code: str,
+        elite_code: str,
+        damage: Damage,
+        rangeadder: str,
+        durability: str,
+        speed: str,
+        level: str,
+        magic_lvl: str,
+        reqstr: str,
+        reqdex: str,
+        strbonus: str | int,
+        dexbonus: str | int,
+        gemsockets: str,
+        gemapplytype: str,
+        automods: list,
+        staffmods: str,
+    ) -> None:
         self.name = name
         self.category = category
         self.req_level = req_level
@@ -75,7 +87,7 @@ class Weapon:
         self.automods = automods
         self.staffmods = staffmods
 
-    def automods_string(self):
+    def automods_string(self) -> str:
         ret = ""
         if self.automods is None:
             return ""
@@ -85,25 +97,27 @@ class Weapon:
                 for stat in p.stats:
                     allstats.append(stat)
                 for stat in sorted(
-                    allstats, key=lambda x: int(x.priority), reverse=True
+                    allstats,
+                    key=lambda x: int(x.priority),
+                    reverse=True,
                 ):
                     ret = ret + stat.stat_string + "<br>"
             ret = ret + "<br>"
         return ret[:-4]
 
 
-class Weapon_Generator:
-    def __init__(self, tables, table_strings, utils):
+class WeaponGenerator:
+    def __init__(self, tables: Tables, table_strings: dict[str, str], utils: Utils) -> None:
         self.tables = tables
         self.table_strings = table_strings
         self.utils = utils
 
-    def replace_if_empty(self, string, replacement):
+    def replace_if_empty(self, string: str, replacement: str | int) -> str | int:
         if string == "":
             return replacement
         return string
 
-    def generate_weapons(self):
+    def generate_weapons(self) -> list:
         normal_weapons = []
         exceptional_weapons = []
         elite_weapons = []
@@ -137,7 +151,9 @@ class Weapon_Generator:
                 weapon_row["gemsockets"],
                 weapon_row["gemapplytype"],
                 self.utils.get_automods(
-                    weapon_row["auto prefix"], weapon_row["type"], weapon_row["type2"]
+                    weapon_row["auto prefix"],
+                    weapon_row["type"],
+                    weapon_row["type2"],
                 ),
                 self.utils.get_staffmod(weapon_row["code"]),
             )
@@ -171,8 +187,13 @@ class Weapon_Generator:
 
         for exceptional_weapon in exceptional_weapons:
             weapons.append(exceptional_weapon)
-            # self.utils.log("Error: Exceptional weapon " + exceptional_weapon.name + " could not find corresponding Normal weapon.")
+            self.utils.log(
+                "Exceptional weapon " + exceptional_weapon.name + " could not find corresponding Normal weapon.",
+                level=WARNING,
+            )
         for elite_weapon in elite_weapons:
-            # self.utils.log("Error: Elite weapon " + elite_weapon.name + " could not find corresponding Normal weapon.")
+            self.utils.log(
+                "Elite weapon " + elite_weapon.name + " could not find corresponding Normal weapon.", level=WARNING
+            )
             weapons.append(elite_weapon)
         return weapons

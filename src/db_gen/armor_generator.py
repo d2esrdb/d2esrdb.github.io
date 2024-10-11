@@ -1,13 +1,18 @@
 import operator
+from logging import WARNING
+
+from db_gen.properties import Property
+from db_gen.tables import Tables
+from db_gen.utils import Utils
 
 
-class Armor_Generator:
-    def __init__(self, tables, table_strings, utils):
+class ArmorGenerator:
+    def __init__(self, tables: Tables, table_strings: dict[str, str], utils: Utils) -> None:
         self.tables = tables
         self.table_strings = table_strings
         self.utils = utils
 
-    def automods_string(self, automods):
+    def automods_string(self, automods: list[list[Property]] | None) -> str:
         if automods is None:
             return ""
         ret = ""
@@ -17,19 +22,17 @@ class Armor_Generator:
             return ret[:-4]
         return ret
 
-    def generate_armor(self):
+    def generate_armor(self) -> list:
         normal_armors = []
         exceptional_armors = []
         elite_armors = []
         for armor_row in self.tables.armor_table:
             for item_type_row in self.tables.item_types_table:
-                if (
-                    armor_row["type"] == item_type_row["Code"]
-                    and armor_row["type"] != ""
-                ):
+                if armor_row["type"] == item_type_row["Code"] and armor_row["type"] != "":
                     armor = [
                         self.table_strings.get(
-                            armor_row["namestr"], armor_row["name"]
+                            armor_row["namestr"],
+                            armor_row["name"],
                         ),  # 0: name
                         item_type_row["ItemType"],  # 1: category
                         armor_row["levelreq"],  # 2: req_level
@@ -54,7 +57,7 @@ class Armor_Generator:
                                 armor_row["auto prefix"],
                                 armor_row["type"],
                                 armor_row["type2"],
-                            )
+                            ),
                         ),
                         self.utils.get_staffmod(armor_row["code"]),
                     ]
@@ -88,15 +91,12 @@ class Armor_Generator:
         for exceptional_armor in exceptional_armors:
             armors.append(exceptional_armor)
             self.utils.log(
-                "Error: Exceptional armor "
-                + exceptional_armor[0]
-                + " could not find corresponding Normal armor."
+                "Exceptional armor " + exceptional_armor[0] + " could not find corresponding Normal armor.",
+                level=WARNING,
             )
         for elite_armor in elite_armors:
             self.utils.log(
-                "Error: Elite armor "
-                + elite_armor[0]
-                + " could not find corresponding Normal armor."
+                "Elite armor " + elite_armor[0] + " could not find corresponding Normal armor.", level=WARNING
             )
             armors.append(elite_armor)
         return armors

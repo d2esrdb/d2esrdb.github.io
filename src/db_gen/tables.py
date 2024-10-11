@@ -1,10 +1,11 @@
 import csv
-
 from pathlib import Path
+
+from db_gen import logger
 
 
 class Tables:
-    def __init__(self, db_dir: Path, db_name):
+    def __init__(self, db_dir: Path, db_name: str) -> None:
         self.db_dir = db_dir
         self.include_header = False
         self.db_name = db_name
@@ -31,14 +32,14 @@ class Tables:
         self.recipes_table = self.load_table("CubeMain.txt")
 
         # For efficiency sake we should just build this dict once
-        self.parent_types = {}
+        self.parent_types: dict[str, list[str]] = {}
         for t in self.item_types_table:
             if t["Code"] == "":
                 continue
             self.parent_types[t["Code"]] = [t["Code"]]
             self.add_code_to_type(t["Equiv1"], t["Code"])
             self.add_code_to_type(t["Equiv2"], t["Code"])
-            self.parent_types[t["Code"]] = set(self.parent_types[t["Code"]])
+            self.parent_types[t["Code"]] = list(set(self.parent_types[t["Code"]]))
 
         self.sub_types = {}
         for t in self.item_types_table:
@@ -48,7 +49,7 @@ class Tables:
             self.add_sub_codes_to_type(t["Code"], t["Code"])
             self.sub_types[t["Code"]] = set(self.sub_types[t["Code"]])
 
-    def add_sub_codes_to_type(self, code, t):
+    def add_sub_codes_to_type(self, code: str, t: str) -> None:
         if code == "":
             return
         for _type in self.item_types_table:
@@ -59,7 +60,7 @@ class Tables:
                 self.sub_types[t].append(_type["Code"])
                 self.add_sub_codes_to_type(_type["Code"], t)
 
-    def add_code_to_type(self, code, t):
+    def add_code_to_type(self, code: str, t: str) -> None:
         if code == "":
             return
         self.parent_types[t].append(code)
@@ -68,9 +69,10 @@ class Tables:
                 self.add_code_to_type(_type["Equiv1"], t)
                 self.add_code_to_type(_type["Equiv2"], t)
 
-    def load_table(self, table_name):
-        table_file = open(
-            self.db_dir / self.db_name / table_name, newline="", errors="ignore"
+    def load_table(self, table_name: str) -> list[dict[str, str]]:
+        table_file = (self.db_dir / self.db_name / table_name).open(
+            newline="",
+            errors="ignore",
         )
         table = csv.reader(table_file, delimiter="\t")
         fieldnames = []
@@ -78,98 +80,21 @@ class Tables:
             if headername not in fieldnames:
                 fieldnames.append(headername)
             else:
-                print(
-                    'Warning: Duplicate column "'
+                logger.warning(
+                    'Duplicate column "'
                     + headername
                     + '" detected. Renaming second one to '
                     + headername
-                    + "2. (this is normal for mindam and maxdam)"
+                    + "2. (this is normal for mindam and maxdam)",
                 )
                 fieldnames.append(headername + "2")
         return list(csv.DictReader(table_file, fieldnames=fieldnames, delimiter="\t"))
 
-    def load_table_list(self, table_name):
-        table_file = open("../" + self.db_name + "/" + table_name, newline="")
-        return list(csv.reader(table_file, delimiter="\t"))
-
-    def print_table_headers(self, table_name):
-        table = self.load_table_list(table_name)
-        first = []
-        for i, row in enumerate(table):
-            if i == 0:
-                first = row
-        for i, col in enumerate(first):
-            print(str(i) + ": " + col)
-
-    def print_row_with_cell_equal_to_list(self, table_name, cell_index, value):
-        table = self.load_table_list(table_name)
-        first = []
-        for i, row in enumerate(table):
-            if i == 0:
-                first = row
-            if row[cell_index] == value:
-                for i, col in enumerate(first):
-                    print(str(i) + ": " + col + ": " + row[i])
-
-    def print_row_with_cell_equal_to(self, table_name, cell_name, value):
-        table = self.load_table(table_name)
-        first = []
-        for i, row in enumerate(table):
-            if i == 0:
-                first = row
-            if row[cell_name] == value:
-                for i, col in enumerate(first):
-                    print(str(i) + ": " + col + ": " + row[col])
-
-    def print_row_with_cell_not_equal_to(self, table_name, cell_name, value):
-        table = self.load_table(table_name)
-        for i, row in enumerate(table):
-            if row[cell_name] != value:
-                print(row[cell_name])
-                # for i, col in enumerate(first):
-                #    print(str(i) + ": " + col + ": " + row[col])
-
 
 class Node:
-    def __init__(self, code):
+    def __init__(self, code: str) -> None:
         self.code = code
         self.children = []
 
-    def addchild(self, child):
+    def addchild(self, child: "Node") -> None:
         self.children.append(child)
-
-
-def fillsubtype(node):
-    if node.code == "":
-        return
-
-    # print("filling subtype: " + node.code)
-    for itemtype in mytables.item_types_table:
-        if itemtype["Equiv1"] == node.code or itemtype["Equiv2"] == node.code:
-            child = Node(itemtype["Code"])
-            node.addchild(child)
-            fillsubtype(child)
-
-
-def printtree(node, indent):
-    if node.code is None:
-        return
-    print(indent + node.code)
-    for child in node.children:
-        printtree(child, indent + "  ")
-
-
-if __name__ == "__main__":
-    mytables = Tables(Path("."), "Eastern_Sun_Resurrected")
-    # mytables.print_row_with_cell_not_equal_to("Misc.txt", "spelldescstr", "")
-    # mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "strength")
-    mytables.print_row_with_cell_equal_to("Properties.txt", "code", "dmg%")
-    # mytables.print_row_with_cell_equal_to("UniqueItems.txt", "code", "dmg-fire")
-
-    # for armor in mytables.armor_table:
-    #    if armor["type"] in mytables.sub_types["tors"] or armor["type2"] in mytables.sub_types["tors"]:
-    #        print(armor["name"] + ": " + armor["gemapplytype"])
-    # mytables.print_row_with_cell_equal_to("Properties.txt", "code", "fire-multi")
-    # mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "fire_multi")
-    # for key in mytables.sub_types:
-    #    print(key + ": " + str(mytables.sub_types[key]))

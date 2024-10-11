@@ -1,10 +1,18 @@
 from db_gen import properties
+from db_gen.tables import Tables
+from db_gen.utils import Utils
 
 
 class Runeword:
     def __init__(
-        self, name, runes, allowed_bases, excluded_bases, properties, rune_properties
-    ):
+        self,
+        name: str,
+        runes: list[str],
+        allowed_bases: list[str],
+        excluded_bases: list[str],
+        properties: list[properties.Property],
+        rune_properties: list[list[properties.Property]],
+    ) -> None:
         self.name = name
         self.runes = runes
         self.num_sockets = len(runes)
@@ -16,13 +24,13 @@ class Runeword:
         # Keep track of first found valid base for each gemapplytype, add as a comment in html for debugging purposes
         self.types = ["", "", ""]
 
-    def rune_string(self):
+    def rune_string(self) -> str:
         ret = ""
         for rune in self.runes:
             ret = ret + rune + "<br>"
         return ret
 
-    def bases_string(self):
+    def bases_string(self) -> str:
         ret = ""
         for base in self.allowed_bases:
             ret = ret + base + "<br>"
@@ -32,7 +40,7 @@ class Runeword:
             ret = ret + base + "<br>"
         return ret
 
-    def stats_string(self):
+    def stats_string(self) -> str:
         ret = ""
         allstats = []
         for prop in self.properties:
@@ -42,7 +50,7 @@ class Runeword:
             ret = ret + stat.stat_string + "<br>"
         return ret
 
-    def rune_stats_string(self, gemapplytype):
+    def rune_stats_string(self, gemapplytype: int) -> str:
         ret = ""
         allstats = []
         for prop in self.rune_properties[gemapplytype]:
@@ -53,20 +61,18 @@ class Runeword:
         return ret
 
 
-class Runeword_Generator:
-    def __init__(self, tables, table_strings, utils):
+class RunewordGenerator:
+    def __init__(self, tables: Tables, table_strings: dict[str, str], utils: Utils) -> None:
         self.tables = tables
         self.table_strings = table_strings
         self.utils = utils
 
-    def set_gemapplytypes(self, rw, include_types, exclude_types):
+    def set_gemapplytypes(self, rw: Runeword, include_types: list[str], exclude_types: list[str]) -> None:
         # Get the intersection of all the armor types and its subtypes and the rw include types and it's subtypes
         intersected_types = self.utils.get_all_sub_types(
-            include_types
+            include_types,
         ) - self.utils.get_all_sub_types(exclude_types)
-        for armor in (
-            self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table
-        ):
+        for armor in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
             if (
                 armor["gemapplytype"] != ""
                 and not rw.gemapplytype[int(armor["gemapplytype"])]
@@ -74,10 +80,7 @@ class Runeword_Generator:
                 and int(armor["gemsockets"]) >= rw.num_sockets
             ):
                 # If there's even 1 item remaining in the intersected types after removing the exclude types, we have a valid item that can use the rw
-                if (
-                    armor["type"] in intersected_types
-                    or armor["type2"] in intersected_types
-                ):
+                if armor["type"] in intersected_types or armor["type2"] in intersected_types:
                     rw.gemapplytype[int(armor["gemapplytype"])] = True
                     rw.types[int(armor["gemapplytype"])] = (
                         rw.types[int(armor["gemapplytype"])]
@@ -85,7 +88,7 @@ class Runeword_Generator:
                         + self.table_strings.get(armor["namestr"], armor["namestr"])
                     )
 
-    def generate_runewords(self):
+    def generate_runewords(self) -> list:
         runewords = []
         for rw in self.tables.runeword_table:
             include_types = []
@@ -98,22 +101,22 @@ class Runeword_Generator:
                 if rw["itype" + str(i + 1)] != "":
                     allowed_bases.append(
                         self.utils.get_item_type_name_from_code(
-                            rw["itype" + str(i + 1)]
-                        )
+                            rw["itype" + str(i + 1)],
+                        ),
                     )
                     include_types.append(rw["itype" + str(i + 1)])
             for i in range(3):
                 if rw["etype" + str(i + 1)] != "":
                     excluded_bases.append(
                         self.utils.get_item_type_name_from_code(
-                            rw["etype" + str(i + 1)]
-                        )
+                            rw["etype" + str(i + 1)],
+                        ),
                     )
                     exclude_types.append(rw["etype" + str(i + 1)])
             for i in range(6):
                 if rw["Rune" + str(i + 1)] != "":
                     runes.append(
-                        self.utils.get_item_name_from_code(rw["Rune" + str(i + 1)])
+                        self.utils.get_item_name_from_code(rw["Rune" + str(i + 1)]),
                     )
             for j in range(7):
                 # If the property doesn't have a name, then there isn't a property
@@ -125,7 +128,7 @@ class Runeword_Generator:
                             rw["T1Param" + str(j + 1)],
                             rw["T1Min" + str(j + 1)],
                             rw["T1Max" + str(j + 1)],
-                        )
+                        ),
                     )
 
             rune_properties = [[], [], []]
@@ -134,74 +137,36 @@ class Runeword_Generator:
                     if socketable["code"] == rw["Rune" + str(i + 1)]:
                         for j in range(3):
                             for k, sockettype in enumerate(
-                                ["weapon", "helm", "shield"]
+                                ["weapon", "helm", "shield"],
                             ):
-                                if (
-                                    socketable[sockettype + "Mod" + str(j + 1) + "Code"]
-                                    != ""
-                                ):
+                                if socketable[sockettype + "Mod" + str(j + 1) + "Code"] != "":
                                     found = False
                                     for p in rune_properties[k]:
-                                        if (
-                                            p.code
-                                            == socketable[
-                                                sockettype + "Mod" + str(j + 1) + "Code"
-                                            ]
-                                        ):
+                                        if p.code == socketable[sockettype + "Mod" + str(j + 1) + "Code"]:
                                             if p.min != "":
                                                 p.min = str(
                                                     int(p.min)
                                                     + int(
-                                                        socketable[
-                                                            sockettype
-                                                            + "Mod"
-                                                            + str(j + 1)
-                                                            + "Min"
-                                                        ]
-                                                    )
+                                                        socketable[sockettype + "Mod" + str(j + 1) + "Min"],
+                                                    ),
                                                 )
                                             if p.max != "":
                                                 p.max = str(
                                                     int(p.max)
                                                     + int(
-                                                        socketable[
-                                                            sockettype
-                                                            + "Mod"
-                                                            + str(j + 1)
-                                                            + "Max"
-                                                        ]
-                                                    )
+                                                        socketable[sockettype + "Mod" + str(j + 1) + "Max"],
+                                                    ),
                                                 )
                                             found = True
                                     if not found:
                                         rune_properties[k].append(
                                             properties.Property(
                                                 self.utils,
-                                                socketable[
-                                                    sockettype
-                                                    + "Mod"
-                                                    + str(j + 1)
-                                                    + "Code"
-                                                ],
-                                                socketable[
-                                                    sockettype
-                                                    + "Mod"
-                                                    + str(j + 1)
-                                                    + "Param"
-                                                ],
-                                                socketable[
-                                                    sockettype
-                                                    + "Mod"
-                                                    + str(j + 1)
-                                                    + "Min"
-                                                ],
-                                                socketable[
-                                                    sockettype
-                                                    + "Mod"
-                                                    + str(j + 1)
-                                                    + "Max"
-                                                ],
-                                            )
+                                                socketable[sockettype + "Mod" + str(j + 1) + "Code"],
+                                                socketable[sockettype + "Mod" + str(j + 1) + "Param"],
+                                                socketable[sockettype + "Mod" + str(j + 1) + "Min"],
+                                                socketable[sockettype + "Mod" + str(j + 1) + "Max"],
+                                            ),
                                         )
 
             new_rw = Runeword(

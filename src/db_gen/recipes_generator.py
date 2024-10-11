@@ -1,9 +1,12 @@
 import re
+from logging import ERROR
+
 from db_gen import properties
+from db_gen.utils import Utils
 
 
 class Item:
-    def __init__(self):
+    def __init__(self) -> None:
         self.name = ""
         self.qty = ""
         self.rarity = ""
@@ -23,18 +26,18 @@ class Item:
 
 
 class Output:
-    def __init__(self, output_string):
+    def __init__(self, output_string: str) -> None:
         self.output_string = output_string
         self.props = []
 
 
 class Recipe:
-    def __init__(self, utils):
+    def __init__(self, utils: Utils) -> None:
         self.utils = utils
         self.inputs = []
         self.outputs = []
 
-    def get_affix(self, table, row):
+    def get_affix(self, table: list[dict[str, str]], row: str) -> str:
         props = []
         for i in range(3):
             if table[int(row)]["mod" + str(i + 1) + "code"] != "":
@@ -45,23 +48,17 @@ class Recipe:
                         table[int(row)]["mod" + str(i + 1) + "param"],
                         table[int(row)]["mod" + str(i + 1) + "min"],
                         table[int(row)]["mod" + str(i + 1) + "max"],
-                    )
+                    ),
                 )
         return self.utils.get_stat_string(props)
 
-    def is_a_unique_item(self, code):
-        for row in self.utils.tables.unique_items_table:
-            if row["index"] == code:
-                return True
-        return False
+    def is_a_unique_item(self, code: str) -> bool:
+        return any(row["index"] == code for row in self.utils.tables.unique_items_table)
 
-    def is_a_set_item(self, code):
-        for row in self.utils.tables.set_items_table:
-            if row["index"] == code:
-                return True
-        return False
+    def is_a_set_item(self, code: str) -> bool:
+        return any(row["index"] == code for row in self.utils.tables.set_items_table)
 
-    def parse_string(self, in_str, input_item=None):
+    def parse_string(self, in_str: str) -> str:
         in_strs = in_str.split(",")
         item = Item()
         for s in in_strs:
@@ -113,11 +110,13 @@ class Recipe:
                 item.mod = "Transfer Properties"
             elif s.startswith("pre="):
                 item.pre = self.get_affix(
-                    self.utils.tables.prefixes_table, s.replace("pre=", "")
+                    self.utils.tables.prefixes_table,
+                    s.replace("pre=", ""),
                 )
             elif s.startswith("suf="):
                 item.suf = self.get_affix(
-                    self.utils.tables.suffixes_table, s.replace("suf=", "")
+                    self.utils.tables.suffixes_table,
+                    s.replace("suf=", ""),
                 )
             elif s.startswith("nru"):
                 item.nru = "(Non Runeword)"
@@ -129,16 +128,16 @@ class Recipe:
                 item.name = "Any"
             else:
                 # This code isn't any of the special ones above, it must be it's name.. check armor/weapon/misc tables first
-                item.name = self.utils.get_item_name_from_code(s, False)
+                item.name = self.utils.get_item_name_from_code(s)
                 if s == item.name:
                     # Not in armor/weapon/misc table, lets check if it's an item type, and if so, we'll use the comment column
                     # Note that this is the best we can do because item types don't have strings because they don't show up in game
                     # An example of this is tors=Torso or blun=Blunt Weapon
-                    item.name = self.utils.get_item_type_name_from_code(s, False)
+                    item.name = self.utils.get_item_type_name_from_code(s)
                     if s == item.name:
                         # So it's not an item type, let's check if it's a unique or set items
                         if not self.is_a_unique_item(s) and not self.is_a_set_item(s):
-                            self.utils.log("Could not translate: " + s)
+                            self.utils.log("Could not translate: " + s, level=ERROR)
             """
 
             elif s.startswith("gem0"):
@@ -218,13 +217,13 @@ class Recipe:
             ret = ret + "<br>" + item.pre
         return ret
 
-    def input_string(self):
+    def input_string(self) -> str:
         ret = ""
         for i in self.inputs:
             ret = ret + self.parse_string(i) + "<br>"
         return ret
 
-    def output_string(self):
+    def output_string(self) -> str:
         ret = ""
         for i in self.outputs:
             ret = ret + self.parse_string(i.output_string) + "<br>"
@@ -232,11 +231,11 @@ class Recipe:
         return ret
 
 
-class Recipe_Generator:
-    def __init__(self, utils):
+class RecipeGenerator:
+    def __init__(self, utils: Utils) -> None:
         self.utils = utils
 
-    def proj_specific_recipes(self):
+    def proj_specific_recipes(self) -> list[Recipe] | list:
         if self.utils.tables.db_name == "Lord_Of_Destruction":
             return []
         r = Recipe(self.utils)
@@ -255,7 +254,7 @@ class Recipe_Generator:
 
     # @TODO make this project specific somehow
     # Return True if you want to block/filter out the recipe, false otherwise
-    def proj_specific_filter(self, recipe):
+    def proj_specific_filter(self, recipe: dict[str, str]) -> bool:
         gem_list = [
             "gcv",
             "gfv",
@@ -325,13 +324,9 @@ class Recipe_Generator:
             ret = True
             # If first input is gem can, and all the other inputs are gems, don't add to recipe list
             for i in range(2, 8):
-                if (
-                    recipe["input " + str(i)] == ""
-                    or recipe["input " + str(i)].split(",")[0] in gem_list
-                ):
+                if recipe["input " + str(i)] == "" or recipe["input " + str(i)].split(",")[0] in gem_list:
                     continue
-                else:
-                    ret = False
+                ret = False
             if ret:
                 return ret
 
@@ -348,10 +343,7 @@ class Recipe_Generator:
             ret = True
             # If first input is gem can, and all other inputs are weapons/armors or ancient decipherers
             for i in range(2, 8):
-                if (
-                    recipe["input " + str(i)] == ""
-                    or recipe["input " + str(i)] == "ddd"
-                ):
+                if recipe["input " + str(i)] == "" or recipe["input " + str(i)] == "ddd":
                     continue
                 ret = False
                 for s in recipe["input " + str(i)].split(","):
@@ -361,7 +353,7 @@ class Recipe_Generator:
                 return ret
         return False
 
-    def generate_recipes(self):
+    def generate_recipes(self) -> list:
         recipes = []
         for recipe in self.utils.tables.recipes_table:
             if recipe["enabled"] != "1":
@@ -387,7 +379,7 @@ class Recipe_Generator:
                                     recipe[column + " " + str(j) + " min"],
                                     recipe[column + " " + str(j) + " max"],
                                     chance=recipe[column + " " + str(j) + " chance"],
-                                )
+                                ),
                             )
                     output.props = props
                     r.outputs.append(output)
