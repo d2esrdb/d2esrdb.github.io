@@ -1,8 +1,7 @@
-import operator
-import utils
-
 class Damage:
-    def __init__(self, mindam, maxdam, _2handmindam, _2handmaxdam, minmisdam, maxmisdam):
+    def __init__(
+        self, mindam, maxdam, _2handmindam, _2handmaxdam, minmisdam, maxmisdam
+    ):
         self.mindam = mindam
         self.maxdam = maxdam
         self.dam = self.get_dmg(mindam, maxdam)
@@ -15,21 +14,45 @@ class Damage:
         self.maxmisdam = maxmisdam
         self.misdam = self.get_dmg(minmisdam, maxmisdam)
         self.misavg = self.get_avg(minmisdam, maxmisdam)
-    
+
     def get_avg(self, mindam, maxdam):
         ret = ""
         if mindam != "":
-            ret = str(round(((float(mindam) + float(maxdam))/2.0), 1)) + " Avg"
+            ret = str(round(((float(mindam) + float(maxdam)) / 2.0), 1)) + " Avg"
         return ret
-    
+
     def get_dmg(self, mindam, maxdam):
         ret = ""
         if mindam != "":
             ret = str(mindam) + " to " + str(maxdam)
         return ret
 
+
 class Weapon:
-    def __init__(self, name, category, req_level, code, norm_code, exceptional_code, elite_code, damage, rangeadder, durability, speed, level, magic_lvl, reqstr, reqdex, strbonus, dexbonus, gemsockets, gemapplytype, automods, staffmods):
+    def __init__(
+        self,
+        name,
+        category,
+        req_level,
+        code,
+        norm_code,
+        exceptional_code,
+        elite_code,
+        damage,
+        rangeadder,
+        durability,
+        speed,
+        level,
+        magic_lvl,
+        reqstr,
+        reqdex,
+        strbonus,
+        dexbonus,
+        gemsockets,
+        gemapplytype,
+        automods,
+        staffmods,
+    ):
         self.name = name
         self.category = category
         self.req_level = req_level
@@ -51,27 +74,30 @@ class Weapon:
         self.gemapplytype = gemapplytype
         self.automods = automods
         self.staffmods = staffmods
-    
+
     def automods_string(self):
         ret = ""
-        if self.automods == None:
+        if self.automods is None:
             return ""
         for automod in self.automods:
             for p in automod:
                 allstats = []
                 for stat in p.stats:
                     allstats.append(stat)
-                for stat in sorted(allstats, key=lambda x: int(x.priority), reverse=True):
+                for stat in sorted(
+                    allstats, key=lambda x: int(x.priority), reverse=True
+                ):
                     ret = ret + stat.stat_string + "<br>"
             ret = ret + "<br>"
         return ret[:-4]
+
 
 class Weapon_Generator:
     def __init__(self, tables, table_strings, utils):
         self.tables = tables
         self.table_strings = table_strings
         self.utils = utils
-    
+
     def replace_if_empty(self, string, replacement):
         if string == "":
             return replacement
@@ -82,29 +108,40 @@ class Weapon_Generator:
         exceptional_weapons = []
         elite_weapons = []
         for weapon_row in self.tables.weapons_table:
-            damage = Damage(weapon_row["mindam"], weapon_row["maxdam"], weapon_row["2handmindam"], weapon_row["2handmaxdam"], weapon_row["minmisdam"], weapon_row["maxmisdam"])
-            weapon = Weapon(self.table_strings.get(weapon_row["namestr"], weapon_row["name"]),
-                            self.utils.get_item_type_name_from_code(weapon_row["type"]),
-                            weapon_row["levelreq"], 
-                            weapon_row["code"],     
-                            weapon_row["normcode"],
-                            weapon_row["ubercode"],
-                            weapon_row["ultracode"],
-                            damage,
-                            weapon_row["rangeadder"], 
-                            weapon_row["durability"],
-                            weapon_row["speed"],     
-                            weapon_row["level"],     
-                            weapon_row["magic lvl"], 
-                            weapon_row["reqstr"],    
-                            weapon_row["reqdex"],    
-                            self.replace_if_empty(weapon_row["StrBonus"], 0), 
-                            self.replace_if_empty(weapon_row["DexBonus"], 0), 
-                            weapon_row["gemsockets"],
-                            weapon_row["gemapplytype"], 
-                            self.utils.get_automods(weapon_row["auto prefix"], weapon_row["type"], weapon_row["type2"]),
-                            self.utils.get_staffmod(weapon_row["code"]))
-                            
+            damage = Damage(
+                weapon_row["mindam"],
+                weapon_row["maxdam"],
+                weapon_row["2handmindam"],
+                weapon_row["2handmaxdam"],
+                weapon_row["minmisdam"],
+                weapon_row["maxmisdam"],
+            )
+            weapon = Weapon(
+                self.table_strings.get(weapon_row["namestr"], weapon_row["name"]),
+                self.utils.get_item_type_name_from_code(weapon_row["type"]),
+                weapon_row["levelreq"],
+                weapon_row["code"],
+                weapon_row["normcode"],
+                weapon_row["ubercode"],
+                weapon_row["ultracode"],
+                damage,
+                weapon_row["rangeadder"],
+                weapon_row["durability"],
+                weapon_row["speed"],
+                weapon_row["level"],
+                weapon_row["magic lvl"],
+                weapon_row["reqstr"],
+                weapon_row["reqdex"],
+                self.replace_if_empty(weapon_row["StrBonus"], 0),
+                self.replace_if_empty(weapon_row["DexBonus"], 0),
+                weapon_row["gemsockets"],
+                weapon_row["gemapplytype"],
+                self.utils.get_automods(
+                    weapon_row["auto prefix"], weapon_row["type"], weapon_row["type2"]
+                ),
+                self.utils.get_staffmod(weapon_row["code"]),
+            )
+
             if weapon_row["normcode"] == weapon_row["code"]:
                 normal_weapons.append(weapon)
             if weapon_row["ubercode"] == weapon_row["code"]:
@@ -134,8 +171,8 @@ class Weapon_Generator:
 
         for exceptional_weapon in exceptional_weapons:
             weapons.append(exceptional_weapon)
-            #self.utils.log("Error: Exceptional weapon " + exceptional_weapon.name + " could not find corresponding Normal weapon.")
+            # self.utils.log("Error: Exceptional weapon " + exceptional_weapon.name + " could not find corresponding Normal weapon.")
         for elite_weapon in elite_weapons:
-            #self.utils.log("Error: Elite weapon " + elite_weapon.name + " could not find corresponding Normal weapon.")
+            # self.utils.log("Error: Elite weapon " + elite_weapon.name + " could not find corresponding Normal weapon.")
             weapons.append(elite_weapon)
         return weapons

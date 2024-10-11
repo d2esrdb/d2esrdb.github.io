@@ -1,4 +1,5 @@
-import properties
+from db_gen import properties
+
 
 class Utils:
     def __init__(self, tables, table_strings):
@@ -17,7 +18,7 @@ class Utils:
                 if t == item_type["Code"]:
                     ret.append(item_type["Code"] + " = " + item_type["ItemType"])
         return ret
-            
+
     def is_in_gamble_table(self, code):
         for row in self.tables.gamble_table:
             if row["code"] == code:
@@ -28,16 +29,41 @@ class Utils:
         for row in self.tables.armor_table:
             if row["code"] == code and row["spawnable"] == str(1):
                 for row_again in self.tables.armor_table:
-                    if row_again["code"] != "" and row_again["code"] == row["normcode"] and self.is_in_gamble_table(row_again["code"]):
-                        return self.get_item_name_from_code(row_again["code"]) + " (" + row_again["code"] + ")"
+                    if (
+                        row_again["code"] != ""
+                        and row_again["code"] == row["normcode"]
+                        and self.is_in_gamble_table(row_again["code"])
+                    ):
+                        return (
+                            self.get_item_name_from_code(row_again["code"])
+                            + " ("
+                            + row_again["code"]
+                            + ")"
+                        )
         for row in self.tables.weapons_table:
             if row["code"] == code and row["spawnable"] == str(1):
                 for row_again in self.tables.weapons_table:
-                    if row_again["code"] != "" and row_again["code"] == row["normcode"] and self.is_in_gamble_table(row_again["code"]):
-                        return self.get_item_name_from_code(row_again["code"]) + " (" + row_again["code"] + ")"
+                    if (
+                        row_again["code"] != ""
+                        and row_again["code"] == row["normcode"]
+                        and self.is_in_gamble_table(row_again["code"])
+                    ):
+                        return (
+                            self.get_item_name_from_code(row_again["code"])
+                            + " ("
+                            + row_again["code"]
+                            + ")"
+                        )
         for row in self.tables.misc_table:
-            if row["code"] != "" and row["code"] == code and row["spawnable"] == str(1) and self.is_in_gamble_table(row["code"]):
-                return self.get_item_name_from_code(row["code"]) + " (" + row["code"] + ")"
+            if (
+                row["code"] != ""
+                and row["code"] == code
+                and row["spawnable"] == str(1)
+                and self.is_in_gamble_table(row["code"])
+            ):
+                return (
+                    self.get_item_name_from_code(row["code"]) + " (" + row["code"] + ")"
+                )
         return "N/A"
 
     def get_all_equivalent_types(self, types):
@@ -61,21 +87,25 @@ class Utils:
         return set(all_types) & set(include_types)
 
     def get_item_name_from_code(self, code, debug=True):
-        for row in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
+        for row in (
+            self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table
+        ):
             if row["code"] == code:
                 if self.table_strings.get(row["namestr"]) is not None:
                     return self.table_strings[row["namestr"]]
         if debug:
             self.log("No name found for code: " + code)
         return code
-    
+
     def get_level_req_from_code(self, code):
-        for row in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
+        for row in (
+            self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table
+        ):
             if row["code"] == code:
                 return row["levelreq"]
         self.log("Could not get level req for code: " + code)
         return 0
-    
+
     def get_bg_color_from_code(self, code):
         for item in self.tables.weapons_table + self.tables.armor_table:
             if code == item["ultracode"]:
@@ -84,21 +114,41 @@ class Utils:
                 return 202020
         return 101010
 
-
     def get_automods(self, group, type1, type2):
         automods = []
         if group == "":
             return
         for autos in self.tables.automagic_table:
-            if group == autos["group"] and self.is_of_item_type([type1, type2], [autos["itype1"], autos["itype2"], autos["itype3"], autos["itype4"], autos["itype5"], autos["itype6"], autos["itype7"]]) and not self.is_of_item_type([type1, type2], [autos["etype1"], autos["etype2"], autos["etype3"]]):
+            if (
+                group == autos["group"]
+                and self.is_of_item_type(
+                    [type1, type2],
+                    [
+                        autos["itype1"],
+                        autos["itype2"],
+                        autos["itype3"],
+                        autos["itype4"],
+                        autos["itype5"],
+                        autos["itype6"],
+                        autos["itype7"],
+                    ],
+                )
+                and not self.is_of_item_type(
+                    [type1, type2], [autos["etype1"], autos["etype2"], autos["etype3"]]
+                )
+            ):
                 props = []
                 for i in range(3):
-                    if autos["mod" + str(i+1) + "code"] != "":
-                        props.append(properties.Property(self,
-                                                         autos["mod" + str(i+1) + "code"],
-                                                         autos["mod" + str(i+1) + "param"],
-                                                         autos["mod" + str(i+1) + "min"],
-                                                         autos["mod" + str(i+1) + "max"]))
+                    if autos["mod" + str(i + 1) + "code"] != "":
+                        props.append(
+                            properties.Property(
+                                self,
+                                autos["mod" + str(i + 1) + "code"],
+                                autos["mod" + str(i + 1) + "param"],
+                                autos["mod" + str(i + 1) + "min"],
+                                autos["mod" + str(i + 1) + "max"],
+                            )
+                        )
                 automods.append(props)
         return automods
 
@@ -110,10 +160,15 @@ class Utils:
         return "Unknown"
 
     def get_staffmod(self, code):
-        for item in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
+        for item in (
+            self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table
+        ):
             if item["code"] == code:
                 for item_type in self.tables.item_types_table:
-                    if item_type["Code"] == item["type"] and item_type["StaffMods"] != "":
+                    if (
+                        item_type["Code"] == item["type"]
+                        and item_type["StaffMods"] != ""
+                    ):
                         return self.short_to_long_class(item_type["StaffMods"])
         return ""
 
@@ -163,7 +218,7 @@ class Utils:
                     continue
                 ret.append(pt)
         return set(ret)
-    
+
     def get_all_sub_types(self, types):
         ret = list(types)
         for t in types:
@@ -175,37 +230,13 @@ class Utils:
                 ret.append(st)
         return set(ret)
 
-    def handle_hardcoded():
-        # Handle the hard-coded stuff
-        if stat.stat == "firemindam" and any(s.stat == "firemaxdam" for s in self.stats):
-            for s in self.stats:
-                if s.stat == "firemaxdam":
-                    return True, self.utils.table_strings["strModFireDamageRange"].replace("%d", self.min, 1).replace("%d", s.max, 1) 
-        if stat.stat == "firemaxdam":
-            for s in self.stats:
-                if s.stat == "firemindam":
-                    return True, self.utils.table_strings["strModFireDamageRange"].replace("%d", s.min, 1).replace("%d", self.max, 1) 
-        return False, None
-        if stat.stat == "lightmindam" and any(s.stat == "lightmaxdam"):
-            return True
-        if stat.stat == "magicmindam" and any(s.stat == "magicmaxdam"):
-            return True
-        if stat.stat == "coldmindam" and any(s.stat == "coldmaxdam"):
-            return True
-        if stat.stat == "poisonmindam" and any(s.stat == "poisonmaxdam"):
-            return True
-        if stat.stat == "mindamage" and any(s.stat == "maxdamage"):
-            return True
-        return False, None
-    
-
     def get_stat_string(self, properties):
         ret = ""
         all_stats = []
         for prop in properties:
             for stat in prop.stats:
                 all_stats.append(stat)
-        
+
         # Replace stats with group stats
         for stat in list(all_stats):
             if stat.isc is not None and stat.isc["dgrp"] != "":
@@ -230,9 +261,13 @@ class Utils:
                 for isc in isc_stats:
                     found = False
                     for item_stat in item_stats:
-                        if isc == item_stat.stat and item_stat.property_value_string == stat.property_value_string:
+                        if (
+                            isc == item_stat.stat
+                            and item_stat.property_value_string
+                            == stat.property_value_string
+                        ):
                             found = True
-                    if found == False:
+                    if not found:
                         found_all = False
                 if not found_all:
                     continue
@@ -248,12 +283,21 @@ class Utils:
                     stat.descstr = stat.property.get_descstr(stat.isc["dgrpstrneg"])
                 stat.stat_string = stat.property.get_stat_string(stat)
                 all_stats.append(stat)
-       
+
         # Sort the remaining stats based on priority
         for stat in sorted(all_stats, key=lambda x: int(x.priority), reverse=True):
             if stat.stat_string != "":
                 ret = ret + stat.stat_string + "<br>"
-            if stat.stat_string == "" and stat.stat not in ["poisonlength", "coldlength", "state"]:
-                self.log("Could not get stat string for stat: " + stat.stat + " property: " + stat.property.code)
-       
+            if stat.stat_string == "" and stat.stat not in [
+                "poisonlength",
+                "coldlength",
+                "state",
+            ]:
+                self.log(
+                    "Could not get stat string for stat: "
+                    + stat.stat
+                    + " property: "
+                    + stat.property.code
+                )
+
         return ret

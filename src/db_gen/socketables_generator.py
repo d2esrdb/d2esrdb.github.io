@@ -1,5 +1,5 @@
-import utils
-import properties
+from db_gen import properties
+
 
 class Socketable:
     def __init__(self, utils, name, props, level_req):
@@ -10,6 +10,7 @@ class Socketable:
 
     def stats_string(self, gemapplytype):
         return self.utils.get_stat_string(self.props[gemapplytype])
+
 
 class Socketables_Generator:
     def __init__(self, tables, table_strings, utils):
@@ -27,14 +28,15 @@ class Socketables_Generator:
             props = [[], [], []]
             for i, socket_type in enumerate(["weapon", "helm", "shield"]):
                 for j in range(3):
-                    if socketable[socket_type + "Mod" + str(j+1) + "Code"] != "":
-                        props[i].append(properties.Property(self.utils,
-                                                            socketable[socket_type + "Mod" + str(j+1) + "Code"],
-                                                            socketable[socket_type + "Mod" + str(j+1) + "Param"],
-                                                            socketable[socket_type + "Mod" + str(j+1) + "Min"],
-                                                            socketable[socket_type + "Mod" + str(j+1) + "Max"]))
+                    if socketable[socket_type + "Mod" + str(j + 1) + "Code"] != "":
+                        props[i].append(
+                            properties.Property(
+                                self.utils,
+                                socketable[socket_type + "Mod" + str(j + 1) + "Code"],
+                                socketable[socket_type + "Mod" + str(j + 1) + "Param"],
+                                socketable[socket_type + "Mod" + str(j + 1) + "Min"],
+                                socketable[socket_type + "Mod" + str(j + 1) + "Max"],
+                            )
+                        )
             ret.append(Socketable(self.utils, name, props, level_req))
         return ret
-
-
-

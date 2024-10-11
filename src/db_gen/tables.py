@@ -1,7 +1,11 @@
 import csv
 
+from pathlib import Path
+
+
 class Tables:
-    def __init__(self, db_name):
+    def __init__(self, db_dir: Path, db_name):
+        self.db_dir = db_dir
         self.include_header = False
         self.db_name = db_name
         self.weapons_table = self.load_table("Weapons.txt")
@@ -65,21 +69,29 @@ class Tables:
                 self.add_code_to_type(_type["Equiv2"], t)
 
     def load_table(self, table_name):
-        table_file = open("../" + self.db_name + "/" + table_name, newline='', errors="ignore")
-        table = csv.reader(table_file, delimiter='\t')
+        table_file = open(
+            self.db_dir / self.db_name / table_name, newline="", errors="ignore"
+        )
+        table = csv.reader(table_file, delimiter="\t")
         fieldnames = []
         for headername in next(table):
             if headername not in fieldnames:
                 fieldnames.append(headername)
             else:
-                print("Warning: Duplicate column \"" + headername + "\" detected. Renaming second one to " + headername + "2. (this is normal for mindam and maxdam)")
+                print(
+                    'Warning: Duplicate column "'
+                    + headername
+                    + '" detected. Renaming second one to '
+                    + headername
+                    + "2. (this is normal for mindam and maxdam)"
+                )
                 fieldnames.append(headername + "2")
-        return list(csv.DictReader(table_file, fieldnames=fieldnames, delimiter='\t'))
+        return list(csv.DictReader(table_file, fieldnames=fieldnames, delimiter="\t"))
 
     def load_table_list(self, table_name):
-        table_file = open("../" + self.db_name + "/" + table_name, newline='')
-        return list(csv.reader(table_file, delimiter='\t'))
-    
+        table_file = open("../" + self.db_name + "/" + table_name, newline="")
+        return list(csv.reader(table_file, delimiter="\t"))
+
     def print_table_headers(self, table_name):
         table = self.load_table_list(table_name)
         first = []
@@ -101,23 +113,20 @@ class Tables:
 
     def print_row_with_cell_equal_to(self, table_name, cell_name, value):
         table = self.load_table(table_name)
-        first = None
+        first = []
         for i, row in enumerate(table):
             if i == 0:
                 first = row
             if row[cell_name] == value:
                 for i, col in enumerate(first):
                     print(str(i) + ": " + col + ": " + row[col])
-    
+
     def print_row_with_cell_not_equal_to(self, table_name, cell_name, value):
         table = self.load_table(table_name)
-        first = None
         for i, row in enumerate(table):
-            if i == 0:
-                first = row
             if row[cell_name] != value:
                 print(row[cell_name])
-                #for i, col in enumerate(first):
+                # for i, col in enumerate(first):
                 #    print(str(i) + ": " + col + ": " + row[col])
 
 
@@ -125,20 +134,22 @@ class Node:
     def __init__(self, code):
         self.code = code
         self.children = []
-    
+
     def addchild(self, child):
         self.children.append(child)
+
 
 def fillsubtype(node):
     if node.code == "":
         return
-    
-    #print("filling subtype: " + node.code)
+
+    # print("filling subtype: " + node.code)
     for itemtype in mytables.item_types_table:
         if itemtype["Equiv1"] == node.code or itemtype["Equiv2"] == node.code:
             child = Node(itemtype["Code"])
             node.addchild(child)
             fillsubtype(child)
+
 
 def printtree(node, indent):
     if node.code is None:
@@ -147,34 +158,18 @@ def printtree(node, indent):
     for child in node.children:
         printtree(child, indent + "  ")
 
-def printItemTypesTree():
-    mytables = Tables("ESE")
-    root = Node(None)
-    for itemtype in mytables.item_types_table:
-        if itemtype["Equiv1"] == "":
-            root.addchild(Node(itemtype["Code"]))
-    for child in root.children:
-        fillsubtype(child)
-    for child in root.children:
-        printtree(child, "")
 
 if __name__ == "__main__":
-    mytables = Tables("Eastern_Sun_Resurrected")
-    #mytables.print_row_with_cell_not_equal_to("Misc.txt", "spelldescstr", "")
-    #mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "strength")
+    mytables = Tables(Path("."), "Eastern_Sun_Resurrected")
+    # mytables.print_row_with_cell_not_equal_to("Misc.txt", "spelldescstr", "")
+    # mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "strength")
     mytables.print_row_with_cell_equal_to("Properties.txt", "code", "dmg%")
-    #mytables.print_row_with_cell_equal_to("UniqueItems.txt", "code", "dmg-fire")
+    # mytables.print_row_with_cell_equal_to("UniqueItems.txt", "code", "dmg-fire")
 
-    #for armor in mytables.armor_table:
+    # for armor in mytables.armor_table:
     #    if armor["type"] in mytables.sub_types["tors"] or armor["type2"] in mytables.sub_types["tors"]:
-    #        print(armor["name"] + ": " + armor["gemapplytype"]) 
-    #mytables.print_row_with_cell_equal_to("Properties.txt", "code", "fire-multi")
-    #mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "fire_multi")
-    #for key in mytables.sub_types:
+    #        print(armor["name"] + ": " + armor["gemapplytype"])
+    # mytables.print_row_with_cell_equal_to("Properties.txt", "code", "fire-multi")
+    # mytables.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "fire_multi")
+    # for key in mytables.sub_types:
     #    print(key + ": " + str(mytables.sub_types[key]))
-
-
-
-
-
-

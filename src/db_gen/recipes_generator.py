@@ -1,6 +1,6 @@
-import utils
 import re
-import properties
+from db_gen import properties
+
 
 class Item:
     def __init__(self):
@@ -19,29 +19,36 @@ class Item:
         self.suf = ""
         self.pre = ""
         self.nru = ""
+        self.sock = ""
+
 
 class Output:
     def __init__(self, output_string):
         self.output_string = output_string
         self.props = []
 
+
 class Recipe:
     def __init__(self, utils):
         self.utils = utils
         self.inputs = []
         self.outputs = []
-    
+
     def get_affix(self, table, row):
         props = []
         for i in range(3):
-            if table[int(row)]["mod" + str(i+1) + "code"] != "":
-                props.append(properties.Property(self.utils,
-                                                 table[int(row)]["mod" + str(i+1) + "code"],
-                                                 table[int(row)]["mod" + str(i+1) + "param"],
-                                                 table[int(row)]["mod" + str(i+1) + "min"],
-                                                 table[int(row)]["mod" + str(i+1) + "max"]))
+            if table[int(row)]["mod" + str(i + 1) + "code"] != "":
+                props.append(
+                    properties.Property(
+                        self.utils,
+                        table[int(row)]["mod" + str(i + 1) + "code"],
+                        table[int(row)]["mod" + str(i + 1) + "param"],
+                        table[int(row)]["mod" + str(i + 1) + "min"],
+                        table[int(row)]["mod" + str(i + 1) + "max"],
+                    )
+                )
         return self.utils.get_stat_string(props)
-    
+
     def is_a_unique_item(self, code):
         for row in self.utils.tables.unique_items_table:
             if row["index"] == code:
@@ -61,7 +68,7 @@ class Recipe:
             if s.startswith("qty="):
                 item.qty = s.replace("qty=", "") + "x"
             elif s.startswith("nor"):
-                item.rarity = "White" #To not get confused with "normal" (i.e not exceptional or elite)
+                item.rarity = "White"  # To not get confused with "normal" (i.e not exceptional or elite)
             elif s.startswith("mag"):
                 item.rarity = "Magic"
             elif s.startswith("rar"):
@@ -83,7 +90,7 @@ class Recipe:
             elif s.startswith("nos"):
                 item.sock = "Non Socketed"
             elif s.startswith("sock="):
-                item.sock = "Socketed (" + s.replace("sock=","") + ")"
+                item.sock = "Socketed (" + s.replace("sock=", "") + ")"
             elif s.startswith("bas"):
                 item.tier = "Normal"
             elif s.startswith("exc"):
@@ -105,13 +112,17 @@ class Recipe:
             elif s.startswith("mod"):
                 item.mod = "Transfer Properties"
             elif s.startswith("pre="):
-                item.pre = self.get_affix(self.utils.tables.prefixes_table, s.replace("pre=",""))
+                item.pre = self.get_affix(
+                    self.utils.tables.prefixes_table, s.replace("pre=", "")
+                )
             elif s.startswith("suf="):
-                item.suf = self.get_affix(self.utils.tables.suffixes_table, s.replace("suf=",""))
+                item.suf = self.get_affix(
+                    self.utils.tables.suffixes_table, s.replace("suf=", "")
+                )
             elif s.startswith("nru"):
                 item.nru = "(Non Runeword)"
             elif s.startswith("usetype"):
-                item.name = "Same Input Type" 
+                item.name = "Same Input Type"
             elif s.startswith("useitem"):
                 item.name = "Same Item"
             elif s.startswith("any"):
@@ -128,7 +139,7 @@ class Recipe:
                         # So it's not an item type, let's check if it's a unique or set items
                         if not self.is_a_unique_item(s) and not self.is_a_set_item(s):
                             self.utils.log("Could not translate: " + s)
-            '''
+            """
 
             elif s.startswith("gem0"):
                 item.name = "Chipped Gem"
@@ -170,10 +181,35 @@ class Recipe:
                 item.name = "Blunt Weapon"
             elif s.startswith("amul"):
                 item.name = "Amulet"
-            '''
+            """
 
-            
-        ret = re.sub(" +", " ", item.qty + " " + item.quality + " " + item.tier + " " + item.rarity + " " + item.name + " " + item.eth + " " + item.upg + " " + item.rep + " " + item.rch + " " + item.uns + " " + item.rem + " " + item.nru)
+        ret = re.sub(
+            " +",
+            " ",
+            item.qty
+            + " "
+            + item.quality
+            + " "
+            + item.tier
+            + " "
+            + item.rarity
+            + " "
+            + item.name
+            + " "
+            + item.eth
+            + " "
+            + item.upg
+            + " "
+            + item.rep
+            + " "
+            + item.rch
+            + " "
+            + item.uns
+            + " "
+            + item.rem
+            + " "
+            + item.nru,
+        )
         if item.mod != "":
             ret = ret + "<br>" + item.mod
         if item.suf != "":
@@ -187,13 +223,14 @@ class Recipe:
         for i in self.inputs:
             ret = ret + self.parse_string(i) + "<br>"
         return ret
-    
+
     def output_string(self):
         ret = ""
         for i in self.outputs:
             ret = ret + self.parse_string(i.output_string) + "<br>"
             ret = ret + self.utils.get_stat_string(i.props)
         return ret
+
 
 class Recipe_Generator:
     def __init__(self, utils):
@@ -219,34 +256,103 @@ class Recipe_Generator:
     # @TODO make this project specific somehow
     # Return True if you want to block/filter out the recipe, false otherwise
     def proj_specific_filter(self, recipe):
-        gem_list = ["gcv", "gfv", "gsv", "gzv", "gpv", "gvb", "6gv",
-                    "gcb", "gfb", "gsb", "glb", "gpb", "gbb", "6gy",
-                    "gcg", "gfg", "gsg", "glg", "gpg", "ggb", "6gb",
-                    "gcr", "gfr", "gsr", "glr", "gpr", "grb", "6gg",
-                    "gcw", "gfw", "gsw", "glw", "gpw", "gwb", "6gr",
-                    "gcy", "gfy", "gsy", "gly", "gpy", "gyb", "6gw",
-                    "gcy", "gfy", "gsy", "gly", "gpy", "gyb", "6sk",
-                    "skc", "skf", "sku", "skl", "skz", "skb",
-                    "gck", "gfk", "gsk", "gzk", "gpk", "gbk", "6gk"]
-        
+        gem_list = [
+            "gcv",
+            "gfv",
+            "gsv",
+            "gzv",
+            "gpv",
+            "gvb",
+            "6gv",
+            "gcb",
+            "gfb",
+            "gsb",
+            "glb",
+            "gpb",
+            "gbb",
+            "6gy",
+            "gcg",
+            "gfg",
+            "gsg",
+            "glg",
+            "gpg",
+            "ggb",
+            "6gb",
+            "gcr",
+            "gfr",
+            "gsr",
+            "glr",
+            "gpr",
+            "grb",
+            "6gg",
+            "gcw",
+            "gfw",
+            "gsw",
+            "glw",
+            "gpw",
+            "gwb",
+            "6gr",
+            "gcy",
+            "gfy",
+            "gsy",
+            "gly",
+            "gpy",
+            "gyb",
+            "6gw",
+            "gcy",
+            "gfy",
+            "gsy",
+            "gly",
+            "gpy",
+            "gyb",
+            "6sk",
+            "skc",
+            "skf",
+            "sku",
+            "skl",
+            "skz",
+            "skb",
+            "gck",
+            "gfk",
+            "gsk",
+            "gzk",
+            "gpk",
+            "gbk",
+            "6gk",
+        ]
+
         if recipe["input 1"] == "can1":
             ret = True
             # If first input is gem can, and all the other inputs are gems, don't add to recipe list
-            for i in range(2,8):
-                if recipe["input " + str(i)] == "" or recipe["input " + str(i)].split(",")[0] in gem_list:
+            for i in range(2, 8):
+                if (
+                    recipe["input " + str(i)] == ""
+                    or recipe["input " + str(i)].split(",")[0] in gem_list
+                ):
                     continue
                 else:
                     ret = False
             if ret:
                 return ret
 
-        if recipe["input 1"] in ["kv0","ky0","kb0","kg0","kr0","kw0","ks0","kk0"]:
+        if recipe["input 1"] in [
+            "kv0",
+            "ky0",
+            "kb0",
+            "kg0",
+            "kr0",
+            "kw0",
+            "ks0",
+            "kk0",
+        ]:
             ret = True
             # If first input is gem can, and all other inputs are weapons/armors or ancient decipherers
-            for i in range(2,8):
-                if recipe["input " + str(i)] == "" or \
-                   recipe["input " + str(i)] == "ddd":
-                       continue
+            for i in range(2, 8):
+                if (
+                    recipe["input " + str(i)] == ""
+                    or recipe["input " + str(i)] == "ddd"
+                ):
+                    continue
                 ret = False
                 for s in recipe["input " + str(i)].split(","):
                     if s == self.utils.get_item_name_from_code(s):
@@ -254,7 +360,6 @@ class Recipe_Generator:
             if ret:
                 return ret
         return False
-
 
     def generate_recipes(self):
         recipes = []
@@ -264,7 +369,7 @@ class Recipe_Generator:
             if self.proj_specific_filter(recipe):
                 continue
             r = Recipe(self.utils)
-            for i in range(1,8):
+            for i in range(1, 8):
                 if recipe["input " + str(i)] != "":
                     r.inputs.append(recipe["input " + str(i)])
             for i in ["", " b", " c"]:
@@ -274,15 +379,18 @@ class Recipe_Generator:
                     for j in range(1, 6):
                         column = str(i + " mod").strip()
                         if recipe[column + " " + str(j)] != "":
-                            props.append(properties.Property(self.utils,
-                                                             recipe[column + " " + str(j)],
-                                                             recipe[column + " " + str(j) + " param"],
-                                                             recipe[column + " " + str(j) + " min"],
-                                                             recipe[column + " " + str(j) + " max"],
-                                                             chance=recipe[column + " " + str(j) + " chance"]))
+                            props.append(
+                                properties.Property(
+                                    self.utils,
+                                    recipe[column + " " + str(j)],
+                                    recipe[column + " " + str(j) + " param"],
+                                    recipe[column + " " + str(j) + " min"],
+                                    recipe[column + " " + str(j) + " max"],
+                                    chance=recipe[column + " " + str(j) + " chance"],
+                                )
+                            )
                     output.props = props
                     r.outputs.append(output)
             recipes.append(r)
-        
-        return recipes + self.proj_specific_recipes()
 
+        return recipes + self.proj_specific_recipes()
