@@ -26,6 +26,7 @@ class Database_Generator:
     def __init__(
         self,
         db_dir: str | Path,
+        out_dir: str | Path | None,
         db_code,
         db_name,
         db_version,
@@ -33,6 +34,10 @@ class Database_Generator:
         gemapplytype_names,
     ):
         self.db_dir = Path(db_dir)
+        if out_dir:
+            self.out_dir = Path(out_dir)
+        else:
+            self.out_dir = self.db_dir
         self.db_code = db_code
         self.db_name = db_name
         self.db_version = db_version
@@ -51,7 +56,8 @@ class Database_Generator:
                 body=body_template, name=self.db_name, version=self.db_version
             )
         ).replace("\r", "")
-        open(self.db_dir / self.db_code / filename, "w").write(base_rendered)
+        (self.out_dir / self.db_code).mkdir(exist_ok=True)
+        open(self.out_dir / self.db_code / filename, "w").write(base_rendered)
 
     def generate_static(self, extra=[]):
         filenames = [
@@ -215,13 +221,17 @@ def generate_static_links(db):
 
 @click.command()
 @click.option("--db_dir", default=".")
-def main(db_dir: str):
+@click.option("--out_dir", default="output")
+def main(db_dir: str, out_dir: str):
+    out_path = Path(out_dir)
+    out_path.mkdir(exist_ok=True, parents=True)
     for db in config.databases:
         if len(sys.argv) == 1 or sys.argv[1] == db["shortname"]:
             print("----GENERATING " + db["name"] + "-----")
             extra_static = generate_static_links(db)
             db_gen = Database_Generator(
-                db_dir,
+                Path(db_dir),
+                out_path,
                 db["shortname"],
                 db["name"],
                 db["version"],
