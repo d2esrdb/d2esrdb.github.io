@@ -1,0 +1,597 @@
+monster	oninit	level	item1	loc1	mod1	item2	loc2	mod2	item3	loc3	mod3	eol
+bloodraven	1	0	sbw	rarm	6							0
+flyingscimitar	1	0	scm	rarm	6							0
+valkyrie		27	ci2	head	6							0
+valkyrie		25	amu	neck	6							0
+valkyrie		23	ahb	belt	6							0
+valkyrie		21	yhb	feet	6							0
+valkyrie		19	yhg	glov	6							0
+valkyrie		17	0p0	rarm	6							0
+valkyrie		16	yar	tors	6							0
+valkyrie		14	ci0	head	4							0
+valkyrie		13	amu	neck	4							0
+valkyrie		12	zhb	belt	4							0
+valkyrie		11	xhb	feet	4							0
+valkyrie		10	xhg	glov	4							0
+valkyrie		8	9p9	rarm	6							0
+valkyrie		7	xul	tors	6							0
+valkyrie		5	hbl	belt	4							0
+valkyrie		4	hbt	feet	4							0
+valkyrie		2	hgl	glov	4							0
+valkyrie		0	spr	rarm	6							0
+valkyrie		0	ful	tors	6							0
+shadowwarrior		24		rarm	6							0
+shadowwarrior		24		larm	6							0
+shadowwarrior		24		neck	6							0
+shadowwarrior		18		feet	6							0
+shadowwarrior		18		tors	6							0
+shadowwarrior		18		head	6							0
+shadowwarrior		12		rarm	4							0
+shadowwarrior		12		larm	4							0
+shadowwarrior		12		neck	4							0
+shadowwarrior		6		feet	4							0
+shadowwarrior		6		tors	4							0
+shadowwarrior		6		head	4							0
+shadowwarrior		0		rarm	3							0
+shadowwarrior		0		larm	3							0
+shadowwarrior		0		feet	3							0
+shadowwarrior		0		tors	3							0
+shadowwarrior		0		head	3							0
+shadowmaster		29	amu	neck	6							0
+shadowmaster		25	rin	lrin	6							0
+shadowmaster		21	ylg	glov	6	ymg	glov	6	yhg	glov	6	0
+shadowmaster		21	ylb	feet	6	ymb	feet	6	yhb	feet	6	0
+shadowmaster		21	rin	rrin	6							0
+shadowmaster		21	7ar	rarm	6	7xf	rarm	6	7qr	rarm	6	0
+shadowmaster		17	7cs	larm	6	7tw	larm	6	7qr	larm	6	0
+shadowmaster		17	ylk	tors	6		tors	6		tors	6	0
+shadowmaster		17	yap	head	6	yhl	head	6	ci2	head	6	0
+shadowmaster		13	xlg	glov	4	xmg	glov	4	xhg	glov	4	0
+shadowmaster		13	xlb	feet	4	xmb	feet	4	xhb	feet	4	0
+shadowmaster		13	rin	rrin	4							0
+shadowmaster		13	9ar	rarm	4	9xf	rarm	4	9qr	rarm	4	0
+shadowmaster		9	9cs	larm	4	9tw	larm	4	9qr	larm	4	0
+shadowmaster		9	xlk	tors	4		tors	4		tors	4	0
+shadowmaster		9	xap	head	4	xhl	head	4	ci4	head	4	0
+shadowmaster		5	lgl	glov	3	mgl	glov	3	hgl	glov	3	0
+shadowmaster		5	lbt	feet	3	mbt	feet	3	hbt	feet	3	0
+shadowmaster		0	ktr	rarm	3	axf	rarm	3	skr	rarm	3	0
+shadowmaster		0	ces	larm	3	btl	larm	3	skr	larm	3	0
+shadowmaster		0	clk	tors	3		tors	3		tors	3	0
+shadowmaster		0	cap	head	3	fhl	head	3	cix	head	3	0
+walkingdecoy		27	baf	head	6							0
+walkingdecoy		24	yth	tors	6							0
+walkingdecoy		18	baa	head	6							0
+walkingdecoy		12	xth	tors	6							0
+walkingdecoy		9	ba5	head	5							0
+walkingdecoy		0	gth	tors	5							0
+phaseboss1	1	1	mr0	rrin	7							0
+phaseboss1phase2	1	1	mr0	rrin	7							0
+phaseboss1phase3	1	1	mr0	rrin	7							0
+phaseboss2	1	1	mr1	rrin	7							0
+phaseboss2phase2	1	1	mr1	rrin	7							0
+phaseboss2phase3	1	1	mr1	rrin	7							0
+phaseboss3	1	1	mr2	rrin	7							0
+phaseboss3phase2	1	1	mr2	rrin	7							0
+phaseboss3phase3	1	1	mr2	rrin	7							0
+phaseboss4	1	1	mr3	rrin	7							0
+phaseboss4phase2	1	1	mr3	rrin	7							0
+phaseboss4phase3	1	1	mr3	rrin	7							0
+phaseboss5	1	1	mr4	rrin	7							0
+phaseboss5phase2	1	1	mr4	rrin	7							0
+phaseboss5phase3	1	1	mr4	rrin	7							0
+phaseboss6	1	1	mr5	rrin	7							0
+phaseboss6phase2	1	1	mr5	rrin	7							0
+phaseboss6phase3	1	1	mr5	rrin	7							0
+testtokens	1	1	mr9	rrin	7							0
+magicmushroom	1	94	0am	neck	7							0
+magicmushroom	1	94	mr8	rrin	7							0
+magicmushroom	1	93	mr9	rrin	7							0
+magicmushroom	1	93	1am	neck	7							0
+magicmushroom	1	92	2am	neck	7							0
+magicmushroom	1	91	3am	neck	7							0
+magicmushroom	1	90	4am	neck	7							0
+magicmushroom	1	89	5am	neck	7							0
+shriekingtoadstool	1	94	0am	neck	7							0
+shriekingtoadstool	1	94	mr8	rrin	7							0
+shriekingtoadstool	1	93	mr9	rrin	7							0
+shriekingtoadstool	1	93	1am	neck	7							0
+shriekingtoadstool	1	92	2am	neck	7							0
+shriekingtoadstool	1	91	3am	neck	7							0
+shriekingtoadstool	1	90	4am	neck	7							0
+shriekingtoadstool	1	89	5am	neck	7							0
+fungalfiend	1	94	0am	neck	7							0
+fungalfiend	1	94	mr8	rrin	7							0
+fungalfiend	1	93	mr9	rrin	7							0
+fungalfiend	1	93	1am	neck	7							0
+fungalfiend	1	92	2am	neck	7							0
+fungalfiend	1	91	3am	neck	7							0
+fungalfiend	1	90	4am	neck	7							0
+fungalfiend	1	89	5am	neck	7							0
+helllancer	1	94	0am	neck	7							0
+helllancer	1	94	mr8	rrin	7							0
+helllancer	1	93	mr9	rrin	7							0
+helllancer	1	93	1am	neck	7							0
+helllancer	1	92	2am	neck	7							0
+helllancer	1	91	3am	neck	7							0
+helllancer	1	90	4am	neck	7							0
+helllancer	1	89	5am	neck	7							0
+hellvanguard	1	94	0am	neck	7							0
+hellvanguard	1	94	mr8	rrin	7							0
+hellvanguard	1	93	mr9	rrin	7							0
+hellvanguard	1	93	1am	neck	7							0
+hellvanguard	1	92	2am	neck	7							0
+hellvanguard	1	91	3am	neck	7							0
+hellvanguard	1	90	4am	neck	7							0
+hellvanguard	1	89	5am	neck	7							0
+hellvoidknight	1	94	0am	neck	7							0
+hellvoidknight	1	94	mr8	rrin	7							0
+hellvoidknight	1	93	mr9	rrin	7							0
+hellvoidknight	1	93	1am	neck	7							0
+hellvoidknight	1	92	2am	neck	7							0
+hellvoidknight	1	91	3am	neck	7							0
+hellvoidknight	1	90	4am	neck	7							0
+hellvoidknight	1	89	5am	neck	7							0
+tyrannosaur	1	94	0am	neck	7							0
+tyrannosaur	1	94	mr8	rrin	7							0
+tyrannosaur	1	93	mr9	rrin	7							0
+tyrannosaur	1	93	1am	neck	7							0
+tyrannosaur	1	92	2am	neck	7							0
+tyrannosaur	1	91	3am	neck	7							0
+tyrannosaur	1	90	4am	neck	7							0
+tyrannosaur	1	89	5am	neck	7							0
+visceraravager	1	94	0am	neck	7							0
+visceraravager	1	94	mr8	rrin	7							0
+visceraravager	1	93	mr9	rrin	7							0
+visceraravager	1	93	1am	neck	7							0
+visceraravager	1	92	2am	neck	7							0
+visceraravager	1	91	3am	neck	7							0
+visceraravager	1	90	4am	neck	7							0
+visceraravager	1	89	5am	neck	7							0
+abyssalravager	1	94	0am	neck	7							0
+abyssalravager	1	94	mr8	rrin	7							0
+abyssalravager	1	93	mr9	rrin	7							0
+abyssalravager	1	93	1am	neck	7							0
+abyssalravager	1	92	2am	neck	7							0
+abyssalravager	1	91	3am	neck	7							0
+abyssalravager	1	90	4am	neck	7							0
+abyssalravager	1	89	5am	neck	7							0
+boneelectromancer	1	94	0am	neck	7							0
+boneelectromancer	1	94	mr8	rrin	7							0
+boneelectromancer	1	93	mr9	rrin	7							0
+boneelectromancer	1	93	1am	neck	7							0
+boneelectromancer	1	92	2am	neck	7							0
+boneelectromancer	1	91	3am	neck	7							0
+boneelectromancer	1	90	4am	neck	7							0
+boneelectromancer	1	89	5am	neck	7							0
+bonecryomancer	1	94	0am	neck	7							0
+bonecryomancer	1	94	mr8	rrin	7							0
+bonecryomancer	1	93	mr9	rrin	7							0
+bonecryomancer	1	93	1am	neck	7							0
+bonecryomancer	1	92	2am	neck	7							0
+bonecryomancer	1	91	3am	neck	7							0
+bonecryomancer	1	90	4am	neck	7							0
+bonecryomancer	1	89	5am	neck	7							0
+bonepyromancer	1	94	0am	neck	7							0
+bonepyromancer	1	94	mr8	rrin	7							0
+bonepyromancer	1	93	mr9	rrin	7							0
+bonepyromancer	1	93	1am	neck	7							0
+bonepyromancer	1	92	2am	neck	7							0
+bonepyromancer	1	91	3am	neck	7							0
+bonepyromancer	1	90	4am	neck	7							0
+bonepyromancer	1	89	5am	neck	7							0
+barricadebrute	1	94	0am	neck	7							0
+barricadebrute	1	94	mr8	rrin	7							0
+barricadebrute	1	93	mr9	rrin	7							0
+barricadebrute	1	93	1am	neck	7							0
+barricadebrute	1	92	2am	neck	7							0
+barricadebrute	1	91	3am	neck	7							0
+barricadebrute	1	90	4am	neck	7							0
+barricadebrute	1	89	5am	neck	7							0
+siegegiant	1	94	0am	neck	7							0
+siegegiant	1	94	mr8	rrin	7							0
+siegegiant	1	93	mr9	rrin	7							0
+siegegiant	1	93	1am	neck	7							0
+siegegiant	1	92	2am	neck	7							0
+siegegiant	1	91	3am	neck	7							0
+siegegiant	1	90	4am	neck	7							0
+siegegiant	1	89	5am	neck	7							0
+assaulttitan	1	94	0am	neck	7							0
+assaulttitan	1	94	mr8	rrin	7							0
+assaulttitan	1	93	mr9	rrin	7							0
+assaulttitan	1	93	1am	neck	7							0
+assaulttitan	1	92	2am	neck	7							0
+assaulttitan	1	91	3am	neck	7							0
+assaulttitan	1	90	4am	neck	7							0
+assaulttitan	1	89	5am	neck	7							0
+fallenangel	1	94	0am	neck	7							0
+fallenangel	1	94	mr8	rrin	7							0
+fallenangel	1	93	mr9	rrin	7							0
+fallenangel	1	93	1am	neck	7							0
+fallenangel	1	92	2am	neck	7							0
+fallenangel	1	91	3am	neck	7							0
+fallenangel	1	90	4am	neck	7							0
+fallenangel	1	89	5am	neck	7							0
+corruptedangel	1	94	0am	neck	7							0
+corruptedangel	1	94	mr8	rrin	7							0
+corruptedangel	1	93	mr9	rrin	7							0
+corruptedangel	1	93	1am	neck	7							0
+corruptedangel	1	92	2am	neck	7							0
+corruptedangel	1	91	3am	neck	7							0
+corruptedangel	1	90	4am	neck	7							0
+corruptedangel	1	89	5am	neck	7							0
+devilangel	1	94	0am	neck	7							0
+devilangel	1	94	mr8	rrin	7							0
+devilangel	1	93	mr9	rrin	7							0
+devilangel	1	93	1am	neck	7							0
+devilangel	1	92	2am	neck	7							0
+devilangel	1	91	3am	neck	7							0
+devilangel	1	90	4am	neck	7							0
+devilangel	1	89	5am	neck	7							0
+holycow	1	94	0am	neck	7							0
+holycow	1	94	mr8	rrin	7							0
+holycow	1	93	mr9	rrin	7							0
+holycow	1	93	1am	neck	7							0
+holycow	1	92	2am	neck	7							0
+holycow	1	91	3am	neck	7							0
+holycow	1	90	4am	neck	7							0
+holycow	1	89	5am	neck	7							0
+chillingcattle	1	94	0am	neck	7							0
+chillingcattle	1	94	mr8	rrin	7							0
+chillingcattle	1	93	mr9	rrin	7							0
+chillingcattle	1	93	1am	neck	7							0
+chillingcattle	1	92	2am	neck	7							0
+chillingcattle	1	91	3am	neck	7							0
+chillingcattle	1	90	4am	neck	7							0
+chillingcattle	1	89	5am	neck	7							0
+burningbovine	1	94	0am	neck	7							0
+burningbovine	1	94	mr8	rrin	7							0
+burningbovine	1	93	mr9	rrin	7							0
+burningbovine	1	93	1am	neck	7							0
+burningbovine	1	92	2am	neck	7							0
+burningbovine	1	91	3am	neck	7							0
+burningbovine	1	90	4am	neck	7							0
+burningbovine	1	89	5am	neck	7							0
+ancientmaiden	1	94	0am	neck	7							0
+ancientmaiden	1	94	mr8	rrin	7							0
+ancientmaiden	1	93	mr9	rrin	7							0
+ancientmaiden	1	93	1am	neck	7							0
+ancientmaiden	1	92	2am	neck	7							0
+ancientmaiden	1	91	3am	neck	7							0
+ancientmaiden	1	90	4am	neck	7							0
+ancientmaiden	1	89	5am	neck	7							0
+naturemaiden	1	94	0am	neck	7							0
+naturemaiden	1	94	mr8	rrin	7							0
+naturemaiden	1	93	mr9	rrin	7							0
+naturemaiden	1	93	1am	neck	7							0
+naturemaiden	1	92	2am	neck	7							0
+naturemaiden	1	91	3am	neck	7							0
+naturemaiden	1	90	4am	neck	7							0
+naturemaiden	1	89	5am	neck	7							0
+battlemaiden	1	94	0am	neck	7							0
+battlemaiden	1	94	mr8	rrin	7							0
+battlemaiden	1	93	mr9	rrin	7							0
+battlemaiden	1	93	1am	neck	7							0
+battlemaiden	1	92	2am	neck	7							0
+battlemaiden	1	91	3am	neck	7							0
+battlemaiden	1	90	4am	neck	7							0
+battlemaiden	1	89	5am	neck	7							0
+steelbarbhornets	1	94	0am	neck	7							0
+steelbarbhornets	1	94	mr8	rrin	7							0
+steelbarbhornets	1	93	mr9	rrin	7							0
+steelbarbhornets	1	93	1am	neck	7							0
+steelbarbhornets	1	92	2am	neck	7							0
+steelbarbhornets	1	91	3am	neck	7							0
+steelbarbhornets	1	90	4am	neck	7							0
+steelbarbhornets	1	89	5am	neck	7							0
+frenziedboa	1	94	0am	neck	7							0
+frenziedboa	1	94	mr8	rrin	7							0
+frenziedboa	1	93	mr9	rrin	7							0
+frenziedboa	1	93	1am	neck	7							0
+frenziedboa	1	92	2am	neck	7							0
+frenziedboa	1	91	3am	neck	7							0
+frenziedboa	1	90	4am	neck	7							0
+frenziedboa	1	89	5am	neck	7							0
+abberantbeetle	1	94	0am	neck	7							0
+abberantbeetle	1	94	mr8	rrin	7							0
+abberantbeetle	1	93	mr9	rrin	7							0
+abberantbeetle	1	93	1am	neck	7							0
+abberantbeetle	1	92	2am	neck	7							0
+abberantbeetle	1	91	3am	neck	7							0
+abberantbeetle	1	90	4am	neck	7							0
+abberantbeetle	1	89	5am	neck	7							0
+emberdrake	1	94	0am	neck	7							0
+emberdrake	1	94	mr8	rrin	7							0
+emberdrake	1	93	mr9	rrin	7							0
+emberdrake	1	93	1am	neck	7							0
+emberdrake	1	92	2am	neck	7							0
+emberdrake	1	91	3am	neck	7							0
+emberdrake	1	90	4am	neck	7							0
+emberdrake	1	89	5am	neck	7							0
+venomdrake	1	94	0am	neck	7							0
+venomdrake	1	94	mr8	rrin	7							0
+venomdrake	1	93	mr9	rrin	7							0
+venomdrake	1	93	1am	neck	7							0
+venomdrake	1	92	2am	neck	7							0
+venomdrake	1	91	3am	neck	7							0
+venomdrake	1	90	4am	neck	7							0
+venomdrake	1	89	5am	neck	7							0
+arcanedrake	1	94	0am	neck	7							0
+arcanedrake	1	94	mr8	rrin	7							0
+arcanedrake	1	93	mr9	rrin	7							0
+arcanedrake	1	93	1am	neck	7							0
+arcanedrake	1	92	2am	neck	7							0
+arcanedrake	1	91	3am	neck	7							0
+arcanedrake	1	90	4am	neck	7							0
+arcanedrake	1	89	5am	neck	7							0
+glacialgargoyle	1	94	0am	neck	7							0
+glacialgargoyle	1	94	mr8	rrin	7							0
+glacialgargoyle	1	93	mr9	rrin	7							0
+glacialgargoyle	1	93	1am	neck	7							0
+glacialgargoyle	1	92	2am	neck	7							0
+glacialgargoyle	1	91	3am	neck	7							0
+glacialgargoyle	1	90	4am	neck	7							0
+glacialgargoyle	1	89	5am	neck	7							0
+sludgedemon	1	94	0am	neck	7							0
+sludgedemon	1	94	mr8	rrin	7							0
+sludgedemon	1	93	mr9	rrin	7							0
+sludgedemon	1	93	1am	neck	7							0
+sludgedemon	1	92	2am	neck	7							0
+sludgedemon	1	91	3am	neck	7							0
+sludgedemon	1	90	4am	neck	7							0
+sludgedemon	1	89	5am	neck	7							0
+aethericprojector	1	94	0am	neck	7							0
+aethericprojector	1	94	mr8	rrin	7							0
+aethericprojector	1	93	mr9	rrin	7							0
+aethericprojector	1	93	1am	neck	7							0
+aethericprojector	1	92	2am	neck	7							0
+aethericprojector	1	91	3am	neck	7							0
+aethericprojector	1	90	4am	neck	7							0
+aethericprojector	1	89	5am	neck	7							0
+spireconjurer	1	94	0am	neck	7							0
+spireconjurer	1	94	mr8	rrin	7							0
+spireconjurer	1	93	mr9	rrin	7							0
+spireconjurer	1	93	1am	neck	7							0
+spireconjurer	1	92	2am	neck	7							0
+spireconjurer	1	91	3am	neck	7							0
+spireconjurer	1	90	4am	neck	7							0
+spireconjurer	1	89	5am	neck	7							0
+pylonsummoner	1	94	0am	neck	7							0
+pylonsummoner	1	94	mr8	rrin	7							0
+pylonsummoner	1	93	mr9	rrin	7							0
+pylonsummoner	1	93	1am	neck	7							0
+pylonsummoner	1	92	2am	neck	7							0
+pylonsummoner	1	91	3am	neck	7							0
+pylonsummoner	1	90	4am	neck	7							0
+pylonsummoner	1	89	5am	neck	7							0
+pillarconvoker	1	94	0am	neck	7							0
+pillarconvoker	1	94	mr8	rrin	7							0
+pillarconvoker	1	93	mr9	rrin	7							0
+pillarconvoker	1	93	1am	neck	7							0
+pillarconvoker	1	92	2am	neck	7							0
+pillarconvoker	1	91	3am	neck	7							0
+pillarconvoker	1	90	4am	neck	7							0
+pillarconvoker	1	89	5am	neck	7							0
+bloodpriest	1	94	0am	neck	7							0
+bloodpriest	1	94	mr8	rrin	7							0
+bloodpriest	1	93	mr9	rrin	7							0
+bloodpriest	1	93	1am	neck	7							0
+bloodpriest	1	92	2am	neck	7							0
+bloodpriest	1	91	3am	neck	7							0
+bloodpriest	1	90	4am	neck	7							0
+bloodpriest	1	89	5am	neck	7							0
+sanguinehexer	1	94	0am	neck	7							0
+sanguinehexer	1	94	mr8	rrin	7							0
+sanguinehexer	1	93	mr9	rrin	7							0
+sanguinehexer	1	93	1am	neck	7							0
+sanguinehexer	1	92	2am	neck	7							0
+sanguinehexer	1	91	3am	neck	7							0
+sanguinehexer	1	90	4am	neck	7							0
+sanguinehexer	1	89	5am	neck	7							0
+ashenvexer	1	94	0am	neck	7							0
+ashenvexer	1	94	mr8	rrin	7							0
+ashenvexer	1	93	mr9	rrin	7							0
+ashenvexer	1	93	1am	neck	7							0
+ashenvexer	1	92	2am	neck	7							0
+ashenvexer	1	91	3am	neck	7							0
+ashenvexer	1	90	4am	neck	7							0
+ashenvexer	1	89	5am	neck	7							0
+unearthedwarrior	1	94	0am	neck	7							0
+unearthedwarrior	1	94	mr8	rrin	7							0
+unearthedwarrior	1	93	mr9	rrin	7							0
+unearthedwarrior	1	93	1am	neck	7							0
+unearthedwarrior	1	92	2am	neck	7							0
+unearthedwarrior	1	91	3am	neck	7							0
+unearthedwarrior	1	90	4am	neck	7							0
+unearthedwarrior	1	89	5am	neck	7							0
+unearthedhighlander	1	94	0am	neck	7							0
+unearthedhighlander	1	94	mr8	rrin	7							0
+unearthedhighlander	1	93	mr9	rrin	7							0
+unearthedhighlander	1	93	1am	neck	7							0
+unearthedhighlander	1	92	2am	neck	7							0
+unearthedhighlander	1	91	3am	neck	7							0
+unearthedhighlander	1	90	4am	neck	7							0
+unearthedhighlander	1	89	5am	neck	7							0
+unearthedkhan	1	94	0am	neck	7							0
+unearthedkhan	1	94	mr8	rrin	7							0
+unearthedkhan	1	93	mr9	rrin	7							0
+unearthedkhan	1	93	1am	neck	7							0
+unearthedkhan	1	92	2am	neck	7							0
+unearthedkhan	1	91	3am	neck	7							0
+unearthedkhan	1	90	4am	neck	7							0
+unearthedkhan	1	89	5am	neck	7							0
+flamespinner	1	94	0am	neck	7							0
+flamespinner	1	94	mr8	rrin	7							0
+flamespinner	1	93	mr9	rrin	7							0
+flamespinner	1	93	1am	neck	7							0
+flamespinner	1	92	2am	neck	7							0
+flamespinner	1	91	3am	neck	7							0
+flamespinner	1	90	4am	neck	7							0
+flamespinner	1	89	5am	neck	7							0
+frostweaver	1	94	0am	neck	7							0
+frostweaver	1	94	mr8	rrin	7							0
+frostweaver	1	93	mr9	rrin	7							0
+frostweaver	1	93	1am	neck	7							0
+frostweaver	1	92	2am	neck	7							0
+frostweaver	1	91	3am	neck	7							0
+frostweaver	1	90	4am	neck	7							0
+frostweaver	1	89	5am	neck	7							0
+sparkthreader	1	94	0am	neck	7							0
+sparkthreader	1	94	mr8	rrin	7							0
+sparkthreader	1	93	mr9	rrin	7							0
+sparkthreader	1	93	1am	neck	7							0
+sparkthreader	1	92	2am	neck	7							0
+sparkthreader	1	91	3am	neck	7							0
+sparkthreader	1	90	4am	neck	7							0
+sparkthreader	1	89	5am	neck	7							0
+forgefiend	1	94	0am	neck	7							0
+forgefiend	1	94	mr8	rrin	7							0
+forgefiend	1	93	mr9	rrin	7							0
+forgefiend	1	93	1am	neck	7							0
+forgefiend	1	92	2am	neck	7							0
+forgefiend	1	91	3am	neck	7							0
+forgefiend	1	90	4am	neck	7							0
+forgefiend	1	89	5am	neck	7							0
+stygiansmith	1	94	0am	neck	7							0
+stygiansmith	1	94	mr8	rrin	7							0
+stygiansmith	1	93	mr9	rrin	7							0
+stygiansmith	1	93	1am	neck	7							0
+stygiansmith	1	92	2am	neck	7							0
+stygiansmith	1	91	3am	neck	7							0
+stygiansmith	1	90	4am	neck	7							0
+stygiansmith	1	89	5am	neck	7							0
+hellhammerer	1	94	0am	neck	7							0
+hellhammerer	1	94	mr8	rrin	7							0
+hellhammerer	1	93	mr9	rrin	7							0
+hellhammerer	1	93	1am	neck	7							0
+hellhammerer	1	92	2am	neck	7							0
+hellhammerer	1	91	3am	neck	7							0
+hellhammerer	1	90	4am	neck	7							0
+hellhammerer	1	89	5am	neck	7							0
+acolyteofash	1	94	0am	neck	7							0
+acolyteofash	1	94	mr8	rrin	7							0
+acolyteofash	1	93	mr9	rrin	7							0
+acolyteofash	1	93	1am	neck	7							0
+acolyteofash	1	92	2am	neck	7							0
+acolyteofash	1	91	3am	neck	7							0
+acolyteofash	1	90	4am	neck	7							0
+acolyteofash	1	89	5am	neck	7							0
+acolyteoffrost	1	94	0am	neck	7							0
+acolyteoffrost	1	94	mr8	rrin	7							0
+acolyteoffrost	1	93	mr9	rrin	7							0
+acolyteoffrost	1	93	1am	neck	7							0
+acolyteoffrost	1	92	2am	neck	7							0
+acolyteoffrost	1	91	3am	neck	7							0
+acolyteoffrost	1	90	4am	neck	7							0
+acolyteoffrost	1	89	5am	neck	7							0
+acolyteofstorms	1	94	0am	neck	7							0
+acolyteofstorms	1	94	mr8	rrin	7							0
+acolyteofstorms	1	93	mr9	rrin	7							0
+acolyteofstorms	1	93	1am	neck	7							0
+acolyteofstorms	1	92	2am	neck	7							0
+acolyteofstorms	1	91	3am	neck	7							0
+acolyteofstorms	1	90	4am	neck	7							0
+acolyteofstorms	1	89	5am	neck	7							0
+plaguegnat	1	94	0am	neck	7							0
+plaguegnat	1	94	mr8	rrin	7							0
+plaguegnat	1	93	mr9	rrin	7							0
+plaguegnat	1	93	1am	neck	7							0
+plaguegnat	1	92	2am	neck	7							0
+plaguegnat	1	91	3am	neck	7							0
+plaguegnat	1	90	4am	neck	7							0
+plaguegnat	1	89	5am	neck	7							0
+swarmling	1	94	0am	neck	7							0
+swarmling	1	94	mr8	rrin	7							0
+swarmling	1	93	mr9	rrin	7							0
+swarmling	1	93	1am	neck	7							0
+swarmling	1	92	2am	neck	7							0
+swarmling	1	91	3am	neck	7							0
+swarmling	1	90	4am	neck	7							0
+swarmling	1	89	5am	neck	7							0
+deathlywidow	1	94	0am	neck	7							0
+deathlywidow	1	94	mr8	rrin	7							0
+deathlywidow	1	93	mr9	rrin	7							0
+deathlywidow	1	93	1am	neck	7							0
+deathlywidow	1	92	2am	neck	7							0
+deathlywidow	1	91	3am	neck	7							0
+deathlywidow	1	90	4am	neck	7							0
+deathlywidow	1	89	5am	neck	7							0
+BossSummoner1	1	94	0am	neck	7							0
+BossSummoner1	1	94	mr8	rrin	7							0
+BossSummoner1	1	93	mr9	rrin	7							0
+BossSummoner1	1	93	1am	neck	7							0
+BossSummoner1	1	92	2am	neck	7							0
+BossSummoner1	1	91	3am	neck	7							0
+BossSummoner1	1	90	4am	neck	7							0
+BossSummoner1	1	89	5am	neck	7							0
+BossAndariel1	1	94	0am	neck	7							0
+BossAndariel1	1	94	mr8	rrin	7							0
+BossAndariel1	1	93	mr9	rrin	7							0
+BossAndariel1	1	93	1am	neck	7							0
+BossAndariel1	1	92	2am	neck	7							0
+BossAndariel1	1	91	3am	neck	7							0
+BossAndariel1	1	90	4am	neck	7							0
+BossAndariel1	1	89	5am	neck	7							0
+BossDuriel1	1	94	0am	neck	7							0
+BossDuriel1	1	94	mr8	rrin	7							0
+BossDuriel1	1	93	mr9	rrin	7							0
+BossDuriel1	1	93	1am	neck	7							0
+BossDuriel1	1	92	2am	neck	7							0
+BossDuriel1	1	91	3am	neck	7							0
+BossDuriel1	1	90	4am	neck	7							0
+BossDuriel1	1	89	5am	neck	7							0
+BossBaal1	1	94	0am	neck	7							0
+BossBaal1	1	94	mr8	rrin	7							0
+BossBaal1	1	93	mr9	rrin	7							0
+BossBaal1	1	93	1am	neck	7							0
+BossBaal1	1	92	2am	neck	7							0
+BossBaal1	1	91	3am	neck	7							0
+BossBaal1	1	90	4am	neck	7							0
+BossBaal1	1	89	5am	neck	7							0
+BossMephisto1	1	94	0am	neck	7							0
+BossMephisto1	1	94	mr8	rrin	7							0
+BossMephisto1	1	93	mr9	rrin	7							0
+BossMephisto1	1	93	1am	neck	7							0
+BossMephisto1	1	92	2am	neck	7							0
+BossMephisto1	1	91	3am	neck	7							0
+BossMephisto1	1	90	4am	neck	7							0
+BossMephisto1	1	89	5am	neck	7							0
+BossDiablo1	1	94	0am	neck	7							0
+BossDiablo1	1	94	mr8	rrin	7							0
+BossDiablo1	1	93	mr9	rrin	7							0
+BossDiablo1	1	93	1am	neck	7							0
+BossDiablo1	1	92	2am	neck	7							0
+BossDiablo1	1	91	3am	neck	7							0
+BossDiablo1	1	90	4am	neck	7							0
+BossDiablo1	1	89	5am	neck	7							0
+TrapTower1	1	94	0am	neck	7							0
+TrapTower1	1	94	mr8	rrin	7							0
+TrapTower1	1	93	mr9	rrin	7							0
+TrapTower1	1	93	1am	neck	7							0
+TrapTower1	1	92	2am	neck	7							0
+TrapTower1	1	91	3am	neck	7							0
+TrapTower1	1	90	4am	neck	7							0
+TrapTower1	1	89	5am	neck	7							0
+TrapTower2	1	94	0am	neck	7							0
+TrapTower2	1	94	mr8	rrin	7							0
+TrapTower2	1	93	mr9	rrin	7							0
+TrapTower2	1	93	1am	neck	7							0
+TrapTower2	1	92	2am	neck	7							0
+TrapTower2	1	91	3am	neck	7							0
+TrapTower2	1	90	4am	neck	7							0
+TrapTower2	1	89	5am	neck	7							0
+TrapTower3	1	94	0am	neck	7							0
+TrapTower3	1	94	mr8	rrin	7							0
+TrapTower3	1	93	mr9	rrin	7							0
+TrapTower3	1	93	1am	neck	7							0
+TrapTower3	1	92	2am	neck	7							0
+TrapTower3	1	91	3am	neck	7							0
+TrapTower3	1	90	4am	neck	7							0
+TrapTower3	1	89	5am	neck	7							0
+phaseboss1add1	1	95	5am	neck	7							0
+phaseboss2add1	1	95	5am	neck	7							0
+phaseboss3add1	1	95	5am	neck	7							0
+phaseboss4add1	1	95	5am	neck	7							0
+phaseboss5add1	1	95	5am	neck	7							0
+phaseboss6add1	1	95	5am	neck	7							0
+*end*  do not remove												0

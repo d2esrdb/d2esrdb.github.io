@@ -1,15 +1,15 @@
+import shutil
 import sys
 import typing as t
 from pathlib import Path
 
 import click
 from mako.lookup import TemplateLookup
-from mako.template import Template
+from ruamel.yaml import YAML
 
 from db_gen import (
     affixes_generator,
     armor_generator,
-    config,
     logger,
     recipes_generator,
     runeword_generator,
@@ -23,6 +23,7 @@ from db_gen import (
 )
 
 TEMPLATE_DIR = Path(__file__).parent / "templates"
+LOOKUP = TemplateLookup(directories=[Path.cwd(), TEMPLATE_DIR])
 
 
 class DatabaseGenerator:
@@ -30,29 +31,28 @@ class DatabaseGenerator:
         self,
         db_dir: str | Path,
         out_dir: str | Path | None,
-        db_code: str,
-        db_name: str,
-        db_version: str,
-        string_tables: list[str],
-        gemapplytype_names: list[str],
+        db: dict[str, t.Any],
     ) -> None:
         self.db_dir = Path(db_dir)
         if out_dir:
             self.out_dir = Path(out_dir)
         else:
             self.out_dir = self.db_dir
-        self.db_code = db_code
-        self.db_name = db_name
-        self.db_version = db_version
+
+        self.db_code = db["shortname"]
+        self.db_name = db["name"]
+        self.db_version = db["version"]
         self.table_strings = table_strings.get_string_dict(
             self.db_dir,
-            db_code,
-            string_tables,
+            self.db_code,
+            db["tablestring_files"],
         )
-        self.mylookup = TemplateLookup(directories=[Path.cwd(), TEMPLATE_DIR])
-        self.tables = tables.Tables(self.db_dir, db_code)
+        self.mylookup = LOOKUP
+        self.tables = tables.Tables(self.db_dir, self.db_code)
         self.utils = utils.Utils(self.tables, self.table_strings)
-        self.gemapplytype_names = gemapplytype_names
+        self.gemapplytype_names = db["gemapplytype_names"]
+        self.to_copy = [s['file'] for s in db.get('extra_static', [])]
+        self.extra_static, self.prelinks, self.postlinks = generate_static_links(db)
 
     def generate(self, body_template: str | bytes, filename: str) -> None:
         base_template = self.mylookup.get_template(uri="base.htm")
@@ -61,12 +61,14 @@ class DatabaseGenerator:
                 body=body_template,
                 name=self.db_name,
                 version=self.db_version,
+                prelinks=self.prelinks,
+                postlinks=self.postlinks,
             ),
         ).replace("\r", "")
         (self.out_dir / self.db_code).mkdir(exist_ok=True)
         (self.out_dir / self.db_code / filename).open("w").write(base_rendered)
 
-    def generate_static(self, extra: list | None) -> None:
+    def generate_static(self, extra: list | None, data_dir: Path) -> None:
         if not extra:
             extra = []
         filenames = [
@@ -77,12 +79,9 @@ class DatabaseGenerator:
             # @TODO delete once we autogen recipes
             if filename in ["recipes.htm"]:
                 template = self.mylookup.get_template(filename)
+                rendered = template.render()
             else:
-                template = Template(
-                    filename=self.db_code + "/" + filename,
-                    lookup=self.mylookup,
-                )
-            rendered = template.render()
+                rendered = (data_dir / self.db_code / filename).open().read()
             self.generate(rendered, filename)
 
     def generate_armor(self) -> None:
@@ -202,6 +201,13 @@ class DatabaseGenerator:
         rendered = template.render(recipes)
         self.generate(rendered, filename)
 
+    def copy_static(self) ->  None:
+        for static in self.to_copy:
+            shutil.copy(
+                (self.db_dir / self.db_code / static),
+                (self.out_dir / self.db_code / static)
+            )
+
     def gen_all(self) -> None:
         self.generate_armor()
         self.generate_weapons()
@@ -212,10 +218,11 @@ class DatabaseGenerator:
         self.generate_uniques()
         self.generate_socketables()
         self.generate_recipes()
+        self.copy_static()
+        self.generate_static(self.extra_static, data_dir=self.db_dir)
 
 
-def generate_static_links(db: dict[str, t.Any]) -> list:
-    # TODO: don't write to templates dir
+def generate_static_links(db: dict[str, t.Any]) -> tuple[list[str], str, str]:
     prelinks = ""
     postlinks = ""
     extra_static = []
@@ -226,37 +233,47 @@ def generate_static_links(db: dict[str, t.Any]) -> list:
         if extra_links["position"] > 0:
             postlinks = postlinks + '<a href="./' + extra_links["file"] + '">[' + extra_links["name"] + "]</a>\n"
             extra_static.append(extra_links["file"])
-    prelink_file = (TEMPLATE_DIR / "prelinks.htm").open("w")
-    prelink_file.write(prelinks)
-    prelink_file.close()
-    postlink_file = (TEMPLATE_DIR / "postlinks.htm").open("w")
-    postlink_file.write(postlinks)
-    postlink_file.close()
-    return extra_static
+    return extra_static, prelinks, postlinks
+
+
+def load_config(config_file: Path) -> list[dict[str, t.Any]]:
+    yaml = YAML(typ="safe")
+    with config_file.open() as config:
+        return yaml.load(config)
 
 
 @click.command()
-@click.option("--db_dir", default=".")
-@click.option("--out_dir", default="output")
-def main(db_dir: str, out_dir: str) -> None:
+@click.option("-d", "--db_dir", default="data", type=click.Path(file_okay=False, exists=True, readable=True))
+@click.option("-c", "--config", default="data/config.yaml", type=click.Path(file_okay=True, exists=True, readable=True))
+@click.option("-o", "--out_dir", default="output", type=click.Path(file_okay=False))
+def main(db_dir: str, config: str, out_dir: str) -> None:
     out_path = Path(out_dir)
     out_path.mkdir(exist_ok=True, parents=True)
-    for db in config.databases:
+    db_path = Path(db_dir)
+
+    databases = load_config(Path(config))
+
+    index_links = []
+
+    for db in databases:
         if len(sys.argv) == 1 or sys.argv[1] == db["shortname"]:
             logger.info("----GENERATING " + db["name"] + "-----")
-            extra_static = generate_static_links(db)
+
             db_gen = DatabaseGenerator(
-                Path(db_dir),
+                db_path,
                 out_path,
-                db["shortname"],
-                db["name"],
-                db["version"],
-                db["tablestring_files"],
-                db["gemapplytype_names"],
+                db,
             )
             db_gen.gen_all()
-            db_gen.generate_static(extra_static)
+
             logger.info("----DONE-----\n")
+
+            index_file = db.get('index', {}).get('file', "armors.htm")
+            index_name = db.get('index', {}).get('name', db["name"])
+            index_links.append(f'<a href="./{db["shortname"]}/{index_file}">[{index_name}]</a>')
+
+    with (out_path / "index.htm").open("w") as index:
+        index.write(str(LOOKUP.get_template("index.htm").render(indexes=index_links)))
 
 
 if __name__ == "__main__":
