@@ -38,18 +38,17 @@ class Recipe:
         self.outputs = []
 
     def get_affix(self, table: list[dict[str, str]], row: str) -> str:
-        props = []
-        for i in range(3):
-            if table[int(row)]["mod" + str(i + 1) + "code"] != "":
-                props.append(
-                    properties.Property(
-                        self.utils,
-                        table[int(row)]["mod" + str(i + 1) + "code"],
-                        table[int(row)]["mod" + str(i + 1) + "param"],
-                        table[int(row)]["mod" + str(i + 1) + "min"],
-                        table[int(row)]["mod" + str(i + 1) + "max"],
-                    ),
-                )
+        props = [
+            properties.Property(
+                self.utils,
+                table[int(row)]["mod" + str(i + 1) + "code"],
+                table[int(row)]["mod" + str(i + 1) + "param"],
+                table[int(row)]["mod" + str(i + 1) + "min"],
+                table[int(row)]["mod" + str(i + 1) + "max"],
+            )
+            for i in range(3)
+            if table[int(row)]["mod" + str(i + 1) + "code"] != ""
+        ]
         return self.utils.get_stat_string(props)
 
     def is_a_unique_item(self, code: str) -> bool:
@@ -353,7 +352,7 @@ class RecipeGenerator:
                 return ret
         return False
 
-    def generate_recipes(self) -> list:
+    def generate_recipes(self) -> list[Recipe]:
         recipes = []
         for recipe in self.utils.tables.recipes_table:
             if recipe["enabled"] != "1":

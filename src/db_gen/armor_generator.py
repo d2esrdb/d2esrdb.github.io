@@ -22,7 +22,7 @@ class ArmorGenerator:
             return ret[:-4]
         return ret
 
-    def generate_armor(self) -> list:
+    def generate_armor(self) -> list[list[str]]:
         normal_armors = []
         exceptional_armors = []
         elite_armors = []
@@ -73,7 +73,7 @@ class ArmorGenerator:
 
         armors = list(normal_armors)
         # Now append exceptional armors in order
-        for normal_armor in list(normal_armors):
+        for normal_armor in normal_armors:
             for exceptional_armor in list(exceptional_armors):
                 if normal_armor[5] == exceptional_armor[3]:
                     armors.append(exceptional_armor)
@@ -81,7 +81,7 @@ class ArmorGenerator:
                     break
 
         # Now append elite armors in order
-        for normal_armor in list(normal_armors):
+        for normal_armor in normal_armors:
             for elite_armor in list(elite_armors):
                 if normal_armor[6] == elite_armor[3]:
                     armors.append(elite_armor)

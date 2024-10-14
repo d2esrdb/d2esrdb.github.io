@@ -41,32 +41,21 @@ class AffixGenerator:
         for affix in table:
             if affix["spawnable"] != str(1):
                 continue
-            props: list[properties.Property] = []
-            for i in range(3):
-                if affix["mod" + str(i + 1) + "code"] != "":
-                    props.append(
-                        properties.Property(
-                            self.utils,
-                            affix["mod" + str(i + 1) + "code"],
-                            affix["mod" + str(i + 1) + "param"],
-                            affix["mod" + str(i + 1) + "min"],
-                            affix["mod" + str(i + 1) + "max"],
-                        ),
-                    )
+            props = [
+                properties.Property(
+                    self.utils,
+                    affix["mod" + str(i + 1) + "code"],
+                    affix["mod" + str(i + 1) + "param"],
+                    affix["mod" + str(i + 1) + "min"],
+                    affix["mod" + str(i + 1) + "max"],
+                )
+                for i in range(3)
+                if affix["mod" + str(i + 1) + "code"] != ""
+            ]
 
-            item_types = []
-            for i in range(7):
-                if affix["itype" + str(i + 1)] != "":
-                    item_types.append(affix["itype" + str(i + 1)])
+            item_types = [affix["itype" + str(i + 1)] for i in range(7) if affix.get("itype" + str(i + 1), "") != ""]
 
-            exclude_types = []
-            for i in range(5):
-                # prefixes have 5 columns for exclude types but suffix only has 3 #smart
-                try:
-                    if affix["etype" + str(i + 1)] != "":
-                        exclude_types.append(affix["etype" + str(i + 1)])
-                except Exception:
-                    pass
+            exclude_types = [affix["etype" + str(i + 1)] for i in range(5) if affix.get("etype" + str(i + 1), "") != ""]
 
             affixes.append(
                 Affix(
@@ -83,8 +72,8 @@ class AffixGenerator:
             )
         return affixes
 
-    def get_prefixes(self) -> list:
+    def get_prefixes(self) -> list[Affix]:
         return self.get_affixes(self.tables.prefixes_table)
 
-    def get_suffixes(self) -> list:
+    def get_suffixes(self) -> list[Affix]:
         return self.get_affixes(self.tables.suffixes_table)

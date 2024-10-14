@@ -32,26 +32,25 @@ class Property:
         self.chance = chance
         self.stats: list[Stat] = []
 
-        for p in self.utils.tables.properties_table:
-            if p["code"].lower() == code.lower():
-                for i in range(1, 8):
-                    if p["stat" + str(i)] != "":
-                        self.stats.append(
-                            Stat(
-                                p["stat" + str(i)],
-                                p["set" + str(i)],
-                                p["val" + str(i)],
-                                p["func" + str(i)],
-                                self,
-                            ),
-                        )
+        if p := self.utils.tables.properties_dict.get(code.lower(), None):
+            for i in range(1, 8):
+                if p["stat" + str(i)] != "":
+                    self.stats.append(
+                        Stat(
+                            p["stat" + str(i)],
+                            p["set" + str(i)],
+                            p["val" + str(i)],
+                            p["func" + str(i)],
+                            self,
+                        ),
+                    )
 
         # Special handling for properties with hardcoded stats
         if code == "dmg-min":
             self.stats.append(Stat("mindamage", "", "", "5", self))
-        if code == "dmg-max":
+        elif code == "dmg-max":
             self.stats.append(Stat("maxdamage", "", "", "6", self))
-        if code == "dmg%":
+        elif code == "dmg%":
             stat = Stat("", "", "", "7", self)
             stat.priority = 1000
             stat.stat_string = (
@@ -59,36 +58,35 @@ class Property:
             )
             stat.stat_string = stat.stat_string.replace("%+d%% ", "")
             self.stats.append(stat)
-        if code == "indestruct":
+        elif code == "indestruct":
             self.stats.append(Stat("item_indesctructible", "", "", "20", self))
-        if code == "fear":
+        elif code == "fear":
             stat = Stat("", "", "", "7", self)
             stat.priority = 1000
             stat.stat_string = "Hit Causes Monster to Flee " + self.get_property_value_string(stat) + "%"
             self.stats.append(stat)
-        if code == "ethereal":
+        elif code == "ethereal":
             stat = Stat("", "", "", "0", self)
             stat.priority = 1000
             stat.stat_string = "Ethereal (Cannot be Repaired)"
             self.stats.append(stat)
 
         for stat in self.stats:
-            for isc in self.utils.tables.item_stat_cost_table:
-                if isc["Stat"].lower() == stat.stat.lower():
-                    stat.isc = isc
-                    if isc["descpriority"] != "":
-                        stat.priority = int(isc["descpriority"])
-                    stat.property_value_string = self.get_property_value_string(stat)
-                    # Since we only display the stats range and don't actually roll for it, it's possible for
-                    # a stat to have negative and positive range, so we'll always use the positive one unless
-                    # the stat is always negative
-                    stat.descfunc = isc["descfunc"]
-                    stat.descval = isc["descval"]
-                    stat.descstr = self.get_descstr(isc["descstrpos"])
-                    if self.is_always_negative():
-                        stat.descstr = self.get_descstr(isc["descstrneg"])
-                    stat.descstr2 = self.get_descstr(isc["descstr2"])
-                    stat.stat_string = self.get_stat_string(stat)
+            if isc := self.utils.tables.item_stat_cost_dict.get(stat.stat.lower(), None):
+                stat.isc = isc
+                if isc["descpriority"] != "":
+                    stat.priority = int(isc["descpriority"])
+                stat.property_value_string = self.get_property_value_string(stat)
+                # Since we only display the stats range and don't actually roll for it, it's possible for
+                # a stat to have negative and positive range, so we'll always use the positive one unless
+                # the stat is always negative
+                stat.descfunc = isc["descfunc"]
+                stat.descval = isc["descval"]
+                stat.descstr = self.get_descstr(isc["descstrpos"])
+                if self.is_always_negative():
+                    stat.descstr = self.get_descstr(isc["descstrneg"])
+                stat.descstr2 = self.get_descstr(isc["descstr2"])
+                stat.stat_string = self.get_stat_string(stat)
 
         if len(self.stats) == 0:
             self.utils.log("No stats for property: " + code, level=INFO)
@@ -194,10 +192,11 @@ class Property:
         return self.utils.table_strings[descstr]
 
     def get_skill_name_from_skill_id(self, skill_id: str) -> str:
+        lskill_id = skill_id.lower()
         for s in self.utils.tables.skills_table:
-            if s["skill"].lower() == skill_id.lower() or s["Id"].lower() == skill_id.lower():
+            if s["_lskill"] == lskill_id or s["_lId"] == lskill_id:
                 for sd in self.utils.tables.skill_desc_table:
-                    if sd["skilldesc"].lower() == s["skilldesc"].lower():
+                    if sd["_lskilldesc"] == s["_lskilldesc"]:
                         return self.utils.table_strings[sd["str name"]]
         self.utils.log("get skill name failed for skill id: " + skill_id, level=WARNING)
         return "Unknown Skill"
@@ -212,8 +211,9 @@ class Property:
         return "Unknown Class"
 
     def get_classonly_from_skill_id(self, skill_id: str) -> str:
+        lskill_id = skill_id.lower()
         for s in self.utils.tables.skills_table:
-            if s["skill"].lower() == skill_id.lower() or s["Id"].lower() == skill_id.lower():
+            if s["_lskill"] == lskill_id or s["_lId"].lower() == lskill_id:
                 for pc in self.utils.tables.player_class_table:
                     if pc["Code"] == s["charclass"]:
                         for cs in self.utils.tables.char_stats_table:

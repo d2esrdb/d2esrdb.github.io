@@ -257,3 +257,7 @@ def main(db_dir: str, out_dir: str) -> None:
             db_gen.gen_all()
             db_gen.generate_static(extra_static)
             logger.info("----DONE-----\n")
+
+
+if __name__ == "__main__":
+    main()

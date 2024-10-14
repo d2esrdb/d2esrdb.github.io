@@ -33,9 +33,9 @@ class UniquesGenerator:
         self.tables = tables
         self.table_strings = table_strings
         self.utils = utils
-        self.unique_weapons = None
-        self.unique_armors = None
-        self.unique_misc = None
+        self.unique_weapons = []
+        self.unique_armors = []
+        self.unique_misc = []
         # Fills in the above 3 items
         self.generate_uniques()
 
@@ -69,13 +69,13 @@ class UniquesGenerator:
     def armor_is_of_type(self, item_code: str, armor_code: str) -> bool:
         return any(row["code"] == item_code and armor_code == row["type"] for row in self.tables.armor_table)
 
-    def get_unique_weapons(self) -> list | None:
+    def get_unique_weapons(self) -> list[ItemGroup]:
         return self.unique_weapons
 
-    def get_unique_armors(self) -> list | None:
+    def get_unique_armors(self) -> list[ItemGroup]:
         return self.unique_armors
 
-    def get_unique_misc(self) -> list | None:
+    def get_unique_misc(self) -> list[ItemGroup]:
         return self.unique_misc
 
     def generate_uniques(self) -> None:
@@ -127,18 +127,17 @@ class UniquesGenerator:
         for row in self.tables.unique_items_table:
             # @TODO If item is enabled... for some reason we have to use rarity?? Maybe this is only an ES thing? I feel like this should be removed...
             if row["rarity"].isdigit() and int(row["rarity"]) > 0 and row["enabled"] == "1" and row["code"] != "":
-                props = []
-                for j in range(12):
-                    if row["prop" + str(j + 1)] != "":
-                        props.append(
-                            properties.Property(
-                                self.utils,
-                                row["prop" + str(j + 1)],
-                                row["par" + str(j + 1)],
-                                row["min" + str(j + 1)],
-                                row["max" + str(j + 1)],
-                            ),
-                        )
+                props = [
+                    properties.Property(
+                        self.utils,
+                        row["prop" + str(j + 1)],
+                        row["par" + str(j + 1)],
+                        row["min" + str(j + 1)],
+                        row["max" + str(j + 1)],
+                    )
+                    for j in range(12)
+                    if row["prop" + str(j + 1)] != ""
+                ]
                 unique_items.append(
                     UniqueItem(
                         self.utils,

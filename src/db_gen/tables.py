@@ -15,7 +15,9 @@ class Tables:
         self.skill_desc_table = self.load_table("SkillDesc.txt")
         self.unique_items_table = self.load_table("UniqueItems.txt")
         self.properties_table = self.load_table("Properties.txt")
+        self.properties_dict = self.table_to_dict(self.properties_table, "code", lower=True)
         self.item_stat_cost_table = self.load_table("ItemStatCost.txt")
+        self.item_stat_cost_dict = self.table_to_dict(self.item_stat_cost_table, "Stat", lower=True)
         self.item_types_table = self.load_table("ItemTypes.txt")
         self.misc_table = self.load_table("Misc.txt")
         self.mon_stats_table = self.load_table("MonStats.txt")
@@ -74,9 +76,9 @@ class Tables:
             newline="",
             errors="ignore",
         )
-        table = csv.reader(table_file, delimiter="\t")
+        table_reader = csv.reader(table_file, delimiter="\t")
         fieldnames = []
-        for headername in next(table):
+        for headername in next(table_reader):
             if headername not in fieldnames:
                 fieldnames.append(headername)
             else:
@@ -88,7 +90,20 @@ class Tables:
                     + "2. (this is normal for mindam and maxdam)",
                 )
                 fieldnames.append(headername + "2")
-        return list(csv.DictReader(table_file, fieldnames=fieldnames, delimiter="\t"))
+        table: list[dict[str, str]] = list(csv.DictReader(table_file, fieldnames=fieldnames, delimiter="\t"))
+        for row in table:
+            # Avoid repeated lower() calls for select properties
+            for key in ("skill", "Id", "skilldesc"):
+                row[f"_l{key}"] = row.get(key, "").lower()
+        return table
+
+    @staticmethod
+    def table_to_dict(
+        table: list[dict[str, str]], unique_key: str, *, lower: bool = False
+    ) -> dict[str, dict[str, str]]:
+        if lower:
+            return {r[unique_key].lower(): r for r in table}
+        return {r[unique_key]: r for r in table}
 
 
 class Node:

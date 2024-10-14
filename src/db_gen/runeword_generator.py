@@ -44,8 +44,7 @@ class Runeword:
         ret = ""
         allstats = []
         for prop in self.properties:
-            for stat in prop.stats:
-                allstats.append(stat)
+            allstats.extend(prop.stats)
         for stat in sorted(allstats, key=lambda x: int(x.priority), reverse=True):
             ret = ret + stat.stat_string + "<br>"
         return ret
@@ -54,8 +53,7 @@ class Runeword:
         ret = ""
         allstats = []
         for prop in self.rune_properties[gemapplytype]:
-            for stat in prop.stats:
-                allstats.append(stat)
+            allstats.extend(prop.stats)
         for stat in sorted(allstats, key=lambda x: int(x.priority), reverse=True):
             ret = ret + stat.stat_string + "<br>"
         return ret
@@ -66,70 +64,65 @@ class RunewordGenerator:
         self.tables = tables
         self.table_strings = table_strings
         self.utils = utils
+        self.items = [
+            item
+            for item in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table
+            if item["gemapplytype"] != "" and item["hasinv"] == "1"
+        ]
 
     def set_gemapplytypes(self, rw: Runeword, include_types: list[str], exclude_types: list[str]) -> None:
         # Get the intersection of all the armor types and its subtypes and the rw include types and it's subtypes
         intersected_types = self.utils.get_all_sub_types(
             include_types,
         ) - self.utils.get_all_sub_types(exclude_types)
-        for armor in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
-            if (
-                armor["gemapplytype"] != ""
-                and not rw.gemapplytype[int(armor["gemapplytype"])]
-                and armor["hasinv"] == "1"
-                and int(armor["gemsockets"]) >= rw.num_sockets
-            ):
+        for item in self.items:
+            if int(item["gemsockets"]) >= rw.num_sockets and not rw.gemapplytype[int(item["gemapplytype"])]:
                 # If there's even 1 item remaining in the intersected types after removing the exclude types, we have a valid item that can use the rw
-                if armor["type"] in intersected_types or armor["type2"] in intersected_types:
-                    rw.gemapplytype[int(armor["gemapplytype"])] = True
-                    rw.types[int(armor["gemapplytype"])] = (
-                        rw.types[int(armor["gemapplytype"])]
+                if item["type"] in intersected_types or item["type2"] in intersected_types:
+                    rw.gemapplytype[int(item["gemapplytype"])] = True
+                    rw.types[int(item["gemapplytype"])] = (
+                        rw.types[int(item["gemapplytype"])]
                         + "<br>"
-                        + self.table_strings.get(armor["namestr"], armor["namestr"])
+                        + self.table_strings.get(item["namestr"], item["namestr"])
                     )
 
-    def generate_runewords(self) -> list:
+    def generate_runewords(self) -> list[Runeword]:
         runewords = []
         for rw in self.tables.runeword_table:
-            include_types = []
-            exclude_types = []
-            allowed_bases = []
-            excluded_bases = []
-            runes = []
-            props = []
-            for i in range(6):
-                if rw["itype" + str(i + 1)] != "":
-                    allowed_bases.append(
-                        self.utils.get_item_type_name_from_code(
-                            rw["itype" + str(i + 1)],
-                        ),
-                    )
-                    include_types.append(rw["itype" + str(i + 1)])
-            for i in range(3):
-                if rw["etype" + str(i + 1)] != "":
-                    excluded_bases.append(
-                        self.utils.get_item_type_name_from_code(
-                            rw["etype" + str(i + 1)],
-                        ),
-                    )
-                    exclude_types.append(rw["etype" + str(i + 1)])
-            for i in range(6):
-                if rw["Rune" + str(i + 1)] != "":
-                    runes.append(
-                        self.utils.get_item_name_from_code(rw["Rune" + str(i + 1)]),
-                    )
-            for j in range(7):
-                # If the property doesn't have a name, then there isn't a property
-                if rw["T1Code" + str(j + 1)] != "":
-                    props.append(
-                        properties.Property(
-                            self.utils,
-                            rw["T1Code" + str(j + 1)],
-                            rw["T1Param" + str(j + 1)],
-                            rw["T1Min" + str(j + 1)],
-                            rw["T1Max" + str(j + 1)],
-                        ),
-                    )
+            allowed_bases = [
+                self.utils.get_item_type_name_from_code(
+                    rw["itype" + str(i + 1)],
+                )
+                for i in range(6)
+                if rw["itype" + str(i + 1)] != ""
+            ]
+            include_types = [rw["itype" + str(i + 1)] for i in range(6) if rw["itype" + str(i + 1)] != ""]
+
+            excluded_bases = [
+                self.utils.get_item_type_name_from_code(
+                    rw["etype" + str(i + 1)],
+                )
+                for i in range(3)
+                if rw["etype" + str(i + 1)] != ""
+            ]
+            exclude_types = [rw["etype" + str(i + 1)] for i in range(3) if rw["etype" + str(i + 1)] != ""]
+
+            runes = [
+                self.utils.get_item_name_from_code(rw["Rune" + str(i + 1)])
+                for i in range(6)
+                if rw["Rune" + str(i + 1)] != ""
+            ]
+            props = [
+                properties.Property(
+                    self.utils,
+                    rw["T1Code" + str(j + 1)],
+                    rw["T1Param" + str(j + 1)],
+                    rw["T1Min" + str(j + 1)],
+                    rw["T1Max" + str(j + 1)],
+                )
+                for j in range(7)
+                if rw["T1Code" + str(j + 1)] != ""
+            ]
 
             rune_properties = [[], [], []]
             for socketable in self.tables.socketables_table:

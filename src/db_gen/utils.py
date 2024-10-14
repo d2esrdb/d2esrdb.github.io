@@ -10,6 +10,10 @@ class Utils:
         self.table_strings = table_strings
         self.tables = tables
         self.log_errors = set()
+        self.items_by_code = {
+            item["code"]: item
+            for item in (self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table)
+        }
 
     def log(self, msg: str, *, level: int = INFO) -> None:
         if msg not in self.log_errors:
@@ -21,7 +25,7 @@ class Utils:
         for item_type in self.tables.item_types_table:
             for t in types:
                 if t == item_type["Code"]:
-                    ret.append(item_type["Code"] + " = " + item_type["ItemType"])
+                    ret.append(item_type["Code"] + " = " + item_type["ItemType"])  # noqa: PERF401
         return ret
 
     def is_in_gamble_table(self, code: str) -> bool:
@@ -77,16 +81,16 @@ class Utils:
         return set(all_types) & set(include_types)
 
     def get_item_name_from_code(self, code: str) -> str:
-        for row in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
-            if row["code"] == code and self.table_strings.get(row["namestr"]) is not None:
-                return self.table_strings[row["namestr"]]
+        item = self.items_by_code.get(code, None)
+        if item and (item_name := self.table_strings.get(item["namestr"])) is not None:
+            return item_name
         logger.debug("No name found for code: " + code)
         return code
 
     def get_level_req_from_code(self, code: str) -> str:
-        for row in self.tables.armor_table + self.tables.weapons_table + self.tables.misc_table:
-            if row["code"] == code:
-                return row["levelreq"]
+        item = self.items_by_code.get(code, None)
+        if item is not None:
+            return item["levelreq"]
         logger.debug("Could not get level req for code: " + code)
         return "0"
 
@@ -122,18 +126,17 @@ class Utils:
                     [autos["etype1"], autos["etype2"], autos["etype3"]],
                 )
             ):
-                props = []
-                for i in range(3):
-                    if autos["mod" + str(i + 1) + "code"] != "":
-                        props.append(
-                            properties.Property(
-                                self,
-                                autos["mod" + str(i + 1) + "code"],
-                                autos["mod" + str(i + 1) + "param"],
-                                autos["mod" + str(i + 1) + "min"],
-                                autos["mod" + str(i + 1) + "max"],
-                            ),
-                        )
+                props = [
+                    properties.Property(
+                        self,
+                        autos["mod" + str(i + 1) + "code"],
+                        autos["mod" + str(i + 1) + "param"],
+                        autos["mod" + str(i + 1) + "min"],
+                        autos["mod" + str(i + 1) + "max"],
+                    )
+                    for i in range(3)
+                    if autos["mod" + str(i + 1) + "code"] != ""
+                ]
                 automods.append(props)
         return automods
 
@@ -150,6 +153,7 @@ class Utils:
                 for item_type in self.tables.item_types_table:
                     if item_type["Code"] == item["type"] and item_type["StaffMods"] != "":
                         return self.short_to_long_class(item_type["StaffMods"])
+
         return ""
 
     def get_spelldesc(self, code: str) -> str | None:
@@ -215,8 +219,7 @@ class Utils:
         ret = ""
         all_stats = []
         for prop in properties:
-            for stat in prop.stats:
-                all_stats.append(stat)
+            all_stats.extend(prop.stats)
 
         # Replace stats with group stats
         for stat in list(all_stats):
@@ -224,7 +227,7 @@ class Utils:
                 item_stats = set()
                 isc_stats = set()
                 # Gather all the stats on the item with the same dgrp as stat
-                for s in list(all_stats):
+                for s in all_stats:
                     if s.isc is not None and s.isc.get("dgrp", "") == stat.isc["dgrp"]:
                         item_stats.add(s)
                 # Gather all the isc stats with the same dgrp as stat

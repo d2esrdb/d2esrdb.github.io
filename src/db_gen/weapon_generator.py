@@ -93,11 +93,8 @@ class Weapon:
             return ""
         for automod in self.automods:
             for p in automod:
-                allstats = []
-                for stat in p.stats:
-                    allstats.append(stat)
                 for stat in sorted(
-                    allstats,
+                    p.stats,
                     key=lambda x: int(x.priority),
                     reverse=True,
                 ):
@@ -117,7 +114,7 @@ class WeaponGenerator:
             return replacement
         return string
 
-    def generate_weapons(self) -> list:
+    def generate_weapons(self) -> list[Weapon]:
         normal_weapons = []
         exceptional_weapons = []
         elite_weapons = []
@@ -170,7 +167,7 @@ class WeaponGenerator:
 
         weapons = list(normal_weapons)
         # Now append exceptional weapons in order
-        for normal_weapon in list(normal_weapons):
+        for normal_weapon in normal_weapons:
             for exceptional_weapon in list(exceptional_weapons):
                 if normal_weapon.exceptional_code == exceptional_weapon.code:
                     weapons.append(exceptional_weapon)
@@ -178,7 +175,7 @@ class WeaponGenerator:
                     break
 
         # Now append elite weapons in order
-        for normal_weapon in list(normal_weapons):
+        for normal_weapon in normal_weapons:
             for elite_weapon in list(elite_weapons):
                 if normal_weapon.elite_code == elite_weapon.code:
                     weapons.append(elite_weapon)

@@ -8,14 +8,15 @@ def read_bytes(data: BufferedReader, num_bytes: int) -> int:
     return int.from_bytes(data.read(num_bytes), byteorder="little")
 
 
-def read_string(data: BufferedReader) -> str:
-    # @TODO There must be a better way of doing this...
-    string_byte = data.read(1).decode("raw_unicode_escape")
-    string = ""
-    while string_byte != "\0":
-        string = string + string_byte
-        string_byte = data.read(1).decode("raw_unicode_escape")
-    return string
+def read_string(data: BufferedReader, length: int = 0) -> str:
+    if length:
+        read_bytes = data.read(length)[:-1]
+    else:
+        indv_bytes = [data.read(1)]
+        while indv_bytes[-1] != b"\0":
+            indv_bytes.append(data.read(1))
+        read_bytes = b''.join(indv_bytes[:-1])
+    return read_bytes.decode("raw_unicode_escape")
 
 
 def replace_code_with_color(value: str, code: str, color: str, count: int) -> tuple:
@@ -189,9 +190,7 @@ def get_string_dict(db_dir: Path, db_code: str, string_tables: list[str]) -> dic
             read_bytes(strings, 4)  # End index, ignored
 
             # Array of two bytes per entry, gives index to next table
-            indexes = []
-            for _ in range(num_elements):
-                indexes.append(read_bytes(strings, 2))
+            indexes = [read_bytes(strings, 2) for _ in range(num_elements)]
 
             # Store this position, as this is the position used to index from
             start_pos = strings.tell()
@@ -204,7 +203,7 @@ def get_string_dict(db_dir: Path, db_code: str, string_tables: list[str]) -> dic
                 read_bytes(strings, 4)  # Has Number, ignored
                 key_offset = read_bytes(strings, 4)
                 value_offset = read_bytes(strings, 4)
-                read_bytes(strings, 2)  # Length of value string, ignored
+                value_len = read_bytes(strings, 2)  # Length of value string, ignored
 
                 # Get the key string
                 strings.seek(key_offset)
@@ -212,7 +211,7 @@ def get_string_dict(db_dir: Path, db_code: str, string_tables: list[str]) -> dic
 
                 # Get the value string
                 strings.seek(value_offset)
-                value_string = read_string(strings)
+                value_string = read_string(strings, value_len)
 
                 # Create the key/value pair dict
                 key_value_dict[key_string] = value_string

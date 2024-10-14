@@ -74,7 +74,7 @@ class SetGenerator:
     def __init__(self, utils: Utils) -> None:
         self.utils = utils
 
-    def generate_sets(self) -> list:
+    def generate_sets(self) -> list[Set]:
         sets = []
         for _set in self.utils.tables.sets_table:
             if _set["name"] == "":
@@ -103,18 +103,17 @@ class SetGenerator:
                         ),
                     )
 
-            full_properties = []
-            for i in range(8):
-                if _set["FCode" + str(i + 1)] != "":
-                    full_properties.append(
-                        properties.Property(
-                            self.utils,
-                            _set["FCode" + str(i + 1)],
-                            _set["FParam" + str(i + 1)],
-                            _set["FMin" + str(i + 1)],
-                            _set["FMax" + str(i + 1)],
-                        ),
-                    )
+            full_properties = [
+                properties.Property(
+                    self.utils,
+                    _set["FCode" + str(i + 1)],
+                    _set["FParam" + str(i + 1)],
+                    _set["FMin" + str(i + 1)],
+                    _set["FMax" + str(i + 1)],
+                )
+                for i in range(8)
+                if _set["FCode" + str(i + 1)] != ""
+            ]
             items = []
             for item in self.utils.tables.set_items_table:
                 if item["set"] == _set["index"]:
@@ -145,18 +144,17 @@ class SetGenerator:
                                     item["amax" + str(i + 1) + "b"],
                                 ),
                             )
-                    item_properties = []
-                    for i in range(9):
-                        if item["prop" + str(i + 1)] != "":
-                            item_properties.append(
-                                properties.Property(
-                                    self.utils,
-                                    item["prop" + str(i + 1)],
-                                    item["par" + str(i + 1)],
-                                    item["min" + str(i + 1)],
-                                    item["max" + str(i + 1)],
-                                ),
-                            )
+                    item_properties = [
+                        properties.Property(
+                            self.utils,
+                            item["prop" + str(i + 1)],
+                            item["par" + str(i + 1)],
+                            item["min" + str(i + 1)],
+                            item["max" + str(i + 1)],
+                        )
+                        for i in range(9)
+                        if item["prop" + str(i + 1)] != ""
+                    ]
 
                     gamble_string = self.utils.get_gamble_item_from_code(item_base_code)
                     items.append(

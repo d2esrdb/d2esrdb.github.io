@@ -20,7 +20,7 @@ class SocketablesGenerator:
         self.table_strings = table_strings
         self.utils = utils
 
-    def generate_socketables(self) -> list:
+    def generate_socketables(self) -> list[Socketable]:
         ret = []
         for socketable in self.tables.socketables_table:
             if socketable["code"] == "":
