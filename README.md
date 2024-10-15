@@ -4,7 +4,7 @@ A set of python scripts to generate a web based database for Diablo 2 mods.
 
 ## Install/Requirements
 
-1. Install Python3.10+ (https://www.python.org/downloads/)
+1. Install Python3.12+ (https://www.python.org/downloads/)
 
 ## Usage
 

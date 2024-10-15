@@ -72,7 +72,8 @@ class Tables:
                 self.add_code_to_type(_type["Equiv2"], t)
 
     def load_table(self, table_name: str) -> list[dict[str, str]]:
-        table_file = (self.db_dir / self.db_name / table_name).open(
+        table_path = next((self.db_dir / self.db_name).glob(table_name, case_sensitive=False))
+        table_file = table_path.open(
             newline="",
             errors="ignore",
         )
