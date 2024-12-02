@@ -1,3 +1,5 @@
 __pycache__
 prelinks.htm
 postlinks.htm
+build
+*.egg-info

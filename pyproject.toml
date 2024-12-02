@@ -1,0 +1,80 @@
+[project]
+name = "d2esrdb-github-io"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1.7",
+    "mako>=1.3.5",
+    "ruamel-yaml>=0.18.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/db_gen"]
+
+[project.scripts]
+db-gen = "db_gen.db_gen:main"
+
+[tool.uv]
+dev-dependencies = [
+    "hatchet>=1.4.0",
+    "infer-types>=1.0.0",
+    "ipython>=8.28.0",
+    "line-profiler>=4.1.3",
+    "numpy>=2.1.2",
+    "pyright>=1.1.384",
+    "pytest>=8.3.3",
+    "ruff>=0.6.9",
+    "snakeviz>=2.2.0",
+]
+
+[tool.ruff]
+exclude = [
+    ".venv"
+]
+line-length = 120
+[tool.ruff.lint]
+select = [
+    "E", "W", # pycodestyle errors + warnings (PEP8)
+    "I", # isort
+    "N", # PEP8 naming convertions
+    "F", # Pyflakes static error checking
+    "UP", # use newer language version syntax
+    "ANN", # type annotations
+    "A", # builtin shadowing
+    "B", # flake8-bugbear (likely bugs)
+    "COM", # flake8 missing comma issues
+    "C4", # flake8 comprehension issues
+    "RET", # flake8 return issues
+    "TCH", # flake8 type checking
+    "ARG", # flake8 unused arguments
+    "PTH", # flake8 use pathlib
+    "FBT", # flake8 boolean trap
+    "EM", # flake8 nice errors
+    "INT", # flake8 string formatting issues
+    "SLF", # flake8 private acccess
+    "FA", # flake8 future annotations
+    "ICN", # flake8 unusual imports
+    "SIM", # flake8 simplication lints
+    "LOG", "G", # flake8 logging module checks
+    "T20", # flake8 avoid print
+    "PL", # Pylint rules
+    "RUF", # Ruff-specific rules,
+    "ERA", # commented dead code detection
+    "TRY", # exception handling antipatterns
+    "FLY", # use f-strings over static .join
+    "PERF", # performance antipatterns
+    "FURB", # modernization
+]
+ignore = [
+ "ANN101", "ANN102", # Controversial "self" annotations
+ "COM812", # comma rule handled by ruff format
+ "E501", # line length
+ "PLR0911", "PLR0912", "PLR0913", "PLR0915", # code complexity rules
+ "SIM102", # frequently used for a good reason
+]
