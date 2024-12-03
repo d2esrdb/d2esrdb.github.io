@@ -132,11 +132,13 @@ class Property:
                 if self.min == "" and self.max == "":
                     return "0"
                 if self.min == "":
-                    return "(" + self.strmin(0, self.max) + " to " + self.strmax(0, self.max) + ")"
+                    return str(float(self.max)/8)
+                    #return "(" + self.strmin(0, self.max) + " to " + self.strmax(0, self.max) + ")"
                 if self.max == "":
-                    return "(" + self.strmin(self.min, 0) + " to " + self.strmax(self.min, 0) + ")"
+                    return str(float(self.min)/8)
+                    #return "(" + self.strmin(self.min, 0) + " to " + self.strmax(self.min, 0) + ")"
                 if self.min == self.max:
-                    return self.min
+                    return str(float(self.min)/8)
                 return "(" + self.strmin(self.min, self.max) + " to " + self.strmax(self.min, self.max) + ")"
             case "21":
                 # @TODO this is actually dangerous because you need to ensure you call get_property_value_string before you use param...
