@@ -71,17 +71,8 @@ class DatabaseGenerator:
     def generate_static(self, extra: list | None, data_dir: Path) -> None:
         if not extra:
             extra = []
-        filenames = [
-            "recipes.htm",
-        ]
-        filenames = filenames + extra
-        for filename in filenames:
-            # @TODO delete once we autogen recipes
-            if filename in ["recipes.htm"]:
-                template = self.mylookup.get_template(filename)
-                rendered = template.render()
-            else:
-                rendered = (data_dir / self.db_code / filename).open().read()
+        for filename in extra:
+            rendered = (data_dir / self.db_code / filename).open().read()
             self.generate(rendered, filename)
 
     def generate_armor(self) -> None:

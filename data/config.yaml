@@ -8,9 +8,12 @@
     - Helms / Boots
     - Armor / Shields / Belts
   extra_pages:
+    - name: Recipes
+      file: recipes.htm
+      position: 1
     - name: Maps
       file: maps.htm
-      position: 1
+      position: 2
 - name: Eastern Sun Rises
   shortname: Eastern_Sun_Rises
   version: 5.3A5
@@ -27,9 +30,12 @@
     - name: Top
       file: top.htm
       position: -1
+    - name: Recipes
+      file: recipes.htm
+      position: 1
     - name: Maps
       file: maps.htm
-      position: 1
+      position: 2
   index:
     file: top.htm
 - name: Eastern Sun Eclipse
@@ -44,15 +50,18 @@
     - Helms / Boots
     - Armor / Shields / Belts
   extra_pages:
+    - name: Recipes
+      file: recipes.htm
+      position: 1
     - name: Maps
       file: maps.htm
-      position: 1
+      position: 2
     - name: New Stuff
       file: newstuff.htm
-      position: 2
+      position: 3
     - name: Eclipse
       file: eclipse.htm
-      position: 3
+      position: 4
   extra_static:
     - file: styles.css
   index:

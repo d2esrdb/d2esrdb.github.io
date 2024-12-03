@@ -10,11 +10,14 @@ A set of python scripts to generate a web based database for Diablo 2 mods.
 
 1. Clone this repo (`git clone https://github.com/d2esrdb/d2esrdb.github.io.git`)
 2. Install the package (`cd d2esrdb.github.io; pip install .`)
-2. Make a new directory inside the repo folder `data`, name it the same as your mod
-3. Copy all your txt files from global/data in to it, as well as all your .tbl files
-4. Open `data/config.yaml` and add a new entry for your mod
-5. Run the db-gen command (`db-gen`)
-6. All the files should get generated in the `output` directory.
+3. You might need to add Python312 Scripts directory to your PATH environment variable
+ (there should be a warning indicating so output from step 2)
+4. Make a new directory inside the repo folder `data`, name it the same as your mod
+5. Copy all your txt files from global/data in to it, as well as all your .tbl files
+6. Open `data/config.yaml` and add a new entry for your mod
+7. Run the db-gen command (`db-gen`)
+8. All the files should get generated in the `output` directory.
+9. If you make changes to the db-gen code itself, you'll need to redo step 2 so the changes take effect. 
 
 ## Known issues
 
