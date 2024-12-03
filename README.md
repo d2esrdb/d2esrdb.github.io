@@ -33,3 +33,10 @@ from properties param/min/max to stat strings.
 game it never rolls 0 sockets, and seems to roll 1 socket more than 2 sockets. Another example:
 setting up an item with 1-10 %mag but using 1 in the param field and 10 in the min field still
 works in game for some reason, but the dbgen just shows 1% because of the invalid data in the txt.
+
+4. Some of the column names are different between original d2 and resurrected.
+"Rune Name" -> "*Rune Name" in runes.txt
+"hcIdx" -> "*hcIdx" in monstat.txt
+"Id" -> "*Id" in skills.txt
+Are all the ones I know of so far. Since it looks like these are all mostly comment columns, we
+probably shouldn't be using them for the parser. 
