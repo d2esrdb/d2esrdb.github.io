@@ -139,7 +139,7 @@ class Property:
                     #return "(" + self.strmin(self.min, 0) + " to " + self.strmax(self.min, 0) + ")"
                 if self.min == self.max:
                     return str(float(self.min)/8)
-                return "(" + self.strmin(self.min, self.max) + " to " + self.strmax(self.min, self.max) + ")"
+                return "(" + str(float(self.strmin(self.min, self.max))/8) + " to " + str(float(self.strmax(self.min, self.max))/8) + ")"
             case "21":
                 # @TODO this is actually dangerous because you need to ensure you call get_property_value_string before you use param...
                 self.param = stat.val
