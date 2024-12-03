@@ -1,7 +1,7 @@
 import csv
 from pathlib import Path
 
-from db_gen import logger
+#from db_gen import logger
 
 
 class Tables:
@@ -83,13 +83,6 @@ class Tables:
             if headername not in fieldnames:
                 fieldnames.append(headername)
             else:
-                logger.warning(
-                    'Duplicate column "'
-                    + headername
-                    + '" detected. Renaming second one to '
-                    + headername
-                    + "2. (this is normal for mindam and maxdam)",
-                )
                 fieldnames.append(headername + "2")
         table: list[dict[str, str]] = list(csv.DictReader(table_file, fieldnames=fieldnames, delimiter="\t"))
         for row in table:
@@ -106,6 +99,39 @@ class Tables:
             return {r[unique_key].lower(): r for r in table}
         return {r[unique_key]: r for r in table}
 
+    def print_table_headers(self, table_name):
+            print(str(i) + ": " + col)
+
+    def print_row_with_cell_equal_to_list(self, table_name, cell_index, value):
+        table = self.load_table_list(table_name)
+        first = None
+        for i, row in enumerate(table):
+            if i == 0:
+                first = row
+            if row[cell_index] == value:
+                for i, col in enumerate(first):
+                    print(str(i) + ": " + col + ": " + row[i])
+
+    def print_row_with_cell_equal_to(self, table_name, cell_name, value):
+        table = self.load_table(table_name)
+        first = None
+        for i, row in enumerate(table):
+            if i == 0:
+                first = row
+            if row[cell_name] == value:
+                for i, col in enumerate(first):
+                    print(str(i) + ": " + col + ": " + row[col])
+    
+    def print_row_with_cell_not_equal_to(self, table_name, cell_name, value):
+        table = self.load_table(table_name)
+        first = None
+        for i, row in enumerate(table):
+            if i == 0:
+                first = row
+            if row[cell_name] != value:
+                print(row[cell_name])
+                #for i, col in enumerate(first):
+                #    print(str(i) + ": " + col + ": " + row[col])
 
 class Node:
     def __init__(self, code: str) -> None:
@@ -114,3 +140,7 @@ class Node:
 
     def addchild(self, child: "Node") -> None:
         self.children.append(child)
+
+
+myt = Tables(Path("../../data/"), "Eastern_Sun_Resurrected")
+myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "strength")
