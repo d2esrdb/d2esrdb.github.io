@@ -128,7 +128,7 @@ class Property:
                 return self.min
             case "17":
                 if self.param != "":
-                    return self.param
+                    return str(float(self.param)/8)
                 if self.min == "" and self.max == "":
                     return "0"
                 if self.min == "":

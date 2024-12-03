@@ -1,7 +1,8 @@
 import csv
 from pathlib import Path
 
-#from db_gen import logger
+if __name__ != "__main__":
+    from db_gen import logger
 
 
 class Tables:
@@ -83,6 +84,14 @@ class Tables:
             if headername not in fieldnames:
                 fieldnames.append(headername)
             else:
+                if __name__ != "__main__":
+                    logger.warning(
+                        'Duplicate column "'
+                        + headername
+                        + '" detected. Renaming second one to '
+                        + headername
+                        + "2. (this is normal for mindam and maxdam)",
+                    )
                 fieldnames.append(headername + "2")
         table: list[dict[str, str]] = list(csv.DictReader(table_file, fieldnames=fieldnames, delimiter="\t"))
         for row in table:
@@ -141,6 +150,9 @@ class Node:
     def addchild(self, child: "Node") -> None:
         self.children.append(child)
 
-
-#myt = Tables(Path("../../data/"), "Eastern_Sun_Resurrected")
-#myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "strength")
+if __name__ == "__main__":
+    myt = Tables(Path("../../data/"), "Eastern_Sun_Resurrected")
+    myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_mana_perlevel")
+    myt.print_row_with_cell_equal_to("Properties.txt", "code", "mana/lvl")
+#    myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Something Wicked")
+    #myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Vlad Tepe's Sustenance")
