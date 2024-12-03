@@ -142,5 +142,5 @@ class Node:
         self.children.append(child)
 
 
-myt = Tables(Path("../../data/"), "Eastern_Sun_Resurrected")
-myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "strength")
+#myt = Tables(Path("../../data/"), "Eastern_Sun_Resurrected")
+#myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "strength")
