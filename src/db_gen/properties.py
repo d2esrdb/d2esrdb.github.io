@@ -76,26 +76,21 @@ class Property:
             self.stats = []
             stat = Stat("", "", "", "1", self)
             stat.priority = 1000
-            if self.min == self.max or self.min == "0" or self.max == "0":
-                stat.stat_string = "Adds " + self.strmax(self.min, self.max) + " poison damage over " + str(int(int(self.param)/25)) + " seconds"
-            else:
-                stat.stat_string = "Adds " + self.min + "-" + self.max + " poison damage over " + str(int(int(self.param)/25)) + " seconds"
+            stat.stat_string = "Adds " + self.get_damage_value_string(self.min, self.max) + " poison damage over " + str(int(self.param)/25).strip(".0") + " seconds"
             self.stats.append(stat)
-        elif code == "dmg-cold22":
+        elif code == "dmg-cold":
             # No duration so just cold min and coldmax
             if self.param == "":
                 self.stats = []
                 stat = Stat("", "", "", "1", self)
                 stat.priority = 1000
-                stat.stat_string = "Adds " + self.get_property_value_string(stat) + " cold damage"
+                stat.stat_string = "Adds " + self.get_damage_value_string(self.min, self.max) + " cold damage"
                 self.stats.append(stat)
             else:
-                self.min = str(int(int(self.min)*int(self.param)/256))
-                self.max = str(int(int(self.max)*int(self.param)/256))
                 self.stats = []
                 stat = Stat("", "", "", "1", self)
                 stat.priority = 1000
-                stat.stat_string = "Adds " + self.get_property_value_string(stat) + " cold damage over " + str(int(self.param)/25) + " seconds"
+                stat.stat_string = "Adds " + self.get_damage_value_string(self.min, self.max) + " cold damage over " + str(int(self.param)/25).strip(".0") + " seconds"
                 self.stats.append(stat)
 
         for stat in self.stats:
@@ -131,6 +126,11 @@ class Property:
         if v2 == "":
             return str(v1)
         return str(max(int(v1), int(v2)))
+
+    def get_damage_value_string(self, _min, _max):
+        if _min == _max or _min == "0" or _max == "0":
+            return self.strmin(self.min, self.max)
+        return _min + "-" + _max
 
     def get_property_value_string(self, stat: Stat) -> str:
         # @TODO Figure out if we need to treat empty min/max or even param columns as zeros?
