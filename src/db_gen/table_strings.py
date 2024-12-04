@@ -167,6 +167,8 @@ def get_string_dict(db_dir: Path, db_code: str, string_tables: list[str]) -> dic
                 )
                 data = json.load(st)
                 for i in data:
+                    if i["Key"] in key_value_dict:
+                        print("Duplicate key found in json: " + i["Key"])
                     key_value_dict[i["Key"]] = i["enUS"]
         directory = os.fsencode(db_dir / db_code / "strings")
         for file in os.listdir(directory):
@@ -175,6 +177,8 @@ def get_string_dict(db_dir: Path, db_code: str, string_tables: list[str]) -> dic
                 st = (db_dir / db_code / "strings" / filename).open(encoding="utf-8-sig")
                 data = json.load(st)
                 for i in data:
+                    if i["Key"] in key_value_dict:
+                        print("Duplicate key found in json: " + i["Key"])
                     key_value_dict[i["Key"]] = i["enUS"]
     else:
         for string_table in string_tables:
@@ -221,3 +225,10 @@ def get_string_dict(db_dir: Path, db_code: str, string_tables: list[str]) -> dic
         key_value_dict[key] = d2_color_to_html_color(value.replace("\n", "<br>"))
 
     return key_value_dict
+
+
+
+if __name__ == "__main__":
+    ts = get_string_dict(Path("../../data/"), "Eastern_Sun_Resurrected", ["json"])
+    print(ts["Moditemenrescoldsk"])
+    print(ts["Moditemenrespoissk"])

@@ -285,6 +285,7 @@ class Property:
                     1,
                 ).replace("%s", self.get_skill_name_from_skill_id(self.param), 1)
             case "19":
+                #if "%d" in stat.descstr or "%+d" in stat.descstr:
                 return (
                     stat.descstr.replace("%d%", "%d")
                     .replace("%+d%%", "+%d%")
@@ -293,6 +294,7 @@ class Property:
                     + " "
                     + stat.descstr2
                 )
+                #return self.get_property_value_string(stat) + " " + stat.descstr + stat.descstr2
             case "23":
                 # %0%% Reanimate as: %1
                 monster = self.utils.get_monster_from_id(self.param)
