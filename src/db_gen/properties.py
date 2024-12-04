@@ -99,6 +99,9 @@ class Property:
             stat.stat_string = "Adds " + self.get_damage_value_string(self.min, self.max) + " fire damage"
             self.stats.append(stat)
         elif code == "dmg-ltng":
+            # Technically we should also do this when min lightning damage and max lightning damage stats are on an item (see soj vs highlords in LOD)
+            # But I can't be bothered. Technically we should also do this for the other damage types as well.
+            # We could(should?) also just set up this stat properly with the right descstr and let it run through the normal generation
             self.stats = []
             stat = Stat("", "", "", "1", self)
             stat.priority = 1000
@@ -345,14 +348,7 @@ class Property:
                     self.get_property_value_string(stat),
                 ).replace("%1", monster)
             case "24":
-                return (
-                    "Level "
-                    + self.max
-                    + " "
-                    + self.get_skill_name_from_skill_id(self.param)
-                    + " "
-                    + stat.descstr.replace("%d", self.min)
-                )
+                return "Level "+ self.max + " " + self.get_skill_name_from_skill_id(self.param) + " (" + self.min + "/" + self.min + " Charges)"
             case "27":
                 if stat.func == "12":
                     _class = self.get_class_name_from_skill_id(self.min)
