@@ -126,26 +126,26 @@ class UniquesGenerator:
         unique_items = []
         for row in self.tables.unique_items_table:
             # @TODO If item is enabled... for some reason we have to use rarity?? Maybe this is only an ES thing? I feel like this should be removed...
-            if row["rarity"].isdigit() and int(row["rarity"]) > 0 and row["enabled"] == "1" and row["code"] != "":
-                props = [
-                    properties.Property(
-                        self.utils,
-                        row["prop" + str(j + 1)],
-                        row["par" + str(j + 1)],
-                        row["min" + str(j + 1)],
-                        row["max" + str(j + 1)],
-                    )
-                    for j in range(12)
-                    if row["prop" + str(j + 1)] != ""
-                ]
-                unique_items.append(
-                    UniqueItem(
-                        self.utils,
-                        row["index"],
-                        row["lvl"],
-                        row["lvl req"],
-                        props,
-                        row["code"],
-                    ),
+            #if row["rarity"].isdigit() and int(row["rarity"]) > 0 and row["enabled"] == "1" and row["code"] != "":
+            props = [
+                properties.Property(
+                    self.utils,
+                    row["prop" + str(j + 1)],
+                    row["par" + str(j + 1)],
+                    row["min" + str(j + 1)],
+                    row["max" + str(j + 1)],
                 )
+                for j in range(12)
+                if row["prop" + str(j + 1)] != ""
+            ]
+            unique_items.append(
+                UniqueItem(
+                    self.utils,
+                    row["index"],
+                    row["lvl"],
+                    row["lvl req"],
+                    props,
+                    row["code"],
+                ),
+            )
         return unique_items

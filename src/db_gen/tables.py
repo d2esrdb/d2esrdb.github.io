@@ -152,15 +152,10 @@ class Node:
 
 if __name__ == "__main__":
     myt = Tables(Path("../../data/"), "Eastern_Sun_Resurrected")
-    
-    print("isc")
-    myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_charged_skill")
-    
-    print("")
-    print("properties")
-    myt.print_row_with_cell_equal_to("Properties.txt", "code", "charged")
-
-
-    print("")
-    print("properties")
+    #myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_charged_skill")
+    #myt.print_row_with_cell_equal_to("Properties.txt", "code", "charged")
     myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Spikewall")
+    print("")
+    myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Hellfire Torch")
+    print("")
+    myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Celestial Unicorn")
