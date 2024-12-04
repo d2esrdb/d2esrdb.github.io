@@ -70,6 +70,14 @@ class Property:
             stat.priority = 1000
             stat.stat_string = "Ethereal (Cannot be Repaired)"
             self.stats.append(stat)
+        elif code == "dmg-pois":
+            self.min = str(int(int(self.min)*int(param)/256))
+            self.max = str(int(int(self.max)*int(param)/256))
+            self.stats = []
+            stat = Stat("", "", "", "1", self)
+            stat.priority = 1000
+            stat.stat_string = "Adds " + self.get_property_value_string(stat) + " poison damage over " + str(int(int(param)/25)) + " seconds"
+            self.stats.append(stat)
 
         for stat in self.stats:
             if isc := self.utils.tables.item_stat_cost_dict.get(stat.stat.lower(), None):

@@ -152,8 +152,9 @@ class Node:
 
 if __name__ == "__main__":
     myt = Tables(Path("../../data/"), "Eastern_Sun_Resurrected")
-    myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "passive_pois_pierce")
-    myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "passive_cold_pierce")
-#    myt.print_row_with_cell_equal_to("Properties.txt", "code", "pierce-pois")
-#    myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Holy Deviant")
-    #myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Vlad Tepe's Sustenance")
+    print("isc")
+    myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "poisonlength")
+    print("")
+    print("properties")
+    myt.print_row_with_cell_equal_to("Properties.txt", "code", "dmg-pois")
+#    myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Bohemian Stone")
