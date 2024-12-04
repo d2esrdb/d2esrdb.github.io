@@ -231,4 +231,4 @@ def get_string_dict(db_dir: Path, db_code: str, string_tables: list[str]) -> dic
 if __name__ == "__main__":
     ts = get_string_dict(Path("../../data/"), "Eastern_Sun_Resurrected", ["json"])
 #    print(ts["Moditemenrescoldsk"])
-    print(ts["ModStre10d"])
+    print(ts["ModStr3a"])

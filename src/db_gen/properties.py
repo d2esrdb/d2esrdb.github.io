@@ -302,6 +302,8 @@ class Property:
                     .replace("%d", str(int(100 / int(self.param))), 1)
                 )
             case "13":
+                if self.param == "":
+                    return "+" + stat.val + " to Random Class Skill Levels"
                 return self.get_descstr(
                     self.get_allskills_descstr_from_class_number(self.param),
                 ).replace("%+d", "+" + self.get_property_value_string(stat))
