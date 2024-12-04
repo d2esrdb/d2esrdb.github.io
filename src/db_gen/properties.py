@@ -71,13 +71,32 @@ class Property:
             stat.stat_string = "Ethereal (Cannot be Repaired)"
             self.stats.append(stat)
         elif code == "dmg-pois":
-            self.min = str(int(int(self.min)*int(param)/256))
-            self.max = str(int(int(self.max)*int(param)/256))
+            self.min = str(int(int(self.min)*int(self.param)/256))
+            self.max = str(int(int(self.max)*int(self.param)/256))
             self.stats = []
             stat = Stat("", "", "", "1", self)
             stat.priority = 1000
-            stat.stat_string = "Adds " + self.get_property_value_string(stat) + " poison damage over " + str(int(int(param)/25)) + " seconds"
+            if self.min == self.max or self.min == "0" or self.max == "0":
+                stat.stat_string = "Adds " + self.strmax(self.min, self.max) + " poison damage over " + str(int(int(self.param)/25)) + " seconds"
+            else:
+                stat.stat_string = "Adds " + self.min + "-" + self.max + " poison damage over " + str(int(int(self.param)/25)) + " seconds"
             self.stats.append(stat)
+        elif code == "dmg-cold22":
+            # No duration so just cold min and coldmax
+            if self.param == "":
+                self.stats = []
+                stat = Stat("", "", "", "1", self)
+                stat.priority = 1000
+                stat.stat_string = "Adds " + self.get_property_value_string(stat) + " cold damage"
+                self.stats.append(stat)
+            else:
+                self.min = str(int(int(self.min)*int(self.param)/256))
+                self.max = str(int(int(self.max)*int(self.param)/256))
+                self.stats = []
+                stat = Stat("", "", "", "1", self)
+                stat.priority = 1000
+                stat.stat_string = "Adds " + self.get_property_value_string(stat) + " cold damage over " + str(int(self.param)/25) + " seconds"
+                self.stats.append(stat)
 
         for stat in self.stats:
             if isc := self.utils.tables.item_stat_cost_dict.get(stat.stat.lower(), None):
