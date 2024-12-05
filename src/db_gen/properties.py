@@ -71,8 +71,8 @@ class Property:
             stat.stat_string = "Ethereal (Cannot be Repaired)"
             self.stats.append(stat)
         elif code == "dmg-pois":
-            self.min = str(int(int(self.min)*int(self.param)/256))
-            self.max = str(int(int(self.max)*int(self.param)/256))
+            self.min = str(int(round(int(self.min)*int(self.param)/256)))
+            self.max = str(int(round(int(self.max)*int(self.param)/256)))
             self.stats = []
             stat = Stat("", "", "", "1", self)
             stat.priority = 1000
