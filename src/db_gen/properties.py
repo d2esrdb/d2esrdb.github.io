@@ -90,7 +90,7 @@ class Property:
                 self.stats = []
                 stat = Stat("", "", "", "1", self)
                 stat.priority = 1000
-                stat.stat_string = "Adds " + self.get_damage_value_string(self.min, self.max) + " cold damage over " + str(int(self.param)/25).strip(".0") + " seconds"
+                stat.stat_string = "Adds " + self.get_damage_value_string(self.min, self.max) + " cold damage over " + str(int(self.param)/25).replace(".0", "") + " seconds"
                 self.stats.append(stat)
         elif code == "dmg-fire":
             self.stats = []
