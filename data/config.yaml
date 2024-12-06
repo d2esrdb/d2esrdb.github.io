@@ -1,6 +1,6 @@
 - name: Eastern Sun Resurrected
   shortname: Eastern_Sun_Resurrected
-  version: "1.6"
+  version: "2.31"
   tablestring_files:
     - json
   gemapplytype_names:
@@ -8,12 +8,18 @@
     - Helms / Boots
     - Armor / Shields / Belts
   extra_pages:
-    - name: Recipes
-      file: recipes.htm
+    - name: Changelog
+      file: changelog.htm
+      position: -1
+    - name: Corruption
+      file: corruptions.htm
       position: 1
+    - name: Recipes
+      file: Eastern Sun Resurrected Cube Recipes.html
+      position: 2
     - name: Maps
       file: maps.htm
-      position: 2
+      position: 3
 - name: Eastern Sun Rises
   shortname: Eastern_Sun_Rises
   version: 5.3A5
