@@ -247,7 +247,6 @@
             const ingredientCheckboxes = document.querySelectorAll('.ingredient');
             const recipeRows = document.querySelectorAll('.recipeRow');
 
-            console.log('Recipe Rows:', recipeRows); // Debugging: Check if rows are found
 
             // Get selected ingredients
             const selectedIngredients = [];
@@ -257,7 +256,6 @@
                 }
             });
 
-            console.log('Selected Ingredients:', selectedIngredients); // Debugging
 
             // If no ingredients are selected, show all recipes
             if (selectedIngredients.length === 0) {
@@ -269,12 +267,10 @@
 
             // Loop through all the rows and check if all ingredients match
             recipeRows.forEach(row => {
-                console.log('Processing row:', row); // Debugging
 
                 // Extract ingredients from the text content of the <font> tag
                 const fontTag = row.querySelector('.ingredients font');
                 if (!fontTag) {
-                    console.warn('No font tag found in row:', row); // Debugging
                     row.style.display = 'none'; // Hide the row
                     return;
                 }
@@ -284,7 +280,6 @@
                     .map(ingredient => ingredient.replace(/<\/?[^>]+(>|$)/g, '').trim()) // Strip HTML tags and trim
                     .filter(ingredient => ingredient !== ''); // Remove empty strings
 
-                console.log('Row Ingredients:', rowIngredients); // Debugging
 
                 // Hide the row if there are no ingredients
                 if (rowIngredients.length === 0) {
