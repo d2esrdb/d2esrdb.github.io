@@ -1,3 +1,27 @@
+- name: Eastern Sun Rises
+  shortname: Eastern_Sun_Rises
+  version: 5.3A5
+  tablestring_files:
+    - string.tbl
+    - expansionstring.tbl
+    - patchstring.tbl
+    - ES AlphA.tbl
+  gemapplytype_names:
+    - Weapons / Gloves
+    - Helms / Boots
+    - Armor / Shields / Belts
+  extra_pages:
+    - name: Top
+      file: top.htm
+      position: -1
+    - name: Recipes
+      file: recipes.htm
+      position: 1
+    - name: Maps
+      file: maps.htm
+      position: 2
+  index:
+    file: top.htm
 - name: Diablo II Lord of Destruction
   shortname: Lord_Of_Destruction
   version: 1.13c
@@ -34,30 +58,6 @@
     - name: Maps
       file: maps.htm
       position: 3
-- name: Eastern Sun Rises
-  shortname: Eastern_Sun_Rises
-  version: 5.3A5
-  tablestring_files:
-    - string.tbl
-    - expansionstring.tbl
-    - patchstring.tbl
-    - ES AlphA.tbl
-  gemapplytype_names:
-    - Weapons / Gloves
-    - Helms / Boots
-    - Armor / Shields / Belts
-  extra_pages:
-    - name: Top
-      file: top.htm
-      position: -1
-    - name: Recipes
-      file: recipes.htm
-      position: 1
-    - name: Maps
-      file: maps.htm
-      position: 2
-  index:
-    file: top.htm
 - name: Eastern Sun Eclipse
   shortname: Eastern_Sun_Eclipse
   version: "1.0"

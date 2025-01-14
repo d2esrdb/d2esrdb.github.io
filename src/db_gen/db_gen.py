@@ -1,6 +1,7 @@
 import shutil
 import sys
 import typing as t
+import re
 from pathlib import Path
 
 import click
@@ -156,12 +157,18 @@ class DatabaseGenerator:
         )
         self.generate(affix_rendered, "suffixes.htm")
 
+    def remove_html_tags(self, text):
+    # Use a regular expression to remove all HTML tags
+        clean_text = re.sub(r'<[^>]*>', '', text)
+        return clean_text
+
     def get_all_socketables(self):
         socketables = []
         for socketable in self.tables.socketables_table:
             if socketable["code"] == "":
                 continue
-            socketables.append(self.utils.get_item_name_from_code(socketable["code"]))
+            socketables.append([self.utils.get_item_name_from_code(socketable["code"]),
+                                self.remove_html_tags(self.utils.get_item_name_from_code(socketable["code"]))])
         return socketables
 
     def generate_runewords(self) -> None:
