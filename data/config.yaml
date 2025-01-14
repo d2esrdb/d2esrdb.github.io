@@ -1,3 +1,17 @@
+- name: Diablo II Lord of Destruction
+  shortname: Lord_Of_Destruction
+  version: 1.13c
+  tablestring_files:
+    - string.tbl
+    - expansionstring.tbl
+    - patchstring.tbl
+  gemapplytype_names:
+    - Weapon
+    - Helm
+    - Shield
+  extra_pages: []
+  index:
+    name: Lord Of Destruction
 - name: Eastern Sun Resurrected
   shortname: Eastern_Sun_Resurrected
   version: "2.31"
@@ -72,17 +86,3 @@
     - file: styles.css
   index:
     file: newstuff.htm
-- name: Diablo II Lord of Destruction
-  shortname: Lord_Of_Destruction
-  version: 1.13c
-  tablestring_files:
-    - string.tbl
-    - expansionstring.tbl
-    - patchstring.tbl
-  gemapplytype_names:
-    - Weapon
-    - Helm
-    - Shield
-  extra_pages: []
-  index:
-    name: Lord Of Destruction

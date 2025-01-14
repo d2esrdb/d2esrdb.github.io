@@ -1,22 +1,119 @@
-<%page args="runewords, gemapplytype_names"/>\
+<%page args="runewords, gemapplytype_names, runes"/>\
+
+<form id="ingredientsForm">
+% for rune in runes:
+    <label><input type="checkbox" value="${rune}" class="ingredient">${rune}</label>
+% endfor
+</form>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Function to check the ingredients
+        function checkIngredients() {
+            // Query the DOM for checkboxes and rows each time the function is called
+            const ingredientCheckboxes = document.querySelectorAll('.ingredient');
+            const recipeRows = document.querySelectorAll('.recipeRow');
+
+
+            // Get selected ingredients
+            const selectedIngredients = [];
+            ingredientCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedIngredients.push(checkbox.value);
+                }
+            });
+
+
+            // If no ingredients are selected, show all recipes
+            if (selectedIngredients.length === 0) {
+                recipeRows.forEach(row => {
+                    row.style.display = ''; // Show all rows
+                });
+                return; // Exit the function early since all recipes should be shown
+            }
+
+            // Loop through all the rows and check if all ingredients match
+            recipeRows.forEach(row => {
+
+                // Extract ingredients from the text content of the <font> tag
+                const fontTag = row.querySelector('.ingredients font');
+                if (!fontTag) {
+                    row.style.display = 'none'; // Hide the row
+                    return;
+                }
+
+                const rowIngredients = fontTag.innerHTML
+                    .split(/<br\s*\/?>/) // Split by <br> tags
+                    .map(ingredient => ingredient.replace(/<\/?[^>]+(>|$)/g, '').trim()) // Strip HTML tags and trim
+                    .filter(ingredient => ingredient !== ''); // Remove empty strings
+
+
+                // Hide the row if there are no ingredients
+                if (rowIngredients.length === 0) {
+                    row.style.display = 'none';
+                    return;
+                }
+
+                // Check if all ingredients in the row are selected
+                const isMatch = rowIngredients.every(ingredient => selectedIngredients.includes(ingredient));
+
+                if (isMatch) {
+                    row.style.display = ''; // Show the row
+                } else {
+                    row.style.display = 'none'; // Hide the row
+                }
+            });
+        }
+
+        // Event listener to trigger the check when a checkbox is clicked
+        document.addEventListener('change', (event) => {
+            if (event.target.classList.contains('ingredient')) {
+                checkIngredients();
+            }
+        });
+
+        // Call the function to initialize the visibility of rows
+        checkIngredients();
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
 <table cellpadding="5" border="0">
-<tbody>
+<thead>
 <tr>
-<td width="125" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
-Rune Word</font></td>
-<td width="205" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
-Allowed Items</font></td>
-<td width="375" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
-${gemapplytype_names[0]}</font></td>
-<td width="375" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
-${gemapplytype_names[1]}</font></td>
-<td width="375" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
-${gemapplytype_names[2]}</font></td>
+<th width="125" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
+Rune Word</font></th>
+<th width="125" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
+Runes</font></th>
+<th width="205" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
+Allowed Items</font></th>
+<th width="375" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
+${gemapplytype_names[0]}</font></th>
+<th width="375" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
+${gemapplytype_names[1]}</font></th>
+<th width="375" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
+${gemapplytype_names[2]}</font></th>
 </tr>
 
+</thead>
+<tbody>
+
 % for runeword in runewords:
-<tr>
-<td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="#908858"><b>${runeword.name}</b></font><br><br>${runeword.rune_string()}<br>(${runeword.num_sockets} Socket)<br><br></font></td>
+<tr class="recipeRow">
+<td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="#908858"><b>${runeword.name}</b></font><br><br>(${runeword.num_sockets} Socket)<br><br></font></td>
+<td class="ingredients bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica" color="#908858">${runeword.rune_string()}</font></td>
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica">${runeword.bases_string()}</font></td>
 
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">

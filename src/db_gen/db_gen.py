@@ -156,6 +156,14 @@ class DatabaseGenerator:
         )
         self.generate(affix_rendered, "suffixes.htm")
 
+    def get_all_socketables(self):
+        socketables = []
+        for socketable in self.tables.socketables_table:
+            if socketable["code"] == "":
+                continue
+            socketables.append(self.utils.get_item_name_from_code(socketable["code"]))
+        return socketables
+
     def generate_runewords(self) -> None:
         runewords = runeword_generator.RunewordGenerator(
             self.tables,
@@ -164,7 +172,7 @@ class DatabaseGenerator:
         ).generate_runewords()
         filename = "runewords.htm"
         template = self.mylookup.get_template(filename)
-        rendered = template.render(runewords, self.gemapplytype_names)
+        rendered = template.render(runewords, self.gemapplytype_names, self.get_all_socketables())
         self.generate(rendered, filename)
 
     def generate_socketables(self) -> None:
