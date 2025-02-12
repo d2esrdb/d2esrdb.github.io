@@ -281,6 +281,7 @@ def main(db_dir: str, config: str, out_dir: str) -> None:
     with (out_path / "index.htm").open("w") as index:
         index.write(str(LOOKUP.get_template("index.htm").render(indexes=index_links)))
 
+    shutil.copyfile("src/db_gen/templates/ads.txt", "output/ads.txt")
 
 if __name__ == "__main__":
     main()
