@@ -187,7 +187,7 @@ uberminion	184																												1		1		1	1																												i
 cooldown	185																																																																								0
 sharedstash	186																																																																								0
 hidedead	187																											1	1			1																																									0
-paralyze	188						1	1																																																	100	105	255	255	255												0
+paralyze	188																																																								100	105	255	255	255												0
 desecrated	189																												1	1																																											0
 eagleeye	190	2																																									quickness							attackrate																							0
 elemmastery	191																																																																								0
@@ -197,7 +197,7 @@ timestop	194																																																								106	74	255	2
 arrowofconfession	195													1																																				item_restinpeace																							0
 divineaura	196																																										aura_of_divinity																			paladin_aura_sanctuary											0
 sacredpiercer	197													1																																				item_pierce																							0
-elemcry	198							1					1	1																													aura_elemcry							coldresist												barbarian_battlecry_state											0
+elemcry	198						1	1					1	1																													aura_elemcry							coldresist												barbarian_battlecry_state											0
 finditem	199																																																	item_magicbonus																							0
 strengthancients	200																																																																								0
 cowballoon	201				1						1																		1	1	1		1						1																								1	391									0
@@ -221,19 +221,19 @@ unicha9	218																																																																					
 callofthewild	219					1								1																													callofthewild							skill_armor_percent																							0
 lifetapgolem	220						1																																				cursereversevampire					curse_hit														necromancer_reversevampire											0
 undeadfrenzy	221					1																																					undeadfrenzy																														0
-placeholder4	222					1																																					holyfreeze																			impact_bluemotize_1											0
-placeholder5	223					1																																					holyfreeze																			impact_bluemotize_1											0
-placeholder6	224					1																																					holyfreeze																			impact_bluemotize_1											0
-placeholder7	225					1																																					holyfreeze																			impact_bluemotize_1											0
-placeholder8	226					1																																					holyfreeze																			impact_bluemotize_1											0
+generalmythicalweaponstate	222																																																																								0
+orange	223																																																								100	101	255	255	255	paladin_aura_salvation											0
+hiddenstate	224																																																																								0
+korliclight	225																																										korliclight																			paladin_aura_salvation											0
+bluecolor	226																																																								101	108	255	255	255												0
 elementalform	227	3			1					1	1																																								14											druid_morph	druid_morph	1	911								0
 penaltydefensestate	228																																																																								0
 progressive_physical	229																																				1										progressive_physical_1			progressive_physical	1	1																					0
 progressive_execute	230																																				1										progressive_execute_1			progressive_execute	1	1																					0
 damagebonus	231																																																																								0
 bonusdefensestate	232																																																																								0
-bonusdamagestate	233																																																																								0
-gold	234																												1	1																											85	102	255	255	255												0
+bonusdamagestate	233																																										bloodlust_state	bloodlust_state						skill_frenzy																							0
+gold	234																												1	1																											85	103	255	255	255												0
 copper	235																												1	1																											85	101	215	215	215												0
 cancelcres	236					1																																					cancelcres																			paladin_aura_purification											0
 poverty	237					1																																					poverty																			paladin_aura_sanctuary											0
@@ -249,8 +249,22 @@ markwolf	246	5										1																											1				impregnated												
 dopplezonnew	247																												1	1			1															dopllezon_appear																									0
 vengeance	248																																															vengeance_hit														paladin_sacrifice											0
 elementalfury	249	6																																									elementalfury_fire	elementalfury_cold	elementalfury_ltng																												0
-coldenchant	250													1																																		frozenarmor		skill_cold_enchant					weap	cblu																	0
+coldenchant	250											1	1																																			frozenarmor		skill_cold_enchant					weap	cblu																	0
 athuluapower	251																																																																								0
 athuluawisdom	252																																																																								0
 poisonmastery	253																																																																								0
 windmastery	254																																																																								0
+teal	255																																																								90	110	255	255	255												0
+generalmythicalarmorstate	256																																																																								0
+imperiusundyingwrath	257																																										lightning														50	101	255	255	255	paladin_handofgod_cast											0
+headhunterphysicaldamage	258																																										undeadfrenzy																			barbarian_shout_1											0
+headhunterstats	259																																										callofthewild							skill_armor_percent												paladin_aura_sanctuary											0
+headhunterelementaldamage	260																																										elementalfury_fire	elementalfury_cold	elementalfury_ltng																	paladin_aura_purification											0
+headhunterresistances	261																																										aura_resistall_front	aura_resistall_back				cast_resistall		lightresist												paladin_aura_salvation											0
+headhunterspeed	262																																										staminafront	staminaback						maxstamina												paladin_aura_stamina											0
+headhunterskills	263																																										aura_of_divinity																			paladin_aura_meditation											0
+headhunterhealth	264																																										battleorders																			barbarian_battleorders_1											0
+white	265																																																								90	111	255	255	255												0
+lichkingessence	266																																										lich_king_essence_front																			paladin_aura_purification											0
+empoweredenchant	267											1																															thunderstormfront					enchant		skill_enchant																							0
+eternalhourglass	268																																										baal_on_throne																			paladin_redeemed_soul											0

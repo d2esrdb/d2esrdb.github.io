@@ -540,48 +540,48 @@ Runeword538	Ruin	1				tors										gzk	gzk	gzk	gzk	gzk	gzk	gethit-skill	Twister
 Runeword539	Ruin	1				tors										gpk	gpk	gpk	gpk	gpk	gpk	gethit-skill	Twister	22	25																									0
 Runeword540	Ruin	1				tors										gbk	gbk	gbk	gbk	gbk	gbk	gethit-skill	Twister	25	30																									0
 Runeword541	Ruin	1				weap	glov	misl								gck						hit-skill	Static Field	1	5																									0
-Runeword542	Ruin	1				weap	glov	misl								gfk						hit-skill	Static Field	2	8																									0
-Runeword543	Ruin	1				weap	glov	misl								gsk						hit-skill	Static Field	3	11																									0
-Runeword544	Ruin	1				weap	glov	misl								gzk						hit-skill	Static Field	4	15																									0
-Runeword545	Ruin	1				weap	glov	misl								gpk						hit-skill	Static Field	5	20																									0
-Runeword546	Ruin	1				weap	glov	misl								gbk						hit-skill	Static Field	6	25																									0
-Runeword547	Ruin	1				weap	glov									gck	gck					hit-skill	Static Field	2	6																									0
-Runeword548	Ruin	1				weap	glov									gfk	gfk					hit-skill	Static Field	3	9																									0
-Runeword549	Ruin	1				weap	glov									gsk	gsk					hit-skill	Static Field	4	12																									0
-Runeword550	Ruin	1				weap	glov									gzk	gzk					hit-skill	Static Field	5	16																									0
-Runeword551	Ruin	1				weap	glov									gpk	gpk					hit-skill	Static Field	6	21																									0
-Runeword552	Ruin	1				weap	glov									gbk	gbk					hit-skill	Static Field	7	26																									0
-Runeword553	Ruin	1				weap										gck	gck	gck				hit-skill	Static Field	3	7																									0
-Runeword554	Ruin	1				weap										gfk	gfk	gfk				hit-skill	Static Field	4	10																									0
-Runeword555	Ruin	1				weap										gsk	gsk	gsk				hit-skill	Static Field	5	13																									0
-Runeword556	Ruin	1				weap										gzk	gzk	gzk				hit-skill	Static Field	6	17																									0
-Runeword557	Ruin	1				weap										gpk	gpk	gpk				hit-skill	Static Field	7	22																									0
-Runeword558	Ruin	1				weap										gbk	gbk	gbk				hit-skill	Static Field	8	27																									0
-Runeword559	Ruin	1				weap										gck	gck	gck	gck			hit-skill	Static Field	4	8																									0
-Runeword560	Ruin	1				weap										gfk	gfk	gfk	gfk			hit-skill	Static Field	5	11																									0
-Runeword561	Ruin	1				weap										gsk	gsk	gsk	gsk			hit-skill	Static Field	6	14																									0
-Runeword562	Ruin	1				weap										gzk	gzk	gzk	gzk			hit-skill	Static Field	7	18																									0
-Runeword563	Ruin	1				weap										gpk	gpk	gpk	gpk			hit-skill	Static Field	8	23																									0
-Runeword564	Ruin	1				weap										gbk	gbk	gbk	gbk			hit-skill	Static Field	9	28																									0
-Runeword565	Ruin	1				weap										gck	gck	gck	gck	gck		hit-skill	Static Field	5	9																									0
-Runeword566	Ruin	1				weap										gfk	gfk	gfk	gfk	gfk		hit-skill	Static Field	6	12																									0
-Runeword567	Ruin	1				weap										gsk	gsk	gsk	gsk	gsk		hit-skill	Static Field	7	15																									0
-Runeword568	Ruin	1				weap										gzk	gzk	gzk	gzk	gzk		hit-skill	Static Field	8	19																									0
-Runeword569	Ruin	1				weap										gpk	gpk	gpk	gpk	gpk		hit-skill	Static Field	9	24																									0
-Runeword570	Ruin	1				weap										gbk	gbk	gbk	gbk	gbk		hit-skill	Static Field	10	29																									0
-Runeword571	Ruin	1				weap										gck	gck	gck	gck	gck	gck	hit-skill	Static Field	6	10																									0
-Runeword572	Ruin	1				weap										gfk	gfk	gfk	gfk	gfk	gfk	hit-skill	Static Field	7	13																									0
-Runeword573	Ruin	1				weap										gsk	gsk	gsk	gsk	gsk	gsk	hit-skill	Static Field	8	16																									0
-Runeword574	Ruin	1				weap										gzk	gzk	gzk	gzk	gzk	gzk	hit-skill	Static Field	9	20																									0
-Runeword575	Ruin	1				weap										gpk	gpk	gpk	gpk	gpk	gpk	hit-skill	Static Field	10	25																									0
-Runeword576	Ruin	1				weap										gbk	gbk	gbk	gbk	gbk	gbk	hit-skill	Static Field	11	30																									0
+Runeword542	Ruin	1				weap	glov	misl								gfk						hit-skill	Static Field	1	8																									0
+Runeword543	Ruin	1				weap	glov	misl								gsk						hit-skill	Static Field	1	11																									0
+Runeword544	Ruin	1				weap	glov	misl								gzk						hit-skill	Static Field	1	15																									0
+Runeword545	Ruin	1				weap	glov	misl								gpk						hit-skill	Static Field	1	20																									0
+Runeword546	Ruin	1				weap	glov	misl								gbk						hit-skill	Static Field	1	25																									0
+Runeword547	Ruin	1				weap	glov									gck	gck					hit-skill	Static Field	1	6																									0
+Runeword548	Ruin	1				weap	glov									gfk	gfk					hit-skill	Static Field	1	9																									0
+Runeword549	Ruin	1				weap	glov									gsk	gsk					hit-skill	Static Field	1	12																									0
+Runeword550	Ruin	1				weap	glov									gzk	gzk					hit-skill	Static Field	1	16																									0
+Runeword551	Ruin	1				weap	glov									gpk	gpk					hit-skill	Static Field	1	21																									0
+Runeword552	Ruin	1				weap	glov									gbk	gbk					hit-skill	Static Field	1	26																									0
+Runeword553	Ruin	1				weap										gck	gck	gck				hit-skill	Static Field	1	7																									0
+Runeword554	Ruin	1				weap										gfk	gfk	gfk				hit-skill	Static Field	1	10																									0
+Runeword555	Ruin	1				weap										gsk	gsk	gsk				hit-skill	Static Field	1	13																									0
+Runeword556	Ruin	1				weap										gzk	gzk	gzk				hit-skill	Static Field	1	17																									0
+Runeword557	Ruin	1				weap										gpk	gpk	gpk				hit-skill	Static Field	1	22																									0
+Runeword558	Ruin	1				weap										gbk	gbk	gbk				hit-skill	Static Field	1	27																									0
+Runeword559	Ruin	1				weap										gck	gck	gck	gck			hit-skill	Static Field	1	8																									0
+Runeword560	Ruin	1				weap										gfk	gfk	gfk	gfk			hit-skill	Static Field	1	11																									0
+Runeword561	Ruin	1				weap										gsk	gsk	gsk	gsk			hit-skill	Static Field	1	14																									0
+Runeword562	Ruin	1				weap										gzk	gzk	gzk	gzk			hit-skill	Static Field	1	18																									0
+Runeword563	Ruin	1				weap										gpk	gpk	gpk	gpk			hit-skill	Static Field	1	23																									0
+Runeword564	Ruin	1				weap										gbk	gbk	gbk	gbk			hit-skill	Static Field	1	28																									0
+Runeword565	Ruin	1				weap										gck	gck	gck	gck	gck		hit-skill	Static Field	1	9																									0
+Runeword566	Ruin	1				weap										gfk	gfk	gfk	gfk	gfk		hit-skill	Static Field	1	12																									0
+Runeword567	Ruin	1				weap										gsk	gsk	gsk	gsk	gsk		hit-skill	Static Field	1	15																									0
+Runeword568	Ruin	1				weap										gzk	gzk	gzk	gzk	gzk		hit-skill	Static Field	1	19																									0
+Runeword569	Ruin	1				weap										gpk	gpk	gpk	gpk	gpk		hit-skill	Static Field	1	24																									0
+Runeword570	Ruin	1				weap										gbk	gbk	gbk	gbk	gbk		hit-skill	Static Field	1	29																									0
+Runeword571	Ruin	1				weap										gck	gck	gck	gck	gck	gck	hit-skill	Static Field	1	10																									0
+Runeword572	Ruin	1				weap										gfk	gfk	gfk	gfk	gfk	gfk	hit-skill	Static Field	1	13																									0
+Runeword573	Ruin	1				weap										gsk	gsk	gsk	gsk	gsk	gsk	hit-skill	Static Field	1	16																									0
+Runeword574	Ruin	1				weap										gzk	gzk	gzk	gzk	gzk	gzk	hit-skill	Static Field	1	20																									0
+Runeword575	Ruin	1				weap										gpk	gpk	gpk	gpk	gpk	gpk	hit-skill	Static Field	1	25																									0
+Runeword576	Ruin	1				weap										gbk	gbk	gbk	gbk	gbk	gbk	hit-skill	Static Field	1	30																									0
 Runeword577	Rainbow	1				helm	tors	shld								ggb	grb	gbb	gyb			gethit-skill	Poison Nova	3	12	gethit-skill	Nova	3	12	gethit-skill	Frost Nova	3	12	gethit-skill	Charged Bolt	3	12													0
 Runeword578	Rainbow	1				weap										ggb	grb	gbb	gyb			hit-skill	Poison Nova	3	12	hit-skill	Nova	3	12	hit-skill	Frost Nova	3	12	hit-skill	Charged Bolt	3	12													0
 Runeword579	ArchDimeron	1				helm										gwb	skb	gbk	gbk			oskill	Might	10	10	oskill	Conviction	10	10	charged	Corpse Explosion	40	10	allskills		1	1	str		-12	-12	dex		-12	-12	vit		-12	-12	0
 Runeword580	Boar	1				weap	misl								I	r01						dmg%		50	50	crush		15	15	str		10	10																	0
 Runeword581	Hare	1				weap	misl								U	r02						dmg-max		7	7	deadly		50	50	red-dmg		1	1	move1		15	15													0
 Runeword582	Death	1				weap	misl								Shi	r03						dmg-max		10	30	dmg-pois	75	103	103	light		-1	-1	rip		1	1													0
-Runeword583	Stone	1				armo									I Shi	r01	r03					ac		50	50	res-ltng		20	20	red-dmg		5	5	red-mag		5	5	life		50	50									0
+Runeword583	Stone	1				armo									I Shi	r01	r03					ac		50	50	res-ltng		20	20	red-dmg		5	5	red-mag		5	5	hp		50	50									0
 Runeword584	Cow	1				weap									UShi	r02	r03					dmg-min		10	10	hp		25	25	regen		5	5	dmg-ltng/lvl	32															0
 Runeword585	Luck	1				shld									U N	r02	r05					ac		35	35	mag%		50	50	dex		10	10	block		1	3	balance1		15	15	gold%		50	50					0
 Runeword586	Evolution	1				tors	char								Shi N Ka	r03	r05	r04				addxp		5	5	all-stats		5	10	dmg-fire		50	150	res-fire/lvl	4															0
@@ -639,7 +639,7 @@ Runeword643	Glory	1				shld									E I Ko U	r18	r01	r19	r02			ac		60	60	block		
 Runeword644	Trust	1				weap									Shi N Ra I	r03	r05	r20	r01			dmg%		120	150	lifesteal		6	6	red-dmg%		15	15	swing1		15	15	res-all		20	20	manasteal		6	6	dmg-norm		10	35	0
 Runeword645	Trust	1				tors									Shi N Ra I	r03	r05	r20	r01			ac%		80	110	lifesteal		6	6	red-dmg%		15	15	balance1		15	15	res-all		20	20	manasteal		6	6	dmg-norm		10	35	0
 Runeword646	Storm	1				scep	bedg								A Ra Shi	r12	r20	r03				pierce-ltng		15	15	kill-skill	Lightning Strike	10	25	kill-skill	Judgement	10	25	dmg-ltng		1	500	dmg-ltng/lvl	64			move2		30	30	swing2		30	30	0
-Runeword647	Psychic	1				helm									A Ki Ra	r12	r08	r20				kill-skill	Psychic Hammer	2	30	red-dmg%		15	15	red-mag		25	25	red-dmg		15	15	allskills		2	2	extra-mag2		20	20	cast2		30	30	0
+Runeword647	Psychic	1				helm									A Ki Ra	r12	r08	r20				kill-skill	Psychic Hammer	10	30	red-dmg%		15	15	red-mag		25	25	red-dmg		15	15	allskills		2	2	extra-mag2		20	20	cast2		30	30	0
 Runeword648	Cherry Blossom	1				helm									Sa Ku Ra	r15	r06	r20				ac%		75	100	hp		150	150	mag%		100	100	regen		250	250	regen-mana		150	150	res-all		25	25	allskills		1	1	0
 Runeword649	Conquest	1				shld									Shi Shi O	r03	r03	r21				ac%		150	200	cast2		30	30	block		4	4	block2		20	20	res-all		45	45	red-dmg%		15	15	oskill	Shiver Armor	3	3	0
 Runeword650	Memory	1				mana	orb	char							Ki O Ku	r08	r21	r06				ac%		50	50	sor		2	2	mana%		20	20	red-mag		25	25	cast3		20	20	skill	Energy Shield	3	3	pierce-ltng		15	15	0
@@ -669,7 +669,7 @@ Runeword674	Tradition	1				mele									I I Tsu Ta E	r01	r01	r13	r25	r18		dmg%		
 Runeword675	Bird	1				mele									To Ri	r26	r09					ass		1	1	pierce-fire		15	15	pierce-cold		15	15	pierce-ltng		15	15	dmg%		200	250	trap-limit		-1	-1	swing2		40	40	0
 Runeword676	Wealth	1				tors									To Mi	r26	r10					ac%		100	100	gold%		150	150	mag%		100	100	gold%/lvl	24			mag%/lvl	12			regen		-2	-2					0
 Runeword677	Wealth	1				glov	belt								To Mi	r26	r10					ac%		75	75	gold%		125	125	mag%		75	75	gold%/lvl	16			mag%/lvl	8			regen		-2	-2					0
-Runeword678	Opposing Destiny	1				mace	hamm	club	swor						A Ki To	r12	r08	r26				dmg%		220	260	bar		2	2	dru		2	2	knockback		1	1	kill-skill	Shock Wave	7	25	kill-skill	Bash	7	25	hit-skill	Inner Sight	3	12	0
+Runeword678	Opposing Destiny	1				mace	hamm	club	swor						A Ki To	r12	r08	r26				dmg%		220	260	bar		2	2	dru		2	2	knock		1	1	kill-skill	Shock Wave	7	25	kill-skill	Bash	7	25	hit-skill	Inner Sight	3	12	0
 Runeword679	Jealousy	1				helm									Shi Tsu To	r03	r13	r26				ac%		100	100	lifesteal		6	6	manasteal		6	6	mag%		100	100	res-all		45	45	pierce-fire		15	15	pierce-ltng		15	15	0
 Runeword680	Tiger	1				weap									To Ra	r26	r20					dmg%		200	240	deadly		40	40	swing2		25	25	hit-skill	Tiger Strike	2	25	ass		1	1	red-dmg%		10	10	str		50	50	0
 Runeword681	Achieve	1				shld									Ka Chi To Ru	r04	r14	r26	r24			ac%		150	200	addxp		25	25	block2		50	50	block		5	5	red-dmg		50	50	red-mag		50	50	res-all		50	50	0
@@ -753,7 +753,7 @@ Runeword763	Dark Star	1				tors									Hi Ka Ri No Ke N	r34	r04	r09	r36	r17	r05
 Runeword764	Nature's Kingdom	1				2hsw									Mo No No Ke	r35	r36	r36	r17			skilltab	15	6	6	aura	Salvation	5	5	extra-summ		20	20	gold%		150	150	move2		40	40	passive-summ-life		20	20	skill	Feral Mastery	7	7	0
 Runeword765	Master Key	1				h2h	asnx								Te N Chi	r37	r05	r14				dmg%		175	250	ass		4	4	gold%		100	100	mag%		100	100	swing3		50	50	mag%/lvl	16			dmg/lvl	12			0
 Runeword766	Zenith	1				tors									Te N Chi Yo U	r37	r05	r14	r07	r02		ac%		175	225	allskills		4	4	str		50	50	res-all		45	45	ease		-50	-50	ac/lvl	80			red-dmg%		20	20	0
-Runeword767	Lethal	1				mele									Chi Me I Te Ki	r14	r23	r01	r37	r08		dmg%		230	260	deadly		50	50	crush		50	50	swing1		30	30	dmg/lvl	8			hit-skill	Static Field	10	30	kill-skill	Shock Wave	4	30	0
+Runeword767	Lethal	1				mele									Chi Me I Te Ki	r14	r23	r01	r37	r08		dmg%		230	260	deadly		50	50	crush		50	50	swing1		30	30	dmg/lvl	8			hit-skill	Static Field	1	30	kill-skill	Shock Wave	4	30	0
 Runeword768	Thirst	1				spea	pole								U E Te I Ru	r02	r18	r37	r01	r24		dmg%		260	300	lifesteal		20	20	manasteal		10	10	kill-skill	Spearstorm	10	30	move3		35	35	rep-dur	100			hit-skill	Decrepify	4	25	0
 Runeword769	Feminine	1				staf						orb	mana		Na Te Shi Ko	r29	r37	r03	r19			ac%		100	100	sor		6	6	regen-mana		150	150	hp%		15	15	mana%		40	40	cast3		30	30	skill	Elemental Fury	15	15	0
 Runeword770	Feminine	1				miss	spea								Na Te Shi Ko	r29	r37	r03	r19			ac%		100	100	ama		4	4	dmg%		255	300	hp%		40	40	mana%		15	15	swing3		30	30	hit-skill	Splintering Javelin	2	30	0
@@ -769,7 +769,7 @@ Runeword779	Fury	1				mele									O Ru So N	r21	r24	r39	r05			dmg%		320	380	swi
 Runeword780	War	1				mace	hamm								Se N So U	r31	r05	r39	r02			hit-skill	Confuse	6	50	oskill	Poison Mastery Passive	1	1	oskill	Venom	1	1	dmg-pois	100	10240	12800	pierce-pois		20	20	strpercent		15	15	kill-skill	Bash	5	25	0
 Runeword781	Smoke	1				tors									Ke Mu Ri	r17	r40	r09				ac%		160	190	allskills		2	2	res-all		60	60	balance2		40	40	nofreeze		1	1	oskill	Cloak of Shadows	1	1	move3		40	40	0
 Runeword782	Envy	1				armo									U Ra Ya Mu	r02	r20	r11	r40			ac%		180	220	allskills		2	2	red-dmg%		15	15	res-mag		15	15	rep-dur	100			aura	Defiance	15	15	hp		150	150	0
-Runeword783	Rat	1				weap									Ne	r41						dmg%		260	290	dex/lvl	8			dexpercent		25	25	move1		40	40	oskill	Venom	8	8	pierce-pos		25	25	deadly		50	50	0
+Runeword783	Rat	1				weap									Ne	r41						dmg%		260	290	dex/lvl	8			dexpercent		25	25	move1		40	40	oskill	Venom	8	8	pierce-pois		25	25	deadly		50	50	0
 Runeword784	Hot	1				armo						tors			Ne Tsu	r41	r13					ac%		150	150	abs-fire%		3	3	gethit-skill	Nova	33	50	hp%		15	15	allskills		2	2	pierce-fire		10	10	extra-fire		10	10	0
 Runeword785	Fox	1				tors									Ki Tsu Ne	r08	r13	r41				ac%		240	300	balance3		30	30	vit		75	75	move3		30	30	lifesteal		10	10	manasteal		10	10	aura	Resist Cold	15	15	0
 Runeword786	Bone	1				wand	knif								Ho Ne	r22	r41					skill	Bone Armor	7	7	skill	Skeleton Mastery	7	7	skill	Raise Skeleton	7	7	skill	Bone Wall	7	7	skill	Bone Spirit	7	7	nec		3	3	skill	Summon Skeleton King	7	7	0
@@ -785,7 +785,7 @@ Runeword793	Unknown	1				tors									Mi Chi Su U	r10	r14	r43	r02			allskills		2
 Runeword794	Dodge	1				shld									Ka Wa Su	r04	r27	r43				ac%		170	220	oskill	Dodge	10	10	dex		50	50	block		5	5	allskills		2	2	res-all		40	40	dexpercent		25	25	0
 Runeword795	Admiration	1				weap									Su U Ha I	r43	r02	r28	r01			dmg%		240	280	allskills		1	1	swing3		30	30	aura	Might	15	15	deadly		75	75	lifesteal		6	6	manasteal		6	6	0
 Runeword796	Jindujun	1				tors									Su Ha Ra Shi I	r43	r28	r20	r03	r01		allskills		3	3	ac		1000	1500	aura	Salvation	5	5	res-pois-len		100	100	red-dmg		75	75	red-mag		75	75	hp/lvl	24			0
-Runeword797	Revenge	1				weap									Ho U Fu Ku Su Ru	r22	r02	r32	r06	r43	r24	dmg%		240	280	gethit-skill	Execute	15	35	thorns/lvl	160			hit-skill	Shuriken	1	30	allskills		3	3	swing		50	50	hp/lvl	16			0
+Runeword797	Revenge	1				weap									Ho U Fu Ku Su Ru	r22	r02	r32	r06	r43	r24	dmg%		240	280	gethit-skill	Execute	15	35	thorns/lvl	160			hit-skill	Shuriken	1	30	allskills		3	3	swing2		50	50	hp/lvl	16			0
 Runeword798	Burn	1				mele									Mo Ya Su	r35	r11	r43				dmg-fire		900	1000	kill-skill	Fire Claws	25	35	aura	Conviction	20	20	nofreeze		1	1	fireskill		3	3	kill-skill	Fire Wall	25	50	pierce-fire		20	20	0
 Runeword799	Abandon	1				helm	shld								Su Te Ru	r43	r37	r24				ac%		145	185	allskills		2	2	oskill	Fade	9	9	move3		40	40	block		5	5	oskill	Shade Armor	9	9	curse-res		50	50	0
 Runeword800	Transformation	1				tors									He N Shi N	r44	r05	r03	r05			ac%		190	260	skilltab	16	3	3	oskill	Claw Mastery	1	1	balance3		50	50	allskills		2	2	lifesteal		20	20	dmg/lvl	4			0
@@ -832,7 +832,7 @@ Runeword841	BREATH OF THE DYING	1				weap									VexHelElEldZodEth	r76	r65	r51	
 Runeword842	CALL TO ARMS	1				weap									AmnRalMalIstOhm	r61	r58	r73	r74	r77		swing2		40	40	dmg%		200	240	allskills		1	1	oskill	Battle Command	2	6	oskill	Battle Orders	1	6	oskill	Battle Cry	1	4	regen		12	12	0
 Runeword843	CHAOS	1				h2h									FalOhmUm	r69	r77	r72				heal-kill		15	15	dmg%		240	290			216	471	oskill	Whirlwind	1	1	swing2		35	35	hit-skill	Frozen Orb	3	50	hit-skill	Charged Bolt	10	50	0
 Runeword844	CHAINS OF HONOR	1				tors									DolUmBerIst	r64	r72	r80	r74			res-all		50	50	ac%		70	70	dmg-demon		200	200	dmg-undead		100	100	lifesteal		8	8	allskills		4	4	str		20	20	0
-Runeword845	CRESCENT MOON	1				axe	swor	pole							ShaelUmTir	r63	r72	r53				pierce-ltng		35	35	ignore-ac		1	1	dmg%		180	220	abs-mag		9	11	charged	Summon Spirit Wolf	30	18	hit-skill	Static Field	7	13	hit-skill	Chain Lightning	10	17	0
+Runeword845	CRESCENT MOON	1				axe	swor	pole							ShaelUmTir	r63	r72	r53				pierce-ltng		35	35	ignore-ac		1	1	dmg%		180	220	abs-mag		9	11	charged	Summon Spirit Wolf	30	18	hit-skill	Static Field	2	13	hit-skill	Chain Lightning	10	17	0
 Runeword846	DELIRIUM	1				helm									LemIstIo	r70	r74	r66				hit-skill	Confuse	11	18	charged	Attract	60	17	gethit-skill	Terror	14	13	ac		261	261	gethit-skill	Mind Blast	6	14	gethit-skill	Delerium Change	1	50	allskills		2	2	0
 Runeword847	DOOM	1				axe	pole	hamm							HelOhmUmLoCham	r65	r77	r72	r78	r82		dmg%		280	320	aura	Holy Freeze	12	12	swing2		45	45	pierce-cold		40	60	allskills		2	2	hit-skill	Volcano	2	50					0
 Runeword848	DURESS	1				tors									ShaelUmThul	r63	r72	r60				dmg-cold	50	37	133	dmg%		10	20	ac%		150	200	balance2		20	20	deadly		33	33	crush		15	15	allskills		1	1	0
@@ -886,7 +886,7 @@ Runeword894	PLAGUE	1				weap									ChamFalUm	r82	r69	r72				dmg-demon		260	380
 Runeword895	Dance	1				glov	boot	belt							Ma I	r33	r01					ac%		60	90	gethit-skill	Whirlwind	15	17	move1		20	20	balance1		20	20	red-dmg%		10	10	dexpercent		15	15	res-all		20	20	0
 Runeword896	Hail Fire	1				staf									Hi Sa Me Ho U Ka	r34	r15	r23	r22	r02	r04	fireskill		6	6	coldskill		6	6	cast2		30	30	red-dmg%		15	15	pierce-fire		15	15	pierce-cold		15	15	oskill	Conviction	5	5	0
 Runeword897	Thief	1				helm									Nu Su Tsu To	r45	r43	r13	r26			hit-skill	Quickness	4	30	gold%/lvl	32			mag%/lvl	16			lifesteal		12	12	manasteal		12	12	nofreeze		1	1	slow		30	30	0
-Runeword898	Stone	1				tors	shld								JEW I Shi	jew	r01	r03				ac		50	50	res-ltng		20	20	red-dmg		5	5	red-mag		5	5	life		50	50									0
+Runeword898	Stone	1				tors	shld								JEW I Shi	jew	r01	r03				ac		50	50	res-ltng		20	20	red-dmg		5	5	red-mag		5	5	hp		50	50									0
 Runeword899	Void	1				tors	shld								Ku U JEW	r06	r02					res-cold		15	15	res-ltng		15	15	res-pois-len		50	50	red-dmg%		5	5	mana		50	50									0
 Runeword900	Forefeel	1				tors									JEW Yo Ka N	jew	r07	r04	r05			extra-pois		15	15	mana%		20	20	mana-kill		5	5	cast1		20	20	extra-fire		15	15	extra-ltng		15	15	extra-cold		15	15	0
 Runeword901	Gold	1				tors									JEW Ki N	jew	r08	r05				ac		25	50	gold%		100	100	light-thorns		20	20	abs-ltng		3	3	mag%		50	50	res-ltng		20	20					0
@@ -899,7 +899,7 @@ Runeword907	Memory	1				staf						orb	mana		Ki O Ku	r08	r21	r06				ac%		100	100	
 Runeword908	Rain	1				orb	mana								A Me	r12	r23					kill-skill	Rain of Fire	5	33	allskills		2	2	enr		25	25	cast2		30	30	pierce-fire		15	15	pierce-ltng		15	15	kill-skill	Pole Arm Mastery	5	33	0
 Runeword909	Rain	1				staf						orb	mana		A Me	r12	r23					kill-skill	Rain of Fire	10	33	allskills		3	3	enr		40	40	cast2		40	40	pierce-fire		20	20	pierce-ltng		20	20	kill-skill	Pole Arm Mastery	10	33	0
 Runeword910	Winter	1				staf						orb	mana		Fu Yu	r32	r16					coldskill		5	5	aura	Holy Freeze	15	5	cast2		40	40	abs-cold%		5	5	pierce-cold		20	20	extra-cold		20	20	kill-skill	Frozen Orb	10	35	0
-Runeword912	Psychic	1				char									A Ki Ra	r12	r08	r20				kill-skill	Psychic	2	30	red-dmg%		15	15	red-mag		25	25	red-dmg		15	15	allskills		1	1	extra-mag2		20	20	cast2		30	30	0
+Runeword912	Psychic	1				char									A Ki Ra	r12	r08	r20				kill-skill	Psychic Hammer	10	30	red-dmg%		15	15	red-mag		25	25	red-dmg		15	15	allskills		1	1	extra-mag2		20	20	cast2		30	30	0
 Runeword913	Captive	1				char									Ho Ri Yo	r22	r09	r07				ac%		100	125	move1		20	20	oskill	Raise Skeleton	8	12	oskill	Skeleton Mastery	8	12	oskill	Raise Skeletal Mage	8	12	allskills		1	1	extra-summ		15	15	0
 Runeword914	Wealth	1				char									To Mi	r26	r10					ac%		75	75	gold%		125	125	mag%		75	75	gold%/lvl	16			mag%/lvl	8			regen		-2	-2					0
 Runeword915	Youth	1				char									Wa Ka Sa	r27	r04	r15				hp/lvl	24			allskills		1	1	balance2		20	20	ac		200	200	res-ltng/lvl	4			res-fire/lvl	4			res-cold/lvl	4			0
@@ -907,7 +907,7 @@ Runeword916	Harmony	1				char									Wa Se I	r27	r31	r01				hp%		20	20	balance3
 Runeword917	Daylight	1				char									Hi Ru Ma	r34	r24	r33				ac		150	150	allskills		1	1	pierce-fire		15	15	pierce-ltng		15	15	hit-skill	Nova	2	40	abs-fire%		3	3	abs-ltng%		3	3	0
 Runeword918	Spirit	1				char									Ko Ko Ro	r19	r19	r38				res-all		20	20	allskills		1	1	abs-ltng%		3	3	abs-fire%		3	3	abs-cold%		3	3	oskill	Spirit of Nature	7	7	passive-summ-life		18	18	0
 Runeword919	Abandon	1				char									Su Te Ru	r43	r37	r24				ac		150	150	allskills		1	1	oskill	Fade	5	5	move3		30	30	block		3	3	oskill	Shade Armor	5	5	curse-res		30	30	0
-Runeword920	Stone	1				tors	shld								JEW I Shi	jew	r01	r03				ac		50	50	res-ltng		20	20	red-dmg		5	5	red-mag		5	5	life		50	50									0
+Runeword920	Stone	1				tors	shld								JEW I Shi	jew	r01	r03				ac		50	50	res-ltng		20	20	red-dmg		5	5	red-mag		5	5	hp		50	50									0
 Runeword921	Void	1				tors	shld								JEW Ku U	jew	r06	r02				res-cold		15	15	res-ltng		15	15	res-pois-len		50	50	red-dmg%		5	5													0
 Runeword922	Forefeel	1				tors									JEW Yo Ka N	jew	r07	r04	r05			extra-pois		15	15	mana%		20	20	mana-kill		5	5	cast1		20	20	extra-fire		15	15	extra-ltng		15	15	extra-cold		15	15	0
 Runeword923	Gold	1				tors	shld								JEW Ki N	jew	r08	r05				ac		25	50	gold%		100	100	light-thorns		20	20	abs-ltng		3	3													0
@@ -916,7 +916,7 @@ Runeword925	Moon	1				tors									JEW Tsu Ki	jew	r13	r08				ac		75	75	deadly		2
 Runeword926	Sin	1				tors									JEW Tsu Mi	jew	r13	r10				ac%		125	125	crush		25	25	lifesteal		5	5	res-all		25	25	red-dmg%		8	8									0
 Runeword927	DRAGON	1				shld									SurLoSol	r79	r78	r62				ac		360	360	ac-miss		230	230	str/lvl	3			hit-skill	SHydra	2	50	gethit-skill	Venom	20	18	aura	Holy Fire	15	15	all-stats		3	5	0
 Runeword928	DREAM	1				shld									IoJahPul	r66	r81	r71				ac		150	220	gethit-skill	Confuse	10	15	mana/lvl	5			res-all		5	20	balance3		20	30	aura	Holy Shock	15	15	mag%		12	25	0
-Runeword929	Lynx	1				tors									Ya Ma Ne Ko	r11	r33	r41	r19			hit-skill	Static Field	10	33	swing1		20	20	ac%		150	200	dmg%		200	200	crush		33	33	deadly		33	33	light		-4	-4	0
+Runeword929	Lynx	1				tors									Ya Ma Ne Ko	r11	r33	r41	r19			hit-skill	Static Field	1	33	swing1		20	20	ac%		150	200	dmg%		200	200	crush		33	33	deadly		33	33	light		-4	-4	0
 Runeword930	Pear	1				tors									Hi To Te Na Shi	r34	r26	r37	r29	r03		allskills		2	2	oskill	Summon Resist	1	1	oskill	Skeleton Mastery	3	3	skill	Skeleton Mastery	13	13	oskill	Raise Skeletal Mage	15	15	pierce-res-all		15	15	passive-summ-phys-resist		10	10	0
 Runeword931	Maniac	1				2hsw									Ma Ni A Tsu Ku	r33	r30	r12	r13	r06		dmg-mag		400	500	hit-skill	Poison Mastery	4	33	kill-skill	Hells Gate	10	40	kill-skill	Killer Scythe	7	40	extra-mag2		40	40	res-pois		60	60	res-mag		20	20	0
 Runeword932	Sunny	1				shld									Sa Ni I	r15	r30	r01				oskill	Natural Resistance	1	1	cast1		20	20	block1		50	50	ac%		120	160	regen		200	200	light		10	10	rep-dur	25			0
@@ -935,9 +935,9 @@ Runeword944	Land	1				weap									Ri Ku	r09	r06					dmg%		80	100	hit-skill	Ench
 Runeword945	Hercules	1				mele									Ka I Ri Ki	r04	r01	r09	r08			dmg%		150	150	str		50	50	oskill	Stun	6	6	str/lvl	8			crush		25	25	enr		-10	-10	red-dmg		10	10	0
 Runeword946	Maven	1				mele									Tsu U	r13	r02					dmg/lvl	14			hit-skill	Weaken	4	12	allskills		1	1	enr		10	10	vit		10	10	dmg-mag		35	70	dmg-to-mana		50	50	0
 Runeword947	Lawless	1				wand	scep	staf	mana	orb					Mu Ho U	r40	r22	r02				lifesteal		9	9	manasteal		9	9	oskill	Poison Mastery	3	3	swing3		30	30	dmg%		200	250	cast1		30	30	hit-skill	Decrepify	8	30	0
-Runeword948	Prohibit					weap									JEW x 6	jew	jew	jew	jew	jew	jew	vit-h		-900	-900																									0
-Runeword949	Prohibit					tors									JEW x 6	jew	jew	jew	jew	jew	jew	vit-h		-900	-900																									0
-Runeword950	Prohibit					helm	shld								JEW x 4	jew	jew	jew	jew			vit-h		-900	-900																									0
+Runeword948	Prohibit					weap									JEW x 6	jew	jew	jew	jew	jew	jew	vit-h2		-900	-900																									0
+Runeword949	Prohibit					tors									JEW x 6	jew	jew	jew	jew	jew	jew	vit-h2		-900	-900																									0
+Runeword950	Prohibit					helm	shld								JEW x 4	jew	jew	jew	jew			vit-h2		-900	-900																									0
 Runeword951	Rhino	1				shld									Sa I	r15	r01					allskills		1	1	res-ltng		40	40	thorns/lvl	40			ac%		200	300	balance1		25	25	str		30	30	thorns		500	500	0
 Runeword952	Kick	1				boot									Ke Ri	r17	r09					skilltab	20	1	1	move2		30	30	crush		20	20	dex		10	10	vit		10	10	dexpercent		5	5	vitpercent		5	5	0
 Runeword953	Woodsman	1				shld									Ki Ko Ri	r08	r19	r09				allskills		1	1	oskill	Summon Spirit Wolf	12	12	oskill	Twin Fangs	8	8	regen-mana		50	50	mag%		30	30	gold%		40	40	oskill	Feral Mastery	1	1	0
@@ -947,7 +947,7 @@ Runeword956	Airship	1				miss									Hi Ko U Se N	r34	r19	r02	r31	r05		allskill
 Runeword957	Shank	1				boot									Su Ne	r43	r41					allskills		2	2	hit-skill	Decrepify	6	35	hp/lvl	40			move2		60	60	res-pois-len		75	75	gold%		100	100	rep-dur	100			0
 Runeword958	Navel	1				belt									He So	r44	r39					allskills		2	2	thorns		1500	1500	gethit-skill	Battle Command	10	20	balance2		20	20	block		5	5	ac		100	150	red-dmg%		15	15	0
 Runeword959	Swamp	1				glov									Nu Ma	r45	r33					allskills		2	2	ass		1	1	nec		1	1	swing3		60	60	res-mag		25	25	slow		25	25	all-stats		15	15	0
-Runeword960	Prohibit					char									JEW x 3	jew	jew	jew				vit-h		-900	-900																									0
+Runeword960	Prohibit					char									JEW x 3	jew	jew	jew				vit-h2		-900	-900																									0
 Runeword961	Rhino	1				shld									JEW Sa I	jew	r15	r01				allskills		1	1	res-ltng		40	40	thorns/lvl	40			ac%		200	300	balance1		25	25	str		30	30	thorns		500	500	0
 Runeword962	Master of Fire	1				char									Fire Ma Su	r85	r33	r43				oskill	Fire Mastery	1	3	cast1		20	20	mana/lvl	8			kill-skill	Rain of Fire	4	50	pierce-fire		15	15	dmg-fire		425	525	abs-fire		5	5	0
 Runeword963	Master of Water	1				char									Water Ma Su	r86	r33	r43				oskill	370	1	3	cast1		20	20	mana/lvl	8			kill-skill	Frozen Orb	4	50	pierce-cold		15	15	dmg-cold	50	400	500	abs-cold		5	5	0
@@ -956,8 +956,8 @@ Runeword965	Angel	1				char									Heaven Shi	r96	r03					oskill	Teleport	1	1	c
 Runeword966	Work of God	1				2hsw									God No Mi Wa Sa	r97	r36	r10	r27	r15		aura	Conviction	20	20	ignore-undead-resist		1	1	ignore-demon-resist		1	1	extra-mag2		50	50	dmg%		380	420	hit-skill	Holy Bolt	4	60	item-skill-cooldown		50	50	0
 Runeword967	Gold Scarab	1				tors									Ko Metal Mu Shi	r19	r88	r40	r03			aura	Resist Lightning	20	20	allskills		3	3	gethit-skill	Charged Bolt	100	70	oskill	Find Item	12	16	ac		3000	3000	gold%		300	300	mag%		150	150	0
 Runeword968	Creature	1				helm									Life Ki Mo No	r94	r08	r35	r36			allskills		1	1	oskill	Battle Orders	15	15	extra-summ		40	40	passive-summ-limit		3	3	res-all		25	25	aura	Vigor	5	5	nofreeze		1	1	0
-Runeword969	Shinigami	1				2hsw									Death God	r95	r97					kill-skill	Corpse Explosion	33	45	allskills		3	3	swing1		30	30	dmg/lvl	20			dmg%/lvl	20			indestruct		1	1	ignore-beast-resist		1	1	0
-Runeword970	Shinigami	1				mele									Death God	r95	r97					kill-skill	Corpse Explosion	20	30	allskills		2	2	swing1		30	30	dmg/lvl	20			dmg%/lvl	20			indestruct		1	1	ignore-beast-resist		1	1	0
+Runeword969	Shinigami	1				2hsw									Death God	r95	r97					hit-skill	Corpse Explosion	5	45	allskills		3	3	swing1		30	30	dmg/lvl	20			dmg%/lvl	20			indestruct		1	1	dmg		125	125	0
+Runeword970	Shinigami	1				mele									Death God	r95	r97					hit-skill	Corpse Explosion	3	30	allskills		2	2	swing1		30	30	dmg/lvl	20			dmg%/lvl	20			indestruct		1	1	dmg		75	75	0
 Runeword971	Moonlight	1				miss									Moon Ko U	r84	r19	r02				hit-skill	Magic Arrow	3	40	allskills		2	2	oskill	Strafe	1	1	skill	Strafe	19	19	dmg%/lvl	16			dmg-mag		2500	2500	hit-skill	Poison Mastery	3	45	0
 Runeword972	Sunlight	1				shld									Sun Ko U	r90	r19	r02				hit-skill	Nova	5	60	allskills		2	2	oskill	Inferno Fury	16	20	ac%		170	210	block		10	10	pierce-fire		20	20	regen		1000	1000	0
 Runeword973	Tourbillion	1				2hsw									Tsu Mu Shi Wind	r13	r40	r03	r92			hit-skill	Twister	5	60	twister-limit		100	100	kill-skill	Whirlwind	20	40	extra-wind		50	50	swing1		40	40	dmg%		500	500	red-dmg%		33	33	0

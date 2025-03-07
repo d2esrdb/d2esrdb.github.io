@@ -149,11 +149,24 @@ class Node:
 
     def addchild(self, child: "Node") -> None:
         self.children.append(child)
+    
+
 
 if __name__ == "__main__":
+    import table_strings
+    ts = table_strings.get_string_dict(Path("../../data/"), "Eastern_Sun_Resurrected", ["json"])
     myt = Tables(Path("../../data/"), "Eastern_Sun_Resurrected")
-    myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_addclassskills")
-    print("")
-    myt.print_row_with_cell_equal_to("Properties.txt", "code", "randclassskill")
-    print("")
-    myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Hellfire Torch")
+    #myt.print_row_with_cell_equal_to("ItemStatCost.txt", "Stat", "item_addclassskills")
+    #print("")
+    #myt.print_row_with_cell_equal_to("Properties.txt", "code", "randclassskill")
+    #print("")
+    #myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Hellfire Torch")
+    codes = []
+    for row in myt.weapons_table:
+        if row["type"] == "2hsw" or row["type2"] == "2hsw":
+            codes.append(ts[(row["namestr"])])
+    codes.append("this's my \"test\" item")
+    print(codes)
+
+    #print(str(codes).replace("[","").replace("]","").replace("'",""))
+
