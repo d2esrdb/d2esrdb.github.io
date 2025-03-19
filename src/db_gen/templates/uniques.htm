@@ -56,6 +56,12 @@
 							${item.gamble_item}
 						</b>
 				</font>
+				% if item.enabled == "0":
+				<font face=arial,helvetica size=-1 color=red><br><br>Disabled</font>
+				% endif
+				% if item.rarity == "0":
+				<font face=arial,helvetica size=-1 color=red><br><br>0 Rarity - Drop Disabled</font>
+				% endif
 			</td>
 			<td align=center bgcolor=#${item.bg_color_code}>
 				<font face=arial,helvetica size=-1>

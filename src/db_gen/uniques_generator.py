@@ -8,7 +8,7 @@ from db_gen.utils import Utils
 
 class UniqueItem:
     def __init__(
-        self, utils: Utils, namestr: str, lvl: str, req_lvl: str, properties: list[properties.Property], code: str
+            self, utils: Utils, namestr: str, lvl: str, req_lvl: str, properties: list[properties.Property], code: str, enabled: str, rarity: str
     ) -> None:
         self.utils = utils
         self.name = utils.table_strings.get(namestr, namestr)
@@ -20,7 +20,8 @@ class UniqueItem:
         self.required_level = req_lvl
         self.properties = properties
         self.bg_color_code = self.utils.get_bg_color_from_code(code)
-
+        self.enabled = enabled
+        self.rarity = rarity
 
 class ItemGroup:
     def __init__(self, name: str) -> None:
@@ -146,6 +147,8 @@ class UniquesGenerator:
                     row["lvl req"],
                     props,
                     row["code"],
+                    row["enabled"],
+                    row["rarity"],
                 ),
             )
         return unique_items

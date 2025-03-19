@@ -15,6 +15,7 @@ class Affix:
         stat_string: str,
         item_types: list[str],
         exclude_types: list[str],
+        group: str,
     ) -> None:
         self.name = name
         self.rare = rare
@@ -26,6 +27,7 @@ class Affix:
         self.item_types = item_types
         self.exclude_types = exclude_types
         self.item_types_string = ", ".join(item_types)
+        self.group = group
         if len(exclude_types) != 0:
             self.item_types_string = self.item_types_string + "<br><br>Excluding:<br>" + ", ".join(exclude_types)
 
@@ -68,9 +70,10 @@ class AffixGenerator:
                     self.utils.get_stat_string(props),
                     item_types,
                     exclude_types,
+                    affix["group"]
                 ),
             )
-        return affixes
+        return sorted(affixes, key=lambda x: x.group, reverse=False)
 
     def get_prefixes(self) -> list[Affix]:
         return self.get_affixes(self.tables.prefixes_table)

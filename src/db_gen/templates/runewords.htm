@@ -1,9 +1,16 @@
 <%page args="runewords, gemapplytype_names, runes"/>\
 
 <form id="ingredientsForm">
-% for rune in runes:
-    <label><input type="checkbox" value="${rune[1]}" class="ingredient">${rune[0]}</label>
-% endfor
+  <table>
+    <tr>
+    % for i, rune in enumerate(runes):
+      % if i != 0 and i % 12 == 0:
+      	</tr><tr>
+      % endif
+      <td><label><input type="checkbox" value="${rune[1]}" class="ingredient">${rune[0]}</label></td>
+    % endfor
+    </tr>
+  </table>
 </form>
 
 

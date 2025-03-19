@@ -163,9 +163,8 @@ if __name__ == "__main__":
     #myt.print_row_with_cell_equal_to("UniqueItems.txt", "index", "Hellfire Torch")
     codes = []
     for row in myt.weapons_table:
-        if row["type"] == "2hsw" or row["type2"] == "2hsw":
+        if row["type"] == "thrw" or row["type2"] == "thrw":
             codes.append(ts[(row["namestr"])])
-    codes.append("this's my \"test\" item")
     print(codes)
 
     #print(str(codes).replace("[","").replace("]","").replace("'",""))

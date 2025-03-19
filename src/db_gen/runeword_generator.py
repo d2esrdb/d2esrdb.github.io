@@ -151,17 +151,19 @@ class RunewordGenerator:
                                                     ),
                                                 )
                                             found = True
-                                    if not found:
-                                        rune_properties[k].append(
-                                            properties.Property(
-                                                self.utils,
-                                                socketable[sockettype + "Mod" + str(j + 1) + "Code"],
-                                                socketable[sockettype + "Mod" + str(j + 1) + "Param"],
-                                                socketable[sockettype + "Mod" + str(j + 1) + "Min"],
-                                                socketable[sockettype + "Mod" + str(j + 1) + "Max"],
-                                            ),
-                                        )
+                                    # @TODO this doesn't actually work, and can't work with the way it's written above, because it doesn't affect "param" and we don't know if we want to "double" param or not
+                                    #if not found:
+                                    rune_properties[k].append(
+                                        properties.Property(
+                                            self.utils,
+                                            socketable[sockettype + "Mod" + str(j + 1) + "Code"],
+                                            socketable[sockettype + "Mod" + str(j + 1) + "Param"],
+                                            socketable[sockettype + "Mod" + str(j + 1) + "Min"],
+                                            socketable[sockettype + "Mod" + str(j + 1) + "Max"],
+                                        ),
+                                    )
 
+            
             new_rw = Runeword(
                 self.table_strings.get(rw["Name"], rw["Rune Name"]),
                 runes,

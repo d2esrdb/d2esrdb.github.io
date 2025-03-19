@@ -162,10 +162,19 @@ class DatabaseGenerator:
         clean_text = re.sub(r'<[^>]*>', '', text)
         return clean_text
 
-    def get_all_socketables(self):
+    def socketable_is_used_in_runeword(self, socketable_code):
+        for rw in self.tables.runeword_table:
+            for i in range(1,7):
+                if rw["Rune" + str(i)] == socketable_code:
+                    return True
+        return False
+
+    def get_all_used_socketables(self):
         socketables = []
         for socketable in self.tables.socketables_table:
             if socketable["code"] == "":
+                continue
+            if not self.socketable_is_used_in_runeword(socketable["code"]):
                 continue
             socketables.append([self.utils.get_item_name_from_code(socketable["code"]),
                                 self.remove_html_tags(self.utils.get_item_name_from_code(socketable["code"]))])
@@ -179,7 +188,7 @@ class DatabaseGenerator:
         ).generate_runewords()
         filename = "runewords.htm"
         template = self.mylookup.get_template(filename)
-        rendered = template.render(runewords, self.gemapplytype_names, self.get_all_socketables())
+        rendered = template.render(runewords, self.gemapplytype_names, self.get_all_used_socketables())
         self.generate(rendered, filename)
 
     def generate_socketables(self) -> None:
