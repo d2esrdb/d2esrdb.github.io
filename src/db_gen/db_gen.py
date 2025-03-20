@@ -180,6 +180,14 @@ class DatabaseGenerator:
                                 self.remove_html_tags(self.utils.get_item_name_from_code(socketable["code"]))])
         return socketables
 
+    def get_all_used_runeword_allowed_types(self):
+        allowed_bases = set()
+        for rw in self.tables.runeword_table:
+            for i in range(6):
+                if rw["itype" + str(i + 1)] != "":
+                    allowed_bases.add(self.utils.get_item_type_name_from_code(rw["itype" + str(i + 1)]))
+        return allowed_bases
+
     def generate_runewords(self) -> None:
         runewords = runeword_generator.RunewordGenerator(
             self.tables,
@@ -188,7 +196,7 @@ class DatabaseGenerator:
         ).generate_runewords()
         filename = "runewords.htm"
         template = self.mylookup.get_template(filename)
-        rendered = template.render(runewords, self.gemapplytype_names, self.get_all_used_socketables())
+        rendered = template.render(runewords, self.gemapplytype_names, self.get_all_used_socketables(), self.get_all_used_runeword_allowed_types())
         self.generate(rendered, filename)
 
     def generate_socketables(self) -> None:

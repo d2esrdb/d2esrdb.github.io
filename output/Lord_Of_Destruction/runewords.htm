@@ -96,6 +96,31 @@
   </table>
 </form>
 
+<form id="ingredients2Form">
+  <table>
+    <tr>
+      <td><label><input type="checkbox" value="Staff" class="ingredient2">Staff</label></td>
+      <td><label><input type="checkbox" value="Body Armor" class="ingredient2">Body Armor</label></td>
+      <td><label><input type="checkbox" value="Hand to Hand" class="ingredient2">Hand to Hand</label></td>
+      <td><label><input type="checkbox" value="Club" class="ingredient2">Club</label></td>
+      <td><label><input type="checkbox" value="Melee Weapon" class="ingredient2">Melee Weapon</label></td>
+      <td><label><input type="checkbox" value="Any Shield" class="ingredient2">Any Shield</label></td>
+      <td><label><input type="checkbox" value="Axe" class="ingredient2">Axe</label></td>
+      <td><label><input type="checkbox" value="Polearm" class="ingredient2">Polearm</label></td>
+      <td><label><input type="checkbox" value="Scepter" class="ingredient2">Scepter</label></td>
+      <td><label><input type="checkbox" value="Mace" class="ingredient2">Mace</label></td>
+      <td><label><input type="checkbox" value="Weapon" class="ingredient2">Weapon</label></td>
+      <td><label><input type="checkbox" value="Helm" class="ingredient2">Helm</label></td>
+      	</tr><tr>
+      <td><label><input type="checkbox" value="Hammer" class="ingredient2">Hammer</label></td>
+      <td><label><input type="checkbox" value="Paladin Item" class="ingredient2">Paladin Item</label></td>
+      <td><label><input type="checkbox" value="Missile Weapon" class="ingredient2">Missile Weapon</label></td>
+      <td><label><input type="checkbox" value="Sword" class="ingredient2">Sword</label></td>
+      <td><label><input type="checkbox" value="Wand" class="ingredient2">Wand</label></td>
+    </tr>
+  </table>
+</form>
+
 
 <script>
     // Function to strip HTML tags
@@ -103,64 +128,58 @@
         const doc = new DOMParser().parseFromString(str, 'text/html');
         return doc.body.textContent || "";
     }
+    document.addEventListener('DOMContentLoaded', function () {
+    const ingredientCheckboxes = document.querySelectorAll('.ingredient');
+    const baseCheckboxes = document.querySelectorAll('.ingredient2');
+    const recipeRows = document.querySelectorAll('.recipeRow');
 
-    // Ensure the DOM is fully loaded before running any JavaScript
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get all the checkboxes and recipe rows after the DOM is ready
-        const ingredientCheckboxes = document.querySelectorAll('.ingredient');
-        const recipeRows = document.querySelectorAll('.recipeRow');
+    function getSelectedValues(checkboxes) {
+        return Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+    }
 
-        // Function to check the ingredients
-        function checkIngredients() {
-            // Get selected ingredients
-            const selectedIngredients = [];
-            ingredientCheckboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    selectedIngredients.push(checkbox.value);
-                }
-            });
+    function checkIngredients() {
+        const selectedIngredients = getSelectedValues(ingredientCheckboxes);
+        const selectedBases = getSelectedValues(baseCheckboxes);
 
-            // Loop through all the rows and check if all ingredients match
-            recipeRows.forEach(row => {
-                const fontTag = row.querySelector('.ingredients font');
-                if (!fontTag) {
-                    row.style.display = 'none'; // If no ingredients are found, hide the row
-                    return;
-                }
+        recipeRows.forEach(row => {
+            const fontTag = row.querySelector('.ingredients font');
+            const baseCell = row.children[2]; // Allowed Items column
+            
+            if (!fontTag || !baseCell) {
+                row.style.display = 'none';
+                return;
+            }
 
-                const rawIngredients = fontTag.innerHTML.split('<br>') // Split by <br>
-                    .map(ingredient => ingredient.trim()) // Remove extra whitespace
-                    .filter(ingredient => ingredient !== ''); // Remove empty strings
+            const rawIngredients = fontTag.innerHTML.split('<br>')
+                .map(ingredient => ingredient.trim())
+                .filter(ingredient => ingredient !== '');
+            const rowIngredients = rawIngredients.map(removeHtmlTags);
 
-                // Strip HTML tags from each ingredient
-                const rowIngredients = rawIngredients.map(removeHtmlTags);
+            const rowBases = baseCell.innerHTML
+                .replace(/<br>/g, '\n')
+                .split('\n')
+                .map(base => removeHtmlTags(base.trim()));
 
-                // If no ingredients are in the row, hide it
-                if (rowIngredients.length === 0) {
-                    row.style.display = 'none'; // Hide rows with no ingredients
-                    return;
-                }
+            const ingredientsMatch = selectedIngredients.length === 0 || selectedIngredients.every(ingredient => rowIngredients.includes(ingredient));
+            const basesMatch = selectedBases.length === 0 || selectedBases.some(base => rowBases.includes(base));
 
-                // Check if any of the row's ingredients match selected ingredients
-                const isMatch = rowIngredients.every(ingredient => selectedIngredients.includes(ingredient));
-
-                // Show or hide the row based on whether all ingredients match
-                if (selectedIngredients.length === 0 || isMatch) {
-                    row.style.display = ''; // Show the row if no ingredients are selected or if it matches
-                } else {
-                    row.style.display = 'none'; // Hide the row if it doesn't match
-                }
-            });
-        }
-
-        // Event listener to trigger the check when a checkbox is clicked
-        ingredientCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', checkIngredients);
+            if (ingredientsMatch && basesMatch) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
         });
+    }
 
-        // Call the function to initialize the visibility of rows
-        checkIngredients();
-    });
+    ingredientCheckboxes.forEach(checkbox => checkbox.addEventListener('change', checkIngredients));
+    baseCheckboxes.forEach(checkbox => checkbox.addEventListener('change', checkIngredients));
+
+    checkIngredients();
+});
+
+
 </script>
 
 
