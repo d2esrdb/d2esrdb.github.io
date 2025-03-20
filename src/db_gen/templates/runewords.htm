@@ -1,11 +1,11 @@
-<%page args="runewords, gemapplytype_names, runes, allowed_items"/>\
+<%page args="runewords, gemapplytype_names, runes, allowed_items"/>
 
 <form id="ingredientsForm">
   <table>
     <tr>
     % for i, rune in enumerate(runes):
       % if i != 0 and i % 12 == 0:
-      	</tr><tr>
+      </tr><tr>
       % endif
       <td><label><input type="checkbox" value="${rune[1]}" class="ingredient">${rune[0]}</label></td>
     % endfor
@@ -18,7 +18,7 @@
     <tr>
     % for i, base in enumerate(allowed_items):
       % if i != 0 and i % 12 == 0:
-      	</tr><tr>
+      </tr><tr>
       % endif
       <td><label><input type="checkbox" value="${base}" class="ingredient2">${base}</label></td>
     % endfor
@@ -26,13 +26,7 @@
   </table>
 </form>
 
-
 <script>
-    // Function to strip HTML tags
-    function removeHtmlTags(str) {
-        const doc = new DOMParser().parseFromString(str, 'text/html');
-        return doc.body.textContent || "";
-    }
     document.addEventListener('DOMContentLoaded', function () {
     const ingredientCheckboxes = document.querySelectorAll('.ingredient');
     const baseCheckboxes = document.querySelectorAll('.ingredient2');
@@ -45,73 +39,61 @@
     }
 
     function checkIngredients() {
-    const selectedIngredients = getSelectedValues(ingredientCheckboxes);
-    const selectedBases = getSelectedValues(baseCheckboxes);
+        const selectedIngredients = getSelectedValues(ingredientCheckboxes);
+        const selectedBases = getSelectedValues(baseCheckboxes);
 
-    recipeRows.forEach(row => {
-        const fontTag = row.querySelector('.ingredients font');
-        const baseCell = row.children[2]; // Allowed Items column
-        
-        if (!fontTag || !baseCell) {
-            row.style.display = 'none';
-            return;
-        }
+        recipeRows.forEach(row => {
+            const fontTag = row.querySelector('.ingredients font');
+            const baseCell = row.children[2]; // Allowed Items column
+            
+            if (!fontTag || !baseCell) {
+                row.style.display = 'none';
+                return;
+            }
 
-        // Extracting ingredients (runes) from the row
-        const rawIngredients = fontTag.innerHTML.split('<br>')
-            .map(ingredient => ingredient.trim())
-            .filter(ingredient => ingredient !== '');
-        const rowIngredients = rawIngredients.map(removeHtmlTags);
+            // Extracting ingredients (runes) from the row
+            const rawIngredients = fontTag.innerHTML.split('<br>')
+                .map(ingredient => ingredient.trim())
+                .filter(ingredient => ingredient !== '');
+            const rowIngredients = rawIngredients.map(ingredient => ingredient.replace(/<[^>]*>/g, ''));
 
-        // Extracting allowed items (bases) from the row
-        const rowBases = baseCell.innerHTML
-            .replace(/<br>/g, '\n')
-            .split('\n')
-            .map(base => removeHtmlTags(base.trim()));
+            // Extracting allowed items (bases) from the row
+            const rowBases = baseCell.innerHTML
+                .replace(/<br>/g, '\n')
+                .split('\n')
+                .map(base => base.trim().replace(/<[^>]*>/g, ''));
 
-        // Matching the selected ingredients (runes)
-        const ingredientsMatch = selectedIngredients.length === 0 || selectedIngredients.every(ingredient => rowIngredients.includes(ingredient));
+            // Check if selected runes can complete the recipe (subset check but with count)
+            const runeCount = selectedIngredients.reduce((count, rune) => {
+                count[rune] = (count[rune] || 0) + 1;
+                return count;
+            }, {});
 
-        // Allowed items filter (show recipes with any of the selected allowed items)
-        const basesMatch = selectedBases.length === 0 || selectedBases.some(base => rowBases.includes(base));
+            const recipeCount = rowIngredients.reduce((count, rune) => {
+                count[rune] = (count[rune] || 0) + 1;
+                return count;
+            }, {});
 
-        // Runes filter (only show recipes where selected runes are a subset of the runes in the recipe)
-        const runesMatch = selectedIngredients.length === 0 || (
-            selectedIngredients.every(rune => rowIngredients.includes(rune)) &&  // All selected runes are present
-            rowIngredients.every(rune => selectedIngredients.includes(rune))      // Recipe only contains selected runes
-        );
+            const canComplete = selectedIngredients.length === 0 || Object.entries(recipeCount).every(([rune, needed]) => (runeCount[rune] || 0) >= needed);
 
-        // If both match, show the row
-        if (ingredientsMatch && basesMatch && runesMatch) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
-    });
-}
+            // Allowed items filter (show recipes with any of the selected allowed items)
+            const basesMatch = selectedBases.length === 0 || selectedBases.some(base => rowBases.includes(base));
 
-
+            // Apply filters
+            if ((selectedIngredients.length === 0 && selectedBases.length === 0) || (canComplete && basesMatch)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
 
     ingredientCheckboxes.forEach(checkbox => checkbox.addEventListener('change', checkIngredients));
     baseCheckboxes.forEach(checkbox => checkbox.addEventListener('change', checkIngredients));
 
     checkIngredients();
 });
-
-
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <table cellpadding="5" border="0">
 <thead>
@@ -129,40 +111,28 @@ ${gemapplytype_names[1]}</font></th>
 <th width="375" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">
 ${gemapplytype_names[2]}</font></th>
 </tr>
-
 </thead>
 <tbody>
-
 % for runeword in runewords:
 <tr class="recipeRow">
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="#908858"><b>${runeword.name}</b></font><br><br>(${runeword.num_sockets} Socket)<br><br></font></td>
 <td class="ingredients" bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica" color="#908858">${runeword.rune_string()}</font></td>
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica">${runeword.bases_string()}</font></td>
-
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">
 % if runeword.gemapplytype[0] == True:
 ${runeword.stats_string()}<br>${runeword.rune_stats_string(0)}
-<!--${runeword.types[0]}-->
 % endif
 </font></font></td>
-
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">
 % if runeword.gemapplytype[1] == True:
 ${runeword.stats_string()}<br>${runeword.rune_stats_string(1)}
-<!--${runeword.types[1]}-->
 % endif
 </font></font></td>
-
 <td bgcolor="#101010" align="center"><font size="-1" face="arial,helvetica"><font color="8080E6">
 % if runeword.gemapplytype[2] == True:
 ${runeword.stats_string()}<br>${runeword.rune_stats_string(2)}
-<!--${runeword.types[2]}-->
 % endif
 </font></font></td>
-
 </tr>
 % endfor
-
-
 </tbody></table>
-
