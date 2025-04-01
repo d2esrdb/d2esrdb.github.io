@@ -1,3 +1,27 @@
+- name: Eastern Sun Rises Beta
+  shortname: Eastern_Sun_Rises_Beta
+  version: "5.4 Beta"
+  tablestring_files:
+    - string.tbl
+    - expansionstring.tbl
+    - patchstring.tbl
+    - ES AlphA.tbl
+  gemapplytype_names:
+    - Weapons / Gloves
+    - Helms / Boots
+    - Armor / Shields / Belts
+  extra_pages:
+    - name: Top
+      file: top.htm
+      position: -1
+    - name: Recipes
+      file: recipes.htm
+      position: 1
+    - name: Maps
+      file: maps.htm
+      position: 2
+  index:
+    file: top.htm
 - name: Eastern Sun Rises
   shortname: Eastern_Sun_Rises
   version: 5.3A5

@@ -113,6 +113,14 @@ class UniquesGenerator:
             for item in list(all_uniques):
                 if item.base_code == other_type:
                     others.items.append(item)
+                    for x in others.items:
+                        if x.item_level == "":
+                            x.item_level = 0
+                            print("No valid item_level for unique " + x.name)
+                        if x.required_level == "":
+                            x.required_level = 0
+                            print("No valid required_level for unique " + x.name)
+
                     others.items.sort(
                         key=lambda x: (int(x.item_level), int(x.required_level)),
                     )

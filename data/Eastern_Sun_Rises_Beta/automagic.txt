@@ -1,0 +1,2158 @@
+Name	version	spawnable	rare	level	maxlevel	levelreq	class	classlevelreq	frequency	group	mod1code	mod1param	mod1min	mod1max	mod2code	mod2param	mod2min	mod2max	mod3code	mod3param	mod3min	mod3max	transform	transformcolor	itype1	itype2	itype3	itype4	itype5	itype6	itype7	etype1	etype2	etype3	divide	multiply	add
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	dex		1	5							tors	helm	glov	boot							0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	dex		8	12							tors	helm	glov	boot							0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	dex		15	19							tors	helm	glov	boot							0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	dex		22	26							tors	helm	glov	boot							0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	dex		29	33							tors	helm	glov	boot							0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	dex		36	40							tors	helm	glov	boot							0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	dex%		6	12							tors	helm	glov	boot							0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	enr		1	5							tors	helm	glov	boot							0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	enr		8	12							tors	helm	glov	boot							0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	enr		15	19							tors	helm	glov	boot							0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	enr		22	26							tors	helm	glov	boot							0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	enr		29	33							tors	helm	glov	boot							0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	enr		36	40							tors	helm	glov	boot							0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	enr%		6	12							tors	helm	glov	boot							0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	str		1	5							tors	helm	glov	boot							0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	str		8	12							tors	helm	glov	boot							0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	str		15	19							tors	helm	glov	boot							0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	str		22	26							tors	helm	glov	boot							0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	str		29	33							tors	helm	glov	boot							0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	str		36	40							tors	helm	glov	boot							0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	str%		6	12							tors	helm	glov	boot							0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	vit		1	5							tors	helm	glov	boot							0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	vit		8	12							tors	helm	glov	boot							0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	vit		15	19							tors	helm	glov	boot							0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	vit		22	26							tors	helm	glov	boot							0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	vit		29	33							tors	helm	glov	boot							0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	vit		36	40							tors	helm	glov	boot							0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	vit%		6	12							tors	helm	glov	boot							0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		20	60											tors	belt									0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		25	65											tors	belt									0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		30	70											tors	belt									0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		35	75											tors	belt									0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		40	80											tors	belt									0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		45	85											tors	belt									0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		50	90											tors	belt									0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	ac%/lvl	4									tors	shie									0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	ac%/lvl	6									tors	shie									0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	ac%/lvl	8									tors	shie									0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	ac%/lvl	10									tors	shie									0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	ac%/lvl	12									tors	shie									0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	ac%/lvl	14									tors	shie									0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	ac%/lvl	16									tors	shie									0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	ac/lvl	4									tors	shie									0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	ac/lvl	6									tors	shie									0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	ac/lvl	8									tors	shie									0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	ac/lvl	10									tors	shie									0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	ac/lvl	12									tors	shie									0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	ac/lvl	14									tors	shie									0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	ac/lvl	16									tors	shie									0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	move2		4	10							boot										0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	move2		5	12							boot										0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	move2		6	14							boot										0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	move2		7	16							boot										0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	move2		9	20							boot										0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	move2		11	24							boot										0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	move2		13	28							boot										0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	res-fire/lvl	4			res-fire-max		0	0			helm	shie									0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	res-fire/lvl	6			res-fire-max		0	0			helm	shie									0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	res-fire/lvl	8			res-fire-max		0	-1			helm	shie									0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	res-fire/lvl	10			res-fire-max		0	-1			helm	shie									0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	res-fire/lvl	12			res-fire-max		-1	-2			helm	shie									0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	res-fire/lvl	14			res-fire-max		-1	-2			helm	shie									0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	res-fire/lvl	16			res-fire-max		-2	-3			helm	shie									0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	res-ltng/lvl	4			res-ltng-max		0	0			helm	shie									0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	res-ltng/lvl	6			res-ltng-max		0	0			helm	shie									0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	res-ltng/lvl	8			res-ltng-max		0	-1			helm	shie									0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	res-ltng/lvl	10			res-ltng-max		0	-1			helm	shie									0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	res-ltng/lvl	12			res-ltng-max		-1	-2			helm	shie									0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	res-ltng/lvl	14			res-ltng-max		-1	-2			helm	shie									0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	res-ltng/lvl	16			res-ltng-max		-2	-3			helm	shie									0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	res-cold/lvl	4			res-cold-max		0	0			helm	shie									0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	res-cold/lvl	6			res-cold-max		0	0			helm	shie									0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	res-cold/lvl	8			res-cold-max		0	-1			helm	shie									0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	res-cold/lvl	10			res-cold-max		0	-1			helm	shie									0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	res-cold/lvl	12			res-cold-max		-1	-2			helm	shie									0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	res-cold/lvl	14			res-cold-max		-1	-2			helm	shie									0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	res-cold/lvl	16			res-cold-max		-2	-3			helm	shie									0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	res-pois/lvl	4			res-pois-max		0	0			helm	shie									0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	res-pois/lvl	6			res-pois-max		0	0			helm	shie									0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	res-pois/lvl	8			res-pois-max		0	-1			helm	shie									0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	res-pois/lvl	10			res-pois-max		0	-1			helm	shie									0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	res-pois/lvl	12			res-pois-max		-1	-2			helm	shie									0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	res-pois/lvl	14			res-pois-max		-1	-2			helm	shie									0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	res-pois/lvl	16			res-pois-max		-2	-3			helm	shie									0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	hp		3	12							glov	belt									0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	hp		6	24							glov	belt									0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	hp		9	36							glov	belt									0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	hp		12	48							glov	belt									0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	hp		15	60							glov	belt									0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	hp		18	72							glov	belt									0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	hp%		3	12							glov	belt									0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	mana		6	12							glov	belt									0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	mana		12	24							glov	belt									0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	mana		18	36							glov	belt									0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	mana		24	48							glov	belt									0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	mana		30	60							glov	belt									0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	mana		36	72							glov	belt									0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	mana%		6	12							glov	belt									0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	gold%		5	10							dwav										0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	gold%		7	14							dwav										0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	gold%		9	18							dwav										0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	gold%		11	22							dwav										0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	gold%		13	26							dwav										0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	gold%		15	30							dwav										0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	gold%/lvl	4									dwav										0	0	0
+																																					
+null	100	1	1	5	45	3			32	901	tinkerflag2		10	30	mag%		6	12							circ										0	0	0
+null	100	1	1	15	60	12			32	901	tinkerflag2		10	30	mag%		7	14							circ										0	0	0
+null	100	1	1	25		24			32	901	tinkerflag2		10	30	mag%		8	16							circ										0	0	0
+null	100	1	1	45		33			32	901	tinkerflag2		10	30	mag%		9	18							circ										0	0	0
+null	100	1	1	60		42			16	901	tinkerflag2		10	30	mag%		10	20							circ										0	0	0
+null	100	1	1	80		60			8	901	tinkerflag2		10	30	mag%		11	22							circ										0	0	0
+null	100	1	1	95		66			2	901	tinkerflag2		10	30	mag%		12	24							circ										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	extra-fire		1	3							1hcw							wdnr			0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	extra-fire		4	7							1hcw							wdnr			0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	extra-fire		7	11							1hcw							wdnr			0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	extra-fire		10	15							1hcw							wdnr			0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	extra-fire		13	19							1hcw							wdnr			0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	extra-fire		16	23							1hcw							wdnr			0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	extra-fire		19	27							1hcw							wdnr			0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	extra-cold		1	3							1hcw							wdnr			0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	extra-cold		4	7							1hcw							wdnr			0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	extra-cold		7	11							1hcw							wdnr			0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	extra-cold		10	15							1hcw							wdnr			0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	extra-cold		13	19							1hcw							wdnr			0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	extra-cold		16	23							1hcw							wdnr			0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	extra-cold		19	27							1hcw							wdnr			0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	extra-ltng		1	3							1hcw							wdnr			0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	extra-ltng		4	7							1hcw							wdnr			0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	extra-ltng		7	11							1hcw							wdnr			0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	extra-ltng		10	15							1hcw							wdnr			0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	extra-ltng		13	19							1hcw							wdnr			0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	extra-ltng		16	23							1hcw							wdnr			0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	extra-ltng		19	27							1hcw							wdnr			0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	extra-wind		1	3							1hcw							wdnr			0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	extra-wind		4	7							1hcw							wdnr			0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	extra-wind		7	11							1hcw							wdnr			0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	extra-wind		10	15							1hcw							wdnr			0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	extra-wind		13	19							1hcw							wdnr			0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	extra-wind		16	23							1hcw							wdnr			0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	extra-wind		19	27							1hcw							wdnr			0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	extra-fleshbone		1	3							1hcw							orb			0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	extra-fleshbone		4	7							1hcw							orb			0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	extra-fleshbone		7	11							1hcw							orb			0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	extra-fleshbone		10	15							1hcw							orb			0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	extra-fleshbone		13	19							1hcw							orb			0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	extra-fleshbone		16	23							1hcw							orb			0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	extra-fleshbone		19	27							1hcw							orb			0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	enr		1	5							1hcw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	enr		8	12							1hcw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	enr		15	19							1hcw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	enr		22	26							1hcw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	enr		29	33							1hcw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	enr		36	40							1hcw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	enr%		6	12							1hcw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	mana/lvl	4									1hcw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	mana/lvl	6									1hcw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	mana/lvl	8									1hcw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	mana/lvl	10									1hcw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	mana/lvl	12									1hcw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	mana/lvl	14									1hcw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	mana/lvl	16									1hcw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	extra-fire		2	6							2hcw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	extra-fire		6	11							2hcw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	extra-fire		10	16							2hcw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	extra-fire		14	21							2hcw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	extra-fire		18	26							2hcw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	extra-fire		22	31							2hcw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	extra-fire		26	36							2hcw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	extra-cold		2	6							2hcw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	extra-cold		6	11							2hcw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	extra-cold		10	16							2hcw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	extra-cold		14	21							2hcw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	extra-cold		18	26							2hcw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	extra-cold		22	31							2hcw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	extra-cold		26	36							2hcw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	extra-ltng		2	6							2hcw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	extra-ltng		6	11							2hcw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	extra-ltng		10	16							2hcw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	extra-ltng		14	21							2hcw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	extra-ltng		18	26							2hcw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	extra-ltng		22	31							2hcw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	extra-ltng		26	36							2hcw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	extra-wind		2	6							2hcw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	extra-wind		6	11							2hcw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	extra-wind		10	16							2hcw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	extra-wind		14	21							2hcw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	extra-wind		18	26							2hcw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	extra-wind		22	31							2hcw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	extra-wind		26	36							2hcw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	extra-fleshbone		2	6							2hcw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	extra-fleshbone		6	11							2hcw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	extra-fleshbone		10	16							2hcw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	extra-fleshbone		14	21							2hcw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	extra-fleshbone		18	26							2hcw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	extra-fleshbone		22	31							2hcw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	extra-fleshbone		26	36							2hcw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	enr		10	15							2hcw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	enr		18	22							2hcw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	enr		25	29							2hcw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	enr		32	36							2hcw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	enr		39	43							2hcw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	enr		46	50							2hcw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	enr%		8	14							2hcw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	mana/lvl	2			mana%		2	4			2hcw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	mana/lvl	3			mana%		3	5			2hcw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	mana/lvl	4			mana%		4	6			2hcw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	mana/lvl	5			mana%		5	7			2hcw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	mana/lvl	6			mana%		6	8			2hcw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	mana/lvl	7			mana%		7	9			2hcw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	mana/lvl	8			mana%		8	10			2hcw										0	0	0
+																																					
+null	100	1	1	5	45	3			30	950	tinkerflag2		20	60											1hcw	2hcw									0	0	0
+null	100	1	1	15	60	12			30	950	tinkerflag2		25	65											1hcw	2hcw									0	0	0
+null	100	1	1	25		24			30	950	tinkerflag2		30	70											1hcw	2hcw									0	0	0
+null	100	1	1	45		33			8	950	tinkerflag2		35	75											1hcw	2hcw									0	0	0
+null	100	1	1	60		42			2	950	tinkerflag2		40	80											1hcw	2hcw									0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		45	85											1hcw	2hcw									0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		50	90											1hcw	2hcw									0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		1	5			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		8	12			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		15	19			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		22	26			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		29	33			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		36	40			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex%		6	12			1hsw							tkni	taxe	jave	0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		1	5			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		8	12			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		15	19			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		22	26			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		29	33			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		36	40			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str%		6	12			1hsw							tkni	taxe	jave	0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		5	10			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		15	30			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		25	50			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		40	80			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		60	120			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		85	170			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		115	230			1hsw							tkni	taxe	jave	0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	8					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	12					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	16					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	20					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	24					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	28					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	32					1hsw							tkni	taxe	jave	0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	8					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	12					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	16					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	20					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	24					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	28					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	32					1hsw							tkni	taxe	jave	0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	8					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	12					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	16					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	20					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	24					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	28					1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	32					1hsw							tkni	taxe	jave	0	0	0
+																																					
+null	100	1	1	5	45	3			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		1	2			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	15	60	12			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		1	3			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	25		24			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		2	4			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	45		33			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		2	5			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	60		42			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		3	6			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	80		60			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		3	7			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		4	8			1hsw							tkni	taxe	jave	0	0	0
+																																					
+null	100	1	1	5	45	3			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		1	2			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	15	60	12			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		1	3			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	25		24			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		2	4			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	45		33			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		2	5			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	60		42			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		3	6			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	80		60			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		3	7			1hsw							tkni	taxe	jave	0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		4	8			1hsw							tkni	taxe	jave	0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		10	15			2hsw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		18	22			2hsw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		25	29			2hsw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		32	36			2hsw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		39	43			2hsw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex		46	50			2hsw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dex%		8	14			2hsw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		10	15			2hsw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		18	22			2hsw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		25	29			2hsw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		32	36			2hsw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		39	43			2hsw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str		46	50			2hsw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	str%		8	14			2hsw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		5	10			2hsw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		15	30			2hsw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		25	50			2hsw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		40	80			2hsw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		60	120			2hsw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		85	170			2hsw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg%		115	230			2hsw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	16					2hsw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	20					2hsw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	24					2hsw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	28					2hsw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	32					2hsw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	36					2hsw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-cold/lvl	40					2hsw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	16					2hsw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	20					2hsw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	24					2hsw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	28					2hsw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	32					2hsw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	36					2hsw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-fire/lvl	40					2hsw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	16					2hsw										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	20					2hsw										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	24					2hsw										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	28					2hsw										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	32					2hsw										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	36					2hsw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	dmg-ltng/lvl	40					2hsw										0	0	0
+																																					
+null	100	1	1	5	45	3			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		1	3			2hsw										0	0	0
+null	100	1	1	15	60	12			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		2	5			2hsw										0	0	0
+null	100	1	1	25		24			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		3	7			2hsw										0	0	0
+null	100	1	1	45		33			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		4	9			2hsw										0	0	0
+null	100	1	1	60		42			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		5	11			2hsw										0	0	0
+null	100	1	1	80		60			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		6	13			2hsw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	deadly		7	15			2hsw										0	0	0
+																																					
+null	100	1	1	5	45	3			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		1	3			2hsw										0	0	0
+null	100	1	1	15	60	12			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		2	5			2hsw										0	0	0
+null	100	1	1	25		24			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		3	7			2hsw										0	0	0
+null	100	1	1	45		33			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		4	9			2hsw										0	0	0
+null	100	1	1	60		42			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		5	11			2hsw										0	0	0
+null	100	1	1	80		60			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		6	13			2hsw										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	hit-splash	WeaponSplash	100	1	crush		7	15			2hsw										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		20	60	hit-splash	WeaponSplash	100	1							1hsw	2hsw						tkni	taxe	jave	0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		25	65	hit-splash	WeaponSplash	100	1							1hsw	2hsw						tkni	taxe	jave	0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		30	70	hit-splash	WeaponSplash	100	1							1hsw	2hsw						tkni	taxe	jave	0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		35	75	hit-splash	WeaponSplash	100	1							1hsw	2hsw						tkni	taxe	jave	0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		40	80	hit-splash	WeaponSplash	100	1							1hsw	2hsw						tkni	taxe	jave	0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		45	85	hit-splash	WeaponSplash	100	1							1hsw	2hsw						tkni	taxe	jave	0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		50	90	hit-splash	WeaponSplash	100	1							1hsw	2hsw						tkni	taxe	jave	0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	rep-quant	33			dex		1	5			tkni	taxe	jave								0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	rep-quant	33			dex		8	12			tkni	taxe	jave								0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	rep-quant	33			dex		15	19			tkni	taxe	jave								0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	rep-quant	33			dex		22	26			tkni	taxe	jave								0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	rep-quant	33			dex		29	33			tkni	taxe	jave								0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	rep-quant	33			dex		36	40			tkni	taxe	jave								0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	rep-quant	33			dex%		6	12			tkni	taxe	jave								0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	rep-quant	33			str		1	5			tkni	taxe	jave								0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	rep-quant	33			str		8	12			tkni	taxe	jave								0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	rep-quant	33			str		15	19			tkni	taxe	jave								0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	rep-quant	33			str		22	26			tkni	taxe	jave								0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	rep-quant	33			str		29	33			tkni	taxe	jave								0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	rep-quant	33			str		36	40			tkni	taxe	jave								0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	rep-quant	33			str%		6	12			tkni	taxe	jave								0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	rep-quant	33			dmg%		5	10			tkni	taxe	jave								0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	rep-quant	33			dmg%		15	30			tkni	taxe	jave								0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	rep-quant	33			dmg%		25	50			tkni	taxe	jave								0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	rep-quant	33			dmg%		40	80			tkni	taxe	jave								0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	rep-quant	33			dmg%		60	120			tkni	taxe	jave								0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	rep-quant	33			dmg%		85	170			tkni	taxe	jave								0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	rep-quant	33			dmg%		115	230			tkni	taxe	jave								0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	rep-quant	33			dmg-cold/lvl	8					tkni	taxe	jave								0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	rep-quant	33			dmg-cold/lvl	12					tkni	taxe	jave								0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	rep-quant	33			dmg-cold/lvl	16					tkni	taxe	jave								0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	rep-quant	33			dmg-cold/lvl	20					tkni	taxe	jave								0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	rep-quant	33			dmg-cold/lvl	24					tkni	taxe	jave								0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	rep-quant	33			dmg-cold/lvl	28					tkni	taxe	jave								0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	rep-quant	33			dmg-cold/lvl	32					tkni	taxe	jave								0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	rep-quant	33			dmg-fire/lvl	8					tkni	taxe	jave								0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	rep-quant	33			dmg-fire/lvl	12					tkni	taxe	jave								0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	rep-quant	33			dmg-fire/lvl	16					tkni	taxe	jave								0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	rep-quant	33			dmg-fire/lvl	20					tkni	taxe	jave								0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	rep-quant	33			dmg-fire/lvl	24					tkni	taxe	jave								0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	rep-quant	33			dmg-fire/lvl	28					tkni	taxe	jave								0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	rep-quant	33			dmg-fire/lvl	32					tkni	taxe	jave								0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	rep-quant	33			dmg-ltng/lvl	8					tkni	taxe	jave								0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	rep-quant	33			dmg-ltng/lvl	12					tkni	taxe	jave								0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	rep-quant	33			dmg-ltng/lvl	16					tkni	taxe	jave								0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	rep-quant	33			dmg-ltng/lvl	20					tkni	taxe	jave								0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	rep-quant	33			dmg-ltng/lvl	24					tkni	taxe	jave								0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	rep-quant	33			dmg-ltng/lvl	28					tkni	taxe	jave								0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	rep-quant	33			dmg-ltng/lvl	32					tkni	taxe	jave								0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	rep-quant	33			pierce		4	8			tkni	taxe	jave								0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	rep-quant	33			pierce		6	12			tkni	taxe	jave								0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	rep-quant	33			pierce		8	16			tkni	taxe	jave								0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	rep-quant	33			pierce		10	20			tkni	taxe	jave								0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	rep-quant	33			pierce		12	24			tkni	taxe	jave								0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	rep-quant	33			pierce		14	26			tkni	taxe	jave								0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	rep-quant	33			pierce		16	28			tkni	taxe	jave								0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	str		10	15							xbow										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	str		18	22							xbow										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	str		25	29							xbow										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	str		32	36							xbow										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	str		39	43							xbow										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	str		46	50							xbow										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	str%		8	14							xbow										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	dex		10	15							bow										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	dex		18	22							bow										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	dex		25	29							bow										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	dex		32	36							bow										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	dex		39	43							bow										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	dex		46	50							bow										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	dex%		8	14							bow										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	dmg%		5	10							miss										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	dmg%		15	30							miss										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	dmg%		25	50							miss										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	dmg%		40	80							miss										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	dmg%		60	120							miss										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	dmg%		85	170							miss										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	dmg%		115	230							miss										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	dmg/lvl	5									miss										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	dmg/lvl	5									miss										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	dmg/lvl	6									miss										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	dmg/lvl	6									miss										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	dmg/lvl	7									miss										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	dmg/lvl	7									miss										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	dmg/lvl	8									miss										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	pierce		4	8							miss										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	pierce		6	12							miss										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	pierce		8	16							miss										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	pierce		10	20							miss										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	pierce		12	24							miss										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	pierce		14	26							miss										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	pierce		16	28							miss										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		20	60											miss										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		25	65											miss										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		30	70											miss										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		35	75											miss										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		40	80											miss										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		45	85											miss										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		50	90											miss										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	dmg-cold/lvl	16									miss										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	dmg-cold/lvl	20									miss										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	dmg-cold/lvl	24									miss										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	dmg-cold/lvl	28									miss										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	dmg-cold/lvl	32									miss										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	dmg-cold/lvl	36									miss										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	dmg-cold/lvl	40									miss										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	dmg-fire/lvl	16									miss										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	dmg-fire/lvl	20									miss										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	dmg-fire/lvl	24									miss										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	dmg-fire/lvl	28									miss										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	dmg-fire/lvl	32									miss										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	dmg-fire/lvl	36									miss										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	dmg-fire/lvl	40									miss										0	0	0
+																																					
+null	100	1	1	5	45	3			32	950	tinkerflag2		10	30	dmg-ltng/lvl	16									miss										0	0	0
+null	100	1	1	15	60	12			32	950	tinkerflag2		10	30	dmg-ltng/lvl	20									miss										0	0	0
+null	100	1	1	25		24			32	950	tinkerflag2		10	30	dmg-ltng/lvl	24									miss										0	0	0
+null	100	1	1	45		33			32	950	tinkerflag2		10	30	dmg-ltng/lvl	28									miss										0	0	0
+null	100	1	1	60		42			16	950	tinkerflag2		10	30	dmg-ltng/lvl	32									miss										0	0	0
+null	100	1	1	80		60			8	950	tinkerflag2		10	30	dmg-ltng/lvl	36									miss										0	0	0
+null	100	1	1	95		66			2	950	tinkerflag2		10	30	dmg-ltng/lvl	40									miss										0	0	0
+																																					
+null	0	1	1	5	45	3	ama		12	901	skilltab	0	1	1											scrn										0	0	0
+null	0	1	1	45		33	ama		6	901	skilltab	0	1	2											scrn										0	0	0
+null	0	1	1	60		42	ama		4	901	skilltab	0	2	3											scrn										0	0	0
+null	0	1	1	5	45	3	ama		12	901	skilltab	1	1	1											scrn										0	0	0
+null	0	1	1	45		33	ama		6	901	skilltab	1	1	2											scrn										0	0	0
+null	0	1	1	60		42	ama		4	901	skilltab	1	2	3											scrn										0	0	0
+null	0	1	1	5	45	3	ama		12	901	skilltab	2	1	1											scrn										0	0	0
+null	0	1	1	45		33	ama		6	901	skilltab	2	1	2											scrn										0	0	0
+null	0	1	1	60		42	ama		4	901	skilltab	2	2	3											scrn										0	0	0
+																																					
+null	0	1	1	5	45	3	ama		12	950	skilltab	0	1	1											abow	pbow									0	0	0
+null	0	1	1	45		33	ama		6	950	skilltab	0	1	2											abow	pbow									0	0	0
+null	0	1	1	60		42	ama		4	950	skilltab	0	2	3											abow	pbow									0	0	0
+null	0	1	1	5	45	3	ama		12	950	skilltab	2	1	1	rep-quant	33									ajav										0	0	0
+null	0	1	1	45		33	ama		6	950	skilltab	2	1	2	rep-quant	33									ajav										0	0	0
+null	0	1	1	60		42	ama		4	950	skilltab	2	2	3	rep-quant	33									ajav										0	0	0
+null	0	1	1	5	45	3	ama		12	950	skilltab	2	1	1	hit-splash	WeaponSplash	100	1							aspe										0	0	0
+null	0	1	1	45		33	ama		6	950	skilltab	2	1	2	hit-splash	WeaponSplash	100	1							aspe										0	0	0
+null	0	1	1	60		42	ama		4	950	skilltab	2	2	3	hit-splash	WeaponSplash	100	1							aspe										0	0	0
+																																					
+null	0	1	1	5	45	3	sor		12	901	skilltab	3	1	1											robe										0	0	0
+null	0	1	1	45		33	sor		6	901	skilltab	3	1	2											robe										0	0	0
+null	0	1	1	60		42	sor		4	901	skilltab	3	2	3											robe										0	0	0
+null	0	1	1	5	45	3	sor		12	901	skilltab	4	1	1											robe										0	0	0
+null	0	1	1	45		33	sor		6	901	skilltab	4	1	2											robe										0	0	0
+null	0	1	1	60		42	sor		4	901	skilltab	4	2	3											robe										0	0	0
+null	0	1	1	5	45	3	sor		12	901	skilltab	5	1	1											robe										0	0	0
+null	0	1	1	45		33	sor		6	901	skilltab	5	1	2											robe										0	0	0
+null	0	1	1	60		42	sor		4	901	skilltab	5	2	3											robe										0	0	0
+																																					
+null	0	1	1	5	45	3	sor		12	950	skilltab	3	1	1											orb										0	0	0
+null	0	1	1	45		33	sor		6	950	skilltab	3	1	2											orb										0	0	0
+null	0	1	1	60		42	sor		4	950	skilltab	3	2	3											orb										0	0	0
+null	0	1	1	5	45	3	sor		12	950	skilltab	4	1	1											orb										0	0	0
+null	0	1	1	45		33	sor		6	950	skilltab	4	1	2											orb										0	0	0
+null	0	1	1	60		42	sor		4	950	skilltab	4	2	3											orb										0	0	0
+null	0	1	1	5	45	3	sor		12	950	skilltab	5	1	1											orb										0	0	0
+null	0	1	1	45		33	sor		6	950	skilltab	5	1	2											orb										0	0	0
+null	0	1	1	60		42	sor		4	950	skilltab	5	2	3											orb										0	0	0
+																																					
+null	0	1	1	5	45	3	nec		12	901	skilltab	6	1	1											head										0	0	0
+null	0	1	1	45		33	nec		6	901	skilltab	6	1	2											head										0	0	0
+null	0	1	1	60		42	nec		4	901	skilltab	6	2	3											head										0	0	0
+null	0	1	1	5	45	3	nec		12	901	skilltab	7	1	1											head										0	0	0
+null	0	1	1	45		33	nec		6	901	skilltab	7	1	2											head										0	0	0
+null	0	1	1	60		42	nec		4	901	skilltab	7	2	3											head										0	0	0
+null	0	1	1	5	45	3	nec		12	901	skilltab	8	1	1											head										0	0	0
+null	0	1	1	45		33	nec		6	901	skilltab	8	1	2											head										0	0	0
+null	0	1	1	60		42	nec		4	901	skilltab	8	2	3											head										0	0	0
+																																					
+null	0	1	1	5	45	3	nec		12	950	skilltab	6	1	1											wdnr										0	0	0
+null	0	1	1	45		33	nec		6	950	skilltab	6	1	2											wdnr										0	0	0
+null	0	1	1	60		42	nec		4	950	skilltab	6	2	3											wdnr										0	0	0
+null	0	1	1	5	45	3	nec		12	950	skilltab	7	1	1											wdnr										0	0	0
+null	0	1	1	45		33	nec		6	950	skilltab	7	1	2											wdnr										0	0	0
+null	0	1	1	60		42	nec		4	950	skilltab	7	2	3											wdnr										0	0	0
+null	0	1	1	5	45	3	nec		12	950	skilltab	8	1	1											wdnr										0	0	0
+null	0	1	1	45		33	nec		6	950	skilltab	8	1	2											wdnr										0	0	0
+null	0	1	1	60		42	nec		4	950	skilltab	8	2	3											wdnr										0	0	0
+null	0	1	1	5	45	3	nec		12	950	skilltab	6	1	1	hit-splash	WeaponSplash	100	1							ndgr										0	0	0
+null	0	1	1	45		33	nec		6	950	skilltab	6	1	2	hit-splash	WeaponSplash	100	1							ndgr										0	0	0
+null	0	1	1	60		42	nec		4	950	skilltab	6	2	3	hit-splash	WeaponSplash	100	1							ndgr										0	0	0
+null	0	1	1	5	45	3	nec		12	950	skilltab	7	1	1	hit-splash	WeaponSplash	100	1							ndgr	npol									0	0	0
+null	0	1	1	45		33	nec		6	950	skilltab	7	1	2	hit-splash	WeaponSplash	100	1							ndgr	npol									0	0	0
+null	0	1	1	60		42	nec		4	950	skilltab	7	2	3	hit-splash	WeaponSplash	100	1							ndgr	npol									0	0	0
+																																					
+null	0	1	1	5	45	3	pal		12	901	skilltab	9	1	1											ashd										0	0	0
+null	0	1	1	45		33	pal		6	901	skilltab	9	1	2											ashd										0	0	0
+null	0	1	1	60		42	pal		4	901	skilltab	9	2	3											ashd										0	0	0
+null	0	1	1	5	45	3	pal		12	901	skilltab	10	1	1											ashd										0	0	0
+null	0	1	1	45		33	pal		6	901	skilltab	10	1	2											ashd										0	0	0
+null	0	1	1	60		42	pal		4	901	skilltab	10	2	3											ashd										0	0	0
+null	0	1	1	5	45	3	pal		12	901	skilltab	11	1	1											ashd										0	0	0
+null	0	1	1	45		33	pal		6	901	skilltab	11	1	2											ashd										0	0	0
+null	0	1	1	60		42	pal		4	901	skilltab	11	2	3											ashd										0	0	0
+																																					
+null	0	1	1	5	45	3	pal		12	950	skilltab	9	1	1											scpc										0	0	0
+null	0	1	1	45		33	pal		6	950	skilltab	9	1	2											scpc										0	0	0
+null	0	1	1	60		42	pal		4	950	skilltab	9	2	3											scpc										0	0	0
+null	0	1	1	5	45	3	pal		12	950	skilltab	10	1	1											scpc										0	0	0
+null	0	1	1	45		33	pal		6	950	skilltab	10	1	2											scpc										0	0	0
+null	0	1	1	60		42	pal		4	950	skilltab	10	2	3											scpc										0	0	0
+null	0	1	1	5	45	3	pal		12	950	skilltab	11	1	1											scpc										0	0	0
+null	0	1	1	45		33	pal		6	950	skilltab	11	1	2											scpc										0	0	0
+null	0	1	1	60		42	pal		4	950	skilltab	11	2	3											scpc										0	0	0
+																																					
+null	0	1	1	5	45	3	pal		12	950	skilltab	9	1	1	hit-splash	WeaponSplash	100	1							scpm	bedg									0	0	0
+null	0	1	1	45		33	pal		6	950	skilltab	9	1	2	hit-splash	WeaponSplash	100	1							scpm	bedg									0	0	0
+null	0	1	1	60		42	pal		4	950	skilltab	9	2	3	hit-splash	WeaponSplash	100	1							scpm	bedg									0	0	0
+null	0	1	1	5	45	3	pal		12	950	skilltab	10	1	1	hit-splash	WeaponSplash	100	1							scpm	bedg									0	0	0
+null	0	1	1	45		33	pal		6	950	skilltab	10	1	2	hit-splash	WeaponSplash	100	1							scpm	bedg									0	0	0
+null	0	1	1	60		42	pal		4	950	skilltab	10	2	3	hit-splash	WeaponSplash	100	1							scpm	bedg									0	0	0
+null	0	1	1	5	45	3	pal		12	950	skilltab	11	1	1	hit-splash	WeaponSplash	100	1							scpm	bedg									0	0	0
+null	0	1	1	45		33	pal		6	950	skilltab	11	1	2	hit-splash	WeaponSplash	100	1							scpm	bedg									0	0	0
+null	0	1	1	60		42	pal		4	950	skilltab	11	2	3	hit-splash	WeaponSplash	100	1							scpm	bedg									0	0	0
+																																					
+null	0	1	1	5	45	3	bar		12	901	skilltab	12	1	1											phlm										0	0	0
+null	0	1	1	45		33	bar		6	901	skilltab	12	1	2											phlm										0	0	0
+null	0	1	1	60		42	bar		4	901	skilltab	12	2	3											phlm										0	0	0
+null	0	1	1	5	45	3	bar		12	901	skilltab	13	1	1											phlm										0	0	0
+null	0	1	1	45		33	bar		6	901	skilltab	13	1	2											phlm										0	0	0
+null	0	1	1	60		42	bar		4	901	skilltab	13	2	3											phlm										0	0	0
+null	0	1	1	5	45	3	bar		12	901	skilltab	14	1	1											phlm										0	0	0
+null	0	1	1	45		33	bar		6	901	skilltab	14	1	2											phlm										0	0	0
+null	0	1	1	60		42	bar		4	901	skilltab	14	2	3											phlm										0	0	0
+																																					
+null	0	1	1	5	45	3	bar		12	950	skilltab	12	1	1	hit-splash	WeaponSplash	100	1							h3h3										0	0	0
+null	0	1	1	45		33	bar		6	950	skilltab	12	1	2	hit-splash	WeaponSplash	100	1							h3h3										0	0	0
+null	0	1	1	60		42	bar		4	950	skilltab	12	2	3	hit-splash	WeaponSplash	100	1							h3h3										0	0	0
+null	0	1	1	5	45	3	bar		12	950	skilltab	13	1	1	hit-splash	WeaponSplash	100	1							h3h3										0	0	0
+null	0	1	1	45		33	bar		6	950	skilltab	13	1	2	hit-splash	WeaponSplash	100	1							h3h3										0	0	0
+null	0	1	1	60		42	bar		4	950	skilltab	13	2	3	hit-splash	WeaponSplash	100	1							h3h3										0	0	0
+null	0	1	1	5	45	3	bar		12	950	skilltab	14	1	1	hit-splash	WeaponSplash	100	1							h3h3										0	0	0
+null	0	1	1	45		33	bar		6	950	skilltab	14	1	2	hit-splash	WeaponSplash	100	1							h3h3										0	0	0
+null	0	1	1	60		42	bar		4	950	skilltab	14	2	3	hit-splash	WeaponSplash	100	1							h3h3										0	0	0
+null	0	1	1	5	45	3	bar		12	950	skilltab	12	1	1	rep-quant	33									bjav										0	0	0
+null	0	1	1	45		33	bar		6	950	skilltab	12	1	2	rep-quant	33									bjav										0	0	0
+null	0	1	1	60		42	bar		4	950	skilltab	12	2	3	rep-quant	33									bjav										0	0	0
+null	0	1	1	5	45	3	bar		12	950	skilltab	14	1	1	rep-quant	33									bjav										0	0	0
+null	0	1	1	45		33	bar		6	950	skilltab	14	1	2	rep-quant	33									bjav										0	0	0
+null	0	1	1	60		42	bar		4	950	skilltab	14	2	3	rep-quant	33									bjav										0	0	0
+																																					
+null	0	1	1	5	45	3	dru		12	901	skilltab	15	1	1											pelt										0	0	0
+null	0	1	1	45		33	dru		6	901	skilltab	15	1	2											pelt										0	0	0
+null	0	1	1	60		42	dru		4	901	skilltab	15	2	3											pelt										0	0	0
+null	0	1	1	5	45	3	dru		12	901	skilltab	16	1	1											pelt										0	0	0
+null	0	1	1	45		33	dru		6	901	skilltab	16	1	2											pelt										0	0	0
+null	0	1	1	60		42	dru		4	901	skilltab	16	2	3											pelt										0	0	0
+null	0	1	1	5	45	3	dru		12	901	skilltab	17	1	1											pelt										0	0	0
+null	0	1	1	45		33	dru		6	901	skilltab	17	1	2											pelt										0	0	0
+null	0	1	1	60		42	dru		4	901	skilltab	17	2	3											pelt										0	0	0
+																																					
+null	0	1	1	5	45	3	dru		12	950	skilltab	15	1	1											dclc										0	0	0
+null	0	1	1	45		33	dru		6	950	skilltab	15	1	2											dclc										0	0	0
+null	0	1	1	60		42	dru		4	950	skilltab	15	2	3											dclc										0	0	0
+null	0	1	1	5	45	3	dru		12	950	skilltab	16	1	1	hit-splash	WeaponSplash	100	1							dcbm										0	0	0
+null	0	1	1	45		33	dru		6	950	skilltab	16	1	2	hit-splash	WeaponSplash	100	1							dcbm										0	0	0
+null	0	1	1	60		42	dru		4	950	skilltab	16	2	3	hit-splash	WeaponSplash	100	1							dcbm										0	0	0
+null	0	1	1	5	45	3	dru		12	950	skilltab	17	1	1											dclc										0	0	0
+null	0	1	1	45		33	dru		6	950	skilltab	17	1	2											dclc										0	0	0
+null	0	1	1	60		42	dru		4	950	skilltab	17	2	3											dclc										0	0	0
+																																					
+null	0	1	1	5	45	3			12	901	skilltab	18	1	1											clok										0	0	0
+null	0	1	1	45		33			6	901	skilltab	18	1	2											clok										0	0	0
+null	0	1	1	60		42			4	901	skilltab	18	2	3											clok										0	0	0
+null	0	1	1	5	45	3			12	901	skilltab	19	1	1											clok										0	0	0
+null	0	1	1	45		33			6	901	skilltab	19	1	2											clok										0	0	0
+null	0	1	1	60		42			4	901	skilltab	19	2	3											clok										0	0	0
+null	0	1	1	5	45	3			12	901	skilltab	20	1	1											clok										0	0	0
+null	0	1	1	45		33			6	901	skilltab	20	1	2											clok										0	0	0
+null	0	1	1	60		42			4	901	skilltab	20	2	3											clok										0	0	0
+																																					
+null	0	1	1	5	45	3			12	950	skilltab	18	1	1	hit-splash	WeaponSplash	100	1							asnx	h2h2									0	0	0
+null	0	1	1	45		33			6	950	skilltab	18	1	2	hit-splash	WeaponSplash	100	1							asnx	h2h2									0	0	0
+null	0	1	1	60		42			4	950	skilltab	18	2	3	hit-splash	WeaponSplash	100	1							asnx	h2h2									0	0	0
+null	0	1	1	5	45	3			12	950	skilltab	19	1	1	hit-splash	WeaponSplash	100	1							asnx	h2h2									0	0	0
+null	0	1	1	45		33			6	950	skilltab	19	1	2	hit-splash	WeaponSplash	100	1							asnx	h2h2									0	0	0
+null	0	1	1	60		42			4	950	skilltab	19	2	3	hit-splash	WeaponSplash	100	1							asnx	h2h2									0	0	0
+null	0	1	1	5	45	3			12	950	skilltab	20	1	1	hit-splash	WeaponSplash	100	1							asnx	h2h2									0	0	0
+null	0	1	1	45		33			6	950	skilltab	20	1	2	hit-splash	WeaponSplash	100	1							asnx	h2h2									0	0	0
+null	0	1	1	60		42			4	950	skilltab	20	2	3	hit-splash	WeaponSplash	100	1							asnx	h2h2									0	0	0
+																																					
+null	0	1	1	5	45	3			12	950	skilltab	18	1	1	hit-splash	WeaponSplash	100	1							h2h1										0	0	0
+null	0	1	1	45		33			6	950	skilltab	18	1	2	hit-splash	WeaponSplash	100	1							h2h1										0	0	0
+null	0	1	1	60		42			4	950	skilltab	18	2	3	hit-splash	WeaponSplash	100	1							h2h1										0	0	0
+null	0	1	1	5	45	3			12	950	skilltab	19	1	1	hit-splash	WeaponSplash	100	1							h2h1										0	0	0
+null	0	1	1	45		33			6	950	skilltab	19	1	2	hit-splash	WeaponSplash	100	1							h2h1										0	0	0
+null	0	1	1	60		42			4	950	skilltab	19	2	3	hit-splash	WeaponSplash	100	1							h2h1										0	0	0
+																																					
+																																					
+null	100	1	1	1	45	1			30	925	skill	Magic Arrow	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Magic Arrow	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Magic Arrow	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Magic Arrow	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Magic Arrow	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fire Arrow	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fire Arrow	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fire Arrow	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fire Arrow	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fire Arrow	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Inner Sight	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Inner Sight	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Inner Sight	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Inner Sight	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Inner Sight	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Critical Strike	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Critical Strike	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Critical Strike	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Critical Strike	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Critical Strike	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Jab	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Jab	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Jab	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Jab	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Jab	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Cold Arrow	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Cold Arrow	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Cold Arrow	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Cold Arrow	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Cold Arrow	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Multiple Shot	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Multiple Shot	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Multiple Shot	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Multiple Shot	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Multiple Shot	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Dodge	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Dodge	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Dodge	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Dodge	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Dodge	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Power Strike	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Power Strike	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Power Strike	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Power Strike	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Power Strike	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Poison Javelin	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Poison Javelin	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Poison Javelin	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Poison Javelin	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Poison Javelin	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Exploding Arrow	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Exploding Arrow	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Exploding Arrow	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Exploding Arrow	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Exploding Arrow	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Presence of Athena	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Presence of Athena	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Presence of Athena	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Presence of Athena	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Presence of Athena	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Avoid	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Avoid	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Avoid	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Avoid	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Avoid	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Impale	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Impale	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Impale	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Impale	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Impale	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Lightning Bolt	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Lightning Bolt	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Lightning Bolt	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Lightning Bolt	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Lightning Bolt	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Ice Arrow	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Ice Arrow	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Ice Arrow	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Ice Arrow	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Ice Arrow	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Guided Arrow	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Guided Arrow	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Guided Arrow	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Guided Arrow	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Guided Arrow	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Penetrate	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Penetrate	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Penetrate	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Penetrate	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Penetrate	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Charged Strike	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Charged Strike	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Charged Strike	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Charged Strike	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Charged Strike	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Plague Javelin	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Plague Javelin	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Plague Javelin	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Plague Javelin	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Plague Javelin	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Strafe	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Strafe	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Strafe	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Strafe	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Strafe	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Immolation Arrow	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Immolation Arrow	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Immolation Arrow	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Immolation Arrow	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Immolation Arrow	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Dopplezon	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Dopplezon	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Dopplezon	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Dopplezon	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Dopplezon	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Evade	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Evade	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Evade	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Evade	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Evade	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fend	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fend	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fend	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fend	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fend	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Freezing Arrow	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Freezing Arrow	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Freezing Arrow	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Freezing Arrow	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Freezing Arrow	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Valkyrie	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Valkyrie	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Valkyrie	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Valkyrie	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Valkyrie	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Pierce	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Pierce	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Pierce	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Pierce	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Pierce	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Lightning Strike	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Lightning Strike	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Lightning Strike	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Lightning Strike	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Lightning Strike	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Lightning Fury	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Lightning Fury	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Lightning Fury	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Lightning Fury	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Lightning Fury	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Eagle Eye	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Eagle Eye	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Eagle Eye	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Eagle Eye	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Eagle Eye	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Legendary Arrow	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Legendary Arrow	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Legendary Arrow	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Legendary Arrow	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Legendary Arrow	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Dance of Death	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Dance of Death	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Dance of Death	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Dance of Death	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Dance of Death	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fire Hawk	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fire Hawk	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fire Hawk	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fire Hawk	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fire Hawk	3	5											zrin	zamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	SFrost Nova	0	1											zrin	zamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	SFrost Nova	1	2											zrin	zamu									0	0	0
+null	100	1	1	1		1			30	925	skill	SFrost Nova	2	3											zrin	zamu									0	0	0
+null	100	1	1	1		1			8	925	skill	SFrost Nova	2	4											zrin	zamu									0	0	0
+null	100	1	1	1		1			2	925	skill	SFrost Nova	3	5											zrin	zamu									0	0	0
+																																					
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fire Bolt	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fire Bolt	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fire Bolt	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fire Bolt	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fire Bolt	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Warmth	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Warmth	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Warmth	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Warmth	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Warmth	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Charged Bolt	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Charged Bolt	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Charged Bolt	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Charged Bolt	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Charged Bolt	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Ice Bolt	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Ice Bolt	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Ice Bolt	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Ice Bolt	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Ice Bolt	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Frozen Armor	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Frozen Armor	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Frozen Armor	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Frozen Armor	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Frozen Armor	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Inferno	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Inferno	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Inferno	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Inferno	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Inferno	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Static Field	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Static Field	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Static Field	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Static Field	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Static Field	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Telekinesis	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Telekinesis	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Telekinesis	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Telekinesis	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Telekinesis	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Frost Nova	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Frost Nova	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Frost Nova	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Frost Nova	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Frost Nova	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Ice Blast	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Ice Blast	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Ice Blast	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Ice Blast	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Ice Blast	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Blaze	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Blaze	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Blaze	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Blaze	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Blaze	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fire Ball	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fire Ball	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fire Ball	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fire Ball	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fire Ball	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Nova	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Nova	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Nova	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Nova	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Nova	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Lightning	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Lightning	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Lightning	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Lightning	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Lightning	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Shiver Armor	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Shiver Armor	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Shiver Armor	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Shiver Armor	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Shiver Armor	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fire Wall	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fire Wall	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fire Wall	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fire Wall	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fire Wall	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Enchant	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Enchant	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Enchant	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Enchant	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Enchant	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Chain Lightning	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Chain Lightning	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Chain Lightning	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Chain Lightning	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Chain Lightning	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Teleport	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Teleport	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Teleport	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Teleport	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Teleport	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Glacial Spike	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Glacial Spike	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Glacial Spike	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Glacial Spike	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Glacial Spike	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Meteor	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Meteor	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Meteor	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Meteor	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Meteor	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Thunder Storm	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Thunder Storm	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Thunder Storm	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Thunder Storm	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Thunder Storm	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Energy Shield	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Energy Shield	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Energy Shield	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Energy Shield	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Energy Shield	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Blizzard	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Blizzard	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Blizzard	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Blizzard	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Blizzard	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Chilling Armor	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Chilling Armor	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Chilling Armor	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Chilling Armor	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Chilling Armor	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fire Mastery	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fire Mastery	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fire Mastery	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fire Mastery	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fire Mastery	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Hydra	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Hydra	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Hydra	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Hydra	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Hydra	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Lightning Mastery	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Lightning Mastery	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Lightning Mastery	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Lightning Mastery	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Lightning Mastery	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Frozen Orb	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Frozen Orb	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Frozen Orb	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Frozen Orb	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Frozen Orb	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Cold Mastery	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Cold Mastery	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Cold Mastery	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Cold Mastery	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Cold Mastery	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Time Stop	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Time Stop	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Time Stop	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Time Stop	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Time Stop	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fanatic Swing	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fanatic Swing	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fanatic Swing	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fanatic Swing	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fanatic Swing	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Aerial Shield	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Aerial Shield	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	Aerial Shield	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	Aerial Shield	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	Aerial Shield	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	SEruption	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	SEruption	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	SEruption	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	SEruption	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	SEruption	3	5											srin	samu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	STwister	0	1											srin	samu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	STwister	1	2											srin	samu									0	0	0
+null	100	1	1	1		1			30	925	skill	STwister	2	3											srin	samu									0	0	0
+null	100	1	1	1		1			8	925	skill	STwister	2	4											srin	samu									0	0	0
+null	100	1	1	1		1			2	925	skill	STwister	3	5											srin	samu									0	0	0
+																																					
+																																					
+null	100	1	1	1	45	1			30	925	skill	Amplify Damage	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Amplify Damage	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Amplify Damage	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Amplify Damage	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Amplify Damage	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Teeth	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Teeth	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Teeth	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Teeth	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Teeth	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Bone Armor	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Bone Armor	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Bone Armor	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Bone Armor	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Bone Armor	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Skeleton Mastery	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Skeleton Mastery	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Skeleton Mastery	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Skeleton Mastery	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Skeleton Mastery	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Raise Skeleton	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Raise Skeleton	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Raise Skeleton	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Raise Skeleton	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Raise Skeleton	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Dim Vision	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Dim Vision	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Dim Vision	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Dim Vision	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Dim Vision	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Weaken	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Weaken	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Weaken	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Weaken	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Weaken	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Poison Dagger	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Poison Dagger	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Poison Dagger	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Poison Dagger	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Poison Dagger	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Corpse Explosion	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Corpse Explosion	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Corpse Explosion	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Corpse Explosion	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Corpse Explosion	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Clay Golem	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Clay Golem	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Clay Golem	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Clay Golem	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Clay Golem	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Iron Maiden	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Iron Maiden	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Iron Maiden	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Iron Maiden	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Iron Maiden	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Terror	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Terror	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Terror	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Terror	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Terror	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Bone Wall	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Bone Wall	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Bone Wall	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Bone Wall	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Bone Wall	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Golem Mastery	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Golem Mastery	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Golem Mastery	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Golem Mastery	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Golem Mastery	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Raise Skeletal Mage	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Raise Skeletal Mage	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Raise Skeletal Mage	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Raise Skeletal Mage	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Raise Skeletal Mage	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Confuse	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Confuse	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Confuse	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Confuse	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Confuse	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Life Tap	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Life Tap	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Life Tap	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Life Tap	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Life Tap	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Poison Explosion	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Poison Explosion	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Poison Explosion	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Poison Explosion	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Poison Explosion	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Bone Spear	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Bone Spear	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Bone Spear	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Bone Spear	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Bone Spear	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	BloodGolem	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	BloodGolem	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	BloodGolem	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	BloodGolem	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	BloodGolem	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Attract	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Attract	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Attract	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Attract	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Attract	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Decrepify	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Decrepify	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Decrepify	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Decrepify	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Decrepify	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Bone Prison	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Bone Prison	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Bone Prison	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Bone Prison	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Bone Prison	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Devastator	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Devastator	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Devastator	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Devastator	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill		3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	IronGolem	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	IronGolem	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	IronGolem	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	IronGolem	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	IronGolem	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Lower Resist	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Lower Resist	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Lower Resist	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Lower Resist	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Lower Resist	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Poison Nova	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Poison Nova	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Poison Nova	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Poison Nova	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Poison Nova	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Bone Spirit	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Bone Spirit	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Bone Spirit	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Bone Spirit	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Bone Spirit	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	FireGolem	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	FireGolem	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	FireGolem	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	FireGolem	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	FireGolem	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Revive	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Revive	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Revive	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Revive	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Revive	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Poison Mastery	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Poison Mastery	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Poison Mastery	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Poison Mastery	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Poison Mastery	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Killer Scythe	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Killer Scythe	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Killer Scythe	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Killer Scythe	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Killer Scythe	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Hells Gate	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Hells Gate	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Hells Gate	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Hells Gate	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Hells Gate	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Essense Shift	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Essense Shift	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	Essense Shift	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	Essense Shift	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	Essense Shift	3	5											nrin	namu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	SBlade Fury	0	1											nrin	namu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	SBlade Fury	1	2											nrin	namu									0	0	0
+null	100	1	1	1		1			30	925	skill	SBlade Fury	2	3											nrin	namu									0	0	0
+null	100	1	1	1		1			8	925	skill	SBlade Fury	2	4											nrin	namu									0	0	0
+null	100	1	1	1		1			2	925	skill	SBlade Fury	3	5											nrin	namu									0	0	0
+																																					
+																																					
+null	100	1	1	1	45	1			30	925	skill	Sacrifice	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Sacrifice	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Sacrifice	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Sacrifice	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Sacrifice	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Smite	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Smite	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Smite	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Smite	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Smite	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Might	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Might	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Might	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Might	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Might	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Prayer	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Prayer	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Prayer	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Prayer	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Prayer	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Resist Fire	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Resist Fire	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Resist Fire	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Resist Fire	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Resist Fire	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Holy Bolt	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Holy Bolt	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Holy Bolt	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Holy Bolt	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Holy Bolt	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Holy Fire	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Holy Fire	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Holy Fire	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Holy Fire	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Holy Fire	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Thorns	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Thorns	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Thorns	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Thorns	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Thorns	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Defiance	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Defiance	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Defiance	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Defiance	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Defiance	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Resist Cold	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Resist Cold	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Resist Cold	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Resist Cold	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Resist Cold	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Zeal	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Zeal	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Zeal	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Zeal	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Zeal	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Charge	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Charge	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Charge	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Charge	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Charge	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Blessed Aim	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Blessed Aim	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Blessed Aim	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Blessed Aim	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Blessed Aim	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Cleansing	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Cleansing	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Cleansing	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Cleansing	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Cleansing	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Resist Lightning	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Resist Lightning	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Resist Lightning	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Resist Lightning	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Resist Lightning	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Vengeance	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Vengeance	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Vengeance	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Vengeance	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Vengeance	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Blessed Hammer	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Blessed Hammer	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Blessed Hammer	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Blessed Hammer	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Blessed Hammer	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Concentration	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Concentration	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Concentration	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Concentration	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Concentration	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Holy Freeze	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Holy Freeze	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Holy Freeze	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Holy Freeze	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Holy Freeze	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Vigor	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Vigor	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Vigor	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Vigor	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Vigor	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Conversion	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Conversion	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Conversion	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Conversion	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Conversion	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Holy Shield	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Holy Shield	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Holy Shield	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Holy Shield	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Holy Shield	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Holy Shock	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Holy Shock	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Holy Shock	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Holy Shock	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Holy Shock	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Sanctuary	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Sanctuary	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Sanctuary	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Sanctuary	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Sanctuary	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Meditation	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Meditation	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Meditation	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Meditation	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Meditation	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fist of the Heavens	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fist of the Heavens	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fist of the Heavens	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fist of the Heavens	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fist of the Heavens	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fanaticism	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fanaticism	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fanaticism	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fanaticism	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fanaticism	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Conviction	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Conviction	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Conviction	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Conviction	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Conviction	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Redemption	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Redemption	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Redemption	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Redemption	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Redemption	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Salvation	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Salvation	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Salvation	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Salvation	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Salvation	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Aura of Divinity	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Aura of Divinity	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Aura of Divinity	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Aura of Divinity	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Aura of Divinity	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Arrow of Confession	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Arrow of Confession	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Arrow of Confession	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Arrow of Confession	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Arrow of Confession	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Sacred Piercer	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Sacred Piercer	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Sacred Piercer	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Sacred Piercer	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Sacred Piercer	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	SGrim Ward	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	SGrim Ward	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	SGrim Ward	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	SGrim Ward	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	SGrim Ward	3	5											prin	pamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	SSummon Grizzly	0	1											prin	pamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	SSummon Grizzly	1	2											prin	pamu									0	0	0
+null	100	1	1	1		1			30	925	skill	SSummon Grizzly	2	3											prin	pamu									0	0	0
+null	100	1	1	1		1			8	925	skill	SSummon Grizzly	2	4											prin	pamu									0	0	0
+null	100	1	1	1		1			2	925	skill	SSummon Grizzly	3	5											prin	pamu									0	0	0
+																																					
+																																					
+null	100	1	1	1	45	1			30	925	skill	Bash	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Bash	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Bash	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Bash	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Bash	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Sword Mastery	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Sword Mastery	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Sword Mastery	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Sword Mastery	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Sword Mastery	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Axe Mastery	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Axe Mastery	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Axe Mastery	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Axe Mastery	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Axe Mastery	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Mace Mastery	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Mace Mastery	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Mace Mastery	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Mace Mastery	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Mace Mastery	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Howl	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Howl	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Howl	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Howl	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Howl	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Find Potion	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Find Potion	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Find Potion	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Find Potion	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Find Potion	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Leap	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Leap	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Leap	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Leap	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Leap	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Double Swing	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Double Swing	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Double Swing	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Double Swing	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Double Swing	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Pole Arm Mastery	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Pole Arm Mastery	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Pole Arm Mastery	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Pole Arm Mastery	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Pole Arm Mastery	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Throwing Mastery	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Throwing Mastery	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Throwing Mastery	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Throwing Mastery	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Throwing Mastery	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Spear Mastery	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Spear Mastery	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Spear Mastery	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Spear Mastery	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Spear Mastery	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Taunt	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Taunt	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Taunt	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Taunt	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Taunt	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Shout	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Shout	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Shout	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Shout	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Shout	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Stun	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Stun	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Stun	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Stun	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Stun	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Double Throw	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Double Throw	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Double Throw	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Double Throw	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Double Throw	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Increased Stamina	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Increased Stamina	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Increased Stamina	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Increased Stamina	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Increased Stamina	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Find Item	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Find Item	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Find Item	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Find Item	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Find Item	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Leap Attack	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Leap Attack	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Leap Attack	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Leap Attack	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Leap Attack	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Concentrate	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Concentrate	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Concentrate	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Concentrate	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Concentrate	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Iron Skin	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Iron Skin	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Iron Skin	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Iron Skin	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Iron Skin	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Battle Cry	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Battle Cry	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Battle Cry	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Battle Cry	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Battle Cry	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Frenzy	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Frenzy	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Frenzy	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Frenzy	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Frenzy	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Increased Speed	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Increased Speed	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Increased Speed	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Increased Speed	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Increased Speed	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Battle Orders	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Battle Orders	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Battle Orders	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Battle Orders	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Battle Orders	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Grim Ward	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Grim Ward	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Grim Ward	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Grim Ward	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Grim Ward	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Whirlwind	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Whirlwind	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Whirlwind	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Whirlwind	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Whirlwind	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Berserk	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Berserk	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Berserk	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Berserk	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Berserk	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Natural Resistance	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Natural Resistance	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Natural Resistance	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Natural Resistance	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Natural Resistance	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	War Cry	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	War Cry	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	War Cry	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	War Cry	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	War Cry	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Battle Command	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Battle Command	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Battle Command	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Battle Command	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Battle Command	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Inner Corruption	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Inner Corruption	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Inner Corruption	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Inner Corruption	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Inner Corruption	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Phantom Hatchets	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Phantom Hatchets	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Phantom Hatchets	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Phantom Hatchets	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Phantom Hatchets	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Berserk Fury	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Berserk Fury	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Berserk Fury	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Berserk Fury	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Berserk Fury	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	SNova	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	SNova	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	SNova	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	SNova	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	SNova	3	5											brin	bamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	SThunder Storm	0	1											brin	bamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	SThunder Storm	1	2											brin	bamu									0	0	0
+null	100	1	1	1		1			30	925	skill	SThunder Storm	2	3											brin	bamu									0	0	0
+null	100	1	1	1		1			8	925	skill	SThunder Storm	2	4											brin	bamu									0	0	0
+null	100	1	1	1		1			2	925	skill	SThunder Storm	3	5											brin	bamu									0	0	0
+																																					
+																																					
+null	100	1	1	1	45	1			30	925	skill	Raven	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Raven	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Raven	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Raven	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Raven	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Plague Poppy	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Plague Poppy	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Plague Poppy	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Plague Poppy	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Plague Poppy	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Wearwolf	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Wearwolf	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Wearwolf	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Wearwolf	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Wearwolf	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Shape Shifting	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Shape Shifting	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Shape Shifting	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Shape Shifting	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Shape Shifting	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Firestorm	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Firestorm	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Firestorm	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Firestorm	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Firestorm	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Oak Sage	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Oak Sage	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Oak Sage	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Oak Sage	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Oak Sage	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Summon Spirit Wolf	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Summon Spirit Wolf	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Summon Spirit Wolf	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Summon Spirit Wolf	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Summon Spirit Wolf	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Wearbear	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Wearbear	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Wearbear	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Wearbear	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Wearbear	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Molten Boulder	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Molten Boulder	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Molten Boulder	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Molten Boulder	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Molten Boulder	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Arctic Blast	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Arctic Blast	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Arctic Blast	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Arctic Blast	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Arctic Blast	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Cycle of Life	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Cycle of Life	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Cycle of Life	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Cycle of Life	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Cycle of Life	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Feral Rage	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Feral Rage	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Feral Rage	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Feral Rage	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Feral Rage	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Maul	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Maul	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Maul	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Maul	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Maul	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Eruption	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Eruption	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Eruption	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Eruption	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Eruption	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Cyclone Armor	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Cyclone Armor	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Cyclone Armor	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Cyclone Armor	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Cyclone Armor	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Heart of Wolverine	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Heart of Wolverine	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Heart of Wolverine	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Heart of Wolverine	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Heart of Wolverine	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Summon Fenris	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Summon Fenris	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Summon Fenris	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Summon Fenris	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Summon Fenris	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Rabies	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Rabies	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Rabies	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Rabies	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Rabies	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fire Claws	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fire Claws	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fire Claws	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fire Claws	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fire Claws	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Twister	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Twister	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Twister	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Twister	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Twister	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Vines	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Vines	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Vines	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Vines	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Vines	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Hunger	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Hunger	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Hunger	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Hunger	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Hunger	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Shock Wave	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Shock Wave	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Shock Wave	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Shock Wave	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Shock Wave	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Volcano	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Volcano	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Volcano	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Volcano	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Volcano	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Tornado	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Tornado	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Tornado	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Tornado	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Tornado	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Spirit of Barbs	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Spirit of Barbs	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Spirit of Barbs	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Spirit of Barbs	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Spirit of Barbs	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Summon Grizzly	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Summon Grizzly	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Summon Grizzly	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Summon Grizzly	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Summon Grizzly	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fury	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fury	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fury	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fury	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fury	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Armageddon	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Armageddon	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Armageddon	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Armageddon	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Armageddon	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Hurricane	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Hurricane	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Hurricane	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Hurricane	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Hurricane	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Sandstorm	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Sandstorm	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Sandstorm	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Sandstorm	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Sandstorm	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Iron Claws	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Iron Claws	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Iron Claws	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Iron Claws	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Iron Claws	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Cow Balloon	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Cow Balloon	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	Cow Balloon	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	Cow Balloon	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	Cow Balloon	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	SCharged Strike	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	SCharged Strike	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	SCharged Strike	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	SCharged Strike	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	SCharged Strike	3	5											drin	damu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	SBone Spear	0	1											drin	damu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	SBone Spear	1	2											drin	damu									0	0	0
+null	100	1	1	1		1			30	925	skill	SBone Spear	2	3											drin	damu									0	0	0
+null	100	1	1	1		1			8	925	skill	SBone Spear	2	4											drin	damu									0	0	0
+null	100	1	1	1		1			2	925	skill	SBone Spear	3	5											drin	damu									0	0	0
+																																					
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fire Trauma	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fire Trauma	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fire Trauma	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fire Trauma	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fire Trauma	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Claw Mastery	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Claw Mastery	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Claw Mastery	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Claw Mastery	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Claw Mastery	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Psychic Hammer	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Psychic Hammer	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Psychic Hammer	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Psychic Hammer	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Psychic Hammer	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Tiger Strike	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Tiger Strike	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Tiger Strike	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Tiger Strike	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Tiger Strike	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Dragon Talon	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Dragon Talon	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Dragon Talon	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Dragon Talon	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Dragon Talon	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Shock Field	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Shock Field	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Shock Field	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Shock Field	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Shock Field	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Blade Sentinel	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Blade Sentinel	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Blade Sentinel	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Blade Sentinel	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Blade Sentinel	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Quickness	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Quickness	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Quickness	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Quickness	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Quickness	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fists of Fire	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fists of Fire	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fists of Fire	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fists of Fire	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fists of Fire	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Dragon Claw	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Dragon Claw	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Dragon Claw	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Dragon Claw	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Dragon Claw	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Charged Bolt Sentry	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Charged Bolt Sentry	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Charged Bolt Sentry	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Charged Bolt Sentry	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Charged Bolt Sentry	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Wake of Fire Sentry	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Wake of Fire Sentry	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Wake of Fire Sentry	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Wake of Fire Sentry	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Wake of Fire Sentry	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Weapon Block	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Weapon Block	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Weapon Block	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Weapon Block	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Weapon Block	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Horrific Form	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Horrific Form	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Horrific Form	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Horrific Form	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Horrific Form	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Cobra Strike	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Cobra Strike	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Cobra Strike	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Cobra Strike	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Cobra Strike	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Blade Fury	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Blade Fury	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Blade Fury	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Blade Fury	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Blade Fury	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Fade	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Fade	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Fade	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Fade	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Fade	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Shadow Warrior	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Shadow Warrior	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Shadow Warrior	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Shadow Warrior	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Shadow Warrior	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Claws of Thunder	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Claws of Thunder	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Claws of Thunder	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Claws of Thunder	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Claws of Thunder	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Dragon Tail	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Dragon Tail	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Dragon Tail	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Dragon Tail	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Dragon Tail	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Lightning Sentry	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Lightning Sentry	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Lightning Sentry	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Lightning Sentry	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Lightning Sentry	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Inferno Sentry	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Inferno Sentry	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Inferno Sentry	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Inferno Sentry	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Inferno Sentry	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Mind Blast	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Mind Blast	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Mind Blast	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Mind Blast	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Mind Blast	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Blades of Ice	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Blades of Ice	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Blades of Ice	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Blades of Ice	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Blades of Ice	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Dragon Flight	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Dragon Flight	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Dragon Flight	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Dragon Flight	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Dragon Flight	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Death Sentry	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Death Sentry	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Death Sentry	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Death Sentry	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Death Sentry	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Blade Shield	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Blade Shield	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Blade Shield	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Blade Shield	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Blade Shield	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Venom	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Venom	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Venom	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Venom	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Venom	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Shadow Master	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Shadow Master	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Shadow Master	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Shadow Master	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Shadow Master	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Royal Strike	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Royal Strike	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Royal Strike	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Royal Strike	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Royal Strike	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Shade Armor	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Shade Armor	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Shade Armor	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Shade Armor	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Shade Armor	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Shuriken	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Shuriken	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Shuriken	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Shuriken	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Shuriken	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	Iaigiri	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	Iaigiri	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	Iaigiri	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	Iaigiri	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	Iaigiri	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	STeeth	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	STeeth	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	STeeth	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	STeeth	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	STeeth	3	5											arin	aamu									0	0	0
+																																					
+null	100	1	1	1	45	1			30	925	skill	SCold Missiles	0	1											arin	aamu									0	0	0
+null	100	1	1	1	60	1			30	925	skill	SCold Missiles	1	2											arin	aamu									0	0	0
+null	100	1	1	1		1			30	925	skill	SCold Missiles	2	3											arin	aamu									0	0	0
+null	100	1	1	1		1			8	925	skill	SCold Missiles	2	4											arin	aamu									0	0	0
+null	100	1	1	1		1			2	925	skill	SCold Missiles	3	5											arin	aamu									0	0	0
