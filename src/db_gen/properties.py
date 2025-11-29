@@ -50,6 +50,15 @@ class Property:
             self.stats.append(Stat("mindamage", "", "", "5", self))
         elif code == "dmg-max":
             self.stats.append(Stat("maxdamage", "", "", "6", self))
+        elif code == "dmg":
+            self.stats = []
+            stat = Stat("", "", "", "1", self)
+            stat.priority = 1000
+            if self.min == self.max:
+                stat.stat_string = "Damage +" + str(self.min)
+            else:
+                stat.stat_string = "Damage +(" + str(self.min) + "-" + str(self.max) + ")"
+            self.stats.append(stat)
         elif code == "dmg%":
             stat = Stat("", "", "", "7", self)
             stat.priority = 1000

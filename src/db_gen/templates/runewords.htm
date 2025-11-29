@@ -16,7 +16,7 @@
 <form id="ingredients2Form">
   <table>
     <tr>
-    % for i, base in enumerate(allowed_items):
+    % for i, base in enumerate(sorted(allowed_items)):
       % if i != 0 and i % 12 == 0:
       </tr><tr>
       % endif
