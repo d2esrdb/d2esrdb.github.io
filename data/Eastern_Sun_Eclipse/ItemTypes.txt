@@ -89,7 +89,7 @@ Amazon Bow	abow	bow	amaz	0	1	rarm	larm	bowq		0	0	0	0		1	0	0	0	0	3	5	6	1	1		0	ama
 Amazon Spear	aspe	spea	amaz	1	1	rarm	larm			0	0	0	0		1	0	0	0	0	3	5	6	0	1		0	ama	0							weap	0
 Amazon Javelin	ajav	jave	amaz	1	1	rarm	larm			1	1	1	1		1	0	0	0	0	3	5	6	0	1		0	ama	0							misc	0
 Hand to Hand 1	h2h1	claw	assn	1	1	rarm	larm			0	0	0	0		1	0	0	0	0	3	5	6	0	2	ass	0	ass	0							weap	0
-Bow Quiver	arrm	bowq		1	1	rarm	larm		bow	0	1	1	1		1	0	0	0	0	1	1	1	0	3		0	ama	0							misc	0
+Bow Quiver	arrm	bowq		1	1	rarm	larm		bow	0	1	1	1		1	0	0	0	0	1	1	1	0	3		0		0							misc	0
 Crossbow Quiver	boqm	xboq		1	1	rarm	larm		xbow	0	1	1	1		1	0	0	0	0	1	1	1	0	3		0		0							misc	0
 Chipped Gem	gem0	gem		0	0					0	0	0	0			1	0	1	0	0	0	0	0	3		0		0							misc	0
 Flawed Gem	gem1	gem		0	0					0	0	0	0			1	0	1	0	0	0	0	0	3		0		0							misc	0
@@ -186,7 +186,7 @@ Gloves Ultra Elite	glv1	armo		1	1	glov	glov			0	0	0	0		0	0	0	0	0	4	4	4	0	1		1		0
 Boots Ultra Elite	boo1	armo		1	1	feet	feet			0	0	0	0		0	0	0	0	0	4	4	4	0	1		1		0							armo	0
 Belt Ultra Elite	bel1	armo		1	1	belt	belt			0	0	0	0		0	0	0	0	0	2	2	2	0	1		1		0							armo	0
 Radiance Gem	radg	rune		0	0					0	0	0	0			1	0	0	0	0	0	0	0	1		0		0							misc	0
-Chromatic Blade	cbla	mele		1	1	rarm	larm			0	0	0	0			0	0	0	0	3	5	6	0	1		0		0							weap	0
+Chromatic Blade	cbla	mele	swor	1	1	rarm	larm			0	0	0	0			0	0	0	0	3	5	6	0	1		0		0							weap	0
 Monster Amulet	mam0	misc		0	1	neck	neck			0	0	0	0	1	1	0	0	0	0	1	1	1	0	3		0		6	invamu1	invamu2	invamu3	invamu4	invamu5	invamu6	misc	0
 Monster Amulet	mam1	misc		0	1	neck	neck			0	0	0	0	1	1	0	0	0	0	1	1	1	0	3		0		6	invamu1	invamu2	invamu3	invamu4	invamu5	invamu6	misc	0
 Monster Amulet	mam2	misc		0	1	neck	neck			0	0	0	0	1	1	0	0	0	0	1	1	1	0	3		0		6	invamu1	invamu2	invamu3	invamu4	invamu5	invamu6	misc	0
@@ -211,6 +211,7 @@ Polearm Ultra Elite	1pol	pole		1	1	rarm	larm			0	0	0	0			0	0	0	0	6	6	6	0	1		0		0
 Crossbow Ultra Elite	1xbo	xbow		1	1	rarm	larm	xboq		0	0	0	0			0	0	0	0	6	6	6	0	1		0		0							weap	0
 Mace Ultra Elite	1mac	mace		1	1	rarm	larm			0	0	0	0			0	0	0	0	6	6	6	0	1		0		0							weap	0
 Throwing Axe Ultra Elite	1tax	taxe	axe	1	1	rarm	larm			1	1	1	1			0	0	0	0	6	6	6	0	1		0		0							misc	0
-Hand to Hand Ultra Elite	1h2h	h2h		1	1	rarm	larm			0	0	0	0			0	0	0	0	6	6	6	0	1		0		0							weap	0
+Hand to Hand Ultra Elite	1h2h	h2h		1	1	rarm	larm			0	0	0	0			0	0	0	0	6	6	6	0	1		0	ass	0							weap	0
 Javelin Ultra Elite	1jav	jave	spea	1	1	rarm	larm			1	1	1	1			0	0	0	0	6	6	6	0	1		0		0							misc	0
 Uber Boss Heart	ubhr	cube		0	0					0	0	0	0			1	0	0	0	0	0	0	0	1		0		0							misc	0
+Hand to Hand Ultra Elite Fixed	2h2h	h2h2		1	1	rarm	larm			0	0	0	0			0	0	0	0	6	6	6	0	1		0	ass	0							weap	0

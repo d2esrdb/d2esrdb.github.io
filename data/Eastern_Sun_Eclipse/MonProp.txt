@@ -42,4 +42,4 @@ lightblue-abs-all	abs-all%			40	40	state		194	1	1																					abs-all%		
 cblue-abs-all	abs-all%			40	40	state		191	1	1																					abs-all%			40	40	state		191	1	1																					abs-all%			40	40	state		191	1	1																					0
 cb-swing2	crush			10	10	swing2			100	100																					crush			20	20	swing2			100	100																					crush			30	30	swing2			100	100																					0
 testhp	monster_playercount			8	8																																																																																						0
-bossblack	state		244	1	1																										state		244	1	1																										state		244	1	1	state		219	1	1																					0
+bossblack	state		244	1	1																										state		244	1	1																										state		244	1	1	state		219	1	1	state		217	1	1																0

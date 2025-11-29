@@ -188,7 +188,7 @@ Helm Aura Stone Cleansing		3	x1d	3													aura	Cleansing	16	16	item-absorbp
 Helm Aura Stone Resist Fire		3	x2d	3													aura	Resist Fire	16	16	abs-fire%		1	1	res-fire		50	50												
 Helm Aura Stone Resist Cold		3	x3d	3													aura	Resist Cold	16	16	abs-cold%		1	1	res-cold		50	50												
 Helm Aura Stone Resist Lightning		3	x4d	3													aura	Resist Lightning	16	16	abs-ltng%		1	1	res-ltng		50	50												
-Helm Aura Stone Vigour		3	x5d	3													aura	Vigour	16	16	move2		40	40	block2		40	40												
+Helm Aura Stone Vigour		3	x5d	3													aura	Vigor	16	16	move2		40	40	block2		40	40												
 Helm Aura Stone Salvation		3	x6d	3													aura	Salvation	16	16	res-all-max		5	5	res-all		35	35												
 Helm Aura Stone Doom		3	x7d	3													aura	DoomAura	16	16	item-absorbphys-percent		1	1	ac		400	400												
 Helm Aura Stone Arcane Vulnerability		3	x8d	3													aura	MagicConviction	16	16	abs-mag%		1	1	res-mag		15	15												

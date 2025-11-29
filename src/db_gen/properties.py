@@ -455,6 +455,8 @@ class Property:
             case "12":
                 # @TODO vidalas full set just says freezes target but this says freezes target +1
                 return stat.descstr + " +" + self.get_property_value_string(stat)
+            case "19":
+                return stat.descstr.replace("%d", self.get_property_value_string(stat)) + " " 
             case _:
                 self.utils.log(
                     "descfunc" + stat.descfunc + " descval 2 not implemented (stat " + stat.stat + ")", level=ERROR

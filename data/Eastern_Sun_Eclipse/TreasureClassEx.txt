@@ -12,8 +12,8 @@ Potion 4			1						hp2	4	hp3	8	hp4	4	mp2	2	mp3	4	mp4	2	rvs	1										0
 Potion 5			1						hp3	8	hp4	8	mp3	4	mp4	4	rvs	1														0
 Potion 6			1						hp3	4	hp4	8	hp5	4	mp3	2	mp4	4	mp5	2	rvs	1										0
 Potion 7			1						hp4	8	hp5	8	mp4	4	mp5	4	rvs	1														0
-Ore (GFU) 1			1						Uni Ore 0	1	Uni Ore 1	1	Uni Ore 2	1	Uni Ore 3	1	Uni Ore 4	1	Uni Ore 5	1												0
-Ore (GFU) 2			1						Uni Ore 6	1	Uni Ore 7	1	Uni Ore 8	1	Uni Ore 9	1	Uni Ore 10	1	Uni Ore 11	1												0
+Ore (GFU) 1			1						00r	1	00t	1																				0
+Ore (GFU) 2			1						00g	1	00h	1																				0
 Ore (GFU)			1						Ore (GFU) 1	1	Ore (GFU) 2	1																				0
 Ore			1						Ore (GFU)	1																						0
 Act 1 Junk			1						Potion 1	8	Misc 0	3	Ammo	1																		0
@@ -32,11 +32,12 @@ Act 3 (H) Junk			1						Potion 7	8	Misc 2	3	Ammo	1																		0
 Act 4 (H) Junk			1						Potion 7	8	Misc 2	3	Ammo	1																		0
 Act 5 (H) Junk			1						Potion 7	8	Misc 2	3	Ammo	1																		0
 Class Rings			1						srn	1	brg	1	nrn	1	prn	1	drn	1	zrn	1	arn	1										0
+TD			1	1024					Tinkerer's Dream	1																						
 Rings			1						rin	2	Class Rings	1																				0
 Class Amulets			1						sam	1	bam	1	nam	1	pam	1	dam	1	zam	1	aam	1										0
 Amulets			1						amu	2	Class Amulets	1																				0
 Unique Charm 1			1	1024					The Perfect Cell	6	Yello Jello	6	Lothar's Will	6	Deviant Cell	4																0
-Unique Charm 2			1	1024					The Perfect Cell	6	Yello Jello	6	Lothar's Will	6	Deviant Cell	4	Vlad Tepe's Sustenance	1	Something Wicked	1	The Unknown Hero	1	Tinkerer's Dream	3								0
+Unique Charm 2			1	1024					The Perfect Cell	6	Yello Jello	6	Lothar's Will	6	Deviant Cell	4	Vlad Tepe's Sustenance	1	Something Wicked	1	The Unknown Hero	1										0
 DDD6			-6						ddd	1	ddd	1	ddd	1	ddd	1	ddd	1	ddd	1												
 DDD5			-5						ddd	1	ddd	1	ddd	1	ddd	1	ddd	1														
 DDD4			-4						ddd	1	ddd	1	ddd	1	ddd	1																
@@ -52,22 +53,22 @@ Normal Gem			1						gsv	1	gsy	1	gsb	1	gsg	1	gsr	1	gsw	1	sku	1	gsk	1								0
 Flawless Gem			1						gzv	1	gly	1	glb	1	glg	1	glr	1	glw	1	skl	1	gzk	1								0
 Blemished Gem			1						gpv	1	gpy	1	gpb	1	gpg	1	gpr	1	gpw	1	skz	1	gpk	1								0
 Perfect Gem			1						gvb	1	gyb	1	gbb	1	ggb	1	grb	1	gwb	1	skb	1	gpk	1								0
-Runes 1			1						r01	35	r02	30	r03	25	01l	7	02l	6	03l	5												0
-Runes 2			1						r04	35	r05	30	r06	25	04l	7	05l	6	06l	5	Runes 1	150										0
-Runes 3			1						r07	35	r08	30	r09	25	07l	6	08l	5	Runes 2	250												0
-Runes 4			1						r10	35	r11	30	r12	25	09l	6	10l	5	Runes 3	350												0
-Runes 5			1						r13	35	r14	30	r15	25	11l	6	12l	5	Runes 4	450												0
-Runes 6			1						r16	35	r17	30	r18	25	13l	6	14l	5	Runes 5	600												0
-Runes 7			1						r19	35	r20	30	r21	25	15l	6	16l	5	Runes 6	750												0
-Runes 8			1						r22	35	r23	30	r24	25	17l	6	18l	5	Runes 7	950												0
-Runes 9			1						r25	28	r26	26	r27	24	19l	6	20l	5	Runes 8	1200												0
-Runes 10			1						r28	26	r29	24	r30	22	21l	5	22l	4	Runes 9	1450												0
-Runes 11			1						r31	24	r32	22	r33	20	23l	5	24l	4	Runes 10	1750												0
-Runes 12			1						r34	22	r35	20	r36	18	25l	5	26l	4	Runes 11	2000												0
-Runes 13			1						r37	20	r38	18	r39	16	27l	4	28l	3	Runes 12	2200												0
-Runes 14			1						r40	18	r41	16	r42	14	29l	4	30l	3	Runes 13	2200												0
-Runes 15			1						r43	16	r44	14	r45	12	31l	4	32l	3	Runes 14	2200												0
-Runes 16			1						r50	8	r46	10	33l	3	Runes 15	2200																0
+Runes 1			1						r01	35	r02	30	r03	25																		0
+Runes 2			1						r04	35	r05	30	r06	25	Runes 1	150																0
+Runes 3			1						r07	35	r08	30	r09	25	Runes 2	250																0
+Runes 4			1						r10	35	r11	30	r12	25	Runes 3	350																0
+Runes 5			1						r13	35	r14	30	r15	25	Runes 4	450																0
+Runes 6			1						r16	35	r17	30	r18	25	Runes 5	600																0
+Runes 7			1						r19	35	r20	30	r21	25	Runes 6	750																0
+Runes 8			1						r22	35	r23	30	r24	25	Runes 7	950																0
+Runes 9			1						r25	28	r26	26	r27	24	Runes 8	1200																0
+Runes 10			1						r28	26	r29	24	r30	22	Runes 9	1450																0
+Runes 11			1						r31	24	r32	22	r33	20	Runes 10	1750																0
+Runes 12			1						r34	22	r35	20	r36	18	Runes 11	2000																0
+Runes 13			1						r37	20	r38	18	r39	16	Runes 12	2200																0
+Runes 14			1						r40	18	r41	16	r42	14	Runes 13	2200																0
+Runes 15			1						r43	16	r44	14	r45	12	Runes 14	2200																0
+Runes 16			1						r50	8	r46	10	Runes 15	2200	Runes 15	2200																0
 Rune JP (Norm)			-6						Runes 6	6																						0
 Rune JP (NM)			-6						Runes 11	6																						0
 Rune JP (H)			-6						Runes 16	6																						0
@@ -547,7 +548,8 @@ Act 5 (H) Unique A	15	81	-2					0	Act 5 (H) Uitem A	1	Cpot 7	1																		
 Act 5 (H) Unique B	15	83	-2					0	Act 5 (H) Uitem B	1	Cpot 7	1																				0
 Act 5 (H) Unique C	15	85	-2					0	Act 5 (H) Uitem C	1	Cpot 7	1																				0
 Act 1 Super A			3	864	864	864	1024	25	"gld,mul=2048"	20	Act 1 Equip A	40	Act 1 Junk	10	Act 1 UGood	5	Sets01	1														0
-Act 1 Super B			5	0	1024	0	0	0	Sets01	100	Sets01	100	Sets01	100	Sets01	100	Sets01	100	Sets01	100	Sets01	100	Sets01	100	Sets01	100	Sets01	100				0
+CF			1	864	0	0	0	0	TD	1																						
+Act 1 Super B			5	0	864	0	0	0	Sets01	100	Sets01	100	Sets01	100	Sets01	100																0
 Act 1 Super C			3	864	864	864	1024	25	"gld,mul=2048"	20	Act 1 Equip C	40	Act 1 Junk	10	Act 1 UGood	5	Sets01	1														0
 Act 2 Super A			3	864	864	864	1024	25	"gld,mul=2048"	20	Act 2 Equip A	40	Act 2 Junk	10	Act 2 UGood	5																0
 Act 2 Super B			3	864	864	864	1024	25	"gld,mul=2048"	20	Act 2 Equip B	40	Act 2 Junk	10	Act 2 UGood	5																0
@@ -651,27 +653,30 @@ Cow King (H)			5						Act 5 (H) Ultra	1																						0
 Treant King			6						Act 5 Uber	1080	Ore (GFU)	5	ppp	1																		0
 Treant King (N)			6						Act 5 (N) Uber	720	Ore (GFU)	10	ppp	1																		0
 Treant King (H)			6						Act 5 (H) Uber	360	Ore (GFU)	15	ppp	1																		0
-Reporb			6						Act 5 Uber	1080	Ore (GFU)	5	ppp	1																		0
-Reporb (N)			6						Act 5 (N) Uber	720	Ore (GFU)	10	ppp	1																		0
-Reporb (H)			10						Act 5 (H) Uber	360	Ore (GFU)	15	ROP Charm	1																		0
-Reziarfg			6						Act 5 Uber	1080	Ore (GFU)	5	ppp	1																		0
-Reziarfg (N)			6						Act 5 (N) Uber	720	Ore (GFU)	10	ppp	1																		0
-Reziarfg (H)			10						Act 5 (H) Uber	360	Ore (GFU)	15	ROP Charm	1																		0
-Guardian0			6						Act 5 Uber	1080	Ore (GFU)	6	ppp	2																		0
-Guardian0 (N)			8						Act 5 (N) Uber	720	Ore (GFU)	12	ppp	2																		0
-Guardian0 (H)			10						Clone (H)	1500	Runes 16	4	Ore (GFU)	20	r15	25	sbs	2	srj	2												0
-Guardian1			6						Act 5 Uber	1080	Ore (GFU)	6	ppp	2																		0
-Guardian1 (N)			8						Act 5 (N) Uber	720	Ore (GFU)	12	ppp	2																		0
-Guardian1 (H)			10						Clone (H)	1500	Runes 16	4	Ore (GFU)	20	r15	25	sbs	2	srj	2												0
-Guardian2			6						Act 5 Uber	1080	Ore (GFU)	6	ppp	2																		0
-Guardian2 (N)			8						Act 5 (N) Uber	720	Ore (GFU)	12	ppp	2																		0
-Guardian2 (H)			10						Clone (H)	1500	Runes 16	4	Ore (GFU)	20	r15	25	sbs	2	srj	2												0
-Guardian3			6						Act 5 Uber	1080	Ore (GFU)	6	ppp	2																		0
-Guardian3 (N)			8						Act 5 (N) Uber	720	Ore (GFU)	12	ppp	2																		0
-Guardian3 (H)			10						Clone (H)	1500	Runes 16	4	Ore (GFU)	20	r15	25	sbs	2	srj	2												0
-Guardian4			6						Act 5 Uber	1080	Ore (GFU)	6	ppp	2																		0
-Guardian4 (N)			8						Act 5 (N) Uber	720	Ore (GFU)	12	ppp	2																		0
-Guardian4 (H)			10						Clone (H)	1500	Runes 16	4	Ore (GFU)	20	r15	25	sbs	2	srj	2												0
+ROP Rare Charm			1						cx1	1	cx2	1	cx3	1																		0
+ROP Charm			1						Unique Charm 2	10	cx1	15	cx2	15	cx3	15	ROP Rare Charm	15														0
+Clone (H)			1	682	682	682	682	100	Gold	32	Act 5 (H) Equip B	48	Act 5 (H) UGood	6	ppp	2																0
+Reporb			6						Act 5 Uber	100	Ore (GFU)	5	ppp	1																		0
+Reporb (N)			6						Act 5 (N) Uber	100	Ore (GFU)	10	ppp	1																		0
+Reporb (H)			6						Act 5 (H) Uber	100	Ore (GFU)	15	ROP Charm	1																		0
+Reziarfg			6						Act 5 Uber	100	Ore (GFU)	5	ppp	1																		0
+Reziarfg (N)			6						Act 5 (N) Uber	100	Ore (GFU)	10	ppp	1																		0
+Reziarfg (H)			6						Act 5 (H) Uber	100	Ore (GFU)	15	ROP Charm	1																		0
+Guardian0			6						Act 5 Uber	100	Ore (GFU)	6	ppp	2																		0
+Guardian0 (N)			6						Act 5 (N) Uber	100	Ore (GFU)	12	ppp	2																		0
+Guardian0 (H)			6						Clone (H)	100	Runes 16	4	Ore (GFU)	20	r15	25	sbs	2	srj	2												0
+Guardian1			6						Act 5 Uber	100	Ore (GFU)	6	ppp	2																		0
+Guardian1 (N)			6						Act 5 (N) Uber	100	Ore (GFU)	12	ppp	2																		0
+Guardian1 (H)			6						Clone (H)	100	Runes 16	4	Ore (GFU)	20	r15	25	sbs	2	srj	2												0
+Guardian2			6						Act 5 Uber	100	Ore (GFU)	6	ppp	2																		0
+Guardian2 (N)			6						Act 5 (N) Uber	100	Ore (GFU)	12	ppp	2																		0
+Guardian2 (H)			6						Clone (H)	100	Runes 16	4	Ore (GFU)	20	r15	25	sbs	2	srj	2												0
+Guardian3			6						Act 5 Uber	100	Ore (GFU)	6	ppp	2																		0
+Guardian3 (N)			6						Act 5 (N) Uber	100	Ore (GFU)	12	ppp	2																		0
+Guardian3 (H)			6						Clone (H)	100	Runes 16	4	Ore (GFU)	20	r15	25	sbs	2	srj	2												0
+Guardian4			6						Act 5 Uber	100	Ore (GFU)	6	ppp	2																		0
+Guardian4 (N)			6						Act 5 (N) Uber	100	Ore (GFU)	12	ppp	2																		0
+Guardian4 (H)			6						Clone (H)	100	Runes 16	4	Ore (GFU)	20	r15	25	sbs	2	srj	2												0
 Act 1  Boss			1	960	960	960	1024	15	"gld,mul=3072"	10	Act 3 Equip A	55	Act 3 Junk	8	Act 3 UGood	7																0
 Act 1 (N) Boss			1	960	960	960	1024	15	"gld,mul=3072"	10	Act 3 (N) Equip A	55	Act 3 (N) Junk	8	Act 3 (N) UGood	7																0
 Act 1 (H) Boss			1	960	960	960	1024	15	"gld,mul=3072"	10	Act 3 (H) Equip A	55	Act 3 (H) Junk	8	Act 3 (H) UGood	7																0
@@ -687,9 +692,18 @@ Act 4 (H) Boss			1	960	960	960	1024	15	"gld,mul=3072"	10	Act 5 (H) Equip A	55	Ac
 Act 5  Boss			1	960	960	960	1024	15	"gld,mul=3072"	10	Act 5 Equip C	55	Act 5 Junk	8	Act 5 UGood	7																0
 Act 5 (N) Boss			1	960	960	960	1024	15	"gld,mul=3072"	10	Act 5 (N) Equip C	55	Act 5 (N) Junk	8	Act 5 (N) UGood	7																0
 Act 5 (H) Boss			1	960	960	960	1024	15	"gld,mul=3072"	10	Act 5 (H) Equip C	55	Act 5 (H) Junk	8	Act 5 (H) UGood	7																0
+ROP - Base			5						Act 5 Ultra	1080	Ore (GFU)	1																				0
+ROP (N) - Base			5						Act 5 (N) Ultra	720	Ore (GFU)	1																				0
+ROP (H) - Base			5						r15	10	Ore (GFU)	5	sbs	1	srj	1																0
+ROP			-2						ROP Charm	1	ROP - Base	1																				0
+ROP (N)			-2						ROP Charm	1	ROP (N) - Base	1																				0
+ROP (H)			4						ROP Charm	1	ROP (H) - Base	1																				0
+M Maps Nihl			1						mt1	1	mt2	1	mt3	1	mt4	1	mt5	1	mt6	1												0
+M Focus Uniques			1						Glacial Focus	1	Magmatic Focus	1	Arcing Focus	1	Psychic Focus	1	Geothermic Focus	1	Vile Focus	1	Celestial Focus	1	Webbed Focus	1	Spiritual Focus	1						0
+ROP (H) HellNihl			4						ROP Charm	10	ROP (H) - Base	10	M Maps Nihl	8																		0
 Nihlathak			6						Act 5  Boss	1080	Ore (GFU)	1																				0
-Nihlathak (N)			6						Act 5 (N) Boss	720	Ore (GFU)	1																				0
-Nihlathak (H)			6						Act 5 (H) Boss	50	Ore (GFU)	20	ROP (H)	10																		0
+Nihlathak (N)			6						Act 5 (N) Boss	720	Ore (GFU)	2	yy1	1																		0
+Nihlathak (H)			10						Act 5 (H) Boss	20	Ore (GFU)	20	ROP (H) HellNihl	10	M Focus Uniques	1	yy1	1														0
 Andariel			6						Act 1  Boss	1080	Ore (GFU)	1																				0
 Andariel (N)			6						Act 1 (N) Boss	720	Ore (GFU)	1																				0
 Andariel (H)			6						Act 1 (H) Boss	360	Ore (GFU)	1																				0
@@ -726,15 +740,6 @@ Baal (H)			6						Act 5 (H) Boss	360	Ore (GFU)	1	r15	1																		0
 Baalq			6	982	982	982	1024	45	"gld,mul=3072"	15	Act 5 Equip C	180	Act 5 Junk	12	Act 5 UGood	30	Sets03	2	Ore (GFU)	1	r15	1										0
 Baalq (N)			6	982	982	982	1024	45	"gld,mul=3072"	15	Act 5 (N) Equip C	180	Act 5 (N) Junk	12	Act 5 (N) UGood	30	Sets06	2	Ore (GFU)	2	r15	1										0
 Baalq (H)			6	982	982	982	1024	45	"gld,mul=3072"	15	Act 5 (H) Equip C	180	Act 5 (H) Junk	12	Act 5 (H) UGood	30	Sets08	2	Ore (GFU)	3	r15	1										0
-ROP Rare Charm			1						cx1	1	cx2	1	cx3	1																		0
-ROP Charm			1						Unique Charm 2	10	cx1	15	cx2	15	cx3	15	ROP Rare Charm	15														0
-ROP - Base			5						Act 5 Ultra	1080	Ore (GFU)	1																				0
-ROP (N) - Base			5						Act 5 (N) Ultra	720	Ore (GFU)	1																				0
-ROP (H) - Base			5						r15	10	Ore (GFU)	5	sbs	1	srj	1																0
-ROP			-2						ROP Charm	1	ROP - Base	1					  															0
-ROP (N)			-2						ROP Charm	1	ROP (N) - Base	1					  															0
-M Maps Nihl			1						mt1	1	mt2	1	mt3	1	mt4	1	mt5	1	mt6	1												0
-ROP (H)			6						ROP Charm	1	ROP (H) - Base	1	M Maps Nihl	1			  															0
 Trapped Soul			1					66	Gold	19	A4A	8	Act 4 Junk	33																		0
 Trapped Soul (N)			1					66	Gold	19	A4A (N)	8	Act 4 (N) Junk	33																		0
 Trapped Soul (H)			1					66	Gold	19	A4A (H)	8	Act 4 (H) Junk	33																		0
@@ -1388,7 +1393,6 @@ Gold Only Champ			1						"gld,mul=4000"	1																						0
 Gold Only Unique			1						"gld,mul=12000"	1																						0
 Clone			1	682	682	682	682	100	Gold	32	Act 5 Equip B	48	Act 5 UGood	6	ppp	2																0
 Clone (N)			1	682	682	682	682	100	Gold	32	Act 5 (N) Equip B	48	Act 5 (N) UGood	6	ppp	2																0
-Clone (H)			1	682	682	682	682	100	Gold	32	Act 5 (H) Equip B	48	Act 5 (H) UGood	6	ppp	2																0
 Clone Norm			5	682	682	682	682	100	Gold	32	Act 5 Equip B	48	Act 5 UGood	6	ppp	2																0
 Clone Norm (N)			5	682	682	682	682	100	Gold	32	Act 5 (N) Equip B	48	Act 5 (N) UGood	6	ppp	2																0
 Clone Norm (H)			5	682	682	682	682	100	Gold	32	Act 5 (H) Equip B	48	Act 5 (H) UGood	6	ppp	2																0
@@ -1422,9 +1426,9 @@ Nihla_Clone2 (H)			5						Clone (H)	600	Ore (GFU)	10	fkn	120																		0
 Nihla_Clone3			5						Clone	600	Ore (GFU)	2	po4	30	fkn	60																0
 Nihla_Clone3 (N)			5						Clone (N)	600	Ore (GFU)	4	po4	35	fkn	80																0
 Nihla_Clone3 (H)			5						Clone (H)	600	Ore (GFU)	6	po4	40	fkn	100																0
-Nihla_Clone4			8						Clone	600	Ore (GFU)	10	ppp	4					Runes 7	3												0
-Nihla_Clone4 (N)			12						Clone (N)	600	Ore (GFU)	20	ppp	4					Runes 12	3												0
-Nihla_Clone4 (H)			16						Clone (H)	1000	Ore (GFU)	40	ppp	4			sbs	3	Runes 16	6	srj	3										0
+Nihla_Clone4			6						Clone	600	Ore (GFU)	10	ppp	4					Runes 7	3												0
+Nihla_Clone4 (N)			6						Clone (N)	600	Ore (GFU)	20	ppp	4					Runes 12	3												0
+Nihla_Clone4 (H)			6						Clone (H)	1000	Ore (GFU)	40	ppp	4			sbs	3	Runes 16	6	srj	3										0
 Izual_Clone			5						Clone	500	Scrolls 5	6	zzz	25	ppp	5	Ore (GFU)	4	r15	15			Runes 7	2								0
 Izual_Clone (N)			7						Clone (N)	500	Scrolls 10	6	zzz	25	ppp	5	Ore (GFU)	8	r15	15			Runes 12	2								0
 Izual_Clone (H)			9						Clone (H)	800	Scrolls 17	12	zzz	25	ppp	5	Ore (GFU)	24	r15	15	sbs	1	Runes 16	2								0
@@ -1442,140 +1446,139 @@ dclone_xtals_fl_0			1						dclone_xtals_fl_1	1	dclone_xtals_fl_2	1														
 dclone_xtals_nr_0			1						dclone_xtals_nr_1	1	dclone_xtals_nr_2	1																				0
 dclone_xtals			1						dclone_xtals_nr_0	1	dclone_xtals_fl_0	19	dclone_xtals_ch_0	80																		0
 RatHrt			1					5	hrt	1																						0
-M Focus Uniques			1						Glacial Focus	1	Magmatic Focus	1	Arcing Focus	1	Psychic Focus	1	Geothermic Focus	1	Vile Focus	1	Celestial Focus	1	Webbed Focus	1	Spiritual Focus	1						0
 M Glove Uniques			1						Solar Eclipse	1	Lunar Eclipse	1	Voltaic Storm	1	Pox Corona	1	Hurricanic Gale	1	Aetheric Anomaly	1												0
-M Helm Uniques			1						Solar Nexus	1	Lunar Nexus	1	Voltaic Nexus	1	Pox Nexus	1	Hurricanic Nexus	1	Aetheric Nexus	1												0
+M Helm Uniques			1						Solar Nexus	2	Lunar Nexus	2	Voltaic Nexus	2	Pox Nexus	2	Hurricanic Nexus	2	Aetheric Nexus	2	Skirmisher's Mastery	1	Brawler's Mastery	1								0
 M Boot Uniques			1						Solar Flare	1	Lunar Tide	1	Voltaic Field	1	Pox Miasma	1	Hurricanic Typhoon	1	Aetheric Disjunction	1												0
 M Belt Uniques			1						Solar Wind	1	Lunar Umbra	1	Voltaic Cascade	1	Pox Plague	1	Hurricanic Maelstrom	1	Aetheric Chaos	1												0
 M 1H Uniques 1			1						Formed Flame	1	Ice Bite	1	Thunderhead Gavel	1	Breath of the Balrog	1	Breath of The Ice Fiend	1	Breath of The Stormlord	1	Breath of The Rotting	1	Breath of The Dervish	1	Breath of The Unknowable	1						0
 M 1H Uniques 2			1						Molten Fangs	1	Frozen Fangs	1	Arcing Fangs	1	Jaws of Nature	1	Mechanicus	1	Quills of Nature	1	The Cull	1										0
 M 2H Uniques			1						Reach of Nature	1	The Reaper's Beckoning	1	Torrent Of Nature	1	Death Spitter	1	Spine of the Balrog	1	Spine of The Ice Fiend	1	Spine of The Stormlord	1	Spine of The Rotting	1	Spine of The Dervish	1	Spine of The Unknowable	1				0
-M Armo Uniques			1						Nature's Bulwark	1	Enslaver	1	Infinite Thoughts	1	Endless Barrage	1	Perpetual Fury	1	Mage's Delight	1	Wraith Shroud	1	Force of Conviction	1								0
-M Trinket Uniques 1			1						The Other Ring	1	Layers of Abstraction	1	Tinkerer's Dream	1	Skirmisher's Mastery	1	Brawler's Mastery	1	Dweia's Revenge	1	Yagul's Bloody Rage	1	Smaqdoun's Painful Pride	1	BlackKnight's Holy Signet	1	The Cursed Donut	1				0
-M Trinket Uniques 2			1						The Mistress' Leather Collar	1	Plague's Last Arrowhead	1	Killjoy's Attitude	1	Yagul's Wrath	1	The Mad Celt's Shining Sparkly	1	The Tipsy Donut	1	BlackMage's Knucklebone	1	Killashandra Ree's Black C	1	Dfuzzz's Fingerguard	1						0
-M Trinkets Grouped			1						M Trinket Uniques 1	1	M Trinket Uniques 2	1																				0
-M Uniques Tier 1	16	89	1						M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1														0
-M Uniques Tier 2	16	90	1						M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1	M Glove Uniques	1												0
-M Uniques Tier 3	16	91	1						M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1	M Glove Uniques	1	M Helm Uniques	1										0
-M Uniques Tier 4	16	92	1						M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1	M Glove Uniques	1	M Helm Uniques	1	M Boot Uniques	1								0
-M Uniques Tier 5	16	93	1						M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1	M Glove Uniques	1	M Helm Uniques	1	M Boot Uniques	1	M Belt Uniques	1						0
-M Uniques Tier 6	16	94	1						M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1	M Glove Uniques	1	M Helm Uniques	1	M Boot Uniques	1	M Belt Uniques	1	M Armo Uniques	1				0
-M Diabolic Tier 1	17	89	2						um1	95	up1	5																				0
-M Diabolic Tier 2	17	90	3						um1	94	up1	6																				0
-M Diabolic Tier 3	17	91	4						um1	93	up1	7																				0
-M Diabolic Tier 4	17	92	5						um1	92	up1	8																				0
-M Diabolic Tier 5	17	93	6						um1	91	up1	9																				0
-M Diabolic Tier 6	17	94	7						um1	90	up1	10																				0
-M Anguish Tier 1	18	89	2						um5	95	up5	5																				0
-M Anguish Tier 2	18	90	3						um5	94	up5	6																				0
-M Anguish Tier 3	18	91	4						um5	93	up5	7																				0
-M Anguish Tier 4	18	92	5						um5	92	up5	8																				0
-M Anguish Tier 5	18	93	6						um5	91	up5	9																				0
-M Anguish Tier 6	18	94	7						um5	90	up5	10																				0
-M Baleful Tier 1	19	89	2						um3	95	up3	5																				0
-M Baleful Tier 2	19	90	3						um3	94	up3	6																				0
-M Baleful Tier 3	19	91	4						um3	93	up3	7																				0
-M Baleful Tier 4	19	92	5						um3	92	up3	8																				0
-M Baleful Tier 5	19	93	6						um3	91	up3	9																				0
-M Baleful Tier 6	19	94	7						um3	90	up3	10																				0
-M Mephitic Tier 1	20	89	2						um2	95	up2	5																				0
-M Mephitic Tier 2	20	90	3						um2	94	up2	6																				0
-M Mephitic Tier 3	20	91	4						um2	93	up2	7																				0
-M Mephitic Tier 4	20	92	5						um2	92	up2	8																				0
-M Mephitic Tier 5	20	93	6						um2	91	up2	9																				0
-M Mephitic Tier 6	20	94	7						um2	90	up2	10																				0
-M Pained Tier 1	21	89	2						um4	95	up4	5																				0
-M Pained Tier 2	21	90	3						um4	94	up4	6																				0
-M Pained Tier 3	21	91	4						um4	93	up4	7																				0
-M Pained Tier 4	21	92	5						um4	92	up4	8																				0
-M Pained Tier 5	21	93	6						um4	91	up4	9																				0
-M Pained Tier 6	21	94	7						um4	90	up4	10																				0
-M Convoking Tier 1	22	89	2						um6	95	up6	5																				0
-M Convoking Tier 2	22	90	3						um6	94	up6	6																				0
-M Convoking Tier 3	22	91	4						um6	93	up6	7																				0
-M Convoking Tier 4	22	92	5						um6	92	up6	8																				0
-M Convoking Tier 5	22	93	6						um6	91	up6	9																				0
-M Convoking Tier 6	22	94	7						um6	90	up6	10																				0
-M Mats Tier 1	23	89	1						pp1	3	1z1	2	ma1	1	yy1	3	hr1	5	so1	5	00g	3	00t	3	00r	3	00h	3				0
-M Mats Tier 2	23	90	1						pp1	4	1z1	3	ma1	2	yy1	4	hr1	6	so1	5	00g	3	00t	3	00r	3	00h	3				0
-M Mats Tier 3	23	91	2						pp1	5	1z1	4	ma1	3	yy1	4	hr1	7	so1	5	00g	4	00t	4	00r	4	00h	4				0
-M Mats Tier 4	23	92	2						pp1	6	1z1	5	ma1	4	yy1	5	hr1	8	so1	5	00g	4	00t	4	00r	4	00h	4				0
-M Mats Tier 5	23	93	3						pp1	7	1z1	6	ma1	5	yy1	5	hr1	9	so1	5	00g	5	00t	5	00r	5	00h	5				0
-M Mats Tier 6	23	94	4						pp1	8	1z1	7	ma1	6	yy1	6	hr1	10	so1	5	00g	5	00t	5	00r	5	00h	5				0
-M Xtal Tier 1 	24	89	1						dclone_xtals_nr_1	1	dclone_xtals_nr_2	1																				0
-M Xtal Tier 2	24	90	1						dclone_xtals_nr_1	1	dclone_xtals_nr_2	1																				0
-M Xtal Tier 3	24	91	1						dclone_xtals_nr_1	2	dclone_xtals_nr_2	2																				0
-M Xtal Tier 4	24	92	2						dclone_xtals_nr_1	2	dclone_xtals_nr_2	2																				0
-M Xtal Tier 5	24	93	2						dclone_xtals_nr_1	3	dclone_xtals_nr_2	3																				0
-M Xtal Tier 6	24	94	3						dclone_xtals_nr_1	3	dclone_xtals_nr_2	3																				0
-M Runes 16 Tier 1	25	89	1						r50	8	r46	10	33l	3	Runes 15	2200																0
-M Runes 16 Tier 2	25	90	1						r50	16	r46	20	33l	6	Runes 15	2200																0
-M Runes 16 Tier 3	25	91	1						r50	24	r46	30	33l	9	Runes 15	2200																0
-M Runes 16 Tier 4	25	92	1						r50	32	r46	40	33l	12	Runes 15	2200																0
-M Runes 16 Tier 5	25	93	1						r50	40	r46	50	33l	15	Runes 15	2200																0
-M Runes 16 Tier 6	25	94	1						r50	48	r46	60	33l	18	Runes 15	2200																0
-M Pots Tier 1	26	89	1						srj	1	sbs	1																				0
-M Pots Tier 2	26	90	1						srj	1	sbs	1																				0
-M Pots Tier 3	26	91	2						srj	1	sbs	1																				0
-M Pots Tier 4	26	92	2						srj	1	sbs	1																				0
-M Pots Tier 5	26	93	3						srj	1	sbs	1																				0
-M Pots Tier 6	26	94	4						srj	1	sbs	1																				0
-M Boss Misc Tier 1	27	89	6						"gld,mul=1024"	100	M Uniques Tier 1	2	M Mats Tier 1	5	M Xtal Tier 1	5	M Runes 16 Tier 1	10	M Pots Tier 1	10	Scrolls 17	10										0
-M Boss Misc Tier 2	27	90	7						"gld,mul=1280"	100	M Uniques Tier 1	2	M Mats Tier 1	6	M Xtal Tier 1	6	M Runes 16 Tier 1	11	M Pots Tier 1	11	Scrolls 17	11										0
-M Boss Misc Tier 3	27	91	8						"gld,mul=1536"	100	M Uniques Tier 1	2	M Mats Tier 1	7	M Xtal Tier 1	7	M Runes 16 Tier 1	12	M Pots Tier 1	12	Scrolls 17	12										0
-M Boss Misc Tier 4	27	92	9						"gld,mul=1792"	100	M Uniques Tier 1	3	M Mats Tier 1	8	M Xtal Tier 1	8	M Runes 16 Tier 1	13	M Pots Tier 1	13	Scrolls 17	13										0
-M Boss Misc Tier 5	27	93	10						"gld,mul=2048"	100	M Uniques Tier 1	3	M Mats Tier 1	9	M Xtal Tier 1	9	M Runes 16 Tier 1	14	M Pots Tier 1	14	Scrolls 17	14										0
-M Boss Misc Tier 6	27	94	12						"gld,mul=2304"	100	M Uniques Tier 1	4	M Mats Tier 1	10	M Xtal Tier 1	10	M Runes 16 Tier 1	15	M Pots Tier 1	15	Scrolls 17	15										0
-M Monster Tier 1	28	89	4					200	Act 5 (H) Equip B	450	"gld,mul=1024"	150	M Uniques Tier 1	1	M Mats Tier 1	5	M Xtal Tier 1	1	M Runes 16 Tier 1	5	M Pots Tier 1	5	Scrolls 17	5								0
-M Monster Tier 2	28	90	4					220	Act 5 (H) Equip B	470	"gld,mul=1280"	170	M Uniques Tier 1	1	M Mats Tier 1	6	M Xtal Tier 1	1	M Runes 16 Tier 1	5	M Pots Tier 1	5	Scrolls 17	5								0
-M Monster Tier 3	28	91	5					240	Act 5 (H) Equip B	490	"gld,mul=1536"	190	M Uniques Tier 1	1	M Mats Tier 1	7	M Xtal Tier 1	2	M Runes 16 Tier 1	6	M Pots Tier 1	6	Scrolls 17	6								0
-M Monster Tier 4	28	92	5					260	Act 5 (H) Equip B	510	"gld,mul=1792"	210	M Uniques Tier 1	2	M Mats Tier 1	8	M Xtal Tier 1	2	M Runes 16 Tier 1	6	M Pots Tier 1	6	Scrolls 17	6								0
-M Monster Tier 5	28	93	6					280	Act 5 (H) Equip B	530	"gld,mul=2048"	230	M Uniques Tier 1	2	M Mats Tier 1	9	M Xtal Tier 1	2	M Runes 16 Tier 1	7	M Pots Tier 1	7	Scrolls 17	7								0
-M Monster Tier 6	28	94	7					300	Act 5 (H) Equip B	550	"gld,mul=2304"	250	M Uniques Tier 1	3	M Mats Tier 1	10	M Xtal Tier 1	3	M Runes 16 Tier 1	7	M Pots Tier 1	7	Scrolls 17	7								0
-M Summoner Tier 1	29	89	-2						M Convoking Tier 1	1	M Boss Misc Tier 1																					0
-M Summoner Tier 2	29	90	-2						M Convoking Tier 2	1	M Boss Misc Tier 2																					0
-M Summoner Tier 3	29	91	-2						M Convoking Tier 3	1	M Boss Misc Tier 3																					0
-M Summoner Tier 4	29	92	-2						M Convoking Tier 4	1	M Boss Misc Tier 4																					0
-M Summoner Tier 5	29	93	-2						M Convoking Tier 5	1	M Boss Misc Tier 5																					0
-M Summoner Tier 6	29	94	-2						M Convoking Tier 6	1	M Boss Misc Tier 6																					0
-M Andariel Tier 1	30	89	-2						M Anguish Tier 1	1	M Boss Misc Tier 1																					0
-M Andariel Tier 2	30	90	-2						M Anguish Tier 2	1	M Boss Misc Tier 2																					0
-M Andariel Tier 3	30	91	-2						M Anguish Tier 3	1	M Boss Misc Tier 3																					0
-M Andariel Tier 4	30	92	-2						M Anguish Tier 4	1	M Boss Misc Tier 4																					0
-M Andariel Tier 5	30	93	-2						M Anguish Tier 5	1	M Boss Misc Tier 5																					0
-M Andariel Tier 6	30	94	-2						M Anguish Tier 6	1	M Boss Misc Tier 6																					0
-M Duriel Tier 1	31	89	-2						M Pained Tier 1	1	M Boss Misc Tier 1																					0
-M Duriel Tier 2	31	90	-2						M Pained Tier 2	1	M Boss Misc Tier 2																					0
-M Duriel Tier 3	31	91	-2						M Pained Tier 3	1	M Boss Misc Tier 3																					0
-M Duriel Tier 4	31	92	-2						M Pained Tier 4	1	M Boss Misc Tier 4																					0
-M Duriel Tier 5	31	93	-2						M Pained Tier 5	1	M Boss Misc Tier 5																					0
-M Duriel Tier 6	31	94	-2						M Pained Tier 6	1	M Boss Misc Tier 6																					0
-M Baal Tier 1	32	89	-2						M Baleful Tier 1	1	M Boss Misc Tier 1																					0
-M Baal Tier 2	32	90	-2						M Baleful Tier 2	1	M Boss Misc Tier 2																					0
-M Baal Tier 3	32	91	-2						M Baleful Tier 3	1	M Boss Misc Tier 3																					0
-M Baal Tier 4	32	92	-2						M Baleful Tier 4	1	M Boss Misc Tier 4																					0
-M Baal Tier 5	32	93	-2						M Baleful Tier 5	1	M Boss Misc Tier 5																					0
-M Baal Tier 6	32	94	-2						M Baleful Tier 6	1	M Boss Misc Tier 6																					0
-M Mephisto Tier 1	33	89	-2						M Mephitic Tier 1	1	M Boss Misc Tier 1																					0
-M Mephisto Tier 2	33	90	-2						M Mephitic Tier 2	1	M Boss Misc Tier 2																					0
-M Mephisto Tier 3	33	91	-2						M Mephitic Tier 3	1	M Boss Misc Tier 3																					0
-M Mephisto Tier 4	33	92	-2						M Mephitic Tier 4	1	M Boss Misc Tier 4																					0
-M Mephisto Tier 5	33	93	-2						M Mephitic Tier 5	1	M Boss Misc Tier 5																					0
-M Mephisto Tier 6	33	94	-2						M Mephitic Tier 6	1	M Boss Misc Tier 6																					0
-M Diablo Tier 1	34	89	-2						M Diabolic Tier 1	1	M Boss Misc Tier 1																					0
-M Diablo Tier 2	34	90	-2						M Diabolic Tier 2	1	M Boss Misc Tier 2																					0
-M Diablo Tier 3	34	91	-2						M Diabolic Tier 3	1	M Boss Misc Tier 3																					0
-M Diablo Tier 4	34	92	-2						M Diabolic Tier 4	1	M Boss Misc Tier 4																					0
-M Diablo Tier 5	34	93	-2						M Diabolic Tier 5	1	M Boss Misc Tier 5																					0
-M Diablo Tier 6	34	94	-2						M Diabolic Tier 6	1	M Boss Misc Tier 6																					0
-M Kanji Uber Only 1			1						r84	1	r85	1	r86	1	r87	1	r88	1	r89	1	r90											0
-M Kanji Uber Only 2			1						r91	1	r92	1	r93	1	r94	1	r95	1	r96	1	r97											0
-M Ufrag Explosion			400						M Uniques Tier 6	1	M Mats Tier 6	10	M Xtal Tier 6	4	M Runes 16 Tier 1	3	M Pots Tier 1	5	"gld,mul=32768"	23	M Kanji Uber Only 1	1	M Kanji Uber Only 1	1								0
-M Tyoh Explosion			400						M Uniques Tier 6	1	M Mats Tier 6	10	M Xtal Tier 1	4	M Runes 16 Tier 1	3	M Pots Tier 1	5	"gld,mul=32768"	23	M Kanji Uber Only 1	1	M Kanji Uber Only 1	1								0
-M Emitnwod Explosion			400						M Uniques Tier 6	1	M Mats Tier 6	10	M Xtal Tier 1	4	M Runes 16 Tier 1	3	M Pots Tier 1	5	"gld,mul=32768"	23	M Kanji Uber Only 1	1	M Kanji Uber Only 1	1								0
-M Effellarr Explosion			400						M Uniques Tier 6	1	M Mats Tier 6	10	M Xtal Tier 1	4	M Runes 16 Tier 1	3	M Pots Tier 1	5	"gld,mul=32768"	23	M Kanji Uber Only 1	1	M Kanji Uber Only 1	1								0
-M Mudeyhnne Explosion			400						M Uniques Tier 6	1	M Mats Tier 6	10	M Xtal Tier 1	4	M Runes 16 Tier 1	3	M Pots Tier 1	5	"gld,mul=32768"	23	M Kanji Uber Only 1	1	M Kanji Uber Only 1	1								0
-M Lyrtsa Explosion			400						M Uniques Tier 6	1	M Mats Tier 6	10	M Xtal Tier 1	4	M Runes 16 Tier 1	3	M Pots Tier 1	5	"gld,mul=32768"	23	M Kanji Uber Only 1	1	M Kanji Uber Only 1	1								0
+M Armo Uniques			1						Nature's Bulwark	1	Enslaver	1	Infinite Thoughts	1	Endless Barrage	1	Perpetual Fury	1														0
+M Trinket Uniques 1			1						The Other Ring	1	Layers of Abstraction	1	Tinkerer's Dream	1																		0
+M Trinket Uniques 2			1						Killjoy's Attitude	1	Yagul's Wrath	1	The Mad Celt's Shining Sparkly	1	The Tipsy Donut	1	BlackMage's Knucklebone	1	Killashandra Ree's Black C	1	Dfuzzz's Fingerguard	1										0
+M Trinkets Grouped			1						Nothing	100	M Trinket Uniques 1	1	M Trinket Uniques 2	1																		0
+M Uniques Tier 1	16	89	1						Nothing	11	M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1												0
+M Uniques Tier 2	16	90	1						Nothing	11	M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1	M Glove Uniques	1										0
+M Uniques Tier 3	16	91	1						Nothing	11	M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1	M Glove Uniques	1	M Helm Uniques	1								0
+M Uniques Tier 4	16	92	1						Nothing	11	M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1	M Glove Uniques	1	M Helm Uniques	1	M Boot Uniques	1						0
+M Uniques Tier 5	16	93	1						Nothing	11	M Trinkets Grouped	1	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1	M Glove Uniques	1	M Helm Uniques	1	M Boot Uniques	1	M Belt Uniques	1				0
+M Uniques Tier 6	16	94	1						Nothing	11	M Focus Uniques	1	M 1H Uniques 1	1	M 1H Uniques 2	1	M 2H Uniques	1	M Glove Uniques	1	M Helm Uniques	1	M Boot Uniques	1	M Belt Uniques	1	M Armo Uniques	1				0
+M Diabolic Tier 1	17	89	1						um1	100		1																				0
+M Diabolic Tier 2	17	90	2						um1	99	up1	2																				0
+M Diabolic Tier 3	17	91	3						um1	98	up1	3																				0
+M Diabolic Tier 4	17	92	4						um1	97	up1	4																				0
+M Diabolic Tier 5	17	93	5						um1	96	up1	5																				0
+M Diabolic Tier 6	17	94	6						um1	96	up1	5																				0
+M Anguish Tier 1	18	89	1						um5	100		1																				0
+M Anguish Tier 2	18	90	2						um5	99	up5	2																				0
+M Anguish Tier 3	18	91	3						um5	98	up5	3																				0
+M Anguish Tier 4	18	92	4						um5	97	up5	4																				0
+M Anguish Tier 5	18	93	5						um5	96	up5	5																				0
+M Anguish Tier 6	18	94	6						um5	96	up5	5																				0
+M Baleful Tier 1	19	89	1						um3	100		1																				0
+M Baleful Tier 2	19	90	2						um3	99	up3	2																				0
+M Baleful Tier 3	19	91	3						um3	98	up3	3																				0
+M Baleful Tier 4	19	92	4						um3	97	up3	4																				0
+M Baleful Tier 5	19	93	5						um3	96	up3	5																				0
+M Baleful Tier 6	19	94	6						um3	96	up3	5																				0
+M Mephitic Tier 1	20	89	1						um2	100		1																				0
+M Mephitic Tier 2	20	90	2						um2	99	up2	2																				0
+M Mephitic Tier 3	20	91	3						um2	98	up2	3																				0
+M Mephitic Tier 4	20	92	4						um2	97	up2	4																				0
+M Mephitic Tier 5	20	93	5						um2	96	up2	5																				0
+M Mephitic Tier 6	20	94	6						um2	96	up2	5																				0
+M Pained Tier 1	21	89	1						um4	100		1																				0
+M Pained Tier 2	21	90	2						um4	99	up4	2																				0
+M Pained Tier 3	21	91	3						um4	98	up4	3																				0
+M Pained Tier 4	21	92	4						um4	97	up4	4																				0
+M Pained Tier 5	21	93	5						um4	96	up4	5																				0
+M Pained Tier 6	21	94	6						um4	96	up4	5																				0
+M Convoking Tier 1	22	89	1						um6	100		1																				0
+M Convoking Tier 2	22	90	2						um6	99	up6	2																				0
+M Convoking Tier 3	22	91	3						um6	98	up6	3																				0
+M Convoking Tier 4	22	92	4						um6	97	up6	4																				0
+M Convoking Tier 5	22	93	5						um6	96	up6	5																				0
+M Convoking Tier 6	22	94	6						um6	96	up6	5																				0
+M Mats Tier 1	23	89	1						Nothing	7	pp1	3	ma1	1	hr1	5	so1	5	00g	3	00t	3	00r	3	00h	3						0
+M Mats Tier 2	23	90	1						Nothing	7	pp1	4	ma1	2	hr1	6	so1	6	00g	3	00t	3	00r	3	00h	3						0
+M Mats Tier 3	23	91	2						Nothing	7	pp1	5	ma1	3	hr1	7	so1	7	00g	2	00t	2	00r	2	00h	2						0
+M Mats Tier 4	23	92	2						Nothing	7	pp1	6	ma1	4	hr1	8	so1	8	00g	2	00t	2	00r	2	00h	2						0
+M Mats Tier 5	23	93	3						Nothing	7	pp1	7	ma1	5	hr1	9	so1	9	00g	1	00t	1	00r	1	00h	1						0
+M Mats Tier 6	23	94	4						Nothing	7	pp1	8	ma1	6	hr1	10	so1	10	00g	1	00t	1	00r	1	00h	1						0
+M Xtal Tier 1	24	89	1						Nothing	1	dclone_xtals_nr_1	1	dclone_xtals_nr_2	1																		0
+M Xtal Tier 2	24	90	1						Nothing	1	dclone_xtals_nr_1	1	dclone_xtals_nr_2	1																		0
+M Xtal Tier 3	24	91	1						Nothing	1	dclone_xtals_nr_1	1	dclone_xtals_nr_2	1																		0
+M Xtal Tier 4	24	92	2						Nothing	1	dclone_xtals_nr_1	1	dclone_xtals_nr_2	1																		0
+M Xtal Tier 5	24	93	2						Nothing	1	dclone_xtals_nr_1	1	dclone_xtals_nr_2	1																		0
+M Xtal Tier 6	24	94	3						Nothing	1	dclone_xtals_nr_1	1	dclone_xtals_nr_2	1																		0
+M Runes 16 Tier 1	25	89	1						Nothing	100	r50	8	r46	10	Runes 15	2200																0
+M Runes 16 Tier 2	25	90	1						Nothing	100	r50	16	r46	20	Runes 15	2100																0
+M Runes 16 Tier 3	25	91	1						Nothing	100	r50	24	r46	30	Runes 15	2000																0
+M Runes 16 Tier 4	25	92	1						Nothing	100	r50	32	r46	40	Runes 15	1900																0
+M Runes 16 Tier 5	25	93	1						Nothing	100	r50	40	r46	50	Runes 15	1800																0
+M Runes 16 Tier 6	25	94	1						Nothing	100	r50	48	r46	60	Runes 15	1400																0
+M Pots Tier 1	26	89	1						Nothing	6	srj	1	sbs	1																		0
+M Pots Tier 2	26	90	1						Nothing	6	srj	1	sbs	1																		0
+M Pots Tier 3	26	91	2						Nothing	5	srj	1	sbs	1																		0
+M Pots Tier 4	26	92	2						Nothing	5	srj	1	sbs	1																		0
+M Pots Tier 5	26	93	3						Nothing	4	srj	1	sbs	1																		0
+M Pots Tier 6	26	94	4						Nothing	3	srj	1	sbs	1																		0
+M Boss Misc Tier 1	27	89	6					300	"gld,mul=6000"	300	M Uniques Tier 1	15	M Mats Tier 1	20	M Runes 16 Tier 1	20	M Pots Tier 1	20														0
+M Boss Misc Tier 2	27	90	6					300	"gld,mul=8000"	300	M Uniques Tier 2	16	M Mats Tier 1	22	M Runes 16 Tier 1	22	M Pots Tier 1	22														0
+M Boss Misc Tier 3	27	91	7					300	"gld,mul=10000"	300	M Uniques Tier 3	17	M Mats Tier 1	24	M Runes 16 Tier 1	24	M Pots Tier 1	24														0
+M Boss Misc Tier 4	27	92	7					300	"gld,mul=12000"	300	M Uniques Tier 4	18	M Mats Tier 1	26	M Runes 16 Tier 1	26	M Pots Tier 1	26														0
+M Boss Misc Tier 5	27	93	8					300	"gld,mul=16000"	300	M Uniques Tier 5	19	M Mats Tier 1	28	M Runes 16 Tier 1	28	M Pots Tier 1	28														0
+M Boss Misc Tier 6	27	94	9					300	"gld,mul=24000"	300	M Uniques Tier 6	20	M Mats Tier 1	30	M Runes 16 Tier 1	30	M Pots Tier 1	30														0
+M Monster Tier 1	28	89	4					3200	Nothing	1300	"gld,mul=1024"	400	M Trinkets Grouped	1	M Mats Tier 1	10	M Runes 16 Tier 1	3	M Pots Tier 1	2	r15	4	M Focus Uniques	1								0
+M Monster Tier 2	28	90	4					3200	Nothing	1250	"gld,mul=1280"	380	M Uniques Tier 1	1	M Mats Tier 1	11	M Runes 16 Tier 1	4	M Pots Tier 1	2	r15	4										0
+M Monster Tier 3	28	91	5					3200	Nothing	1200	"gld,mul=1536"	360	M Uniques Tier 2	1	M Mats Tier 1	12	M Runes 16 Tier 1	5	M Pots Tier 1	2	r15	4										0
+M Monster Tier 4	28	92	5					3200	Nothing	1150	"gld,mul=1792"	340	M Uniques Tier 3	2	M Mats Tier 1	13	M Runes 16 Tier 1	7	M Pots Tier 1	3	r15	6										0
+M Monster Tier 5	28	93	6					3200	Nothing	1100	"gld,mul=2048"	320	M Uniques Tier 4	2	M Mats Tier 1	14	M Runes 16 Tier 1	9	M Pots Tier 1	3	r15	6										0
+M Monster Tier 6	28	94	7					3200	Nothing	1000	"gld,mul=2304"	300	M Uniques Tier 5	2	M Mats Tier 1	15	M Runes 16 Tier 1	11	M Pots Tier 1	4	r15	6										0
+M Summoner Tier 1	29	89	-2						M Convoking Tier 1	1	M Boss Misc Tier 1	1																				0
+M Summoner Tier 2	29	90	-2						M Convoking Tier 2	1	M Boss Misc Tier 2	1																				0
+M Summoner Tier 3	29	91	-2						M Convoking Tier 3	1	M Boss Misc Tier 3	1																				0
+M Summoner Tier 4	29	92	-2						M Convoking Tier 4	1	M Boss Misc Tier 4	1																				0
+M Summoner Tier 5	29	93	-2						M Convoking Tier 5	1	M Boss Misc Tier 5	1																				0
+M Summoner Tier 6	29	94	-2						M Convoking Tier 6	1	M Boss Misc Tier 6	1																				0
+M Andariel Tier 1	30	89	-2						M Anguish Tier 1	1	M Boss Misc Tier 1	1																				0
+M Andariel Tier 2	30	90	-2						M Anguish Tier 2	1	M Boss Misc Tier 2	1																				0
+M Andariel Tier 3	30	91	-2						M Anguish Tier 3	1	M Boss Misc Tier 3	1																				0
+M Andariel Tier 4	30	92	-2						M Anguish Tier 4	1	M Boss Misc Tier 4	1																				0
+M Andariel Tier 5	30	93	-2						M Anguish Tier 5	1	M Boss Misc Tier 5	1																				0
+M Andariel Tier 6	30	94	-2						M Anguish Tier 6	1	M Boss Misc Tier 6	1																				0
+M Duriel Tier 1	31	89	-2						M Pained Tier 1	1	M Boss Misc Tier 1	1																				0
+M Duriel Tier 2	31	90	-2						M Pained Tier 2	1	M Boss Misc Tier 2	1																				0
+M Duriel Tier 3	31	91	-2						M Pained Tier 3	1	M Boss Misc Tier 3	1																				0
+M Duriel Tier 4	31	92	-2						M Pained Tier 4	1	M Boss Misc Tier 4	1																				0
+M Duriel Tier 5	31	93	-2						M Pained Tier 5	1	M Boss Misc Tier 5	1																				0
+M Duriel Tier 6	31	94	-2						M Pained Tier 6	1	M Boss Misc Tier 6	1																				0
+M Baal Tier 1	32	89	-2						M Baleful Tier 1	1	M Boss Misc Tier 1	1																				0
+M Baal Tier 2	32	90	-2						M Baleful Tier 2	1	M Boss Misc Tier 2	1																				0
+M Baal Tier 3	32	91	-2						M Baleful Tier 3	1	M Boss Misc Tier 3	1																				0
+M Baal Tier 4	32	92	-2						M Baleful Tier 4	1	M Boss Misc Tier 4	1																				0
+M Baal Tier 5	32	93	-2						M Baleful Tier 5	1	M Boss Misc Tier 5	1																				0
+M Baal Tier 6	32	94	-2						M Baleful Tier 6	1	M Boss Misc Tier 6	1																				0
+M Mephisto Tier 1	33	89	-2						M Mephitic Tier 1	1	M Boss Misc Tier 1	1																				0
+M Mephisto Tier 2	33	90	-2						M Mephitic Tier 2	1	M Boss Misc Tier 2	1																				0
+M Mephisto Tier 3	33	91	-2						M Mephitic Tier 3	1	M Boss Misc Tier 3	1																				0
+M Mephisto Tier 4	33	92	-2						M Mephitic Tier 4	1	M Boss Misc Tier 4	1																				0
+M Mephisto Tier 5	33	93	-2						M Mephitic Tier 5	1	M Boss Misc Tier 5	1																				0
+M Mephisto Tier 6	33	94	-2						M Mephitic Tier 6	1	M Boss Misc Tier 6	1																				0
+M Diablo Tier 1	34	89	-2						M Diabolic Tier 1	1	M Boss Misc Tier 1	1																				0
+M Diablo Tier 2	34	90	-2						M Diabolic Tier 2	1	M Boss Misc Tier 2	1																				0
+M Diablo Tier 3	34	91	-2						M Diabolic Tier 3	1	M Boss Misc Tier 3	1																				0
+M Diablo Tier 4	34	92	-2						M Diabolic Tier 4	1	M Boss Misc Tier 4	1																				0
+M Diablo Tier 5	34	93	-2						M Diabolic Tier 5	1	M Boss Misc Tier 5	1																				0
+M Diablo Tier 6	34	94	-2						M Diabolic Tier 6	1	M Boss Misc Tier 6	1																				0
+M Kanji Uber Only 1			1						r84	1	r85	1	r86	1	r87	1	r88	1	r89	1	r90	1										0
+M Kanji Uber Only 2			1						r91	1	r92	1	r93	1	r94	1	r95	1	r96	1	r97	1										0
+M Ufrag Explosion			150						M Uniques Tier 6	4	M Mats Tier 6	20	M Runes 16 Tier 1	6	M Pots Tier 1	10	"gld,mul=32768"	33														0
+M Tyoh Explosion			150						M Uniques Tier 6	4	M Mats Tier 6	20	M Runes 16 Tier 1	6	M Pots Tier 1	10	"gld,mul=32768"	33														0
+M Emitnwod Explosion			150						M Uniques Tier 6	4	M Mats Tier 6	20	M Runes 16 Tier 1	6	M Pots Tier 1	10	"gld,mul=32768"	33														0
+M Effellarr Explosion			150						M Uniques Tier 6	4	M Mats Tier 6	20	M Runes 16 Tier 1	6	M Pots Tier 1	10	"gld,mul=32768"	33														0
+M Mudeyhnne Explosion			150						M Uniques Tier 6	4	M Mats Tier 6	20	M Runes 16 Tier 1	6	M Pots Tier 1	10	"gld,mul=32768"	33														0
+M Lyrtsa Explosion			150						M Uniques Tier 6	4	M Mats Tier 6	20	M Runes 16 Tier 1	6	M Pots Tier 1	10	"gld,mul=32768"	33														0
 M Ufrag 1			-3						Endless Potential	1	M Ufrag Explosion	1	bh1	1																		0
 M Tyoh 1			-3						Endless Potential	1	M Tyoh Explosion	1	bh2	1																		0
 M Emitnwod 1			-3						Endless Potential	1	M Emitnwod Explosion	1	bh3	1																		0

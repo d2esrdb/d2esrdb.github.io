@@ -115,7 +115,7 @@ smithdeath																												object_fire_loop_magic												0
 smithdemon	smith_attack_1	weapon_2hs_large_1	0	2	80	170	smith_attack_1	weapon_2hs_large_1	0	2	80	170	smith_hit_1	smith_death	2	1					heavy_walk_dirt_1		2	0	100	smith_neutral_1	150		monster_smith_taunt_1											0
 spider														creature_spider_1		0																								0
 stainedglass														object_glass_break_1	2	1																								0
-succubus	succubus_attack_1		3		100		succubus_attack_1		3		100		succubus_hit_1	succubus_death_1	2	1		succubus_cast				hawk_wing_1	2	0	30															0
+succubus	succubus_attack_1		3		100		succubus_attack_1		3		100		succubus_hit_1		2	1		succubus_cast				hawk_wing_1	2	0	30															0
 suicideminion													minion_hit_1	hawknest_death_1	2	1	minion_morph_1				heavy_walk_dirt_1	minionsuicide_neutral_1	2	0	30															0
 summoner													summoner_hit_1	summoner_death	2	1					medium_walk_dirt_1		2	0	100				monster_summoner_taunt_1											0
 swarm	swarm_attack_1		0		100		swarm_attack_1		0		100		swarm_hit_1	swarm_hit_1	2	1												swarm_loop												0
@@ -143,7 +143,7 @@ diabloclone	diablo_attack_1	weapon_giant_1	0	6	100	120	diablo_attack_1	weapon_gi
 blackknight	blackknight_attack_1	weapon_1hs_large_1	4	8	90	120	blackknight_attack_1	weapon_1hs_large_1	4	8	90	120	blackknight_hit_1	blackknight_death_1	2	1					heavy_walk_dirt_1		2	0	100	undeadhorror_neutral_1	150													0
 blackknightboss	blackknight_attack_1	weapon_1hs_large_1	4	8	90	120	blackknight_attack_1	weapon_1hs_large_1	4	8	90	120	blackknight_hit_1	blackknight_death_1	2	1					heavy_walk_dirt_1		2	0	100	undeadhorror_neutral_1	150		monster_blackknight_taunt_1											0
 leoric	leoric_attack_1		0		100		leoric_attack_1		0		100		leoric_hit_1	leoric_death_1	2	1	greatermummy_unholybolt_cast	greatermummy_bestow	leoric_resurrect_1									mephisto_loop	monster_leoric_taunt_1											0
-d1succubus	d1succubus_attack_1		0		100		d1succubus_attack_1		0		100		d1succubus_hit_1	d1succubus_death_1	2	1					light_walk_dirt_1		2	0	100															0
+d1succubus	d1succubus_attack_1		0		100		d1succubus_attack_1		0		100		d1succubus_hit_1		2	1					light_walk_dirt_1		2	0	100															0
 hidden	hidden_attack_1		0		100		hidden_attack_1		0		100		hidden_hit_1	hidden_death_1	2	1	hidden_appear_1	willowisp_lightning_cast_1										willowisp_loop			SC		S2							0
 cyclops	cyclops_attack_1		0		100		cyclops_attack_1		0		100		cyclops_hit_1	cyclops_death_1	2	1					heavy_walk_dirt_1	walk_ginormous_high_1	2	0	100															0
 belhifet	belhifet_attack_1		0		100		belhifet_attack_1		0		100		belhifet_hit_1	belhifet_death_1	2	1					heavy_walk_dirt_1	walk_ginormous_high_1	2	0	100	belhifet_neutral_1	150													0

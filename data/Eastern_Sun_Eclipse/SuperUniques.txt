@@ -39,7 +39,7 @@ Infector of Souls	Infector of Souls	blackknight6	36	blackknightboss	6	7	30	6	6	0
 Lord De Seis	Lord De Seis	hellspawn1	37	d1succubus	29	30	0	5	5	0	1	0		11	11	11	Seal	Seal (N)	Seal (H)	0
 Grand Vizier of Chaos	Grand Vizier of Chaos	leoric	38	leoric	23	25	30	6	6	0	1	0		26	26	26	Seal	Seal (N)	Seal (H)	0
 The Cow King	The Cow King	hellbovine	39		8	17	0	6	6	0	1	0		27	27	27	Cow King	Cow King (N)	Cow King (H)	0
-Corpsefire	Corpsefire	zombie1	40		27	0	0	5	5	0	1	0		25	25	25	Act 1 Super B	Act 1 (N) Super B	Act 1 (H) Super B	0
+Corpsefire	Corpsefire	zombie1	40		27	0	0	5	5	0	1	0		25	25	25	CF	Act 1 (N) Super B	Act 1 (H) Super B	0
 The Feature Creep	The Feature Creep	hephasto	41		27	30	0	2	3	0	1	0		20	20	20	Haphesto	Haphesto (N)	Haphesto (H)	0
 Expansion																				0
 Siege Boss	Siege Boss	overseer1	42		5	0	0	0	0	1	0	1		7	7	7	Act 5 Super A	Act 5 (N) Super A	Act 5 (H) Super A	0
@@ -60,7 +60,7 @@ Sharp Tooth Sayer	Sharp Tooth Sayer	overseer3	56		6	0	0	3	3	1	0	0	1	24	24	24	Act
 Magma Torquer	Magma Torquer	imp5	57		5	7	0	5	5	1	0	0		9	9	9	Act 5 Super C	Act 5 (N) Super C	Act 5 (H) Super C	0
 Blaze Ripper	Blaze Ripper	deathmauler5	58		17	6	0	4	4	1	0	0		10	10	10				0
 Frozenstein	Frozenstein	snowyeti4	59		18	25	0	5	6	1	0	0		19	19	19	Act 5 Super B	Act 5 (N) Super B	Act 5 (H) Super B	0
-Nihlathak Boss	Nihlathak	nihlathakboss	60		0	0	0	6	6	1	0	1		28	28	28	Nihlathak	Nihlathak (N)	ROP (H)	0
+Nihlathak Boss	Nihlathak	nihlathakboss	60		0	0	0	6	6	1	0	1		28	28	28	Nihlathak	Nihlathak (N)	ROP (H) HellNihl	0
 Baal Subject 1	Baal Subject 1	baalminion1	61		5	9	0	8	8	1	0	1		29	29	29	Act 5 Super C	Act 5 (N) Super C	Act 5 (H) Super C	0
 Baal Subject 2	Baal Subject 2	andariel_throne	62	andariel	23	0	0	8	8	1	0	1		21	21	21	Andariel	Andariel (N)	Andariel (H)	0
 Baal Subject 3	Baal Subject 3	duriel_throne	63	duriel	17	0	0	6	6	1	0	1		36	36	36	Duriel	Duriel (N)	Duriel (H)	0

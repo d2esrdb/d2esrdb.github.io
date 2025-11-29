@@ -807,7 +807,7 @@ Runeword796	Jindujun	1		tors									Su Ha Ra Shi I	r43	r28	r20	r03	r01		allskil
 Runeword797	Revenge	1		weap									Ho U Fu Ku Su Ru	r22	r02	r32	r06	r43	r24	dmg%		240	280	oskill	Iron Maiden	1	1	thorns/lvl	60			gethit-skill	Static Field	100	30	allskills		3	3	cast1		30	30	hp/lvl	12			0
 Runeword797	Revenge	1		weap									Ho U Hu Ku Su Ru	r22	r02	r48	r06	r43	r24	dmg%		240	280	oskill	Iron Maiden	1	1	thorns/lvl	60			gethit-skill	Static Field	100	30	allskills		3	3	cast1		30	30	hp/lvl	12			0
 Runeword798	Burn	1		mele									Mo Ya Su	r35	r11	r43				dmg-fire		400	500	dmg%		130	150	aura	Conviction	20	5	nofreeze		1	1	fireskill		3	3	gethit-skill	Nova	8	32	att-skill	Fire Ball	10	35	0
-Runeword799	Abandon	1		helm	shld								Su Te Ru	r43	r37	r24				ac%		145	185	allskills		2	2	gethit-skill	Fade	8	17	move3		40	40	block		20	20	thorns		300	300	block1		20	20	0
+Runeword799	Abandon	1		helm	shld								Su Te Ru	r43	r37	r24				ac%		145	185	allskills		2	2	oskill	Fade	31	31	move3		40	40	block		20	20	thorns		300	300	block1		20	20	0
 Runeword800	Transformation	1		tors									He N Shi N	r44	r05	r03	r05			ac%		190	260	skilltab	16	3	3	oskill	Claw Mastery	1	1	balance3		30	30	allskills		2	2	lifesteal		20	20	dmg/lvl	4			0
 Runeword801	Peace	1		helm									He I Wa	r44	r01	r27				ac%		100	140	allskills		4	4	enr		25	25	vit		25	25	res-all		30	30	regen		20	30	regen-mana		75	75	0
 Runeword802	Placidity	1		pelt									He I Se I	r44	r01	r31	r01			ac%		130	160	dru		4	4	regen		30	30	mag%		75	75	res-all		45	45	addxp		5	5	skilltab	17	1	1	0
@@ -815,7 +815,7 @@ Runeword803	Horizon	1		tors									Chi He I Se N	r14	r44	r01	r31	r05		ac%		260	
 Runeword804	Discontent	1		helm									Fu He I	r32	r44	r01				gethit-skill	Static Field	10	20	oskill	Lower Resist	5	10	aura	Defiance	12	15	charged	Summon Grizzly	2	20	charged	Shadow Master	2	20	oskill	Battle Orders	3	6	charged	Valkyrie	2	20	0
 Runeword805	Hound	1		weap									I Nu	r01	r45					dmg%		255	305	aura	Concentration	15	15	allskills		1	1	lifesteal		7	7	deadly		30	30	hp/lvl	4			reduce-ac		25	25	0
 Runeword806	Demon	1		asnx									I Nu Ya Shi Ya	r01	r45	r11	r03	r11		dmg%		300	350	ass		4	4	swing3		50	50	att		350	350	hit-skill	Decrepify	7	13	res-fire-max		25	25	dmg-fire/lvl	80			0
-Runeword807	Insight	1		tors									Mi Nu Ku Chi Ka Ra	r10	r45	r06	r14	r04	r20	ac%		170	210	allskills		5	5	all-stats		20	20	cast2		30	30	swing3		30	30	aura	Meditation	13	20	mag%		200	200	0
+Runeword807	Insight	1		tors	misl								Mi Nu Ku Chi Ka Ra	r10	r45	r06	r14	r04	r20	ac%		170	210	allskills		5	5	all-stats		20	20	cast2		30	30	swing3		30	30	aura	Meditation	13	20	mag%		200	200	0
 Runeword808	Cunning	1		miss									Nu Ke Me Na I	r45	r17	r23	r29	r01		dmg%		300	350	skilltab	0	2	2	hit-skill	Quickness	3	10	dmg-mag		250	250	pierce		75	75	ama		2	2	dex		50	50	0
 Runeword809	Rage	1		weap									Fu N Nu	r32	r05	r45				dmg%		260	290	aura	Fanaticism	31	31	fasterattackanim/lvl	2			deadly/lvl	2			skilltab	9	3	3	skilltab	14	3	3	skilltab	20	3	3	0
 Runeword809	Rage	1		weap									Hu N Nu	r48	r05	r45				dmg%		260	290	aura	Fanaticism	15	15	fasterattackanim/lvl	2			deadly/lvl	2			skilltab	9	3	3	skilltab	14	3	3	skilltab	20	3	3	0
@@ -930,7 +930,7 @@ Runeword915	Youth	1		char									Wa Ka Sa	r27	r04	r15				hp/lvl	16			allskills	
 Runeword916	Harmony	1		char									Wa Se I	r27	r31	r01				hp%		18	18	balance3		18	18	mana%		18	18	swing3		18	18	move3		18	18	cast3		18	18	red-dmg%		18	18	0
 Runeword917	Daylight	1		char									Hi Ru Ma	r34	r24	r33				ac		100	100	allskills		1	1	light		3	3	red-dmg		5	5	gethit-skill	Nova	3	24	res-fire-max		12	12	res-ltng-max		12	12	0
 Runeword918	Spirit	1		char									Ko Ko Ro	r19	r19	r38				res-all		15	15	allskills		1	1	res-ltng-max		9	9	res-fire-max		9	9	res-cold-max		9	9	regen-mana		20	20	vit/lvl	2			0
-Runeword919	Abandon	1		char									Su Te Ru	r43	r37	r24				ac		120	120	allskills		1	1	gethit-skill	Fade	5	17	move3		30	30	block		15	15	thorns		200	200	block1		15	15	0
+Runeword919	Abandon	1		char									Su Te Ru	r43	r37	r24				ac		120	120	allskills		1	1	oskill	Fade	30	30	move3		30	30	block		15	15	thorns		200	200	block1		15	15	0
 Runeword920	Stone	1		tors	shld								I Shi JEW	r01	r03	jew				ac		35	35	res-ltng		20	20	red-dmg		2	2	red-mag		2	2													0
 Runeword921	Void	1		tors	shld								Ku U JEW	r06	r02	jew				res-cold		15	15	res-ltng		15	15	res-pois-len		50	50	red-dmg%		5	5													0
 Runeword922	Forefeel	1		tors									Yo Ka N JEW	r07	r04	r05	jew			ac		70	70	mana%		20	20	mana-kill		5	5	cast1		20	20	extra-fire		10	10	extra-ltng		10	10	extra-cold		10	10	0
@@ -973,7 +973,7 @@ Runeword958	Swamp	1		glov									Nu Ma	r45	r33					allskills		1	1	ass		1	1	nec	
 Runeword959	Prohibit			char									JEW x 3	jew	jew	jew				vit-h		-900	-900																									0
 Runeword960	Diablo	1		char									Ma Mo No	r33	r35	r36				allskills		1	1	oskill	Inferno	28	28	oskill	Firestorm	28	28	pierce-ltng		10	10	pierce-fire		10	10	dmg-cold	100	150	300	oskill	420	1	1	0
 Runeword950	Rhino	1		shld									Sa I JEW	r15	r01	jew				allskills		1	1	res-ltng		40	40	thorns/lvl	16			oskill	Charge	3	3	ac%		200	300	balance1		25	25	dex		-10	-10	0
-Runeword961	Wirt's Other Leg	1		boot									Fire Wood	r85	r87					oskill	Whirlwind	3	3	oskill	Dragon Flight	3	3	skill	Whirlwind	15	15	move3		65	65	regen		-30	-30	hit-skill	Twister	20	35	cheap		35	35	0
+Runeword961	Wirt's Other Leg	1		boot									Fire Wood	r85	r87					oskill	Whirlwind	3	3	oskill	Dragon Flight	3	3	skill	Whirlwind	15	15	move3		65	65	indestruct		1	1	hit-skill	Twister	20	35	cheap		35	35	0
 Runeword962	Master of Water	1		char									Water Ma Su	r86	r33	r43				oskill	Cold Mastery	20	20	oskill	SCold Missiles	20	20	oskill	Arctic Blast	20	20	cast1		20	20	mana/lvl	8			dmg-cold	50	200	400	pierce-cold		16	16	0
 Runeword963	Master of Thunder	1		char									Thunder Ma Su	r91	r33	r43				oskill	Lightning Mastery	20	20	oskill	SNova	20	20	oskill	Fist of the Heavens	20	20	cast1		20	20	mana/lvl	8			dmg-ltng		200	400	pierce-ltng		8	8	0
 Runeword964	Angel	1		char									Heaven Shi JEW	r96	r03	jew				oskill	Teleport	10	10	dmg%		100	100	extra-wind		10	10	hit-skill	ctcFist of the Heavens	10	24	res-all		30	30	regen		30	30	mana-kill		27	27	0
@@ -991,3 +991,9 @@ Runeword974	Solar Wind	1		miss									Sun Wind JEW	r90	r92	jew				hit-skill	Dec
 Runeword975	Nerfobaba 	1		char									Hi Ro Fu	r34	r38	r32				allskills		1	1	extra-all		20	20	oskill	Elemental Mastery	20	20	res-all		20	20	cast1		15	15									0
 Runeword976	Moonlight	1		miss									Moon Ko U	r84	r19	r02				allskills		3	3	oskill	Strafe	1	1	hit-skill	Inner Sight	12	20	dmg%		260	260	dmg-mag		1000	1000	extra-mag2		100	100	str		15	15	0
 Runeword977	Master of Fire	1		char									Fire Ma Su	r85	r33	r43				oskill	Fire Mastery	20	20	oskill	Fire Wall	20	20	oskill	SHydra	20	20	cast1		20	20	mana/lvl	8			dmg-fire	50	200	400	pierce-fire		16	16	0
+Runeword978	Utmost Greed	1		tors									Dragon God JEW JEW JEW JEW	r93	r97	jew	jew	jew	jew	gold%		900	900	gold%/lvl	128																							0
+Runeword979	Overwhelming Greed	1		glov									Dragon God JEW JEW	r93	r97					gold%		900	900	gold%/lvl	96																							0
+Runeword980	Unyielding Greed	1		boot									Dragon God	r93	r97					gold%		900	900	gold%/lvl	96																							0
+Runeword981	Endless Greed	1		belt									Dragon God	r93	r97					gold%		900	900	gold%/lvl	64																							0
+Runeword982	All-Consuming Greed	1		miss									Dragon God JEW	r93	r97	jew				gold%		900	900	gold%/lvl	80																							0
+Runeword983	Pinnacle of Greed	1		mele									Dragon God JEW	r93	r97	jew				gold%		900	900	gold%/lvl	80																							0

@@ -134,11 +134,11 @@ regen-dur																																		none	0
 fire-fx																																		none	0
 ltng-fx																																		none	0
 sock	1			14	item_numsockets																													none	0
-dmg-fire	1			15	firemindam			16	firemaxdam																					Fire Damage		Min	Max	none	0
-dmg-ltng	1			15	lightmindam			16	lightmaxdam																					Lightning Damage		Min	Max	none	0
-dmg-mag	1			15	magicmindam			16	magicmaxdam																					Magic Damge		Min	Max	none	0
-dmg-cold	1			15	coldmindam			16	coldmaxdam			17	coldlength																	Cold Damage	Length (Frames)	Min	Max	none	0
-dmg-pois	1			15	poisonmindam			16	poisonmaxdam			17	poisonlength																	Poison Damage	Length (Frames)	Min	Max	none	0
+dmg-fire	1			15	firemindam			16	firemaxdam																					Fire Dmg		Min	Max	none	0
+dmg-ltng	1			15	lightmindam			16	lightmaxdam																					Lit Dmg		Min	Max	none	0
+dmg-mag	1			15	magicmindam			16	magicmaxdam																					Mag Dmg		Min	Max	none	0
+dmg-cold	1			15	coldmindam			16	coldmaxdam			17	coldlength																	Cold Dmg	Length (Frames)	Min	Max	none	0
+dmg-pois	1			15	poisonmindam			16	poisonmaxdam			17	poisonlength																	Pois Dmg	Length (Frames)	Min	Max	none	0
 dmg-throw	1			15	item_throw_mindamage			16	item_throw_maxdamage																					Throwing Damage		Min	Max	none	0
 dmg-norm	1			15	mindamage			16	maxdamage																					Normal Damage Modifier		Min	Max	none	0
 ac/lvl	1			17	item_armor_perlevel																									AC per Player Level	ac/lvl (8ths)			none	0
@@ -508,3 +508,4 @@ petmax-increase	1			1	petmax_increase																														0
 velocity-percent	1			1	velocitypercent																														0
 curse-resistance	1			1	curse_resistance																														0
 cast-swing	1			1	item_fastercastrate			1	item_fasterattackrate																										0
+flat_dmg_poismag%	1			1	min_dmg_poismag%			3	max_dmg_poismag%																										0

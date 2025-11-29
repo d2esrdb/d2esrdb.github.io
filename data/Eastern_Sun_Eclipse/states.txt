@@ -208,7 +208,7 @@ timestop	205												1																																													106	74	255
 arrowofconfession	206															1																																			item_restinpeace																				0
 divineaura	207																																											aura_of_divinity																			paladin_aura_sanctuary								0
 sacredpiercer	208															1																																			item_pierce																				0
-elemcry	209							1							1	1																												aura_elemcry							coldresist												barbarian_battlecry_state								0
+elemcry	209														1	1																												aura_elemcry							coldresist												barbarian_battlecry_state								0
 finditem	210																																																		item_magicbonus																				0
 strengthancients	211																																																																						0
 cowballoon	212				1							1																			1	1	1		1						1																								1	391					0
@@ -259,3 +259,9 @@ elemskill_ltng	256			1																																																										
 elemskill_pois	257			1																																																																			0
 elemskill_mag	258			1																																																																			0
 brawlerbarrier	259																																						1	1				reflectionactive	reflectionactive	reflectionactive			reflectionstart	reflectionend		8	5																		0
+minionbuff1	260					1				1																																																													0
+minionbuff2	261					1				1																																																													0
+minionbuff3	262					1				1																																																													0
+passive_minionbuff1	263																																																																						0
+passive_minionbuff2	264																																																																						0
+passive_minionbuff3	265																																																																						0

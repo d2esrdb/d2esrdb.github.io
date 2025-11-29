@@ -1,0 +1,102 @@
+DESCRIPTION	INPUT 1	INPUT 2	INPUT 3	INPUT 4	INPUT 5	INPUT 6	INPUT 7	OUTPUT	OUTPUT 2	OUTPUT 3	MOD 1	MOD 1 MIN	MOD 1 MAX	MOD 2	MOD 2 MIN	MOD 2 MAX
+																
+Convert Regular > Pure Diabolic Diaboleite	Diabolic Diaboleite x10							Pure Diabolic Diaboleite								
+Convert Regular > Pure Mephitic Malachite	Mephitic Malachite x10							Pure Mephitic Malachite								
+Convert Regular > Pure Baleful Bastnasite	Baleful Bastnasite x10							Pure Baleful Bastnasite								
+Convert Regular > Pure Pained Petalite	Pained Petalite x10							Pure Pained Petalite								
+Convert Regular > Pure Anguishing Andalusite	Anguishing Andalusite x10							Pure Anguishing Andalusite								
+Convert Regular > Pure Convoking Covellite	Convoking Covellite x10							Pure Convoking Covellite								
+Teleport Cooldown Frames Adjust Up	Any Ring	Minor HP Potion	Key					The same ring	Minor HP Potion	Key	item-telecooldownadjust	1	1			
+Teleport Cooldown Frames Adjust Down	Any Ring	Minor MP Potion	Key					The same ring	Minor MP Potion	Key	item-telecooldownadjust	-1	-1			
+Tinkerer's Dream: Tinkering Adds Life	Tinkerer's Dream	Heart						Tinkerer's Dream			hp	3	3			
+Tinkerer's Dream: Tinkering Adds Mana	Tinkerer's Dream	Soul						Tinkerer's Dream			mana	3	3			
+Tinkerer's Dream: Tinkering Adds Fdam	Tinkerer's Dream	Fang						Tinkerer's Dream			dmg-fire	3	9			
+Tinkerer's Dream: Tinkering Adds Ldam	Tinkerer's Dream	Horn						Tinkerer's Dream			dmg-ltng	3	9			
+Tinkerer's Dream: Tinkering Adds Cdam	Tinkerer's Dream	Spleen						Tinkerer's Dream			dmg-cold	3	6			
+Tinkerer's Dream: Tinkering Adds red-mag	Tinkerer's Dream	Tail						Tinkerer's Dream			red-mag	3	3			
+Tinkerer's Dream: Tinkering Adds Regen Life	Tinkerer's Dream	Jawbone						Tinkerer's Dream			regen	3	3			
+Tinkerer's Dream: Tinkering Adds Regen Mana	Tinkerer's Dream	Scalp						Tinkerer's Dream			regen-mana	6	6			
+Tinkerer's Dream: Tinkering Adds red-dmg	Tinkerer's Dream	Quill						Tinkerer's Dream			red-dmg	3	3			
+Tinkerer's Dream: Tinkering Adds Max Dam	Tinkerer's Dream	Griswold's Hand						Tinkerer's Dream			dmg-max	6	6	dmg-min	3	3
+Tinkerer's Dream: Tinkering Adds Min Dam	Tinkerer's Dream	Hephasto's Hand						Tinkerer's Dream			mana	9	9	mana-kill	3	3
+Tinkerer's Dream: Tinkering Adds vsDemon Dam	Tinkerer's Dream	Woodfist's Arm						Tinkerer's Dream			dmg-demon	27	27	dmg-undead	27	27
+Tinkerer's Dream: Tinkering Adds VsUndead Dam	Tinkerer's Dream	Radament's Head						Tinkerer's Dream			hp	9	9	heal-kill	3	3
+Tinkerer's Dream: Add Max Magic Resist	Tinkerer's Dream	Maple Leaf x3	Spider Silk					Tinkerer's Dream			levelreq	4	4	res-mag-max	1	1
+Tinkerer's Dream: Add Magic Resist	Tinkerer's Dream	Maple Leaf	Crushed Gem					Tinkerer's Dream			levelreq	4	4	res-mag	2	2
+Tinkerer's Dream: Add Max All Elemental Resists	Tinkerer's Dream	Maple Leaf	Blackmoor					Tinkerer's Dream			levelreq	4	4	res-all-max	1	1
+Tinkerer's Dream: Add Cannot Be Frozen	Tinkerer's Dream	Maple Leaf	Holy Symbol					Tinkerer's Dream			levelreq	4	4	nofreeze	1	1
+Tinkerer's Dream: Add Faster Block Rate	Tinkerer's Dream	Maple Leaf	Forging Hammer					Tinkerer's Dream			levelreq	4	4	block2	10	10
+Tinkerer's Dream: Add Poison Length Reduced	Tinkerer's Dream	Maple Leaf	Tyranium Ore					Tinkerer's Dream			levelreq	4	4	res-pois-len	5	5
+Tinkerer's Dream: Add Gold%	Tinkerer's Dream	Maple Leaf	Dragon Stone					Tinkerer's Dream			levelreq	4	4	gold%	20	20
+Tinkerer's Dream: -4 Level Requirement	Tinkerer's Dream	Sa Rune	Maple Leaf	Scroll 50				Tinkerer's Dream	Scroll 50		levelreq	-4	-4			
+Create Unique: Entropy	Entropic Aura Stone	Skill Book x4	Heaven Rune x2	God Rune x 2	Moon Rune	Water Rune		Entropy								
+Create Unique: Superconductor	Superconductive Aura Stone	Skill Book x4	Heaven Rune x2	God Rune x 2	Thunder Rune	Metal Rune		Superconductor								
+Create Item: Entropic Aura Stone	Green Aura Stone	Violet Aura Stone	Black Aura Stone	White Aura Stone				Entropic Aura Stone								
+Create Item: Superconductive Aura Stone	Green Aura Stone	Blue Aura Stone	Black Aura Stone	White Aura Stone				Superconductive Aura Stone								
+Create Unique: Chromatic Brilliance	Entropy	Superconductor	Radiance					Chromatic Brilliance								
+Create Item: Crystallized Radiance	Radiance	Pure Diabolic Diaboleite x5	Pure Mephitic Malachite x5	Pure Baleful Bastnasite x5	Pure Pained Petalite x5	Pure Pained Petalite x5	Pure Convoking Covellite x5	Crystallized Radiance								
+Create Item: Crystallized Entropy	Entropy	Pure Diabolic Diaboleite x5	Pure Mephitic Malachite x5	Pure Baleful Bastnasite x5	Pure Pained Petalite x5	Pure Pained Petalite x5	Pure Convoking Covellite x5	Crystallized Entropy								
+Create Item: Crystallized Superconductor	Superconductor	Pure Diabolic Diaboleite x5	Pure Mephitic Malachite x5	Pure Baleful Bastnasite x5	Pure Pained Petalite x5	Pure Pained Petalite x5	Pure Convoking Covellite x5	Crystallized Superconductor								
+Tier 2 Create Token Map Shifting Sands	Shifting Sands Tier 1	Pure Pained Petalite						Shifting Sands Tier 2	Shifting Sands Tier 1							
+Tier 2 Create Token Map Ancient Temple	Ancient Temple Tier 1	Pure Anguishing Andalusite						Ancient Temple Tier 2	Ancient Temple Tier 1							
+Tier 2 Create Token Map Warped Worldstone	Warped Worldstone Tier 1	Pure Baleful Bastnasite						Warped Worldstone Tier 2	Warped Worldstone Tier 1							
+Tier 2 Create Token Map Chaos Palace	Chaos Palace Tier 1	Pure Diabolic Diaboleite						Chaos Palace Tier 2	Chaos Palace Tier 1							
+Tier 2 Create Token Map Lost Tombs	Lost Tombs Tier 1	Pure Convoking Covellite						Lost Tombs Tier 2	Lost Tombs Tier 1							
+Tier 2 Create Token Map Hidden Durance	Hidden Durance Tier 1	Pure Mephitic Malachite						Hidden Durance Tier 2	Hidden Durance Tier 1							
+Tier 3 Create Token Map Shifting Sands	Shifting Sands Tier 2	Pure Pained Petalite x2						Shifting Sands Tier 3	Shifting Sands Tier 2							
+Tier 3 Create Token Map Ancient Temple	Ancient Temple Tier 2	Pure Anguishing Andalusite x2						Ancient Temple Tier 3	Ancient Temple Tier 2							
+Tier 3 Create Token Map Warped Worldstone	Warped Worldstone Tier 2	Pure Baleful Bastnasite x2						Warped Worldstone Tier 3	Warped Worldstone Tier 2							
+Tier 3 Create Token Map Chaos Palace	Chaos Palace Tier 2	Pure Diabolic Diaboleite x2						Chaos Palace Tier 3	Chaos Palace Tier 2							
+Tier 3 Create Token Map Lost Tombs	Lost Tombs Tier 2	Pure Convoking Covellite x2						Lost Tombs Tier 3	Lost Tombs Tier 2							
+Tier 3 Create Token Map Hidden Durance	Hidden Durance Tier 2	Pure Mephitic Malachite x2						Hidden Durance Tier 3	Hidden Durance Tier 2							
+Tier 4 Create Token Map Shifting Sands	Shifting Sands Tier 3	Pure Pained Petalite x4						Shifting Sands Tier 4	Shifting Sands Tier 3							
+Tier 4 Create Token Map Ancient Temple	Ancient Temple Tier 3	Pure Anguishing Andalusite x4						Ancient Temple Tier 4	Ancient Temple Tier 3							
+Tier 4 Create Token Map Warped Worldstone	Warped Worldstone Tier 3	Pure Baleful Bastnasite x4						Warped Worldstone Tier 4	Warped Worldstone Tier 3							
+Tier 4 Create Token Map Chaos Palace	Chaos Palace Tier 3	Pure Diabolic Diaboleite x4						Chaos Palace Tier 4	Chaos Palace Tier 3							
+Tier 4 Create Token Map Lost Tombs	Lost Tombs Tier 3	Pure Convoking Covellite x4						Lost Tombs Tier 4	Lost Tombs Tier 3							
+Tier 4 Create Token Map Hidden Durance	Hidden Durance Tier 3	Pure Mephitic Malachite x4						Hidden Durance Tier 4	Hidden Durance Tier 3							
+Tier 5 Create Token Map Shifting Sands	Shifting Sands Tier 4	Pure Pained Petalite x7						Shifting Sands Tier 5	Shifting Sands Tier 4							
+Tier 5 Create Token Map Ancient Temple	Ancient Temple Tier 4	Pure Anguishing Andalusite x7						Ancient Temple Tier 5	Ancient Temple Tier 4							
+Tier 5 Create Token Map Warped Worldstone	Warped Worldstone Tier 4	Pure Baleful Bastnasite x7						Warped Worldstone Tier 5	Warped Worldstone Tier 4							
+Tier 5 Create Token Map Chaos Palace	Chaos Palace Tier 4	Pure Diabolic Diaboleite x7						Chaos Palace Tier 5	Chaos Palace Tier 4							
+Tier 5 Create Token Map Lost Tombs	Lost Tombs Tier 4	Pure Convoking Covellite x7						Lost Tombs Tier 5	Lost Tombs Tier 4							
+Tier 5 Create Token Map Hidden Durance	Hidden Durance Tier 4	Pure Mephitic Malachite x7						Hidden Durance Tier 5	Hidden Durance Tier 4							
+Tier 6 Create Token Map Shifting Sands	Shifting Sands Tier 5	Pure Pained Petalite x10						Shifting Sands Tier 6	Shifting Sands Tier 5							
+Tier 6 Create Token Map Ancient Temple	Ancient Temple Tier 5	Pure Anguishing Andalusite x10						Ancient Temple Tier 6	Ancient Temple Tier 5							
+Tier 6 Create Token Map Warped Worldstone	Warped Worldstone Tier 5	Pure Baleful Bastnasite x10						Warped Worldstone Tier 6	Warped Worldstone Tier 5							
+Tier 6 Create Token Map Chaos Palace	Chaos Palace Tier 5	Pure Diabolic Diaboleite x10						Chaos Palace Tier 6	Chaos Palace Tier 5							
+Tier 6 Create Token Map Lost Tombs	Lost Tombs Tier 5	Pure Convoking Covellite x10						Lost Tombs Tier 6	Lost Tombs Tier 5							
+Tier 6 Create Token Map Hidden Durance	Hidden Durance Tier 5	Pure Mephitic Malachite x10						Hidden Durance Tier 6	Hidden Durance Tier 5							
+Create: Helm Aura Stone Defiance	Any same pure uber material x5	Ring Contract x10	Perfect Amethyst (6 Pack)	Minor Healing Potion				Aura Stone Defiance								
+Create: Helm Aura Stone Cleansing	Any same pure uber material x5	Ring Contract x10	Perfect Topaz (6 Pack)	Light Healing Potion				Aura Stone Cleansing								
+Create: Helm Aura Stone Resist Fire	Any same pure uber material x5	Ring Contract x10	Perfect Saphire (6 Pack)	Healing Potion				Aura Stone Resist Fire								
+Create: Helm Aura Stone Resist Cold	Any same pure uber material x5	Ring Contract x10	Perfect Emerald (6 Pack)	Greater Healing Potion				Aura Stone Resist Cold								
+Create: Helm Aura Stone Resist Lightning	Any same pure uber material x5	Ring Contract x10	Perfect Ruby (6 Pack)	Super Healing Potion				Aura Stone Resist Lightning								
+Create: Helm Aura Stone Vigour	Any same pure uber material x5	Ring Contract x10	Perfect Diamond (6 Pack)	Minor Mana Potion				Aura Stone Vigour								
+Create: Helm Aura Stone Salvation	Any same pure uber material x5	Ring Contract x10	Perfect Skull (6 Pack)	Light Mana Potion				Aura Stone Salvation								
+Create: Helm Aura Stone Doom	Any same pure uber material x5	Ring Contract x10	Perfect Obsidian (6 Pack)	Mana Potion				Aura Stone Doom								
+Create: Helm Aura Stone Arcane Vulnerability	Any same pure uber material x5	Ring Contract x10	Perfect Obsidian (6 Pack)	Greater Mana Potion				Aura Stone Arcane Vulnerability								
+Create: Helm Aura Stone Conviction	Any same pure uber material x5	Ring Contract x10	Perfect Obsidian (6 Pack)	Super Mana Potion				Aura Stone Conviction								
+Upgrade Splashstone: Small > Medium	Small Splashstone	Maple Leaf x3						Medium Splashstone								
+Upgrade Splashstone: Medium > Large	Medium Splashstone	Maple Leaf x9						Large Splashstone								
+Upgrade Splashstone: Large > Huge	Large Splashstone	Maple Leaf x15	Null Rune x2					Huge Splashstone								
+Upgrade Splashstone: Huge > Perfect	Huge Splashstone	Any same pure uber material x5						Perfect Huge Splashstone								
+Create Uber Boss Token : The Undying Inferno	Pure Diabolic Diaboleite x10	Chaos Palace Tier 6						The Undying Inferno	Chaos Palace Tier 6							
+Create Uber Boss Token : The Frozen Waste	Pure Mephitic Malachite x10	Hidden Durance Tier 6						The Frozen Waste	Hidden Durance Tier 6							
+Create Uber Boss Token : The Static Plateau	Pure Baleful Bastnasite x10	Warped Worldstone Tier 6						The Static Plateau	Warped Worldstone Tier 6							
+Create Uber Boss Token : The Decaying Mire	Pure Pained Petalite x10	Ancient Temple Tier 6						The Decaying Mire	Ancient Temple Tier 6							
+Create Uber Boss Token : The Firmament Enduring	Pure Anguishing Andalusite x10	Shifting Sands Tier 6						The Firmament Enduring	Shifting Sands Tier 6							
+Create Uber Boss Token : The Nexus Arcana	Pure Convoking Covellite x10	Lost Tombs Tier 6						The Nexus Arcana	Lost Tombs Tier 6							
+Create Uber-Uber Boss Token: Wish of Night Eternal																
+Add Wings To Endless Potential: Red	Endless Potential	Ufrag's Heart							Ufrag's Heart							
+Add Wings To Endless Potential: Blue	Endless Potential	Tyoh's Heart							Tyoh's Heart							
+Add Wings To Endless Potential: Yellow	Endless Potential	Emitnwod's Heart							Emitnwod's Heart							
+Add Wings To Endless Potential: Green	Endless Potential	Effellarr's Heart							Effellarr's Heart							
+Add Wings To Endless Potential: White	Endless Potential	Mudeyhnne's Heart							Mudeyhnne's Heart							
+Add Wings To Endless Potential: Purple	Endless Potential	Lyrtsa's Heart							Lyrtsa's Heart							
+Remove Wings From Endless Potential: Red	Endless Potential	Chipped Ruby														
+Remove Wings From Endless Potential: Blue	Endless Potential	Chipped Saphire														
+Remove Wings From Endless Potential: Yellow	Endless Potential	Chipped Topaz														
+Remove Wings From Endless Potential: Green	Endless Potential	Chipped Emerald														
+Remove Wings From Endless Potential: White	Endless Potential	Chipped Diamond														
+Remove Wings From Endless Potential: Purple	Endless Potential	Chipped Amethyst														

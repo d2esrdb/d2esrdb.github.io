@@ -39,4 +39,7 @@ works in game for some reason, but the dbgen just shows 1% because of the invali
 "hcIdx" -> "*hcIdx" in monstat.txt
 "Id" -> "*Id" in skills.txt
 Are all the ones I know of so far. Since it looks like these are all mostly comment columns, we
-probably shouldn't be using them for the parser. 
+probably shouldn't be using them for the parser.
+
+## Resources
+https://locbones.github.io/D2R_DataGuide/
