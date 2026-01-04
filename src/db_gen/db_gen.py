@@ -4,7 +4,6 @@ import typing as t
 import re
 from pathlib import Path
 
-import click
 from mako.lookup import TemplateLookup
 from ruamel.yaml import YAML
 
@@ -264,17 +263,12 @@ def load_config(config_file: Path) -> list[dict[str, t.Any]]:
     with config_file.open() as config:
         return yaml.load(config)
 
-
-@click.command()
-@click.option("-d", "--db_dir", default="data", type=click.Path(file_okay=False, exists=True, readable=True))
-@click.option("-c", "--config", default="data/config.yaml", type=click.Path(file_okay=True, exists=True, readable=True))
-@click.option("-o", "--out_dir", default="output", type=click.Path(file_okay=False))
-def main(db_dir: str, config: str, out_dir: str) -> None:
-    out_path = Path(out_dir)
+def main() -> None:
+    out_path = Path("output")
     out_path.mkdir(exist_ok=True, parents=True)
-    db_path = Path(db_dir)
+    db_path = Path("data")
 
-    databases = load_config(Path(config))
+    databases = load_config(Path("data/config.yaml"))
 
     index_links = []
 
