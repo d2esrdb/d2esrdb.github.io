@@ -153,10 +153,10 @@ enr/lvl	1			17	item_energy_perlevel																									Energy per Player Le
 vit/lvl	1			17	item_vitality_perlevel																									Vitality per Player Level	(8ths)			none	0
 att/lvl	1			17	item_tohit_perlevel																									Attack per Player Level	att/lvl (1)			none	0
 att%/lvl	1			17	item_tohitpercent_perlevel																									Attack% per Player Level	att%/lvl (8ths)			none	0
-dmg-cold/lvl	1			17	item_cold_damagemax_perlevel																									Max Cold Damage per Player Level	(8ths)			none	0
-dmg-fire/lvl	1			17	item_fire_damagemax_perlevel																									Max Fire Damage per Player Level	(8ths)			none	0
-dmg-ltng/lvl	1			17	item_ltng_damagemax_perlevel																									Max Lightning Dmg per Player Level	(8ths)			none	0
-dmg-pois/lvl	1			17	item_pois_damagemax_perlevel																									Max Poison Dmg per Player Level	(8ths)			none	0
+dmg-cold/lvl	1			15	item_cold_damagemax_perlevel			16	item_cold_damagemax_perlevel																					Max Cold Damage per Player Level	(8ths)			none	0
+dmg-fire/lvl	1			15	item_fire_damagemax_perlevel			16	item_fire_damagemax_perlevel																					Max Fire Damage per Player Level	(8ths)			none	0
+dmg-ltng/lvl	1			15	item_ltng_damagemax_perlevel			16	item_ltng_damagemax_perlevel			17	coldlength																	Max Lightning Dmg per Player Level	(8ths)			none	0
+dmg-pois/lvl	1			15	item_pois_damagemax_perlevel			16	item_pois_damagemax_perlevel			17	poisonlength																	Max Poison Dmg per Player Level	(8ths)			none	0
 res-cold/lvl	1			17	item_resist_cold_perlevel																									Resist Cold% per Player Level	(8ths)			none	0
 res-fire/lvl	1			17	item_resist_fire_perlevel																									Resist Fire% per Player Level	(8ths)			none	0
 res-ltng/lvl	1			17	item_resist_ltng_perlevel																									Resist Lightning% per Player Level	(8ths)			none	0
@@ -176,7 +176,7 @@ att-dem/lvl	1			17	item_tohit_demon_perlevel																									Attack Demo
 att-und/lvl	1			17	item_tohit_undead_perlevel																									Attack Undead + per Player Level	att/lvl (1)			none	0
 crush/lvl	1			17	item_crushingblow_perlevel																									+% Chance of Crushing Blow per Player Level	(8ths)			none	0
 wounds/lvl	1			17	item_openwounds_perlevel																									+% Chance of Open Wounds per Player Level	(8ths)			none	0
-kick/lvl																														Kick Damage per Player Level	(8ths)			none	0
+kick/lvl	1			17	kickdamage_perlevel																									Kick Damage per Player Level	(8ths)			none	0
 deadly/lvl	1			17	item_deadlystrike_perlevel																									+% Chance of Deadly Strike per Player Level	(8ths)			none	0
 gems%/lvl																														+% Chance of finding Gems per Player Level	(8ths)			none	0
 rep-dur	1			17	item_replenish_durability																									regenerates durability	speed (see note)			regenerates 1 durability point per 100/lvl seconds	0
@@ -402,7 +402,6 @@ vit%	1			1	item_vitality_percent																													none	0
 enr%	1			1	item_energy_percent																													none	0
 res-curse-len	1			1	curse_resistance_length			1	curse_resistance																									none	0
 ex-minion	1			1	skill_extra_minion																													none	0
-ex-trap	1			1	skill_extra_trap																													none	0
 corrupt-roll	1			1	item_corrupt_roll																														0
 kills	1			1	new_kill_counter																													none	0
 kill_disp	1			17	Kill_display																													none	0
@@ -423,50 +422,28 @@ dmg-ltng/kill	1			15	item_ltng_damagemin_perkill			16	item_ltng_damagemax_perkil
 dmg-fire/kill	1			15	item_fire_damagemin_perkill			16	item_fire_damagemax_perkill																									none	0
 nec-fire	1			1	item_nec_holyfire																														0
 sum-skills	1			1	item_summskills																														0
-skeli	1			1	item_nec_skeli																														0
 psn%/dex	1			1	item_poison%_perdex																														0
 dmg-psn/kill	1			16	item_pois_damagemax_perkill																													none	0
 maxdmg-mag/kill	1			16	item_magic_damagemax_perkill																													none	0
 warcry-effect	1			1	item_barb_warcry																														0
-ltngskill	1			1	item_barb_ltngskill																														0
-thundertime	1			1	item_barb_thunder																														0
-frenzytime	1			1	item_barb_frenzy																														0
-frenzyconvert	1			1	item_barb_frenzy2																														0
-bolderexplode	1			1	item_druid_bolder																														0
-spikes	1			1	item_druid_spikes																														0
-wolf	1			1	item_druid_wolf																														0
-wolf2	1			1	item_druid_wolf2																														0
-dclaws	1			1	item_druid_claws																														0
-dshock	1			1	item_druid_shock																														0
-stwister	1			1	item_sorc_twister																														0
-sshower	1			1	item_sorc_shower																														0
-cold%/coldres	1			1	item_cold%_percoldres																														0
-ltng%/gold%	1			1	item_ltng%_pergold																														0
 fire%/str	1			1	item_fire%_perstr																														0
-ama-hawk	1			1	item_ama_hawk																														0
-ama-hawk2	1			1	item_ama_hawk2																														0
-pala-bolt	1			1	item_pala_bolt																														0
-pala-tick	1			1	item_pala_tick																														0
-pala-tele	1			1	item_pala_tele																														0
 ex-minion2	1			1	skill_extra_minion2																														0
 hp/dex	1			1	item_hp_perdex																														0
 hp/str	1			1	item_hp_perstr																														0
 hp/enr	1			1	item_life_perenr																														0
-sorcb	1			1	item_sorc_bolt																														0
 pierce-phys	1			1	passive_phys_pierce																									Negates % of Enemy Cold Resistance		min	max	none	0
 pierce-mag	1			1	passive_mag_pierce																									Negates % of Enemy Cold Resistance		min	max	none	0
 abs-phys%	1			1	abs-phys_percent																														0
 abs-phys	1			1	abs-phys																														0
 total-avoid	1			1	passive_dodge			3	passive_avoid			3	passive_evade																						0
-abs-all	1			1	item_absorbfire			3	item_absorblight			3	item_absorbcold			3	item_absorbmagic			3															0
-abs-all%	1			1	item_absorbfire_percent			3	item_absorblight_percent			3	item_absorbcold_percent			3	item_absorbmagic_percent			3															0
-extra-all	1			1	passive_fire_mastery			3	passive_ltng_mastery			3	passive_cold_mastery			3	passive_pois_mastery																		0
+abs-all	1			1	item_absorbfire			3	item_absorblight			3	item_absorbcold			3	item_absorbmagic																		0
+abs-all%	1			1	item_absorbfire_percent			3	item_absorblight_percent			3	item_absorbcold_percent			3	item_absorbmagic_percent																		0
+extra-all	1			1	passive_fire_mastery			3	passive_ltng_mastery			3	passive_cold_mastery																						0
 pierce-all	1			1	passive_fire_pierce			3	passive_ltng_pierce			3	passive_cold_pierce			3	passive_pois_pierce			3	passive_phys_pierce			3	passive_mag_pierce										0
 hit-splash	1			11	item_skillonhitmele																									Proc Skill on Hit	Skill #	% Chance	Level	none	0
-nspear	1			1	item_nec_spear																														0
 dmg-ltng/vit	1			15	min_ltngdmg_per_vit			16	max_ltngdmg_per_vit																										0
 dmg-fire/str	1			15	min_firedmg_per_str			16	max_firedmg_per_str																										0
-dmg-ltng/dex	1			15	min_ltngdmg_per_dex			16	max_ltngdmg_per_vit																										0
+dmg-ltng/dex	1			15	min_ltngdmg_per_dex			16	max_ltngdmg_per_dex																										0
 dmg-cold/enr	1			15	min_colddmg_per_enr			16	max_colddmg_per_enr																										0
 curse-rad	1			1	item_curse_radius																														0
 curse-effect	1			1	item_curse_effect																														0
@@ -474,11 +451,28 @@ aura-effect	1			1	item_aura_effect																														0
 extra-ele	1			1	passive_fire_mastery			3	passive_ltng_mastery			3	passive_cold_mastery			3	passive_wind_mastery																		0
 extra-fleshbone	1			1	passive_pois_mastery			3	passive_mag2_mastery																										0
 wind%/str	1			1	item_wind%_perstr																														0
-wind%/mana	1			1	item_wind%_permana																														0
 cold%/dex	1			1	item_cold%_perdex																														0
 ltng%/dex	1			1	item_ltng%_perdex																														0
 fire%/ar	1			1	item_fire%_perar																														0
 psn%/ar	1			1	item_poison_perar																														0
 mag%/str	1			1	item_magic%_perstr																														0
-mag%/mana	1			1	item_magic%_permana																														0
 fire%/dex	1			1	item_fire%_perdex																														0
+dmg-mag/vit	1			15	min_magdmg_per_vit			16	max_magdmg_per_vit																										0
+all-res/lvl	1			17	item_resist_cold_perlevel			17	item_resist_fire_perlevel			17	item_resist_ltng_perlevel			17	item_resist_pois_perlevel																		0
+mana/kill	1			17	item_mana_perkill																														0
+psn%/life	1			1	item_psn%_perlife																														0
+all-stats/kill	1			17	item_strength_perkill			17	item_dexterity_perkill			17	item_vitality_perkill			17	item_energy_perkill																		0
+all-stats%	1			1	item_strength_percent			1	item_dexterity_percent			1	item_vitality_percent			1	item_energy_percent																		0
+maxdmg/mana	1			17	item_maxdamage_permana																														0
+cold%/mana	1			1	item_cold%_permana																														0
+fire%/mana	1			1	item_fire%_permana																														0
+ltng%/mana	1			1	item_ltng%_permana																														0
+wind%/mana	1			1	item_wind%_permana																														0
+mag%/mana	1			1	item_magic%_permana																														0
+cold%/coldres	1			1	item_cold%_percoldres																														0
+fire%/fireres	1			1	item_fire%_perfireres																														0
+ltng%/gold%	1			1	item_ltng%_pergold																														0
+pierce-ele	1			1	passive_fire_pierce			3	passive_ltng_pierce			3	passive_cold_pierce																						0
+maxdam/str	1			17	item_maxdamage_perstr																														0
+ltng%/ltngres	1			1	item_ltng%_perltngres																														0
+hp/kill	1			17	item_hp_perkill																														0

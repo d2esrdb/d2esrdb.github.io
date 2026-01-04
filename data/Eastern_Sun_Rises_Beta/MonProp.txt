@@ -13,10 +13,10 @@ quillrat7																															thorns			15	20																										
 quillrat8																															thorns			15	20																										thorns			30	40																										0
 druidhawk	stupidity			-1	-1																										stupidity			-1	-1																										stupidity			-1	-1																										0
 ancientbarb	state		fullsetgeneric	1	1																																																																																						0
-epierce	pierce-fire			0	10	pierce-ltng			0	10	pierce-cold			0	10	pierce-pois			0	10											pierce-fire			5	15	pierce-ltng			5	15	pierce-cold			5	15	pierce-pois			5	15											pierce-fire			10	20	pierce-ltng			10	20	pierce-cold			10	20	pierce-pois			10	20											0
-epiercefade	pierce-fire			0	10	pierce-ltng			0	10	pierce-cold			0	10	pierce-pois			0	10	fade			1	1						pierce-fire			5	15	pierce-ltng			5	15	pierce-cold			5	15	pierce-pois			5	15	fade			1	1						pierce-fire			10	20	pierce-ltng			10	20	pierce-cold			10	20	pierce-pois			10	20	fade			1	1						0
+epierce	pierce-fire			5	15	pierce-ltng			5	15	pierce-cold			5	15	pierce-pois			5	15											pierce-fire			15	25	pierce-ltng			15	25	pierce-cold			15	25	pierce-pois			15	25											pierce-fire			25	35	pierce-ltng			25	35	pierce-cold			25	35	pierce-pois			25	35											0
+epiercefade	pierce-fire			5	15	pierce-ltng			5	15	pierce-cold			5	15	pierce-pois			5	15	fade			1	1						pierce-fire			15	25	pierce-ltng			15	25	pierce-cold			15	25	pierce-pois			15	25	fade			1	1						pierce-fire			25	35	pierce-ltng			25	35	pierce-cold			25	35	pierce-pois			25	35	fade			1	1						0
 red	state		228	1	1																										state		228	1	1																										state		228	1	1																										0
-epiercered	pierce-fire			0	10	pierce-ltng			0	10	pierce-cold			0	10	pierce-pois			0	10	state		228	1	1						pierce-fire			5	15	pierce-ltng			5	15	pierce-cold			5	15	pierce-pois			5	15	state		228	1	1						pierce-fire			10	20	pierce-ltng			10	20	pierce-cold			10	20	pierce-pois			10	20	state		228	1	1						0
+epiercered	pierce-fire			5	15	pierce-ltng			5	15	pierce-cold			5	15	pierce-pois			5	15	state		228	1	1						pierce-fire			15	25	pierce-ltng			15	25	pierce-cold			15	25	pierce-pois			15	25	state		228	1	1						pierce-fire			25	35	pierce-ltng			25	35	pierce-cold			25	35	pierce-pois			25	35	state		228	1	1						0
 hireling	addxp			50	50																										addxp			50	50																										addxp			50	50																										0
 a3hireling	addxp			50	50																										addxp			50	50																										addxp			50	50														33	33											0
 cb	crush			10	10																										crush			20	20																										crush			30	30																										0
@@ -48,12 +48,12 @@ dozaprop	swing1	100		25	50	death-skill	100	253	8	1																					swing1	10
 duricloneprop	death-skill	100	518	10	1																										death-skill	100	518	10	1																										death-skill	100	518	10	1																										0
 livingmaulprop	death-skill	100	374	8	1																										death-skill	100	374	8	3																										death-skill	100	374	8	5																										0
 trollgprop	abs-phys%	100		5	5	gethit-skill	100	382	7	2																					abs-phys%	100		7	7	gethit-skill	100	382	7	5																					abs-phys%	100		10	10	gethit-skill	100	382	7	8																					0
-stormskelprop	pierce-ltng	100		15	15	pierce-phys	100		15	15																					pierce-ltng	100		15	15	pierce-phys	100		15	15																					pierce-ltng	100		15	15	pierce-phys	100		15	15																					0
+stormskelprop	pierce-ltng	100		5	15	pierce-phys	100		15	20																					pierce-ltng	100		15	25	pierce-phys	100		30	35																					pierce-ltng	100		25	35	pierce-phys	100		45	50																					0
 skelprop	hit-skill	100	497	100	1																										hit-skill	100	497	100	12																										hit-skill	100	497	100	20																										0
 claygolemprop	hit-skill	100	516	10	8																										hit-skill	100	516	10	15																										hit-skill	100	516	10	22																										0
 bloodgolemprop	att-skill	100	478	10	8																										att-skill	100	478	10	15																										att-skill	100	478	10	22																										0
 irongolemprop	gethit-skill	100	243	20	3																										gethit-skill	100	243	25	3																										gethit-skill	100	243	30	3																										0
 firegolemprop	hit-skill	100	479	10	8																										hit-skill	100	479	10	15																										hit-skill	100	479	10	22																										0
-swolfprop	hit-skill	100	451	100	1	pierce-phys	100		15	15																					hit-skill	100	451	100	12	pierce-phys	100		30	30																					hit-skill	100	451	100	20	pierce-phys	100		45	45																					0
-fenrisprop	hit-skill	100	398	10	8	pierce-phys	100		15	15																					hit-skill	100	398	10	15	pierce-phys	100		30	30																					hit-skill	100	398	10	22	pierce-phys	100		45	45																					0
-druidbearprop	att-skill	100	399	10	8	pierce-phys	100		15	15																					att-skill	100	399	10	15	pierce-phys	100		30	30																					att-skill	100	399	10	22	pierce-phys	100		45	45																					0
+swolfprop	hit-skill	100	451	100	1	pierce-phys	100		15	20																					hit-skill	100	451	100	12	pierce-phys	100		30	35																					hit-skill	100	451	100	20	pierce-phys	100		45	50																					0
+fenrisprop	hit-skill	100	398	10	8	pierce-phys	100		15	20																					hit-skill	100	398	10	15	pierce-phys	100		30	35																					hit-skill	100	398	10	22	pierce-phys	100		45	50																					0
+druidbearprop	att-skill	100	399	10	8	pierce-phys	100		15	20																					att-skill	100	399	10	15	pierce-phys	100		30	35																					att-skill	100	399	10	22	pierce-phys	100		45	50																					0

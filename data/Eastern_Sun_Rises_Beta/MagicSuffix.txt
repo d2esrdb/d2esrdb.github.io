@@ -1,48 +1,48 @@
 Name	version	spawnable	rare	level	maxlevel	levelreq	classspecific	class	classlevelreq	frequency	group	mod1code	mod1param	mod1min	mod1max	mod2code	mod2param	mod2min	mod2max	mod3code	mod3param	mod3min	mod3max	transform	transformcolor	itype1	itype2	itype3	itype4	itype5	itype6	itype7	etype1	etype2	etype3	divide	multiply	add	sort
-of Might	100	1	1	1	10	1				28	1	str		2	4											armo										0	0	0	1
-of Might	100	1	1	5	15	3				28	1	str		5	7											armo										0	0	0	2
-of Might	100	1	1	10	20	6				28	1	str		8	10											armo										0	0	0	3
-of the Ox	100	1	1	15	35	12				28	1	str		11	13											armo										0	0	0	4
-of the Ox	100	1	1	20	45	18				28	1	str		14	16											armo										0	0	0	5
-of the Ox	100	1	1	25	60	24				28	1	str		17	19											armo										0	0	0	6
-of the Giant	100	1	1	35		33				28	1	str		20	22											glov	helm	boot	shld							0	0	0	7
-of the Giant	100	1	1	45		42				28	1	str		23	25											glov	helm	boot	shld							0	0	0	8
-of the Giant	100	1	1	35	80	33				28	1	str		20	22											tors	belt									0	0	0	9
-of the Giant	100	1	1	45	95	42				28	1	str		23	25											tors	belt									0	0	0	10
-of the Giant	100	1	1	60		48				26	1	str		26	30											tors	belt									0	0	0	11
-of the Titan	100	1	1	80		60				24	1	str		31	35											tors	belt									0	0	0	12
-of the Titan	100	1	1	95		66				22	1	str		36	40											tors										0	0	0	13
-of Atlas	100	1	1	95		66				20	1	str		41	45											tors										0	0	0	14
+of Might	100	1	1	1	10	1				24	1	str		2	4											armo										0	0	0	1
+of Might	100	1	1	5	15	3				24	1	str		5	7											armo										0	0	0	2
+of Might	100	1	1	10	20	6				24	1	str		8	10											armo										0	0	0	3
+of the Ox	100	1	1	15	35	12				24	1	str		11	13											armo										0	0	0	4
+of the Ox	100	1	1	20	45	18				24	1	str		14	16											armo										0	0	0	5
+of the Ox	100	1	1	25	60	24				24	1	str		17	19											armo										0	0	0	6
+of the Giant	100	1	1	35		33				24	1	str		20	22											glov	helm	boot	shld							0	0	0	7
+of the Giant	100	1	1	45		42				24	1	str		23	25											glov	helm	boot	shld							0	0	0	8
+of the Giant	100	1	1	35	80	33				24	1	str		20	22											tors	belt									0	0	0	9
+of the Giant	100	1	1	45	95	42				24	1	str		23	25											tors	belt									0	0	0	10
+of the Giant	100	1	1	60		48				22	1	str		26	30											tors	belt									0	0	0	11
+of the Titan	100	1	1	80		60				20	1	str		31	35											tors	belt									0	0	0	12
+of the Titan	100	1	1	95		66				18	1	str		36	40											tors										0	0	0	13
+of Atlas	100	1	1	95		66				16	1	str		41	45											tors										0	0	0	14
 																																							15
-of the Phantom	100	1	1	1	10	1				28	2	dex		2	4											armo										0	0	0	16
-of the Phantom	100	1	1	5	15	3				28	2	dex		5	7											armo										0	0	0	17
-of the Phantom	100	1	1	10	20	6				28	2	dex		8	10											armo										0	0	0	18
-of the Wind	100	1	1	15	35	12				28	2	dex		11	13											armo										0	0	0	19
-of the Wind	100	1	1	20	45	18				28	2	dex		14	16											armo										0	0	0	20
-of the Wind	100	1	1	25	60	24				28	2	dex		17	19											armo										0	0	0	21
-of Precision	100	1	1	35		33				28	2	dex		20	22											helm	belt	boot	shld							0	0	0	22
-of Precision	100	1	1	45		42				28	2	dex		23	25											helm	belt	boot	shld							0	0	0	23
-of Precision	100	1	1	35	80	33				28	2	dex		20	22											tors	glov									0	0	0	24
-of Precision	100	1	1	45	95	42				28	2	dex		23	25											tors	glov									0	0	0	25
-of Precision	100	1	1	60		48				26	2	dex		26	30											tors	glov									0	0	0	26
-of Perfection	100	1	1	80		60				24	2	dex		31	35											tors	glov									0	0	0	27
-of Perfection	100	1	1	95		66				22	2	dex		36	40											tors										0	0	0	28
-of Nirvana	100	1	1	95		66				20	2	dex		41	45											tors										0	0	0	29
+of the Phantom	100	1	1	1	10	1				24	2	dex		2	4											armo										0	0	0	16
+of the Phantom	100	1	1	5	15	3				24	2	dex		5	7											armo										0	0	0	17
+of the Phantom	100	1	1	10	20	6				24	2	dex		8	10											armo										0	0	0	18
+of the Wind	100	1	1	15	35	12				24	2	dex		11	13											armo										0	0	0	19
+of the Wind	100	1	1	20	45	18				24	2	dex		14	16											armo										0	0	0	20
+of the Wind	100	1	1	25	60	24				24	2	dex		17	19											armo										0	0	0	21
+of Precision	100	1	1	35		33				24	2	dex		20	22											helm	belt	boot	shld							0	0	0	22
+of Precision	100	1	1	45		42				24	2	dex		23	25											helm	belt	boot	shld							0	0	0	23
+of Precision	100	1	1	35	80	33				24	2	dex		20	22											tors	glov									0	0	0	24
+of Precision	100	1	1	45	95	42				24	2	dex		23	25											tors	glov									0	0	0	25
+of Precision	100	1	1	60		48				22	2	dex		26	30											tors	glov									0	0	0	26
+of Perfection	100	1	1	80		60				20	2	dex		31	35											tors	glov									0	0	0	27
+of Perfection	100	1	1	95		66				18	2	dex		36	40											tors										0	0	0	28
+of Nirvana	100	1	1	95		66				16	2	dex		41	45											tors										0	0	0	29
 																																							30
-of the Mind	100	1	1	1	10	1				28	3	enr		2	4											armo										0	0	0	31
-of the Mind	100	1	1	5	15	3				28	3	enr		5	7											armo										0	0	0	32
-of the Mind	100	1	1	10	20	6				28	3	enr		8	10											armo										0	0	0	33
-of Brilliance	100	1	1	15	35	12				28	3	enr		11	13											armo										0	0	0	34
-of Brilliance	100	1	1	20	45	18				28	3	enr		14	16											armo										0	0	0	35
-of Brilliance	100	1	1	25	60	24				28	3	enr		17	19											armo										0	0	0	36
-of Sorcery	100	1	1	35		33				28	3	enr		20	22											glov	belt	boot	shld							0	0	0	37
-of Sorcery	100	1	1	45		42				28	3	enr		23	25											glov	belt	boot	shld							0	0	0	38
-of Sorcery	100	1	1	35	80	33				28	3	enr		20	22											tors	helm									0	0	0	39
-of Sorcery	100	1	1	45	95	42				28	3	enr		23	25											tors	helm									0	0	0	40
-of Sorcery	100	1	1	60		48				26	3	enr		26	30											tors	helm									0	0	0	41
-of Wizardry	100	1	1	80		60				24	3	enr		31	35											tors	helm									0	0	0	42
-of Wizardry	100	1	1	95		66				22	3	enr		36	40											tors										0	0	0	43
-of Enlightenment	100	1	1	95		66				20	3	enr		41	45											tors										0	0	0	44
+of the Mind	100	1	1	1	10	1				24	3	enr		2	4											armo										0	0	0	31
+of the Mind	100	1	1	5	15	3				24	3	enr		5	7											armo										0	0	0	32
+of the Mind	100	1	1	10	20	6				24	3	enr		8	10											armo										0	0	0	33
+of Brilliance	100	1	1	15	35	12				24	3	enr		11	13											armo										0	0	0	34
+of Brilliance	100	1	1	20	45	18				24	3	enr		14	16											armo										0	0	0	35
+of Brilliance	100	1	1	25	60	24				24	3	enr		17	19											armo										0	0	0	36
+of Sorcery	100	1	1	35		33				24	3	enr		20	22											glov	belt	boot	shld							0	0	0	37
+of Sorcery	100	1	1	45		42				24	3	enr		23	25											glov	belt	boot	shld							0	0	0	38
+of Sorcery	100	1	1	35	80	33				24	3	enr		20	22											tors	helm									0	0	0	39
+of Sorcery	100	1	1	45	95	42				24	3	enr		23	25											tors	helm									0	0	0	40
+of Sorcery	100	1	1	60		48				22	3	enr		26	30											tors	helm									0	0	0	41
+of Wizardry	100	1	1	80		60				20	3	enr		31	35											tors	helm									0	0	0	42
+of Wizardry	100	1	1	95		66				18	3	enr		36	40											tors										0	0	0	43
+of Enlightenment	100	1	1	95		66				16	3	enr		41	45											tors										0	0	0	44
 																																							45
 of the Jackal	100	1	1	1	10	1				18	4	vit		4	8											armo										0	0	0	46
 of the Jackal	100	1	1	5	15	3				18	4	vit		7	9											armo										0	0	0	47
@@ -88,7 +88,7 @@ of the Mumakil	100	1	1	80		60				6	8	vit%		11	13											tors	boot									0	0
 of the Mumakil	100	1	1	95		66				5	8	vit%		14	16											tors										0	0	0	87
 																																							88
 of Velocity	100	1	1	20	60	18				24	9	swing1		5	10											glov										0	0	0	89
-of Velocity	100	1	1	60		48				24	9	swing2		10	15											glov										0	0	0	90
+of Velocity	100	1	1	60	95	48				24	9	swing2		10	15											glov										0	0	0	90
 of Acceleration	100	1	1	80		60				24	9	swing2		16	20											glov										0	0	0	91
 of Acceleration	100	1	1	95		66				24	9	swing2		21	25											glov										0	0	0	92
 																																							93
@@ -108,66 +108,66 @@ of Stability	100	1	1	95		66				20	11	balance3		25	27	tinkerflag2		12	42							to
 																																							107
 of Regeneration	100	1	1	5	15	3				28	12	regen		10	15	hp/lvl	2									helm	tors									0	0	0	108
 of Regeneration	100	1	1	15	35	12				28	12	regen		16	20	hp/lvl	2									helm	tors									0	0	0	109
-of Regeneration	100	1	1	25		24				26	12	regen		21	25	hp/lvl	2									tors										0	0	0	110
-of Regrowth	100	1	1	45		42				24	12	regen		26	30	hp/lvl	2									tors										0	0	0	111
-of Regeneration	100	1	1	25	60	24				26	12	regen		21	25	hp/lvl	2									helm	tors									0	0	0	112
-of Regrowth	100	1	1	45	95	42				24	12	regen		26	30	hp/lvl	2									helm	tors									0	0	0	113
-of Regrowth	100	1	1	80		60				22	12	regen		31	35	hp/lvl	3									helm										0	0	0	114
-of Regrowth	100	1	1	95		66				20	12	regen		36	40	hp/lvl	3									helm										0	0	0	115
+of Regeneration	100	1	1	25		24				26	12	regen		21	25	hp/lvl	3									tors										0	0	0	110
+of Regrowth	100	1	1	45		42				24	12	regen		26	30	hp/lvl	4									tors										0	0	0	111
+of Regeneration	100	1	1	25	60	24				26	12	regen		21	25	hp/lvl	3									helm	tors									0	0	0	112
+of Regrowth	100	1	1	45	95	42				24	12	regen		26	30	hp/lvl	4									helm	tors									0	0	0	113
+of Regrowth	100	1	1	80		60				22	12	regen		31	35	hp/lvl	5									helm										0	0	0	114
+of Regrowth	100	1	1	95		66				20	12	regen		36	40	hp/lvl	6									helm										0	0	0	115
 																																							116
-of the Psyche	100	1	1	5	15	3				28	13	regen-mana		10	15	mana/lvl	3									helm	tors									0	0	0	117
-of the Psyche	100	1	1	15	35	12				28	13	regen-mana		16	20	mana/lvl	3									helm	tors									0	0	0	118
+of the Psyche	100	1	1	5	15	3				28	13	regen-mana		10	15	mana/lvl	2									helm	tors									0	0	0	117
+of the Psyche	100	1	1	15	35	12				28	13	regen-mana		16	20	mana/lvl	2									helm	tors									0	0	0	118
 of the Psyche	100	1	1	25		24				26	13	regen-mana		21	25	mana/lvl	3									tors										0	0	0	119
-of Euphoria	100	1	1	45		42				24	13	regen-mana		26	30	mana/lvl	3									tors										0	0	0	120
+of Euphoria	100	1	1	45		42				24	13	regen-mana		26	30	mana/lvl	4									tors										0	0	0	120
 of the Psyche	100	1	1	25	60	24				26	13	regen-mana		21	25	mana/lvl	3									helm	tors									0	0	0	121
-of Euphoria	100	1	1	45	95	42				24	13	regen-mana		26	30	mana/lvl	3									helm	tors									0	0	0	122
-of Euphoria	100	1	1	80		60				22	13	regen-mana		31	35	mana/lvl	4									helm										0	0	0	123
-of Euphoria	100	1	1	95		66				20	13	regen-mana		36	40	mana/lvl	4									helm										0	0	0	124
+of Euphoria	100	1	1	45	95	42				24	13	regen-mana		26	30	mana/lvl	4									helm	tors									0	0	0	122
+of Euphoria	100	1	1	80		60				22	13	regen-mana		31	35	mana/lvl	5									helm										0	0	0	123
+of Euphoria	100	1	1	95		66				20	13	regen-mana		36	40	mana/lvl	6									helm										0	0	0	124
 																																							125
 of Ages	100	1	1	20	60	18				2	14	indestruct				ease		5	10	red-dmg		4	8			armo										0	0	0	126
-of Ages	100	1	1	60		48				2	14	indestruct				ease		11	15	red-dmg		9	13			armo										0	0	0	127
+of Ages	100	1	1	60	95	48				2	14	indestruct				ease		11	15	red-dmg		9	13			armo										0	0	0	127
 of Eternity	100	1	1	80		60				2	14	indestruct				ease		16	20	red-dmg		14	18			armo										0	0	0	128
 of Eternity	100	1	1	95		66				2	14	indestruct				ease		21	25	red-dmg		19	23			armo										0	0	0	129
 																																							130
-of Aurora	100	1	1	80		60				2	15	aura	Defiance	3	6											tors	helm									0	0	0	131
-of Aurora	100	1	1	95		66				1	15	aura	Defiance	7	10											tors										0	0	0	132
-of Aurora	100	1	1	80		60				2	15	aura	Cleansing	1	2											tors	helm									0	0	0	133
-of Aurora	100	1	1	95		66				1	15	aura	Cleansing	2	4											tors										0	0	0	134
-of Aurora	100	1	1	80		60				2	15	aura	Meditation	1	2											helm										0	0	0	135
-of Aurora	100	1	1	95		66				1	15	aura	Meditation	2	4											helm										0	0	0	136
-of Aurora	100	1	1	80		60				2	15	aura	Prayer	1	2											helm										0	0	0	137
-of Aurora	100	1	1	95		66				1	15	aura	Prayer	2	4											helm										0	0	0	138
-of Aurora	100	1	1	80		60				2	15	aura	Vigor	1	4											tors	boot									0	0	0	139
-of Aurora	100	1	1	95		66				1	15	aura	Vigor	4	7											tors										0	0	0	140
-of Aurora	100	1	1	80		60				2	15	aura	Salvation	1	2											tors	shld									0	0	0	141
-of Aurora	100	1	1	95		66				1	15	aura	Salvation	2	4											tors										0	0	0	142
-of Aurora	100	1	1	80		60				2	15	aura	Thorns	3	6											tors										0	0	0	143
-of Aurora	100	1	1	95		66				1	15	aura	Thorns	7	10											tors										0	0	0	144
-of Aurora	100	1	1	80		60				2	15	aura	Holy Fire T	18	36											tors										0	0	0	145
-of Aurora	100	1	1	95		66				1	15	aura	Holy Fire T	30	60											tors										0	0	0	146
-of Aurora	100	1	1	80		60				2	15	aura	Holy Freeze T	18	36											tors										0	0	0	147
-of Aurora	100	1	1	95		66				1	15	aura	Holy Freeze T	30	60											tors										0	0	0	148
-of Aurora	100	1	1	80		60				2	15	aura	Holy Shock T	18	36											tors										0	0	0	149
-of Aurora	100	1	1	95		66				1	15	aura	Holy Shock T	30	60											tors										0	0	0	150
+of Aurora	100	1	1	80		60				4	15	aura	Defiance	3	6											tors	helm									0	0	0	131
+of Aurora	100	1	1	95		66				2	15	aura	Defiance	7	10											tors										0	0	0	132
+of Aurora	100	1	1	80		60				4	15	aura	Cleansing	1	2											tors	helm									0	0	0	133
+of Aurora	100	1	1	95		66				2	15	aura	Cleansing	2	4											tors										0	0	0	134
+of Aurora	100	1	1	80		60				4	15	aura	Meditation	1	2											helm										0	0	0	135
+of Aurora	100	1	1	95		66				2	15	aura	Meditation	2	4											helm										0	0	0	136
+of Aurora	100	1	1	80		60				4	15	aura	Prayer	1	2											helm										0	0	0	137
+of Aurora	100	1	1	95		66				2	15	aura	Prayer	2	4											helm										0	0	0	138
+of Aurora	100	1	1	80		60				4	15	aura	Vigor	1	4											tors	boot									0	0	0	139
+of Aurora	100	1	1	95		66				2	15	aura	Vigor	4	7											tors										0	0	0	140
+of Aurora	100	1	1	80		60				4	15	aura	Salvation	1	2											tors	shld									0	0	0	141
+of Aurora	100	1	1	95		66				2	15	aura	Salvation	2	4											tors										0	0	0	142
+of Aurora	100	1	1	80		60				4	15	aura	Thorns	6	18											tors										0	0	0	143
+of Aurora	100	1	1	95		66				2	15	aura	Thorns	8	24											tors										0	0	0	144
+of Aurora	100	1	1	80		60				4	15	aura	Holy Fire T	18	36											tors										0	0	0	145
+of Aurora	100	1	1	95		66				2	15	aura	Holy Fire T	30	60											tors										0	0	0	146
+of Aurora	100	1	1	80		60				4	15	aura	Holy Freeze T	18	36											tors										0	0	0	147
+of Aurora	100	1	1	95		66				2	15	aura	Holy Freeze T	30	60											tors										0	0	0	148
+of Aurora	100	1	1	80		60				4	15	aura	Holy Shock T	18	36											tors										0	0	0	149
+of Aurora	100	1	1	95		66				2	15	aura	Holy Shock T	30	60											tors										0	0	0	150
 																																							151
-of Blitz Armor	100	1	1	5	15	3				9	16	gethit-skill	Frozen Armor	8	5											belt										0	0	0	152
-of Blitz Armor	100	1	1	15	35	12				9	16	gethit-skill	Frozen Armor	8	6											belt										0	0	0	153
-of Blitz Armor	100	1	1	25	60	24				8	16	gethit-skill	Frozen Armor	8	7											belt										0	0	0	154
-of Blitz Armor	100	1	1	45	95	42				7	16	gethit-skill	Frozen Armor	8	8											belt										0	0	0	155
-of Blitz Armor	100	1	1	80		60				6	16	gethit-skill	Frozen Armor	8	9											belt										0	0	0	156
-of Blitz Armor	100	1	1	95		66				5	16	gethit-skill	Frozen Armor	8	10											belt										0	0	0	157
-of Fire Armor	100	1	1	5	15	3				9	16	gethit-skill	Shiver Armor	8	5											belt										0	0	0	158
-of Fire Armor	100	1	1	15	35	12				9	16	gethit-skill	Shiver Armor	8	6											belt										0	0	0	159
-of Fire Armor	100	1	1	25	60	24				8	16	gethit-skill	Shiver Armor	8	7											belt										0	0	0	160
-of Fire Armor	100	1	1	45	95	42				7	16	gethit-skill	Shiver Armor	8	8											belt										0	0	0	161
-of Fire Armor	100	1	1	80		60				6	16	gethit-skill	Shiver Armor	8	9											belt										0	0	0	162
-of Fire Armor	100	1	1	95		66				5	16	gethit-skill	Shiver Armor	8	10											belt										0	0	0	163
-of Shiver Armor	100	1	1	5	15	3				9	16	gethit-skill	Chilling Armor	8	5											belt										0	0	0	164
-of Shiver Armor	100	1	1	15	35	12				9	16	gethit-skill	Chilling Armor	8	6											belt										0	0	0	165
-of Shiver Armor	100	1	1	25	60	24				8	16	gethit-skill	Chilling Armor	8	7											belt										0	0	0	166
-of Shiver Armor	100	1	1	45	95	42				7	16	gethit-skill	Chilling Armor	8	8											belt										0	0	0	167
-of Shiver Armor	100	1	1	80		60				6	16	gethit-skill	Chilling Armor	8	9											belt										0	0	0	168
-of Shiver Armor	100	1	1	95		66				5	16	gethit-skill	Chilling Armor	8	10											belt										0	0	0	169
+of Blitz Armor	100	1	1	5	15	3				9	16	gethit-skill	Frozen Armor	8	10											belt										0	0	0	152
+of Blitz Armor	100	1	1	15	35	12				9	16	gethit-skill	Frozen Armor	8	12											belt										0	0	0	153
+of Blitz Armor	100	1	1	25	60	24				8	16	gethit-skill	Frozen Armor	8	14											belt										0	0	0	154
+of Blitz Armor	100	1	1	45	95	42				7	16	gethit-skill	Frozen Armor	8	16											belt										0	0	0	155
+of Blitz Armor	100	1	1	80		60				6	16	gethit-skill	Frozen Armor	8	18											belt										0	0	0	156
+of Blitz Armor	100	1	1	95		66				5	16	gethit-skill	Frozen Armor	8	20											belt										0	0	0	157
+of Fire Armor	100	1	1	5	15	3				9	16	gethit-skill	Shiver Armor	8	10											belt										0	0	0	158
+of Fire Armor	100	1	1	15	35	12				9	16	gethit-skill	Shiver Armor	8	12											belt										0	0	0	159
+of Fire Armor	100	1	1	25	60	24				8	16	gethit-skill	Shiver Armor	8	14											belt										0	0	0	160
+of Fire Armor	100	1	1	45	95	42				7	16	gethit-skill	Shiver Armor	8	16											belt										0	0	0	161
+of Fire Armor	100	1	1	80		60				6	16	gethit-skill	Shiver Armor	8	18											belt										0	0	0	162
+of Fire Armor	100	1	1	95		66				5	16	gethit-skill	Shiver Armor	8	20											belt										0	0	0	163
+of Shiver Armor	100	1	1	5	15	3				9	16	gethit-skill	Chilling Armor	8	10											belt										0	0	0	164
+of Shiver Armor	100	1	1	15	35	12				9	16	gethit-skill	Chilling Armor	8	12											belt										0	0	0	165
+of Shiver Armor	100	1	1	25	60	24				8	16	gethit-skill	Chilling Armor	8	14											belt										0	0	0	166
+of Shiver Armor	100	1	1	45	95	42				7	16	gethit-skill	Chilling Armor	8	16											belt										0	0	0	167
+of Shiver Armor	100	1	1	80		60				6	16	gethit-skill	Chilling Armor	8	18											belt										0	0	0	168
+of Shiver Armor	100	1	1	95		66				5	16	gethit-skill	Chilling Armor	8	20											belt										0	0	0	169
 																																							170
 of Ease	100	1	1	5	15	3				16	17	ease		-10	-15	red-dmg		2	4							armo										0	0	0	171
 of Ease	100	1	1	15	35	12				16	17	ease		-16	-20	red-dmg		4	8							armo										0	0	0	172
@@ -189,66 +189,66 @@ of Riches	100	1	1	80		60				11	18	mag%		21	25											boot										0	0	0	187
 of Riches	100	1	1	95		66				10	18	mag%		26	30											boot										0	0	0	188
 																																							189
 of the Whelpling	100	1	1	20	60	18				13	19	abs-fire		1	2	abs-fire%		1	2							shld										0	0	0	190
-of the Whelpling	100	1	1	60		48				12	19	abs-fire		3	4	abs-fire%		2	3							shld										0	0	0	191
+of the Whelpling	100	1	1	60	95	48				12	19	abs-fire		3	4	abs-fire%		2	3							shld										0	0	0	191
 of the Kiln	100	1	1	80		60				11	19	abs-fire		4	5	abs-fire%		3	4							shld										0	0	0	192
 of the Kiln	100	1	1	95		66				10	19	abs-fire		5	6	abs-fire%		4	5							shld										0	0	0	193
 																																							194
 of the Walrus	100	1	1	20	60	18				13	19	abs-cold		1	2	abs-cold%		1	2							shld										0	0	0	195
-of the Walrus	100	1	1	60		48				12	19	abs-cold		3	4	abs-cold%		2	3							shld										0	0	0	196
+of the Walrus	100	1	1	60	95	48				12	19	abs-cold		3	4	abs-cold%		2	3							shld										0	0	0	196
 of the Polar Bear	100	1	1	80		60				11	19	abs-cold		4	5	abs-cold%		3	4							shld										0	0	0	197
 of the Polar Bear	100	1	1	95		66				10	19	abs-cold		5	6	abs-cold%		4	5							shld										0	0	0	198
 																																							199
 of the Tempest	100	1	1	20	60	18				13	19	abs-ltng		1	2	abs-ltng%		1	2							shld										0	0	0	200
-of the Tempest	100	1	1	60		48				12	19	abs-ltng		3	4	abs-ltng%		2	3							shld										0	0	0	201
+of the Tempest	100	1	1	60	95	48				12	19	abs-ltng		3	4	abs-ltng%		2	3							shld										0	0	0	201
 of the Maelstrom	100	1	1	80		60				11	19	abs-ltng		4	5	abs-ltng%		3	4							shld										0	0	0	202
 of the Maelstrom	100	1	1	95		66				10	19	abs-ltng		5	6	abs-ltng%		4	5							shld										0	0	0	203
 																																							204
-of Flames	100	1	1	20	60	18				8	20	extra-fire		2	6											glov										0	0	0	205
-of Flames	100	1	1	60		48				8	20	extra-fire		4	8											glov										0	0	0	206
-of Immolation	100	1	1	80		60				7	20	extra-fire		6	10											glov										0	0	0	207
-of Immolation	100	1	1	95		66				6	20	extra-fire		8	12											glov										0	0	0	208
+of Flames	100	1	1	20	60	18				16	20	extra-fire		2	6											glov										0	0	0	205
+of Flames	100	1	1	60	95	48				16	20	extra-fire		4	8											glov										0	0	0	206
+of Immolation	100	1	1	80		60				14	20	extra-fire		6	10											glov										0	0	0	207
+of Immolation	100	1	1	95		66				12	20	extra-fire		8	12											glov										0	0	0	208
 																																							209
-of Shock	100	1	1	20	60	18				8	20	extra-ltng		2	6											glov										0	0	0	210
-of Shock	100	1	1	60		48				8	20	extra-ltng		4	8											glov										0	0	0	211
-of Zapping	100	1	1	80		60				7	20	extra-ltng		6	10											glov										0	0	0	212
-of Zapping	100	1	1	95		66				6	20	extra-ltng		8	12											glov										0	0	0	213
+of Shock	100	1	1	20	60	18				16	20	extra-ltng		2	6											glov										0	0	0	210
+of Shock	100	1	1	60	95	48				16	20	extra-ltng		4	8											glov										0	0	0	211
+of Zapping	100	1	1	80		60				14	20	extra-ltng		6	10											glov										0	0	0	212
+of Zapping	100	1	1	95		66				12	20	extra-ltng		8	12											glov										0	0	0	213
 																																							214
-of Chilling	100	1	1	20	60	18				8	20	extra-cold		2	6											glov										0	0	0	215
-of Chilling	100	1	1	60		48				8	20	extra-cold		4	8											glov										0	0	0	216
-of Freezing	100	1	1	80		60				7	20	extra-cold		6	10											glov										0	0	0	217
-of Freezing	100	1	1	95		66				6	20	extra-cold		8	12											glov										0	0	0	218
+of Chilling	100	1	1	20	60	18				16	20	extra-cold		2	6											glov										0	0	0	215
+of Chilling	100	1	1	60	95	48				16	20	extra-cold		4	8											glov										0	0	0	216
+of Freezing	100	1	1	80		60				14	20	extra-cold		6	10											glov										0	0	0	217
+of Freezing	100	1	1	95		66				12	20	extra-cold		8	12											glov										0	0	0	218
 																																							219
-of Blight	100	1	1	20	60	18				8	20	extra-pois		2	6											glov										0	0	0	220
-of Blight	100	1	1	60		48				8	20	extra-pois		4	8											glov										0	0	0	221
-of Venom	100	1	1	80		60				7	20	extra-pois		6	10											glov										0	0	0	222
-of Venom	100	1	1	95		66				6	20	extra-pois		8	12											glov										0	0	0	223
+of Blight	100	1	1	20	60	18				16	20	extra-pois		2	6											glov										0	0	0	220
+of Blight	100	1	1	60	95	48				16	20	extra-pois		4	8											glov										0	0	0	221
+of Venom	100	1	1	80		60				14	20	extra-pois		6	10											glov										0	0	0	222
+of Venom	100	1	1	95		66				12	20	extra-pois		8	12											glov										0	0	0	223
 																																							224
-of Banishment	100	1	1	20	60	18				8	20	extra-mag2		2	6											glov										0	0	0	225
-of Banishment	100	1	1	60		48				8	20	extra-mag2		4	8											glov										0	0	0	226
-of Exile	100	1	1	80		60				7	20	extra-mag2		6	10											glov										0	0	0	227
-of Exile	100	1	1	95		66				6	20	extra-mag2		8	12											glov										0	0	0	228
+of Banishment	100	1	1	20	60	18				16	20	extra-mag2		2	6											glov										0	0	0	225
+of Banishment	100	1	1	60	95	48				16	20	extra-mag2		4	8											glov										0	0	0	226
+of Exile	100	1	1	80		60				14	20	extra-mag2		6	10											glov										0	0	0	227
+of Exile	100	1	1	95		66				12	20	extra-mag2		8	12											glov										0	0	0	228
 																																							229
-of Dazing	100	1	1	20	60	18				8	20	extra-wind		2	6											glov										0	0	0	230
-of Dazing	100	1	1	60		48				8	20	extra-wind		4	8											glov										0	0	0	231
-of Impact	100	1	1	80		60				7	20	extra-wind		6	10											glov										0	0	0	232
-of Impact	100	1	1	95		66				6	20	extra-wind		8	12											glov										0	0	0	233
+of Dazing	100	1	1	20	60	18				16	20	extra-wind		2	6											glov										0	0	0	230
+of Dazing	100	1	1	60	95	48				16	20	extra-wind		4	8											glov										0	0	0	231
+of Impact	100	1	1	80		60				14	20	extra-wind		6	10											glov										0	0	0	232
+of Impact	100	1	1	95		66				12	20	extra-wind		8	12											glov										0	0	0	233
 																																							234
-of Knowledge	100	1	1	20	60	18				6	21	allskills		1	1											tors										0	0	0	235
-of Knowledge	100	1	1	60		48				5	21	allskills		1	2											tors										0	0	0	236
-of Dogma	100	1	1	80		60				4	21	allskills		2	2											tors										0	0	0	237
-of Dogma	100	1	1	95		66				3	21	allskills		2	3											tors										0	0	0	238
+of Knowledge	100	1	1	20	60	18				10	21	allskills		1	1											tors										0	0	0	235
+of Knowledge	100	1	1	60	95	48				8	21	allskills		1	2											tors										0	0	0	236
+of Dogma	100	1	1	80		60				6	21	allskills		2	2											tors										0	0	0	237
+of Dogma	100	1	1	95		66				4	21	allskills		2	3											tors										0	0	0	238
 																																							239
 of Archaeology	100	1	1	5	15	3				13	18	gold%		10	15	mag%		10	15							dwav										0	0	0	240
 of Archaeology	100	1	1	15	35	12				12	18	gold%		16	20	mag%		16	20							dwav										0	0	0	241
 of Excavation	100	1	1	25	60	24				11	18	gold%		21	25	mag%		21	25							dwav										0	0	0	242
 of Excavation	100	1	1	45		42				10	18	gold%		26	30	mag%		26	30							dwav										0	0	0	243
 of Excavation	100	1	1	80		60				10	18	gold%		26	30	mag%		26	30							dwav										0	0	0	244
-of Exhuming	100	1	1	95		66				1	18	oskill	Find Potion	1	4											dwav										0	0	0	245
-of Exhuming	100	1	1	95		66				1	18	oskill	Find Item	1	4											dwav										0	0	0	246
+of Exhuming	100	1	1	95		66				3	18	oskill	Find Potion	1	4											dwav										0	0	0	245
+of Exhuming	100	1	1	95		66				3	18	oskill	Find Item	1	4											dwav										0	0	0	246
 																																							247
-of the Oiorpata	100	1	1	95		66	ama		60	1	15	aura	Holy Fire H	12	24											scrn												0	248
-of the Oiorpata	100	1	1	95		66	ama		60	1	15	aura	Holy Freeze H	12	24											scrn												0	249
-of the Oiorpata	100	1	1	95		66	ama		60	1	15	aura	Holy Shock H	12	24											scrn												0	250
+of the Oiorpata	100	1	1	95		66	ama		60	4	15	aura	Holy Fire H	12	24											scrn												0	248
+of the Oiorpata	100	1	1	95		66	ama		60	4	15	aura	Holy Freeze H	12	24											scrn												0	249
+of the Oiorpata	100	1	1	95		66	ama		60	4	15	aura	Holy Shock H	12	24											scrn												0	250
 																																							251
 of Thorns	100	1	1	5	15	3				28	22	thorns/lvl	16	0	0											spike										0	0	0	252
 of Thorns	100	1	1	15	35	12				28	22	thorns/lvl	16	0	0											spike										0	0	0	253
@@ -256,15 +256,15 @@ of Spikes	100	1	1	25	60	24				26	22	thorns/lvl	32	0	0											spike										0
 of Spikes	100	1	1	45	95	42				24	22	thorns/lvl	48	0	0											spike										0	0	0	255
 of Razors	100	1	1	80		60				22	22	thorns/lvl	64	0	0											spike										0	0	0	256
 of Razors	100	1	1	95		66				20	22	thorns/lvl	80	0	0											spike										0	0	0	257
-of Swords	100	1	1	95		66				1	22	oskill	Thorns	1	10											spike										0	0	0	258
+of Swords	100	1	1	95		66				4	22	oskill	Thorns	1	10											spike										0	0	0	258
 																																							259
-of Shade Armor	100	1	1	5	15	3				9	16	gethit-skill	Shade Armor	8	5											slyv										0	0	0	260
-of Shade Armor	100	1	1	15	35	12				9	16	gethit-skill	Shade Armor	8	6											slyv										0	0	0	261
-of Shade Armor	100	1	1	25	60	24				8	16	gethit-skill	Shade Armor	8	7											slyv										0	0	0	262
-of Shade Armor	100	1	1	45	95	42				7	16	gethit-skill	Shade Armor	8	8											slyv										0	0	0	263
-of Shade Armor	100	1	1	80		60				6	16	gethit-skill	Shade Armor	8	9											slyv										0	0	0	264
-of Shade Armor	100	1	1	95		66				5	16	gethit-skill	Shade Armor	8	10											slyv										0	0	0	265
-of Haer Dalis	100	1	1	95		66				1	16	oskill	Shade Armor	1	4											slyv										0	0	0	266
+of Shade Armor	100	1	1	5	15	3				9	16	gethit-skill	Shade Armor	8	10											slyv										0	0	0	260
+of Shade Armor	100	1	1	15	35	12				9	16	gethit-skill	Shade Armor	8	12											slyv										0	0	0	261
+of Shade Armor	100	1	1	25	60	24				8	16	gethit-skill	Shade Armor	8	14											slyv										0	0	0	262
+of Shade Armor	100	1	1	45	95	42				7	16	gethit-skill	Shade Armor	8	16											slyv										0	0	0	263
+of Shade Armor	100	1	1	80		60				6	16	gethit-skill	Shade Armor	8	18											slyv										0	0	0	264
+of Shade Armor	100	1	1	95		66				5	16	gethit-skill	Shade Armor	8	20											slyv										0	0	0	265
+of Haer Dalis	100	1	1	95		66				2	16	oskill	Shade Armor	1	4											slyv										0	0	0	266
 																																							267
 of the Apprentice	100	1	1	5	15	3				28	22	cast1		8	12											circ										0	0	0	268
 of the Apprentice	100	1	1	15	35	12				28	22	cast1		13	17											circ										0	0	0	269
@@ -272,7 +272,7 @@ of the Mage	100	1	1	25	60	24				26	22	cast2		18	22											circ										0	0	0
 of the Mage	100	1	1	45	95	42				24	22	cast2		23	27											circ										0	0	0	271
 of the Arch Mage	100	1	1	80		60				22	22	cast3		28	32											circ										0	0	0	272
 of the Arch Mage	100	1	1	95		66				20	22	cast3		33	37											circ										0	0	0	273
-of the Royal Wizard	100	1	1	95		66				4	22	nofreeze		1	1											circ										0	0	0	274
+of the Royal Wizard	100	1	1	95		66				4	22	cast3		38	42	nofreeze		1	1							circ										0	0	0	274
 																																							275
 of the Clouds	100	1	1	5	15	3				9	23	all-stats		1	2											wrap										0	0	0	276
 of the Clouds	100	1	1	15	35	12				9	23	all-stats		2	4											wrap										0	0	0	277
@@ -289,44 +289,44 @@ of Carnage	100	1	1	80		60				6	20	deadly		13	15											gurd										0	0	0	28
 of Carnage	100	1	1	95		66				5	20	deadly		15	17											gurd										0	0	0	288
 of Crushing	100	1	1	95		66				4	20	deadly		9	11	crush		3	6							gurd										0	0	0	289
 																																							290
-of Mighty	100	1	1	1	10	1				28	50	str		4	8											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	291
-of Mighty	100	1	1	5	15	3				28	50	str		7	9											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	292
-of Mighty	100	1	1	10	20	6				28	50	str		10	12											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	293
-of the Bull	100	1	1	15	35	12				28	50	str		13	15											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	294
-of the Bull	100	1	1	20	45	18				28	50	str		16	18											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	295
-of the Bull	100	1	1	25	60	24				28	50	str		19	21											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	296
-of the Ogre	100	1	1	35	80	33				28	50	str		22	24											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	297
-of the Ogre	100	1	1	45	95	42				28	50	str		25	27											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	298
-of the Ogre	100	1	1	60		48				28	50	str		30	34											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	299
-of the Goliath	100	1	1	80		60				24	50	str		35	39											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	300
-of the Goliath	100	1	1	95		66				22	50	str		40	44											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	301
-of Prometheus	100	1	1	95		66				20	50	str		45	49											2hsw	2hcw	miss								0	0	0	302
+of Mighty	100	1	1	1	10	1				24	50	str		4	8											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	291
+of Mighty	100	1	1	5	15	3				24	50	str		7	9											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	292
+of Mighty	100	1	1	10	20	6				24	50	str		10	12											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	293
+of the Bull	100	1	1	15	35	12				24	50	str		13	15											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	294
+of the Bull	100	1	1	20	45	18				24	50	str		16	18											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	295
+of the Bull	100	1	1	25	60	24				24	50	str		19	21											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	296
+of the Ogre	100	1	1	35	80	33				24	50	str		22	24											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	297
+of the Ogre	100	1	1	45	95	42				24	50	str		25	27											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	298
+of the Ogre	100	1	1	60	95	48				24	50	str		30	34											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	299
+of the Goliath	100	1	1	80		60				22	50	str		35	39											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	300
+of the Goliath	100	1	1	95		66				20	50	str		40	44											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	301
+of Prometheus	100	1	1	95		66				18	50	str		45	49											2hsw	2hcw	miss								0	0	0	302
 																																							303
-of the Spectre	100	1	1	1	10	1				28	51	dex		4	8											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	304
-of the Spectre	100	1	1	5	15	3				28	51	dex		7	9											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	305
-of the Spectre	100	1	1	10	20	6				28	51	dex		10	12											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	306
-of the Gale	100	1	1	15	35	12				28	51	dex		13	15											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	307
-of the Gale	100	1	1	20	45	18				28	51	dex		16	18											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	308
-of the Gale	100	1	1	25	60	24				28	51	dex		19	21											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	309
-of the Falcon	100	1	1	35	80	33				28	51	dex		22	24											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	310
-of the Falcon	100	1	1	45	95	42				28	51	dex		25	27											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	311
-of the Falcon	100	1	1	60		48				28	51	dex		30	34											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	312
-of Excellence	100	1	1	80		60				24	51	dex		35	39											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	313
-of Excellence	100	1	1	95		66				22	51	dex		40	44											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	314
-of Oblivion	100	1	1	95		66				20	51	dex		45	49											2hsw	2hcw	miss								0	0	0	315
+of the Spectre	100	1	1	1	10	1				24	51	dex		4	8											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	304
+of the Spectre	100	1	1	5	15	3				24	51	dex		7	9											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	305
+of the Spectre	100	1	1	10	20	6				24	51	dex		10	12											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	306
+of the Gale	100	1	1	15	35	12				24	51	dex		13	15											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	307
+of the Gale	100	1	1	20	45	18				24	51	dex		16	18											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	308
+of the Gale	100	1	1	25	60	24				24	51	dex		19	21											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	309
+of the Falcon	100	1	1	35	80	33				24	51	dex		22	24											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	310
+of the Falcon	100	1	1	45	95	42				24	51	dex		25	27											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	311
+of the Falcon	100	1	1	60	95	48				24	51	dex		30	34											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	312
+of Excellence	100	1	1	80		60				22	51	dex		35	39											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	313
+of Excellence	100	1	1	95		66				20	51	dex		40	44											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	314
+of Oblivion	100	1	1	95		66				18	51	dex		45	49											2hsw	2hcw	miss								0	0	0	315
 																																							316
-of Lucidity	100	1	1	1	10	1				28	52	enr		2	4											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	317
-of Lucidity	100	1	1	5	15	3				28	52	enr		5	7											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	318
-of Lucidity	100	1	1	10	20	6				28	52	enr		8	10											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	319
-of Luminosity	100	1	1	15	35	12				28	52	enr		11	13											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	320
-of Luminosity	100	1	1	20	45	18				28	52	enr		14	16											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	321
-of Luminosity	100	1	1	25	60	24				28	52	enr		17	19											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	322
-of Incantation	100	1	1	35	80	33				28	52	enr		20	22											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	323
-of Incantation	100	1	1	45	95	42				28	52	enr		23	25											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	324
-of Incantation	100	1	1	60		48				28	52	enr		20	22											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	325
-of Conjuration	100	1	1	80		60				24	52	enr		31	35											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	326
-of Conjuration	100	1	1	95		66				22	52	enr		36	40											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	327
-of Awakening	100	1	1	95		66				20	52	enr		41	45											2hsw	2hcw	miss								0	0	0	328
+of Lucidity	100	1	1	1	10	1				24	52	enr		2	4											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	317
+of Lucidity	100	1	1	5	15	3				24	52	enr		5	7											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	318
+of Lucidity	100	1	1	10	20	6				24	52	enr		8	10											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	319
+of Luminosity	100	1	1	15	35	12				24	52	enr		11	13											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	320
+of Luminosity	100	1	1	20	45	18				24	52	enr		14	16											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	321
+of Luminosity	100	1	1	25	60	24				24	52	enr		17	19											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	322
+of Incantation	100	1	1	35	80	33				24	52	enr		20	22											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	323
+of Incantation	100	1	1	45	95	42				24	52	enr		23	25											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	324
+of Incantation	100	1	1	60	95	48				24	52	enr		20	22											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	325
+of Conjuration	100	1	1	80		60				22	52	enr		31	35											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	326
+of Conjuration	100	1	1	95		66				20	52	enr		36	40											1hsw	2hsw	1hcw	2hcw	miss						0	0	0	327
+of Awakening	100	1	1	95		66				18	52	enr		41	45											2hsw	2hcw	miss								0	0	0	328
 																																							329
 of the Ursus	100	1	1	5	15	3				9	53	str%		1	2											1hsw	2hsw									0	0	0	330
 of the Ursus	100	1	1	15	35	12				9	53	str%		3	5											1hsw	2hsw									0	0	0	331
@@ -360,7 +360,7 @@ of Alacrity	100	1	1	20	45	18				28	56	swing1		14	16											1hsw	2hsw	miss				
 of Alacrity	100	1	1	25	60	24				28	56	swing1		17	19											1hsw	2hsw	miss								0	0	0	359
 of Swiftness	100	1	1	35	80	33				28	56	swing2		20	22											1hsw	2hsw	miss								0	0	0	360
 of Swiftness	100	1	1	45	95	42				28	56	swing2		23	25											1hsw	2hsw	miss								0	0	0	361
-of Swiftness	100	1	1	60		48				28	56	swing2		20	22											1hsw	2hsw	miss								0	0	0	362
+of Swiftness	100	1	1	60	95	48				28	56	swing2		20	22											1hsw	2hsw	miss								0	0	0	362
 of Quickness	100	1	1	80		60				24	56	swing2		31	35											1hsw	2hsw	miss								0	0	0	363
 of Quickness	100	1	1	95		66				22	56	swing2		36	40											1hsw	2hsw	miss								0	0	0	364
 of Fervour	100	1	1	95		66				20	56	swing3		41	45											2hsw	miss									0	0	0	365
@@ -373,7 +373,7 @@ of the Conjurer	100	1	1	20	45	18				28	57	cast1		14	16											1hcw	2hcw						
 of the Conjurer	100	1	1	25	60	24				28	57	cast1		17	19											1hcw	2hcw									0	0	0	372
 of the Diviner	100	1	1	35	80	33				28	57	cast2		20	22											1hcw	2hcw									0	0	0	373
 of the Diviner	100	1	1	45	95	42				28	57	cast2		23	25											1hcw	2hcw									0	0	0	374
-of the Diviner	100	1	1	60		48				28	57	cast2		20	22											1hcw	2hcw									0	0	0	375
+of the Diviner	100	1	1	60	95	48				28	57	cast2		20	22											1hcw	2hcw									0	0	0	375
 of the Foreseer	100	1	1	80		60				24	57	cast2		31	35											1hcw	2hcw									0	0	0	376
 of the Foreseer	100	1	1	95		66				22	57	cast2		36	40											1hcw	2hcw									0	0	0	377
 of the Visionary	100	1	1	95		66				20	57	cast3		41	45											2hcw										0	0	0	378
@@ -420,83 +420,83 @@ of the Mauler	100	1	1	45	95	42				16	63	crush		7	8											1hsw										0	0	0
 of the Maulhorn	100	1	1	80		60				14	63	crush		9	10											1hsw										0	0	0	419
 of the Maulhorn	100	1	1	95		66				12	63	crush		11	12											1hsw										0	0	0	420
 																																							421
-of Aurora	100	1	1	80		60				2	64	aura	Might	3	6											1hsw	2hsw	miss								0	0	0	422
-of Aurora	100	1	1	95		66				1	64	aura	Might	7	10											1hsw	2hsw	miss								0	0	0	423
-of Aurora	100	1	1	80		60				2	64	aura	Fanaticism	3	6											1hsw	2hsw	miss								0	0	0	424
-of Aurora	100	1	1	95		66				1	64	aura	Fanaticism	7	10											1hsw	2hsw	miss								0	0	0	425
-of Aurora	100	1	1	80		60				2	64	aura	Concentration	3	6											1hsw	2hsw	miss								0	0	0	426
-of Aurora	100	1	1	95		66				1	64	aura	Concentration	7	10											1hsw	2hsw	miss								0	0	0	427
-of Aurora	100	1	1	80		60				2	64	aura	Blessed Aim	3	6											1hsw	2hsw	miss								0	0	0	428
-of Aurora	100	1	1	95		66				1	64	aura	Blessed Aim	7	10											1hsw	2hsw	miss								0	0	0	429
+of Aurora	100	1	1	80		60				4	64	aura	Might	3	6											1hsw	2hsw	miss								0	0	0	422
+of Aurora	100	1	1	95		66				2	64	aura	Might	7	10											1hsw	2hsw	miss								0	0	0	423
+of Aurora	100	1	1	80		60				4	64	aura	Fanaticism	3	6											1hsw	2hsw	miss								0	0	0	424
+of Aurora	100	1	1	95		66				2	64	aura	Fanaticism	7	10											1hsw	2hsw	miss								0	0	0	425
+of Aurora	100	1	1	80		60				4	64	aura	Concentration	3	6											1hsw	2hsw	miss								0	0	0	426
+of Aurora	100	1	1	95		66				2	64	aura	Concentration	7	10											1hsw	2hsw	miss								0	0	0	427
+of Aurora	100	1	1	80		60				4	64	aura	Blessed Aim	3	6											1hsw	2hsw	miss								0	0	0	428
+of Aurora	100	1	1	95		66				2	64	aura	Blessed Aim	7	10											1hsw	2hsw	miss								0	0	0	429
 																																							430
-of Aurora	100	1	1	95		66				1	64	aura	Redemption	1	1											1hcw	2hcw									0	0	0	431
+of Aurora	100	1	1	95		66				4	64	aura	Redemption	1	1											1hcw	2hcw									0	0	0	431
 of Aurora	100	1	1	80		60				2	64	aura	Redemption	1	3											1hcw	2hcw									0	0	0	432
-of Aurora	100	1	1	95		66				1	64	aura	Salvation	1	1											1hcw	2hcw									0	0	0	433
+of Aurora	100	1	1	95		66				4	64	aura	Salvation	1	1											1hcw	2hcw									0	0	0	433
 of Aurora	100	1	1	80		60				2	64	aura	Salvation	1	3											1hcw	2hcw									0	0	0	434
 																																							435
 of Fire Balls	100	1	1	5	15	3				12	65	hit-skill	Fireballs	5	5	extra-fire		1	1							1hsw	2hsw	miss								0	0	0	436
 of Fire Balls	100	1	1	15	35	12				12	65	hit-skill	Fireballs	5	10	extra-fire		1	2							1hsw	2hsw	miss								0	0	0	437
 of Fire Balls	100	1	1	25	60	24				10	65	hit-skill	Fireballs	5	15	extra-fire		2	2							1hsw	2hsw	miss								0	0	0	438
-of Fire Balls	100	1	1	45	95	42				8	65	hit-skill	Fireballs	5	25	extra-fire		2	3							1hsw	2hsw	miss								0	0	0	439
-of Fire Balls	100	1	1	80		60				6	65	hit-skill	Fireballs	5	35	extra-fire		3	3							1hsw	2hsw	miss								0	0	0	440
-of Fire Balls	100	1	1	95		66				4	65	hit-skill	Fireballs	5	50	extra-fire		3	4							1hsw	2hsw	miss								0	0	0	441
-of Fire Balls	100	1	1	95		66				2	65	hit-skill	Fireballs	5	65	extra-fire		4	6							1hsw	2hsw	miss								0	0	0	442
+of Fire Balls	100	1	1	45	95	42				10	65	hit-skill	Fireballs	5	25	extra-fire		2	3							1hsw	2hsw	miss								0	0	0	439
+of Fire Balls	100	1	1	80	95	60				8	65	hit-skill	Fireballs	5	35	extra-fire		3	3							1hsw	2hsw	miss								0	0	0	440
+of Fire Balls	100	1	1	95		66				8	65	hit-skill	Fireballs	5	50	extra-fire		3	4							1hsw	2hsw	miss								0	0	0	441
+of Fire Balls	100	1	1	95		66				6	65	hit-skill	Fireballs	5	60	extra-fire		4	6							1hsw	2hsw	miss								0	0	0	442
 																																							443
 of Fire Bolts	100	1	1	5	15	3				12	65	hit-skill	Firebolts	5	5	extra-fire		1	1							1hsw	2hsw	miss								0	0	0	444
 of Fire Bolts	100	1	1	15	35	12				12	65	hit-skill	Firebolts	5	10	extra-fire		1	2							1hsw	2hsw	miss								0	0	0	445
 of Fire Bolts	100	1	1	25	60	24				10	65	hit-skill	Firebolts	5	15	extra-fire		2	2							1hsw	2hsw	miss								0	0	0	446
-of Fire Bolts	100	1	1	45	95	42				8	65	hit-skill	Firebolts	5	25	extra-fire		2	3							1hsw	2hsw	miss								0	0	0	447
-of Fire Bolts	100	1	1	80		60				6	65	hit-skill	Firebolts	5	35	extra-fire		3	3							1hsw	2hsw	miss								0	0	0	448
-of Fire Bolts	100	1	1	95		66				4	65	hit-skill	Firebolts	5	50	extra-fire		3	4							1hsw	2hsw	miss								0	0	0	449
-of Fire Bolts	100	1	1	95		66				2	65	hit-skill	Firebolts	5	65	extra-fire		4	6							1hsw	2hsw	miss								0	0	0	450
+of Fire Bolts	100	1	1	45	95	42				10	65	hit-skill	Firebolts	5	25	extra-fire		2	3							1hsw	2hsw	miss								0	0	0	447
+of Fire Bolts	100	1	1	80	95	60				8	65	hit-skill	Firebolts	5	35	extra-fire		3	3							1hsw	2hsw	miss								0	0	0	448
+of Fire Bolts	100	1	1	95		66				8	65	hit-skill	Firebolts	5	50	extra-fire		3	4							1hsw	2hsw	miss								0	0	0	449
+of Fire Bolts	100	1	1	95		66				6	65	hit-skill	Firebolts	5	60	extra-fire		4	6							1hsw	2hsw	miss								0	0	0	450
 																																							451
 of Chain Lightning	100	1	1	5	15	3				12	65	hit-skill	Chain Lightning	5	5	extra-ltng		1	1							1hsw	2hsw	miss								0	0	0	452
 of Chain Lightning	100	1	1	15	35	12				12	65	hit-skill	Chain Lightning	5	10	extra-ltng		1	2							1hsw	2hsw	miss								0	0	0	453
 of Chain Lightning	100	1	1	25	60	24				10	65	hit-skill	Chain Lightning	5	15	extra-ltng		2	2							1hsw	2hsw	miss								0	0	0	454
-of Chain Lightning	100	1	1	45	95	42				8	65	hit-skill	Chain Lightning	5	25	extra-ltng		2	3							1hsw	2hsw	miss								0	0	0	455
-of Chain Lightning	100	1	1	80		60				6	65	hit-skill	Chain Lightning	5	35	extra-ltng		3	3							1hsw	2hsw	miss								0	0	0	456
-of Chain Lightning	100	1	1	95		66				4	65	hit-skill	Chain Lightning	5	50	extra-ltng		3	4							1hsw	2hsw	miss								0	0	0	457
-of Chain Lightning	100	1	1	95		66				2	65	hit-skill	Chain Lightning	5	65	extra-ltng		4	6							1hsw	2hsw	miss								0	0	0	458
+of Chain Lightning	100	1	1	45	95	42				10	65	hit-skill	Chain Lightning	5	25	extra-ltng		2	3							1hsw	2hsw	miss								0	0	0	455
+of Chain Lightning	100	1	1	80	95	60				8	65	hit-skill	Chain Lightning	5	35	extra-ltng		3	3							1hsw	2hsw	miss								0	0	0	456
+of Chain Lightning	100	1	1	95		66				8	65	hit-skill	Chain Lightning	5	50	extra-ltng		3	4							1hsw	2hsw	miss								0	0	0	457
+of Chain Lightning	100	1	1	95		66				6	65	hit-skill	Chain Lightning	5	60	extra-ltng		4	6							1hsw	2hsw	miss								0	0	0	458
 																																							459
 of Plasma Rain	100	1	1	5	15	3				12	65	hit-skill	Pole Arm Mastery	5	5	extra-ltng		1	1							1hsw	2hsw	miss								0	0	0	460
 of Plasma Rain	100	1	1	15	35	12				12	65	hit-skill	Pole Arm Mastery	5	10	extra-ltng		1	2							1hsw	2hsw	miss								0	0	0	461
 of Plasma Rain	100	1	1	25	60	24				10	65	hit-skill	Pole Arm Mastery	5	15	extra-ltng		2	2							1hsw	2hsw	miss								0	0	0	462
-of Plasma Rain	100	1	1	45	95	42				8	65	hit-skill	Pole Arm Mastery	5	25	extra-ltng		2	3							1hsw	2hsw	miss								0	0	0	463
-of Plasma Rain	100	1	1	80		60				6	65	hit-skill	Pole Arm Mastery	5	35	extra-ltng		3	3							1hsw	2hsw	miss								0	0	0	464
-of Plasma Rain	100	1	1	95		66				4	65	hit-skill	Pole Arm Mastery	5	50	extra-ltng		3	4							1hsw	2hsw	miss								0	0	0	465
-of Plasma Rain	100	1	1	95		66				2	65	hit-skill	Pole Arm Mastery	5	65	extra-ltng		4	6							1hsw	2hsw	miss								0	0	0	466
+of Plasma Rain	100	1	1	45	95	42				10	65	hit-skill	Pole Arm Mastery	5	25	extra-ltng		2	3							1hsw	2hsw	miss								0	0	0	463
+of Plasma Rain	100	1	1	80	95	60				8	65	hit-skill	Pole Arm Mastery	5	35	extra-ltng		3	3							1hsw	2hsw	miss								0	0	0	464
+of Plasma Rain	100	1	1	95		66				8	65	hit-skill	Pole Arm Mastery	5	50	extra-ltng		3	4							1hsw	2hsw	miss								0	0	0	465
+of Plasma Rain	100	1	1	95		66				6	65	hit-skill	Pole Arm Mastery	5	60	extra-ltng		4	6							1hsw	2hsw	miss								0	0	0	466
 																																							467
 of Ice Fangs	100	1	1	5	15	3				12	65	hit-skill	STeeth	5	5	extra-cold		1	1							1hsw	2hsw	miss								0	0	0	468
 of Ice Fangs	100	1	1	15	35	12				12	65	hit-skill	STeeth	5	10	extra-cold		1	2							1hsw	2hsw	miss								0	0	0	469
 of Ice Fangs	100	1	1	25	60	24				10	65	hit-skill	STeeth	5	15	extra-cold		2	2							1hsw	2hsw	miss								0	0	0	470
-of Ice Fangs	100	1	1	45	95	42				8	65	hit-skill	STeeth	5	25	extra-cold		2	3							1hsw	2hsw	miss								0	0	0	471
-of Ice Fangs	100	1	1	80		60				6	65	hit-skill	STeeth	5	35	extra-cold		3	3							1hsw	2hsw	miss								0	0	0	472
-of Ice Fangs	100	1	1	95		66				4	65	hit-skill	STeeth	5	50	extra-cold		3	4							1hsw	2hsw	miss								0	0	0	473
-of Ice Fangs	100	1	1	95		66				2	65	hit-skill	STeeth	5	65	extra-cold		4	6							1hsw	2hsw	miss								0	0	0	474
+of Ice Fangs	100	1	1	45	95	42				10	65	hit-skill	STeeth	5	25	extra-cold		2	3							1hsw	2hsw	miss								0	0	0	471
+of Ice Fangs	100	1	1	80	95	60				8	65	hit-skill	STeeth	5	35	extra-cold		3	3							1hsw	2hsw	miss								0	0	0	472
+of Ice Fangs	100	1	1	95		66				8	65	hit-skill	STeeth	5	50	extra-cold		3	4							1hsw	2hsw	miss								0	0	0	473
+of Ice Fangs	100	1	1	95		66				6	65	hit-skill	STeeth	5	60	extra-cold		4	6							1hsw	2hsw	miss								0	0	0	474
 																																							475
 of Blizzard	100	1	1	5	15	3				12	65	hit-skill	ctcBlizzard	5	5	extra-cold		1	1							1hsw	2hsw	miss								0	0	0	476
 of Blizzard	100	1	1	15	35	12				12	65	hit-skill	ctcBlizzard	5	10	extra-cold		1	2							1hsw	2hsw	miss								0	0	0	477
 of Blizzard	100	1	1	25	60	24				10	65	hit-skill	ctcBlizzard	5	15	extra-cold		2	2							1hsw	2hsw	miss								0	0	0	478
-of Blizzard	100	1	1	45	95	42				8	65	hit-skill	ctcBlizzard	5	25	extra-cold		2	3							1hsw	2hsw	miss								0	0	0	479
-of Blizzard	100	1	1	80		60				6	65	hit-skill	ctcBlizzard	5	35	extra-cold		3	3							1hsw	2hsw	miss								0	0	0	480
-of Blizzard	100	1	1	95		66				4	65	hit-skill	ctcBlizzard	5	50	extra-cold		3	4							1hsw	2hsw	miss								0	0	0	481
-of Blizzard	100	1	1	95		66				2	65	hit-skill	ctcBlizzard	5	65	extra-cold		4	6							1hsw	2hsw	miss								0	0	0	482
+of Blizzard	100	1	1	45	95	42				10	65	hit-skill	ctcBlizzard	5	25	extra-cold		2	3							1hsw	2hsw	miss								0	0	0	479
+of Blizzard	100	1	1	80	95	60				8	65	hit-skill	ctcBlizzard	5	35	extra-cold		3	3							1hsw	2hsw	miss								0	0	0	480
+of Blizzard	100	1	1	95		66				8	65	hit-skill	ctcBlizzard	5	50	extra-cold		3	4							1hsw	2hsw	miss								0	0	0	481
+of Blizzard	100	1	1	95		66				6	65	hit-skill	ctcBlizzard	5	60	extra-cold		4	6							1hsw	2hsw	miss								0	0	0	482
 																																							483
 of Poison Nova	100	1	1	5	15	3				12	65	hit-skill	Poison Nova	5	5	extra-pois		1	1							1hsw	2hsw	miss								0	0	0	484
 of Poison Nova	100	1	1	15	35	12				12	65	hit-skill	Poison Nova	5	10	extra-pois		1	2							1hsw	2hsw	miss								0	0	0	485
 of Poison Nova	100	1	1	25	60	24				10	65	hit-skill	Poison Nova	5	15	extra-pois		2	2							1hsw	2hsw	miss								0	0	0	486
-of Poison Nova	100	1	1	45	95	42				8	65	hit-skill	Poison Nova	5	25	extra-pois		2	3							1hsw	2hsw	miss								0	0	0	487
-of Poison Nova	100	1	1	80		60				6	65	hit-skill	Poison Nova	5	35	extra-pois		3	3							1hsw	2hsw	miss								0	0	0	488
-of Poison Nova	100	1	1	95		66				4	65	hit-skill	Poison Nova	5	50	extra-pois		3	4							1hsw	2hsw	miss								0	0	0	489
-of Poison Nova	100	1	1	95		66				2	65	hit-skill	Poison Nova	5	65	extra-pois		4	6							1hsw	2hsw	miss								0	0	0	490
+of Poison Nova	100	1	1	45	95	42				10	65	hit-skill	Poison Nova	5	25	extra-pois		2	3							1hsw	2hsw	miss								0	0	0	487
+of Poison Nova	100	1	1	80	95	60				8	65	hit-skill	Poison Nova	5	35	extra-pois		3	3							1hsw	2hsw	miss								0	0	0	488
+of Poison Nova	100	1	1	95		66				8	65	hit-skill	Poison Nova	5	50	extra-pois		3	4							1hsw	2hsw	miss								0	0	0	489
+of Poison Nova	100	1	1	95		66				6	65	hit-skill	Poison Nova	5	60	extra-pois		4	6							1hsw	2hsw	miss								0	0	0	490
 																																							491
 of Earth Spikes	100	1	1	5	15	3				12	65	hit-skill	Eruption	5	5	extra-mag2		1	1							1hsw	2hsw	miss								0	0	0	492
 of Earth Spikes	100	1	1	15	35	12				12	65	hit-skill	Eruption	5	10	extra-mag2		1	2							1hsw	2hsw	miss								0	0	0	493
 of Earth Spikes	100	1	1	25	60	24				10	65	hit-skill	Eruption	5	15	extra-mag2		2	2							1hsw	2hsw	miss								0	0	0	494
-of Earth Spikes	100	1	1	45	95	42				8	65	hit-skill	Eruption	5	25	extra-mag2		2	3							1hsw	2hsw	miss								0	0	0	495
-of Earth Spikes	100	1	1	80		60				6	65	hit-skill	Eruption	5	35	extra-mag2		3	3							1hsw	2hsw	miss								0	0	0	496
-of Earth Spikes	100	1	1	95		66				4	65	hit-skill	Eruption	5	50	extra-mag2		3	4							1hsw	2hsw	miss								0	0	0	497
-of Earth Spikes	100	1	1	95		66				2	65	hit-skill	Eruption	5	65	extra-mag2		4	6							1hsw	2hsw	miss								0	0	0	498
+of Earth Spikes	100	1	1	45	95	42				10	65	hit-skill	Eruption	5	25	extra-mag2		2	3							1hsw	2hsw	miss								0	0	0	495
+of Earth Spikes	100	1	1	80	95	60				8	65	hit-skill	Eruption	5	35	extra-mag2		3	3							1hsw	2hsw	miss								0	0	0	496
+of Earth Spikes	100	1	1	95		66				8	65	hit-skill	Eruption	5	50	extra-mag2		3	4							1hsw	2hsw	miss								0	0	0	497
+of Earth Spikes	100	1	1	95		66				6	65	hit-skill	Eruption	5	60	extra-mag2		4	6							1hsw	2hsw	miss								0	0	0	498
 																																							499
 of Restoration	100	1	1	5	15	3				28	66	regen		10	15	hp/lvl	2									1hcw	2hcw									0	0	0	500
 of Restoration	100	1	1	15	35	12				28	66	regen		16	20	hp/lvl	2									1hcw	2hcw									0	0	0	501
@@ -516,80 +516,80 @@ of Resurgence	100	1	1	45	95	42				24	67	regen-mana		26	30	mana/lvl	3									2hc
 of Resurgence	100	1	1	80		60				22	67	regen-mana		31	35	mana/lvl	4									2hcw										0	0	0	515
 of Resurgence	100	1	1	95		66				20	67	regen-mana		36	40	mana/lvl	4									2hcw										0	0	0	516
 																																							517
-of Conviction	100	1	1	20	60	18				13	68	allskills		1	1											knfc										0	0	0	518
-of Conviction	100	1	1	60		48				12	68	allskills		1	1											knfc										0	0	0	519
-of Doctrine	100	1	1	80		60				11	68	allskills		1	2											knfc										0	0	0	520
-of Doctrine	100	1	1	95		66				10	68	allskills		2	2											knfc										0	0	0	521
+of Conviction	100	1	1	20	60	18				15	68	allskills		1	1											knfc										0	0	0	518
+of Conviction	100	1	1	60	95	48				13	68	allskills		1	1											knfc										0	0	0	519
+of Doctrine	100	1	1	80		60				13	68	allskills		1	2											knfc										0	0	0	520
+of Doctrine	100	1	1	95		66				11	68	allskills		2	2											knfc										0	0	0	521
 																																							522
-of Law	100	1	1	20	60	18				13	68	allskills		1	1											stfc										0	0	0	523
-of Law	100	1	1	60		48				12	68	allskills		1	2											stfc										0	0	0	524
-of Ideology	100	1	1	80		60				11	68	allskills		2	2											stfc										0	0	0	525
-of Ideology	100	1	1	95		66				10	68	allskills		2	3											stfc										0	0	0	526
+of Law	100	1	1	20	60	18				15	68	allskills		1	1											stfc										0	0	0	523
+of Law	100	1	1	60	95	48				13	68	allskills		1	2											stfc										0	0	0	524
+of Ideology	100	1	1	80		60				13	68	allskills		2	2											stfc										0	0	0	525
+of Ideology	100	1	1	95		66				11	68	allskills		2	3											stfc										0	0	0	526
 																																							527
 of Aeons	100	1	1	20	60	18				2	69	indestruct				ease		5	10	dmg%		10	20			1hsw	2hsw									0	0	0	528
-of Aeons	100	1	1	60		48				2	69	indestruct				ease		11	15	dmg%		20	30			1hsw	2hsw									0	0	0	529
+of Aeons	100	1	1	60	95	48				2	69	indestruct				ease		11	15	dmg%		20	30			1hsw	2hsw									0	0	0	529
 of the Dullahan	100	1	1	80		60				2	69	indestruct				ease		16	20	dmg%		30	40			1hsw	2hsw									0	0	0	530
 of the Dullahan	100	1	1	95		66				2	69	indestruct				ease		21	25	dmg%		40	50			1hsw	2hsw									0	0	0	531
 																																							532
-of Callisto	100	1	1	1	10	1				28	300	str		1	3											amul	ring									0	0	0	533
-of Callisto	100	1	1	5	15	3				28	300	str		2	5											amul	ring									0	0	0	534
-of Callisto	100	1	1	10	20	6				28	300	str		3	7											amul	ring									0	0	0	535
-of Jambavan	100	1	1	15	35	12				28	300	str		4	9											amul	ring									0	0	0	536
-of Jambavan	100	1	1	20	45	18				28	300	str		5	11											amul	ring									0	0	0	537
-of Jambavan	100	1	1	25	60	24				28	300	str		6	13											amul	ring									0	0	0	538
-of Otso	100	1	1	35	80	33				28	300	str		7	15											amul										0	0	0	539
-of Otso	100	1	1	35		33				28	300	str		7	15											ring										0	0	0	540
-of Otso	100	1	1	45	95	42				28	300	str		8	17											amul										0	0	0	541
-of Otso	100	1	1	45		42				28	300	str		8	17											ring										0	0	0	542
-of Otso	100	1	1	60		48				26	300	str		9	19											amul	ring									0	0	0	543
-of Ayula	100	1	1	80		60				24	300	str		10	21											amul										0	0	0	544
-of Ayula	100	1	1	95		66				22	300	str		11	23											amul										0	0	0	545
-of the Onikuma	100	1	1	95		66				20	300	str		12	25											amul										0	0	0	546
+of Callisto	100	1	1	1	10	1				20	300	str		1	3											amul	ring									0	0	0	533
+of Callisto	100	1	1	5	15	3				20	300	str		2	5											amul	ring									0	0	0	534
+of Callisto	100	1	1	10	20	6				20	300	str		3	7											amul	ring									0	0	0	535
+of Jambavan	100	1	1	15	35	12				20	300	str		4	9											amul	ring									0	0	0	536
+of Jambavan	100	1	1	20	45	18				20	300	str		5	11											amul	ring									0	0	0	537
+of Jambavan	100	1	1	25	60	24				20	300	str		6	13											amul	ring									0	0	0	538
+of Otso	100	1	1	35	80	33				20	300	str		7	15											amul	ring									0	0	0	539
+of Otso	100	1	1	45	95	42				20	300	str		8	17											amul	ring									0	0	0	541
+of Otso	100	1	1	60		48				18	300	str		9	19											ring										0	0	0	543
+of Otso	100	1	1	60	95	48				18	300	str		9	19											amul										0	0	0	543
+of Ayula	100	1	1	80		60				16	300	str		10	21											ring										0	0	0	544
+of Ayula	100	1	1	80	95	60				16	300	str		10	21											amul										0	0	0	544
+of Ayula	100	1	1	95		66				14	300	str		11	23											amul										0	0	0	545
+of the Onikuma	100	1	1	95		66				12	300	str		12	25											amul										0	0	0	546
 																																							547
-of Orthrus	100	1	1	1	10	1				28	301	dex		1	3											amul	ring									0	0	0	548
-of Orthrus	100	1	1	5	15	3				28	301	dex		2	5											amul	ring									0	0	0	549
-of Orthrus	100	1	1	10	20	6				28	301	dex		3	7											amul	ring									0	0	0	550
-of Asena	100	1	1	15	35	12				28	301	dex		4	9											amul	ring									0	0	0	551
-of Asena	100	1	1	20	45	18				28	301	dex		5	11											amul	ring									0	0	0	552
-of Asena	100	1	1	25	60	24				28	301	dex		6	13											amul	ring									0	0	0	553
-of Cerebus	100	1	1	35	80	33				28	301	dex		7	15											amul										0	0	0	554
-of Cerebus	100	1	1	35		33				28	301	dex		7	15											ring										0	0	0	555
-of Cerebus	100	1	1	45	95	42				28	301	dex		8	17											amul										0	0	0	556
-of Cerebus	100	1	1	45		42				28	301	dex		8	17											ring										0	0	0	557
-of Cerebus	100	1	1	60		48				26	301	dex		9	19											amul	ring									0	0	0	558
-of the Chupacabra	100	1	1	80		60				24	301	dex		10	21											amul										0	0	0	559
-of the Chupacabra	100	1	1	95		66				22	301	dex		11	23											amul										0	0	0	560
-of Fenrir	100	1	1	95		66				20	301	dex		12	25											amul										0	0	0	561
+of Orthrus	100	1	1	1	10	1				20	301	dex		1	3											amul	ring									0	0	0	548
+of Orthrus	100	1	1	5	15	3				20	301	dex		2	5											amul	ring									0	0	0	549
+of Orthrus	100	1	1	10	20	6				20	301	dex		3	7											amul	ring									0	0	0	550
+of Asena	100	1	1	15	35	12				20	301	dex		4	9											amul	ring									0	0	0	551
+of Asena	100	1	1	20	45	18				20	301	dex		5	11											amul	ring									0	0	0	552
+of Asena	100	1	1	25	60	24				20	301	dex		6	13											amul	ring									0	0	0	553
+of Cerebus	100	1	1	35	80	33				20	301	dex		7	15											amul	ring									0	0	0	554
+of Cerebus	100	1	1	35	95	33				20	301	dex		8	17											amul	ring									0	0	0	555
+of Cerebus	100	1	1	45		42				20	301	dex		9	19											ring										0	0	0	556
+of Cerebus	100	1	1	45	95	42				20	301	dex		9	19											amul										0	0	0	557
+of the Chupacabra	100	1	1	80		60				16	301	dex		10	21											ring										0	0	0	559
+of the Chupacabra	100	1	1	80	95	60				16	301	dex		10	21											amul										0	0	0	559
+of the Chupacabra	100	1	1	95		66				14	301	dex		11	23											amul										0	0	0	560
+of Fenrir	100	1	1	95		66				12	301	dex		12	25											amul										0	0	0	561
 																																							562
-of the Griffin	100	1	1	1	10	1				28	302	enr		1	3											amul	ring									0	0	0	563
-of the Griffin	100	1	1	5	15	3				28	302	enr		2	5											amul	ring									0	0	0	564
-of the Griffin	100	1	1	10	20	6				28	302	enr		3	7											amul	ring									0	0	0	565
-of the Salmon	100	1	1	15	35	12				28	302	enr		4	9											amul	ring									0	0	0	566
-of the Salmon	100	1	1	20	45	18				28	302	enr		5	11											amul	ring									0	0	0	567
-of the Salmon	100	1	1	25	60	24				28	302	enr		6	13											amul	ring									0	0	0	568
-of the Sphinx	100	1	1	35	80	33				28	302	enr		7	15											amul										0	0	0	569
-of the Sphinx	100	1	1	35		33				28	302	enr		7	15											ring										0	0	0	570
-of the Sphinx	100	1	1	45	95	42				28	302	enr		8	17											amul										0	0	0	571
-of the Sphinx	100	1	1	45		42				28	302	enr		8	17											ring										0	0	0	572
-of the Sphinx	100	1	1	60		48				26	302	enr		9	19											amul	ring									0	0	0	573
-of Baize	100	1	1	80		60				24	302	enr		10	21											amul										0	0	0	574
-of Baize	100	1	1	95		66				22	302	enr		11	23											amul										0	0	0	575
-of Athena	100	1	1	95		66				20	302	enr		12	25											amul										0	0	0	576
+of the Griffin	100	1	1	1	10	1				20	302	enr		1	3											amul	ring									0	0	0	563
+of the Griffin	100	1	1	5	15	3				20	302	enr		2	5											amul	ring									0	0	0	564
+of the Griffin	100	1	1	10	20	6				20	302	enr		3	7											amul	ring									0	0	0	565
+of the Salmon	100	1	1	15	35	12				20	302	enr		4	9											amul	ring									0	0	0	566
+of the Salmon	100	1	1	20	45	18				20	302	enr		5	11											amul	ring									0	0	0	567
+of the Salmon	100	1	1	25	60	24				20	302	enr		6	13											amul	ring									0	0	0	568
+of the Sphinx	100	1	1	35	80	33				20	302	enr		7	15											amul	ring									0	0	0	569
+of the Sphinx	100	1	1	35	95	33				20	302	enr		8	17											amul	ring									0	0	0	570
+of the Sphinx	100	1	1	45		42				20	302	enr		9	19											ring										0	0	0	571
+of the Sphinx	100	1	1	45	95	42				20	302	enr		9	19											amul										0	0	0	572
+of Baize	100	1	1	80		60				16	302	enr		10	21											ring										0	0	0	574
+of Baize	100	1	1	80	95	60				16	302	enr		10	21											amul										0	0	0	574
+of Baize	100	1	1	95		66				14	302	enr		11	23											amul										0	0	0	575
+of Athena	100	1	1	95		66				12	302	enr		12	25											amul										0	0	0	576
 																																							577
-of the Faun	100	1	1	1	10	1				28	303	vit		1	3											amul	ring									0	0	0	578
-of the Faun	100	1	1	5	15	3				28	303	vit		2	5											amul	ring									0	0	0	579
-of the Faun	100	1	1	10	20	6				28	303	vit		3	7											amul	ring									0	0	0	580
-of the Nymph	100	1	1	15	35	12				28	303	vit		4	9											amul	ring									0	0	0	581
-of the Nymph	100	1	1	20	45	18				28	303	vit		5	11											amul	ring									0	0	0	582
-of the Nymph	100	1	1	25	60	24				28	303	vit		6	13											amul	ring									0	0	0	583
-of the Satyr	100	1	1	35	80	33				28	303	vit		7	15											amul										0	0	0	584
-of the Satyr	100	1	1	35		33				28	303	vit		7	15											ring										0	0	0	585
-of the Satyr	100	1	1	45	95	42				28	303	vit		8	17											amul										0	0	0	586
-of the Satyr	100	1	1	45		42				28	303	vit		8	17											ring										0	0	0	587
-of the Satyr	100	1	1	60		48				26	303	vit		9	19											amul	ring									0	0	0	588
-of the Incubus	100	1	1	80		60				24	303	vit		10	21											amul										0	0	0	589
-of the Incubus	100	1	1	95		66				22	303	vit		11	23											amul										0	0	0	590
-of the Succubus	100	1	1	95		66				20	303	vit		12	25											amul										0	0	0	591
+of the Faun	100	1	1	1	10	1				20	303	vit		1	3											amul	ring									0	0	0	578
+of the Faun	100	1	1	5	15	3				20	303	vit		2	5											amul	ring									0	0	0	579
+of the Faun	100	1	1	10	20	6				20	303	vit		3	7											amul	ring									0	0	0	580
+of the Nymph	100	1	1	15	35	12				20	303	vit		4	9											amul	ring									0	0	0	581
+of the Nymph	100	1	1	20	45	18				20	303	vit		5	11											amul	ring									0	0	0	582
+of the Nymph	100	1	1	25	60	24				20	303	vit		6	13											amul	ring									0	0	0	583
+of the Satyr	100	1	1	35	80	33				20	303	vit		7	15											amul	ring									0	0	0	584
+of the Satyr	100	1	1	35	95	33				20	303	vit		8	17											amul	ring									0	0	0	585
+of the Satyr	100	1	1	45		42				20	303	vit		9	19											ring										0	0	0	586
+of the Satyr	100	1	1	45	95	42				20	303	vit		9	19											amul										0	0	0	587
+of the Incubus	100	1	1	80		60				16	303	vit		10	21											ring										0	0	0	589
+of the Incubus	100	1	1	80	95	60				16	303	vit		10	21											amul										0	0	0	589
+of the Incubus	100	1	1	95		66				14	303	vit		11	23											amul										0	0	0	590
+of the Succubus	100	1	1	95		66				12	303	vit		12	25											amul										0	0	0	591
 																																							592
 of Steadiness 	100	1	1	5	15	3				28	304	balance1		6	10											amul	ring									0	0	0	593
 of Steadiness	100	1	1	15	35	12				28	304	balance1		8	12											amul	ring									0	0	0	594
@@ -612,17 +612,17 @@ of Perception	100	1	1	45	95	42				24	305	cast1		12	16											amul	ring							
 of Perception	100	1	1	80		60				22	305	cast1		14	18											amul	ring									0	0	0	611
 of Perception	100	1	1	95		66				20	305	cast2		16	20											amul	ring									0	0	0	612
 																																							613
-of the Carbuncle	100	1	1	20	60	18				13	306	gold%		6	12											ring										0	0	0	614
-of the Carbuncle	100	1	1	60		48				12	306	gold%		10	16											ring										0	0	0	615
-of the Leprechaun	100	1	1	80		60				11	306	gold%		14	20											ring										0	0	0	616
-of the Leprechaun	100	1	1	95		66				10	306	gold%		18	24											ring										0	0	0	617
-of the Leprechaun	100	1	1	95		66				2	306	gold%/lvl	3													ring										0	0	0	618
+of the Carbuncle	100	1	1	20	60	18				15	306	gold%		6	12											ring										0	0	0	614
+of the Carbuncle	100	1	1	60	95	48				14	306	gold%		10	16											ring										0	0	0	615
+of the Leprechaun	100	1	1	80		60				13	306	gold%		14	20											ring										0	0	0	616
+of the Leprechaun	100	1	1	95		66				12	306	gold%		18	24											ring										0	0	0	617
+of the Leprechaun	100	1	1	95		66				4	306	gold%/lvl	3													ring										0	0	0	618
 																																							619
-of the Drawf	100	1	1	20	60	18				13	307	mag%		6	12											amul										0	0	0	620
-of the Drawf	100	1	1	60		48				12	307	mag%		10	16											amul										0	0	0	621
-of the Sarimanok	100	1	1	80		60				11	307	mag%		14	20											amul										0	0	0	622
-of the Sarimanok	100	1	1	95		66				10	307	mag%		18	24											amul										0	0	0	623
-of the Sarimanok	100	1	1	95		66				2	307	mag%/lvl	3													amul										0	0	0	624
+of the Drawf	100	1	1	20	60	18				15	307	mag%		6	12											amul										0	0	0	620
+of the Drawf	100	1	1	60	95	48				14	307	mag%		10	16											amul										0	0	0	621
+of the Sarimanok	100	1	1	80		60				13	307	mag%		14	20											amul										0	0	0	622
+of the Sarimanok	100	1	1	95		66				12	307	mag%		18	24											amul										0	0	0	623
+of the Sarimanok	100	1	1	95		66				4	307	mag%/lvl	3													amul										0	0	0	624
 																																							625
 of Sengir	100	1	1	5	15	3				18	308	lifesteal		1	1											ring										0	0	0	626
 of Sengir	100	1	1	15	35	12				18	308	lifesteal		1	2											ring										0	0	0	627
@@ -666,52 +666,54 @@ of the Crypt	100	1	1	45	95	42				24	311	regen-mana		22	29	mana/lvl	3									amu
 of the Crypt	100	1	1	80		60				22	311	regen-mana		27	34	mana/lvl	3									amul										0	0	0	665
 of the Crypt	100	1	1	95		66				20	311	regen-mana		32	39	mana/lvl	3									amul										0	0	0	666
 																																							667
-of Belief	100	1	1	20	60	18				8	312	allskills		1	1											amul										0	0	0	668
-of Belief	100	1	1	60		48				6	312	allskills		1	1											amul										0	0	0	669
-of Faith	100	1	1	80		60				4	312	allskills		1	2											amul										0	0	0	670
-of Faith	100	1	1	95		66				2	312	allskills		2	2											amul										0	0	0	671
+of Belief	100	1	1	20	60	18				16	312	allskills		1	1											amul	ring									0	0	0	668
+of Belief	100	1	1	60	95	48				16	312	allskills		1	1											amul										0	0	0	669
+of Belief	100	1	1	60		48				16	312	allskills		1	1											ring										0	0	0	669
+of Faith	100	1	1	80		60				12	312	allskills		1	2											amul	ring									0	0	0	670
+of Faith	100	1	1	95		66				8	312	allskills		2	2											amul										0	0	0	671
+of Faith	100	1	1	95		66				8	312	allskills		2	3											amul										0	0	0	671
 																																							
-of the Yamabushi	100	1	1	20	60	18				8	210	crush		2	4											zamu	zrin											0	0
-of the Yamabushi	100	1	1	60		48				8	210	crush		3	6											zamu	zrin											0	0
-of the Yamabushi	100	1	1	80		60				4	210	crush		4	8											zamu	zrin											0	0
-of Sokenzan	100	1	1	95		66				2	210	crush		5	10											zamu	zrin											0	0
-of Sokenzan	100	1	1	95		66				2	210	crush		6	12											zamu												0	0
+of the Yamabushi	100	1	1	20	60	18				22	210	crush		2	4											zamu	zrin											0	0
+of the Yamabushi	100	1	1	60	95	48				22	210	crush		3	6											zamu	zrin											0	0
+of the Yamabushi	100	1	1	80		60				20	210	crush		4	8											zamu	zrin											0	0
+of Sokenzan	100	1	1	95		66				18	210	crush		5	10											zamu	zrin											0	0
+of Sokenzan	100	1	1	95		66				16	210	crush		6	12											zamu												0	0
 																																							
-of the Moonfolk	100	1	1	20	60	18				8	210	enr%		1	4											samu	srin											0	0
-of the Moonfolk	100	1	1	60		48				8	210	enr%		2	5											samu	srin											0	0
-of the Moonfolk 	100	1	1	80		60				4	210	enr%		3	6											samu	srin											0	0
-of Otawara	100	1	1	95		66				2	210	enr%		4	7											samu	srin											0	0
-of Otawara	100	1	1	95		66				2	210	enr%		5	8											samu												0	0
+of the Moonfolk	100	1	1	20	60	18				22	210	enr%		1	4											samu	srin											0	0
+of the Moonfolk	100	1	1	60	95	48				22	210	enr%		2	5											samu	srin											0	0
+of the Moonfolk 	100	1	1	80		60				20	210	enr%		3	6											samu	srin											0	0
+of Otawara	100	1	1	95		66				18	210	enr%		4	7											samu	srin											0	0
+of Otawara	100	1	1	95		66				16	210	enr%		5	8											samu												0	0
 																																							
-of the Nezumi	100	1	1	20	60	18				8	210	red-mag		2	8	res-pois-len		0	15							namu	nrin											0	0
-of the Nezumi	100	1	1	60		48				8	210	red-mag		4	10	res-pois-len		5	30							namu	nrin											0	0
-of the Nezumi	100	1	1	80		60				4	210	red-mag		6	12	res-pois-len		20	45							namu	nrin											0	0
-of Shizo	100	1	1	95		66				2	210	red-mag		8	14	res-pois-len		35	60							namu	nrin											0	0
-of Shizo	100	1	1	95		66				2	210	red-mag		10	16	res-pois-len		50	75							namu												0	0
+of the Nezumi	100	1	1	20	60	18				22	210	red-mag		2	8	res-pois-len		0	15							namu	nrin											0	0
+of the Nezumi	100	1	1	60	95	48				22	210	red-mag		4	10	res-pois-len		5	30							namu	nrin											0	0
+of the Nezumi	100	1	1	80		60				20	210	red-mag		6	12	res-pois-len		20	45							namu	nrin											0	0
+of Shizo	100	1	1	95		66				18	210	red-mag		8	14	res-pois-len		35	60							namu	nrin											0	0
+of Shizo	100	1	1	95		66				16	210	red-mag		10	16	res-pois-len		50	75							namu												0	0
 																																							
-of the Samurai	100	1	1	20	60	18				8	210	red-dmg		2	6	red-dmg%		0	1							pamu	prin											0	0
-of the Samurai	100	1	1	60		48				8	210	red-dmg		4	8	red-dmg%		1	2							pamu	prin											0	0
-of the Samurai	100	1	1	80		60				4	210	red-dmg		6	10	red-dmg%		2	3							pamu	prin											0	0
-of Eiganjo	100	1	1	95		66				2	210	red-dmg		8	12	red-dmg%		3	4							pamu	prin											0	0
-of Eiganjo	100	1	1	95		66				2	210	red-dmg		10	14	red-dmg%		4	5							pamu												0	0
+of the Samurai	100	1	1	20	60	18				22	210	red-dmg		2	6	red-dmg%		0	1							pamu	prin											0	0
+of the Samurai	100	1	1	60	95	48				22	210	red-dmg		4	8	red-dmg%		1	2							pamu	prin											0	0
+of the Samurai	100	1	1	80		60				20	210	red-dmg		6	10	red-dmg%		2	3							pamu	prin											0	0
+of Eiganjo	100	1	1	95		66				18	210	red-dmg		8	12	red-dmg%		3	4							pamu	prin											0	0
+of Eiganjo	100	1	1	95		66				16	210	red-dmg		10	14	red-dmg%		4	5							pamu												0	0
 																																							
-of the Sanzoku 	100	1	1	20	60	18				8	210	hp/str		4	4											bamu	brin											0	0
-of the Sanzoku	100	1	1	60		48				8	210	hp/str		5	5											bamu	brin											0	0
-of the Sanzoku	100	1	1	80		60				4	210	hp/str		6	6											bamu	brin											0	0
-of Shinka	100	1	1	95		66				2	210	hp/str		7	7											bamu	brin											0	0
-of Shinka	100	1	1	95		66				2	210	hp/str		8	8											bamu												0	0
+of the Sanzoku 	100	1	1	20	60	18				22	210	hp/str		4	4											bamu	brin											0	0
+of the Sanzoku	100	1	1	60	95	48				22	210	hp/str		5	5											bamu	brin											0	0
+of the Sanzoku	100	1	1	80		60				20	210	hp/str		6	6											bamu	brin											0	0
+of Shinka	100	1	1	95		66				18	210	hp/str		7	7											bamu	brin											0	0
+of Shinka	100	1	1	95		66				16	210	hp/str		8	8											bamu												0	0
 																																							
-of the Monk	100	1	1	20	60	18				8	210	abs-all		2	4	abs-all%		0	1							damu	drin											0	0
-of the Monk	100	1	1	60		48				8	210	abs-all		4	6	abs-all%		0	1							damu	drin											0	0
-of the Monk	100	1	1	80		60				4	210	abs-all		6	8	abs-all%		1	1							damu	drin											0	0
-of Okina	100	1	1	95		66				2	210	abs-all		8	10	abs-all%		1	2							damu	drin											0	0
-of Okina	100	1	1	95		66				2	210	abs-all		10	12	abs-all%		2	2							damu												0	0
+of the Monk	100	1	1	20	60	18				22	210	abs-all		2	4	abs-all%		0	1							damu	drin											0	0
+of the Monk	100	1	1	60	95	48				22	210	abs-all		4	6	abs-all%		0	1							damu	drin											0	0
+of the Monk	100	1	1	80		60				20	210	abs-all		6	8	abs-all%		1	1							damu	drin											0	0
+of Okina	100	1	1	95		66				18	210	abs-all		8	10	abs-all%		1	2							damu	drin											0	0
+of Okina	100	1	1	95		66				16	210	abs-all		10	12	abs-all%		2	2							damu												0	0
 																																							
-of the Ronin	100	1	1	20	60	18				8	210	res-curse-len		2	4											aamu	arin											0	0
-of the Ronin	100	1	1	60		48				8	210	res-curse-len		4	6											aamu	arin											0	0
-of the Ronin	100	1	1	80		60				4	210	res-curse-len		6	8											aamu	arin											0	0
-of Takenuma	100	1	1	95		66				2	210	res-curse-len		8	10											aamu	arin											0	0
-of Takenuma	100	1	1	95		66				2	210	res-curse-len		10	12											aamu												0	0
+of the Ronin	100	1	1	20	60	18				22	210	res-curse-len		2	12											aamu	arin											0	0
+of the Ronin	100	1	1	60	95	48				22	210	res-curse-len		4	14											aamu	arin											0	0
+of the Ronin	100	1	1	80		60				20	210	res-curse-len		6	16											aamu	arin											0	0
+of Takenuma	100	1	1	95		66				18	210	res-curse-len		8	18											aamu	arin											0	0
+of Takenuma	100	1	1	95		66				16	210	res-curse-len		10	20											aamu												0	0
 																																							672
 of Mettle	100	1	1	5	15	3				28	350	str		3	6											jewl										0	0	0	673
 of Mettle	100	1	1	15	35	12				28	350	str		4	8											jewl										0	0	0	674
@@ -825,83 +827,83 @@ of Blasphemy	100	1	1	60		48				12	358	res-curse-len		4	8											jewl									
 of Execration	100	1	1	80		60				8	358	res-curse-len		5	9											jewl										0	0	0	782
 of Execration	100	1	1	95		66				4	358	res-curse-len		6	10											jewl										0	0	0	783
 																																							784
-of Frost Nova	100	1	1	20	60	18				12	359	hit-skill	Frost Nova	5	15											jewl										0	0	0	785
+of Frost Nova	100	1	1	20	60	18				10	359	hit-skill	Frost Nova	5	15											jewl										0	0	0	785
 of Frost Nova	100	1	1	60		48				8	359	hit-skill	Frost Nova	5	25											jewl										0	0	0	786
-of Frost Nova	100	1	1	80		60				4	359	hit-skill	Frost Nova	5	35											jewl										0	0	0	787
-of Frost Nova	100	1	1	95		66				2	359	hit-skill	Frost Nova	5	45											jewl										0	0	0	788
+of Frost Nova	100	1	1	80		60				6	359	hit-skill	Frost Nova	5	35											jewl										0	0	0	787
+of Frost Nova	100	1	1	95		66				4	359	hit-skill	Frost Nova	5	45											jewl										0	0	0	788
 																																							789
-of Firestorm	100	1	1	20	60	18				12	359	hit-skill	Firestorm	5	15											jewl										0	0	0	790
+of Firestorm	100	1	1	20	60	18				10	359	hit-skill	Firestorm	5	15											jewl										0	0	0	790
 of Firestorm	100	1	1	60		48				8	359	hit-skill	Firestorm	5	25											jewl										0	0	0	791
-of Firestorm	100	1	1	80		60				4	359	hit-skill	Firestorm	5	35											jewl										0	0	0	792
-of Firestorm	100	1	1	95		66				2	359	hit-skill	Firestorm	5	45											jewl										0	0	0	793
+of Firestorm	100	1	1	80		60				6	359	hit-skill	Firestorm	5	35											jewl										0	0	0	792
+of Firestorm	100	1	1	95		66				4	359	hit-skill	Firestorm	5	45											jewl										0	0	0	793
 																																							794
-of Charged Bolt	100	1	1	20	60	18				12	359	hit-skill	Charged Bolt	5	15											jewl										0	0	0	795
+of Charged Bolt	100	1	1	20	60	18				10	359	hit-skill	Charged Bolt	5	15											jewl										0	0	0	795
 of Charged Bolt	100	1	1	60		48				8	359	hit-skill	Charged Bolt	5	25											jewl										0	0	0	796
-of Charged Bolt	100	1	1	80		60				4	359	hit-skill	Charged Bolt	5	35											jewl										0	0	0	797
-of Charged Bolt	100	1	1	95		66				2	359	hit-skill	Charged Bolt	5	45											jewl										0	0	0	798
+of Charged Bolt	100	1	1	80		60				6	359	hit-skill	Charged Bolt	5	35											jewl										0	0	0	797
+of Charged Bolt	100	1	1	95		66				4	359	hit-skill	Charged Bolt	5	45											jewl										0	0	0	798
 																																							799
-of Bone Spear	100	1	1	20	60	18				12	359	hit-skill	Bone Spear	5	15											jewl										0	0	0	800
+of Bone Spear	100	1	1	20	60	18				10	359	hit-skill	Bone Spear	5	15											jewl										0	0	0	800
 of Bone Spear	100	1	1	60		48				8	359	hit-skill	Bone Spear	5	25											jewl										0	0	0	801
-of Bone Spear	100	1	1	80		60				4	359	hit-skill	Bone Spear	5	35											jewl										0	0	0	802
-of Bone Spear	100	1	1	95		66				2	359	hit-skill	Bone Spear	5	45											jewl										0	0	0	803
+of Bone Spear	100	1	1	80		60				6	359	hit-skill	Bone Spear	5	35											jewl										0	0	0	802
+of Bone Spear	100	1	1	95		66				4	359	hit-skill	Bone Spear	5	45											jewl										0	0	0	803
 																																							804
-of the Lion	100	1	1	5	15	3				28	370	str		1	3											arrm	boqm									0	0	0	805
-of the Lion	100	1	1	15	35	12				28	370	str		3	6											arrm	boqm									0	0	0	806
-of the Lion	100	1	1	25	60	24				28	370	str		5	9											arrm	boqm									0	0	0	807
-of the Cougar	100	1	1	45	95	42				26	370	str		7	12											arrm	boqm									0	0	0	808
-of the Cougar	100	1	1	80		60				22	370	str		9	15											arrm	boqm									0	0	0	809
-of the Cougar	100	1	1	95		66				18	370	str		11	17											arrm	boqm									0	0	0	810
-of the Cougar	100	1	1	95		66				16	370	str		13	19											arrm										0	0	0	811
-of the Smilodon	100	1	1	95		66				2	370	str		5	10	str%		2	4							arrm	boqm									0	0	0	812
+of the Lion	100	1	1	5	15	3				28	370	str		1	3	rep-quant	33									arrm	boqm									0	0	0	805
+of the Lion	100	1	1	15	35	12				28	370	str		3	6	rep-quant	33									arrm	boqm									0	0	0	806
+of the Lion	100	1	1	25	60	24				28	370	str		5	9	rep-quant	33									arrm	boqm									0	0	0	807
+of the Cougar	100	1	1	45	95	42				26	370	str		7	12	rep-quant	33									arrm	boqm									0	0	0	808
+of the Cougar	100	1	1	80		60				22	370	str		9	15	rep-quant	33									arrm	boqm									0	0	0	809
+of the Cougar	100	1	1	95		66				18	370	str		11	17	rep-quant	33									arrm	boqm									0	0	0	810
+of the Cougar	100	1	1	95		66				16	370	str		13	19	rep-quant	33									arrm										0	0	0	811
+of the Smilodon	100	1	1	95		66				2	370	str		5	10	str%		2	4	rep-quant	33					arrm	boqm									0	0	0	812
 																																							813
-of the Ostrich	100	1	1	5	15	3				28	371	dex		1	3											arrm	boqm									0	0	0	814
-of the Ostrich	100	1	1	15	35	12				28	371	dex		3	6											arrm	boqm									0	0	0	815
-of the Ostrich	100	1	1	25	60	24				28	371	dex		5	9											arrm	boqm									0	0	0	816
-of the Pronghorns	100	1	1	45	95	42				26	371	dex		7	12											arrm	boqm									0	0	0	817
-of the Pronghorns	100	1	1	80		60				22	371	dex		9	15											arrm	boqm									0	0	0	818
-of the Pronghorns	100	1	1	95		66				18	371	dex		11	17											arrm	boqm									0	0	0	819
-of the Pronghorns	100	1	1	95		66				16	371	dex		13	19											arrm										0	0	0	820
-of th Eagle	100	1	1	95		66				2	371	dex		5	10	dex%		2	4							arrm	boqm									0	0	0	821
+of the Ostrich	100	1	1	5	15	3				28	371	dex		1	3	rep-quant	33									arrm	boqm									0	0	0	814
+of the Ostrich	100	1	1	15	35	12				28	371	dex		3	6	rep-quant	33									arrm	boqm									0	0	0	815
+of the Ostrich	100	1	1	25	60	24				28	371	dex		5	9	rep-quant	33									arrm	boqm									0	0	0	816
+of the Pronghorns	100	1	1	45	95	42				26	371	dex		7	12	rep-quant	33									arrm	boqm									0	0	0	817
+of the Pronghorns	100	1	1	80		60				22	371	dex		9	15	rep-quant	33									arrm	boqm									0	0	0	818
+of the Pronghorns	100	1	1	95		66				18	371	dex		11	17	rep-quant	33									arrm	boqm									0	0	0	819
+of the Pronghorns	100	1	1	95		66				16	371	dex		13	19	rep-quant	33									arrm										0	0	0	820
+of th Eagle	100	1	1	95		66				2	371	dex		5	10	dex%		2	4	rep-quant	33					arrm	boqm									0	0	0	821
 																																							822
-of Cultivation	100	1	1	5	15	3				28	372	enr		1	3											arrm	boqm									0	0	0	823
-of Cultivation	100	1	1	15	35	12				28	372	enr		3	6											arrm	boqm									0	0	0	824
-of Cultivation	100	1	1	25	60	24				28	372	enr		5	9											arrm	boqm									0	0	0	825
-of Insight	100	1	1	45	95	42				26	372	enr		7	12											arrm	boqm									0	0	0	826
-of Insight	100	1	1	80		60				22	372	enr		9	15											arrm	boqm									0	0	0	827
-of Insight	100	1	1	95		66				18	372	enr		11	17											arrm	boqm									0	0	0	828
-of Insight	100	1	1	95		66				18	372	enr		13	19											arrm										0	0	0	829
-of Vision	100	1	1	95		66				2	372	enr		5	10	enr%		2	4							arrm	boqm									0	0	0	830
+of Cultivation	100	1	1	5	15	3				28	372	enr		1	3	rep-quant	33									arrm	boqm									0	0	0	823
+of Cultivation	100	1	1	15	35	12				28	372	enr		3	6	rep-quant	33									arrm	boqm									0	0	0	824
+of Cultivation	100	1	1	25	60	24				28	372	enr		5	9	rep-quant	33									arrm	boqm									0	0	0	825
+of Insight	100	1	1	45	95	42				26	372	enr		7	12	rep-quant	33									arrm	boqm									0	0	0	826
+of Insight	100	1	1	80		60				22	372	enr		9	15	rep-quant	33									arrm	boqm									0	0	0	827
+of Insight	100	1	1	95		66				18	372	enr		11	17	rep-quant	33									arrm	boqm									0	0	0	828
+of Insight	100	1	1	95		66				18	372	enr		13	19	rep-quant	33									arrm										0	0	0	829
+of Vision	100	1	1	95		66				2	372	enr		5	10	enr%		2	4	rep-quant	33					arrm	boqm									0	0	0	830
 																																							831
-of the Rhinoceros	100	1	1	5	15	3				28	373	vit		1	3											arrm	boqm									0	0	0	832
-of the Rhinoceros	100	1	1	15	35	12				28	373	vit		3	6											arrm	boqm									0	0	0	833
-of the Rhinoceros	100	1	1	25	60	24				28	373	vit		5	9											arrm	boqm									0	0	0	834
-of the Tapir	100	1	1	45	95	42				26	373	vit		7	12											arrm	boqm									0	0	0	835
-of the Tapir	100	1	1	80		60				22	373	vit		9	15											arrm	boqm									0	0	0	836
-of the Tapir	100	1	1	95		66				18	373	vit		11	17											arrm	boqm									0	0	0	837
-of the Tapir	100	1	1	95		66				18	373	vit		13	19											arrm										0	0	0	838
-of the Moa	100	1	1	95		66				2	373	vit		5	10	vit%		2	4							arrm	boqm									0	0	0	839
+of the Rhinoceros	100	1	1	5	15	3				28	373	vit		1	3	rep-quant	33									arrm	boqm									0	0	0	832
+of the Rhinoceros	100	1	1	15	35	12				28	373	vit		3	6	rep-quant	33									arrm	boqm									0	0	0	833
+of the Rhinoceros	100	1	1	25	60	24				28	373	vit		5	9	rep-quant	33									arrm	boqm									0	0	0	834
+of the Tapir	100	1	1	45	95	42				26	373	vit		7	12	rep-quant	33									arrm	boqm									0	0	0	835
+of the Tapir	100	1	1	80		60				22	373	vit		9	15	rep-quant	33									arrm	boqm									0	0	0	836
+of the Tapir	100	1	1	95		66				18	373	vit		11	17	rep-quant	33									arrm	boqm									0	0	0	837
+of the Tapir	100	1	1	95		66				18	373	vit		13	19	rep-quant	33									arrm										0	0	0	838
+of the Moa	100	1	1	95		66				2	373	vit		5	10	vit%		2	4	rep-quant	33					arrm	boqm									0	0	0	839
 																																							840
-of Haste	100	1	1	5	15	3				28	374	swing1		1	5											arrm	boqm									0	0	0	841
-of Haste	100	1	1	15	35	12				28	374	swing1		3	7											arrm	boqm									0	0	0	842
-of Haste	100	1	1	25	60	24				28	374	swing1		5	9											arrm	boqm									0	0	0	843
-of Fleetness	100	1	1	45	95	42				26	374	swing2		7	11											arrm	boqm									0	0	0	844
-of Fleetness	100	1	1	80		60				22	374	swing2		9	13											arrm	boqm									0	0	0	845
-of Fleetness	100	1	1	95		66				18	374	swing2		11	15											arrm	boqm									0	0	0	846
+of Haste	100	1	1	5	15	3				28	374	swing1		1	5	rep-quant	33									arrm	boqm									0	0	0	841
+of Haste	100	1	1	15	35	12				28	374	swing1		3	7	rep-quant	33									arrm	boqm									0	0	0	842
+of Haste	100	1	1	25	60	24				28	374	swing1		5	9	rep-quant	33									arrm	boqm									0	0	0	843
+of Fleetness	100	1	1	45	95	42				26	374	swing2		7	11	rep-quant	33									arrm	boqm									0	0	0	844
+of Fleetness	100	1	1	80		60				22	374	swing2		9	13	rep-quant	33									arrm	boqm									0	0	0	845
+of Fleetness	100	1	1	95		66				18	374	swing2		11	15	rep-quant	33									arrm	boqm									0	0	0	846
 																																							847
-of Puncture	100	1	1	20	60	18				28	375	pierce		1	11											arrm	boqm									0	0	0	848
-of Puncture	100	1	1	60		48				26	375	pierce		11	22											arrm	boqm									0	0	0	849
-of Rupture	100	1	1	80		60				22	375	pierce		22	33											arrm	boqm									0	0	0	850
-of Rupture	100	1	1	95		66				18	375	pierce		33	44											arrm	boqm									0	0	0	851
+of Puncture	100	1	1	20	60	18				28	375	pierce		1	11	rep-quant	33									arrm	boqm									0	0	0	848
+of Puncture	100	1	1	60		48				26	375	pierce		11	22	rep-quant	33									arrm	boqm									0	0	0	849
+of Rupture	100	1	1	80		60				22	375	pierce		22	33	rep-quant	33									arrm	boqm									0	0	0	850
+of Rupture	100	1	1	95		66				18	375	pierce		33	44	rep-quant	33									arrm	boqm									0	0	0	851
 																																							852
-of the Mosquito	100	1	1	20	60	18				28	376	lifesteal		1	2	manasteal		1	2							arrm	boqm									0	0	0	853
-of the Mosquito	100	1	1	60		48				26	376	lifesteal		2	3	manasteal		2	3							arrm	boqm									0	0	0	854
-of the Anopheles	100	1	1	80		60				22	376	lifesteal		3	4	manasteal		3	4							arrm	boqm									0	0	0	855
-of the Anopheles	100	1	1	95		66				18	376	lifesteal		4	5	manasteal		4	5							arrm	boqm									0	0	0	856
+of the Mosquito	100	1	1	20	60	18				28	376	lifesteal		1	2	manasteal		1	2	rep-quant	33					arrm	boqm									0	0	0	853
+of the Mosquito	100	1	1	60		48				26	376	lifesteal		2	3	manasteal		2	3	rep-quant	33					arrm	boqm									0	0	0	854
+of the Anopheles	100	1	1	80		60				22	376	lifesteal		3	4	manasteal		3	4	rep-quant	33					arrm	boqm									0	0	0	855
+of the Anopheles	100	1	1	95		66				18	376	lifesteal		4	5	manasteal		4	5	rep-quant	33					arrm	boqm									0	0	0	856
 																																							857
-of the Hunter	100	1	1	20	60	18				28	377	heal-kill		4	6	mana-kill		4	6							arrm	boqm									0	0	0	858
-of the Hunter	100	1	1	60		48				26	377	heal-kill		6	10	mana-kill		6	10							arrm	boqm									0	0	0	859
-of the Falconer	100	1	1	80		60				22	377	heal-kill		10	16	mana-kill		10	16							arrm	boqm									0	0	0	860
-of the Falconer	100	1	1	95		66				18	377	heal-kill		16	24	mana-kill		16	24							arrm	boqm									0	0	0	861
+of the Hunter	100	1	1	20	60	18				28	377	heal-kill		4	6	mana-kill		4	6	rep-quant	33					arrm	boqm									0	0	0	858
+of the Hunter	100	1	1	60		48				26	377	heal-kill		6	10	mana-kill		6	10	rep-quant	33					arrm	boqm									0	0	0	859
+of the Falconer	100	1	1	80		60				22	377	heal-kill		10	16	mana-kill		10	16	rep-quant	33					arrm	boqm									0	0	0	860
+of the Falconer	100	1	1	95		66				18	377	heal-kill		16	24	mana-kill		16	24	rep-quant	33					arrm	boqm									0	0	0	861
 																																							862
 of the Squirrel	100	1	1	5	15	3				28	400	dex		1	2											lcha	mcha									0	0	0	863
 of the Squirrel	100	1	1	15	35	12				28	400	dex		2	4											lcha	mcha									0	0	0	864
@@ -935,76 +937,78 @@ of the Mule	100	1	1	80		60				22	403	vit		5	10											lcha	mcha									0	0	0
 of the Centaur	100	1	1	95		66				18	403	vit		6	12											lcha										0	0	0	892
 of the Centaur	100	1	1	95		66				2	403	vit		7	14											lcha										0	0	0	893
 																																							894
-of the Weasel	100	1	1	20	40	3				8	404	dex%		1	2											lcha										0	0	0	895
+of the Weasel	100	1	1	5	40	3				8	404	dex%		1	2											lcha										0	0	0	895
 of the Weasel	100	1	1	40	60	12				8	404	dex%		2	3											lcha										0	0	0	896
 of the Weasel	100	1	1	60		24				8	404	dex%		3	4											lcha										0	0	0	897
 of the Cat	100	1	1	80		42				7	404	dex%		4	5											lcha										0	0	0	897
 of the Cat	100	1	1	95		60				6	404	dex%		5	6											lcha										0	0	0	898
 																																							899
-of the Grizzly	100	1	1	20	40	3				8	405	str%		1	2											lcha										0	0	0	900
+of the Grizzly	100	1	1	5	40	3				8	405	str%		1	2											lcha										0	0	0	900
 of the Grizzly	100	1	1	40	60	12				8	405	str%		2	3											lcha										0	0	0	901
 of the Grizzly	100	1	1	60		24				8	405	str%		3	4											lcha										0	0	0	901
 of Hyperion	100	1	1	80		42				7	405	str%		4	5											lcha										0	0	0	902
 of Hyperion	100	1	1	95		60				6	405	str%		5	6											lcha										0	0	0	903
 																																							904
-of Intuition	100	1	1	20	40	3				8	406	enr%		1	2											lcha										0	0	0	905
+of Intuition	100	1	1	5	40	3				8	406	enr%		1	2											lcha										0	0	0	905
 of Intuition	100	1	1	40	60	12				8	406	enr%		2	3											lcha										0	0	0	906
 of Intuition	100	1	1	60		24				8	406	enr%		3	4											lcha										0	0	0	906
 of Wisdom	100	1	1	80		42				7	406	enr%		4	5											lcha										0	0	0	907
 of Wisdom	100	1	1	95		60				6	406	enr%		5	6											lcha										0	0	0	908
 																																							909
-of the Manatee	100	1	1	20	40	3				8	407	vit%		1	2											lcha										0	0	0	910
+of the Manatee	100	1	1	5	40	3				8	407	vit%		1	2											lcha										0	0	0	910
 of the Manatee	100	1	1	40	60	12				8	407	vit%		2	3											lcha										0	0	0	911
 of the Manatee	100	1	1	60		24				8	407	vit%		3	4											lcha										0	0	0	911
 of the Orca	100	1	1	80		42				7	407	vit%		4	5											lcha										0	0	0	912
 of the Orca	100	1	1	95		60				6	407	vit%		5	6											lcha										0	0	0	913
 																																							914
-of Ignition	100	1	1	20	40	3				8	408	extra-fire		1	2											mcha										0	0	0	915
+of Ignition	100	1	1	5	40	3				8	408	extra-fire		1	2											mcha										0	0	0	915
 of Ignition	100	1	1	40	60	12				8	408	extra-fire		2	3											mcha										0	0	0	916
 of Ignition	100	1	1	60		24				8	408	extra-fire		3	4											mcha										0	0	0	916
 of Conflagration	100	1	1	80		42				7	408	extra-fire		4	5											mcha										0	0	0	917
 of Conflagration	100	1	1	95		60				6	408	extra-fire		5	6											mcha										0	0	0	918
 																																							919
-of Current	100	1	1	20	40	3				8	408	extra-ltng		1	2											mcha										0	0	0	920
+of Current	100	1	1	5	40	3				8	408	extra-ltng		1	2											mcha										0	0	0	920
 of Current	100	1	1	40	60	12				8	408	extra-ltng		2	3											mcha										0	0	0	921
 of Current	100	1	1	60		24				8	408	extra-ltng		3	4											mcha										0	0	0	921
 of the Stormcloud	100	1	1	80		42				7	408	extra-ltng		4	5											mcha										0	0	0	922
 of the Stormcloud	100	1	1	95		60				6	408	extra-ltng		5	6											mcha										0	0	0	923
 																																							924
-of the Icicle	100	1	1	20	40	3				8	408	extra-cold		1	2											mcha										0	0	0	925
+of the Icicle	100	1	1	5	40	3				8	408	extra-cold		1	2											mcha										0	0	0	925
 of the Icicle	100	1	1	40	60	12				8	408	extra-cold		2	3											mcha										0	0	0	926
 of the Icicle	100	1	1	60		24				8	408	extra-cold		3	4											mcha										0	0	0	926
 of Permafrost	100	1	1	80		42				7	408	extra-cold		4	5											mcha										0	0	0	927
 of Permafrost	100	1	1	95		60				6	408	extra-cold		5	6											mcha										0	0	0	928
 																																							929
-of Malady	100	1	1	20	40	3				8	408	extra-pois		1	2											mcha										0	0	0	930
+of Malady	100	1	1	5	40	3				8	408	extra-pois		1	2											mcha										0	0	0	930
 of Malady	100	1	1	40	60	12				8	408	extra-pois		2	3											mcha										0	0	0	931
 of Malady	100	1	1	60		24				8	408	extra-pois		3	4											mcha										0	0	0	931
 of Miasma	100	1	1	80		42				7	408	extra-pois		4	5											mcha										0	0	0	932
 of Miasma	100	1	1	95		60				6	408	extra-pois		5	6											mcha										0	0	0	933
 																																							934
-of Obscenety	100	1	1	20	40	3				8	408	extra-mag2		1	2											mcha										0	0	0	935
+of Obscenety	100	1	1	5	40	3				8	408	extra-mag2		1	2											mcha										0	0	0	935
 of Obscenety	100	1	1	40	60	12				8	408	extra-mag2		2	3											mcha										0	0	0	936
 of Obscenety	100	1	1	60		24				8	408	extra-mag2		3	4											mcha										0	0	0	936
 of Vulgarity	100	1	1	80		42				7	408	extra-mag2		4	5											mcha										0	0	0	937
 of Vulgarity	100	1	1	95		60				6	408	extra-mag2		5	6											mcha										0	0	0	938
 																																							939
-of the Breeze	100	1	1	20	40	3				8	408	extra-wind		1	2											mcha										0	0	0	940
+of the Breeze	100	1	1	5	40	3				8	408	extra-wind		1	2											mcha										0	0	0	940
 of the Breeze	100	1	1	40	60	12				8	408	extra-wind		2	3											mcha										0	0	0	941
 of the Breeze	100	1	1	60		24				8	408	extra-wind		3	4											mcha										0	0	0	941
 of the Cyclone	100	1	1	80		42				7	408	extra-wind		4	5											mcha										0	0	0	942
 of the Cyclone	100	1	1	95		60				6	408	extra-wind		5	6											mcha										0	0	0	943
 																																							944
-of Bounty	100	1	1	20	60	18				13	355	gold%		3	6											scha										0	0	0	945
-of Bounty	100	1	1	60		48				12	355	gold%		5	8											scha										0	0	0	946
-of Prosperity	100	1	1	80		60				11	355	gold%		7	10											scha										0	0	0	947
-of Prosperity	100	1	1	95		66				10	355	gold%		9	12											scha										0	0	0	948
+of Bounty	100	1	1	5	40	4				13	355	gold%		3	6											scha										0	0	0	945
+of Bounty	100	1	1	20	60	18				13	355	gold%		5	8											scha										0	0	0	945
+of Bounty	100	1	1	60		48				12	355	gold%		7	10											scha										0	0	0	946
+of Prosperity	100	1	1	80		60				11	355	gold%		9	12											scha										0	0	0	947
+of Prosperity	100	1	1	95		66				10	355	gold%		11	14											scha										0	0	0	948
 of the Hoard	100	1	1	95		66				2	355	gold%/lvl	2													scha										0	0	0	949
 																																							950
-of Fate	100	1	1	20	60	18				13	356	mag%		3	6											scha										0	0	0	951
-of Fate	100	1	1	60		48				12	356	mag%		5	8											scha										0	0	0	952
-of the Rabbit's Foot	100	1	1	80		60				11	356	mag%		7	10											scha										0	0	0	953
-of the Rabbit's Foot	100	1	1	95		66				10	356	mag%		9	12											scha										0	0	0	954
+of Fate	100	1	1	5	40	4				13	356	mag%		1	3											scha										0	0	0	951
+of Fate	100	1	1	20	60	18				13	356	mag%		3	5											scha										0	0	0	951
+of Fate	100	1	1	60		48				12	356	mag%		5	7											scha										0	0	0	952
+of the Rabbit's Foot	100	1	1	80		60				11	356	mag%		7	9											scha										0	0	0	953
+of the Rabbit's Foot	100	1	1	95		66				10	356	mag%		9	11											scha										0	0	0	954
 of the Treasury	100	1	1	95		66				2	356	mag%/lvl	2													scha										0	0	0	955
 																																							956
 of the Incense	100	1	1	20	60	18				28	357	abs-fire		1	2											scha										0	0	0	957
@@ -1035,3 +1039,8 @@ of Counterbalance	100	1	1	20	60	18				28	359	balance1		3	4											lcha							
 of Counterbalance	100	1	1	60		48				26	359	balance1		4	8											lcha										0	0	0	978
 of Equilibrium	100	1	1	80		60				22	359	balance1		5	12											lcha										0	0	0	979
 of Equilibrium	100	1	1	95		66				18	359	balance1		6	16											lcha										0	0	0	980
+																																							
+ChitNor	100	1	1	1		1				1	101	randomize		1	120											chw1	cha1									0	0	0	981
+ChitNM	100	1	1	1		1				1	101	randomize		1	120											chw2	cha2									0	0	0	982
+ChitHell	100	1	1	1		1				1	101	randomize		1	120											chw3	cha3									0	0	0	983
+RndStone	100	1	1	1		1				1	101	randomize		1	511											rstn										0	0	0	984
