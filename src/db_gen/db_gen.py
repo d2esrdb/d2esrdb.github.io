@@ -100,6 +100,7 @@ class DatabaseGenerator:
             self.tables,
             self.table_strings,
             self.utils,
+            self.db_code,
         )
         uniques_template = self.mylookup.get_template("uniques.htm")
 

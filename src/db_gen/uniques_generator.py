@@ -30,13 +30,14 @@ class ItemGroup:
 
 
 class UniquesGenerator:
-    def __init__(self, tables: Tables, table_strings: dict[str, str], utils: Utils) -> None:
+    def __init__(self, tables: Tables, table_strings: dict[str, str], utils: Utils, db_name: str) -> None:
         self.tables = tables
         self.table_strings = table_strings
         self.utils = utils
         self.unique_weapons = []
         self.unique_armors = []
         self.unique_misc = []
+        self.db_name = db_name
         # Fills in the above 3 items
         self.generate_uniques()
 
@@ -134,6 +135,8 @@ class UniquesGenerator:
     def get_unique_items(self) -> list[UniqueItem]:
         unique_items = []
         for row in self.tables.unique_items_table:
+            if row["enabled"] != "1" and self.db_name == "Eastern_Sun_Rises_Beta":
+                continue
             # @TODO If item is enabled... for some reason we have to use rarity?? Maybe this is only an ES thing? I feel like this should be removed...
             #if row["rarity"].isdigit() and int(row["rarity"]) > 0 and row["enabled"] == "1" and row["code"] != "":
             props = [
